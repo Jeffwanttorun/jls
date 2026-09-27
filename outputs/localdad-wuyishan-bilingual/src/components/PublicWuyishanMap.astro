@@ -10,11 +10,11 @@ const tiles={urlTemplate:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",at
 const labels={map:zh?"武夷山奶爸公开地图":"Public Wuyishan map",filters:zh?"筛选":"Filters",relatedContent:zh?"相关内容":"Related content",openPlace:zh?"查看地点":"Open place",enableInteraction:zh?"启用地图拖动":"Enable map interaction"};
 ---
 <section class="public-map-block" aria-labelledby="public-map-title">
-  <header><p class="kicker">{zh?"公开地图":"Public map"}</p><h2 id="public-map-title">{zh?"一号风景道与沿线地点":"No. 1 Scenic Road and places along the way"}</h2><p>{zh?"路线保持已确认的952点、6段道路几何；地图显示本人已经完成判点并确认可公开的正式定位。":"The road retains its reviewed 952-point, six-segment geometry. Markers show formal locations personally plotted and approved for public display."}</p></header>
+  <header><p class="kicker">{zh?"公开地图":"Public map"}</p><h2 id="public-map-title">{zh?"路线地图":"No. 1 Scenic Road and places along the way"}</h2><p>{zh?`${publicMapProvenance.publicPlaceCount} 个公开地点 · ${publicMapProvenance.segmentCount} 段道路 · ${publicMapProvenance.sourcePointCount} 点路线`:"The road retains its reviewed 952-point, six-segment geometry. Markers show formal locations personally plotted and approved for public display."}</p></header>
   <MapExplorer id="wuyishan-public-map" {dataset} {tiles} {labels} filterLabels={{}} />
-  <p class="map-provenance">{zh?`已确认公开地点 ${publicMapProvenance.publicPlaceCount} 个 · 路线 ${publicMapProvenance.segmentCount} 段 · 原始道路点 ${publicMapProvenance.sourcePointCount} 个`:`${publicMapProvenance.publicPlaceCount} owner-approved markers · ${publicMapProvenance.segmentCount} road segments · ${publicMapProvenance.sourcePointCount} source points`}</p>
+  {!zh && <p class="map-provenance">{`${publicMapProvenance.publicPlaceCount} owner-approved markers · ${publicMapProvenance.segmentCount} road segments · ${publicMapProvenance.sourcePointCount} source points`}</p>}
 </section>
 <style>
   .public-map-block{max-width:var(--max);margin:0 auto;padding:0 0 7rem}.public-map-block>header{max-width:760px;margin-bottom:2rem}.public-map-block h2{margin:.2em 0}.public-map-block>header>p:last-child{color:var(--muted)}.map-provenance{margin-top:1rem;color:var(--muted);font-size:.75rem}#wuyishan-public-map{scroll-margin-top:6rem}
-  @media(max-width:800px){.public-map-block{max-width:88vw;padding-bottom:4rem}}
+  @media(max-width:800px){.public-map-block{max-width:none;padding:0 12px 4rem}.public-map-block>header{margin:0 4px 10px}.public-map-block>header .kicker{margin-bottom:3px}.public-map-block h2{margin:0;font-size:29px;line-height:1.08}.public-map-block>header>p:last-child{margin:5px 0 0;font-size:11px}.public-map-block :global(.map-explorer){gap:8px}}
 </style>
