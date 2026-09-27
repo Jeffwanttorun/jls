@@ -12,7 +12,7 @@ const navigation=publicPlace?.navigationCoordinates;
 const webNavigation=navigation?`https://map.qq.com/nav/drive#routes/page?${new URLSearchParams({cond:"0",epointx:String(navigation.longitude),epointy:String(navigation.latitude),eword:placeName,sword:"我的位置",transport:"2"})}`:"";
 const appNavigation=navigation?`qqmap://map/routeplan?${new URLSearchParams({type:"drive",from:"我的位置",fromcoord:"CurrentLocation",to:placeName,tocoord:`${navigation.latitude},${navigation.longitude}`})}`:"";
 const tiles={urlTemplate:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19};
-const labels={map:`${placeName}地图位置`,filters:"筛选",relatedContent:"相关内容",openPlace:"当前地点",enableInteraction:"启用地图拖动"};
+const labels={map:`${placeName}地图位置`,filters:"筛选",relatedContent:"相关内容",openPlace:"当前地点",enableInteraction:"启用地图拖动",locateUser:"我的位置",locatingUser:"正在读取位置…",locationReady:"已定位，蓝色圆点是你的位置",locationDenied:"未获得定位权限，请在浏览器设置中允许位置访问",locationUnavailable:"暂时无法读取位置，请检查系统定位和网络"};
 ---
 {dataset.places.length > 0 && <section class="place-location-map" aria-label={`${placeName}地图位置`}>
   <p class="dad-eyebrow place-map-label">地图位置</p>

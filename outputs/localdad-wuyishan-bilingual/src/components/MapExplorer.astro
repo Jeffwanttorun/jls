@@ -24,7 +24,8 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
   <div class="map-controls"><MapFilterControls filterIds={filters} labels={filterLabels} legend={labels.filters} /></div>
   <div class="map-frame">
     <div class="interactive-map" data-map-canvas role="region" aria-label={labels.map} tabindex="0"></div>
-    <button class="map-activation" type="button" data-map-activation hidden>{labels.enableInteraction}</button>
+    <button class="map-locate" type="button" data-map-locate aria-label={labels.locateUser} title={labels.locateUser}><span aria-hidden="true">◎</span><span>{labels.locateUser}</span></button>
+    <p class="map-status" data-map-status aria-live="polite" hidden></p>
   </div>
   <details class="map-fallback"><summary>{labels.openPlace}</summary><ul>{dataset.places.map((place) => <li><a href={place.href}>{place.name}</a>{place.alternateName && ` · ${place.alternateName}`}</li>)}</ul></details>
   <script type="application/json" data-map-config is:inline set:html={config} />
@@ -50,18 +51,7 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
     if (!canvas || !source?.textContent) return;
     const { default:L } = await import("leaflet");
     const { dataset, tiles, labels, focusPlaceId, autoScrollToFocus=true, openFocusedPopup=true } = JSON.parse(source.textContent) as RuntimeConfig;
-    const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
-    const activation = root.querySelector<HTMLButtonElement>("[data-map-activation]");
-    const map = L.map(canvas, { scrollWheelZoom:false, keyboard:true, dragging:!coarsePointer, touchZoom:!coarsePointer });
-    if (coarsePointer && activation) {
-      activation.hidden = false;
-      activation.addEventListener("click", () => {
-        map.dragging.enable();
-        map.touchZoom.enable();
-        activation.hidden = true;
-        canvas.focus();
-      }, { once:true });
-    }
+    const map = L.map(canvas, { scrollWheelZoom:false, keyboard:true, dragging:true, touchZoom:true, doubleClickZoom:true, boxZoom:true, zoomControl:true });
     L.tileLayer(tiles.urlTemplate, { attribution:tiles.attribution, maxZoom:tiles.maxZoom ?? 19 }).addTo(map);
     const placeLayer = L.layerGroup().addTo(map);
     const routeLayer = L.layerGroup().addTo(map);
@@ -85,6 +75,7 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
         popup.append(list);
       }
       marker.bindPopup(popup);
+      marker.bindTooltip(heading.textContent, { permanent:true, direction:"top", offset:[0,-7], className:"map-place-label" });
       return { place, marker };
     });
 
@@ -109,6 +100,8 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
     }
 
     refresh();
+    const updatePlaceLabels = () => { const zoom=map.getZoom(); root.dataset.mapZoom=String(zoom); root.classList.toggle("map-show-place-labels",zoom>=13); };
+    map.on("zoomend", updatePlaceLabels);
     const requested = placeMarkers.find(({ place }) => place.id === requestedPlaceId);
     if (requested) {
       map.setView([requested.place.coordinates.latitude, requested.place.coordinates.longitude], 15);
@@ -121,6 +114,30 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
       ]);
       map.fitBounds(bounds, { padding:[24,24], maxZoom:14 });
     }
+    updatePlaceLabels();
+
+    const locateButton = root.querySelector<HTMLButtonElement>("[data-map-locate]");
+    const status = root.querySelector<HTMLElement>("[data-map-status]");
+    let userMarker: ReturnType<typeof L.circleMarker> | undefined;
+    let accuracyCircle: ReturnType<typeof L.circle> | undefined;
+    const setStatus = (message:string) => { if(status){ status.textContent=message; status.hidden=false; } };
+    locateButton?.addEventListener("click", () => {
+      if(!navigator.geolocation){ setStatus(labels.locationUnavailable); return; }
+      locateButton.disabled=true;
+      setStatus(labels.locatingUser);
+      navigator.geolocation.getCurrentPosition((position) => {
+        const point=L.latLng(position.coords.latitude,position.coords.longitude);
+        userMarker?.remove(); accuracyCircle?.remove();
+        accuracyCircle=L.circle(point,{radius:Math.max(position.coords.accuracy,12),weight:1,color:"#1671d9",fillColor:"#1671d9",fillOpacity:.08}).addTo(map);
+        userMarker=L.circleMarker(point,{radius:7,weight:3,color:"#fff",fillColor:"#1671d9",fillOpacity:1,className:"map-user-location"}).addTo(map).bindPopup(labels.locationReady).openPopup();
+        map.setView(point,Math.max(map.getZoom(),15));
+        locateButton.disabled=false;
+        setStatus(labels.locationReady);
+      },(error) => {
+        locateButton.disabled=false;
+        setStatus(error.code===error.PERMISSION_DENIED?labels.locationDenied:labels.locationUnavailable);
+      },{enableHighAccuracy:true,timeout:12000,maximumAge:60000});
+    });
   }
 
   for (const root of document.querySelectorAll<HTMLElement>("[data-map-explorer]")) {
@@ -137,6 +154,6 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
 </script>
 
 <style>
-  .map-explorer{display:grid;gap:1rem}.map-frame{position:relative}.interactive-map{min-height:28rem;border-radius:1rem;overflow:hidden;background:var(--mist)}.interactive-map:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-activation{position:absolute;inset:auto 1rem 1rem 1rem;z-index:500;min-height:3rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font-weight:700;box-shadow:0 .25rem 1rem rgb(0 0 0/.18)}.map-activation:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-fallback{font-size:.95rem}
+  .map-explorer{display:grid;gap:1rem}.map-frame{position:relative}.interactive-map{min-height:28rem;border-radius:1rem;overflow:hidden;background:var(--mist);touch-action:pan-x pan-y}.interactive-map:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-locate{position:absolute;top:10px;right:10px;z-index:500;display:flex;align-items:center;gap:6px;min-height:40px;padding:8px 11px;border:1px solid #c7d7cf;border-radius:10px;background:rgba(255,255,255,.96);color:#174c39;font:800 12px/1 system-ui,sans-serif;box-shadow:0 2px 8px rgb(0 0 0/.16);cursor:pointer}.map-locate>span:first-child{font-size:18px}.map-locate:disabled{opacity:.62}.map-locate:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-status{position:absolute;inset:auto 10px 10px;z-index:500;margin:0;padding:9px 12px;border-radius:10px;background:rgba(20,57,44,.92);color:#fff;font:700 11px/1.45 system-ui,sans-serif;box-shadow:0 2px 10px rgb(0 0 0/.2)}.map-fallback{font-size:.95rem}.map-explorer :global(.map-place-label){opacity:0;transition:opacity .15s;border:1px solid #c8d8d0;border-radius:7px;background:rgba(255,255,255,.96);color:#173b2f;font:800 11px/1.2 system-ui,sans-serif;box-shadow:0 2px 7px rgb(0 0 0/.14)}.map-explorer :global(.map-place-label::before){display:none}.map-show-place-labels :global(.map-place-label){opacity:1}
   @media(max-width:700px){.interactive-map{min-height:min(65vh,34rem)}}
 </style>

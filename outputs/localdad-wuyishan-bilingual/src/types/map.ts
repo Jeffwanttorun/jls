@@ -49,4 +49,9 @@ export interface MapExplorerLabels {
   relatedContent: string;
   openPlace: string;
   enableInteraction: string;
+  locateUser: string;
+  locatingUser: string;
+  locationReady: string;
+  locationDenied: string;
+  locationUnavailable: string;
 }
