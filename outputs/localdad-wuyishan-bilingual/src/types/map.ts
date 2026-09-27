@@ -8,6 +8,9 @@ export interface MapPlace {
   id: string;
   href: string;
   name: string;
+  shortName: string;
+  labelPriority: number;
+  category: string;
   alternateName?: string;
   summary?: string;
   locale: Locale;
@@ -54,4 +57,6 @@ export interface MapExplorerLabels {
   locationReady: string;
   locationDenied: string;
   locationUnavailable: string;
+  placeId: string;
+  placeCategory: string;
 }

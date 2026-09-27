@@ -53,17 +53,25 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
     const { dataset, tiles, labels, focusPlaceId, autoScrollToFocus=true, openFocusedPopup=true } = JSON.parse(source.textContent) as RuntimeConfig;
     const map = L.map(canvas, { scrollWheelZoom:false, keyboard:true, dragging:true, touchZoom:true, doubleClickZoom:true, boxZoom:true, zoomControl:true });
     L.tileLayer(tiles.urlTemplate, { attribution:tiles.attribution, maxZoom:tiles.maxZoom ?? 19 }).addTo(map);
-    const placeLayer = L.layerGroup().addTo(map);
     const routeLayer = L.layerGroup().addTo(map);
-    const selected = new Set<string>();
+    const placeLayer = L.layerGroup().addTo(map);
+    const activeFilters = new Set<string>();
     const requestedPlaceId = focusPlaceId || new URLSearchParams(window.location.search).get("place");
+    let selectedPlaceId = requestedPlaceId || undefined;
+    let focusedPlaceId: string | undefined;
+    let labelFrame = 0;
 
     const placeMarkers = dataset.places.map((place) => {
-      const marker = L.circleMarker([place.coordinates.latitude, place.coordinates.longitude], { radius:7, weight:2, color:"#183a2c", fillColor:"#d8a94f", fillOpacity:.9 });
+      const marker = L.circleMarker([place.coordinates.latitude, place.coordinates.longitude], { radius:7, weight:2, color:"#183a2c", fillColor:"#d8a94f", fillOpacity:.9, bubblingMouseEvents:false });
       const popup = document.createElement("div");
       const heading = document.createElement("strong");
       heading.textContent = place.alternateName ? `${place.name} · ${place.alternateName}` : place.name;
       popup.append(heading);
+      if(/^WY-\d+$/.test(place.id)){
+        const metadata=document.createElement("p"); metadata.className="map-popup-meta";
+        metadata.textContent=`${labels.placeId}：${place.id} · ${labels.placeCategory}：${place.category}`;
+        popup.append(metadata);
+      }
       if (place.summary) { const summary = document.createElement("p"); summary.textContent = place.summary; popup.append(summary); }
       const link = document.createElement("a"); link.href = place.href; link.textContent = labels.openPlace; popup.append(link);
       const relationships = [...place.relatedRoutes, ...place.relatedStories];
@@ -75,7 +83,8 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
         popup.append(list);
       }
       marker.bindPopup(popup);
-      marker.bindTooltip(heading.textContent, { permanent:true, direction:"top", offset:[0,-7], className:"map-place-label" });
+      marker.bindTooltip(place.shortName || place.name, { permanent:true, direction:"top", offset:[0,-7], className:"map-place-label", interactive:false });
+      marker.on("add",()=>{const element=marker.getElement() as HTMLElement|undefined;if(element){element.dataset.placeId=place.id;element.setAttribute("role","button");element.setAttribute("aria-label",place.name);}});
       return { place, marker };
     });
 
@@ -83,25 +92,71 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
 
     const refresh = () => {
       placeLayer.clearLayers();
-      for (const { place, marker } of placeMarkers) {
+      for (const { place, marker } of [...placeMarkers].sort((a,b)=>a.place.labelPriority-b.place.labelPriority||a.place.id.localeCompare(b.place.id))) {
         const matchesScope = !requestedPlaceId || place.id === requestedPlaceId;
-        const matches = matchesScope && (selected.size === 0 || place.filterIds.some((filterId) => selected.has(filterId)));
-        if (matches) marker.addTo(placeLayer);
+        const matches = matchesScope && (activeFilters.size === 0 || place.filterIds.some((filterId) => activeFilters.has(filterId)));
+        if (matches) {
+          marker.addTo(placeLayer);
+        }
       }
     };
+
+    const labelForZoom = (place:MapDataset["places"][number], zoom:number) => {
+      if(place.id===selectedPlaceId || place.id===focusedPlaceId)return place.name;
+      if(zoom<=10)return undefined;
+      if(zoom===11)return place.labelPriority>=100?place.shortName:undefined;
+      if(zoom===12)return place.labelPriority>=80?place.shortName:undefined;
+      if(zoom===13)return place.labelPriority>=60?(place.labelPriority>=100?place.name:place.shortName):undefined;
+      if(zoom===14)return place.labelPriority>=40?(place.labelPriority>=80?place.name:place.shortName):undefined;
+      return place.name;
+    };
+
+    const renderPlaceLabels = () => {
+      cancelAnimationFrame(labelFrame);
+      const zoom=map.getZoom(); root.dataset.mapZoom=String(zoom); root.dataset.labelMode=zoom<=10?"points":zoom===11?"core-short":zoom===12?"important-short":zoom===13?"more-short":zoom===14?"mixed":"full";
+      const bounds=map.getBounds().pad(.08);
+      const candidates=placeMarkers.flatMap(({place,marker})=>{
+        const text=labelForZoom(place,zoom);
+        marker.setStyle(place.id===selectedPlaceId?{radius:9,weight:3,color:"#fff",fillColor:"#1671d9",fillOpacity:1}:{radius:7,weight:2,color:"#183a2c",fillColor:"#d8a94f",fillOpacity:.9});
+        marker.closeTooltip();
+        if(!placeLayer.hasLayer(marker)||!bounds.contains(marker.getLatLng())||!text)return [];
+        marker.setTooltipContent(text).openTooltip();
+        return [{place,marker,text,selected:place.id===selectedPlaceId,focused:place.id===focusedPlaceId}];
+      }).sort((a,b)=>Number(b.selected)-Number(a.selected)||Number(b.focused)-Number(a.focused)||b.place.labelPriority-a.place.labelPriority||a.place.id.localeCompare(b.place.id));
+      labelFrame=requestAnimationFrame(()=>{
+        const occupied:{left:number;right:number;top:number;bottom:number}[]=[];
+        for(const candidate of candidates){
+          const element=candidate.marker.getTooltip()?.getElement();
+          if(!element)continue;
+          const box=element.getBoundingClientRect();
+          const padded={left:box.left-5,right:box.right+5,top:box.top-4,bottom:box.bottom+4};
+          const overlaps=occupied.some((other)=>!(padded.right<other.left||padded.left>other.right||padded.bottom<other.top||padded.top>other.bottom));
+          if(overlaps&&!candidate.selected&&!candidate.focused)candidate.marker.closeTooltip();
+          else occupied.push(padded);
+        }
+        root.dataset.visibleLabels=String(occupied.length);
+      });
+    };
+
+    for(const {place,marker} of placeMarkers){
+      marker.on("click",()=>{selectedPlaceId=place.id; focusedPlaceId=undefined; marker.openPopup(); renderPlaceLabels();});
+      marker.on("mouseover",()=>{focusedPlaceId=place.id; renderPlaceLabels();});
+      marker.on("mouseout",()=>{focusedPlaceId=undefined; renderPlaceLabels();});
+    }
+    map.on("click",()=>{selectedPlaceId=undefined; focusedPlaceId=undefined; map.closePopup(); renderPlaceLabels();});
 
     for (const group of root.querySelectorAll<HTMLElement>("[data-filter-group]")) {
       for (const button of group.querySelectorAll<HTMLButtonElement>("button[data-filter]")) button.addEventListener("click", () => {
         const value = button.dataset.filter!;
-        selected.has(value) ? selected.delete(value) : selected.add(value);
-        button.setAttribute("aria-pressed", String(selected.has(value)));
+        activeFilters.has(value) ? activeFilters.delete(value) : activeFilters.add(value);
+        button.setAttribute("aria-pressed", String(activeFilters.has(value)));
         refresh();
+        requestAnimationFrame(renderPlaceLabels);
       });
     }
 
     refresh();
-    const updatePlaceLabels = () => { const zoom=map.getZoom(); root.dataset.mapZoom=String(zoom); root.classList.toggle("map-show-place-labels",zoom>=13); };
-    map.on("zoomend", updatePlaceLabels);
+    map.on("zoomend moveend",renderPlaceLabels);
     const requested = placeMarkers.find(({ place }) => place.id === requestedPlaceId);
     if (requested) {
       map.setView([requested.place.coordinates.latitude, requested.place.coordinates.longitude], 15);
@@ -114,7 +169,7 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
       ]);
       map.fitBounds(bounds, { padding:[24,24], maxZoom:14 });
     }
-    updatePlaceLabels();
+    renderPlaceLabels();
 
     const locateButton = root.querySelector<HTMLButtonElement>("[data-map-locate]");
     const status = root.querySelector<HTMLElement>("[data-map-status]");
@@ -154,6 +209,6 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
 </script>
 
 <style>
-  .map-explorer{display:grid;gap:1rem}.map-frame{position:relative}.interactive-map{min-height:28rem;border-radius:1rem;overflow:hidden;background:var(--mist);touch-action:pan-x pan-y}.interactive-map:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-locate{position:absolute;top:10px;right:10px;z-index:500;display:flex;align-items:center;gap:6px;min-height:40px;padding:8px 11px;border:1px solid #c7d7cf;border-radius:10px;background:rgba(255,255,255,.96);color:#174c39;font:800 12px/1 system-ui,sans-serif;box-shadow:0 2px 8px rgb(0 0 0/.16);cursor:pointer}.map-locate>span:first-child{font-size:18px}.map-locate:disabled{opacity:.62}.map-locate:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-status{position:absolute;inset:auto 10px 10px;z-index:500;margin:0;padding:9px 12px;border-radius:10px;background:rgba(20,57,44,.92);color:#fff;font:700 11px/1.45 system-ui,sans-serif;box-shadow:0 2px 10px rgb(0 0 0/.2)}.map-fallback{font-size:.95rem}.map-explorer :global(.map-place-label){opacity:0;transition:opacity .15s;border:1px solid #c8d8d0;border-radius:7px;background:rgba(255,255,255,.96);color:#173b2f;font:800 11px/1.2 system-ui,sans-serif;box-shadow:0 2px 7px rgb(0 0 0/.14)}.map-explorer :global(.map-place-label::before){display:none}.map-show-place-labels :global(.map-place-label){opacity:1}
+  .map-explorer{display:grid;gap:1rem}.map-frame{position:relative}.interactive-map{min-height:28rem;border-radius:1rem;overflow:hidden;background:var(--mist);touch-action:pan-x pan-y}.interactive-map:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-locate{position:absolute;top:10px;right:10px;z-index:500;display:flex;align-items:center;gap:6px;min-height:40px;padding:8px 11px;border:1px solid #c7d7cf;border-radius:10px;background:rgba(255,255,255,.96);color:#174c39;font:800 12px/1 system-ui,sans-serif;box-shadow:0 2px 8px rgb(0 0 0/.16);cursor:pointer}.map-locate>span:first-child{font-size:18px}.map-locate:disabled{opacity:.62}.map-locate:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-status{position:absolute;inset:auto 10px 10px;z-index:500;margin:0;padding:9px 12px;border-radius:10px;background:rgba(20,57,44,.92);color:#fff;font:700 11px/1.45 system-ui,sans-serif;box-shadow:0 2px 10px rgb(0 0 0/.2)}.map-fallback{font-size:.95rem}.map-explorer :global(.map-place-label){border:1px solid #c8d8d0;border-radius:7px;background:rgba(255,255,255,.96);color:#173b2f;font:800 11px/1.2 system-ui,sans-serif;box-shadow:0 2px 7px rgb(0 0 0/.14);white-space:nowrap}.map-explorer :global(.map-place-label::before){display:none}.map-explorer :global(.map-popup-meta){margin:6px 0;color:#60736a;font-size:11px;line-height:1.45}
   @media(max-width:700px){.interactive-map{min-height:min(65vh,34rem)}}
 </style>
