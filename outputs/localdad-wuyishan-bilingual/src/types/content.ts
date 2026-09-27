@@ -7,7 +7,7 @@ export type { ContentCategory } from "../data/content-categories";
 export type HeritageCategory = "natural-heritage" | "cultural-heritage" | "tea-heritage" | "living-heritage";
 export type KnowledgeCategory = "overview" | HeritageCategory;
 export type VideoRelationType = "place" | "person" | "story" | "topic" | "route";
-export type VideoPlatform = "youtube" | "instagram";
+export type VideoPlatform = "douyin" | "youtube" | "instagram" | "tiktok";
 export type VideoProvider = VideoPlatform;
 export type VideoContentType = "explanation" | "place-visit" | "route" | "interview" | "story";
 

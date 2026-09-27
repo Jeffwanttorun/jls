@@ -5,6 +5,6 @@ const site = Astro.site ?? new URL("https://local-dad-jeff.vercel.app");
 const alternates = [{lang:"en" as const,href:new URL("/map",site).toString()},{lang:"zh" as const,href:new URL("/zh/map",site).toString()}];
 ---
 <BaseLayout title="武夷山奶爸地图｜武夷山奶爸" description="一个本地爸爸根据实地经历整理的武夷山旅行地图，从一号风景道开始，记录玩水、风景、自然、茶、展馆和吃东西的地点。" lang="zh" {alternates}>
-  <section class="bilingual-entry"><div class="map-intro-card"><p class="kicker">武夷山奶爸地图</p><h1><span>沿着一条路</span><span>认识武夷山</span></h1><p class="lead">本人实地走过并完成定位的地点，按一号风景道由南向北排列。</p><div id="corridor" class="route-summary"><div class="route-summary-title"><span>一号风景道</span><strong>南源岭 <b>→</b> 坳头</strong></div><p>南源岭 · 星村 · 漫水桥 · 黄村与红星 · 月亮湾与桃源峪 · 桐木与大竹岚 · 坳头</p></div></div></section>
+  <section class="bilingual-entry"><div class="map-intro-card"><p class="kicker">武夷山奶爸地图</p><h1><span>沿着一条路</span><span>认识武夷山</span></h1><p class="lead">本人实地走过并完成定位的地点，按一号风景道由南向北排列。</p><a id="corridor" class="route-summary" href="/zh/route/no-1-scenic-road"><div class="route-summary-title"><span>一号风景道</span><strong>南源岭 <b>→</b> 坳头</strong></div><p>南源岭 · 星村 · 漫水桥 · 黄村与红星 · 月亮湾与桃源峪 · 桐木与大竹岚 · 坳头</p></a></div></section>
   <PublicWuyishanMap locale="zh" />
 </BaseLayout>

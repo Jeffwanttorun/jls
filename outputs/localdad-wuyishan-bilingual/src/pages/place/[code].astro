@@ -1,0 +1,7 @@
+---
+import KnowledgePlacePage from "../../components/KnowledgePlacePage.astro";
+import { knowledgePlaces } from "../../data/knowledge-places";
+export function getStaticPaths(){return knowledgePlaces.map((place)=>({params:{code:place.id},props:{place}}));}
+const { place }=Astro.props;
+---
+<KnowledgePlacePage {place} locale="en" />

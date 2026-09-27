@@ -1,7 +1,9 @@
 import snapshot from "./wuyishan-public-map.json";
 import type { Locale } from "../i18n/config";
 import type { MapDataset, MapPlace, MapRouteGeometry } from "../types/map";
-import { publicMapLabelFor, publicMapLabelMetadata } from "./map-place-labels";
+import { knowledgePlaces, localizedPlaceName } from "./knowledge-places";
+import { knowledgeRouteById } from "./knowledge-routes";
+import { localizedCategory } from "./knowledge-map-i18n";
 
 type SnapshotPoint = { latitude:number; longitude:number; system:"WGS84" };
 
@@ -15,20 +17,27 @@ export const publicMapProvenance = {
 } as const;
 
 export const publicMapPlaceCodes = new Set(snapshot.places.map((place)=>place.code));
-const missingLabelMetadata=snapshot.places.filter((place)=>!publicMapLabelMetadata[place.code]).map((place)=>place.code);
-if(missingLabelMetadata.length)throw new Error(`Missing public map label metadata: ${missingLabelMetadata.join(", ")}`);
 
 export function wuyishanPublicMap(locale:Locale):MapDataset {
-  const places:MapPlace[]=snapshot.places.map((place)=>({
-    ...publicMapLabelFor(place.code,place.name),
-    id:place.code,
-    href:locale==="zh"?`/zh/place/${place.code}`:"/map",
-    name:place.name,
-    summary:locale==="zh"?`${place.region} · 当前状态：${place.status}`:`${place.region} · Status: open and approved for public map display`,
+  const places:MapPlace[]=knowledgePlaces.map((place)=>({
+    id:place.id,
+    href:locale==="zh"?`/zh/place/${place.id}`:`/place/${place.id}`,
+    name:localizedPlaceName(place,locale),
+    shortName:localizedPlaceName(place,locale,true),
+    labelPriority:place.labelPriority,
+    category:localizedCategory(place.category,locale),
+    alternateName:locale==="en"&&place.nameEn?place.nameZh:undefined,
+    summary:place.summary?.[locale],
     locale,
-    translationStatus:locale==="zh"?"complete":"partial",
+    translationStatus:locale==="zh"||place.englishNameStatus!=="pending"?"complete":"partial",
     coordinates:place.coordinates as SnapshotPoint,
-    categories:[],topics:[],filterIds:[],practicalInformation:[],relatedRoutes:[],relatedStories:[],relatedVideos:[],
+    categories:[],topics:[],filterIds:[],practicalInformation:[],
+    relatedRoutes:(place.routeIds??[]).flatMap((routeId)=>{
+      const route=knowledgeRouteById.get(routeId);
+      return route?[{id:route.id,label:locale==="zh"?route.nameZh:route.nameEn,href:locale==="zh"?`/zh/route/${route.slug}`:`/route/${route.slug}`}]:[];
+    }),
+    relatedStories:(place.storyLinks??[]).map((link,index)=>({id:`story-${place.id}-${index}`,label:link.title,href:link.url})),
+    relatedVideos:[],
   }));
   const routes:MapRouteGeometry[]=snapshot.routes.map((route)=>({
     id:route.id,

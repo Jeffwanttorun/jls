@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import MapExplorer from "./MapExplorer.astro";
+import { knowledgePlaceById, localizedPlaceName } from "../data/knowledge-places";
+import { wuyishanPublicMap } from "../data/wuyishan-public-map";
+import type { Locale } from "../i18n/config";
+import type { KnowledgeRoute } from "../types/knowledge-map";
+import { localizedCategory } from "../data/knowledge-map-i18n";
+
+interface Props { route:KnowledgeRoute; locale:Locale; }
+const { route,locale }=Astro.props;
+const zh=locale==="zh";
+const name=zh?route.nameZh:route.nameEn;
+const summary=zh?route.summaryZh:route.summaryEn;
+const places=route.placeIds.flatMap((id)=>{const place=knowledgePlaceById.get(id);return place?[place]:[]});
+const verified=places.filter((place)=>place.trustStatus?.checkedInPerson);
+const recheck=places.filter((place)=>place.trustStatus?.recheckBeforeGoing);
+const practicalNotes=zh?route.practicalNotesZh:route.practicalNotesEn;
+const dataset=wuyishanPublicMap(locale);
+const tiles={urlTemplate:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19};
+const labels={map:zh?`${name}路线地图`:`Map of ${name}`,filters:zh?"筛选":"Filters",relatedContent:zh?"相关内容":"Related content",openPlace:zh?"查看地点":"Open place",enableInteraction:zh?"启用地图拖动":"Enable map interaction",locateUser:zh?"我的位置":"My location",locatingUser:zh?"正在读取位置…":"Finding your location…",locationReady:zh?"已定位，蓝色圆点是你的位置":"Located. The blue dot is your position.",locationDenied:zh?"未获得定位权限，请在浏览器设置中允许位置访问":"Location permission was not granted.",locationUnavailable:zh?"暂时无法读取位置，请检查系统定位和网络":"Your location is currently unavailable.",placeId:zh?"地点编号":"Place ID",placeCategory:zh?"类型":"Type"};
+const placeHref=(id:string)=>zh?`/zh/place/${id}`:`/place/${id}`;
+const site=Astro.site??new URL("https://localdad.youzipal.com");
+const alternates=[{lang:"en" as const,href:new URL(`/route/${route.slug}`,site).toString()},{lang:"zh" as const,href:new URL(`/zh/route/${route.slug}`,site).toString()}];
+---
+<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Local Dad Jeff`} description={zh?"一号风景道的路线地图、沿线分段、实地记录地点和现场核验状态。路线与地点使用统一知识地图数据关联，方便从路线继续查看每个地点。":"A route map and place-by-place sequence for Wuyishan No. 1 Scenic Road, linked to the shared knowledge map."} {alternates}>
+  <article class="route-page">
+    <a class="route-back" href={zh?"/zh/map":"/map"}>← {zh?"返回完整地图":"Back to the full map"}</a>
+    <header class="route-hero"><p class="route-kicker">{zh?"路线":"Route"}</p><h1>{name}</h1>{summary&&<p>{summary}</p>}<div class="route-trust"><span>{zh?`${verified.length} 个地点已实地核验`:`${verified.length} places checked in person`}</span>{recheck.length>0&&<span class="recheck">{zh?`${recheck.length} 个地点出发前需复核`:`${recheck.length} place to recheck before going`}</span>}</div></header>
+
+    <section class="route-map" aria-labelledby="route-map-title"><div><p class="route-kicker">{zh?"路线地图":"Route map"}</p><h2 id="route-map-title">{zh?"从南源岭到坳头":"From Nanyuanling to Aotou"}</h2></div><MapExplorer id="no-1-scenic-road-map" {dataset} {tiles} {labels} filterLabels={{}} /></section>
+
+    <section class="route-stages" aria-labelledby="route-stages-title"><p class="route-kicker">{zh?"路线骨架":"Route sequence"}</p><h2 id="route-stages-title">{zh?"沿线分段与地点":"Stages and places along the road"}</h2><div class="stage-list">{route.stages.map((stage,index)=>{
+      const stagePlaces=stage.placeIds.flatMap((id)=>{const place=knowledgePlaceById.get(id);return place?[place]:[]});
+      return <section class="stage"><div class="stage-heading"><span>{String(index+1).padStart(2,"0")}</span><h3>{zh?stage.titleZh:stage.titleEn??stage.titleZh}</h3></div><div class="stage-places">{stagePlaces.map((place)=>{const photo=place.photoGallery?.[0];return <a href={placeHref(place.id)}>{photo?<img src={photo.src} alt="" width="120" height="90" loading="lazy" />:<span class="place-dot" aria-hidden="true"></span>}<span><strong>{localizedPlaceName(place,locale)}</strong>{!zh&&place.nameEn&&<small>{place.nameZh}</small>}<small>{localizedCategory(place.category,locale)}</small></span><b aria-hidden="true">→</b></a>})}</div></section>;
+    })}</div></section>
+
+    {(practicalNotes?.length??0)>0&&<section class="route-notes"><p class="route-kicker">{zh?"实用提醒":"Practical notes"}</p><ul>{practicalNotes?.map((note)=><li>{note}</li>)}</ul></section>}
+    {recheck.length>0&&<section class="route-recheck"><p class="route-kicker">{zh?"出发前重新确认":"Recheck before you go"}</p><div>{recheck.map((place)=><a href={placeHref(place.id)}>{localizedPlaceName(place,locale)} <span>→</span></a>)}</div></section>}
+    {(route.videos?.length??0)>0&&<section class="route-notes"><p class="route-kicker">{zh?"相关视频":"Field videos"}</p>{route.videos?.map((video)=><a href={video.url}>{video.title}</a>)}</section>}
+  </article>
+</BaseLayout>
+
+<style>
+  .route-page{max-width:1120px;margin:0 auto;padding:26px 18px 90px}.route-back{display:inline-block;margin-bottom:24px;color:#197152;font-weight:800;text-decoration:none}.route-hero{max-width:780px;padding:30px;border-radius:28px;background:#153f31;color:#fff}.route-kicker{margin:0 0 8px;color:#b96b3d;font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.route-hero .route-kicker{color:#efbb92}.route-hero h1{margin:0;font-size:clamp(42px,8vw,78px);line-height:1}.route-hero>p:not(.route-kicker){max-width:650px;margin:18px 0 0;color:#dce9e2;line-height:1.7}.route-trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.route-trust span{padding:8px 11px;border-radius:999px;background:#fff;color:#1d5b45;font-size:12px;font-weight:900}.route-trust .recheck{background:#fff0e5;color:#8c4d28}.route-map,.route-stages,.route-notes,.route-recheck{margin-top:26px;padding:26px;border:1px solid #d7e3dd;border-radius:26px;background:#fff}.route-map h2,.route-stages h2{margin:0 0 18px;color:#143c2f}.route-map :global(.map-controls),.route-map :global(.map-fallback){display:none}.route-map :global(.interactive-map){min-height:min(64vh,570px)}.stage-list{display:grid;gap:18px}.stage{padding-top:18px;border-top:1px solid #dce6e1}.stage-heading{display:flex;align-items:baseline;gap:12px}.stage-heading>span{color:#b1683f;font-weight:900}.stage-heading h3{margin:0;color:#143c2f;font-size:24px}.stage-places{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.stage-places a{display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:10px;min-height:68px;padding:8px;border-radius:14px;background:#eef5f1;color:#174f3c;text-decoration:none}.stage-places img{width:54px;height:54px;border-radius:10px;object-fit:cover}.place-dot{width:14px;height:14px;margin:auto;border:3px solid #174735;border-radius:50%;background:#dcb257}.stage-places a>span:not(.place-dot){display:grid;gap:2px}.stage-places small{color:#687a72;font-size:11px}.route-recheck>div{display:flex;flex-wrap:wrap;gap:8px}.route-recheck a{padding:10px 13px;border-radius:12px;background:#fff0e5;color:#794121;font-weight:800;text-decoration:none}
+  @media(max-width:650px){.route-page{padding:14px 10px 70px}.route-hero,.route-map,.route-stages,.route-notes,.route-recheck{padding:18px;border-radius:20px}.route-hero h1{font-size:46px}.stage-places{grid-template-columns:1fr}.route-map :global(.interactive-map){min-height:58vh}}
+</style>

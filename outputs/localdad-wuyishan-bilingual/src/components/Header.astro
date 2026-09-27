@@ -6,10 +6,11 @@ const locale = localeFromPath(Astro.url.pathname);
 const labels = ui[locale];
 const pathWithoutLocale = locale === "zh" ? current.replace(/^\/zh(?=\/|$)/, "") || "/" : current;
 const translatedRoutes = new Set(["/", "/why-wuyishan", "/explore-wuyishan", "/map", "/stories-of-wuyishan", "/about"]);
-const counterpartPath = translatedRoutes.has(pathWithoutLocale)
+const isTranslatedDetail = pathWithoutLocale.startsWith("/place/") || pathWithoutLocale.startsWith("/route/");
+const counterpartPath = translatedRoutes.has(pathWithoutLocale) || isTranslatedDetail
   ? localizedPath(pathWithoutLocale, locale === "en" ? "zh" : "en")
   : localizedPath("/", locale === "en" ? "zh" : "en");
-const isChineseMapSurface = locale === "zh" && (current === "/zh/map" || current === "/zh/explore-wuyishan" || current.startsWith("/zh/theme/") || current.startsWith("/zh/place/"));
+const isChineseMapSurface = locale === "zh" && (current === "/zh/map" || current === "/zh/explore-wuyishan" || current.startsWith("/zh/theme/"));
 const brandLabel = locale === "zh" ? "武夷山奶爸" : "Local Dad Jeff";
 const brandHref = localizedPath("/", locale);
 ---

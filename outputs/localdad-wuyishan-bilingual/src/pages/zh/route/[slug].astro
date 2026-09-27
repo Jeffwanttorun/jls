@@ -1,0 +1,7 @@
+---
+import KnowledgeRoutePage from "../../../components/KnowledgeRoutePage.astro";
+import { knowledgeRoutes } from "../../../data/knowledge-routes";
+export function getStaticPaths(){return knowledgeRoutes.map((route)=>({params:{slug:route.slug},props:{route}}));}
+const { route }=Astro.props;
+---
+<KnowledgeRoutePage {route} locale="zh" />

@@ -14,13 +14,13 @@ const routes=[
   <section class="dad-home-hero">
     {heroImage && <img src={heroImage} alt="Jeff一家在武夷山溪边" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async"/>}
     <div class="dad-home-shade"></div>
-    <div class="dad-home-copy"><p class="dad-eyebrow light">{home.eyebrow||"一位本地爸爸的沿路笔记"}</p><h1>{home.titleLine1||"武夷山"}<br/>{home.titleLine2||"奶爸地图"}</h1><p>{home.introLine1||"我在武夷山生活，"}<br/>{home.introLine2||"把自己实际走过、愿意推荐的地方放在这里。"}</p><div class="dad-home-actions"><a class="dad-primary" href="/zh/map">{home.mapButtonLabel||"看地图"}</a><a class="dad-secondary-light" href="/zh/map#corridor">{home.corridorButtonLabel||"一号风景道"}</a></div></div>
+    <div class="dad-home-copy"><p class="dad-eyebrow light">{home.eyebrow||"一位本地爸爸的沿路笔记"}</p><h1>{home.titleLine1||"武夷山"}<br/>{home.titleLine2||"奶爸地图"}</h1><p>{home.introLine1||"我在武夷山生活，"}<br/>{home.introLine2||"把自己实际走过、愿意推荐的地方放在这里。"}</p><div class="dad-home-actions"><a class="dad-primary" href="/zh/map">{home.mapButtonLabel||"看地图"}</a><a class="dad-secondary-light" href="/zh/route/no-1-scenic-road">{home.corridorButtonLabel||"一号风景道"}</a></div></div>
   </section>
   <VisitorThemeGrid compact />
   <section class="dad-route-recommendations" aria-labelledby="dad-route-heading">
     <div class="dad-section-heading"><div><p class="dad-eyebrow">{home.routesEyebrow||"按时间和同行人安排"}</p><h2 id="dad-route-heading">{home.routesTitle||"推荐路线"}</h2></div></div>
     <nav class="dad-route-grid" aria-label="推荐路线">
-      {routes.map((route)=><a href="/zh/map#corridor"><span>{route.badge}</span><strong>{route.title}</strong><small>{route.summary}</small><b aria-hidden="true">→</b></a>)}
+      {routes.map((route)=><a href="/zh/route/no-1-scenic-road"><span>{route.badge}</span><strong>{route.title}</strong><small>{route.summary}</small><b aria-hidden="true">→</b></a>)}
     </nav>
   </section>
 </BaseLayout>

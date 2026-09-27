@@ -37,7 +37,7 @@ const profileSchema = Astro.site && Astro.url.pathname === "/about" ? {
   "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: personEntity({ name:"Jeff", id:personId, url:new URL("/about", Astro.site).toString(), description:"A dad, coffee-cart owner, and licensed tour guide living in Wuyishan, Fujian, China.", homeLocation:"Wuyishan, Fujian, China" })
 } : undefined;
 const schemas = [websiteSchema, profileSchema, ...(Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : [])].filter(Boolean);
-const isToolSurface = Astro.url.pathname === "/map" || Astro.url.pathname === "/zh/map" || Astro.url.pathname === "/zh/explore-wuyishan" || Astro.url.pathname.startsWith("/zh/theme/") || Astro.url.pathname.startsWith("/zh/place/");
+const isToolSurface = Astro.url.pathname === "/map" || Astro.url.pathname === "/zh/map" || Astro.url.pathname === "/zh/explore-wuyishan" || Astro.url.pathname.startsWith("/zh/theme/") || Astro.url.pathname.startsWith("/zh/place/") || Astro.url.pathname.startsWith("/place/") || Astro.url.pathname.startsWith("/zh/route/") || Astro.url.pathname.startsWith("/route/");
 ---
 <!doctype html>
 <html lang={language.htmlLang}>
