@@ -1,4 +1,4 @@
-import {copyFile,mkdir,readFile,rename,writeFile} from 'node:fs/promises';
+import {access,copyFile,mkdir,readFile,rename,writeFile} from 'node:fs/promises';
 import {basename,dirname,resolve} from 'node:path';
 import {createHash,randomUUID} from 'node:crypto';
 
@@ -90,18 +90,34 @@ export function visitorAlertIsActive(alert:VisitorAlert,at=new Date()){
 }
 
 export class VisitorContentStore {
- readonly filePath:string;readonly seedPath:string;readonly backupDir:string;readonly mediaDir:string;
+ readonly filePath:string;readonly seedPath:string;readonly backupDir:string;readonly mediaDir:string;readonly seedMediaDir:string;
  private queue:Promise<unknown>=Promise.resolve();
- constructor(options:{filePath?:string;seedPath?:string;backupDir?:string;mediaDir?:string}={}){
+ constructor(options:{filePath?:string;seedPath?:string;backupDir?:string;mediaDir?:string;seedMediaDir?:string}={}){
   this.filePath=resolve(options.filePath||process.env.VISITOR_CONTENT_STORE_PATH||'visitor-content-store/data.json');
   this.seedPath=resolve(options.seedPath||'visitor-content-store/seed.json');
   this.backupDir=resolve(options.backupDir||process.env.VISITOR_CONTENT_BACKUP_DIR||'visitor-content-store/backups');
   this.mediaDir=resolve(options.mediaDir||process.env.VISITOR_CONTENT_MEDIA_DIR||'visitor-content-store/media');
+  this.seedMediaDir=resolve(options.seedMediaDir||process.env.VISITOR_CONTENT_SEED_MEDIA_DIR||'../localdad-wuyishan-bilingual/public/visitor-media');
  }
  async ensure(){
   await mkdir(dirname(this.filePath),{recursive:true});await mkdir(this.backupDir,{recursive:true});await mkdir(this.mediaDir,{recursive:true});
-  try{await readFile(this.filePath,'utf8');}catch{await copyFile(this.seedPath,this.filePath);}
-  return this.read();
+  let currentText:string;
+  try{currentText=await readFile(this.filePath,'utf8');}
+  catch(error){if((error as NodeJS.ErrnoException).code!=='ENOENT')throw error;await copyFile(this.seedPath,this.filePath);currentText=await readFile(this.filePath,'utf8');}
+  const current=JSON.parse(currentText) as VisitorContentState;
+  const seed=JSON.parse(await readFile(this.seedPath,'utf8')) as VisitorContentState;
+  const legacyBootstrap=current.version<=2&&Object.keys(current.media?.items||{}).length<=1&&seed.version>current.version;
+  if(legacyBootstrap){
+   const stamp=new Date().toISOString().replace(/[:.]/g,'-');
+   await copyFile(this.filePath,resolve(this.backupDir,`${stamp}-bootstrap-v${current.version}-${basename(this.filePath)}`));
+   await copyFile(this.seedPath,this.filePath);
+  }
+  const state=await this.read();
+  for(const image of Object.values(state.media?.items||{})){
+   const destination=resolve(this.mediaDir,image.fileName);
+   try{await access(destination);}catch{try{await copyFile(resolve(this.seedMediaDir,image.fileName),destination);}catch{/* Missing optional seed media stays visible as a validation issue. */}}
+  }
+  return state;
  }
  async read():Promise<VisitorContentState>{
   const state=JSON.parse(await readFile(this.filePath,'utf8')) as VisitorContentState;

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": 2,
-  "updatedAt": "2026-09-26T12:36:44.342Z",
+  "version": 159,
+  "updatedAt": "2026-09-26T13:12:28.567Z",
   "themes": [
     {
       "id": "water",
@@ -12,7 +12,7 @@
       "description": "先看当天水况，再选择适合停留的河边、浅滩或瀑布。",
       "sequence": 10,
       "version": 1,
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-11T02:00:00.000+08:00"
     },
     {
       "id": "scenery",
@@ -23,7 +23,7 @@
       "description": "沿一号风景道看山、看水、看茶园，挑适合自己的停留点。",
       "sequence": 20,
       "version": 1,
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-11T02:00:00.000+08:00"
     },
     {
       "id": "nature",
@@ -34,7 +34,7 @@
       "description": "从溪流、林缘和展馆认识植物、昆虫与山林环境。",
       "sequence": 30,
       "version": 1,
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-11T02:00:00.000+08:00"
     },
     {
       "id": "museum",
@@ -55,7 +55,7 @@
       "eyebrow": "沿路吃饭与补给",
       "description": "整理沿路吃饭、补给和歇脚的位置，方便按行程就近选择。",
       "sequence": 50,
-      "version": 2,
+      "version": 3,
       "updatedAt": "2026-09-26T12:36:44.342Z"
     },
     {
@@ -73,7 +73,7 @@
   "placeAssignments": [
     {
       "placeCode": "WY-0009",
-      "version": 1,
+      "version": 7,
       "themeIds": [
         "water"
       ],
@@ -82,39 +82,43 @@
         "water": 10
       },
       "titleByTheme": {
-        "water": "漫水桥"
+        "water": "漫水桥玩水点"
       },
       "summaryByTheme": {
         "water": "到桥边和河滩看看当天水况"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T12:42:28.664Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      }
     },
     {
       "placeCode": "WY-0017",
-      "version": 1,
+      "version": 4,
       "themeIds": [
-        "water",
         "scenery"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
-        "water": 30,
         "scenery": 40
       },
-      "titleByTheme": {},
-      "summaryByTheme": {
-        "water": "沿路看水、听水的停留点",
-        "scenery": "沿河听水，也看沿途山谷"
+      "titleByTheme": {
+        "scenery": "观山听水"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "summaryByTheme": {
+        "scenery": "带上折叠桌椅，泡一壶茶"
+      },
+      "updatedAt": "2026-09-26T13:04:20.310Z"
     },
     {
       "placeCode": "WY-0018",
-      "version": 1,
+      "version": 3,
       "themeIds": [
         "water"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
         "water": 40
       },
@@ -122,15 +126,20 @@
       "summaryByTheme": {
         "water": "农庄附近的下河位置"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T01:26:23.661Z",
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": true
+      }
     },
     {
       "placeCode": "WY-0060",
-      "version": 1,
+      "version": 2,
       "themeIds": [
         "water"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
         "water": 50
       },
@@ -138,11 +147,11 @@
       "summaryByTheme": {
         "water": "沿路瀑布与溪谷体验"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T00:53:53.920Z"
     },
     {
       "placeCode": "WY-0021",
-      "version": 1,
+      "version": 2,
       "themeIds": [
         "water"
       ],
@@ -154,11 +163,16 @@
       "summaryByTheme": {
         "water": "皮坑口的玩水位置"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T01:26:35.543Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      }
     },
     {
       "placeCode": "WY-0022",
-      "version": 1,
+      "version": 3,
       "themeIds": [
         "water"
       ],
@@ -170,43 +184,64 @@
       "summaryByTheme": {
         "water": "空间开阔的浅滩体验"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T01:34:29.919Z",
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": true,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0004",
-      "version": 1,
+      "version": 4,
       "themeIds": [
         "scenery"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
         "scenery": 10
       },
-      "titleByTheme": {},
-      "summaryByTheme": {
-        "scenery": "齐云峰方向的观景与日出位置"
+      "titleByTheme": {
+        "scenery": "齐云峰"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "summaryByTheme": {
+        "scenery": "开车看日出和日落"
+      },
+      "updatedAt": "2026-09-26T13:02:38.298Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0005",
-      "version": 1,
+      "version": 4,
       "themeIds": [
         "scenery"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
         "scenery": 20
       },
-      "titleByTheme": {},
-      "summaryByTheme": {
-        "scenery": "从三才峰方向看沿线山景"
+      "titleByTheme": {
+        "scenery": "三才峰"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "summaryByTheme": {
+        "scenery": "观鸟好去处"
+      },
+      "updatedAt": "2026-09-26T13:02:52.423Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      }
     },
     {
       "placeCode": "WY-0012",
-      "version": 1,
+      "version": 3,
       "themeIds": [
         "scenery",
         "nature"
@@ -216,71 +251,92 @@
         "scenery": 30,
         "nature": 5
       },
-      "titleByTheme": {},
+      "titleByTheme": {
+        "scenery": "月亮湾"
+      },
       "summaryByTheme": {
-        "scenery": "河湾与山景交叠的沿路停留",
+        "scenery": "值得顺路，不必专程",
         "nature": "河湾水景与自然环境，适合观察但禁止下水"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T13:03:12.963Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      }
     },
     {
       "placeCode": "WY-0056",
-      "version": 2,
+      "version": 10,
       "themeIds": [
         "scenery",
-        "museum"
+        "museum",
+        "camping"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
         "scenery": 50,
         "museum": 10
       },
-      "titleByTheme": {},
+      "titleByTheme": {
+        "camping": "风吟茶海停车场"
+      },
       "summaryByTheme": {
         "scenery": "茶海也是一段开阔风景",
         "museum": "先从茶海景观感受茶山环境"
       },
-      "updatedAt": "2026-09-26T12:36:44.342Z",
+      "updatedAt": "2026-09-26T13:01:20.382Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      },
       "parentCardByTheme": {}
     },
     {
       "placeCode": "WY-0035",
-      "version": 1,
+      "version": 3,
       "themeIds": [
-        "scenery",
         "nature"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
-        "scenery": 60,
         "nature": 60
       },
       "titleByTheme": {},
       "summaryByTheme": {
-        "scenery": "大竹岚方向的山林景观",
         "nature": "大竹岚方向的自然观察区域"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T12:48:40.072Z",
+      "parentCardByTheme": {}
     },
     {
       "placeCode": "WY-0036",
-      "version": 1,
+      "version": 8,
       "themeIds": [
         "scenery"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
         "scenery": 70
       },
-      "titleByTheme": {},
-      "summaryByTheme": {
-        "scenery": "到坳头方向看山谷与远景"
+      "titleByTheme": {
+        "scenery": "坳头观景台"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "summaryByTheme": {
+        "scenery": "壮阔的武夷大峡谷"
+      },
+      "updatedAt": "2026-09-26T13:03:57.541Z",
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0024",
-      "version": 1,
+      "version": 2,
       "themeIds": [
         "nature"
       ],
@@ -292,11 +348,17 @@
       "summaryByTheme": {
         "nature": "溪流与林缘的自然观察起点"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T01:34:41.237Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      }
     },
     {
       "placeCode": "WY-0028",
-      "version": 2,
+      "version": 4,
       "themeIds": [
         "nature",
         "museum"
@@ -311,15 +373,21 @@
         "nature": "在展馆里看懂蝴蝶与环境",
         "museum": "蝴蝶科普与自然观察衔接"
       },
-      "updatedAt": "2026-09-26T12:36:44.342Z"
+      "updatedAt": "2026-09-26T12:36:44.342Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0030",
-      "version": 1,
+      "version": 3,
       "themeIds": [
         "nature"
       ],
-      "familyFriendly": false,
+      "familyFriendly": true,
       "orderByTheme": {
         "nature": 30
       },
@@ -327,11 +395,17 @@
       "summaryByTheme": {
         "nature": "继续往桐木方向观察山林环境"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T01:34:55.714Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      }
     },
     {
       "placeCode": "WY-0041",
-      "version": 2,
+      "version": 3,
       "themeIds": [
         "nature",
         "museum"
@@ -346,11 +420,17 @@
         "nature": "通过科普展示认识武夷山珍稀植物",
         "museum": "珍稀植物主题科普展示"
       },
-      "updatedAt": "2026-09-26T12:36:44.342Z"
+      "updatedAt": "2026-09-26T12:36:44.342Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      }
     },
     {
       "placeCode": "WY-0043",
-      "version": 2,
+      "version": 3,
       "themeIds": [
         "nature",
         "museum"
@@ -365,11 +445,17 @@
         "nature": "从兰花主题认识本地植物",
         "museum": "兰花主题展示"
       },
-      "updatedAt": "2026-09-26T12:36:44.342Z"
+      "updatedAt": "2026-09-26T12:36:44.342Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      }
     },
     {
       "placeCode": "WY-0061",
-      "version": 2,
+      "version": 5,
       "themeIds": [
         "nature",
         "museum"
@@ -384,28 +470,36 @@
         "nature": "昆虫主题展示，开放前先留意在建状态",
         "museum": "昆虫主题展示，开放前先留意在建状态"
       },
-      "updatedAt": "2026-09-26T12:36:44.342Z"
+      "updatedAt": "2026-09-26T12:36:44.342Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": true,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0055",
-      "version": 2,
+      "version": 8,
       "themeIds": [
-        "museum"
+        "camping"
       ],
-      "familyFriendly": false,
-      "orderByTheme": {
-        "museum": 20
-      },
+      "familyFriendly": true,
+      "orderByTheme": {},
       "titleByTheme": {},
-      "summaryByTheme": {
-        "museum": "黄村沿线的茶主题停留"
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T12:47:30.198Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
       },
-      "updatedAt": "2026-09-26T12:36:44.342Z",
       "parentCardByTheme": {}
     },
     {
       "placeCode": "WY-0040",
-      "version": 2,
+      "version": 7,
       "themeIds": [
         "museum"
       ],
@@ -418,11 +512,17 @@
         "museum": "乌龙茶工艺与文化展示"
       },
       "updatedAt": "2026-09-26T12:36:44.342Z",
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": true,
+        "lodging": true
+      },
       "parentCardByTheme": {}
     },
     {
       "placeCode": "WY-0032",
-      "version": 2,
+      "version": 8,
       "themeIds": [
         "museum"
       ],
@@ -435,15 +535,21 @@
         "museum": "红茶发源地主题展示"
       },
       "updatedAt": "2026-09-26T12:36:44.342Z",
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
       "parentCardByTheme": {}
     },
     {
       "placeCode": "WY-0044",
-      "version": 2,
+      "version": 7,
       "themeIds": [
         "museum"
       ],
-      "familyFriendly": true,
+      "familyFriendly": false,
       "orderByTheme": {
         "museum": 60
       },
@@ -451,7 +557,13 @@
       "summaryByTheme": {
         "museum": "红星村沿线的乡愁主题展馆"
       },
-      "updatedAt": "2026-09-26T12:36:44.342Z"
+      "updatedAt": "2026-09-26T12:36:44.342Z",
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0033",
@@ -471,7 +583,7 @@
     },
     {
       "placeCode": "WY-0048",
-      "version": 1,
+      "version": 6,
       "themeIds": [
         "food"
       ],
@@ -479,15 +591,23 @@
       "orderByTheme": {
         "food": 10
       },
-      "titleByTheme": {},
-      "summaryByTheme": {
-        "food": "沿路简单补给"
+      "titleByTheme": {
+        "food": "俞妹光饼"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "summaryByTheme": {
+        "food": "星村特色小吃"
+      },
+      "updatedAt": "2026-09-26T13:00:29.609Z",
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0049",
-      "version": 1,
+      "version": 7,
       "themeIds": [
         "food"
       ],
@@ -495,38 +615,200 @@
       "orderByTheme": {
         "food": 20
       },
-      "titleByTheme": {},
-      "summaryByTheme": {
-        "food": "坐下来吃点热的"
+      "titleByTheme": {
+        "food": "越南粉"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "summaryByTheme": {
+        "food": "坐下来吃碗热的"
+      },
+      "updatedAt": "2026-09-26T13:00:58.055Z",
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      }
     },
     {
       "placeCode": "WY-0050",
-      "version": 1,
+      "version": 10,
       "themeIds": [
-        "food"
+        "scenery"
       ],
       "familyFriendly": false,
-      "orderByTheme": {
-        "food": 30
+      "orderByTheme": {},
+      "titleByTheme": {
+        "scenery": "旧竹筏码头"
       },
-      "titleByTheme": {},
       "summaryByTheme": {
-        "food": "吃完以后到河边走走"
+        "scenery": "河边坐坐，挺惬意"
       },
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-26T13:04:39.941Z",
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "parentCardByTheme": {}
+    },
+    {
+      "placeCode": "WY-0001",
+      "version": 10,
+      "themeIds": [],
+      "familyFriendly": false,
+      "orderByTheme": {},
+      "titleByTheme": {},
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T13:09:13.015Z",
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "parentCardByTheme": {}
+    },
+    {
+      "placeCode": "WY-0051",
+      "version": 5,
+      "themeIds": [],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "orderByTheme": {},
+      "titleByTheme": {},
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T13:08:27.100Z",
+      "parentCardByTheme": {}
+    },
+    {
+      "placeCode": "WY-0057",
+      "version": 4,
+      "themeIds": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "orderByTheme": {},
+      "titleByTheme": {},
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T13:08:48.179Z",
+      "parentCardByTheme": {}
+    },
+    {
+      "placeCode": "WY-0025",
+      "version": 2,
+      "themeIds": [],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "orderByTheme": {},
+      "titleByTheme": {},
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T01:34:39.731Z"
+    },
+    {
+      "placeCode": "WY-0002",
+      "version": 1,
+      "themeIds": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "parentCardByTheme": {},
+      "orderByTheme": {},
+      "titleByTheme": {},
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T13:07:59.805Z"
+    },
+    {
+      "placeCode": "WY-0003",
+      "version": 1,
+      "themeIds": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "parentCardByTheme": {},
+      "orderByTheme": {},
+      "titleByTheme": {},
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T13:08:02.316Z"
+    },
+    {
+      "placeCode": "WY-0053",
+      "version": 2,
+      "themeIds": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "parentCardByTheme": {},
+      "orderByTheme": {},
+      "titleByTheme": {
+        "camping": "漫水桥卫生间"
+      },
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T13:08:36.491Z"
+    },
+    {
+      "placeCode": "WY-0052",
+      "version": 1,
+      "themeIds": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "parentCardByTheme": {},
+      "orderByTheme": {},
+      "titleByTheme": {},
+      "summaryByTheme": {},
+      "updatedAt": "2026-09-26T13:12:28.567Z"
     }
   ],
   "contents": [
     {
       "id": "vc-corridor",
-      "version": 1,
+      "version": 2,
       "status": "published",
       "deletedAt": null,
       "previousStatus": null,
-      "updatedAt": "2026-09-11T02:00:00+08:00",
-      "publishedAt": "2026-09-11T02:00:00+08:00",
+      "updatedAt": "2026-09-11T02:07:18.403Z",
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
       "publishedVersion": 1,
       "draft": {
         "internalName": "一号风景道",
@@ -931,8 +1213,8 @@
       "status": "published",
       "deletedAt": null,
       "previousStatus": null,
-      "updatedAt": "2026-09-11T02:00:00+08:00",
-      "publishedAt": "2026-09-11T02:00:00+08:00",
+      "updatedAt": "2026-09-11T02:00:00.000+08:00",
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
       "publishedVersion": 1,
       "draft": {
         "internalName": "漫水桥",
@@ -1359,8 +1641,8 @@
       "status": "published",
       "deletedAt": null,
       "previousStatus": null,
-      "updatedAt": "2026-09-11T02:00:00+08:00",
-      "publishedAt": "2026-09-11T02:00:00+08:00",
+      "updatedAt": "2026-09-11T02:00:00.000+08:00",
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
       "publishedVersion": 1,
       "draft": {
         "internalName": "桃源峪 · 蝴蝶观察",
@@ -1721,8 +2003,8 @@
       "status": "published",
       "deletedAt": null,
       "previousStatus": null,
-      "updatedAt": "2026-09-11T02:00:00+08:00",
-      "publishedAt": "2026-09-11T02:00:00+08:00",
+      "updatedAt": "2026-09-11T02:00:00.000+08:00",
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
       "publishedVersion": 1,
       "draft": {
         "internalName": "星村停一停",
@@ -1916,18 +2198,1719 @@
       ],
       "contentIds": [],
       "deletedAt": null,
-      "updatedAt": "2026-09-11T02:00:00+08:00"
+      "updatedAt": "2026-09-11T02:00:00.000+08:00"
     }
   ],
   "history": [
     {
+      "id": "37b9c3ef-5882-4e28-81a3-5509767b1d71",
+      "at": "2026-09-26T13:12:28.567Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0052",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "2834c92b-d524-4e5e-aec4-40d0ac11a176",
+      "at": "2026-09-26T13:09:13.015Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"南源岭停车场\"},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "ee26fd7b-e3e2-49cf-ac6e-91dcc6e584bf",
+      "at": "2026-09-26T13:08:48.179Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0057",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "0ab940de-89e7-4064-8b97-855390d50940",
+      "at": "2026-09-26T13:08:36.491Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0053",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"漫水桥卫生间\"},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "566c9419-6ff4-4bf3-85fb-c3f6893f2bcd",
+      "at": "2026-09-26T13:08:30.046Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0053",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "b053474c-60ab-41d3-9e65-9f753907bf7d",
+      "at": "2026-09-26T13:08:27.100Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0051",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "531147cd-1209-4c47-992f-1ba162669211",
+      "at": "2026-09-26T13:08:23.901Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0051",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "f460734f-2e91-4da2-aefb-c7ccc36a6c76",
+      "at": "2026-09-26T13:08:02.316Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0003",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "bf69ff89-1321-4b29-9240-0e2df7c3585b",
+      "at": "2026-09-26T13:07:59.805Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0002",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "54c9e8c1-95ac-45c0-8bcf-caabeaa26277",
+      "at": "2026-09-26T13:04:39.941Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{\"scenery\":\"旧竹筏码头河边\"},\"summaryByTheme\":{\"scenery\":\"河边坐坐，挺惬意\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{\"scenery\":\"旧竹筏码头\"},\"summaryByTheme\":{\"scenery\":\"河边坐坐，挺惬意\"}}"
+    },
+    {
+      "id": "8f33ac84-d23b-4175-af6b-26d0d7f1630a",
+      "at": "2026-09-26T13:04:34.672Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{\"scenery\":\"旧竹筏码头河边\"},\"summaryByTheme\":{\"scenery\":\"河边坐坐，挺惬意\"}}"
+    },
+    {
+      "id": "a030eb9d-6c20-4867-99b7-3061d49ec9cc",
+      "at": "2026-09-26T13:04:20.310Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0017",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"沿路看水、听水的停留点\",\"scenery\":\"沿河听水，也看沿途山谷\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{\"scenery\":\"观山听水\"},\"summaryByTheme\":{\"scenery\":\"带上折叠桌椅，泡一壶茶\"}}"
+    },
+    {
+      "id": "4f0b7f7f-2ace-4deb-9d68-4bee141445db",
+      "at": "2026-09-26T13:03:57.541Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0036",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{\"scenery\":\"坳头观景台\"},\"summaryByTheme\":{\"scenery\":\"壮阔的武夷大峡谷\"}}"
+    },
+    {
+      "id": "ca6ff411-1e22-4e62-bca6-4ebe73e7b42c",
+      "at": "2026-09-26T13:03:12.963Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0012",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"nature\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"河湾与山景交叠的沿路停留\",\"nature\":\"河湾水景与自然环境，适合观察但禁止下水\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"nature\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{\"scenery\":\"月亮湾\"},\"summaryByTheme\":{\"scenery\":\"值得顺路，不必专程\",\"nature\":\"河湾水景与自然环境，适合观察但禁止下水\"}}"
+    },
+    {
+      "id": "d495e753-9a5f-4a43-8d54-9d2daea0111e",
+      "at": "2026-09-26T13:02:52.423Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0005",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"从三才峰方向看沿线山景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{\"scenery\":\"三才峰\"},\"summaryByTheme\":{\"scenery\":\"观鸟好去处\"}}"
+    },
+    {
+      "id": "33cddb6b-dd21-430c-b294-96c8f9f055b5",
+      "at": "2026-09-26T13:02:38.298Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0004",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"齐云峰方向的观景与日出位置\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":true},\"titleByTheme\":{\"scenery\":\"齐云峰\"},\"summaryByTheme\":{\"scenery\":\"开车看日出和日落\"}}"
+    },
+    {
+      "id": "5b8da675-72a4-41e2-9a32-b5cff63dd480",
+      "at": "2026-09-26T13:01:20.382Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"museum\",\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"风吟茶海停车场\"},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"museum\",\"camping\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"风吟茶海停车场\"},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "a4751c25-e68e-4dde-b3bd-2bb8c881a967",
+      "at": "2026-09-26T13:01:09.602Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"museum\",\"camping\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"风吟茶海停车场\"},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"museum\",\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"风吟茶海停车场\"},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "8dcddf92-8334-4d48-804e-682d28957abd",
+      "at": "2026-09-26T13:00:58.055Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0049",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{\"food\":\"越南粉\"},\"summaryByTheme\":{\"food\":\"越南华侨开的店\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{\"food\":\"越南粉\"},\"summaryByTheme\":{\"food\":\"坐下来吃碗热的\"}}"
+    },
+    {
+      "id": "6e10231a-d895-4bf4-8761-595fb4e7ce7b",
+      "at": "2026-09-26T13:00:44.631Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0049",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{\"food\":\"越南粉\"},\"summaryByTheme\":{\"food\":\"越南华侨开的店\"}}"
+    },
+    {
+      "id": "b21537ec-0f9b-4898-a3a2-aa52be135619",
+      "at": "2026-09-26T13:00:29.609Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0048",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{\"food\":\"俞妹光饼\"},\"summaryByTheme\":{\"food\":\"星村特色小吃\"}}"
+    },
+    {
+      "id": "18c03e2b-dfae-4dd0-b90c-1712411ba921",
+      "at": "2026-09-26T12:58:30.578Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"museum\",\"camping\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"museum\",\"camping\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"风吟茶海停车场\"},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "fb34e098-476d-457e-8334-6517ba5ea71c",
+      "at": "2026-09-26T12:49:47.307Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{\"camping\":\"南源岭停车场\"},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "3ddc98d9-93c2-492c-9c8f-504830078c81",
+      "at": "2026-09-26T12:49:33.495Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\",\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "a5e66e7a-3f5f-4447-a34a-d0ed8b02fa73",
+      "at": "2026-09-26T12:48:40.072Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0035",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"nature\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"大竹岚方向的山林景观\",\"nature\":\"大竹岚方向的自然观察区域\"}}",
+      "afterSummary": "{\"themes\":[\"nature\"],\"familyFriendly\":true,\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"大竹岚方向的自然观察区域\"}}"
+    },
+    {
+      "id": "6d3d1d63-31a9-4c98-900e-1281af8e1cd9",
+      "at": "2026-09-26T12:47:43.743Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"museum\",\"camping\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"museum\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "fe0c19ff-e5e3-40ca-ae91-5c692f8eec8a",
+      "at": "2026-09-26T12:47:35.499Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\",\"camping\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "4f76d266-3054-4caa-9434-180b6b4c6f1a",
+      "at": "2026-09-26T12:47:30.198Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0055",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"camping\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "0ee37ab9-1ea5-4886-971a-8ecb0a48856c",
+      "at": "2026-09-26T12:47:00.502Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0051",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "6e7e04c6-f65d-47e3-bc27-87cf20412c55",
+      "at": "2026-09-26T12:46:59.694Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0057",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "69c24aed-7875-47be-a048-830f2a35451c",
+      "at": "2026-09-26T12:46:57.743Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0055",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "8cc09194-febc-4a01-b078-b406433f3aed",
+      "at": "2026-09-26T12:46:28.995Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0055",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"museum\",\"food\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"黄村沿线的茶主题停留\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "6c5e0eac-c3cb-4577-a2b1-943db98a945b",
+      "at": "2026-09-26T12:42:28.664Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0009",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{\"water\":\"漫水桥玩水点\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}"
+    },
+    {
+      "id": "401a9a52-0b35-45b3-947e-8cb51ee76c4a",
+      "at": "2026-09-26T12:22:59.282Z",
+      "objectType": "home",
+      "objectId": "visitor-home",
+      "changeType": "quick_text_update",
+      "beforeSummary": "{\"eyebrow\":\"一位本地爸爸的沿路笔记\",\"titleLine1\":\"武夷山\",\"titleLine2\":\"奶爸地图\",\"introLine1\":\"我在武夷山生活，\",\"introLine2\":\"把自己实际走过、愿意推荐的地方放在这里。\",\"mapButtonLabel\":\"看地图\",\"corridorButtonLabel\":\"一号风景道\",\"kidsLabel\":\"适合带孩子\",\"themeCardHint\":\"看看怎么安排\",\"recommendationsEyebrow\":\"沿路挑三处\",\"recommendationsTitle\":\"最近推荐\",\"recommendationsLinkLabel\":\"查看路线 →\",\"recommendationManshuiTitle\":\"漫水桥\",\"recommendationManshuiSummary\":\"河边停一停，先看当天水况\",\"recommendationMoonbayTitle\":\"月亮湾\",\"recommendationMoonbaySummary\":\"在整条路线地图中查看位置\",\"recommendationTa",
+      "afterSummary": "{\"eyebrow\":\"一位本地爸爸的沿路笔记\",\"titleLine1\":\"武夷山\",\"titleLine2\":\"奶爸地图\",\"introLine1\":\"我在武夷山生活，\",\"introLine2\":\"把自己去过、觉得不错的地方放在这里。\",\"mapButtonLabel\":\"看地图\",\"corridorButtonLabel\":\"一号风景道\",\"kidsLabel\":\"适合带孩子\",\"themeCardHint\":\"看看怎么安排\",\"recommendationsEyebrow\":\"沿路挑三处\",\"recommendationsTitle\":\"最近推荐\",\"recommendationsLinkLabel\":\"查看路线 →\",\"recommendationManshuiTitle\":\"漫水桥\",\"recommendationManshuiSummary\":\"河边停一停，先看当天水况\",\"recommendationMoonbayTitle\":\"月亮湾\",\"recommendationMoonbaySummary\":\"在整条路线地图中查看位置\",\"recommendationTaoy"
+    },
+    {
+      "id": "2b363b6c-4399-4e05-80eb-3b61f62aad04",
+      "at": "2026-09-26T11:43:42.926Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0057",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "ac99918f-c3eb-4285-947a-a815a92fdecd",
+      "at": "2026-09-26T11:43:40.174Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"tea\",\"food\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"tea\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "a2fa6fd8-857c-49d3-b5a9-657748e1418a",
+      "at": "2026-09-26T11:43:34.618Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"tea\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"tea\",\"food\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "79d1da3e-a26d-4970-8f52-f94b018affdc",
+      "at": "2026-09-26T11:43:32.055Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0055",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"黄村沿线的茶主题停留\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"food\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"黄村沿线的茶主题停留\"}}"
+    },
+    {
+      "id": "1310fd51-5aa4-40b3-95df-501c003dd42e",
+      "at": "2026-09-26T11:43:17.097Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0051",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "959f2f40-6128-46eb-ad9e-151c7f954c04",
+      "at": "2026-09-26T08:58:28.253Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"parentCardByTheme\":{},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "ce9bbc87-6793-43a7-a681-c53ab53c46bc",
+      "at": "2026-09-26T08:58:28.188Z",
+      "objectType": "home",
+      "objectId": "visitor-home",
+      "changeType": "quick_text_update",
+      "beforeSummary": "{\"eyebrow\":\"一位本地爸爸的沿路笔记\",\"titleLine1\":\"武夷山\",\"titleLine2\":\"奶爸地图\",\"introLine1\":\"我在武夷山生活，\",\"introLine2\":\"把自己实际走过、愿意推荐的地方放在这里。\",\"mapButtonLabel\":\"看地图\",\"corridorButtonLabel\":\"一号风景道\",\"kidsLabel\":\"适合带孩子\",\"themeCardHint\":\"看看怎么安排\",\"recommendationsEyebrow\":\"沿路挑三处\",\"recommendationsTitle\":\"最近推荐\",\"recommendationsLinkLabel\":\"查看路线 →\",\"recommendationManshuiTitle\":\"漫水桥\",\"recommendationManshuiSummary\":\"河边停一停，先看当天水况\",\"recommendationMoonbayTitle\":\"月亮湾\",\"recommendationMoonbaySummary\":\"在整条路线地图中查看位置\",\"recommendationTa",
+      "afterSummary": "{\"eyebrow\":\"一位本地爸爸的沿路笔记\",\"titleLine1\":\"武夷山\",\"titleLine2\":\"奶爸地图\",\"introLine1\":\"我在武夷山生活，\",\"introLine2\":\"把自己实际走过、愿意推荐的地方放在这里。\",\"mapButtonLabel\":\"看地图\",\"corridorButtonLabel\":\"一号风景道\",\"kidsLabel\":\"适合带孩子\",\"themeCardHint\":\"看看怎么安排\",\"recommendationsEyebrow\":\"沿路挑三处\",\"recommendationsTitle\":\"最近推荐\",\"recommendationsLinkLabel\":\"查看路线 →\",\"recommendationManshuiTitle\":\"漫水桥\",\"recommendationManshuiSummary\":\"河边停一停，先看当天水况\",\"recommendationMoonbayTitle\":\"月亮湾\",\"recommendationMoonbaySummary\":\"在整条路线地图中查看位置\",\"recommendationTa"
+    },
+    {
+      "id": "86e2397b-248f-4b9c-bb0b-6669b05c6e7f",
+      "at": "2026-09-26T08:57:30.266Z",
+      "objectType": "home",
+      "objectId": "visitor-home",
+      "changeType": "quick_text_update",
+      "beforeSummary": "{\"eyebrow\":\"一位本地爸爸的沿路笔记\",\"titleLine1\":\"武夷山\",\"titleLine2\":\"奶爸地图\",\"introLine1\":\"我在武夷山生活，\",\"introLine2\":\"把自己实际走过、愿意推荐的地方放在这里。\",\"mapButtonLabel\":\"看地图\",\"corridorButtonLabel\":\"一号风景道\",\"kidsLabel\":\"适合带孩子\",\"themeCardHint\":\"看看怎么安排\",\"recommendationsEyebrow\":\"沿路挑三处\",\"recommendationsTitle\":\"最近推荐\",\"recommendationsLinkLabel\":\"查看路线 →\",\"recommendationManshuiTitle\":\"漫水桥\",\"recommendationManshuiSummary\":\"河边停一停，先看当天水况\",\"recommendationMoonbayTitle\":\"月亮湾\",\"recommendationMoonbaySummary\":\"在整条路线地图中查看位置\",\"recommendationTa",
+      "afterSummary": "{\"eyebrow\":\"一位本地爸爸的沿路笔记\",\"titleLine1\":\"武夷山\",\"titleLine2\":\"奶爸地图\",\"introLine1\":\"我在武夷山生活，\",\"introLine2\":\"把自己实际走过、愿意推荐的地方放在这里。\",\"mapButtonLabel\":\"看地图\",\"corridorButtonLabel\":\"一号风景道\",\"kidsLabel\":\"适合带孩子\",\"themeCardHint\":\"看看怎么安排\",\"recommendationsEyebrow\":\"沿路挑三处\",\"recommendationsTitle\":\"最近推荐\",\"recommendationsLinkLabel\":\"查看路线 →\",\"recommendationManshuiTitle\":\"漫水桥\",\"recommendationManshuiSummary\":\"河边停一停，先看当天水况\",\"recommendationMoonbayTitle\":\"月亮湾\",\"recommendationMoonbaySummary\":\"在整条路线地图中查看位置\",\"recommendationTa"
+    },
+    {
+      "id": "7e48cd73-5121-42b8-84ec-6da0f765f7e3",
+      "at": "2026-09-26T08:57:30.209Z",
+      "objectType": "theme",
+      "objectId": "food",
+      "changeType": "quick_text_update",
+      "beforeSummary": "{\"name\":\"吃点东西\",\"icon\":\"食\",\"eyebrow\":\"沿路补给与歇脚\",\"description\":\"在星村简单补给，时间不赶再去旧码头河边坐坐。\"}",
+      "afterSummary": "{\"name\":\"吃与床车露营\",\"icon\":\"营\",\"eyebrow\":\"沿路补给、休息与过夜\",\"description\":\"沿路整理吃饭、补给和歇脚的位置，也收录适合床车过夜的停靠点。\"}"
+    },
+    {
+      "id": "18b3482b-4c5e-4cc8-b9ac-5e6549f3e3b4",
+      "at": "2026-09-26T01:35:39.694Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0061",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"昆虫主题展示，开放前先留意在建状态\",\"museum\":\"昆虫主题展示，开放前先留意在建状态\"}}",
+      "afterSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"昆虫主题展示，开放前先留意在建状态\",\"museum\":\"昆虫主题展示，开放前先留意在建状态\"}}"
+    },
+    {
+      "id": "53518524-01c4-4f50-8c1e-2fd9ecacceac",
+      "at": "2026-09-26T01:35:39.267Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0061",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"昆虫主题展示，开放前先留意在建状态\",\"museum\":\"昆虫主题展示，开放前先留意在建状态\"}}",
+      "afterSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"昆虫主题展示，开放前先留意在建状态\",\"museum\":\"昆虫主题展示，开放前先留意在建状态\"}}"
+    },
+    {
+      "id": "f5b55750-7498-4360-bc87-3333288c2d69",
+      "at": "2026-09-26T01:35:38.149Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0036",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}"
+    },
+    {
+      "id": "59331f1e-78c3-4942-9a0a-9d4435755d1a",
+      "at": "2026-09-26T01:35:35.186Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0061",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"昆虫主题展示，开放前先留意在建状态\",\"museum\":\"昆虫主题展示，开放前先留意在建状态\"}}",
+      "afterSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"昆虫主题展示，开放前先留意在建状态\",\"museum\":\"昆虫主题展示，开放前先留意在建状态\"}}"
+    },
+    {
+      "id": "16d7898f-5287-49a2-b1fe-93b5cd78510f",
+      "at": "2026-09-26T01:35:32.486Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0036",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}"
+    },
+    {
+      "id": "40d812c5-c3b5-48fe-bfa7-4d650f73b353",
+      "at": "2026-09-26T01:35:26.306Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0032",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}"
+    },
+    {
+      "id": "6f92c4f1-f735-4fba-af78-ad7b2a03b723",
+      "at": "2026-09-26T01:35:25.886Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0032",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}"
+    },
+    {
+      "id": "da924cf7-d1a7-40f8-b9f6-64c024bf3d34",
+      "at": "2026-09-26T01:35:25.008Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0032",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}"
+    },
+    {
+      "id": "2a9c0187-d9e0-492c-87e4-8b36f7fec46a",
+      "at": "2026-09-26T01:35:23.393Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0032",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}"
+    },
+    {
+      "id": "2949d9e8-fc4e-4f66-b812-d29f1445687c",
+      "at": "2026-09-26T01:34:55.714Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0030",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"继续往桐木方向观察山林环境\"}}",
+      "afterSummary": "{\"themes\":[\"nature\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"继续往桐木方向观察山林环境\"}}"
+    },
+    {
+      "id": "fb06654e-cc84-421a-9cf0-2c4a70dc351d",
+      "at": "2026-09-26T01:34:51.242Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0028",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"在展馆里看懂蝴蝶与环境\",\"museum\":\"蝴蝶科普与自然观察衔接\"}}",
+      "afterSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"在展馆里看懂蝴蝶与环境\",\"museum\":\"蝴蝶科普与自然观察衔接\"}}"
+    },
+    {
+      "id": "404f7fee-1fdc-44dc-8ff7-0546c1ed58e1",
+      "at": "2026-09-26T01:34:48.961Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0028",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"在展馆里看懂蝴蝶与环境\",\"museum\":\"蝴蝶科普与自然观察衔接\"}}",
+      "afterSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"在展馆里看懂蝴蝶与环境\",\"museum\":\"蝴蝶科普与自然观察衔接\"}}"
+    },
+    {
+      "id": "c3f091e6-0de0-4f95-8b93-b082aa4b3e62",
+      "at": "2026-09-26T01:34:41.237Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0024",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"溪流与林缘的自然观察起点\"}}",
+      "afterSummary": "{\"themes\":[\"nature\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"溪流与林缘的自然观察起点\"}}"
+    },
+    {
+      "id": "87f7d6d5-a603-47f4-9d0b-b0331bf95952",
+      "at": "2026-09-26T01:34:39.731Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0025",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "c1915fd2-88f2-41ae-bc02-5fdd4a41b820",
+      "at": "2026-09-26T01:34:34.562Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0025",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "97388022-b3bb-4a6b-b416-0da7bce8540e",
+      "at": "2026-09-26T01:34:29.919Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0022",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"空间开阔的浅滩体验\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"空间开阔的浅滩体验\"}}"
+    },
+    {
+      "id": "0b37a959-807c-4dcf-aec1-ea564facb0f3",
+      "at": "2026-09-26T01:34:08.483Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0043",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"从兰花主题认识本地植物\",\"museum\":\"兰花主题展示\"}}",
+      "afterSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"从兰花主题认识本地植物\",\"museum\":\"兰花主题展示\"}}"
+    },
+    {
+      "id": "8d833ba4-f07e-438f-8866-e130474736b4",
+      "at": "2026-09-26T01:33:41.071Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0041",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"通过科普展示认识武夷山珍稀植物\",\"museum\":\"珍稀植物主题科普展示\"}}",
+      "afterSummary": "{\"themes\":[\"nature\",\"museum\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"通过科普展示认识武夷山珍稀植物\",\"museum\":\"珍稀植物主题科普展示\"}}"
+    },
+    {
+      "id": "d516b76d-9f7c-4868-9563-20511a70fd45",
+      "at": "2026-09-26T01:33:34.027Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0044",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}",
+      "afterSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}"
+    },
+    {
+      "id": "2a5c67ec-c027-4180-9c03-b5794f10835f",
+      "at": "2026-09-26T01:33:33.030Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0044",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}",
+      "afterSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}"
+    },
+    {
+      "id": "31e5eb10-18d7-4ec0-9b8c-968b634c2e52",
+      "at": "2026-09-26T01:33:32.273Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0044",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}",
+      "afterSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}"
+    },
+    {
+      "id": "7e41e84b-0d9f-497b-9684-37b95ef15ec5",
+      "at": "2026-09-26T01:33:31.203Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0044",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}",
+      "afterSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}"
+    },
+    {
+      "id": "7703094b-e6f3-488c-83ff-bd32cf4f4e88",
+      "at": "2026-09-26T01:33:20.994Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0057",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "7ad0f2bc-5779-4b93-bfde-e6e87e26d293",
+      "at": "2026-09-26T01:33:15.496Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0040",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}"
+    },
+    {
+      "id": "dbe629b9-d2ba-45af-8438-b57ca044fc1a",
+      "at": "2026-09-26T01:33:14.319Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0040",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}"
+    },
+    {
+      "id": "242bca50-70ef-444d-899f-ccfbe22abba5",
+      "at": "2026-09-26T01:33:05.919Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0040",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}"
+    },
+    {
+      "id": "4db16c6f-b03f-41aa-bdd4-0b8008a197cc",
+      "at": "2026-09-26T01:32:34.920Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0055",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"黄村沿线的茶主题停留\"}}",
+      "afterSummary": "{\"themes\":[\"tea\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"黄村沿线的茶主题停留\"}}"
+    },
+    {
+      "id": "d1a759b7-f344-40db-af39-2c84000c17c1",
+      "at": "2026-09-26T01:32:23.854Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0051",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "3aa29c3f-01f5-4b88-8825-ba8543151ced",
+      "at": "2026-09-26T01:32:02.255Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0048",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}"
+    },
+    {
+      "id": "6a78aaef-33bf-4ba4-bbfa-752d7e2f0f01",
+      "at": "2026-09-26T01:32:01.829Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0048",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}"
+    },
+    {
+      "id": "b3646a6f-3b01-43c3-86af-393bdc42e2fc",
+      "at": "2026-09-26T01:32:01.417Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0048",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}"
+    },
+    {
+      "id": "9befcadf-cb59-4b3e-98d9-4d6a7953b25b",
+      "at": "2026-09-26T01:32:00.997Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0048",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"沿路简单补给\"}}"
+    },
+    {
+      "id": "c54061e3-30f4-4966-908b-0887944ad41f",
+      "at": "2026-09-26T01:31:58.056Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0049",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}"
+    },
+    {
+      "id": "e3e7ff65-3bcd-4005-81bf-eae0a2d7c9dd",
+      "at": "2026-09-26T01:31:57.439Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0049",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}"
+    },
+    {
+      "id": "c53421f5-5468-4651-9756-de4c46217289",
+      "at": "2026-09-26T01:31:56.788Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0049",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}"
+    },
+    {
+      "id": "14ac0a84-0450-4371-8651-82b39142799b",
+      "at": "2026-09-26T01:31:53.589Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0049",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"坐下来吃点热的\"}}"
+    },
+    {
+      "id": "d5561729-9785-465d-9ea2-f9452f6ba8d2",
+      "at": "2026-09-26T01:31:42.673Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}"
+    },
+    {
+      "id": "d8c1c85d-1e8a-4ce1-b1b3-18beb80b00dc",
+      "at": "2026-09-26T01:31:41.366Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}"
+    },
+    {
+      "id": "9e8ea3a6-cf65-472a-9377-1054406bcc63",
+      "at": "2026-09-26T01:31:40.686Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}"
+    },
+    {
+      "id": "50540698-b725-45cc-971c-fce200613261",
+      "at": "2026-09-26T01:31:37.744Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":false,\"shop\":true,\"restaurant\":false,\"lodging\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}"
+    },
+    {
+      "id": "bc178b04-08ae-4556-b5dc-d86e86e7fa5b",
+      "at": "2026-09-26T01:31:22.057Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0004",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"齐云峰方向的观景与日出位置\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"齐云峰方向的观景与日出位置\"}}"
+    },
+    {
+      "id": "41b706b8-c08d-4a3b-8e29-c0e193942736",
+      "at": "2026-09-26T01:30:57.811Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true,\"lodging\":true},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "6a6272f8-04ad-4275-a7df-e759cd1cf0a2",
+      "at": "2026-09-26T01:28:15.806Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "8587705d-e3ad-4554-906d-c1d02110ce14",
+      "at": "2026-09-26T01:28:15.237Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "8ddd9c42-0b70-4d48-ab4f-28e690a7a4f9",
+      "at": "2026-09-26T01:28:14.349Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "e845b9ea-afe8-4db7-a052-ad64118662b2",
+      "at": "2026-09-26T01:27:50.644Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0036",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}"
+    },
+    {
+      "id": "17490031-d27a-4616-9836-869ac19fdc66",
+      "at": "2026-09-26T01:27:48.739Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0036",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":true,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}"
+    },
+    {
+      "id": "85da2280-6e13-48d9-8664-f9b66d67a52e",
+      "at": "2026-09-26T01:27:45.601Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0036",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}"
+    },
+    {
+      "id": "f47d370c-5f83-4a1f-8ae1-8b16f40074bf",
+      "at": "2026-09-26T01:27:33.493Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"tea\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"tea\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "90fefd8e-c743-4cda-84d0-a3794b614dfb",
+      "at": "2026-09-26T01:27:09.403Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0012",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"nature\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"河湾与山景交叠的沿路停留\",\"nature\":\"河湾水景与自然环境，适合观察但禁止下水\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"nature\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"河湾与山景交叠的沿路停留\",\"nature\":\"河湾水景与自然环境，适合观察但禁止下水\"}}"
+    },
+    {
+      "id": "519d00b0-0097-4aee-b4c3-543db2629ecd",
+      "at": "2026-09-26T01:27:03.938Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0005",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"从三才峰方向看沿线山景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"从三才峰方向看沿线山景\"}}"
+    },
+    {
+      "id": "120b2f75-2528-4943-b605-aa1ea31058e5",
+      "at": "2026-09-26T01:26:43.482Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0022",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"空间开阔的浅滩体验\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"空间开阔的浅滩体验\"}}"
+    },
+    {
+      "id": "877bc8cb-ac23-4be2-bc10-7bf619098411",
+      "at": "2026-09-26T01:26:35.543Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0021",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"皮坑口的玩水位置\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"皮坑口的玩水位置\"}}"
+    },
+    {
+      "id": "f3dc42aa-0a8b-4ab7-97ea-1805df6421ce",
+      "at": "2026-09-26T01:26:23.661Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0018",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"农庄附近的下河位置\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":false,\"shop\":false,\"restaurant\":true},\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"农庄附近的下河位置\"}}"
+    },
+    {
+      "id": "28ff4349-40b1-4c21-99cb-735596ca3c65",
+      "at": "2026-09-26T01:26:15.083Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0009",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"facilities\":{\"toilet\":true,\"shop\":false,\"restaurant\":false},\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}"
+    },
+    {
+      "id": "ed56d923-7169-4c5d-9f4b-23b522feee42",
+      "at": "2026-09-26T01:20:29.815Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0009",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}"
+    },
+    {
+      "id": "cab3d3e3-20da-4e0b-a511-bffc5d9b014c",
+      "at": "2026-09-26T01:20:24.878Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0009",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}"
+    },
+    {
+      "id": "6e94ca89-3b45-4ab6-822d-9c4b875621be",
+      "at": "2026-09-26T01:20:22.635Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0009",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}"
+    },
+    {
+      "id": "f48134bb-bb05-4619-ad27-784d1bb09a98",
+      "at": "2026-09-26T01:20:00.503Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0009",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{\"water\":\"漫水桥\"},\"summaryByTheme\":{\"water\":\"到桥边和河滩看看当天水况\"}}"
+    },
+    {
+      "id": "c5710fee-c7b1-4e8f-9cfe-7a2af2d55284",
+      "at": "2026-09-26T01:05:52.346Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "2d607cda-d780-4273-8efe-1178479143fc",
+      "at": "2026-09-26T01:02:39.673Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}"
+    },
+    {
+      "id": "b434a825-bc24-4f51-aa72-0a050ee138ce",
+      "at": "2026-09-26T01:02:30.299Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0001",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{}}"
+    },
+    {
+      "id": "bc432014-e39e-4d8c-81e7-0fa813bfe53a",
+      "at": "2026-09-26T00:55:55.354Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0050",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"food\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}",
+      "afterSummary": "{\"themes\":[],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"food\":\"吃完以后到河边走走\"}}"
+    },
+    {
+      "id": "163b2323-7d9e-4d9c-9dbd-1bdc34b6d78f",
+      "at": "2026-09-26T00:55:40.339Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0044",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}",
+      "afterSummary": "{\"themes\":[\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"museum\":\"红星村沿线的乡愁主题展馆\"}}"
+    },
+    {
+      "id": "fc9d04a4-3dbb-4960-bfd6-baf5d5bb16be",
+      "at": "2026-09-26T00:55:33.461Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0040",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}"
+    },
+    {
+      "id": "10c799f0-9426-4eee-a53f-d0c6f9c4aa3f",
+      "at": "2026-09-26T00:55:32.712Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0032",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}"
+    },
+    {
+      "id": "a665cc93-6fd4-44c6-9317-5027894470dd",
+      "at": "2026-09-26T00:55:22.459Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0032",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"了解红茶发源地与相关故事\",\"museum\":\"红茶发源地主题展示\"}}"
+    },
+    {
+      "id": "8ec24ddc-5427-4154-a1f4-547ef1ba7f20",
+      "at": "2026-09-26T00:55:19.114Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0040",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}",
+      "afterSummary": "{\"themes\":[\"tea\",\"museum\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"沿着工艺变化理解乌龙茶\",\"museum\":\"乌龙茶工艺与文化展示\"}}"
+    },
+    {
+      "id": "f6709092-02fd-4035-8a39-d98bdc0f0385",
+      "at": "2026-09-26T00:55:09.257Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0055",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"tea\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"黄村沿线的茶主题停留\"}}",
+      "afterSummary": "{\"themes\":[\"tea\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"tea\":\"黄村沿线的茶主题停留\"}}"
+    },
+    {
+      "id": "ffa382b6-bbb6-41a0-932b-9df2fcb5d3a3",
+      "at": "2026-09-26T00:54:56.379Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0030",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"nature\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"继续往桐木方向观察山林环境\"}}",
+      "afterSummary": "{\"themes\":[\"nature\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"nature\":\"继续往桐木方向观察山林环境\"}}"
+    },
+    {
+      "id": "fdc8e0a3-e3fe-420d-a8e9-534ed1847147",
+      "at": "2026-09-26T00:54:18.920Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0036",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"到坳头方向看山谷与远景\"}}"
+    },
+    {
+      "id": "76603e28-91a6-42f1-9c8d-78150ea676f2",
+      "at": "2026-09-26T00:54:18.032Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0035",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"nature\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"大竹岚方向的山林景观\",\"nature\":\"大竹岚方向的自然观察区域\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"nature\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"大竹岚方向的山林景观\",\"nature\":\"大竹岚方向的自然观察区域\"}}"
+    },
+    {
+      "id": "4a5a0d23-99dc-4b4d-b41f-d783261bdae4",
+      "at": "2026-09-26T00:54:16.803Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0056",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\",\"tea\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\",\"tea\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"茶海也是一段开阔风景\",\"tea\":\"先从茶海景观感受茶山环境\"}}"
+    },
+    {
+      "id": "645512ac-8395-412d-8f2b-9bd6b7294397",
+      "at": "2026-09-26T00:54:14.417Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0005",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"从三才峰方向看沿线山景\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"从三才峰方向看沿线山景\"}}"
+    },
+    {
+      "id": "59c8a858-74cb-4dc1-8c74-862057165317",
+      "at": "2026-09-26T00:54:12.685Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0017",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"沿路看水、听水的停留点\",\"scenery\":\"沿河听水，也看沿途山谷\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"沿路看水、听水的停留点\",\"scenery\":\"沿河听水，也看沿途山谷\"}}"
+    },
+    {
+      "id": "095ec737-4ba6-4152-ba47-3896bf4c692a",
+      "at": "2026-09-26T00:54:08.144Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0004",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"齐云峰方向的观景与日出位置\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"scenery\":\"齐云峰方向的观景与日出位置\"}}"
+    },
+    {
+      "id": "55e7fa2d-8791-4599-bbdf-3312dc349a00",
+      "at": "2026-09-26T00:53:53.920Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0060",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"沿路瀑布与溪谷体验\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"沿路瀑布与溪谷体验\"}}"
+    },
+    {
+      "id": "ae6ec972-ae4c-4c54-9028-20ebe16f941d",
+      "at": "2026-09-26T00:53:50.592Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0018",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"农庄附近的下河位置\"}}",
+      "afterSummary": "{\"themes\":[\"water\"],\"familyFriendly\":true,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"农庄附近的下河位置\"}}"
+    },
+    {
+      "id": "5ff38d2c-797f-4166-b295-a1f94d447799",
+      "at": "2026-09-26T00:53:38.359Z",
+      "objectType": "place_theme",
+      "objectId": "WY-0017",
+      "changeType": "update",
+      "beforeSummary": "{\"themes\":[\"water\",\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"沿路看水、听水的停留点\",\"scenery\":\"沿河听水，也看沿途山谷\"}}",
+      "afterSummary": "{\"themes\":[\"scenery\"],\"familyFriendly\":false,\"titleByTheme\":{},\"summaryByTheme\":{\"water\":\"沿路看水、听水的停留点\",\"scenery\":\"沿河听水，也看沿途山谷\"}}"
+    },
+    {
+      "id": "4a841a04-f183-4fc0-94e8-3a3504092a31",
+      "at": "2026-09-24T23:28:52.899Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0028.cover",
+      "changeType": "split_place_media",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e\",\"fileName\":\"03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"蝴蝶馆.png\",\"uploadedAt\":\"2026-09-24T10:00:03.872Z\"}"
+    },
+    {
+      "id": "c612a586-5b40-4b06-b2ce-3ca51823b553",
+      "at": "2026-09-24T23:28:52.899Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0024.cover",
+      "changeType": "split_place_media",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f\",\"fileName\":\"c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"桃源峪.png\",\"uploadedAt\":\"2026-09-24T02:53:38.642Z\"}"
+    },
+    {
+      "id": "d2c3cd3e-25a6-413b-881d-874ea4a76c90",
+      "at": "2026-09-24T10:10:53.137Z",
+      "objectType": "visual_media",
+      "objectId": "theme.food.hero",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5\",\"fileName\":\"d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"光饼.png\",\"uploadedAt\":\"2026-09-24T10:10:53.092Z\"}"
+    },
+    {
+      "id": "bb70e1cc-5aed-4905-a62c-8b144a6e901d",
+      "at": "2026-09-24T10:05:44.992Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0061.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"52ba2965a061f34079eb4ad22906ac8a4e73ae621bfdc4a57a0587c12d8ae482\",\"fileName\":\"52ba2965a061f34079eb4ad22906ac8a4e73ae621bfdc4a57a0587c12d8ae482.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"昆虫馆.png\",\"uploadedAt\":\"2026-09-24T10:05:44.988Z\"}"
+    },
+    {
+      "id": "b641283a-d738-4f15-879a-48870106a489",
+      "at": "2026-09-24T10:04:33.458Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0033.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "{\"id\":\"5fe1c66dbffd2af9394e8de9a122845fd08da65de262cd0e7c0802fa0c68b0ed\",\"fileName\":\"5fe1c66dbffd2af9394e8de9a122845fd08da65de262cd0e7c0802fa0c68b0ed.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大峡谷展示馆.png\",\"uploadedAt\":\"2026-09-24T10:02:32.017Z\"}",
+      "afterSummary": "{\"id\":\"4f1f91b783655841f6793f263c952823d4cd0b8f6d7c5a3205639f15219b92bc\",\"fileName\":\"4f1f91b783655841f6793f263c952823d4cd0b8f6d7c5a3205639f15219b92bc.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大峡谷展示馆.png\",\"uploadedAt\":\"2026-09-24T10:04:33.453Z\"}"
+    },
+    {
+      "id": "f7cec251-e456-4316-8f39-ddc1e52a1d4e",
+      "at": "2026-09-24T10:02:32.024Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0033.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"5fe1c66dbffd2af9394e8de9a122845fd08da65de262cd0e7c0802fa0c68b0ed\",\"fileName\":\"5fe1c66dbffd2af9394e8de9a122845fd08da65de262cd0e7c0802fa0c68b0ed.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大峡谷展示馆.png\",\"uploadedAt\":\"2026-09-24T10:02:32.017Z\"}"
+    },
+    {
+      "id": "ad8a2fba-85a1-46bb-978c-c1373272cb63",
+      "at": "2026-09-24T10:01:07.926Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0032.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"bdf32b1ea485d3229d06eeed9af00e1ccb35dd9f20437d65400872a48ecc19f8\",\"fileName\":\"bdf32b1ea485d3229d06eeed9af00e1ccb35dd9f20437d65400872a48ecc19f8.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"红茶馆.png\",\"uploadedAt\":\"2026-09-24T10:01:07.923Z\"}"
+    },
+    {
+      "id": "6a92b4c1-4817-4af0-bd2b-9dbd6dba5145",
+      "at": "2026-09-24T10:00:03.877Z",
+      "objectType": "visual_media",
+      "objectId": "content.vc-taoyuanyu-butterfly.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "{\"id\":\"c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f\",\"fileName\":\"c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"桃源峪.png\",\"uploadedAt\":\"2026-09-24T02:53:38.642Z\"}",
+      "afterSummary": "{\"id\":\"03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e\",\"fileName\":\"03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"蝴蝶馆.png\",\"uploadedAt\":\"2026-09-24T10:00:03.872Z\"}"
+    },
+    {
+      "id": "2335ffe8-b760-41ff-94ac-1088023c2cc2",
+      "at": "2026-09-24T09:56:41.682Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0043.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"816d890131c24865835d55356aca1b9fa7a396b6087536cdc0cbdf0051fba4ca\",\"fileName\":\"816d890131c24865835d55356aca1b9fa7a396b6087536cdc0cbdf0051fba4ca.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"兰花馆.png\",\"uploadedAt\":\"2026-09-24T09:56:41.676Z\"}"
+    },
+    {
+      "id": "bbdcf200-5d39-4bcc-beb7-c6b1c7e3745c",
+      "at": "2026-09-24T09:55:03.172Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0044.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"db700e9510788c904857622cf34fb5cc060ababea35de13327cf282511825d60\",\"fileName\":\"db700e9510788c904857622cf34fb5cc060ababea35de13327cf282511825d60.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"乡愁馆.png\",\"uploadedAt\":\"2026-09-24T09:55:03.133Z\"}"
+    },
+    {
+      "id": "3fe275c1-fac6-4dc1-9c55-cf94e6de88fa",
+      "at": "2026-09-24T09:52:34.493Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0041.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"f45cca5ce439ecb32326111c319f8470f69ed9a780e20fafe1248f4a9a5d79b3\",\"fileName\":\"f45cca5ce439ecb32326111c319f8470f69ed9a780e20fafe1248f4a9a5d79b3.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"珍稀植物馆.png\",\"uploadedAt\":\"2026-09-24T09:52:34.484Z\"}"
+    },
+    {
+      "id": "3c6e923b-9993-4bd1-b27e-85e5da3d8daa",
+      "at": "2026-09-24T09:52:19.084Z",
+      "objectType": "visual_media",
+      "objectId": "theme.museum.hero",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12\",\"fileName\":\"0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"珍稀植物馆.png\",\"uploadedAt\":\"2026-09-24T09:52:19.075Z\"}"
+    },
+    {
+      "id": "91728167-ae13-40b6-8029-11d74b4c24db",
+      "at": "2026-09-24T09:50:50.536Z",
+      "objectType": "visual_media",
+      "objectId": "content.vc-huangcun-tea.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"0d2aba2cde2f4584140807c399014bbad09023e30aeb07e1bc8c948b3282c30d\",\"fileName\":\"0d2aba2cde2f4584140807c399014bbad09023e30aeb07e1bc8c948b3282c30d.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"乌龙茶展示馆.png\",\"uploadedAt\":\"2026-09-24T09:50:50.531Z\"}"
+    },
+    {
+      "id": "9e675564-e81f-4fc9-8325-863af5e819f4",
+      "at": "2026-09-24T09:48:28.383Z",
+      "objectType": "visual_media",
+      "objectId": "content.vc-corridor.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "{\"id\":\"4f02a07113f2facfb652b706795cf24af99325610b404e1d2d3f5ab7fedbf377\",\"fileName\":\"4f02a07113f2facfb652b706795cf24af99325610b404e1d2d3f5ab7fedbf377.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"一号风景道.png\",\"uploadedAt\":\"2026-09-24T09:44:41.192Z\"}",
+      "afterSummary": "{\"id\":\"aba161feede576d1480e7d2acd59623a72039ab349594f49a0e34db9e57f7a4c\",\"fileName\":\"aba161feede576d1480e7d2acd59623a72039ab349594f49a0e34db9e57f7a4c.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"IMG_2247.jpeg\",\"uploadedAt\":\"2026-09-24T09:48:28.359Z\"}"
+    },
+    {
+      "id": "7ee31742-1c98-4025-8804-de33841cc0b4",
+      "at": "2026-09-24T09:44:41.197Z",
+      "objectType": "visual_media",
+      "objectId": "content.vc-corridor.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"4f02a07113f2facfb652b706795cf24af99325610b404e1d2d3f5ab7fedbf377\",\"fileName\":\"4f02a07113f2facfb652b706795cf24af99325610b404e1d2d3f5ab7fedbf377.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"一号风景道.png\",\"uploadedAt\":\"2026-09-24T09:44:41.192Z\"}"
+    },
+    {
+      "id": "b3f7c95d-84d6-429e-91f9-9fd12ec1af95",
+      "at": "2026-09-24T03:34:36.144Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0036.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"13f4b4a21f8e5459ccd7778ea83260e041d17eb8c6e78a13f7c7f605341ab835\",\"fileName\":\"13f4b4a21f8e5459ccd7778ea83260e041d17eb8c6e78a13f7c7f605341ab835.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"坳头村.png\",\"uploadedAt\":\"2026-09-24T03:34:36.140Z\"}"
+    },
+    {
+      "id": "b393a873-f599-4750-9609-2f659ebe794f",
+      "at": "2026-09-24T03:31:14.597Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0035.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"8bce769adf62f8a1de1d9ee1302feb05acdffe3bc2f7510b1163f1e482cd46aa\",\"fileName\":\"8bce769adf62f8a1de1d9ee1302feb05acdffe3bc2f7510b1163f1e482cd46aa.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大竹岚.png\",\"uploadedAt\":\"2026-09-24T03:31:14.592Z\"}"
+    },
+    {
+      "id": "83ca44fa-735a-4a83-ae7e-3a1f2b085c2a",
+      "at": "2026-09-24T03:26:11.653Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0056.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"65ab132a70a947f4ae5a32a0784810898f10fa43307f94d10d58bc44cbacbd59\",\"fileName\":\"65ab132a70a947f4ae5a32a0784810898f10fa43307f94d10d58bc44cbacbd59.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"风吟茶海.png\",\"uploadedAt\":\"2026-09-24T03:26:11.652Z\"}"
+    },
+    {
+      "id": "b4ed149e-7dbb-4329-914a-de0c31b898b7",
+      "at": "2026-09-24T03:24:12.129Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0005.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"de9c0e23771bc914cf899e7bd040761ceaa57451aab2362bacfca96a97eed488\",\"fileName\":\"de9c0e23771bc914cf899e7bd040761ceaa57451aab2362bacfca96a97eed488.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"三才峰.png\",\"uploadedAt\":\"2026-09-24T03:24:12.124Z\"}"
+    },
+    {
+      "id": "e5ac15dd-6a7e-47ae-bbec-40aa1199a331",
+      "at": "2026-09-24T03:23:02.063Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0004.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"155c12b2deaae0180ad7dc89e2394cdabb5d9448f1f5169cafdd37b4c2548760\",\"fileName\":\"155c12b2deaae0180ad7dc89e2394cdabb5d9448f1f5169cafdd37b4c2548760.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"齐云峰.png\",\"uploadedAt\":\"2026-09-24T03:23:02.056Z\"}"
+    },
+    {
+      "id": "aa972d2a-0eae-4803-8c7c-81e4b280c5bd",
+      "at": "2026-09-24T03:07:31.479Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0022.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "{\"id\":\"906af4d700bc9c4ffa803fa36bb4c78143337acf0078c110705dfbc3f792b5e4\",\"fileName\":\"906af4d700bc9c4ffa803fa36bb4c78143337acf0078c110705dfbc3f792b5e4.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大浅滩.png\",\"uploadedAt\":\"2026-09-24T03:06:32.693Z\"}",
+      "afterSummary": "{\"id\":\"1fbc6a6f0c4fe178777e247bba3c64f4070a003bf5d15f344f5b3e7ff6e55c7d\",\"fileName\":\"1fbc6a6f0c4fe178777e247bba3c64f4070a003bf5d15f344f5b3e7ff6e55c7d.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大浅滩.png\",\"uploadedAt\":\"2026-09-24T03:07:31.477Z\"}"
+    },
+    {
+      "id": "bb41d100-3191-4540-9711-737918479310",
+      "at": "2026-09-24T03:06:32.695Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0022.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"906af4d700bc9c4ffa803fa36bb4c78143337acf0078c110705dfbc3f792b5e4\",\"fileName\":\"906af4d700bc9c4ffa803fa36bb4c78143337acf0078c110705dfbc3f792b5e4.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大浅滩.png\",\"uploadedAt\":\"2026-09-24T03:06:32.693Z\"}"
+    },
+    {
+      "id": "4f2125f1-a017-4bdb-b06a-7fca68293a21",
+      "at": "2026-09-24T03:05:22.673Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0021.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "{\"id\":\"d37b11bce06c959bdbcdbae971725d50a79d14ddcd1b70304633b61470e4569a\",\"fileName\":\"d37b11bce06c959bdbcdbae971725d50a79d14ddcd1b70304633b61470e4569a.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"皮坑口.png\",\"uploadedAt\":\"2026-09-24T03:03:29.997Z\"}",
+      "afterSummary": "{\"id\":\"fbbe17a731f7130cdefedc6cd44e56edb01593c7650fa1cd6acf8d6364ba2895\",\"fileName\":\"fbbe17a731f7130cdefedc6cd44e56edb01593c7650fa1cd6acf8d6364ba2895.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"皮坑口.png\",\"uploadedAt\":\"2026-09-24T03:05:22.670Z\"}"
+    },
+    {
+      "id": "cac4b61f-dca2-4d54-8c78-91165e146c6d",
+      "at": "2026-09-24T03:03:30.000Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0021.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"d37b11bce06c959bdbcdbae971725d50a79d14ddcd1b70304633b61470e4569a\",\"fileName\":\"d37b11bce06c959bdbcdbae971725d50a79d14ddcd1b70304633b61470e4569a.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"皮坑口.png\",\"uploadedAt\":\"2026-09-24T03:03:29.997Z\"}"
+    },
+    {
+      "id": "e962c95f-e2df-4daf-bb20-6aad41ca6cf5",
+      "at": "2026-09-24T03:02:30.531Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0060.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"cd9e84ef89dfa178a07ddca48b3cb205e834e8525d178c0bedaaf083b383316a\",\"fileName\":\"cd9e84ef89dfa178a07ddca48b3cb205e834e8525d178c0bedaaf083b383316a.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"小青龙.png\",\"uploadedAt\":\"2026-09-24T03:02:30.529Z\"}"
+    },
+    {
+      "id": "5ea6ee87-1df1-4e22-9d26-982cae785853",
+      "at": "2026-09-24T03:01:27.131Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0017.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"550f7ca29d57a07eaa877dedcc6177697152dee29fbb5ef984130bd6c9da88ed\",\"fileName\":\"550f7ca29d57a07eaa877dedcc6177697152dee29fbb5ef984130bd6c9da88ed.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"观山听水.png\",\"uploadedAt\":\"2026-09-24T03:01:27.129Z\"}"
+    },
+    {
+      "id": "448ad421-b317-4f60-a587-287c65683f49",
+      "at": "2026-09-24T02:58:12.071Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0018.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"935f8d636515cce0efce1d123559a538f0d1ed90c3ff71a84a3f61b1925cb943\",\"fileName\":\"935f8d636515cce0efce1d123559a538f0d1ed90c3ff71a84a3f61b1925cb943.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"大峡谷农庄.png\",\"uploadedAt\":\"2026-09-24T02:58:12.069Z\"}"
+    },
+    {
+      "id": "ae80b067-be0f-44a8-93c4-3011d40a47a2",
+      "at": "2026-09-24T02:54:50.113Z",
+      "objectType": "visual_media",
+      "objectId": "theme.water.hero",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64\",\"fileName\":\"31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"IMG_2696.jpeg\",\"uploadedAt\":\"2026-09-24T02:54:50.112Z\"}"
+    },
+    {
+      "id": "6cdf1cf3-bf46-4db8-87d2-10d48f374dd8",
+      "at": "2026-09-24T02:53:38.649Z",
+      "objectType": "visual_media",
+      "objectId": "content.vc-taoyuanyu-butterfly.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f\",\"fileName\":\"c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"桃源峪.png\",\"uploadedAt\":\"2026-09-24T02:53:38.642Z\"}"
+    },
+    {
+      "id": "8fa4f27e-09a2-45c0-ae3a-cba29093f7d7",
+      "at": "2026-09-24T02:51:08.202Z",
+      "objectType": "visual_media",
+      "objectId": "place.WY-0012.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"a37def6b7959f3d521f56a9a5c14217f125571a1b949538c68f33bca81a97f1f\",\"fileName\":\"a37def6b7959f3d521f56a9a5c14217f125571a1b949538c68f33bca81a97f1f.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"月亮湾.png\",\"uploadedAt\":\"2026-09-24T02:51:08.199Z\"}"
+    },
+    {
+      "id": "934cdfdb-af9c-4a31-90a2-bb5c2477872d",
+      "at": "2026-09-24T02:49:49.164Z",
+      "objectType": "visual_media",
+      "objectId": "content.vc-manshui.cover",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9\",\"fileName\":\"387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"漫水桥.png\",\"uploadedAt\":\"2026-09-24T02:49:49.162Z\"}"
+    },
+    {
+      "id": "b5f99ac7-24e0-418e-a765-59bae5b8faa7",
+      "at": "2026-09-24T02:42:48.822Z",
+      "objectType": "visual_media",
+      "objectId": "home.hero",
+      "changeType": "replace_and_publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"384f9134b79e063feaa103621776b8046440b871eb3923b7e090c0277627e879\",\"fileName\":\"384f9134b79e063feaa103621776b8046440b871eb3923b7e090c0277627e879.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"504c391e0371ef601a3f6d5dc28f9e31.jpeg\",\"uploadedAt\":\"2026-09-24T02:42:48.820Z\"}"
+    },
+    {
+      "id": "ea05616e-ebda-4e3b-90fd-a5c809ddef00",
+      "at": "2026-09-24T02:09:36.156Z",
+      "objectType": "home",
+      "objectId": "visitor-home",
+      "changeType": "publish",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e\",\"fileName\":\"93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"IMG_2234.jpeg\",\"uploadedAt\":\"2026-09-24T02:09:27.531Z\"}"
+    },
+    {
+      "id": "8c155872-6f31-4acf-b306-583259b3c0c1",
+      "at": "2026-09-24T02:09:27.535Z",
+      "objectType": "home",
+      "objectId": "visitor-home",
+      "changeType": "save_hero_draft",
+      "beforeSummary": "null",
+      "afterSummary": "{\"id\":\"93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e\",\"fileName\":\"93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e.jpg\",\"mimeType\":\"image/jpeg\",\"originalName\":\"IMG_2234.jpeg\",\"uploadedAt\":\"2026-09-24T02:09:27.531Z\"}"
+    },
+    {
+      "id": "51c6e406-fa6e-47ec-acf1-08ca303752c0",
+      "at": "2026-09-11T02:19:40.306Z",
+      "objectType": "store",
+      "objectId": "visitor-content",
+      "changeType": "add_theme_order",
+      "beforeSummary": "null",
+      "afterSummary": "{\"contentCount\":5}"
+    },
+    {
+      "id": "a013dd0e-58b7-4dbf-b0ae-101bdad9a574",
+      "at": "2026-09-11T02:07:18.404Z",
+      "objectType": "content",
+      "objectId": "vc-corridor",
+      "changeType": "remove_deleted_place_reference",
+      "beforeSummary": "{\"placeCode\":\"WY-0039\"}",
+      "afterSummary": "{\"preservedInDatabase\":true}"
+    },
+    {
       "id": "hist-initial-migration",
-      "at": "2026-09-11T02:00:00+08:00",
+      "at": "2026-09-11T02:00:00.000+08:00",
       "objectType": "store",
       "objectId": "visitor-content",
       "changeType": "initial_migration",
       "beforeSummary": "游客内容写在前端配置中",
       "afterSummary": "迁移到独立 visitor content prototype store"
+    },
+    {
+      "id": "hist-9255ad72-0768-4ca8-9031-e24d774ff2bb",
+      "at": "2026-09-26T12:36:44.342Z",
+      "objectType": "store",
+      "objectId": "visitor-content",
+      "changeType": "theme_taxonomy_migration",
+      "beforeSummary": "茶、展馆、吃与床车露营三个主题",
+      "afterSummary": "茶与展馆、吃的、床车露营三个主题"
     }
-  ]
+  ],
+  "home": {
+    "version": 6,
+    "updatedAt": "2026-09-26T12:22:59.282Z",
+    "publishedAt": "2026-09-26T12:22:59.282Z",
+    "draft": {
+      "heroImage": {
+        "id": "93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e",
+        "fileName": "93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "IMG_2234.jpeg",
+        "uploadedAt": "2026-09-24T02:09:27.531Z"
+      },
+      "eyebrow": "一位本地爸爸的沿路笔记",
+      "titleLine1": "武夷山",
+      "titleLine2": "奶爸地图",
+      "introLine1": "我在武夷山生活，",
+      "introLine2": "把自己去过、觉得不错的地方放在这里。",
+      "mapButtonLabel": "看地图",
+      "corridorButtonLabel": "一号风景道",
+      "kidsLabel": "适合带孩子",
+      "themeCardHint": "看看怎么安排",
+      "recommendationsEyebrow": "沿路挑三处",
+      "recommendationsTitle": "最近推荐",
+      "recommendationsLinkLabel": "查看路线 →",
+      "recommendationManshuiTitle": "漫水桥",
+      "recommendationManshuiSummary": "河边停一停，先看当天水况",
+      "recommendationMoonbayTitle": "月亮湾",
+      "recommendationMoonbaySummary": "在整条路线地图中查看位置",
+      "recommendationTaoyuanyuTitle": "桃源峪",
+      "recommendationTaoyuanyuSummary": "先在自然里找，再去展馆看懂",
+      "routesEyebrow": "按时间和同行人安排",
+      "routesTitle": "推荐路线",
+      "routeFamilyTitle": "带娃怎么玩",
+      "routeFamilySummary": "带孩子轻松走，优先选择方便停留的地方",
+      "routeDayTitle": "一天怎么玩",
+      "routeDaySummary": "用一天串起山水、茶和沿路停留",
+      "routeTwoDayTitle": "两天怎么玩",
+      "routeTwoDaySummary": "第一天看山水，第二天慢慢走进茶与自然"
+    },
+    "published": {
+      "heroImage": {
+        "id": "93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e",
+        "fileName": "93d64fd6c8c2319bd85f676a420a4e1fbc029b9d8303ce47e548955703501a1e.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "IMG_2234.jpeg",
+        "uploadedAt": "2026-09-24T02:09:27.531Z"
+      },
+      "eyebrow": "一位本地爸爸的沿路笔记",
+      "titleLine1": "武夷山",
+      "titleLine2": "奶爸地图",
+      "introLine1": "我在武夷山生活，",
+      "introLine2": "把自己去过、觉得不错的地方放在这里。",
+      "mapButtonLabel": "看地图",
+      "corridorButtonLabel": "一号风景道",
+      "kidsLabel": "适合带孩子",
+      "themeCardHint": "看看怎么安排",
+      "recommendationsEyebrow": "沿路挑三处",
+      "recommendationsTitle": "最近推荐",
+      "recommendationsLinkLabel": "查看路线 →",
+      "recommendationManshuiTitle": "漫水桥",
+      "recommendationManshuiSummary": "河边停一停，先看当天水况",
+      "recommendationMoonbayTitle": "月亮湾",
+      "recommendationMoonbaySummary": "在整条路线地图中查看位置",
+      "recommendationTaoyuanyuTitle": "桃源峪",
+      "recommendationTaoyuanyuSummary": "先在自然里找，再去展馆看懂",
+      "routesEyebrow": "按时间和同行人安排",
+      "routesTitle": "推荐路线",
+      "routeFamilyTitle": "带娃怎么玩",
+      "routeFamilySummary": "带孩子轻松走，优先选择方便停留的地方",
+      "routeDayTitle": "一天怎么玩",
+      "routeDaySummary": "用一天串起山水、茶和沿路停留",
+      "routeTwoDayTitle": "两天怎么玩",
+      "routeTwoDaySummary": "第一天看山水，第二天慢慢走进茶与自然"
+    }
+  },
+  "media": {
+    "version": 32,
+    "updatedAt": "2026-09-24T23:28:52.897Z",
+    "items": {
+      "home.hero": {
+        "id": "384f9134b79e063feaa103621776b8046440b871eb3923b7e090c0277627e879",
+        "fileName": "384f9134b79e063feaa103621776b8046440b871eb3923b7e090c0277627e879.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "504c391e0371ef601a3f6d5dc28f9e31.jpeg",
+        "uploadedAt": "2026-09-24T02:42:48.820Z"
+      },
+      "content.vc-manshui.cover": {
+        "id": "387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9",
+        "fileName": "387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "漫水桥.png",
+        "uploadedAt": "2026-09-24T02:49:49.162Z"
+      },
+      "place.WY-0012.cover": {
+        "id": "a37def6b7959f3d521f56a9a5c14217f125571a1b949538c68f33bca81a97f1f",
+        "fileName": "a37def6b7959f3d521f56a9a5c14217f125571a1b949538c68f33bca81a97f1f.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "月亮湾.png",
+        "uploadedAt": "2026-09-24T02:51:08.199Z"
+      },
+      "content.vc-taoyuanyu-butterfly.cover": {
+        "id": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e",
+        "fileName": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "蝴蝶馆.png",
+        "uploadedAt": "2026-09-24T10:00:03.872Z"
+      },
+      "theme.water.hero": {
+        "id": "31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64",
+        "fileName": "31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "IMG_2696.jpeg",
+        "uploadedAt": "2026-09-24T02:54:50.112Z"
+      },
+      "place.WY-0018.cover": {
+        "id": "935f8d636515cce0efce1d123559a538f0d1ed90c3ff71a84a3f61b1925cb943",
+        "fileName": "935f8d636515cce0efce1d123559a538f0d1ed90c3ff71a84a3f61b1925cb943.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "大峡谷农庄.png",
+        "uploadedAt": "2026-09-24T02:58:12.069Z"
+      },
+      "place.WY-0017.cover": {
+        "id": "550f7ca29d57a07eaa877dedcc6177697152dee29fbb5ef984130bd6c9da88ed",
+        "fileName": "550f7ca29d57a07eaa877dedcc6177697152dee29fbb5ef984130bd6c9da88ed.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "观山听水.png",
+        "uploadedAt": "2026-09-24T03:01:27.129Z"
+      },
+      "place.WY-0060.cover": {
+        "id": "cd9e84ef89dfa178a07ddca48b3cb205e834e8525d178c0bedaaf083b383316a",
+        "fileName": "cd9e84ef89dfa178a07ddca48b3cb205e834e8525d178c0bedaaf083b383316a.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "小青龙.png",
+        "uploadedAt": "2026-09-24T03:02:30.529Z"
+      },
+      "place.WY-0021.cover": {
+        "id": "fbbe17a731f7130cdefedc6cd44e56edb01593c7650fa1cd6acf8d6364ba2895",
+        "fileName": "fbbe17a731f7130cdefedc6cd44e56edb01593c7650fa1cd6acf8d6364ba2895.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "皮坑口.png",
+        "uploadedAt": "2026-09-24T03:05:22.670Z"
+      },
+      "place.WY-0022.cover": {
+        "id": "1fbc6a6f0c4fe178777e247bba3c64f4070a003bf5d15f344f5b3e7ff6e55c7d",
+        "fileName": "1fbc6a6f0c4fe178777e247bba3c64f4070a003bf5d15f344f5b3e7ff6e55c7d.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "大浅滩.png",
+        "uploadedAt": "2026-09-24T03:07:31.477Z"
+      },
+      "place.WY-0004.cover": {
+        "id": "155c12b2deaae0180ad7dc89e2394cdabb5d9448f1f5169cafdd37b4c2548760",
+        "fileName": "155c12b2deaae0180ad7dc89e2394cdabb5d9448f1f5169cafdd37b4c2548760.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "齐云峰.png",
+        "uploadedAt": "2026-09-24T03:23:02.056Z"
+      },
+      "place.WY-0005.cover": {
+        "id": "de9c0e23771bc914cf899e7bd040761ceaa57451aab2362bacfca96a97eed488",
+        "fileName": "de9c0e23771bc914cf899e7bd040761ceaa57451aab2362bacfca96a97eed488.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "三才峰.png",
+        "uploadedAt": "2026-09-24T03:24:12.124Z"
+      },
+      "place.WY-0056.cover": {
+        "id": "65ab132a70a947f4ae5a32a0784810898f10fa43307f94d10d58bc44cbacbd59",
+        "fileName": "65ab132a70a947f4ae5a32a0784810898f10fa43307f94d10d58bc44cbacbd59.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "风吟茶海.png",
+        "uploadedAt": "2026-09-24T03:26:11.652Z"
+      },
+      "place.WY-0035.cover": {
+        "id": "8bce769adf62f8a1de1d9ee1302feb05acdffe3bc2f7510b1163f1e482cd46aa",
+        "fileName": "8bce769adf62f8a1de1d9ee1302feb05acdffe3bc2f7510b1163f1e482cd46aa.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "大竹岚.png",
+        "uploadedAt": "2026-09-24T03:31:14.592Z"
+      },
+      "place.WY-0036.cover": {
+        "id": "13f4b4a21f8e5459ccd7778ea83260e041d17eb8c6e78a13f7c7f605341ab835",
+        "fileName": "13f4b4a21f8e5459ccd7778ea83260e041d17eb8c6e78a13f7c7f605341ab835.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "坳头村.png",
+        "uploadedAt": "2026-09-24T03:34:36.140Z"
+      },
+      "content.vc-corridor.cover": {
+        "id": "aba161feede576d1480e7d2acd59623a72039ab349594f49a0e34db9e57f7a4c",
+        "fileName": "aba161feede576d1480e7d2acd59623a72039ab349594f49a0e34db9e57f7a4c.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "IMG_2247.jpeg",
+        "uploadedAt": "2026-09-24T09:48:28.359Z"
+      },
+      "content.vc-huangcun-tea.cover": {
+        "id": "0d2aba2cde2f4584140807c399014bbad09023e30aeb07e1bc8c948b3282c30d",
+        "fileName": "0d2aba2cde2f4584140807c399014bbad09023e30aeb07e1bc8c948b3282c30d.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "乌龙茶展示馆.png",
+        "uploadedAt": "2026-09-24T09:50:50.531Z"
+      },
+      "theme.museum.hero": {
+        "id": "0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12",
+        "fileName": "0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "珍稀植物馆.png",
+        "uploadedAt": "2026-09-24T09:52:19.075Z"
+      },
+      "place.WY-0041.cover": {
+        "id": "f45cca5ce439ecb32326111c319f8470f69ed9a780e20fafe1248f4a9a5d79b3",
+        "fileName": "f45cca5ce439ecb32326111c319f8470f69ed9a780e20fafe1248f4a9a5d79b3.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "珍稀植物馆.png",
+        "uploadedAt": "2026-09-24T09:52:34.484Z"
+      },
+      "place.WY-0044.cover": {
+        "id": "db700e9510788c904857622cf34fb5cc060ababea35de13327cf282511825d60",
+        "fileName": "db700e9510788c904857622cf34fb5cc060ababea35de13327cf282511825d60.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "乡愁馆.png",
+        "uploadedAt": "2026-09-24T09:55:03.133Z"
+      },
+      "place.WY-0043.cover": {
+        "id": "816d890131c24865835d55356aca1b9fa7a396b6087536cdc0cbdf0051fba4ca",
+        "fileName": "816d890131c24865835d55356aca1b9fa7a396b6087536cdc0cbdf0051fba4ca.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "兰花馆.png",
+        "uploadedAt": "2026-09-24T09:56:41.676Z"
+      },
+      "place.WY-0032.cover": {
+        "id": "bdf32b1ea485d3229d06eeed9af00e1ccb35dd9f20437d65400872a48ecc19f8",
+        "fileName": "bdf32b1ea485d3229d06eeed9af00e1ccb35dd9f20437d65400872a48ecc19f8.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "红茶馆.png",
+        "uploadedAt": "2026-09-24T10:01:07.923Z"
+      },
+      "place.WY-0033.cover": {
+        "id": "4f1f91b783655841f6793f263c952823d4cd0b8f6d7c5a3205639f15219b92bc",
+        "fileName": "4f1f91b783655841f6793f263c952823d4cd0b8f6d7c5a3205639f15219b92bc.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "大峡谷展示馆.png",
+        "uploadedAt": "2026-09-24T10:04:33.453Z"
+      },
+      "place.WY-0061.cover": {
+        "id": "52ba2965a061f34079eb4ad22906ac8a4e73ae621bfdc4a57a0587c12d8ae482",
+        "fileName": "52ba2965a061f34079eb4ad22906ac8a4e73ae621bfdc4a57a0587c12d8ae482.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "昆虫馆.png",
+        "uploadedAt": "2026-09-24T10:05:44.988Z"
+      },
+      "theme.food.hero": {
+        "id": "d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5",
+        "fileName": "d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "光饼.png",
+        "uploadedAt": "2026-09-24T10:10:53.092Z"
+      },
+      "place.WY-0024.cover": {
+        "id": "c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f",
+        "fileName": "c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "桃源峪.png",
+        "uploadedAt": "2026-09-24T02:53:38.642Z"
+      },
+      "place.WY-0028.cover": {
+        "id": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e",
+        "fileName": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg",
+        "mimeType": "image/jpeg",
+        "originalName": "蝴蝶馆.png",
+        "uploadedAt": "2026-09-24T10:00:03.872Z"
+      }
+    }
+  }
 }
