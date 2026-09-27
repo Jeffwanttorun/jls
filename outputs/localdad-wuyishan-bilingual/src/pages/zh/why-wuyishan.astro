@@ -4,7 +4,11 @@ import WhyChapter from "../../components/WhyChapter.astro";
 const englishNote = "英文原文";
 ---
 <BaseLayout lang="zh" title="为什么是武夷山｜武夷山奶爸" description="从山水、茶、森林和人文四个相互关联的章节理解武夷山：先看见这片地方，再逐步认识风景背后的自然、生活与思想。">
-  <h1 class="visually-hidden">为什么是武夷山</h1>
+  <section class="why-introduction" aria-labelledby="zh-why-wuyishan-title">
+    <p class="kicker">为什么是武夷山</p>
+    <h1 id="zh-why-wuyishan-title">从彼此关联的线索理解武夷山。</h1>
+    <p>这里的山水、森林与生物多样性、茶、村落、历史和人的活动相互联系。下面四个章节提供一条清楚的理解路径。</p>
+  </section>
   <div class="why-chapters why-only-chapters" aria-label="为什么是武夷山——四个章节">
     <WhyChapter number="01" id="landscape" title="山水" image="/chapter-media/landscape.webp" imageAlt="武夷山森林与水面旁的沿山道路" links={[
       {title:"武夷山概览",href:"/why-wuyishan/why-wuyishan-matters",note:englishNote},

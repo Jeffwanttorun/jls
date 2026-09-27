@@ -27,7 +27,11 @@ const peopleLinks = publishedLinks([
 ]);
 ---
 <BaseLayout title="Why Wuyishan | Local Dad Jeff" description="Explore Wuyishan through four chapters: landscape, tea, forest, and people and ideas.">
-  <h1 class="visually-hidden">Why Wuyishan</h1>
+  <section class="why-introduction" aria-labelledby="why-wuyishan-title">
+    <p class="kicker">Why Wuyishan</p>
+    <h1 id="why-wuyishan-title">One place, understood through connected layers.</h1>
+    <p>Wuyishan’s mountains and rivers, forests and biodiversity, tea, villages, history, and daily work have developed in relation to one another. These four chapters provide a clear way to follow those connections.</p>
+  </section>
   <div class="why-chapters why-only-chapters" aria-label="Why Wuyishan — four chapters">
     <WhyChapter number="01" id="landscape" title="Landscape" image="/chapter-media/landscape.webp" imageAlt="A mountain road following a forested river in Wuyishan" links={landscapeLinks} />
     <WhyChapter number="02" id="tea" title="Tea" image="/chapter-media/tea.webp" imageAlt="Tea fields spreading across a Wuyishan valley" links={teaLinks} />

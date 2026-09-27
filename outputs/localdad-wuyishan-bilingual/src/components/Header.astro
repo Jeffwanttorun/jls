@@ -10,8 +10,8 @@ const counterpartPath = translatedRoutes.has(pathWithoutLocale)
   ? localizedPath(pathWithoutLocale, locale === "en" ? "zh" : "en")
   : localizedPath("/", locale === "en" ? "zh" : "en");
 const isChineseMapSurface = locale === "zh" && (current === "/zh/map" || current === "/zh/explore-wuyishan" || current.startsWith("/zh/theme/") || current.startsWith("/zh/place/"));
-const brandLabel = isChineseMapSurface ? "武夷山奶爸" : "Local Dad Jeff";
-const brandHref = isChineseMapSurface ? "/zh/explore-wuyishan" : localizedPath("/", locale);
+const brandLabel = locale === "zh" ? "武夷山奶爸" : "Local Dad Jeff";
+const brandHref = localizedPath("/", locale);
 ---
 <header class="dad-map-header">
   <a class="brand dad-map-brand" href={brandHref}><strong>{brandLabel}</strong></a>

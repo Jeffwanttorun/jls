@@ -1,6 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PillarSection from "../../components/PillarSection.astro";
 ---
-<BaseLayout lang="zh" title="武夷山故事｜武夷山奶爸" description="记录武夷山风景背后的人、村庄、茶与日常生活，只发布完成事实核对、图片授权和文字审核的内容，不把未经确认的经历写成事实。" eyebrow="武夷山故事">
-  <section class="bilingual-entry"><div><h2>风景背后有人，也有生活。</h2><p class="lead">这里将记录茶农、村民、研究者和当地家庭。未经确认的经历不会写成已经发生的故事。</p></div><div class="route-preview"><h2>内容仍在积累</h2><p>只有完成事实核对、图片授权和文字审核的内容才会正式发布。</p></div></section>
+<BaseLayout lang="zh" title="武夷山故事｜武夷山奶爸" description="这里持续积累武夷山的真实访谈与当地故事，在完成事实核对、人物授权和文字审核后正式发布，并保留人物、当地故事和视频三类长期内容结构。" eyebrow="武夷山故事">
+  <section class="pillar-introduction" aria-labelledby="zh-stories-introduction-heading">
+    <div><p class="kicker">真实记录</p><h2 id="zh-stories-introduction-heading">记录这里的人、工作与日常。</h2></div>
+    <div><p>这里正在积累真实访谈和当地故事。每一篇内容都会在完成事实核对，并取得相关人物授权后发布。</p><aside class="stories-status" role="status"><strong>内容正在整理</strong><span>栏目保持开放，首批内容完成审核后发布。</span></aside></div>
+  </section>
+  <div class="pillar-sections stories-structure" aria-label="故事内容结构">
+    <PillarSection id="people-and-interviews" title="人物" introduction="茶农、村民、当地工作者、研究者与家庭的真实访谈。" />
+    <PillarSection id="local-stories" title="当地故事" introduction="从具体的人、地点和经历出发，记录武夷山的生活。" />
+    <PillarSection id="story-videos" title="视频" introduction="经过事实核对和授权的访谈与地点影像。" />
+  </div>
 </BaseLayout>

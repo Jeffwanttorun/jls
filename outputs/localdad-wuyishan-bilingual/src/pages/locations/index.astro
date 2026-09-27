@@ -4,6 +4,6 @@ import ContentCard from "../../components/ContentCard.astro";
 import { publishedLocations as locations } from "../../data/locations";
 ---
 <BaseLayout title="Wuyishan Location Guides | Local Dad Jeff" description="Practical location guides for rivers, peaks, trails, tea areas, villages, and neighborhoods around Wuyishan, China.">
-  <section class="page-head hub-head"><p class="kicker">Place by place</p><h1>Wuyishan<br/>location guides.</h1><p>These pages explain what each place is like, how it might fit into a trip, and which details to check before you go.</p></section>
+  <section class="page-head hub-head"><p class="kicker">Place by place</p><h1>Wuyishan<br/>location guides.</h1><p>These pages explain what each place is like, how it might fit into a trip, and which details to check before you go.</p><p class="directory-scope"><a href="/map">The map</a> includes more places I’ve visited and recorded. Detailed guides appear here as each place is fully documented.</p></section>
   <section class="collection-section"><p class="directory-count">{locations.length} {locations.length === 1 ? "location guide" : "location guides"}</p><div class="content-card-list">{locations.map((item) => <ContentCard title={item.chineseName ? `${item.englishName} · ${item.chineseName}` : item.englishName} description={item.localSummary} href={`/locations/${item.slug}`} eyebrow={item.area} image={item.image} imageSrcset={item.imageSrcset} imageAlt={item.imageAlt} imageWidth={item.imageWidth} imageHeight={item.imageHeight} tags={item.audience} />)}</div></section>
 </BaseLayout>

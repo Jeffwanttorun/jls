@@ -23,7 +23,7 @@ export const ui = {
   zh: {
     home: "首页", start: "初识武夷山", guides: "旅行指南", tea: "武夷岩茶",
     family: "亲子旅行", why: "为什么是武夷山", explore: "探索武夷山",
-    stories: "武夷山故事", map: "奶爸地图", about: "关于 Jeff", contact: "联系", menu: "菜单",
+    stories: "武夷山故事", map: "地图", about: "关于 Jeff", contact: "联系", menu: "菜单",
     openMenu: "打开主导航", closeMenu: "关闭主导航",
   },
 } as const;

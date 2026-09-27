@@ -221,11 +221,14 @@ footer em { color:#d98a68; font-weight:400; }
 .homepage-about h2 { margin:.2em 0; }
 .homepage-about>div>p:not(.kicker) { color:var(--muted); max-width:580px; }
 .homepage-about .text-link { display:inline-block; margin-top:1rem; }
-.trust-label { display:flex; gap:.75rem; align-items:flex-start; max-width:520px; padding:1rem; border:1px solid var(--line); background:rgba(241,237,223,.55); }
+.trust-label { display:flex; gap:.75rem; align-items:flex-start; max-width:520px; padding:1rem; border:1px solid var(--line); background:rgba(241,237,223,.55); color:inherit; text-decoration:none; border-radius:4px; }
+.trust-label:hover,.trust-label:focus-visible { border-color:var(--leaf); background:rgba(241,237,223,.85); }
 .trust-label>span { flex:0 0 10px; width:10px; height:10px; border-radius:50%; background:var(--clay); margin-top:.4rem; }
 .trust-label strong { display:block; font-size:.82rem; }
 .trust-label p { margin:.25rem 0 0; color:var(--muted); font-size:.78rem; line-height:1.5; }
+.trust-label small { display:block; margin-top:.35rem; color:var(--muted); font-size:.68rem; line-height:1.35; }
 .trust-label.compact { display:inline-flex; margin-top:1rem; padding:.6rem .75rem; }
+.trust-label.compact small { margin-top:.18rem; font-size:.62rem; }
 .trust-checked-on-location>span { background:var(--leaf); }
 .trust-official-information>span { background:#43647a; }
 .trust-research-in-progress>span { background:var(--clay); }
@@ -260,6 +263,18 @@ footer em { color:#d98a68; font-weight:400; }
 .pillar-introduction>div:last-child>p { margin-top:0; font:1.15rem/1.7 Georgia,serif; }
 .pillar-introduction ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.55rem 2rem; margin:2rem 0; padding:0; list-style:none; color:var(--muted); }
 .pillar-introduction li { padding-bottom:.55rem; border-bottom:1px solid var(--line); }
+.stories-status { display:flex; flex-direction:column; gap:.2rem; margin-top:1.5rem; padding:1rem 1.1rem; border-left:3px solid var(--leaf); background:rgba(225,238,230,.52); }
+.stories-status strong { font-size:.86rem; }
+.stories-status span { color:var(--muted); font-size:.82rem; line-height:1.5; }
+.stories-structure { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); }
+.stories-structure .pillar-section { display:block; padding:3rem 2rem; border-right:1px solid var(--line); }
+.stories-structure .pillar-section:last-child { border-right:0; }
+.stories-structure .pillar-section h2 { font-size:clamp(1.7rem,3vw,2.4rem); }
+.why-introduction { max-width:var(--max); margin:0 auto; padding:7rem 0 5rem; border-bottom:1px solid var(--line); }
+.why-introduction h1 { max-width:880px; margin:.18em 0; font-size:clamp(3rem,6vw,5.8rem); }
+.why-introduction>p:last-child { max-width:760px; color:var(--muted); font:1.15rem/1.7 Georgia,"Noto Serif SC",serif; }
+.directory-scope { max-width:720px; margin-top:1.5rem; padding-left:1rem; border-left:3px solid var(--leaf); font-size:.95rem!important; }
+.directory-scope a { font-weight:700; text-underline-offset:4px; }
 .experience-categories { padding:4rem 0; border-bottom:1px solid var(--line); }
 .experience-categories header { display:flex; align-items:baseline; justify-content:space-between; gap:2rem; }
 .experience-categories h2 { margin:.15em 0; font-size:2.25rem; }
@@ -414,6 +429,12 @@ footer small { grid-column:1/-1; border-top:1px solid #476153; padding-top:1.5re
   .pillar-section { padding:4rem 0; grid-template-columns:1fr; gap:2rem; }
   .pillar-section h2 { font-size:2.4rem; }
   .pillar-section-links a { min-height:68px; font-size:1.1rem; }
+  .stories-structure { grid-template-columns:1fr; }
+  .stories-structure .pillar-section { padding:2rem 0; border-right:0; }
+  .why-introduction { margin:0 6vw; padding:4rem 0 3rem; }
+  .why-introduction h1 { font-size:clamp(2.65rem,11vw,4rem); }
+  .why-introduction>p:last-child { font-size:1.02rem; }
+  .trust-label.compact { max-width:100%; }
   .standards-link { margin-left:0; display:block; }
   .editorial-photo img { height:68vh; min-height:430px; max-height:600px; }
   footer { grid-template-columns:1fr; gap:3rem; }

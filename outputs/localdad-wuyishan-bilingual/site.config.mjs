@@ -1,1 +1,1 @@
-export const productionSiteUrl = "https://local-dad-jeff.vercel.app";
+export const productionSiteUrl = "https://localdad.youzipal.com";

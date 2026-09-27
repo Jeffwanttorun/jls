@@ -3,7 +3,7 @@ import { primaryNav } from "../data/site";
 import { localizedPath, type Locale } from "../i18n/config";
 interface Props { locale: Locale; labels: Record<string, string>; current: string; }
 const { locale, labels, current } = Astro.props;
-const navigation = locale === "zh" ? primaryNav.filter((item) => item.href !== "/map") : primaryNav;
+const navigation = primaryNav;
 const isCurrent = (href: string) => {
   const target = localizedPath(href, locale);
   if (current === target) return true;
