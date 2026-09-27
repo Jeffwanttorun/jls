@@ -1,0 +1,41 @@
+---
+import MapExplorer from "./MapExplorer.astro";
+import { wuyishanPublicMap } from "../data/wuyishan-public-map";
+import publicMap from "../data/wuyishan-public-map.json";
+
+interface Props { placeCode:string; placeName:string; }
+const { placeCode, placeName }=Astro.props;
+const complete=wuyishanPublicMap("zh");
+const dataset={...complete,places:complete.places.filter((place)=>place.id===placeCode),routes:[]};
+const publicPlace=publicMap.places.find((place)=>place.code===placeCode);
+const navigation=publicPlace?.navigationCoordinates;
+const webNavigation=navigation?`https://map.qq.com/nav/drive#routes/page?${new URLSearchParams({cond:"0",epointx:String(navigation.longitude),epointy:String(navigation.latitude),eword:placeName,sword:"我的位置",transport:"2"})}`:"";
+const appNavigation=navigation?`qqmap://map/routeplan?${new URLSearchParams({type:"drive",from:"我的位置",fromcoord:"CurrentLocation",to:placeName,tocoord:`${navigation.latitude},${navigation.longitude}`})}`:"";
+const tiles={urlTemplate:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19};
+const labels={map:`${placeName}地图位置`,filters:"筛选",relatedContent:"相关内容",openPlace:"当前地点",enableInteraction:"启用地图拖动"};
+---
+{dataset.places.length > 0 && <section class="place-location-map" aria-label={`${placeName}地图位置`}>
+  <p class="dad-eyebrow place-map-label">地图位置</p>
+  {navigation && <button class="place-navigation dad-primary" type="button" data-place-navigation data-web-url={webNavigation} data-app-url={appNavigation}>导航</button>}
+  <MapExplorer id={`place-map-${placeCode}`} {dataset} {tiles} {labels} filterLabels={{}} focusPlaceId={placeCode} autoScrollToFocus={false} openFocusedPopup={false} />
+</section>}
+<script>
+  for(const button of document.querySelectorAll<HTMLButtonElement>("[data-place-navigation]"))button.addEventListener("click",()=>{
+    const webUrl=button.dataset.webUrl,appUrl=button.dataset.appUrl;
+    if(!webUrl||!appUrl)return;
+    if(!/iPhone|iPad|iPod/i.test(navigator.userAgent)){location.assign(webUrl);return;}
+    let opened=false;
+    const onVisibility=()=>{if(document.visibilityState==="hidden")opened=true;};
+    document.addEventListener("visibilitychange",onVisibility,{once:true});
+    setTimeout(()=>{if(!opened&&document.visibilityState!=="hidden")location.assign(webUrl);},900);
+    location.assign(appUrl);
+  });
+</script>
+<style>
+  .place-location-map{margin-top:18px;padding:20px;border-radius:26px;background:#fff;box-shadow:var(--dad-shadow)}
+  .place-map-label{margin:0 0 10px}
+  .place-location-map :global(.map-controls),.place-location-map :global(.map-fallback){display:none}
+  .place-location-map :global(.interactive-map){min-height:clamp(280px,62vw,430px);border-radius:18px}
+  .place-navigation{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin:0 0 16px;padding:12px 18px;border:0;border-radius:15px;background:#1f78dc;color:#fff;font-size:17px;font-weight:850;line-height:1.2;cursor:pointer;box-shadow:0 9px 22px rgba(31,120,220,.2)}
+  @media(min-width:700px){.place-location-map{padding:28px}}
+</style>

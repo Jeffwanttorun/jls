@@ -1,0 +1,187 @@
+{
+  "jobId": "c7dcdd5e-b6c9-4923-8311-b53a947bc9e8",
+  "sourceSha256": "cd5da7e2a0391a4d48a4d55cad5720fb8b482ed75fd864e05b2f98933f458b19",
+  "counts": {
+    "success": 6,
+    "failed": 4,
+    "skipped": 0,
+    "warnings": 15,
+    "places": 3
+  },
+  "rows": [
+    {
+      "sheet": "地点库",
+      "row": 3,
+      "code": "WY-9801",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 2,
+      "code": "WY-9802",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 4,
+      "code": "WY-9803",
+      "outcome": "failed",
+      "issues": [
+        {
+          "level": "error",
+          "field": "名称",
+          "message": "缺失必填字段"
+        },
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 5,
+      "code": "WY-9804",
+      "outcome": "failed",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "error",
+          "field": "上级地点ID",
+          "message": "引用不存在或未通过校验：WY-9899"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 6,
+      "code": "WY-9805",
+      "outcome": "failed",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "error",
+          "field": "数据库",
+          "message": "new row for relation \"places\" violates check constraint \"test_row_rejection\""
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 7,
+      "code": "WY-9806",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "路线库",
+      "row": 2,
+      "code": "R-9801",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        }
+      ]
+    },
+    {
+      "sheet": "路线库",
+      "row": 3,
+      "code": "R-9802",
+      "outcome": "failed",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        },
+        {
+          "level": "error",
+          "field": "地点序列（地点ID）",
+          "message": "引用不存在或未通过校验：WY-9899"
+        }
+      ]
+    },
+    {
+      "sheet": "实地核验",
+      "row": 2,
+      "code": "V-9801",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "坐标候选匹配",
+      "row": 2,
+      "code": "C-9801",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "人工确认",
+          "message": "Excel 确认标记缺少确认人/确认时间审计凭证，仅保留来源声明；候选保持未确认"
+        }
+      ]
+    }
+  ]
+}

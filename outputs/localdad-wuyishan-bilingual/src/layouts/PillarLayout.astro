@@ -1,0 +1,36 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import ContentCard from "../components/ContentCard.astro";
+import type { Locale } from "../i18n/config";
+import type { PillarId } from "../data/pillars";
+
+interface PillarItem {
+  title: string;
+  description: string;
+  href: string;
+  eyebrow?: string;
+  tags?: string[];
+}
+
+interface Props {
+  pillarId: PillarId;
+  title: string;
+  description: string;
+  eyebrow?: string;
+  lang?: Locale;
+  items?: PillarItem[];
+}
+
+const { pillarId, title, description, eyebrow, lang = "en", items = [] } = Astro.props;
+---
+<BaseLayout title={title} description={description} lang={lang}>
+  <header class="page-head hub-head" data-pillar={pillarId}>
+    {eyebrow && <p class="kicker">{eyebrow}</p>}
+    <h1>{title.split(" | ")[0]}</h1>
+    <p>{description}</p>
+  </header>
+  <slot />
+  {items.length > 0 && <section class="collection-section" aria-label="Published content">
+    <div class="guide-grid">{items.map((item) => <ContentCard {...item} />)}</div>
+  </section>}
+</BaseLayout>

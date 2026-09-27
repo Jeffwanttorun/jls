@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-13T17:26:08.159Z",
+  "url": "https://127.0.0.1:5174",
+  "results": [
+    {
+      "browser": "Microsoft Edge",
+      "viewport": "390x844",
+      "pages": 14,
+      "horizontalOverflow": false,
+      "writeRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "Microsoft Edge",
+      "viewport": "360x800",
+      "pages": 14,
+      "horizontalOverflow": false,
+      "writeRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "Chromium (Chrome engine)",
+      "viewport": "390x844",
+      "pages": 14,
+      "horizontalOverflow": false,
+      "writeRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "Chromium (Chrome engine)",
+      "viewport": "360x800",
+      "pages": 14,
+      "horizontalOverflow": false,
+      "writeRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "WebKit (Safari engine)",
+      "viewport": "390x844",
+      "pages": 14,
+      "horizontalOverflow": false,
+      "writeRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "browser": "WebKit (Safari engine)",
+      "viewport": "360x800",
+      "pages": 14,
+      "horizontalOverflow": false,
+      "writeRequests": 0,
+      "pageErrors": []
+    }
+  ]
+}

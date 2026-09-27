@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "at": "2026-09-09T19:54:43.778Z",
+  "backup": "database/seed/phase2-final-audit-full.sql",
+  "restored": {
+    "passed": true,
+    "database": "wymap_audit_a86998b8582d40e681691d9b41aa1226",
+    "tables": {
+      "coordinate_candidates": {
+        "count": 60,
+        "checksum": "a770025c2e910151093f30e4d8f05848"
+      },
+      "guide_places": {
+        "count": 8,
+        "checksum": "15d75cdfbfc49e340597a8a8fab29eab"
+      },
+      "guide_routes": {
+        "count": 2,
+        "checksum": "aa4783adbe6f6d9878c1638312536ce4"
+      },
+      "guides": {
+        "count": 10,
+        "checksum": "15a7d590fb88c01d8d7fdfa9acf452a3"
+      },
+      "import_jobs": {
+        "count": 1,
+        "checksum": "cf5ef03aa6e22a4c766aa4e8aecc6a4c"
+      },
+      "import_rows": {
+        "count": 93,
+        "checksum": "c054ef7d3e049cfcaaff75b17fec2e19"
+      },
+      "media": {
+        "count": 0,
+        "checksum": null
+      },
+      "place_accessibility": {
+        "count": 46,
+        "checksum": "deee5a10af7406ed50f3cad3a6502e39"
+      },
+      "place_coordinates": {
+        "count": 45,
+        "checksum": "2f6f7bdfde79b3cad18c50cd05e4c7f0"
+      },
+      "place_name_history": {
+        "count": 6,
+        "checksum": "f22dd440289795f1167ac7c0af60d25c"
+      },
+      "place_nature": {
+        "count": 0,
+        "checksum": null
+      },
+      "place_practical_info": {
+        "count": 46,
+        "checksum": "887e322a151c35ff45e4a3af484539f0"
+      },
+      "place_recycle_history": {
+        "count": 1,
+        "checksum": "c965d2298ed51c0b9982aa54eaf58a67"
+      },
+      "place_water": {
+        "count": 0,
+        "checksum": null
+      },
+      "places": {
+        "count": 61,
+        "checksum": "97084a707d4f13b9e3da731fcf5b2ca0"
+      },
+      "route_place_links": {
+        "count": 0,
+        "checksum": null
+      },
+      "route_stops": {
+        "count": 14,
+        "checksum": "a03ce6be8c0e10a6cec93c0f3cb38550"
+      },
+      "routes": {
+        "count": 4,
+        "checksum": "166ac3a1bb83624b38f4d2bfda0b9260"
+      },
+      "schema_migrations": {
+        "count": 10,
+        "checksum": "70c1ebb0bc53464b303e5166554806db"
+      },
+      "spatial_ref_sys": {
+        "count": 8500,
+        "checksum": "fdb0e80574bc8aa77b19b07db09aee70"
+      },
+      "taxonomy_terms": {
+        "count": 34,
+        "checksum": "7f7799be6a0aafa2a0769d16dc024954"
+      },
+      "verification_media": {
+        "count": 0,
+        "checksum": null
+      },
+      "verifications": {
+        "count": 0,
+        "checksum": null
+      }
+    },
+    "schemaVerified": [
+      "columns",
+      "constraints",
+      "indexes",
+      "triggers",
+      "views",
+      "enums",
+      "functions",
+      "extensions",
+      "sequences"
+    ],
+    "backupSha256": "4f7f97c118352d746f8189047ec06edcf3729eefed1ba8700a63aabd005cf193"
+  },
+  "upgrades": [
+    {
+      "backup": "database/seed/phase1-full.sql",
+      "database": "wymap_audit_7cfdf971ed2d4aba87f767814d55f4ca",
+      "initial": [
+        "001_initial.sql",
+        "002_integrity.sql"
+      ],
+      "applied": [
+        "001_initial.sql",
+        "002_integrity.sql",
+        "003_coordinate_history.sql",
+        "004_coordinate_audit_integrity.sql",
+        "005_position_certainty.sql",
+        "006_under_construction.sql",
+        "007_corridor_display.sql",
+        "008_place_name_history.sql",
+        "009_documented_name_changes.sql",
+        "010_place_recycle_bin.sql"
+      ],
+      "places": 46,
+      "allOriginalPlaceFieldsUnchanged": true,
+      "routeStopsUnchanged": true,
+      "secondMigrationRunUnchanged": true,
+      "passed": true
+    },
+    {
+      "backup": "database/seed/phase2-satellite-full.sql",
+      "database": "wymap_audit_d1d8a53efbfe44d091e09745e784bf20",
+      "initial": [
+        "001_initial.sql",
+        "002_integrity.sql",
+        "003_coordinate_history.sql",
+        "004_coordinate_audit_integrity.sql",
+        "005_position_certainty.sql"
+      ],
+      "applied": [
+        "001_initial.sql",
+        "002_integrity.sql",
+        "003_coordinate_history.sql",
+        "004_coordinate_audit_integrity.sql",
+        "005_position_certainty.sql",
+        "006_under_construction.sql",
+        "007_corridor_display.sql",
+        "008_place_name_history.sql",
+        "009_documented_name_changes.sql",
+        "010_place_recycle_bin.sql"
+      ],
+      "places": 46,
+      "allOriginalPlaceFieldsUnchanged": true,
+      "routeStopsUnchanged": true,
+      "secondMigrationRunUnchanged": true,
+      "passed": true
+    }
+  ],
+  "realDataTests": "All application writes were confined to randomly named isolated databases. Source used exported read-only snapshot."
+}

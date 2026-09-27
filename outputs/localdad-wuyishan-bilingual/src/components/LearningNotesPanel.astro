@@ -1,0 +1,39 @@
+---
+import type { LearningNotes } from "../types/content";
+
+interface Props {
+  notes?: LearningNotes;
+}
+
+const { notes } = Astro.props;
+const readingFocus = notes?.readingFocus ?? [];
+const vocabulary = notes?.keyVocabulary ?? [];
+const usefulSentences = notes?.usefulSentences ?? [];
+const speakingPractice = notes?.speakingPractice ?? [];
+const guideUsage = notes?.guideUsage ?? [];
+const hasNotes = Boolean(notes && (
+  notes.learningLevel ||
+  readingFocus.length ||
+  notes.speakingTopic ||
+  vocabulary.length ||
+  usefulSentences.length ||
+  speakingPractice.length ||
+  guideUsage.length
+));
+---
+{hasNotes && <section class="content-module draft-learning-notes" aria-labelledby="draft-learning-notes-heading">
+  <header>
+    <p class="kicker">Draft review</p>
+    <h2 id="draft-learning-notes-heading">English learning notes</h2>
+    <p>These notes support Jeff’s private English practice and are not part of the public visitor article.</p>
+  </header>
+  <dl>
+    {notes?.learningLevel && <div><dt>Learning level</dt><dd>{notes.learningLevel}</dd></div>}
+    {readingFocus.length > 0 && <div><dt>Reading focus</dt><dd>{readingFocus.join(" ")}</dd></div>}
+    {notes?.speakingTopic && <div><dt>Speaking topic</dt><dd>{notes.speakingTopic}</dd></div>}
+  </dl>
+  {vocabulary.length > 0 && <section><h3>Key vocabulary</h3><ul>{vocabulary.map((item) => <li><strong>{item.term}</strong>{item.meaning ? ` — ${item.meaning}` : ""}</li>)}</ul></section>}
+  {usefulSentences.length > 0 && <section><h3>Useful sentences</h3><ul>{usefulSentences.map((sentence) => <li>{sentence}</li>)}</ul></section>}
+  {speakingPractice.length > 0 && <section><h3>Speaking practice</h3><ul>{speakingPractice.map((sentence) => <li>{sentence}</li>)}</ul></section>}
+  {guideUsage.length > 0 && <section><h3>Guide usage</h3><ul>{guideUsage.map((item) => <li>{item}</li>)}</ul></section>}
+</section>}

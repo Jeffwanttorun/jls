@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-09-08T14:00:52.015Z",
+  "data": [
+    {
+      "table": "coordinate_candidates",
+      "count": 0,
+      "checksum": null
+    },
+    {
+      "table": "guide_places",
+      "count": 8,
+      "checksum": "15d75cdfbfc49e340597a8a8fab29eab"
+    },
+    {
+      "table": "guide_routes",
+      "count": 2,
+      "checksum": "aa4783adbe6f6d9878c1638312536ce4"
+    },
+    {
+      "table": "guides",
+      "count": 10,
+      "checksum": "15a7d590fb88c01d8d7fdfa9acf452a3"
+    },
+    {
+      "table": "import_jobs",
+      "count": 1,
+      "checksum": "cf5ef03aa6e22a4c766aa4e8aecc6a4c"
+    },
+    {
+      "table": "import_rows",
+      "count": 93,
+      "checksum": "c054ef7d3e049cfcaaff75b17fec2e19"
+    },
+    {
+      "table": "media",
+      "count": 0,
+      "checksum": null
+    },
+    {
+      "table": "place_accessibility",
+      "count": 46,
+      "checksum": "deee5a10af7406ed50f3cad3a6502e39"
+    },
+    {
+      "table": "place_coordinates",
+      "count": 0,
+      "checksum": null
+    },
+    {
+      "table": "place_nature",
+      "count": 0,
+      "checksum": null
+    },
+    {
+      "table": "place_practical_info",
+      "count": 46,
+      "checksum": "887e322a151c35ff45e4a3af484539f0"
+    },
+    {
+      "table": "place_water",
+      "count": 0,
+      "checksum": null
+    },
+    {
+      "table": "places",
+      "count": 46,
+      "checksum": "6b7d0866840647337106dc2f3a7fc54f"
+    },
+    {
+      "table": "route_place_links",
+      "count": 0,
+      "checksum": null
+    },
+    {
+      "table": "route_stops",
+      "count": 14,
+      "checksum": "a03ce6be8c0e10a6cec93c0f3cb38550"
+    },
+    {
+      "table": "routes",
+      "count": 4,
+      "checksum": "166ac3a1bb83624b38f4d2bfda0b9260"
+    },
+    {
+      "table": "schema_migrations",
+      "count": 4,
+      "checksum": "659ec532ee68fc72e1eea906621f8d8c"
+    },
+    {
+      "table": "taxonomy_terms",
+      "count": 33,
+      "checksum": "dbb95a949eb810c90d03e7ca1c8c7cf3"
+    },
+    {
+      "table": "verification_media",
+      "count": 0,
+      "checksum": null
+    },
+    {
+      "table": "verifications",
+      "count": 0,
+      "checksum": null
+    }
+  ],
+  "files": {
+    "backend/src/coordinates.ts": "13ef8c2994ce954a0c8c800575744829826fe079602d4a5f74f9835b9cd2d784",
+    "backend/src/coordinate-routes.ts": "389b976b68c2673a1563770eb63601765412b712ad5209194c88456577189bb0",
+    "backend/src/checks.ts": "b95f9944bfdd50e7c4f554c37af17b3ab7fb56bbf306d8a5f6da275ab5903a64",
+    "shared/domain.ts": "d3ea88715ac76e5296e9206a8d30e3fef8ff5733fe4c8d0789c0048e7e6d8fdd",
+    "admin/src/CoordinateManager.vue": "2de34c3d27d920ad481fed7ddecfcaba6723c93e061e9972d750330b8033804c",
+    "database/migrations/001_initial.sql": "38664af2cdae9ea9bdf4492b375295249448bbf0f0a7d2b57c2b1ad6d0fd8b33",
+    "database/migrations/002_integrity.sql": "0bdbc01b4da33dbebb869c0fdce1011e563325f1b52df71ff5e83f9b6d7db8a8",
+    "database/migrations/003_coordinate_history.sql": "37781205ffe468f335b14fe40d896789146e332fe24b20993b0156476586010d",
+    "database/migrations/004_coordinate_audit_integrity.sql": "d6d3ac1e8ded3cb9c00544e67443e4f5015b6291d1849528f3d438fac2af1355"
+  },
+  "envWithoutToken": "b99c94a859829e46e46fbe8f95b9a35a3382ba5879698753b94ad20e07d8ad15"
+}

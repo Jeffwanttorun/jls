@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "实际HTTPS列表60当前地点，默认路线顺序及0100补零显示",
+    "实际库排序编辑面板可打开和取消，零写入",
+    "在建状态筛选只返回昆虫展示馆",
+    "黄村乌龙馆改名父级正确，详情及坐标管理可读",
+    "重复馆保留可查，指向WY-0041且不开放新的判点入口",
+    "真实腾讯卫星地图加载，原4个正式地点仍可用于内部核对",
+    "实际公开接口P2—P5和非正常状态坐标保护"
+  ],
+  "errors": [],
+  "writeRequests": 0,
+  "checkedAt": "2026-09-09T08:47:05.982Z",
+  "browser": "installed Edge; HTTPS trust verified without ignoring certificate errors"
+}

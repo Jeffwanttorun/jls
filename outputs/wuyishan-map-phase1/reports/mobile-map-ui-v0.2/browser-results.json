@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-24T01:32:27.972Z",
+  "note": "自动化不能替代实体 iPhone Safari 人工验收",
+  "results": [
+    {
+      "viewport": "360x800",
+      "overlayHeight": 800,
+      "visualViewportHeight": 800,
+      "scroll": {
+        "clientHeight": 310,
+        "scrollHeight": 379,
+        "overflow": "auto",
+        "touchAction": "pan-y"
+      },
+      "markerStyles": [
+        {
+          "width": 40,
+          "height": 48,
+          "anchor": {
+            "x": 20,
+            "y": 43
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 34,
+          "maxY": 42,
+          "symbol": true
+        },
+        {
+          "width": 32,
+          "height": 40,
+          "anchor": {
+            "x": 16,
+            "y": 35
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 26,
+          "maxY": 34,
+          "symbol": true
+        },
+        {
+          "width": 48,
+          "height": 56,
+          "anchor": {
+            "x": 24,
+            "y": 51
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 42,
+          "maxY": 50,
+          "symbol": true
+        },
+        {
+          "width": 30,
+          "height": 38,
+          "anchor": {
+            "x": 15,
+            "y": 33
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 24,
+          "maxY": 32,
+          "symbol": true
+        }
+      ],
+      "stateChecks": [
+        "单地点及选中地点使用完整 focus marker"
+      ],
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390x844",
+      "overlayHeight": 844,
+      "visualViewportHeight": 844,
+      "scroll": {
+        "clientHeight": 329,
+        "scrollHeight": 354,
+        "overflow": "auto",
+        "touchAction": "pan-y"
+      },
+      "markerStyles": [
+        {
+          "width": 40,
+          "height": 48,
+          "anchor": {
+            "x": 20,
+            "y": 43
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 34,
+          "maxY": 42,
+          "symbol": true
+        },
+        {
+          "width": 32,
+          "height": 40,
+          "anchor": {
+            "x": 16,
+            "y": 35
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 26,
+          "maxY": 34,
+          "symbol": true
+        },
+        {
+          "width": 48,
+          "height": 56,
+          "anchor": {
+            "x": 24,
+            "y": 51
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 42,
+          "maxY": 50,
+          "symbol": true
+        },
+        {
+          "width": 30,
+          "height": 38,
+          "anchor": {
+            "x": 15,
+            "y": 33
+          },
+          "minX": 5,
+          "minY": 5,
+          "maxX": 24,
+          "maxY": 32,
+          "symbol": true
+        }
+      ],
+      "stateChecks": [
+        "单地点及选中地点使用完整 focus marker",
+        "全部地点包含普通和服务 marker",
+        "组合内容包含主要和弱化服务 marker",
+        "主题地图使用完整 focus marker，并弱化服务点",
+        "一号风景道起终点、普通及缩放后服务 marker 正常"
+      ],
+      "consoleErrors": []
+    }
+  ]
+}

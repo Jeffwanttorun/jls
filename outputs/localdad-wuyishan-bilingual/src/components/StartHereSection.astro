@@ -1,0 +1,21 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  text: string;
+  linkLabel: string;
+  href: string;
+}
+
+const { id, title, text, linkLabel, href } = Astro.props;
+---
+<section class="first-visit-section" aria-labelledby={`${id}-heading`}>
+  <div>
+    <p class="kicker">First visit</p>
+    <h2 id={`${id}-heading`}>{title}</h2>
+  </div>
+  <div>
+    <p>{text}</p>
+    <a class="button" href={href}>{linkLabel}</a>
+  </div>
+</section>

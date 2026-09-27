@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "businessTablesUnchanged": 19,
+  "places": 46,
+  "formalCoordinates": 0,
+  "candidates": 0,
+  "verifications": 0,
+  "existingMigrationsAndPublicProtectionUnchanged": [
+    "backend/src/checks.ts",
+    "shared/domain.ts",
+    "database/migrations/001_initial.sql",
+    "database/migrations/002_integrity.sql",
+    "database/migrations/003_coordinate_history.sql",
+    "database/migrations/004_coordinate_audit_integrity.sql"
+  ],
+  "envOtherFieldsUnchanged": true,
+  "newMigration": "005_position_certainty.sql",
+  "checkedAt": "2026-09-08T14:12:40.966Z"
+}

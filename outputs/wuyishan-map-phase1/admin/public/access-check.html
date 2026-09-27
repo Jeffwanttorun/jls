@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>手机 HTTPS 与定位检查</title>
+<style>body{font:17px/1.7 system-ui,sans-serif;margin:0;background:#f3f6f4;color:#173f32}main{max-width:580px;margin:auto;padding:24px}section{background:white;border:1px solid #ccd9d1;border-radius:10px;padding:18px;margin:18px 0}button,a{display:block;padding:14px;border-radius:7px;margin:12px 0}button{width:100%;background:#176348;color:white;font:inherit;border:0;min-height:48px}button:disabled{opacity:.6}p{overflow-wrap:anywhere}.error{color:#9b2020}</style>
+<main><h1>手机连接检查</h1><p>只验证本机浏览器能力，位置不会上传、不会保存，也不会生成候选。</p><section><h2>HTTPS</h2><p id="secure"></p><p>浏览器应没有证书警告，并在网站信息中显示连接安全。</p></section><section><h2>定位权限</h2><button id="locate">验证定位权限（不保存）</button><p id="result" role="status">点击后，在浏览器弹窗中允许使用位置。</p></section><a href="/map">返回内部地图</a></main>
+<script>
+const secure=document.getElementById('secure'),button=document.getElementById('locate'),result=document.getElementById('result');
+secure.textContent=location.protocol==='https:'&&isSecureContext?'通过：HTTPS 安全上下文正常':'未通过：请先安装并信任本机证书，再通过 HTTPS 打开。';
+button.disabled=!isSecureContext||!navigator.geolocation;
+button.onclick=()=>{button.disabled=true;result.className='';result.textContent='正在验证定位，请留意权限提示…';let settled=false;const done=(text,error=false)=>{if(settled)return;settled=true;clearTimeout(timer);result.textContent=text;result.className=error?'error':'';button.disabled=false;};const timer=setTimeout(()=>done('定位超时；可到窗边或室外重试。没有保存任何数据。',true),16000);
+try{navigator.geolocation.getCurrentPosition(p=>done('通过：定位权限正常，已取得当前位置。精度约 '+Math.round(p.coords.accuracy)+' 米；未上传、未保存。'),e=>done(e.code===1?'位置权限被拒绝。请在浏览器的网站设置中允许位置，然后重试。':e.code===3?'定位超时，请到信号较好的位置重试。':'暂时无法取得位置，请开启手机定位服务后重试。',true),{enableHighAccuracy:true,maximumAge:0,timeout:15000});}catch{done('浏览器定位不可用，请检查系统定位服务。',true)}};
+</script></html>

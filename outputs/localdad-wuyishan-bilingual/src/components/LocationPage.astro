@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LocationDetails from "./LocationDetails.astro";
+import PhotoGallery from "./PhotoGallery.astro";
+import type { LocationRecord } from "../types/location";
+import { breadcrumbSchema, placeSchema } from "../lib/structured-data";
+import { toLocationDetails } from "../lib/location";
+import Breadcrumbs from "./Breadcrumbs.astro";
+import AuthorInfo from "./AuthorInfo.astro";
+import LinkedVideos from "./LinkedVideos.astro";
+import RelatedContent from "./RelatedContent.astro";
+import TopicList from "./TopicList.astro";
+import DraftPreviewBanner from "./DraftPreviewBanner.astro";
+const props = Astro.props as LocationRecord & { preview?: boolean };
+const { title, englishName, chineseName, localSummary, description, area = "Wuyishan", image, imageWebp, imageSrcset, imageAlt = "", imageWidth, imageHeight, parentHref = "/guides/outdoors", parentLabel = "Mountains & Outdoors", coordinates, lang = "en" } = props;
+const displayName = chineseName ? `${englishName} · ${chineseName}` : englishName;
+const details = toLocationDetails(props);
+const base = Astro.site;
+const pageUrl = base ? new URL(Astro.url.pathname, base).toString() : undefined;
+const schemas = !props.preview && base ? [placeSchema({ name:displayName, alternateName:chineseName, description:localSummary, url:pageUrl!, image:image ? new URL(image, base).toString() : undefined, containedInPlace:"Wuyishan, Fujian, China", latitude:coordinates?.latitude, longitude:coordinates?.longitude, schemaType:props.schemaType }), breadcrumbSchema([
+  { name:"Locations", url:new URL("/locations", base).toString() },
+  { name:displayName, url:pageUrl! },
+])] : [];
+---
+<BaseLayout title={`${props.preview ? "Draft Preview: " : ""}${title} | Wuyishan Location Guide`} description={description} image={image} imageAlt={imageAlt} imageWidth={imageWidth} imageHeight={imageHeight} lang={lang} structuredData={schemas} noIndex={props.preview}>
+  {props.preview && <DraftPreviewBanner contentType="place page" />}
+  <header class:list={["location-hero", { "no-image": !image }]}>
+    {image && <picture>{imageWebp && <source srcset={imageWebp} media="(min-width: 961px)" type="image/webp" />}<img src={image} srcset={imageSrcset} sizes="100vw" alt={imageAlt} width={imageWidth} height={imageHeight} loading="eager" fetchpriority="high" decoding="async" /></picture>}
+    <div class="location-hero-copy"><Breadcrumbs items={[{label:"Locations",href:"/locations"},{label:parentLabel,href:parentHref},{label:displayName}]} /><p class="kicker">{area} · Location guide</p><h1>{displayName}</h1><p>{localSummary}</p></div>
+  </header>
+  <LocationDetails details={details} />
+  {props.whyItMatters && <section class="content-module location-significance" aria-labelledby="why-it-matters-heading"><header><p class="kicker">Context</p><h2 id="why-it-matters-heading">Why this place matters</h2></header><p>{props.whyItMatters}</p></section>}
+  <div class="article-shell location-body"><aside class="article-aside"><p class="kicker">From Jeff</p><p>My own notes about this place. The practical details are listed separately above.</p></aside><article class="prose guide-prose"><slot /></article></div>
+  {details.gallery.length > 0 && <PhotoGallery photos={details.gallery} />}
+  <LinkedVideos videos={details.videos} />
+  <TopicList topicIds={details.relatedTopics} />
+  <AuthorInfo author={details.author} />
+  <slot name="map" />
+  <slot name="related" />
+  <RelatedContent routes={details.relatedRoutes} stories={details.relatedStories} />
+</BaseLayout>

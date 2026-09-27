@@ -1,0 +1,237 @@
+{
+  "passed": true,
+  "originalTablesUnchanged": [
+    {
+      "table": "coordinate_candidates",
+      "before": {
+        "count": 60,
+        "checksum": "a770025c2e910151093f30e4d8f05848"
+      },
+      "after": {
+        "count": 60,
+        "checksum": "a770025c2e910151093f30e4d8f05848"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "guide_places",
+      "before": {
+        "count": 8,
+        "checksum": "15d75cdfbfc49e340597a8a8fab29eab"
+      },
+      "after": {
+        "count": 8,
+        "checksum": "15d75cdfbfc49e340597a8a8fab29eab"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "guide_routes",
+      "before": {
+        "count": 2,
+        "checksum": "aa4783adbe6f6d9878c1638312536ce4"
+      },
+      "after": {
+        "count": 2,
+        "checksum": "aa4783adbe6f6d9878c1638312536ce4"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "guides",
+      "before": {
+        "count": 10,
+        "checksum": "15a7d590fb88c01d8d7fdfa9acf452a3"
+      },
+      "after": {
+        "count": 10,
+        "checksum": "15a7d590fb88c01d8d7fdfa9acf452a3"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "import_jobs",
+      "before": {
+        "count": 1,
+        "checksum": "cf5ef03aa6e22a4c766aa4e8aecc6a4c"
+      },
+      "after": {
+        "count": 1,
+        "checksum": "cf5ef03aa6e22a4c766aa4e8aecc6a4c"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "import_rows",
+      "before": {
+        "count": 93,
+        "checksum": "c054ef7d3e049cfcaaff75b17fec2e19"
+      },
+      "after": {
+        "count": 93,
+        "checksum": "c054ef7d3e049cfcaaff75b17fec2e19"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "media",
+      "before": {
+        "count": 0,
+        "checksum": null
+      },
+      "after": {
+        "count": 0,
+        "checksum": null
+      },
+      "unchanged": true
+    },
+    {
+      "table": "place_accessibility",
+      "before": {
+        "count": 46,
+        "checksum": "deee5a10af7406ed50f3cad3a6502e39"
+      },
+      "after": {
+        "count": 46,
+        "checksum": "deee5a10af7406ed50f3cad3a6502e39"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "place_coordinates",
+      "before": {
+        "count": 45,
+        "checksum": "2f6f7bdfde79b3cad18c50cd05e4c7f0"
+      },
+      "after": {
+        "count": 45,
+        "checksum": "2f6f7bdfde79b3cad18c50cd05e4c7f0"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "place_nature",
+      "before": {
+        "count": 0,
+        "checksum": null
+      },
+      "after": {
+        "count": 0,
+        "checksum": null
+      },
+      "unchanged": true
+    },
+    {
+      "table": "place_practical_info",
+      "before": {
+        "count": 46,
+        "checksum": "887e322a151c35ff45e4a3af484539f0"
+      },
+      "after": {
+        "count": 46,
+        "checksum": "887e322a151c35ff45e4a3af484539f0"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "place_water",
+      "before": {
+        "count": 0,
+        "checksum": null
+      },
+      "after": {
+        "count": 0,
+        "checksum": null
+      },
+      "unchanged": true
+    },
+    {
+      "table": "places",
+      "before": {
+        "count": 61,
+        "checksum": "f57757d53bf2d7883b1166a66ed07b5b"
+      },
+      "after": {
+        "count": 61,
+        "checksum": "f57757d53bf2d7883b1166a66ed07b5b"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "route_place_links",
+      "before": {
+        "count": 0,
+        "checksum": null
+      },
+      "after": {
+        "count": 0,
+        "checksum": null
+      },
+      "unchanged": true
+    },
+    {
+      "table": "route_stops",
+      "before": {
+        "count": 14,
+        "checksum": "a03ce6be8c0e10a6cec93c0f3cb38550"
+      },
+      "after": {
+        "count": 14,
+        "checksum": "a03ce6be8c0e10a6cec93c0f3cb38550"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "routes",
+      "before": {
+        "count": 4,
+        "checksum": "166ac3a1bb83624b38f4d2bfda0b9260"
+      },
+      "after": {
+        "count": 4,
+        "checksum": "166ac3a1bb83624b38f4d2bfda0b9260"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "taxonomy_terms",
+      "before": {
+        "count": 34,
+        "checksum": "7f7799be6a0aafa2a0769d16dc024954"
+      },
+      "after": {
+        "count": 34,
+        "checksum": "7f7799be6a0aafa2a0769d16dc024954"
+      },
+      "unchanged": true
+    },
+    {
+      "table": "verification_media",
+      "before": {
+        "count": 0,
+        "checksum": null
+      },
+      "after": {
+        "count": 0,
+        "checksum": null
+      },
+      "unchanged": true
+    },
+    {
+      "table": "verifications",
+      "before": {
+        "count": 0,
+        "checksum": null
+      },
+      "after": {
+        "count": 0,
+        "checksum": null
+      },
+      "unchanged": true
+    }
+  ],
+  "allPlaceFieldsUnchanged": true,
+  "environmentFileUnchanged": true,
+  "addedHistoryRows": 6,
+  "note": "Only new schema migrations and six evidenced historical-name audit rows were added. No test mutations to real data."
+}

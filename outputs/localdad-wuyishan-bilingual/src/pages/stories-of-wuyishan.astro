@@ -1,0 +1,15 @@
+---
+import PillarLayout from "../layouts/PillarLayout.astro";
+import PillarSection from "../components/PillarSection.astro";
+---
+<PillarLayout pillarId="stories-of-wuyishan" title="Stories of Wuyishan | Local Dad Jeff" description="Follow the people and everyday lives connected with Wuyishan through future interviews, local stories, and videos built from real experience." eyebrow="Stories of Wuyishan">
+  <section class="pillar-introduction" aria-labelledby="stories-introduction-heading">
+    <div><p class="kicker">Human stories</p><h2 id="stories-introduction-heading">The people who live here are part of the story.</h2></div>
+    <div><p>Stories of Wuyishan shares the people behind the landscape: tea makers, villagers, researchers, and local families. Future stories will be based on real conversations, permission, and clearly identified experience.</p></div>
+  </section>
+  <div class="pillar-sections">
+    <PillarSection id="people-and-interviews" title="People and Interviews" introduction="Future interviews will include tea makers, villagers, local workers, and other people connected with Wuyishan." futureDirection="Real interviews published with permission and connected to relevant places and themes." />
+    <PillarSection id="local-stories" title="Local Stories" introduction="Future local stories will connect people’s experiences with the landscape, tea, work, and everyday life." futureDirection="Firsthand stories with clear context and verification." />
+    <PillarSection id="story-videos" title="Videos" introduction="Future videos will connect people, places, topics, and stories within the same Wuyishan knowledge system." futureDirection="Interviews, place-based videos, and visual stories using verified information." />
+  </div>
+</PillarLayout>

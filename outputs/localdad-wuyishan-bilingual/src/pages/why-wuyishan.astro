@@ -1,0 +1,37 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WhyChapter from "../components/WhyChapter.astro";
+
+const publishedKnowledgeSlugs = new Set(
+  (await getCollection("knowledgeArticles", ({ data }) => data.recordStatus === "published")).map((entry: CollectionEntry<"knowledgeArticles">) => entry.data.slug),
+);
+const publishedLinks = (items: Array<{ slug:string; title:string }>) => items
+  .filter((item) => publishedKnowledgeSlugs.has(item.slug))
+  .map((item) => ({ title:item.title, href:`/why-wuyishan/${item.slug}` }));
+
+const landscapeLinks = [
+  ...publishedLinks([{ slug:"why-wuyishan-matters", title:"Why Wuyishan" }]),
+  { title:"Main Scenic Area", href:"/main-scenic-area" },
+  { title:"Jiuqu Stream", href:"/locations/jiuqu-stream" },
+];
+const teaLinks = publishedLinks([
+  { slug:"tea-culture-wuyishan", title:"Tea and Daily Life" },
+  { slug:"tea-garden-wuyishan", title:"Visit a Tea Garden" },
+]);
+const forestLinks = publishedLinks([
+  { slug:"natural-heritage-wuyishan", title:"Forest and Natural Heritage" },
+]);
+const peopleLinks = publishedLinks([
+  { slug:"villages-wuyishan", title:"Villages and Local Life" },
+]);
+---
+<BaseLayout title="Why Wuyishan | Local Dad Jeff" description="Explore Wuyishan through four chapters: landscape, tea, forest, and people and ideas.">
+  <h1 class="visually-hidden">Why Wuyishan</h1>
+  <div class="why-chapters why-only-chapters" aria-label="Why Wuyishan — four chapters">
+    <WhyChapter number="01" id="landscape" title="Landscape" image="/chapter-media/landscape.webp" imageAlt="A mountain road following a forested river in Wuyishan" links={landscapeLinks} />
+    <WhyChapter number="02" id="tea" title="Tea" image="/chapter-media/tea.webp" imageAlt="Tea fields spreading across a Wuyishan valley" links={teaLinks} />
+    <WhyChapter number="03" id="forest" title="Forest" image="/chapter-media/forest.webp" imageAlt="A mantis observed in Wuyishan" links={forestLinks} />
+    <WhyChapter number="04" id="people-and-ideas" title="People and Ideas" image="/chapter-media/people.webp" imageAlt="A local family spending time beside a Wuyishan stream" links={peopleLinks} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,23 @@
+# Local runtime, databases, logs, downloads, and temporary integration files
+/work/
+
+# Scratch copy outside the maintained applications
+/admin/
+
+# Generated delivery archives and checksums
+/outputs/*.zip
+/outputs/*.json
+
+# Common generated and secret files
+**/node_modules/
+**/dist/
+**/.astro/
+**/.vercel/
+**/.env
+**/.env.*
+!**/.env.example
+*.log
+*.pem
+*.key
+*.crt
+

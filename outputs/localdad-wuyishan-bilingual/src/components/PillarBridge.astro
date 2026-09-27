@@ -1,0 +1,17 @@
+---
+interface Props {
+  id: string;
+  text: string;
+  linkLabel: string;
+  href: string;
+}
+
+const { id, text, linkLabel, href } = Astro.props;
+---
+<aside class="pillar-bridge" aria-labelledby={`${id}-heading`}>
+  <div>
+    <p class="kicker">Continue exploring</p>
+    <h2 id={`${id}-heading`}>{text}</h2>
+  </div>
+  <a class="text-link" href={href}>{linkLabel} →</a>
+</aside>

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-10T07:29:00.661Z",
+  "url": "https://127.0.0.1:5174",
+  "provider": "Tencent JavaScript API GL",
+  "sdkLoaded": true,
+  "canvasCount": 1,
+  "successfulProviderResponses": 13,
+  "providerHosts": [
+    "map.qq.com",
+    "pr.map.qq.com",
+    "confinfo.map.qq.com",
+    "apikey.map.qq.com",
+    "overseactrl.map.qq.com",
+    "vectorsdk.map.qq.com"
+  ],
+  "writeRequests": 0,
+  "sensitiveFileRequestStatus": 403,
+  "browserErrors": [],
+  "markerInteraction": true,
+  "selectedPlace": "兰花展示馆"
+}

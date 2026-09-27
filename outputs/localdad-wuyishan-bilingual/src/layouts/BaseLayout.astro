@@ -1,0 +1,77 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { defaultLocale, localeInfo, type Locale } from "../i18n/config";
+import { siteIdentity } from "../data/site";
+import { personEntity } from "../lib/structured-data";
+interface Alternate { lang: Locale; href: string; }
+interface PageData { title: string; description: string; eyebrow?: string; image?: string; imageAlt?: string; imageWidth?: number; imageHeight?: number; ogType?: "website" | "article" | "video.other"; lang?: Locale; alternates?: Alternate[]; structuredData?: Record<string, unknown> | Record<string, unknown>[]; noIndex?: boolean; }
+interface Props extends Partial<PageData> { frontmatter?: PageData; }
+const isMarkdownPage = Boolean(Astro.props.frontmatter);
+const page = Astro.props.frontmatter ?? Astro.props;
+const { title, description, eyebrow, image = siteIdentity.defaultSocialImage, imageAlt, imageWidth = siteIdentity.defaultSocialImageWidth, imageHeight = siteIdentity.defaultSocialImageHeight, ogType = "website", structuredData, noIndex = false, lang = defaultLocale, alternates = [] } = page as Props;
+const language = localeInfo[lang];
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const absoluteImage = Astro.site ? new URL(image, Astro.site).toString() : undefined;
+const pageName = title.includes(" | ") ? title.split(" | ")[0] : title;
+const personId = Astro.site ? new URL("/about#jeff", Astro.site).toString() : undefined;
+const websiteSchema = Astro.site ? {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": new URL("/#website", Astro.site).toString(),
+  name: siteIdentity.name,
+  alternateName: siteIdentity.shortName,
+  url: Astro.site.toString(),
+  description: siteIdentity.description,
+  inLanguage: language.htmlLang,
+} : undefined;
+const profileSchema = Astro.site && Astro.url.pathname === "/about" ? {
+  "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: personEntity({ name:"Jeff", id:personId, url:new URL("/about", Astro.site).toString(), description:"A dad, coffee-cart owner, and licensed tour guide living in Wuyishan, Fujian, China.", homeLocation:"Wuyishan, Fujian, China" })
+} : undefined;
+const schemas = [websiteSchema, profileSchema, ...(Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : [])].filter(Boolean);
+const isToolSurface = Astro.url.pathname === "/map" || Astro.url.pathname === "/zh/map" || Astro.url.pathname === "/zh/explore-wuyishan" || Astro.url.pathname.startsWith("/zh/theme/") || Astro.url.pathname.startsWith("/zh/place/");
+---
+<!doctype html>
+<html lang={language.htmlLang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="generator" content={Astro.generator} />
+  <meta name="theme-color" content="#183a2c" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  {canonical && <link rel="canonical" href={canonical} />}
+  {alternates.map((item) => <link rel="alternate" hreflang={localeInfo[item.lang].htmlLang} href={item.href} />)}
+  {alternates.some((item) => item.lang === defaultLocale) && <link rel="alternate" hreflang="x-default" href={alternates.find((item) => item.lang === defaultLocale)?.href} />}
+  <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow"} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  {canonical && <meta property="og:url" content={canonical} />}
+  {absoluteImage && <meta property="og:image" content={absoluteImage} />}
+  {absoluteImage && <meta property="og:image:alt" content={imageAlt || pageName} />}
+  {absoluteImage && <meta property="og:image:width" content={String(imageWidth)} />}
+  {absoluteImage && <meta property="og:image:height" content={String(imageHeight)} />}
+  <meta property="og:site_name" content={siteIdentity.name} />
+  <meta property="og:locale" content={language.ogLocale} />
+  {alternates.filter((item) => item.lang !== lang).map((item) => <meta property="og:locale:alternate" content={localeInfo[item.lang].ogLocale} />)}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={absoluteImage} />
+  {absoluteImage && <meta name="twitter:image:alt" content={imageAlt || pageName} />}
+  {schemas.length > 0 && <script type="application/ld+json" is:inline set:html={JSON.stringify(schemas)} />}
+  <title>{title}</title>
+</head>
+<body class:list={["dad-map-ui", isToolSurface ? "surface-tool" : "surface-editorial", `locale-${lang}`]}>
+  <a class="skip" href="#content">{lang === "zh" ? "跳到正文" : "Skip to content"}</a>
+  <Header />
+  <main id="content">
+    {eyebrow && <section class="page-head"><p class="kicker">{eyebrow}</p><h1>{pageName}</h1><p>{description}</p></section>}
+    {isMarkdownPage ? <article class="prose"><slot /></article> : <slot />}
+  </main>
+  <Footer compact={isToolSurface} />
+</body>
+</html>

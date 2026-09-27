@@ -1,0 +1,40 @@
+{
+  "name": "local-dad-jeff-wuyishan",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "content:sync-visitor": "node scripts/sync-visitor-content.mjs",
+    "site:publish": "node scripts/publish-site.mjs",
+    "site:rollback": "node scripts/rollback-site.mjs",
+    "check": "astro check",
+    "build": "node scripts/sync-visitor-content.mjs && node scripts/image-tools.mjs check && node scripts/verify-public-map.mjs && astro check && astro build && node scripts/validate-site.mjs",
+    "content:new": "node scripts/content-tools.mjs new",
+    "content:help": "node scripts/content-tools.mjs help",
+    "content:status": "node scripts/content-tools.mjs status",
+    "content:missing": "node scripts/content-tools.mjs missing",
+    "content:quality": "node scripts/content-tools.mjs quality",
+    "content:relationships": "npm run build",
+    "content:validate": "npm run content:check",
+    "content:check": "npm run build && node scripts/content-tools.mjs missing && node scripts/content-tools.mjs quality",
+    "image:help": "node scripts/image-tools.mjs help",
+    "image:prepare": "node scripts/image-tools.mjs prepare",
+    "image:check": "node scripts/image-tools.mjs check",
+    "validate:site": "node scripts/validate-site.mjs",
+    "preview": "astro preview",
+    "preview:drafts": "astro dev"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^5.12.8",
+    "leaflet": "^1.9.4",
+    "sharp": "^0.34.5",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21"
+  }
+}

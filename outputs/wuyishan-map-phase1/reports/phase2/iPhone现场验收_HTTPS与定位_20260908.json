@@ -1,0 +1,15 @@
+{
+  "positionUploaded": false,
+  "reportedAccuracyMeters": 8,
+  "browser": "Safari",
+  "scope": "实体手机 HTTPS 访问与定位能力；不包含真实地点坐标确认或替换",
+  "next": "实体手机真实腾讯地图拖动与缩放验证",
+  "device": "physical iPhone",
+  "source": "user_reported_field_acceptance",
+  "recordedAt": "2026-09-08T10:18:03.2203969Z",
+  "acceptanceStatus": "passed",
+  "positionSaved": false,
+  "httpsSecureContext": "passed",
+  "coordinateWritesAuthorized": false,
+  "geolocationPermission": "passed"
+}

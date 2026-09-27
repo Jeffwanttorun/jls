@@ -1,0 +1,10 @@
+---
+import { getTopic, type TopicId } from "../data/topics";
+interface Props { topicIds?: TopicId[]; }
+const { topicIds = [] } = Astro.props;
+const topics = [...new Set(topicIds)].map(getTopic);
+---
+{topics.length > 0 && <section class="content-module topic-list" aria-labelledby="topics-heading">
+  <header><p class="kicker">Themes</p><h2 id="topics-heading">Related themes</h2></header>
+  <ul>{topics.map((topic) => <li>{topic.label}</li>)}</ul>
+</section>}

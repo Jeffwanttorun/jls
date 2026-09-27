@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-13T16:58:53.522Z",
+  "checks": [
+    "齐云峰导航名称、GCJ-02正式坐标及腾讯H5/App URI正确",
+    "月亮湾导航名称、正式坐标及腾讯URI正确",
+    "黄村乌龙茶展示馆使用后台默认导航目标",
+    "桃源峪+蝴蝶馆只使用后台默认的桃源峪停车位置",
+    "漫水桥只使用后台默认的停车场1",
+    "5个导航目标均逐值来自当前唯一active正式坐标，地图坐标系均为GCJ-02",
+    "无默认导航目标时不生成导航按钮或错误外链",
+    "后台默认导航从 A 改为 B 后，游客端刷新即读取 B（只读响应替身验证）"
+  ],
+  "navigationCases": 5,
+  "writeRequests": 0,
+  "consoleErrors": [],
+  "externalTargets": [
+    {
+      "to": "齐云峰观景/日出位置",
+      "longitude": "117.92890743753605",
+      "latitude": "27.62003604255768",
+      "endpoint": "https://map.qq.com/nav/drive"
+    },
+    {
+      "to": "月亮湾",
+      "longitude": "117.8188396095627",
+      "latitude": "27.66674481978472",
+      "endpoint": "https://map.qq.com/nav/drive"
+    },
+    {
+      "to": "黄村乌龙茶展示馆",
+      "longitude": "117.87896891393711",
+      "latitude": "27.649218383569345",
+      "endpoint": "https://map.qq.com/nav/drive"
+    },
+    {
+      "to": "桃源峪停车位置",
+      "longitude": "117.71869819094513",
+      "latitude": "27.724804669361415",
+      "endpoint": "https://map.qq.com/nav/drive"
+    },
+    {
+      "to": "漫水桥停车场1",
+      "longitude": "117.91579975196396",
+      "latitude": "27.642886374255408",
+      "endpoint": "https://map.qq.com/nav/drive"
+    }
+  ]
+}

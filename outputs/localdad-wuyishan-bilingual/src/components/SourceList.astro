@@ -1,0 +1,9 @@
+---
+import type { SourceReference } from "../types/content";
+interface Props { sources?: SourceReference[]; }
+const { sources = [] } = Astro.props;
+---
+{sources.length > 0 && <section class="content-module source-list" aria-labelledby="sources-heading">
+  <header><p class="kicker">References</p><h2 id="sources-heading">Sources and Further Reading</h2></header>
+  <ul>{sources.map((source) => <li><h3>{source.url ? <a href={source.url} rel="noopener noreferrer">{source.title}</a> : source.title}</h3>{source.publisher && <p>{source.publisher}</p>}</li>)}</ul>
+</section>}

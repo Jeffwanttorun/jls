@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-12T07:34:41.318Z",
+  "provider": "Tencent Maps JavaScript API GL + Tencent URI API",
+  "viewport": "390x844",
+  "checks": [
+    "齐云峰 single-place 真实腾讯地图无路线和图例",
+    "月亮湾 single-place 真实腾讯地图无路线残留",
+    "桃源峪+蝴蝶馆只显示组合相关地点且无路线残留",
+    "自然主题真实地图只显示主题结果且无路线图例",
+    "一号风景道 route scope 正常显示路线和图例",
+    "全部地点 scope 显示全部地点且不显示路线图例",
+    "齐云峰、月亮湾、桃源峪停车位置的腾讯H5导航实际返回可用页面，无“页面不存在”"
+  ],
+  "externalPages": [
+    {
+      "name": "齐云峰观景/日出位置",
+      "status": 200,
+      "title": "腾讯导航",
+      "errorPage": false
+    },
+    {
+      "name": "月亮湾",
+      "status": 200,
+      "title": "腾讯导航",
+      "errorPage": false
+    },
+    {
+      "name": "桃源峪停车位置",
+      "status": 200,
+      "title": "腾讯导航",
+      "errorPage": false
+    }
+  ],
+  "routeGeometrySha256": "0e3113c5b2be8744da4f229ea82fedcff4546027711e0243ce1f142aa0ebfb2e",
+  "routePoints": 952,
+  "routeSegments": 6,
+  "consoleErrors": []
+}

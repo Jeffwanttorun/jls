@@ -1,0 +1,21 @@
+---
+import type { CreatorProfile } from "../types/social";
+
+interface Props {
+  profiles?: readonly CreatorProfile[];
+  id?: string;
+  heading: string;
+  description?: string;
+}
+
+const { profiles = [], id = "creator-profiles", heading, description } = Astro.props;
+const publishedProfiles = profiles.filter((profile) => profile.recordStatus === "published");
+---
+{publishedProfiles.length > 0 && <section class="content-module creator-profiles" aria-labelledby={`${id}-heading`}>
+  <header><h2 id={`${id}-heading`}>{heading}</h2>{description && <p>{description}</p>}</header>
+  <ul>{publishedProfiles.map((profile) => <li><a href={profile.url} target="_blank" rel="me noopener noreferrer">{profile.label} <span aria-hidden="true">↗</span></a></li>)}</ul>
+</section>}
+
+<style>
+  .creator-profiles ul{display:flex;flex-wrap:wrap;gap:.75rem;list-style:none;margin:1rem 0 0;padding:0}.creator-profiles a{display:inline-flex;align-items:center;min-height:2.75rem;padding:.55rem .9rem;border:1px solid var(--line);border-radius:999px;text-underline-offset:4px}.creator-profiles a:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}
+</style>

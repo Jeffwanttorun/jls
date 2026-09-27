@@ -1,0 +1,12 @@
+{
+  "name": "Local Dad Jeff in Wuyishan",
+  "short_name": "Local Dad Jeff",
+  "description": "Jeff’s practical guide to Wuyishan, China, based on firsthand experience.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf8ef",
+  "theme_color": "#183a2c",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

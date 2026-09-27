@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-13T16:59:16.476Z",
+  "checks": [
+    "6个页面均可打开；390px无横向溢出并保存截图",
+    "6个页面在360px均无横向溢出，固定底栏未扩大页面宽度",
+    "首页 → 一号风景道 → 漫水桥完整可点击",
+    "首页6个主题入口均进入独立多标签主题页",
+    "适合带孩子为可与六个主题组合的独立筛选",
+    "只读适配层准确返回41个保留地点；漫水桥4个现存点、星村3点、桃源峪4点坐标与正式表逐值一致；WY-0011/WY-0008不出现",
+    "上一站/下一站按corridor_order与页面覆盖范围动态计算",
+    "全屏地图、地点点击卡片、核心/服务视觉层级可用",
+    "导航先确认地点，再生成含正式坐标的腾讯H5与App路线地址",
+    "游客界面不显示后台技术字段；原型服务无写路由、无public API别名、真实浏览器零写请求和零控制台异常"
+  ],
+  "pages": [
+    "/",
+    "/corridor",
+    "/place/manshui",
+    "/place/tea",
+    "/place/butterfly",
+    "/place/xingcun"
+  ],
+  "viewports": [
+    360,
+    390
+  ],
+  "realDatabaseAccess": "GET/read-only only",
+  "writeRequests": 0,
+  "map": "Tencent SDK event stub; real provider checked separately",
+  "navigation": "Tencent URI generated and structurally verified; external app handoff not asserted"
+}

@@ -1,0 +1,797 @@
+{
+  "checkedAt": "2026-09-09T01:52:11.517Z",
+  "places": [
+    {
+      "code": "WY-0001",
+      "name": "南源岭",
+      "region": "南源岭",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0002",
+      "name": "南源岭停车位置",
+      "region": "南源岭",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0001",
+      "parent_name": "南源岭",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0003",
+      "name": "南源岭卫生间",
+      "region": "南源岭",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": "WY-0001",
+      "parent_name": "南源岭",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0004",
+      "name": "齐云峰观景/日出位置",
+      "region": "南源岭",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0005",
+      "name": "三才峰观景信息点",
+      "region": "南源岭",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P3",
+      "priority": "低",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0006",
+      "name": "星村补给区",
+      "region": "星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0007",
+      "name": "星村特色小吃集中区",
+      "region": "星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": "WY-0006",
+      "parent_name": "星村补给区",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0008",
+      "name": "漫水桥",
+      "region": "星村—黄村沿线",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0009",
+      "name": "漫水桥下河位置",
+      "region": "星村—黄村沿线",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "高",
+      "parent_code": "WY-0008",
+      "parent_name": "漫水桥",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0010",
+      "name": "黄村",
+      "region": "黄村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0011",
+      "name": "黄村沿线停靠/观察位置",
+      "region": "黄村",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P3",
+      "priority": "低",
+      "parent_code": "WY-0010",
+      "parent_name": "黄村",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0012",
+      "name": "月亮湾",
+      "region": "月亮湾",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "正常",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0013",
+      "name": "月亮湾停车位置",
+      "region": "月亮湾",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0012",
+      "parent_name": "月亮湾",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0014",
+      "name": "月亮湾大坝观察位置",
+      "region": "月亮湾",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": "WY-0012",
+      "parent_name": "月亮湾",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0015",
+      "name": "翡翠谷支线路口",
+      "region": "翡翠谷支线",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0016",
+      "name": "翡翠谷支线",
+      "region": "翡翠谷支线",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "临时关闭",
+      "public_level": "P4",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0017",
+      "name": "观山听水",
+      "region": "黄村—红星沿线",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0018",
+      "name": "大峡谷农庄下河位置",
+      "region": "黄村—红星沿线",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "高",
+      "parent_code": "WY-0017",
+      "parent_name": "观山听水",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0019",
+      "name": "皮坑浅滩",
+      "region": "皮坑",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0020",
+      "name": "皮坑口",
+      "region": "皮坑",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0021",
+      "name": "皮坑口下水位置",
+      "region": "皮坑",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "高",
+      "parent_code": "WY-0020",
+      "parent_name": "皮坑口",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0022",
+      "name": "大浅滩",
+      "region": "一号风景道沿线",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0023",
+      "name": "大浅滩停车位置",
+      "region": "一号风景道沿线",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": "WY-0022",
+      "parent_name": "大浅滩",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0024",
+      "name": "桃源峪",
+      "region": "桃源峪",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "正常",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0025",
+      "name": "桃源峪停车位置",
+      "region": "桃源峪",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0024",
+      "parent_name": "桃源峪",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0026",
+      "name": "桃源峪卫生间",
+      "region": "桃源峪",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": "WY-0024",
+      "parent_name": "桃源峪",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0027",
+      "name": "桃源峪主要观蝶区域",
+      "region": "桃源峪",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "高",
+      "parent_code": "WY-0024",
+      "parent_name": "桃源峪",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0028",
+      "name": "龙渡蝴蝶科普展示馆",
+      "region": "红星村附近",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "正常",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0029",
+      "name": "蝴蝶馆停车/步行入口",
+      "region": "红星村附近",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0028",
+      "parent_name": "龙渡蝴蝶科普展示馆",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0030",
+      "name": "野猴谷",
+      "region": "桐木区域",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0031",
+      "name": "野猴观察区域",
+      "region": "桐木区域",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P3",
+      "priority": "高",
+      "parent_code": "WY-0030",
+      "parent_name": "野猴谷",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0032",
+      "name": "红茶发源地展示馆",
+      "region": "桐木区域",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "正常",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0033",
+      "name": "大峡谷展示馆",
+      "region": "桐木区域",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "正常",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0034",
+      "name": "桐木茶马古道相关入口",
+      "region": "桐木区域",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P3",
+      "priority": "中",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0035",
+      "name": "大竹岚自然观察区域",
+      "region": "大竹岚",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P3",
+      "priority": "中",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0036",
+      "name": "坳头观景台",
+      "region": "坳头村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0037",
+      "name": "坳头星空观察区域",
+      "region": "坳头村",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P2",
+      "priority": "中",
+      "parent_code": "WY-0036",
+      "parent_name": "坳头观景台",
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0038",
+      "name": "武夷源活动区域",
+      "region": "武夷源",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "中",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": null,
+      "notes": null
+    },
+    {
+      "code": "WY-0039",
+      "name": "红星村",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": null,
+      "parent_name": null,
+      "intro": "红星村展馆群的区域父节点；用于缩小地图时聚合展示。",
+      "notes": "各展馆作为子节点展开，步行关系待现场核验。"
+    },
+    {
+      "code": "WY-0040",
+      "name": "乌龙茶展示馆",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0039",
+      "parent_name": "红星村",
+      "intro": "红星村茶文化展馆节点。",
+      "notes": "已有较完整研究与口播基础，坐标及开放信息待统一核验。"
+    },
+    {
+      "code": "WY-0041",
+      "name": "珍稀植物展示馆1号馆",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0039",
+      "parent_name": "红星村",
+      "intro": "以武夷山植物、模式标本与科学史为重点的展馆节点。",
+      "notes": "已有内容研究基础；坐标、开放时间、步行关系待核验。"
+    },
+    {
+      "code": "WY-0042",
+      "name": "珍稀植物展示馆2号馆",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0039",
+      "parent_name": "红星村",
+      "intro": "珍稀植物展示馆群中的第二馆。",
+      "notes": "先建立地点对象，具体内容结构与1号馆关系后续补充。"
+    },
+    {
+      "code": "WY-0043",
+      "name": "兰花展示馆",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0039",
+      "parent_name": "红星村",
+      "intro": "兰花种子萌发、真菌关系与传粉观察的展馆节点。",
+      "notes": "已有完整口播与素材基础，坐标及开放信息待核验。"
+    },
+    {
+      "code": "WY-0044",
+      "name": "乡愁馆",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "主地点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0039",
+      "parent_name": "红星村",
+      "intro": "红星村乡村历史与人物故事节点。",
+      "notes": "可关联黎老先生等“山里人的故事”内容。"
+    },
+    {
+      "code": "WY-0045",
+      "name": "乡愁馆村咖/休息点",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "低",
+      "parent_code": "WY-0044",
+      "parent_name": "乡愁馆",
+      "intro": "作为乡愁馆附属休息与补给点，是否需要独立成点待核验。",
+      "notes": "如果与乡愁馆完全同址且用户无需单独寻找，可后续降为地点属性而非地图针。"
+    },
+    {
+      "code": "WY-0046",
+      "name": "红星村展馆群停车/步行起点",
+      "region": "红星村",
+      "main_line": null,
+      "place_type": "辅助点",
+      "current_status": "待核实",
+      "public_level": "P1",
+      "priority": "高",
+      "parent_code": "WY-0039",
+      "parent_name": "红星村",
+      "intro": "为红星村展馆群建立统一到达与步行起点。",
+      "notes": "需现场确认最佳停车位置以及是否确有统一步行起点；若不存在则拆分。"
+    }
+  ],
+  "enums": [
+    {
+      "typname": "place_status",
+      "enumlabel": "正常",
+      "enumsortorder": 1
+    },
+    {
+      "typname": "place_status",
+      "enumlabel": "临时关闭",
+      "enumsortorder": 2
+    },
+    {
+      "typname": "place_status",
+      "enumlabel": "季节关闭",
+      "enumsortorder": 3
+    },
+    {
+      "typname": "place_status",
+      "enumlabel": "施工",
+      "enumsortorder": 4
+    },
+    {
+      "typname": "place_status",
+      "enumlabel": "道路中断",
+      "enumsortorder": 5
+    },
+    {
+      "typname": "place_status",
+      "enumlabel": "不建议前往",
+      "enumsortorder": 6
+    },
+    {
+      "typname": "place_status",
+      "enumlabel": "永久关闭",
+      "enumsortorder": 7
+    },
+    {
+      "typname": "place_status",
+      "enumlabel": "待核实",
+      "enumsortorder": 8
+    },
+    {
+      "typname": "place_type",
+      "enumlabel": "主地点",
+      "enumsortorder": 1
+    },
+    {
+      "typname": "place_type",
+      "enumlabel": "辅助点",
+      "enumsortorder": 2
+    },
+    {
+      "typname": "place_type",
+      "enumlabel": "服务点",
+      "enumsortorder": 3
+    },
+    {
+      "typname": "place_type",
+      "enumlabel": "风险点",
+      "enumsortorder": 4
+    }
+  ],
+  "columns": [
+    {
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "column_name": "code",
+      "data_type": "text"
+    },
+    {
+      "column_name": "name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "short_name",
+      "data_type": "text"
+    },
+    {
+      "column_name": "place_type",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "column_name": "parent_place_id",
+      "data_type": "uuid"
+    },
+    {
+      "column_name": "category_id",
+      "data_type": "uuid"
+    },
+    {
+      "column_name": "tags",
+      "data_type": "ARRAY"
+    },
+    {
+      "column_name": "region",
+      "data_type": "text"
+    },
+    {
+      "column_name": "main_line",
+      "data_type": "text"
+    },
+    {
+      "column_name": "intro",
+      "data_type": "text"
+    },
+    {
+      "column_name": "current_status",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "column_name": "public_level",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "column_name": "priority",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "column_name": "risk_note",
+      "data_type": "text"
+    },
+    {
+      "column_name": "rain_friendly",
+      "data_type": "USER-DEFINED"
+    },
+    {
+      "column_name": "notes",
+      "data_type": "text"
+    },
+    {
+      "column_name": "source_last_verified_at",
+      "data_type": "date"
+    },
+    {
+      "column_name": "source_import_row_id",
+      "data_type": "uuid"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "updated_at",
+      "data_type": "timestamp with time zone"
+    }
+  ]
+}

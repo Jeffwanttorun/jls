@@ -1,0 +1,48 @@
+{
+  "places": {
+    "total": 61,
+    "normal": 59,
+    "deleted": 1,
+    "duplicate": 1
+  },
+  "coordinates": [
+    {
+      "status": "active",
+      "count": 44
+    },
+    {
+      "status": "revoked",
+      "count": 1
+    }
+  ],
+  "candidates": [
+    {
+      "status": "pending",
+      "count": 1
+    },
+    {
+      "status": "confirmed",
+      "count": 45
+    },
+    {
+      "status": "rejected",
+      "count": 14
+    }
+  ],
+  "unranked": [
+    {
+      "code": "WY-0019",
+      "name": "皮坑浅滩"
+    },
+    {
+      "code": "WY-0034",
+      "name": "桐木茶马古道相关入口"
+    }
+  ],
+  "roles": [
+    {
+      "map_display_role": "pin",
+      "count": 61
+    }
+  ]
+}

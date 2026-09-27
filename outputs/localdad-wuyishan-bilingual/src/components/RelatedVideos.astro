@@ -1,0 +1,19 @@
+---
+import type { VideoRecord } from "../types/content";
+import VideoCard from "./VideoCard.astro";
+
+interface Props {
+  videos?: readonly VideoRecord[];
+  id?: string;
+  heading: string;
+  eyebrow: string;
+  watchLabel: string;
+}
+
+const { videos = [], id = "related-videos", heading, eyebrow, watchLabel } = Astro.props;
+const publishedVideos = videos.filter((video) => video.recordStatus === "published");
+---
+{publishedVideos.length > 0 && <section class="content-module related-videos" aria-labelledby={`${id}-heading`}>
+  <header><p class="kicker">{eyebrow}</p><h2 id={`${id}-heading`}>{heading}</h2></header>
+  <div>{publishedVideos.map((video) => <VideoCard video={video} watchLabel={watchLabel} />)}</div>
+</section>}

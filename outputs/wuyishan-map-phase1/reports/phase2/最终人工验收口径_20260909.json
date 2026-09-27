@@ -1,0 +1,14 @@
+{
+  "recordedOn": "2026-09-09",
+  "source": "user_reported_acceptance_and_scope_change",
+  "physicalIPhone": {
+    "https": "passed_previously",
+    "realGeolocation": "passed_previously",
+    "mapAccess": "passed_previously",
+    "satelliteWorkflow": "not_required"
+  },
+  "finalAcceptancePlatform": "desktop",
+  "finalRealPlaceWorkflow": "pending_user_execution",
+  "businessLogicChanged": false,
+  "phase": 2
+}

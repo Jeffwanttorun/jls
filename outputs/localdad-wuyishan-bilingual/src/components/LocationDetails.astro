@@ -1,0 +1,45 @@
+---
+import TrustLabel from "./TrustLabel.astro";
+import type { LocationDetails as Details } from "../types/location";
+import { undocumentedLabel } from "../data/editorial";
+interface Props { details: Details; }
+const { details } = Astro.props;
+const pending = undocumentedLabel;
+const fields = [
+  ["Best season", details.bestSeason],
+  ["Suggested time needed", details.suggestedTimeNeeded],
+  ["Walking difficulty", details.walkingDifficulty],
+  ["Stairs", details.stairs],
+  ["Young-child suitability", details.youngChildSuitability],
+  ["Stroller access", details.strollerAccess],
+  ["Parking", details.parking],
+  ["Restroom", details.restroom],
+  ["Public transportation", details.publicTransportation],
+  ["Best time of day", details.bestTimeOfDay],
+  ["Rain considerations", details.rainConsiderations],
+  ["Safety notes", details.safetyNotes],
+];
+const checked = details.lastPersonallyChecked
+  ? details.lastPersonallyChecked.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
+  : undefined;
+---
+<section class="location-details" aria-labelledby="location-details-heading">
+  <div class="location-details-head">
+    <div><p class="kicker">Practical details</p><h2 id="location-details-heading">What to know before you go</h2><p>If I haven’t confirmed a detail yet, I leave it blank instead of guessing.</p></div>
+    <TrustLabel status={details.sourceStatus} />
+  </div>
+  <dl class="location-detail-grid">
+    <div><dt>Best for</dt><dd>{details.bestFor.length ? details.bestFor.join(" · ") : pending}</dd></div>
+    <div><dt>Not a good fit for</dt><dd>{details.notSuitableFor?.length ? details.notSuitableFor.join(" · ") : pending}</dd></div>
+    {fields.map(([label, value]) => <div><dt>{label}</dt><dd class:list={{ pending: !value }}>{value || pending}</dd></div>)}
+    <div><dt>Last personally checked</dt><dd class:list={{ pending: !checked }}>{checked || pending}</dd></div>
+  </dl>
+  <div class="location-links">
+    <div><h3>Nearby places</h3>{details.nearbyPlaces.length ? <ul>{details.nearbyPlaces.map((item) => <li>{item.href ? <a href={item.href}>{item.label}</a> : item.label}</li>)}</ul> : <p class="pending">{pending}</p>}</div>
+    <div><h3>Useful links</h3><ul>
+      {details.mapLink && <li><a href={details.mapLink} target="_blank" rel="noopener noreferrer">Open map <span aria-hidden="true">↗</span></a></li>}
+      {details.relatedArticle && <li><a href={details.relatedArticle.href}>{details.relatedArticle.label}</a></li>}
+      {!details.mapLink && !details.relatedArticle && <li class="pending">{pending}</li>}
+    </ul></div>
+  </div>
+</section>

@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-10T09:34:32.992Z",
+  "tables": [
+    {
+      "table": "coordinate_candidates",
+      "beforeCount": 60,
+      "afterCount": 60,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "guide_places",
+      "beforeCount": 8,
+      "afterCount": 8,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "guide_routes",
+      "beforeCount": 2,
+      "afterCount": 2,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "guides",
+      "beforeCount": 10,
+      "afterCount": 10,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "import_jobs",
+      "beforeCount": 1,
+      "afterCount": 1,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "import_rows",
+      "beforeCount": 93,
+      "afterCount": 93,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "media",
+      "beforeCount": 0,
+      "afterCount": 0,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "place_accessibility",
+      "beforeCount": 46,
+      "afterCount": 46,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "place_coordinates",
+      "beforeCount": 45,
+      "afterCount": 45,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "place_name_history",
+      "beforeCount": 6,
+      "afterCount": 6,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "place_nature",
+      "beforeCount": 0,
+      "afterCount": 0,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "place_practical_info",
+      "beforeCount": 46,
+      "afterCount": 46,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "place_recycle_history",
+      "beforeCount": 19,
+      "afterCount": 19,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "place_water",
+      "beforeCount": 0,
+      "afterCount": 0,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "places",
+      "beforeCount": 61,
+      "afterCount": 61,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "route_place_links",
+      "beforeCount": 0,
+      "afterCount": 0,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "route_stops",
+      "beforeCount": 14,
+      "afterCount": 14,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "routes",
+      "beforeCount": 4,
+      "afterCount": 4,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "schema_migrations",
+      "beforeCount": 10,
+      "afterCount": 10,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "taxonomy_terms",
+      "beforeCount": 34,
+      "afterCount": 34,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "verification_media",
+      "beforeCount": 0,
+      "afterCount": 0,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    },
+    {
+      "table": "verifications",
+      "beforeCount": 0,
+      "afterCount": 0,
+      "countUnchanged": true,
+      "checksumUnchanged": true
+    }
+  ],
+  "allTableCountsUnchanged": true,
+  "allTableChecksumsUnchanged": true,
+  "allPlaceRowsUnchanged": true,
+  "environmentFileUnchanged": true
+}

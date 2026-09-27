@@ -1,0 +1,26 @@
+---
+interface PillarLink {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  introduction: string;
+  futureDirection?: string;
+  links?: PillarLink[];
+}
+
+const { id, title, introduction, futureDirection, links = [] } = Astro.props;
+---
+<section id={id} class="pillar-section" aria-labelledby={`${id}-heading`}>
+  <div class="pillar-section-copy">
+    <h2 id={`${id}-heading`}>{title}</h2>
+    <p>{introduction}</p>
+    {futureDirection && <div class="pillar-direction"><p class="kicker">Future direction</p><p>{futureDirection}</p></div>}
+  </div>
+  {links.length > 0 && <div class="pillar-section-links">
+    {links.map((link) => <a href={link.href}><span>{link.title}</span><b aria-hidden="true">→</b></a>)}
+  </div>}
+</section>

@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+const before=JSON.parse(await readFile(process.argv[2],'utf8')),after=JSON.parse(await readFile(process.argv[3],'utf8'));
+const allowedTables=new Set(['places','place_recycle_history']);
+const changedTables=Object.keys(before.tables).filter(table=>JSON.stringify(before.tables[table])!==JSON.stringify(after.tables[table]));
+const oldByCode=new Map(before.places.map((p:any)=>[p.code,p]));
+const changedPlaces=after.places.flatMap((place:any)=>{const old:any=oldByCode.get(place.code);const fields=Object.keys(place).filter(key=>JSON.stringify(place[key])!==JSON.stringify(old?.[key]));return fields.length?[{code:place.code,name:place.name,fields,deleted_at:place.deleted_at,deleted_by:place.deleted_by,deletion_reason:place.deletion_reason}]:[];});
+const allowedFields=new Set(['updated_at','deleted_at','deleted_by','deletion_reason']);
+const passed=changedTables.every(table=>allowedTables.has(table))&&changedPlaces.every((place:any)=>place.fields.every((field:string)=>allowedFields.has(field)))&&after.tables.place_recycle_history.count-before.tables.place_recycle_history.count===1;
+const result={passed,changedTables,changedPlaces,recycleHistoryCountBefore:before.tables.place_recycle_history.count,recycleHistoryCountAfter:after.tables.place_recycle_history.count,allOtherBusinessTablesUnchanged:changedTables.every(table=>allowedTables.has(table)),note:'Observed real internal_admin_ui state is preserved. Automated delete/restore tests ran only in random isolated databases; real browser verification blocked every non-GET/HEAD request.'};
+await writeFile(process.argv[4],JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));if(!passed)process.exitCode=1;

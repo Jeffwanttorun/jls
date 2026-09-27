@@ -1,0 +1,142 @@
+---
+import "leaflet/dist/leaflet.css";
+import { mapFilterIds, type MapFilterId } from "../data/map-filters";
+import type { MapDataset, MapExplorerLabels, MapTileConfiguration } from "../types/map";
+import MapFilterControls from "./MapFilterControls.astro";
+
+interface Props {
+  id: string;
+  dataset: MapDataset;
+  tiles: MapTileConfiguration;
+  labels: MapExplorerLabels;
+  filterLabels: Partial<Record<MapFilterId, string>>;
+  focusPlaceId?: string;
+  autoScrollToFocus?: boolean;
+  openFocusedPopup?: boolean;
+}
+
+const { id, dataset, tiles, labels, filterLabels, focusPlaceId, autoScrollToFocus=true, openFocusedPopup=true } = Astro.props;
+const availableFilters = new Set(dataset.places.flatMap((place) => place.filterIds));
+const filters = mapFilterIds.filter((filterId) => availableFilters.has(filterId));
+const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScrollToFocus, openFocusedPopup }).replaceAll("<", "\\u003c");
+---
+{dataset.places.length > 0 && <section id={id} class="map-explorer" data-map-explorer>
+  <div class="map-controls"><MapFilterControls filterIds={filters} labels={filterLabels} legend={labels.filters} /></div>
+  <div class="map-frame">
+    <div class="interactive-map" data-map-canvas role="region" aria-label={labels.map} tabindex="0"></div>
+    <button class="map-activation" type="button" data-map-activation hidden>{labels.enableInteraction}</button>
+  </div>
+  <details class="map-fallback"><summary>{labels.openPlace}</summary><ul>{dataset.places.map((place) => <li><a href={place.href}>{place.name}</a>{place.alternateName && ` · ${place.alternateName}`}</li>)}</ul></details>
+  <script type="application/json" data-map-config is:inline set:html={config} />
+</section>}
+
+<script>
+  import type { MapDataset, MapExplorerLabels, MapTileConfiguration } from "../types/map";
+
+  interface RuntimeConfig {
+    dataset: MapDataset;
+    tiles: MapTileConfiguration;
+    labels: MapExplorerLabels;
+    focusPlaceId?: string;
+    autoScrollToFocus?: boolean;
+    openFocusedPopup?: boolean;
+  }
+
+  async function initializeMap(root: HTMLElement) {
+    if (root.dataset.mapReady === "true") return;
+    root.dataset.mapReady = "true";
+    const canvas = root.querySelector<HTMLElement>("[data-map-canvas]");
+    const source = root.querySelector<HTMLScriptElement>("[data-map-config]");
+    if (!canvas || !source?.textContent) return;
+    const { default:L } = await import("leaflet");
+    const { dataset, tiles, labels, focusPlaceId, autoScrollToFocus=true, openFocusedPopup=true } = JSON.parse(source.textContent) as RuntimeConfig;
+    const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const activation = root.querySelector<HTMLButtonElement>("[data-map-activation]");
+    const map = L.map(canvas, { scrollWheelZoom:false, keyboard:true, dragging:!coarsePointer, touchZoom:!coarsePointer });
+    if (coarsePointer && activation) {
+      activation.hidden = false;
+      activation.addEventListener("click", () => {
+        map.dragging.enable();
+        map.touchZoom.enable();
+        activation.hidden = true;
+        canvas.focus();
+      }, { once:true });
+    }
+    L.tileLayer(tiles.urlTemplate, { attribution:tiles.attribution, maxZoom:tiles.maxZoom ?? 19 }).addTo(map);
+    const placeLayer = L.layerGroup().addTo(map);
+    const routeLayer = L.layerGroup().addTo(map);
+    const selected = new Set<string>();
+    const requestedPlaceId = focusPlaceId || new URLSearchParams(window.location.search).get("place");
+
+    const placeMarkers = dataset.places.map((place) => {
+      const marker = L.circleMarker([place.coordinates.latitude, place.coordinates.longitude], { radius:7, weight:2, color:"#183a2c", fillColor:"#d8a94f", fillOpacity:.9 });
+      const popup = document.createElement("div");
+      const heading = document.createElement("strong");
+      heading.textContent = place.alternateName ? `${place.name} · ${place.alternateName}` : place.name;
+      popup.append(heading);
+      if (place.summary) { const summary = document.createElement("p"); summary.textContent = place.summary; popup.append(summary); }
+      const link = document.createElement("a"); link.href = place.href; link.textContent = labels.openPlace; popup.append(link);
+      const relationships = [...place.relatedRoutes, ...place.relatedStories];
+      if (relationships.length > 0 || place.relatedVideos.length > 0) {
+        const relatedHeading = document.createElement("strong"); relatedHeading.textContent = labels.relatedContent; popup.append(relatedHeading);
+        const list = document.createElement("ul");
+        for (const relationship of relationships) { const item=document.createElement("li"); const anchor=document.createElement("a"); anchor.href=relationship.href; anchor.textContent=relationship.label; item.append(anchor); list.append(item); }
+        for (const video of place.relatedVideos) { const item=document.createElement("li"); const anchor=document.createElement("a"); anchor.href=video.url; anchor.textContent=video.title; item.append(anchor); list.append(item); }
+        popup.append(list);
+      }
+      marker.bindPopup(popup);
+      return { place, marker };
+    });
+
+    if (!requestedPlaceId) for (const route of dataset.routes) L.polyline(route.path.map((point) => [point.latitude, point.longitude]), { color:"#167252", weight:4, opacity:.78 }).addTo(routeLayer);
+
+    const refresh = () => {
+      placeLayer.clearLayers();
+      for (const { place, marker } of placeMarkers) {
+        const matchesScope = !requestedPlaceId || place.id === requestedPlaceId;
+        const matches = matchesScope && (selected.size === 0 || place.filterIds.some((filterId) => selected.has(filterId)));
+        if (matches) marker.addTo(placeLayer);
+      }
+    };
+
+    for (const group of root.querySelectorAll<HTMLElement>("[data-filter-group]")) {
+      for (const button of group.querySelectorAll<HTMLButtonElement>("button[data-filter]")) button.addEventListener("click", () => {
+        const value = button.dataset.filter!;
+        selected.has(value) ? selected.delete(value) : selected.add(value);
+        button.setAttribute("aria-pressed", String(selected.has(value)));
+        refresh();
+      });
+    }
+
+    refresh();
+    const requested = placeMarkers.find(({ place }) => place.id === requestedPlaceId);
+    if (requested) {
+      map.setView([requested.place.coordinates.latitude, requested.place.coordinates.longitude], 15);
+      if (openFocusedPopup) requested.marker.openPopup();
+      if (autoScrollToFocus) requestAnimationFrame(() => root.scrollIntoView({ block:"start" }));
+    } else {
+      const bounds = L.latLngBounds([
+        ...dataset.places.map((place) => [place.coordinates.latitude, place.coordinates.longitude] as [number,number]),
+        ...dataset.routes.flatMap((route) => route.path.map((point) => [point.latitude, point.longitude] as [number,number])),
+      ]);
+      map.fitBounds(bounds, { padding:[24,24], maxZoom:14 });
+    }
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-map-explorer]")) {
+    if (!("IntersectionObserver" in window)) void initializeMap(root);
+    else {
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        void initializeMap(root);
+      }, { rootMargin:"300px" });
+      observer.observe(root);
+    }
+  }
+</script>
+
+<style>
+  .map-explorer{display:grid;gap:1rem}.map-frame{position:relative}.interactive-map{min-height:28rem;border-radius:1rem;overflow:hidden;background:var(--mist)}.interactive-map:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-activation{position:absolute;inset:auto 1rem 1rem 1rem;z-index:500;min-height:3rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font-weight:700;box-shadow:0 .25rem 1rem rgb(0 0 0/.18)}.map-activation:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}.map-fallback{font-size:.95rem}
+  @media(max-width:700px){.interactive-map{min-height:min(65vh,34rem)}}
+</style>

@@ -1,0 +1,21 @@
+node_modules/
+.env
+.env.*
+!.env.example
+admin/dist/
+prototype/dist/
+playwright-report/
+test-results/
+*.log
+*.pem
+*.key
+*.crt
+
+# Local database runtime and generated delivery files
+work/
+outputs/
+
+# Live owner-maintained content is backed up and deployed separately
+visitor-content-store/data.json
+visitor-content-store/media/
+visitor-content-store/backups/

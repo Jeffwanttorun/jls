@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "beforeAt": "2026-09-09T15:56:30.609Z",
+  "afterAt": "2026-09-09T20:11:06.660Z",
+  "tableCount": 22,
+  "tables": {
+    "coordinate_candidates": {
+      "count": 60,
+      "checksum": "a770025c2e910151093f30e4d8f05848"
+    },
+    "guide_places": {
+      "count": 8,
+      "checksum": "15d75cdfbfc49e340597a8a8fab29eab"
+    },
+    "guide_routes": {
+      "count": 2,
+      "checksum": "aa4783adbe6f6d9878c1638312536ce4"
+    },
+    "guides": {
+      "count": 10,
+      "checksum": "15a7d590fb88c01d8d7fdfa9acf452a3"
+    },
+    "import_jobs": {
+      "count": 1,
+      "checksum": "cf5ef03aa6e22a4c766aa4e8aecc6a4c"
+    },
+    "import_rows": {
+      "count": 93,
+      "checksum": "c054ef7d3e049cfcaaff75b17fec2e19"
+    },
+    "media": {
+      "count": 0,
+      "checksum": null
+    },
+    "place_accessibility": {
+      "count": 46,
+      "checksum": "deee5a10af7406ed50f3cad3a6502e39"
+    },
+    "place_coordinates": {
+      "count": 45,
+      "checksum": "2f6f7bdfde79b3cad18c50cd05e4c7f0"
+    },
+    "place_name_history": {
+      "count": 6,
+      "checksum": "f22dd440289795f1167ac7c0af60d25c"
+    },
+    "place_nature": {
+      "count": 0,
+      "checksum": null
+    },
+    "place_practical_info": {
+      "count": 46,
+      "checksum": "887e322a151c35ff45e4a3af484539f0"
+    },
+    "place_recycle_history": {
+      "count": 1,
+      "checksum": "c965d2298ed51c0b9982aa54eaf58a67"
+    },
+    "place_water": {
+      "count": 0,
+      "checksum": null
+    },
+    "places": {
+      "count": 61,
+      "checksum": "97084a707d4f13b9e3da731fcf5b2ca0"
+    },
+    "route_place_links": {
+      "count": 0,
+      "checksum": null
+    },
+    "route_stops": {
+      "count": 14,
+      "checksum": "a03ce6be8c0e10a6cec93c0f3cb38550"
+    },
+    "routes": {
+      "count": 4,
+      "checksum": "166ac3a1bb83624b38f4d2bfda0b9260"
+    },
+    "schema_migrations": {
+      "count": 10,
+      "checksum": "70c1ebb0bc53464b303e5166554806db"
+    },
+    "taxonomy_terms": {
+      "count": 34,
+      "checksum": "7f7799be6a0aafa2a0769d16dc024954"
+    },
+    "verification_media": {
+      "count": 0,
+      "checksum": null
+    },
+    "verifications": {
+      "count": 0,
+      "checksum": null
+    }
+  },
+  "envUnchanged": true,
+  "fullPlaceRowsUnchanged": true,
+  "deleted": [
+    {
+      "code": "WY-0011",
+      "deleted_at": "2026-09-09T15:26:05.341Z"
+    }
+  ],
+  "duplicate": [
+    "WY-0042"
+  ]
+}

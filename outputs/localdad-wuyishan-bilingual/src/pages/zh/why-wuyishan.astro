@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WhyChapter from "../../components/WhyChapter.astro";
+const englishNote = "英文原文";
+---
+<BaseLayout lang="zh" title="为什么是武夷山｜武夷山奶爸" description="从山水、茶、森林和人文四个相互关联的章节理解武夷山：先看见这片地方，再逐步认识风景背后的自然、生活与思想。">
+  <h1 class="visually-hidden">为什么是武夷山</h1>
+  <div class="why-chapters why-only-chapters" aria-label="为什么是武夷山——四个章节">
+    <WhyChapter number="01" id="landscape" title="山水" image="/chapter-media/landscape.webp" imageAlt="武夷山森林与水面旁的沿山道路" links={[
+      {title:"武夷山概览",href:"/why-wuyishan/why-wuyishan-matters",note:englishNote},
+      {title:"主景区",href:"/main-scenic-area",note:englishNote},
+      {title:"九曲溪",href:"/locations/jiuqu-stream",note:englishNote},
+    ]} />
+    <WhyChapter number="02" id="tea" title="茶" image="/chapter-media/tea.webp" imageAlt="武夷山谷中的茶园" links={[
+      {title:"茶与日常生活",href:"/why-wuyishan/tea-culture-wuyishan",note:englishNote},
+      {title:"走进茶园",href:"/why-wuyishan/tea-garden-wuyishan",note:englishNote},
+    ]} />
+    <WhyChapter number="03" id="forest" title="森林" image="/chapter-media/forest.webp" imageAlt="在武夷山观察到的螳螂" links={[
+      {title:"森林与自然遗产",href:"/why-wuyishan/natural-heritage-wuyishan",note:englishNote},
+    ]} />
+    <WhyChapter number="04" id="people-and-ideas" title="人文" image="/chapter-media/people.webp" imageAlt="武夷山溪边的本地家庭生活" links={[
+      {title:"村落与当地生活",href:"/why-wuyishan/villages-wuyishan",note:englishNote},
+    ]} />
+  </div>
+  <aside class="why-map-branch" aria-labelledby="why-map-branch-title">
+    <div><p class="kicker">实用工具</p><h2 id="why-map-branch-title">武夷山奶爸地图</h2><p>按主题找地点，也可以沿一号风景道查看。</p></div>
+    <a href="/zh/map">打开地图 <span aria-hidden="true">→</span></a>
+  </aside>
+</BaseLayout>

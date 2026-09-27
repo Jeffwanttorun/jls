@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "beforeAt": "2026-09-10T02:17:06.815Z",
+  "afterAt": "2026-09-10T03:24:02.958Z",
+  "checks": {
+    "tableCountsAndChecksums": true,
+    "places": true,
+    "categories": true,
+    "environmentFileHash": true
+  },
+  "tableCount": 22,
+  "placeRows": 61,
+  "coordinateRows": 45,
+  "candidateRows": 60
+}

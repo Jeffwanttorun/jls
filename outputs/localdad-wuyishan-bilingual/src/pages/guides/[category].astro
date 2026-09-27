@@ -1,0 +1,15 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import GuideCard from "../../components/GuideCard.astro";
+import { categories, type CategoryKey } from "../../data/categories";
+export function getStaticPaths() { return Object.keys(categories).map((category) => ({ params: { category } })); }
+const category = Astro.params.category as CategoryKey;
+const info = categories[category];
+const allGuides = await getCollection("guides") as CollectionEntry<"guides">[];
+const guides = allGuides.filter(({data}) => data.lang === "en" && data.recordStatus === "published" && data.category === category).sort((a,b) => a.data.order - b.data.order);
+---
+<BaseLayout title={`${info.label} Guides | Local Dad Jeff`} description={`${info.description} Practical advice from Jeff in Wuyishan, China.`}>
+  <section class="page-head hub-head"><p class="kicker"><a href="/guides">Guide Library</a> · Section</p><h1>{info.label}</h1><p>{info.description}</p></section>
+  <section class="collection-section">{guides.length ? <div class="guide-grid">{guides.map((item) => <GuideCard title={item.data.title} description={item.data.description} category={info.label} audience={item.data.audience} href={`/${item.data.slug}`} />)}</div> : <div class="empty-state"><p class="kicker">A growing section</p><h2>Jeff is working on the first guide here.</h2><p>This part of the library is ready for future field notes and practical articles.</p></div>}</section>
+</BaseLayout>

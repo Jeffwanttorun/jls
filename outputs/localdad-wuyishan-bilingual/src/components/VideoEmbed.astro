@@ -1,0 +1,27 @@
+---
+import type { VideoRecord } from "../types/content";
+import { getVideoEmbedUrl } from "../lib/video";
+
+interface Props {
+  video: VideoRecord;
+  labels: {
+    watch: string;
+    transcript: string;
+    openTranscript: string;
+  };
+}
+
+const { video, labels } = Astro.props;
+const src = getVideoEmbedUrl(video);
+---
+<section class="video-section" aria-labelledby={`${video.slug}-video-heading`}>
+  <header><p class="kicker">{labels.watch}</p><h2 id={`${video.slug}-video-heading`}>{video.title}</h2>{video.description && <p>{video.description}</p>}</header>
+  <div class:list={["video-frame", video.platform]}><iframe src={src} title={video.title} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  {video.transcript?.text && <details class="video-transcript"><summary>{labels.transcript}</summary><p>{video.transcript.text}</p></details>}
+  {video.transcript?.url && <p><a class="text-link" href={video.transcript.url}>{labels.openTranscript}</a></p>}
+</section>
+
+<style>
+  .video-frame.instagram{aspect-ratio:9/16;max-width:32rem}
+  .video-transcript{margin-top:1.25rem}.video-transcript summary{cursor:pointer;font-weight:700}.video-transcript p{white-space:pre-wrap}
+</style>

@@ -1,0 +1,1319 @@
+{
+  "jobId": "e7e14a5f-c5dc-4516-ad66-254b52506316",
+  "sourceSha256": "5346dbe02e3e54067d96b91f080bf40007183b51df8cdd107d0d7f1dfd6cb40b",
+  "counts": {
+    "success": 93,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 119,
+    "places": 46
+  },
+  "rows": [
+    {
+      "sheet": "分类标签",
+      "row": 2,
+      "code": "点位层级:MAIN",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 3,
+      "code": "点位层级:AUX",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 4,
+      "code": "一级分类:AREA",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 5,
+      "code": "一级分类:NATURE",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 6,
+      "code": "一级分类:WATER",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 7,
+      "code": "一级分类:VIEW",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 8,
+      "code": "一级分类:MUSEUM",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 9,
+      "code": "一级分类:SERVICE",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 10,
+      "code": "一级分类:PARKING",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 11,
+      "code": "一级分类:TRAFFIC",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 12,
+      "code": "一级分类:RISK",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 13,
+      "code": "公开等级:P1",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 14,
+      "code": "公开等级:P2",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 15,
+      "code": "公开等级:P3",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 16,
+      "code": "公开等级:P4",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 17,
+      "code": "公开等级:P5",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 18,
+      "code": "坐标可信:A",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 19,
+      "code": "坐标可信:B",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 20,
+      "code": "坐标可信:C",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 21,
+      "code": "坐标可信:D",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 22,
+      "code": "当前状态:OPEN",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 23,
+      "code": "当前状态:CLOSED",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 24,
+      "code": "当前状态:SEASONAL",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 25,
+      "code": "当前状态:CONSTRUCTION",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 26,
+      "code": "当前状态:ROADBLOCK",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 27,
+      "code": "当前状态:AVOID",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 28,
+      "code": "当前状态:VERIFY",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 29,
+      "code": "任务状态:TODO",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 30,
+      "code": "任务状态:DOING",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 31,
+      "code": "任务状态:DONE",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 32,
+      "code": "任务优先级:H",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 33,
+      "code": "任务优先级:M",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "分类标签",
+      "row": 34,
+      "code": "任务优先级:L",
+      "outcome": "success",
+      "issues": []
+    },
+    {
+      "sheet": "地点库",
+      "row": 2,
+      "code": "WY-0001",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 3,
+      "code": "WY-0002",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 4,
+      "code": "WY-0003",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 5,
+      "code": "WY-0004",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 6,
+      "code": "WY-0005",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 7,
+      "code": "WY-0006",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 8,
+      "code": "WY-0007",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 9,
+      "code": "WY-0008",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 10,
+      "code": "WY-0009",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 11,
+      "code": "WY-0010",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 12,
+      "code": "WY-0011",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 13,
+      "code": "WY-0012",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 14,
+      "code": "WY-0013",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 15,
+      "code": "WY-0014",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 16,
+      "code": "WY-0015",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "warning",
+          "field": "上级地点ID",
+          "message": "辅助点未指定父地点，保持独立，不推测关联"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 17,
+      "code": "WY-0016",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 18,
+      "code": "WY-0017",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 19,
+      "code": "WY-0018",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 20,
+      "code": "WY-0019",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 21,
+      "code": "WY-0020",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 22,
+      "code": "WY-0021",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 23,
+      "code": "WY-0022",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 24,
+      "code": "WY-0023",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 25,
+      "code": "WY-0024",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "warning",
+          "field": "公开等级",
+          "message": "自然观察 P1 需人工复核生态敏感性；本批无正式坐标，不自动发布"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 26,
+      "code": "WY-0025",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 27,
+      "code": "WY-0026",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 28,
+      "code": "WY-0027",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 29,
+      "code": "WY-0028",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 30,
+      "code": "WY-0029",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 31,
+      "code": "WY-0030",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "warning",
+          "field": "公开等级",
+          "message": "自然观察 P1 需人工复核生态敏感性；本批无正式坐标，不自动发布"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 32,
+      "code": "WY-0031",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 33,
+      "code": "WY-0032",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 34,
+      "code": "WY-0033",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 35,
+      "code": "WY-0034",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 36,
+      "code": "WY-0035",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 37,
+      "code": "WY-0036",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 38,
+      "code": "WY-0037",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 39,
+      "code": "WY-0038",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 40,
+      "code": "WY-0039",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 41,
+      "code": "WY-0040",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 42,
+      "code": "WY-0041",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 43,
+      "code": "WY-0042",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 44,
+      "code": "WY-0043",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 45,
+      "code": "WY-0044",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 46,
+      "code": "WY-0045",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "地点库",
+      "row": 47,
+      "code": "WY-0046",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ]
+    },
+    {
+      "sheet": "路线库",
+      "row": 2,
+      "code": "R-0001",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        }
+      ]
+    },
+    {
+      "sheet": "路线库",
+      "row": 3,
+      "code": "R-0002",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        }
+      ]
+    },
+    {
+      "sheet": "路线库",
+      "row": 4,
+      "code": "R-0003",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        }
+      ]
+    },
+    {
+      "sheet": "路线库",
+      "row": 5,
+      "code": "R-0004",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "站点序列为空；保留路线和备注，不从备注范围推测顺序"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 2,
+      "code": "G-0001",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 3,
+      "code": "G-0002",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 4,
+      "code": "G-0003",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 5,
+      "code": "G-0004",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 6,
+      "code": "G-0005",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 7,
+      "code": "G-0006",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 8,
+      "code": "G-0007",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 9,
+      "code": "G-0008",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 10,
+      "code": "G-0009",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    },
+    {
+      "sheet": "攻略库",
+      "row": 11,
+      "code": "G-0010",
+      "outcome": "success",
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ]
+    }
+  ]
+}

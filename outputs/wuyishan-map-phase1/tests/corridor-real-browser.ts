@@ -1,0 +1,31 @@
+import 'dotenv/config';
+import {chromium,expect} from '@playwright/test';
+import {mkdir,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({channel:'msedge',headless:true});
+const root='reports/phase2/corridor',checks:string[]=[],errors:string[]=[];let writes=0;
+const redact=(s:string)=>s.replaceAll(process.env.TENCENT_MAP_KEY||'__no_key__','[redacted]').replace(/([?&]key=)[^&\s]+/gi,'$1[redacted]');
+try{
+ await mkdir(root+'/screenshots',{recursive:true});
+ const context=await browser.newContext({viewport:{width:1600,height:1100}});
+ await context.route('**/api/**',async route=>{if(!['GET','HEAD'].includes(route.request().method())){writes++;await route.abort();}else await route.continue();});
+ const page=await context.newPage();page.on('pageerror',e=>errors.push(redact(e.message)));page.on('console',e=>{if(e.type()==='error')errors.push(redact(e.text()));});
+ await page.goto('https://127.0.0.1:5173/places');assert(await page.evaluate(()=>window.isSecureContext));
+ await page.getByText('共 60 个地点 · 读取已迁移数据',{exact:true}).waitFor();
+ await expect(page.locator('tbody tr').first()).toContainText('0100');await expect(page.locator('tbody tr').first()).toContainText('WY-0001');
+ await page.screenshot({path:root+'/screenshots/live-ordered-list.png',fullPage:true});checks.push('实际HTTPS列表60当前地点，默认路线顺序及0100补零显示');
+ await page.getByRole('button',{name:'调整WY-0005路线顺序',exact:true}).click();await page.getByRole('button',{name:'上移',exact:true}).waitFor();await page.getByRole('button',{name:'取消调整',exact:true}).click();checks.push('实际库排序编辑面板可打开和取消，零写入');
+ await page.getByLabel('状态',{exact:true}).selectOption('在建');await page.getByRole('button',{name:'查询',exact:true}).click();await expect(page.locator('tbody tr')).toHaveCount(1);await expect(page.locator('tbody')).toContainText('WY-0061');checks.push('在建状态筛选只返回昆虫展示馆');
+ await page.goto('https://127.0.0.1:5173/places/WY-0040');await page.getByRole('heading',{name:'黄村乌龙茶展示馆',exact:true}).waitFor();await page.getByRole('link',{name:'WY-0010 黄村',exact:true}).waitFor();
+ await page.locator('.advanced-coordinates summary').click();await page.getByRole('region',{name:'历史坐标',exact:true}).waitFor();await page.screenshot({path:root+'/screenshots/live-tea-museum-detail.png',fullPage:true});checks.push('黄村乌龙馆改名父级正确，详情及坐标管理可读');
+ await page.goto('https://127.0.0.1:5173/places/WY-0042');await page.getByRole('link',{name:'WY-0041 珍稀植物科普展示馆',exact:true}).waitFor();await expect(page.getByRole('heading',{name:'坐标管理',exact:true})).toHaveCount(0);checks.push('重复馆保留可查，指向WY-0041且不开放新的判点入口');
+ await page.goto('https://127.0.0.1:5173/map');await page.getByText('GCJ-02 · 缩放',{exact:false}).waitFor();await page.getByText(/^符合筛选条件的正式地点：\d+ 个。$/).waitFor();
+ await page.getByRole('button',{name:'卫星影像',exact:true}).click();await expect(page.getByRole('button',{name:'卫星影像',exact:true})).toHaveAttribute('aria-pressed','true');await page.waitForTimeout(6500);
+ await page.screenshot({path:root+'/screenshots/live-satellite-map.png',fullPage:true});checks.push('真实腾讯卫星地图加载，当前正式地点仍可用于内部核对');
+ const publicData=await page.evaluate(async()=>{const res=await fetch('/api/places');return res.json();});
+ assert(publicData.items.every((p:any)=>p.public_level!=='P5'&&(['P2','P3','P4'].includes(p.public_level)||p.current_status!=='正常'?p.latitude===null&&p.longitude===null:true)));
+ checks.push('实际公开接口P2—P5和非正常状态坐标保护');
+ assert.equal(writes,0);assert.deepEqual(errors,[]);
+ await writeFile(root+'/real-browser.json',JSON.stringify({passed:true,checks,errors,writeRequests:writes,checkedAt:new Date().toISOString(),browser:'installed Edge; HTTPS trust verified without ignoring certificate errors'},null,2));
+ console.log(JSON.stringify({passed:true,checks,writeRequests:writes},null,2));
+}finally{await browser.close();}

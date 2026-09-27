@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "可信HTTPS直接打开实际无坐标地点，真实腾讯卫星底图默认加载，高确定度和折叠高级操作",
+    "真实腾讯标准/卫星切换正常",
+    "实际详情高级操作可展开GPS、手工、来源和只读历史"
+  ],
+  "errors": [],
+  "writeRequests": 0,
+  "placeCode": "WY-0047",
+  "checkedAt": "2026-09-09T09:17:32.701Z",
+  "scope": "read-only real Tencent SDK and trusted HTTPS; no map picking or saving on real places"
+}

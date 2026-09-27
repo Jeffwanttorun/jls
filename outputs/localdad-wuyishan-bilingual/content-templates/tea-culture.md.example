@@ -1,0 +1,22 @@
+---
+title: "[Confirmed article title]"
+slug: "[lowercase-hyphenated-slug]"
+description: "[Plain-language description based only on confirmed information.]"
+eyebrow: "Tea culture"
+lang: en
+translationKey: "[same-as-slug]"
+audience: []
+published: 2026-01-01
+# lastPersonallyChecked: YYYY-MM-DD # Add only after Jeff confirms an in-person check.
+trustStatus: reconfirm-before-travel
+recordStatus: draft
+teaNames: []
+practicalInformation: []
+photos: []
+videos: []
+relatedPlaceIds: []
+relatedStoryIds: []
+relatedRouteIds: []
+---
+
+[Jeff’s confirmed tea knowledge and personal observations go here.]

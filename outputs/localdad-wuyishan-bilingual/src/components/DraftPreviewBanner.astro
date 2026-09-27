@@ -1,0 +1,12 @@
+---
+interface Props { contentType: string; }
+const { contentType } = Astro.props;
+---
+<aside class="draft-preview-banner" aria-label="Draft preview status">
+  <strong>Draft preview</strong>
+  <span>This {contentType} is visible only on Jeff’s local development site. It is not published or included in the sitemap.</span>
+</aside>
+
+<style>
+  .draft-preview-banner{position:relative;z-index:20;display:flex;gap:.75rem;align-items:baseline;padding:.85rem max(6vw,1rem);background:#fff1bd;color:#3f3212;border-block:1px solid #d7b851;font-size:.9rem}.draft-preview-banner strong{white-space:nowrap}.draft-preview-banner span{line-height:1.45}@media(max-width:620px){.draft-preview-banner{display:block}.draft-preview-banner span{display:block;margin-top:.25rem}}
+</style>

@@ -1,0 +1,50 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import EditorialLayout from "../../../layouts/EditorialLayout.astro";
+import { contentSections } from "../../../data/content-sections";
+import { hasMarkdownFiles } from "../../../lib/content-files";
+import { buildSiteContentRegistry } from "../../../lib/site-content-registry";
+import { mergeResolvedReferences } from "../../../lib/relationships";
+import type { Locale } from "../../../i18n/config";
+import { resolveContentReferences } from "../../../lib/relationships";
+import { inspectEditorialBody } from "../../../lib/editorial-body";
+
+export async function getStaticPaths() {
+  const hostedBatchPreviewSlugs = new Set([
+    "natural-heritage-wuyishan",
+    "tea-culture-wuyishan",
+    "tea-garden-wuyishan",
+    "villages-wuyishan",
+  ]);
+  const isHostedPreview = process.env.VERCEL_ENV === "preview";
+  if (!import.meta.env.DEV && !isHostedPreview) return [];
+  const paths = [];
+  for (const section of contentSections) {
+    if (!hasMarkdownFiles(section.contentPath)) continue;
+    const entries = await getCollection(section.collection);
+    for (const entry of entries) {
+      if (entry.data.recordStatus === "draft" && (import.meta.env.DEV || hostedBatchPreviewSlugs.has(entry.data.slug))) {
+        paths.push({ params:{ section:section.path, slug:entry.data.slug }, props:{ entry, sectionLabel:section.label, pillarLabel:section.pillarLabel } });
+      }
+    }
+  }
+  return paths;
+}
+
+type EditorialEntry = CollectionEntry<"people"> | CollectionEntry<"routes"> | CollectionEntry<"teaArticles"> | CollectionEntry<"familyGuides"> | CollectionEntry<"localStories"> | CollectionEntry<"knowledgeArticles">;
+interface Props { entry: EditorialEntry; sectionLabel: string; pillarLabel: string; }
+const { entry, sectionLabel, pillarLabel } = Astro.props as Props;
+const { Content } = await render(entry);
+const registry = await buildSiteContentRegistry();
+const lang = entry.data.lang as Locale;
+const relatedPlaces = mergeResolvedReferences(registry, "place", entry.data.relatedPlaces ?? [], entry.data.relatedPlaceIds ?? [], lang);
+const relatedPeople = mergeResolvedReferences(registry, "person", entry.data.relatedPeople ?? [], entry.data.relatedPersonIds ?? [], lang);
+const relatedStories = mergeResolvedReferences(registry, "story", entry.data.relatedStories ?? [], entry.data.relatedStoryIds ?? [], lang);
+const relatedRoutes = mergeResolvedReferences(registry, "route", entry.data.relatedRoutes ?? [], entry.data.relatedRouteIds ?? [], lang);
+const linkableKnowledgeIds = (entry.data.relatedKnowledgeIds ?? []).filter((id: string) => Boolean(registry.get("knowledge", id)?.hrefs?.[lang] ?? registry.get("knowledge", id)?.hrefs?.en));
+const linkableGuideIds = (entry.data.relatedGuideIds ?? []).filter((id: string) => Boolean(registry.get("guide", id)?.hrefs?.[lang] ?? registry.get("guide", id)?.hrefs?.en));
+const relatedKnowledge = resolveContentReferences(registry, "knowledge", linkableKnowledgeIds, lang);
+const relatedGuides = resolveContentReferences(registry, "guide", linkableGuideIds, lang);
+const bodySections = inspectEditorialBody((entry as typeof entry & { body?: string }).body);
+---
+<EditorialLayout {...entry.data} relatedPlaces={relatedPlaces} relatedPeople={relatedPeople} relatedStories={relatedStories} relatedRoutes={relatedRoutes} relatedKnowledge={relatedKnowledge} relatedGuides={relatedGuides} renderStructuredSources={!bodySections.includesSources} sectionLabel={sectionLabel} pillarLabel={pillarLabel} preview={true}><Content /></EditorialLayout>

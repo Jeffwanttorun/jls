@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "oldBusinessTables": [
+    {
+      "table": "coordinate_candidates",
+      "unchanged": true
+    },
+    {
+      "table": "guide_places",
+      "unchanged": true
+    },
+    {
+      "table": "guide_routes",
+      "unchanged": true
+    },
+    {
+      "table": "guides",
+      "unchanged": true
+    },
+    {
+      "table": "import_jobs",
+      "unchanged": true
+    },
+    {
+      "table": "import_rows",
+      "unchanged": true
+    },
+    {
+      "table": "media",
+      "unchanged": true
+    },
+    {
+      "table": "place_accessibility",
+      "unchanged": true
+    },
+    {
+      "table": "place_coordinates",
+      "unchanged": true
+    },
+    {
+      "table": "place_name_history",
+      "unchanged": true
+    },
+    {
+      "table": "place_nature",
+      "unchanged": true
+    },
+    {
+      "table": "place_practical_info",
+      "unchanged": true
+    },
+    {
+      "table": "place_water",
+      "unchanged": true
+    },
+    {
+      "table": "route_place_links",
+      "unchanged": true
+    },
+    {
+      "table": "route_stops",
+      "unchanged": true
+    },
+    {
+      "table": "routes",
+      "unchanged": true
+    },
+    {
+      "table": "taxonomy_terms",
+      "unchanged": true
+    },
+    {
+      "table": "verification_media",
+      "unchanged": true
+    },
+    {
+      "table": "verifications",
+      "unchanged": true
+    }
+  ],
+  "allExistingPlaceFieldsUnchanged": true,
+  "environmentFileUnchanged": true,
+  "recycleBinRows": 0,
+  "recycleHistoryRows": 0,
+  "newColumns": [
+    "deleted_at",
+    "deleted_by",
+    "deletion_reason"
+  ]
+}

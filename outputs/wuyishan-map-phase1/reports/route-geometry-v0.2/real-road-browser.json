@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-10T17:21:13.756Z",
+  "source": "Tencent driving route geometry cached in prototype config",
+  "views": [
+    {
+      "label": "南源岭附近",
+      "file": "01-南源岭附近-390x844.png",
+      "geometryRange": [
+        0,
+        24
+      ]
+    },
+    {
+      "label": "星村—漫水桥",
+      "file": "02-星村至漫水桥-390x844.png",
+      "geometryRange": [
+        78,
+        120
+      ]
+    },
+    {
+      "label": "黄村—红星",
+      "file": "03-黄村至红星-390x844.png",
+      "geometryRange": [
+        126,
+        201
+      ]
+    },
+    {
+      "label": "月亮湾附近",
+      "file": "04-月亮湾附近-390x844.png",
+      "geometryRange": [
+        196,
+        245
+      ]
+    },
+    {
+      "label": "桃源峪—桐木方向",
+      "file": "05-桃源峪至桐木方向-390x844.png",
+      "geometryRange": [
+        510,
+        690
+      ]
+    },
+    {
+      "label": "大峡谷—大竹岚—坳头",
+      "file": "06-大峡谷至坳头-390x844.png",
+      "geometryRange": [
+        738,
+        951
+      ]
+    }
+  ],
+  "fullRoute": "07-完整路线视野-390x844.png",
+  "providerRequests": 65,
+  "writeRequests": 0,
+  "consoleErrors": []
+}

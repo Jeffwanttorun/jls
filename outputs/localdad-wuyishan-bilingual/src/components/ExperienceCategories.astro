@@ -1,0 +1,7 @@
+---
+import { experienceCategories, experienceTargets } from "../data/experience-categories";
+---
+<section class="experience-categories" aria-labelledby="experience-categories-heading">
+  <header><p class="kicker">Visitor perspectives</p><h2 id="experience-categories-heading">Experience Wuyishan</h2></header>
+  <ul>{experienceCategories.map((category) => <li><h3>{category.label}</h3><ul>{category.targetIds.map((targetId) => { const target = experienceTargets[targetId]; return <li><a href={target.href}>{target.label}</a></li>; })}</ul></li>)}</ul>
+</section>

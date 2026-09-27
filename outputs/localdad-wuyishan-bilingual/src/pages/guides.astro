@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GuideCard from "../components/GuideCard.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { categories, type CategoryKey } from "../data/categories";
+const guides = (await getCollection("guides") as CollectionEntry<"guides">[]).filter(({data}) => data.lang === "en" && data.recordStatus === "published").sort((a,b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Wuyishan Guides | Local Dad Jeff" description="Browse practical Wuyishan travel guides for first-time visitors, hikers, tea lovers, photographers, independent travelers, and families.">
+  <section class="page-head hub-head"><p class="kicker">The guide library</p><h1>Practical notes<br/>from Wuyishan.</h1><p>These guides provide the context I’d give a friend before a visit: how the park works, what the tea names mean, which plans take more energy, and which details are easy to miss from far away.</p></section>
+  <section class="location-directory-link"><div><p class="kicker">Place by place</p><h2>Looking for a specific river, peak, trail, or village?</h2><p>The location library gives each place room for practical notes, maps, photographs, and clear notes about what still needs confirmation.</p></div><a class="button" href="/locations">Browse location guides</a></section>
+  <section class="category-directory"><p class="kicker">Browse sections</p><div>{Object.entries(categories).map(([key, item]) => <a href={`/guides/${key}`}><h2>{item.label}</h2><p>{item.description}</p><span aria-hidden="true">→</span></a>)}</div></section>
+  <section class="collection-section"><div class="section-title"><div><p class="kicker">All current guides</p><h2>The library</h2></div><p>{guides.length} practical guides and growing.</p></div><div class="guide-grid">{guides.map((item) => <GuideCard title={item.data.title} description={item.data.description} category={categories[item.data.category as CategoryKey].label} audience={item.data.audience} href={`/${item.data.slug}`} />)}</div></section>
+  <section class="library-note"><p class="kicker">A growing library</p><h2>More firsthand notes are coming.</h2><p>Future guides will cover easy walks, photography conditions, food, neighborhoods, transportation, seasonal weather, tea visits, and everyday questions that are hard to answer from far away.</p></section>
+</BaseLayout>

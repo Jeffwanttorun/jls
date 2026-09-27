@@ -1,0 +1,13 @@
+---
+interface Props {
+  text?: string;
+  heading?: string;
+}
+
+const { text, heading = "Why this matters" } = Astro.props;
+---
+{text && <section class="knowledge-support-block why-this-matters" aria-labelledby="why-this-matters-heading">
+  <p class="kicker">Context</p>
+  <h2 id="why-this-matters-heading">{heading}</h2>
+  <p>{text}</p>
+</section>}

@@ -1,0 +1,348 @@
+{
+  "passed": true,
+  "unchangedTables": {
+    "coordinate_candidates": true,
+    "guide_places": true,
+    "guide_routes": true,
+    "guides": true,
+    "import_jobs": true,
+    "import_rows": true,
+    "media": true,
+    "place_accessibility": true,
+    "place_coordinates": true,
+    "place_nature": true,
+    "place_practical_info": true,
+    "place_water": true,
+    "route_place_links": true,
+    "route_stops": true,
+    "routes": true,
+    "verification_media": true,
+    "verifications": true
+  },
+  "originalPlaceIdsUnchanged": true,
+  "unexpectedOriginalPlaceChanges": [],
+  "expectedOriginalPlaceChanges": [
+    {
+      "code": "WY-0001",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.005Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0002",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.013Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0003",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.017Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0004",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.020Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0005",
+      "field": "name",
+      "before": "三才峰观景信息点",
+      "after": "三才峰观景点"
+    },
+    {
+      "code": "WY-0005",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.024Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0006",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.027Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0007",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.030Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0008",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.033Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0009",
+      "field": "name",
+      "before": "漫水桥下河位置",
+      "after": "漫水桥河滩"
+    },
+    {
+      "code": "WY-0009",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.035Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0010",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.037Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0011",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.039Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0012",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.042Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0013",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.044Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0014",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.048Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0015",
+      "field": "name",
+      "before": "翡翠谷支线路口",
+      "after": "翡翠谷路口"
+    },
+    {
+      "code": "WY-0015",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.050Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0016",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.052Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0017",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.054Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0018",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.055Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0020",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.060Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0021",
+      "field": "name",
+      "before": "皮坑口下水位置",
+      "after": "皮坑口玩水点"
+    },
+    {
+      "code": "WY-0021",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.063Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0022",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.065Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0023",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.067Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0024",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.069Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0025",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.070Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0026",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.072Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0027",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.074Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0028",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.078Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0029",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.080Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0030",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.083Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0031",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.085Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0032",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.087Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0033",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.088Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0035",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.093Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0036",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.096Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0037",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.098Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0038",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.100Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0039",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.102Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0040",
+      "field": "name",
+      "before": "乌龙茶展示馆",
+      "after": "黄村乌龙茶展示馆"
+    },
+    {
+      "code": "WY-0040",
+      "field": "parent_place_id",
+      "before": "3f859fb6-b24a-46ed-bc16-bf4346ad6000",
+      "after": "a8ac2c98-1141-4865-a0b7-148d707c6f4a"
+    },
+    {
+      "code": "WY-0040",
+      "field": "region",
+      "before": "红星村",
+      "after": "黄村"
+    },
+    {
+      "code": "WY-0040",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.105Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0040",
+      "field": "parent_code",
+      "before": "WY-0039",
+      "after": "WY-0010"
+    },
+    {
+      "code": "WY-0041",
+      "field": "name",
+      "before": "珍稀植物展示馆1号馆",
+      "after": "珍稀植物科普展示馆"
+    },
+    {
+      "code": "WY-0041",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.109Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0042",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.113Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0043",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.115Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0044",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.117Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0045",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.118Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    },
+    {
+      "code": "WY-0046",
+      "field": "updated_at",
+      "before": "2026-09-05T04:35:22.120Z",
+      "after": "2026-09-09T02:26:44.433Z"
+    }
+  ],
+  "envFileUnchanged": true,
+  "coordinatesNotCreatedOrModified": true,
+  "verificationsUnchanged": true,
+  "routeStopsUnchanged": true
+}

@@ -1,0 +1,9 @@
+---
+import type { ContentAuthor } from "../types/content";
+interface Props { author?: ContentAuthor; }
+const { author } = Astro.props;
+---
+{author && <aside class="author-info" aria-label="Author information">
+  <p class="kicker">Author</p>
+  <p><strong>{author.href ? <a href={author.href} rel="author">{author.name}</a> : author.name}</strong>{author.role && <span>{author.role}</span>}</p>
+</aside>}

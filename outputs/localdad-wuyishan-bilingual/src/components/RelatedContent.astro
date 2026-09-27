@@ -1,0 +1,17 @@
+---
+import type { ContentReference } from "../types/content";
+interface Props { articles?: ContentReference[]; places?: ContentReference[]; people?: ContentReference[]; routes?: ContentReference[]; stories?: ContentReference[]; eyebrow?: string; heading?: string; }
+const { articles = [], places = [], people = [], routes = [], stories = [], eyebrow = "Keep reading", heading = "Continue exploring Wuyishan" } = Astro.props;
+const hasContent = articles.length > 0 || places.length > 0 || people.length > 0 || routes.length > 0 || stories.length > 0;
+const articlesOnly = articles.length > 0 && places.length === 0 && people.length === 0 && routes.length === 0 && stories.length === 0;
+---
+{hasContent && <section class="content-module related-content" aria-labelledby="related-content-heading">
+  <header><p class="kicker">{eyebrow}</p><h2 id="related-content-heading">{heading}</h2></header>
+  <div class:list={{ "related-content-simple":articlesOnly }}>
+    {articles.length > 0 && (articlesOnly ? <nav aria-label={heading}><ul>{articles.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul></nav> : <section><h3>Articles</h3><ul>{articles.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul></section>)}
+    {places.length > 0 && <section><h3>Places</h3><ul>{places.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul></section>}
+    {people.length > 0 && <section><h3>People</h3><ul>{people.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul></section>}
+    {routes.length > 0 && <section><h3>Routes</h3><ul>{routes.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul></section>}
+    {stories.length > 0 && <section><h3>Stories</h3><ul>{stories.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul></section>}
+  </div>
+</section>}

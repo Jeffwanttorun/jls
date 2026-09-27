@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "changedTables": [
+    "place_recycle_history",
+    "places"
+  ],
+  "changedPlaces": [
+    {
+      "code": "WY-0011",
+      "name": "黄村沿线停靠/观察位置",
+      "fields": [
+        "updated_at",
+        "deleted_at",
+        "deleted_by",
+        "deletion_reason"
+      ],
+      "deleted_at": "2026-09-09T15:26:05.341Z",
+      "deleted_by": "internal_admin_ui",
+      "deletion_reason": "用户从内部后台移入回收站"
+    }
+  ],
+  "recycleHistoryCountBefore": 0,
+  "recycleHistoryCountAfter": 1,
+  "allOtherBusinessTablesUnchanged": true,
+  "note": "Observed real internal_admin_ui state is preserved. Automated delete/restore tests ran only in random isolated databases; real browser verification blocked every non-GET/HEAD request."
+}

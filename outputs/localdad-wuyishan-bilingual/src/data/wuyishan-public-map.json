@@ -1,0 +1,5875 @@
+{
+  "generatedFrom": "Owner-approved publication of every current active, human-confirmed place coordinate; current place state from read-only integrity snapshot",
+  "generatedAt": "2026-09-24T23:40:38.949Z",
+  "routeSource": {
+    "sourceType": "tencent_driving_route_geometry",
+    "sourceReference": "腾讯地图官方驾车路线规划结果（一次获取后固化，只读）",
+    "capturedAt": "2026-09-10",
+    "coordinateSystem": "GCJ-02",
+    "totalDistanceMeters": 64277,
+    "durationMinutes": 110,
+    "geometryPointCount": 952,
+    "keyRoads": [
+      "江东路",
+      "武夷山国家公园1号风景道"
+    ],
+    "controls": [
+      {
+        "label": "南源岭",
+        "geometryIndex": 0,
+        "latitude": 27.6085563,
+        "longitude": 117.9904387
+      },
+      {
+        "label": "星村",
+        "geometryIndex": 92,
+        "latitude": 27.634233299999995,
+        "longitude": 117.92397969999999
+      },
+      {
+        "label": "黄村",
+        "geometryIndex": 132,
+        "latitude": 27.64893629999999,
+        "longitude": 117.88251369999999
+      },
+      {
+        "label": "月亮湾",
+        "geometryIndex": 207,
+        "latitude": 27.666926299999997,
+        "longitude": 117.81927469999998
+      },
+      {
+        "label": "桃源峪方向",
+        "geometryIndex": 536,
+        "latitude": 27.724696299999998,
+        "longitude": 117.7191477
+      },
+      {
+        "label": "大峡谷展示馆附近",
+        "geometryIndex": 768,
+        "latitude": 27.71800729999998,
+        "longitude": 117.6585037
+      },
+      {
+        "label": "坳头村 / 坳头观景台",
+        "geometryIndex": 951,
+        "latitude": 27.66425729999998,
+        "longitude": 117.65026170000002
+      }
+    ],
+    "segmentation": "六段连续几何；相邻段共用同一连接点",
+    "runtimeRequests": false
+  },
+  "sourceGeometrySha256": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+  "publicPlaceCount": 41,
+  "routes": [
+    {
+      "id": "corridor-01",
+      "path": [
+        {
+          "latitude": 27.6118205,
+          "longitude": 117.9854288,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6120209,
+          "longitude": 117.9856312,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6120209,
+          "longitude": 117.9856312,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6116547,
+          "longitude": 117.986041,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6116547,
+          "longitude": 117.986041,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6113366,
+          "longitude": 117.9857389,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6112124,
+          "longitude": 117.9854697,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6112271,
+          "longitude": 117.9852443,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.611542,
+          "longitude": 117.9839071,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.611542,
+          "longitude": 117.9839071,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6117709,
+          "longitude": 117.983593,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6117709,
+          "longitude": 117.983593,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6124649,
+          "longitude": 117.9836108,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6135231,
+          "longitude": 117.9835589,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6135231,
+          "longitude": 117.9835589,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6133829,
+          "longitude": 117.9829486,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6131698,
+          "longitude": 117.9826116,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6092009,
+          "longitude": 117.9776775,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6080749,
+          "longitude": 117.9758844,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6074726,
+          "longitude": 117.975277,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6041597,
+          "longitude": 117.9722782,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6039108,
+          "longitude": 117.9718812,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6037976,
+          "longitude": 117.971579,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6037632,
+          "longitude": 117.9713735,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6038245,
+          "longitude": 117.9690025,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6035871,
+          "longitude": 117.9672618,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6035623,
+          "longitude": 117.96678,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6037232,
+          "longitude": 117.9644885,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6037841,
+          "longitude": 117.9641334,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6039187,
+          "longitude": 117.963866,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6041474,
+          "longitude": 117.9636066,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6081511,
+          "longitude": 117.9600933,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6083749,
+          "longitude": 117.959781,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6085096,
+          "longitude": 117.9595026,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6086499,
+          "longitude": 117.9589538,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6089059,
+          "longitude": 117.9563683,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6089447,
+          "longitude": 117.955557,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6088278,
+          "longitude": 117.955064,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6083944,
+          "longitude": 117.9538934,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6082436,
+          "longitude": 117.9533365,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6079607,
+          "longitude": 117.9509811,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.607861,
+          "longitude": 117.94886,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6087533,
+          "longitude": 117.9440772,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6089584,
+          "longitude": 117.9434941,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6089584,
+          "longitude": 117.9434941,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.60939,
+          "longitude": 117.9431606,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6111647,
+          "longitude": 117.9422528,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6130132,
+          "longitude": 117.9408069,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6136049,
+          "longitude": 117.9404463,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6170118,
+          "longitude": 117.9387774,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6196278,
+          "longitude": 117.9375888,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6199042,
+          "longitude": 117.9373441,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6206537,
+          "longitude": 117.9363553,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6209953,
+          "longitude": 117.9359808,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6215268,
+          "longitude": 117.9356781,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6228807,
+          "longitude": 117.9351247,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6234284,
+          "longitude": 117.9346642,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.624525,
+          "longitude": 117.9335844,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6247656,
+          "longitude": 117.9331858,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6248651,
+          "longitude": 117.9328072,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6253118,
+          "longitude": 117.9292168,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6253742,
+          "longitude": 117.9289121,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6255296,
+          "longitude": 117.9285714,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6257548,
+          "longitude": 117.9283525,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.62603,
+          "longitude": 117.9282106,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6288724,
+          "longitude": 117.9271293,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6291807,
+          "longitude": 117.9268935,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.629342,
+          "longitude": 117.9266007,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.630484,
+          "longitude": 117.9227334,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6305725,
+          "longitude": 117.9222456,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6305509,
+          "longitude": 117.9217869,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6304572,
+          "longitude": 117.9213961,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6301458,
+          "longitude": 117.9207895,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6297832,
+          "longitude": 117.9202108,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6297832,
+          "longitude": 117.9202108,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6299135,
+          "longitude": 117.9199109,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6299135,
+          "longitude": 117.9199109,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6312154,
+          "longitude": 117.9201037,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6326263,
+          "longitude": 117.9202515,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6334886,
+          "longitude": 117.9200076,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6343349,
+          "longitude": 117.9197077,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6346399,
+          "longitude": 117.9196597,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6346399,
+          "longitude": 117.9196597,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6347829,
+          "longitude": 117.9197276,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6351169,
+          "longitude": 117.9197606,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6371819,
+          "longitude": 117.9198974,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6374949,
+          "longitude": 117.9198743,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6374949,
+          "longitude": 117.9198743,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.637412,
+          "longitude": 117.9197124,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6374102,
+          "longitude": 117.9194156,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6374102,
+          "longitude": 117.9194156,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6374764,
+          "longitude": 117.9192666,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6376345,
+          "longitude": 117.9190897,
+          "system": "WGS84"
+        }
+      ]
+    },
+    {
+      "id": "corridor-02",
+      "path": [
+        {
+          "latitude": 27.6376345,
+          "longitude": 117.9190897,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.63838,
+          "longitude": 117.9185129,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6386651,
+          "longitude": 117.9183529,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6392433,
+          "longitude": 117.9181959,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6393914,
+          "longitude": 117.9180959,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6394534,
+          "longitude": 117.917994,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6395849,
+          "longitude": 117.9173422,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.639663,
+          "longitude": 117.9171553,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6398181,
+          "longitude": 117.9170213,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6407245,
+          "longitude": 117.9165374,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6408526,
+          "longitude": 117.9163514,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6411381,
+          "longitude": 117.9156816,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6412101,
+          "longitude": 117.9156056,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6415973,
+          "longitude": 117.9154386,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6436667,
+          "longitude": 117.9148186,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.644211,
+          "longitude": 117.9144236,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6444332,
+          "longitude": 117.9141486,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6450773,
+          "longitude": 117.9119319,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6455017,
+          "longitude": 117.9110859,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.645729,
+          "longitude": 117.9103889,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6463639,
+          "longitude": 117.9076116,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6465563,
+          "longitude": 117.9061793,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6468795,
+          "longitude": 117.9045649,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6472077,
+          "longitude": 117.9033535,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6475118,
+          "longitude": 117.9018528,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6481027,
+          "longitude": 117.900243,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6482427,
+          "longitude": 117.8997528,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6482867,
+          "longitude": 117.8994686,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6482036,
+          "longitude": 117.8988553,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6478304,
+          "longitude": 117.8977657,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6477253,
+          "longitude": 117.8973514,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6476301,
+          "longitude": 117.8962026,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.647663,
+          "longitude": 117.8957773,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.647663,
+          "longitude": 117.8957773,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.647894,
+          "longitude": 117.8955932,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6486619,
+          "longitude": 117.8952889,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6488849,
+          "longitude": 117.8951618,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6497137,
+          "longitude": 117.894252,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6506585,
+          "longitude": 117.8936755,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6508215,
+          "longitude": 117.8934233,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6523329,
+          "longitude": 117.8775985,
+          "system": "WGS84"
+        }
+      ]
+    },
+    {
+      "id": "corridor-03",
+      "path": [
+        {
+          "latitude": 27.6523329,
+          "longitude": 117.8775985,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6523071,
+          "longitude": 117.8704388,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6522505,
+          "longitude": 117.8699078,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6521601,
+          "longitude": 117.8696304,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6519888,
+          "longitude": 117.8693519,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6512987,
+          "longitude": 117.8684894,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6505065,
+          "longitude": 117.8675938,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6498754,
+          "longitude": 117.8667993,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6494065,
+          "longitude": 117.8661151,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6487721,
+          "longitude": 117.8644409,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6485596,
+          "longitude": 117.8640521,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6469101,
+          "longitude": 117.8623369,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6461887,
+          "longitude": 117.861386,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6459604,
+          "longitude": 117.8611906,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6453808,
+          "longitude": 117.8608439,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6452356,
+          "longitude": 117.8607067,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6451194,
+          "longitude": 117.8605483,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6450279,
+          "longitude": 117.8602728,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6450066,
+          "longitude": 117.8600533,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.645055,
+          "longitude": 117.8596314,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6457756,
+          "longitude": 117.8554615,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6459921,
+          "longitude": 117.853895,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6460061,
+          "longitude": 117.8533367,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6458784,
+          "longitude": 117.8529018,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6454541,
+          "longitude": 117.852122,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6453165,
+          "longitude": 117.8517833,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.643162,
+          "longitude": 117.8451931,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6430483,
+          "longitude": 117.8447691,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6430016,
+          "longitude": 117.8443832,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6429782,
+          "longitude": 117.8435993,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6428886,
+          "longitude": 117.8372458,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6431407,
+          "longitude": 117.8351817,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6432844,
+          "longitude": 117.8344468,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6435006,
+          "longitude": 117.8340207,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6441103,
+          "longitude": 117.83332,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6443351,
+          "longitude": 117.8332147,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6445651,
+          "longitude": 117.8331756,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6445651,
+          "longitude": 117.8331756,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.645435,
+          "longitude": 117.8336256,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6460985,
+          "longitude": 117.8339143,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6460985,
+          "longitude": 117.8339143,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6463005,
+          "longitude": 117.8338922,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6464803,
+          "longitude": 117.8337829,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6470571,
+          "longitude": 117.8331302,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6474126,
+          "longitude": 117.8328555,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6510408,
+          "longitude": 117.8307119,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6517943,
+          "longitude": 117.8304131,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6521175,
+          "longitude": 117.829988,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6531767,
+          "longitude": 117.8289995,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6536881,
+          "longitude": 117.8281152,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6547178,
+          "longitude": 117.826849,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6550472,
+          "longitude": 117.8265482,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6552791,
+          "longitude": 117.82648,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6561812,
+          "longitude": 117.826499,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.656976,
+          "longitude": 117.8263756,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6578866,
+          "longitude": 117.8261409,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6600857,
+          "longitude": 117.8261107,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6607972,
+          "longitude": 117.8257848,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6613096,
+          "longitude": 117.8254479,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6618826,
+          "longitude": 117.8249236,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6621141,
+          "longitude": 117.8246288,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6630075,
+          "longitude": 117.8221767,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6630858,
+          "longitude": 117.8217907,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.663305,
+          "longitude": 117.8186891,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6633857,
+          "longitude": 117.8185196,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6654076,
+          "longitude": 117.8167271,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.66586,
+          "longitude": 117.8163822,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6662238,
+          "longitude": 117.816282,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.667103,
+          "longitude": 117.816341,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6674667,
+          "longitude": 117.8161586,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6674667,
+          "longitude": 117.8161586,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.667732,
+          "longitude": 117.8157957,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6680056,
+          "longitude": 117.8155641,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6690995,
+          "longitude": 117.8149234,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6699315,
+          "longitude": 117.8143069,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6702203,
+          "longitude": 117.8142167,
+          "system": "WGS84"
+        }
+      ]
+    },
+    {
+      "id": "corridor-04",
+      "path": [
+        {
+          "latitude": 27.6702203,
+          "longitude": 117.8142167,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6707593,
+          "longitude": 117.8141886,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6717531,
+          "longitude": 117.8140221,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6720082,
+          "longitude": 117.8140451,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6724966,
+          "longitude": 117.8142385,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6725835,
+          "longitude": 117.8142205,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6725835,
+          "longitude": 117.8142205,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6727956,
+          "longitude": 117.8136952,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6727956,
+          "longitude": 117.8136952,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6726376,
+          "longitude": 117.81317,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6726682,
+          "longitude": 117.8129144,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6727688,
+          "longitude": 117.8127048,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6731112,
+          "longitude": 117.8123299,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6732298,
+          "longitude": 117.8121355,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.673594,
+          "longitude": 117.811115,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6740633,
+          "longitude": 117.8101397,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6743359,
+          "longitude": 117.8098821,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6755949,
+          "longitude": 117.8092435,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6758826,
+          "longitude": 117.809054,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6765154,
+          "longitude": 117.8083533,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6766448,
+          "longitude": 117.8079915,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.676733,
+          "longitude": 117.8075455,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6767446,
+          "longitude": 117.8072899,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6765454,
+          "longitude": 117.8065903,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760957,
+          "longitude": 117.8056041,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6758825,
+          "longitude": 117.8049426,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6754345,
+          "longitude": 117.8043804,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6753291,
+          "longitude": 117.8041489,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6752848,
+          "longitude": 117.8039424,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6752761,
+          "longitude": 117.8035495,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6753326,
+          "longitude": 117.8032148,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6758674,
+          "longitude": 117.8018247,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760464,
+          "longitude": 117.8012304,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.676296,
+          "longitude": 117.7997322,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6762715,
+          "longitude": 117.7994015,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760269,
+          "longitude": 117.7990277,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6750486,
+          "longitude": 117.7982171,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6734975,
+          "longitude": 117.7963173,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6710993,
+          "longitude": 117.7943064,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6706749,
+          "longitude": 117.7940329,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6698303,
+          "longitude": 117.7936502,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6691586,
+          "longitude": 117.7932284,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6674573,
+          "longitude": 117.792412,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6668857,
+          "longitude": 117.7919682,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6660175,
+          "longitude": 117.7911727,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6658021,
+          "longitude": 117.7908932,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6652555,
+          "longitude": 117.7897481,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6651769,
+          "longitude": 117.7892743,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6651723,
+          "longitude": 117.7888335,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6651723,
+          "longitude": 117.7888335,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6653679,
+          "longitude": 117.7885379,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6656276,
+          "longitude": 117.7883255,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6659854,
+          "longitude": 117.7881141,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6675327,
+          "longitude": 117.7874528,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6677986,
+          "longitude": 117.7874087,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6685117,
+          "longitude": 117.7873996,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6692615,
+          "longitude": 117.7872363,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6699171,
+          "longitude": 117.7868836,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6701338,
+          "longitude": 117.7866361,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6702745,
+          "longitude": 117.7863456,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6706517,
+          "longitude": 117.7848841,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6706702,
+          "longitude": 117.78362,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6707694,
+          "longitude": 117.7829378,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6709773,
+          "longitude": 117.7819682,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6713884,
+          "longitude": 117.7811539,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6716376,
+          "longitude": 117.7803266,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6717963,
+          "longitude": 117.7800482,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6720571,
+          "longitude": 117.7799029,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6724181,
+          "longitude": 117.7798218,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6735673,
+          "longitude": 117.7799259,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6752284,
+          "longitude": 117.7799478,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6755583,
+          "longitude": 117.7798145,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.675904,
+          "longitude": 117.779494,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760088,
+          "longitude": 117.7793027,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760575,
+          "longitude": 117.7790303,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760895,
+          "longitude": 117.7780359,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760642,
+          "longitude": 117.7777555,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.675933,
+          "longitude": 117.7775221,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6750763,
+          "longitude": 117.7768663,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6746227,
+          "longitude": 117.7762274,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6744834,
+          "longitude": 117.7759671,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6744432,
+          "longitude": 117.7757958,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6746616,
+          "longitude": 117.7751309,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6747326,
+          "longitude": 117.7750268,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6747955,
+          "longitude": 117.7750017,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6751916,
+          "longitude": 117.7750638,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.675846,
+          "longitude": 117.7753932,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6764601,
+          "longitude": 117.7754973,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6770242,
+          "longitude": 117.7754762,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6776241,
+          "longitude": 117.775368,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.677885,
+          "longitude": 117.7752718,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6780859,
+          "longitude": 117.7750826,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6781877,
+          "longitude": 117.7748783,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6782385,
+          "longitude": 117.774651,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.67827,
+          "longitude": 117.7740762,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6781768,
+          "longitude": 117.773863,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6779535,
+          "longitude": 117.7735616,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6774881,
+          "longitude": 117.7731011,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6766306,
+          "longitude": 117.7725855,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6766306,
+          "longitude": 117.7725855,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6765565,
+          "longitude": 117.7724233,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6765912,
+          "longitude": 117.7720759,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6767127,
+          "longitude": 117.7714801,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6769373,
+          "longitude": 117.7708594,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.676966,
+          "longitude": 117.7704479,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6769138,
+          "longitude": 117.7701686,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6767385,
+          "longitude": 117.7698282,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6767385,
+          "longitude": 117.7698282,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6762532,
+          "longitude": 117.7695299,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6757722,
+          "longitude": 117.7694929,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6755022,
+          "longitude": 117.769551,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6750244,
+          "longitude": 117.7698924,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6748264,
+          "longitude": 117.7699585,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6746374,
+          "longitude": 117.7699515,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6737761,
+          "longitude": 117.7696683,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6717282,
+          "longitude": 117.7685001,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6712211,
+          "longitude": 117.7684511,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6700281,
+          "longitude": 117.7685503,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6689388,
+          "longitude": 117.7682271,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6685836,
+          "longitude": 117.7680779,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6684575,
+          "longitude": 117.7679408,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6684043,
+          "longitude": 117.7675644,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6684302,
+          "longitude": 117.7673452,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6684951,
+          "longitude": 117.7672231,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.668606,
+          "longitude": 117.7671269,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.668814,
+          "longitude": 117.7670388,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.669052,
+          "longitude": 117.7670318,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6702084,
+          "longitude": 117.7674331,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6704944,
+          "longitude": 117.7674621,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6708304,
+          "longitude": 117.7674451,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6713144,
+          "longitude": 117.76734,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6715463,
+          "longitude": 117.7671798,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6717172,
+          "longitude": 117.7670026,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.671883,
+          "longitude": 117.7666993,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6719167,
+          "longitude": 117.7661847,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6718405,
+          "longitude": 117.7658214,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6714027,
+          "longitude": 117.7644652,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6712714,
+          "longitude": 117.7638246,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6712973,
+          "longitude": 117.7636194,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6716141,
+          "longitude": 117.763224,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6722769,
+          "longitude": 117.7626885,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6733185,
+          "longitude": 117.7617197,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6734835,
+          "longitude": 117.7615125,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6736653,
+          "longitude": 117.7611252,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6736862,
+          "longitude": 117.7607509,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.673567,
+          "longitude": 117.7603756,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6732778,
+          "longitude": 117.7599423,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6726505,
+          "longitude": 117.7591959,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6721522,
+          "longitude": 117.7582693,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.671797,
+          "longitude": 117.757765,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6715579,
+          "longitude": 117.7573197,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6714678,
+          "longitude": 117.7569065,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6715077,
+          "longitude": 117.7566794,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6715707,
+          "longitude": 117.7565523,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6719446,
+          "longitude": 117.756142,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6722116,
+          "longitude": 117.7560179,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6728657,
+          "longitude": 117.7560499,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6734097,
+          "longitude": 117.7561269,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6735928,
+          "longitude": 117.756222,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6737818,
+          "longitude": 117.756405,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6748062,
+          "longitude": 117.7576567,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6755994,
+          "longitude": 117.7581019,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6759905,
+          "longitude": 117.758259,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6764435,
+          "longitude": 117.758331,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6767025,
+          "longitude": 117.7582409,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6772045,
+          "longitude": 117.7579577,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6775724,
+          "longitude": 117.7575044,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6776654,
+          "longitude": 117.7573403,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6777073,
+          "longitude": 117.7571552,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.677627,
+          "longitude": 117.7560295,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6776409,
+          "longitude": 117.7554952,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6778957,
+          "longitude": 117.7542016,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6780766,
+          "longitude": 117.752887,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6782166,
+          "longitude": 117.7524898,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6783806,
+          "longitude": 117.7522947,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6787656,
+          "longitude": 117.7519816,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6791046,
+          "longitude": 117.7518565,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6805777,
+          "longitude": 117.7519644,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6808157,
+          "longitude": 117.7519294,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6811027,
+          "longitude": 117.7517913,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6814498,
+          "longitude": 117.7514482,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6818208,
+          "longitude": 117.7511971,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6818958,
+          "longitude": 117.75106,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6819448,
+          "longitude": 117.7508529,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6819658,
+          "longitude": 117.7503058,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6814508,
+          "longitude": 117.7483863,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.681294,
+          "longitude": 117.746389,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6812891,
+          "longitude": 117.746127,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6813501,
+          "longitude": 117.7457269,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6814642,
+          "longitude": 117.7454499,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6816162,
+          "longitude": 117.7452379,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6824264,
+          "longitude": 117.7446018,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6830666,
+          "longitude": 117.7443127,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6839898,
+          "longitude": 117.7435216,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.684525,
+          "longitude": 117.7431666,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.684809,
+          "longitude": 117.7430515,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6854671,
+          "longitude": 117.7429775,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6862991,
+          "longitude": 117.7430594,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6870301,
+          "longitude": 117.7435134,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6877461,
+          "longitude": 117.7435903,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6880941,
+          "longitude": 117.7439173,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6882301,
+          "longitude": 117.7439143,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6882831,
+          "longitude": 117.7437423,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6882693,
+          "longitude": 117.7433083,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6883073,
+          "longitude": 117.7431993,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6886964,
+          "longitude": 117.7429572,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6890105,
+          "longitude": 117.7425542,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6893657,
+          "longitude": 117.7422412,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6894527,
+          "longitude": 117.7421022,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6895188,
+          "longitude": 117.7418632,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.689572,
+          "longitude": 117.7411663,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6893643,
+          "longitude": 117.7403524,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6892186,
+          "longitude": 117.7395935,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6891648,
+          "longitude": 117.7391186,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6892019,
+          "longitude": 117.7388087,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.689335,
+          "longitude": 117.7385187,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6896003,
+          "longitude": 117.7381008,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6904737,
+          "longitude": 117.7373139,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6910408,
+          "longitude": 117.7371509,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6918889,
+          "longitude": 117.7371499,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6921779,
+          "longitude": 117.7371948,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6926869,
+          "longitude": 117.7373837,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6931229,
+          "longitude": 117.7374437,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6936469,
+          "longitude": 117.7375816,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.694714,
+          "longitude": 117.7375175,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6958932,
+          "longitude": 117.7372965,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6967193,
+          "longitude": 117.7372344,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6989409,
+          "longitude": 117.7365685,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.69977,
+          "longitude": 117.7364174,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7001411,
+          "longitude": 117.7362805,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7004013,
+          "longitude": 117.7360705,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7007495,
+          "longitude": 117.7356666,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7010019,
+          "longitude": 117.7349628,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7011072,
+          "longitude": 117.734499,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7011025,
+          "longitude": 117.7340082,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7010288,
+          "longitude": 117.7334634,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7006894,
+          "longitude": 117.7326118,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7006225,
+          "longitude": 117.732353,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7006628,
+          "longitude": 117.7320081,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7007599,
+          "longitude": 117.7317992,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.700908,
+          "longitude": 117.7317013,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.701126,
+          "longitude": 117.7316593,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7015251,
+          "longitude": 117.7317012,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.702097,
+          "longitude": 117.7318931,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7027637,
+          "longitude": 117.7323528,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7030227,
+          "longitude": 117.7324217,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7037638,
+          "longitude": 117.7324157,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7044611,
+          "longitude": 117.7320078,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7045713,
+          "longitude": 117.7318249,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7046177,
+          "longitude": 117.7312312,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7047993,
+          "longitude": 117.7304066,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7048302,
+          "longitude": 117.7292503,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7048725,
+          "longitude": 117.7288975,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7051022,
+          "longitude": 117.7280041,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7057189,
+          "longitude": 117.7272465,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7066564,
+          "longitude": 117.7256876,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7072481,
+          "longitude": 117.7249471,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7074172,
+          "longitude": 117.7248032,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7078505,
+          "longitude": 117.7245513,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.709181,
+          "longitude": 117.7241555,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.709181,
+          "longitude": 117.7241555,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.710073,
+          "longitude": 117.7232312,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7105637,
+          "longitude": 117.7225857,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7112512,
+          "longitude": 117.7221231,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7121264,
+          "longitude": 117.7210969,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7126614,
+          "longitude": 117.7201778,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7128471,
+          "longitude": 117.7195753,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7129373,
+          "longitude": 117.7193905,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7134993,
+          "longitude": 117.7185343,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7136745,
+          "longitude": 117.7183795,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7138436,
+          "longitude": 117.7183025,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7144958,
+          "longitude": 117.7182016,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7149652,
+          "longitude": 117.7178919,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7149652,
+          "longitude": 117.7178919,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7155033,
+          "longitude": 117.7178439,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7156864,
+          "longitude": 117.7177589,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7158607,
+          "longitude": 117.7175631,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7159501,
+          "longitude": 117.7171975,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7159234,
+          "longitude": 117.7169228,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7156792,
+          "longitude": 117.7162725,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7152619,
+          "longitude": 117.7156263,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7149596,
+          "longitude": 117.7150489,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7149579,
+          "longitude": 117.7148212,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7150632,
+          "longitude": 117.7145805,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7153166,
+          "longitude": 117.7143108,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7156329,
+          "longitude": 117.714085,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7171431,
+          "longitude": 117.7132878,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7189947,
+          "longitude": 117.712169,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7196767,
+          "longitude": 117.7122259,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7203675,
+          "longitude": 117.7124366,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7209793,
+          "longitude": 117.7126842,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7215939,
+          "longitude": 117.7130408,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7219015,
+          "longitude": 117.7133634,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7219961,
+          "longitude": 117.713645,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7220605,
+          "longitude": 117.7149725,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7219971,
+          "longitude": 117.7152202,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7217375,
+          "longitude": 117.7156987,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7216881,
+          "longitude": 117.7160593,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7218027,
+          "longitude": 117.7164089,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7219254,
+          "longitude": 117.7166426,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7220213,
+          "longitude": 117.7167385,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7221554,
+          "longitude": 117.7167195,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7222425,
+          "longitude": 117.7166406,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7225612,
+          "longitude": 117.7160552,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7226824,
+          "longitude": 117.7159233,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7231507,
+          "longitude": 117.7156706,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7234088,
+          "longitude": 117.7155957,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7237989,
+          "longitude": 117.7155836,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7242387,
+          "longitude": 117.7158273,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7247146,
+          "longitude": 117.7158772,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7251747,
+          "longitude": 117.7158352,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7260251,
+          "longitude": 117.7156014,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7264042,
+          "longitude": 117.7155704,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7266332,
+          "longitude": 117.7155944,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7268641,
+          "longitude": 117.7156593,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.727179,
+          "longitude": 117.7158281,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7277424,
+          "longitude": 117.7163894,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7279532,
+          "longitude": 117.7165393,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7281601,
+          "longitude": 117.7166152,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7283582,
+          "longitude": 117.7166042,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7285473,
+          "longitude": 117.7165212,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7287305,
+          "longitude": 117.7163904,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7289358,
+          "longitude": 117.7161676,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7290651,
+          "longitude": 117.7159019,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7292851,
+          "longitude": 117.7150898,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7292844,
+          "longitude": 117.714871,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7292117,
+          "longitude": 117.7146193,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7291198,
+          "longitude": 117.7145004,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.72895,
+          "longitude": 117.7143796,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7279523,
+          "longitude": 117.7140051,
+          "system": "WGS84"
+        }
+      ]
+    },
+    {
+      "id": "corridor-05",
+      "path": [
+        {
+          "latitude": 27.7279523,
+          "longitude": 117.7140051,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7277694,
+          "longitude": 117.7139082,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7275926,
+          "longitude": 117.7137514,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.72673,
+          "longitude": 117.7125589,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7263771,
+          "longitude": 117.711718,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7262875,
+          "longitude": 117.7113914,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7262531,
+          "longitude": 117.710968,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7263071,
+          "longitude": 117.7095308,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7261526,
+          "longitude": 117.7084672,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7262696,
+          "longitude": 117.7077152,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7265272,
+          "longitude": 117.7066397,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7265316,
+          "longitude": 117.706421,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7264613,
+          "longitude": 117.7058928,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.726571,
+          "longitude": 117.7054724,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7266843,
+          "longitude": 117.7052657,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7269447,
+          "longitude": 117.705024,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7273181,
+          "longitude": 117.7047693,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7280847,
+          "longitude": 117.7044228,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7283728,
+          "longitude": 117.7043558,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7288849,
+          "longitude": 117.7043338,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7293708,
+          "longitude": 117.7044486,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7297298,
+          "longitude": 117.7044536,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7305242,
+          "longitude": 117.7042488,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7309997,
+          "longitude": 117.7040051,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7314413,
+          "longitude": 117.7036506,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7322237,
+          "longitude": 117.7028048,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7326984,
+          "longitude": 117.7023974,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7332504,
+          "longitude": 117.7017943,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7335067,
+          "longitude": 117.7015826,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7342175,
+          "longitude": 117.7011542,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7343786,
+          "longitude": 117.7011222,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7350365,
+          "longitude": 117.7011901,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7353348,
+          "longitude": 117.7010543,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7355351,
+          "longitude": 117.7008885,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7357896,
+          "longitude": 117.7005999,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7361838,
+          "longitude": 117.6998381,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7369736,
+          "longitude": 117.6987897,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7370561,
+          "longitude": 117.6985201,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7371682,
+          "longitude": 117.6978432,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7370955,
+          "longitude": 117.6970555,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.736981,
+          "longitude": 117.6967481,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7360396,
+          "longitude": 117.6957278,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7349004,
+          "longitude": 117.6952038,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7345542,
+          "longitude": 117.6947147,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7341318,
+          "longitude": 117.6943184,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7336128,
+          "longitude": 117.6936835,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.733464,
+          "longitude": 117.6935557,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7330463,
+          "longitude": 117.693396,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7329333,
+          "longitude": 117.6933841,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7327992,
+          "longitude": 117.693434,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7325507,
+          "longitude": 117.6937195,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7320291,
+          "longitude": 117.6946001,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7318006,
+          "longitude": 117.6948806,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7316334,
+          "longitude": 117.6949764,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7314353,
+          "longitude": 117.6949934,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7313224,
+          "longitude": 117.6949455,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7311757,
+          "longitude": 117.6947858,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7311009,
+          "longitude": 117.694645,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7310693,
+          "longitude": 117.6944124,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7311912,
+          "longitude": 117.6939023,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7318629,
+          "longitude": 117.6924018,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7318636,
+          "longitude": 117.6919846,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7316742,
+          "longitude": 117.6910812,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7316875,
+          "longitude": 117.6908716,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7317919,
+          "longitude": 117.6906829,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7321212,
+          "longitude": 117.6905431,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7325683,
+          "longitude": 117.6905231,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7330851,
+          "longitude": 117.6906309,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7334193,
+          "longitude": 117.6905819,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7340287,
+          "longitude": 117.6903762,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7343793,
+          "longitude": 117.6900498,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7346772,
+          "longitude": 117.6895557,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7348389,
+          "longitude": 117.6891773,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7349395,
+          "longitude": 117.6883408,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7351377,
+          "longitude": 117.687684,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7351917,
+          "longitude": 117.686587,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7353557,
+          "longitude": 117.686039,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7355654,
+          "longitude": 117.6856477,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7359924,
+          "longitude": 117.6851286,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.736591,
+          "longitude": 117.6848471,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7373964,
+          "longitude": 117.6841553,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7377143,
+          "longitude": 117.6836892,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7379829,
+          "longitude": 117.6833847,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7383331,
+          "longitude": 117.6827669,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.739162,
+          "longitude": 117.6817777,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7393323,
+          "longitude": 117.6816589,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7398177,
+          "longitude": 117.6814532,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7406818,
+          "longitude": 117.6809222,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.741307,
+          "longitude": 117.6803273,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7419276,
+          "longitude": 117.6795118,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.741937,
+          "longitude": 117.6793112,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7418567,
+          "longitude": 117.6789658,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.741913,
+          "longitude": 117.6788041,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.741913,
+          "longitude": 117.6788041,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7421956,
+          "longitude": 117.6785107,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7426483,
+          "longitude": 117.6781703,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7429486,
+          "longitude": 117.6780216,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7432826,
+          "longitude": 117.6780136,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7448421,
+          "longitude": 117.6783907,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7462204,
+          "longitude": 117.6783237,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7466698,
+          "longitude": 117.678172,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7466698,
+          "longitude": 117.678172,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7466951,
+          "longitude": 117.6779644,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7466951,
+          "longitude": 117.6779644,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7464033,
+          "longitude": 117.6773306,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7462472,
+          "longitude": 117.6768685,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7462544,
+          "longitude": 117.6767468,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7464263,
+          "longitude": 117.6762657,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7464507,
+          "longitude": 117.6760611,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7464156,
+          "longitude": 117.675593,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7463113,
+          "longitude": 117.6752447,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7462175,
+          "longitude": 117.6751099,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7460717,
+          "longitude": 117.6749972,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7454022,
+          "longitude": 117.6746898,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7451865,
+          "longitude": 117.6745132,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.745008,
+          "longitude": 117.6742497,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7447924,
+          "longitude": 117.6734932,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7447057,
+          "longitude": 117.6733555,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.743575,
+          "longitude": 117.672623,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7427664,
+          "longitude": 117.6723326,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7421134,
+          "longitude": 117.6717937,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7418686,
+          "longitude": 117.671664,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7413016,
+          "longitude": 117.6716211,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7410685,
+          "longitude": 117.671674,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.740621,
+          "longitude": 117.6718787,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7404121,
+          "longitude": 117.6718328,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7402335,
+          "longitude": 117.6716312,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7399325,
+          "longitude": 117.6710833,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7395771,
+          "longitude": 117.67071,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7392476,
+          "longitude": 117.6704396,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7385046,
+          "longitude": 117.6698967,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7376222,
+          "longitude": 117.6695155,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7363686,
+          "longitude": 117.6687232,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7356615,
+          "longitude": 117.6682023,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7354838,
+          "longitude": 117.6679927,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7350743,
+          "longitude": 117.6672242,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7348206,
+          "longitude": 117.6670366,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7340591,
+          "longitude": 117.6667163,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7336387,
+          "longitude": 117.666389,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7333443,
+          "longitude": 117.6660576,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.732333,
+          "longitude": 117.6645846,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.730983,
+          "longitude": 117.6634209,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7307243,
+          "longitude": 117.6632423,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7307243,
+          "longitude": 117.6632423,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7305021,
+          "longitude": 117.6633182,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7299824,
+          "longitude": 117.6636615,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7296675,
+          "longitude": 117.6636077,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7293768,
+          "longitude": 117.663428,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.727777,
+          "longitude": 117.6621516,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7264128,
+          "longitude": 117.6616567,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7261771,
+          "longitude": 117.66148,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.725689,
+          "longitude": 117.660984,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7254752,
+          "longitude": 117.6608443,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7252053,
+          "longitude": 117.6607854,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7239453,
+          "longitude": 117.6606987,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7237355,
+          "longitude": 117.660566,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7229331,
+          "longitude": 117.6596997,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7226654,
+          "longitude": 117.6594921,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7221117,
+          "longitude": 117.6593075,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7213686,
+          "longitude": 117.6592916,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7210499,
+          "longitude": 117.6591519,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7205575,
+          "longitude": 117.6587946,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7196878,
+          "longitude": 117.6585441,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7195082,
+          "longitude": 117.6583475,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7191497,
+          "longitude": 117.6574982,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7185955,
+          "longitude": 117.6564971,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.718256,
+          "longitude": 117.6561737,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7176285,
+          "longitude": 117.6558474,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7174226,
+          "longitude": 117.6558144,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7171671,
+          "longitude": 117.65607,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7169569,
+          "longitude": 117.6561469,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7168251,
+          "longitude": 117.656064,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7166917,
+          "longitude": 117.6556877,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7166189,
+          "longitude": 117.6555829,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7164619,
+          "longitude": 117.655578,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7163857,
+          "longitude": 117.6556718,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7163975,
+          "longitude": 117.6558115,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.716744,
+          "longitude": 117.656638,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7170312,
+          "longitude": 117.6570991,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.717033,
+          "longitude": 117.6572218,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7169608,
+          "longitude": 117.6573047,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7168228,
+          "longitude": 117.6572977,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7161079,
+          "longitude": 117.656646,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7160272,
+          "longitude": 117.6565023,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7159779,
+          "longitude": 117.656117,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7159281,
+          "longitude": 117.6559862,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7149402,
+          "longitude": 117.6547706,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7148485,
+          "longitude": 117.6546049,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7148389,
+          "longitude": 117.6543993,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7149022,
+          "longitude": 117.6541896,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7150929,
+          "longitude": 117.6538233,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7152843,
+          "longitude": 117.6536137,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7153553,
+          "longitude": 117.6536077,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7154802,
+          "longitude": 117.6536965,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7155265,
+          "longitude": 117.6540638,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7155644,
+          "longitude": 117.6541367,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7156513,
+          "longitude": 117.6541796,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7163514,
+          "longitude": 117.6541736,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7167262,
+          "longitude": 117.6542943,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7170287,
+          "longitude": 117.6540398,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7172079,
+          "longitude": 117.6539559,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7175166,
+          "longitude": 117.6541595,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7176496,
+          "longitude": 117.6541565,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7179519,
+          "longitude": 117.6540057,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7180628,
+          "longitude": 117.6540467,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7182506,
+          "longitude": 117.6542024,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7186305,
+          "longitude": 117.6542452,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7189151,
+          "longitude": 117.6545097,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7193271,
+          "longitude": 117.6550697,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7195289,
+          "longitude": 117.6552314,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7196858,
+          "longitude": 117.6552932,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7198479,
+          "longitude": 117.6552373,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7201989,
+          "longitude": 117.6547202,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7205733,
+          "longitude": 117.6544866,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7209722,
+          "longitude": 117.6540075,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7210483,
+          "longitude": 117.6539556,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7211663,
+          "longitude": 117.6539556,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7213231,
+          "longitude": 117.6540813,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7213618,
+          "longitude": 117.654249,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7213419,
+          "longitude": 117.6547781,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7213773,
+          "longitude": 117.6551194,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7212497,
+          "longitude": 117.6554169,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7212495,
+          "longitude": 117.6555317,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7213453,
+          "longitude": 117.6556654,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7215462,
+          "longitude": 117.6557023,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7216674,
+          "longitude": 117.6555915,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7217118,
+          "longitude": 117.6554059,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7216862,
+          "longitude": 117.6551843,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7215169,
+          "longitude": 117.6547671,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7215799,
+          "longitude": 117.6542031,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7215715,
+          "longitude": 117.6538967,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.721485,
+          "longitude": 117.6536052,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7213682,
+          "longitude": 117.6534675,
+          "system": "WGS84"
+        }
+      ]
+    },
+    {
+      "id": "corridor-06",
+      "path": [
+        {
+          "latitude": 27.7213682,
+          "longitude": 117.6534675,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7212363,
+          "longitude": 117.6534375,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7210422,
+          "longitude": 117.6534665,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.720301,
+          "longitude": 117.6540774,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7200298,
+          "longitude": 117.6541723,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7197858,
+          "longitude": 117.6541653,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7196059,
+          "longitude": 117.6540875,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7193753,
+          "longitude": 117.6538868,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7189472,
+          "longitude": 117.6533269,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7187545,
+          "longitude": 117.6531373,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7182037,
+          "longitude": 117.6530265,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7174992,
+          "longitude": 117.6526612,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7171334,
+          "longitude": 117.6525505,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7170335,
+          "longitude": 117.6524656,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.716974,
+          "longitude": 117.6522051,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7171651,
+          "longitude": 117.6515952,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7172652,
+          "longitude": 117.6503993,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.717204,
+          "longitude": 117.6487253,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7171692,
+          "longitude": 117.6486294,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7170713,
+          "longitude": 117.6485446,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7168722,
+          "longitude": 117.6485805,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7165838,
+          "longitude": 117.6488321,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7160163,
+          "longitude": 117.6496807,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7155367,
+          "longitude": 117.6499992,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7151958,
+          "longitude": 117.6504733,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7150958,
+          "longitude": 117.6505053,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7147568,
+          "longitude": 117.6504514,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7144723,
+          "longitude": 117.6507379,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7143252,
+          "longitude": 117.6508028,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7139263,
+          "longitude": 117.6506731,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7132367,
+          "longitude": 117.6510115,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7129442,
+          "longitude": 117.6512541,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7125458,
+          "longitude": 117.6514957,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7124504,
+          "longitude": 117.6516704,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7122714,
+          "longitude": 117.6522464,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7121702,
+          "longitude": 117.6523692,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7120621,
+          "longitude": 117.6524341,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7116569,
+          "longitude": 117.652486,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7114638,
+          "longitude": 117.6525589,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7108528,
+          "longitude": 117.653078,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7095372,
+          "longitude": 117.6533526,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7090134,
+          "longitude": 117.6532159,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7087294,
+          "longitude": 117.6532049,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7086333,
+          "longitude": 117.6532449,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7083458,
+          "longitude": 117.6535104,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7082367,
+          "longitude": 117.6535394,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7081528,
+          "longitude": 117.6535034,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7078992,
+          "longitude": 117.653232,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7077743,
+          "longitude": 117.65319,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7076381,
+          "longitude": 117.6532629,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7071709,
+          "longitude": 117.6539367,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7068736,
+          "longitude": 117.6540845,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7067417,
+          "longitude": 117.6540126,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7066576,
+          "longitude": 117.6535145,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7065178,
+          "longitude": 117.6533828,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7064108,
+          "longitude": 117.6533868,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7059555,
+          "longitude": 117.6535545,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7054907,
+          "longitude": 117.6534038,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7052636,
+          "longitude": 117.6534188,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7047098,
+          "longitude": 117.6538501,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7045925,
+          "longitude": 117.6539908,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7041886,
+          "longitude": 117.6550329,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7041304,
+          "longitude": 117.6557147,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7040721,
+          "longitude": 117.6558774,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7034259,
+          "longitude": 117.6565192,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7032527,
+          "longitude": 117.6566021,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7031168,
+          "longitude": 117.6565692,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.703009,
+          "longitude": 117.6564424,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7029121,
+          "longitude": 117.6558166,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7027976,
+          "longitude": 117.6555132,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7026909,
+          "longitude": 117.6553654,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7023162,
+          "longitude": 117.6551658,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7020246,
+          "longitude": 117.6549213,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7014612,
+          "longitude": 117.655139,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7013562,
+          "longitude": 117.655118,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7012633,
+          "longitude": 117.6550431,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7012075,
+          "longitude": 117.6549344,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7011948,
+          "longitude": 117.6547916,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7013783,
+          "longitude": 117.6539701,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7013746,
+          "longitude": 117.6537825,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7013169,
+          "longitude": 117.6536138,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7011702,
+          "longitude": 117.6534501,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7006139,
+          "longitude": 117.6530039,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.7000375,
+          "longitude": 117.6526556,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6996715,
+          "longitude": 117.6520647,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6995765,
+          "longitude": 117.6520258,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6990415,
+          "longitude": 117.6520169,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6984191,
+          "longitude": 117.6516386,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6979839,
+          "longitude": 117.6517185,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6978409,
+          "longitude": 117.6516995,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6977211,
+          "longitude": 117.6516077,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6974739,
+          "longitude": 117.6511425,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6973401,
+          "longitude": 117.6510348,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6971352,
+          "longitude": 117.6509729,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.696565,
+          "longitude": 117.6510069,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6963861,
+          "longitude": 117.6509749,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6962942,
+          "longitude": 117.6508951,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6960419,
+          "longitude": 117.6505028,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6954354,
+          "longitude": 117.6501485,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6954354,
+          "longitude": 117.6501485,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6952464,
+          "longitude": 117.6501715,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6948319,
+          "longitude": 117.6503941,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6946109,
+          "longitude": 117.6503831,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6943151,
+          "longitude": 117.6502694,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6939056,
+          "longitude": 117.6499849,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6933758,
+          "longitude": 117.6498332,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6930601,
+          "longitude": 117.6496306,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6929401,
+          "longitude": 117.6496066,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.692771,
+          "longitude": 117.6496616,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6924004,
+          "longitude": 117.649991,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.691718,
+          "longitude": 117.6502127,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6911722,
+          "longitude": 117.650613,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.691107,
+          "longitude": 117.6507298,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6910853,
+          "longitude": 117.65115,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6910232,
+          "longitude": 117.6512179,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6904123,
+          "longitude": 117.6510802,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6895218,
+          "longitude": 117.6513239,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6887516,
+          "longitude": 117.6514507,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6886227,
+          "longitude": 117.6513748,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6885807,
+          "longitude": 117.6507669,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6883263,
+          "longitude": 117.6504355,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6882084,
+          "longitude": 117.6503846,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6877542,
+          "longitude": 117.6504416,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6876674,
+          "longitude": 117.6503268,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6875362,
+          "longitude": 117.6498556,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6872875,
+          "longitude": 117.649651,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6870648,
+          "longitude": 117.6495083,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6869118,
+          "longitude": 117.6494634,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6861897,
+          "longitude": 117.6495273,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6860428,
+          "longitude": 117.6494215,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6854967,
+          "longitude": 117.6488545,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6852221,
+          "longitude": 117.6486469,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6851131,
+          "longitude": 117.648608,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6849891,
+          "longitude": 117.648613,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6846188,
+          "longitude": 117.6487917,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6843867,
+          "longitude": 117.6488337,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6836036,
+          "longitude": 117.6488257,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6832193,
+          "longitude": 117.6490015,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6831003,
+          "longitude": 117.6490164,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6824246,
+          "longitude": 117.6487679,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6820206,
+          "longitude": 117.6487919,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6817654,
+          "longitude": 117.6488778,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6816302,
+          "longitude": 117.6489786,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.681568,
+          "longitude": 117.6491014,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6815452,
+          "longitude": 117.6495846,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.681479,
+          "longitude": 117.6496654,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6812859,
+          "longitude": 117.6497064,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6811079,
+          "longitude": 117.6496964,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6807244,
+          "longitude": 117.6494199,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6800314,
+          "longitude": 117.6493751,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6796229,
+          "longitude": 117.6490756,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6792418,
+          "longitude": 117.6491006,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6786047,
+          "longitude": 117.6485546,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6783558,
+          "longitude": 117.6484458,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6781928,
+          "longitude": 117.6484738,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6778684,
+          "longitude": 117.6487114,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6777162,
+          "longitude": 117.6487713,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6773105,
+          "longitude": 117.6485727,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6765114,
+          "longitude": 117.6486456,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6760678,
+          "longitude": 117.6483382,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6755706,
+          "longitude": 117.64848,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6752279,
+          "longitude": 117.6482913,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6751409,
+          "longitude": 117.6482834,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6746633,
+          "longitude": 117.6486058,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6744461,
+          "longitude": 117.6486697,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6742702,
+          "longitude": 117.6486458,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6741722,
+          "longitude": 117.6486019,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6740385,
+          "longitude": 117.6484502,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6737832,
+          "longitude": 117.6480069,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6731525,
+          "longitude": 117.6478243,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6726909,
+          "longitude": 117.6475728,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6725501,
+          "longitude": 117.6474041,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6723946,
+          "longitude": 117.6470926,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6720364,
+          "longitude": 117.6466145,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6717489,
+          "longitude": 117.646337,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6713183,
+          "longitude": 117.6460455,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6709035,
+          "longitude": 117.6458938,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6700016,
+          "longitude": 117.645819,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6695207,
+          "longitude": 117.6457002,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.669059,
+          "longitude": 117.6455216,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6682757,
+          "longitude": 117.6450274,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6682757,
+          "longitude": 117.6450274,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6679546,
+          "longitude": 117.6450744,
+          "system": "WGS84"
+        },
+        {
+          "latitude": 27.6676273,
+          "longitude": 117.6452441,
+          "system": "WGS84"
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "code": "WY-0001",
+      "name": "南源岭",
+      "region": "南源岭",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 100,
+      "coordinates": {
+        "latitude": 27.6117246,
+        "longitude": 117.9855643,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.608460789632296,
+        "longitude": 117.99057456870855,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0002",
+      "name": "南源岭停车位置",
+      "region": "南源岭",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 110,
+      "coordinates": {
+        "latitude": 27.6131689,
+        "longitude": 117.9870039,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.609909249142245,
+        "longitude": 117.99201844498793,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0003",
+      "name": "南源岭卫生间",
+      "region": "南源岭",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 120,
+      "coordinates": {
+        "latitude": 27.6135752,
+        "longitude": 117.9871671,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.61031608497586,
+        "longitude": 117.9921821005239,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0004",
+      "name": "齐云峰观景/日出位置",
+      "region": "南源岭",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P2",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 200,
+      "coordinates": {
+        "latitude": 27.6234322,
+        "longitude": 117.9240158,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.62003604255768,
+        "longitude": 117.92890743753605,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0005",
+      "name": "三才峰观景点",
+      "region": "南源岭",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P3",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 300,
+      "coordinates": {
+        "latitude": 27.6277447,
+        "longitude": 117.9276603,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.62435228113925,
+        "longitude": 117.93255504313083,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0047",
+      "name": "三才峰附近卫生间",
+      "region": "南源岭",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 310,
+      "coordinates": {
+        "latitude": 27.6268621,
+        "longitude": 117.9269806,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.623468927984216,
+        "longitude": 117.9318746548854,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0048",
+      "name": "俞妹光饼",
+      "region": "星村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 400,
+      "coordinates": {
+        "latitude": 27.6373065,
+        "longitude": 117.9182569,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.633904710725886,
+        "longitude": 117.92314657499082,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0049",
+      "name": "越南粉",
+      "region": "星村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 500,
+      "coordinates": {
+        "latitude": 27.6409684,
+        "longitude": 117.9184216,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.637566451348373,
+        "longitude": 117.92331164652421,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0050",
+      "name": "旧竹筏码头河边",
+      "region": "星村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 600,
+      "coordinates": {
+        "latitude": 27.6426324,
+        "longitude": 117.9205062,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.639232038094956,
+        "longitude": 117.92539723394498,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0051",
+      "name": "漫水桥停车场1",
+      "region": "星村—黄村沿线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 710,
+      "coordinates": {
+        "latitude": 27.6462929,
+        "longitude": 117.9109109,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.642886374255408,
+        "longitude": 117.91579975196396,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0052",
+      "name": "漫水桥停车场2",
+      "region": "星村—黄村沿线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 720,
+      "coordinates": {
+        "latitude": 27.6481575,
+        "longitude": 117.9108569,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.644750819591323,
+        "longitude": 117.91574597045133,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0053",
+      "name": "漫水桥卫生间",
+      "region": "星村—黄村沿线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 730,
+      "coordinates": {
+        "latitude": 27.647665,
+        "longitude": 117.9111125,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.644258423569404,
+        "longitude": 117.91600150387887,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0009",
+      "name": "漫水桥河滩",
+      "region": "星村—黄村沿线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P2",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 740,
+      "coordinates": {
+        "latitude": 27.6463862,
+        "longitude": 117.9097061,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.642979175652222,
+        "longitude": 117.91459502248028,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0055",
+      "name": "茶诗乐营地",
+      "region": "黄村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 800,
+      "coordinates": {
+        "latitude": 27.6570755,
+        "longitude": 117.8900477,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.653669430125124,
+        "longitude": 117.89494772206672,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0056",
+      "name": "风吟茶海",
+      "region": "黄村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 900,
+      "coordinates": {
+        "latitude": 27.6538033,
+        "longitude": 117.8672534,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.65041839813808,
+        "longitude": 117.87218625276819,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0057",
+      "name": "风吟茶海停车场",
+      "region": "黄村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 910,
+      "coordinates": {
+        "latitude": 27.6538021,
+        "longitude": 117.8672774,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.650417108220438,
+        "longitude": 117.87221012530097,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0040",
+      "name": "黄村乌龙茶展示馆",
+      "region": "黄村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1000,
+      "coordinates": {
+        "latitude": 27.6526114,
+        "longitude": 117.8740481,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.649218383569345,
+        "longitude": 117.87896891393711,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0058",
+      "name": "武夷源支线1",
+      "region": "武夷源",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1100,
+      "coordinates": {
+        "latitude": 27.6243866,
+        "longitude": 117.794787,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.621127678917784,
+        "longitude": 117.79988461077198,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0059",
+      "name": "武夷源支线2",
+      "region": "武夷源",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1200,
+      "coordinates": {
+        "latitude": 27.6048778,
+        "longitude": 117.7840543,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.601633923679803,
+        "longitude": 117.7891701041874,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0041",
+      "name": "珍稀植物科普展示馆",
+      "region": "红星村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1300,
+      "coordinates": {
+        "latitude": 27.6492703,
+        "longitude": 117.8314565,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.645945533248216,
+        "longitude": 117.83647032626209,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0044",
+      "name": "乡愁馆",
+      "region": "红星村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1400,
+      "coordinates": {
+        "latitude": 27.6633103,
+        "longitude": 117.8184603,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.660008997796176,
+        "longitude": 117.82350744939777,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0043",
+      "name": "兰花展示馆",
+      "region": "红星村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1500,
+      "coordinates": {
+        "latitude": 27.6552499,
+        "longitude": 117.8236872,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.651939379060202,
+        "longitude": 117.82872084905387,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0012",
+      "name": "月亮湾",
+      "region": "月亮湾",
+      "status": "正常",
+      "sourceStatus": "正常",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1600,
+      "coordinates": {
+        "latitude": 27.6700381,
+        "longitude": 117.8137805,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.66674481978472,
+        "longitude": 117.8188396095627,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0013",
+      "name": "月亮湾停车位置",
+      "region": "月亮湾",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1610,
+      "coordinates": {
+        "latitude": 27.6694941,
+        "longitude": 117.8148052,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.666199018361233,
+        "longitude": 117.8198617910225,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0015",
+      "name": "翡翠谷路口",
+      "region": "翡翠谷支线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1700,
+      "coordinates": {
+        "latitude": 27.6729775,
+        "longitude": 117.8135561,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.669684442963796,
+        "longitude": 117.81861598106718,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0017",
+      "name": "观山听水",
+      "region": "黄村—红星沿线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1800,
+      "coordinates": {
+        "latitude": 27.6758447,
+        "longitude": 117.8023413,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.672570785883988,
+        "longitude": 117.80742717836551,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0018",
+      "name": "大峡谷农庄下河位置",
+      "region": "黄村—红星沿线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P2",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 1900,
+      "coordinates": {
+        "latitude": 27.6760106,
+        "longitude": 117.8012196,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.672738543120392,
+        "longitude": 117.80630792399143,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0060",
+      "name": "小青龙瀑布",
+      "region": null,
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2000,
+      "coordinates": {
+        "latitude": 27.6714815,
+        "longitude": 117.7565993,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.668254138781265,
+        "longitude": 117.76175166040491,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0021",
+      "name": "皮坑口玩水点",
+      "region": "皮坑",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P2",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2100,
+      "coordinates": {
+        "latitude": 27.6910643,
+        "longitude": 117.737062,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.68783276153622,
+        "longitude": 117.74221874535442,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0022",
+      "name": "大浅滩",
+      "region": "一号风景道沿线",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P2",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2200,
+      "coordinates": {
+        "latitude": 27.6947771,
+        "longitude": 117.7372127,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.69154528100545,
+        "longitude": 117.74236978872239,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0024",
+      "name": "桃源峪",
+      "region": "桃源峪",
+      "status": "正常",
+      "sourceStatus": "正常",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2280,
+      "coordinates": {
+        "latitude": 27.7280462,
+        "longitude": 117.7135617,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.72478964142153,
+        "longitude": 117.71870377050016,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0025",
+      "name": "桃源峪停车位置",
+      "region": "桃源峪",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2290,
+      "coordinates": {
+        "latitude": 27.7280613,
+        "longitude": 117.7135561,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.724804669361415,
+        "longitude": 117.71869819094513,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0026",
+      "name": "桃源峪卫生间",
+      "region": "桃源峪",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2295,
+      "coordinates": {
+        "latitude": 27.7278789,
+        "longitude": 117.7135171,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.72462225548618,
+        "longitude": 117.71865910822316,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0028",
+      "name": "龙渡蝴蝶科普展示馆",
+      "region": "红星村附近",
+      "status": "正常",
+      "sourceStatus": "正常",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2400,
+      "coordinates": {
+        "latitude": 27.7269889,
+        "longitude": 117.7037196,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.723718493917342,
+        "longitude": 117.70884837066751,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0030",
+      "name": "野猴谷",
+      "region": "桐木区域",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2500,
+      "coordinates": {
+        "latitude": 27.7467292,
+        "longitude": 117.6772003,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.74340988312711,
+        "longitude": 117.6822841173423,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0031",
+      "name": "野猴观察区域",
+      "region": "桐木区域",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P3",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2510,
+      "coordinates": {
+        "latitude": 27.74676,
+        "longitude": 117.6772334,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.74344074461451,
+        "longitude": 117.6823172693804,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0032",
+      "name": "红茶发源地展示馆",
+      "region": "桐木区域",
+      "status": "正常",
+      "sourceStatus": "正常",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2600,
+      "coordinates": {
+        "latitude": 27.750947,
+        "longitude": 117.6750617,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.74762311874697,
+        "longitude": 117.6801417691263,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0033",
+      "name": "大峡谷展示馆",
+      "region": "桐木区域",
+      "status": "正常",
+      "sourceStatus": "正常",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2700,
+      "coordinates": {
+        "latitude": 27.7108079,
+        "longitude": 117.6523821,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.70744616985944,
+        "longitude": 117.65741550500468,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0035",
+      "name": "大竹岚自然观察区域",
+      "region": "大竹岚",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P3",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2800,
+      "coordinates": {
+        "latitude": 27.7020279,
+        "longitude": 117.6475669,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.698658802178247,
+        "longitude": 117.65259108928535,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0036",
+      "name": "坳头观景台",
+      "region": "坳头村",
+      "status": "正常",
+      "sourceStatus": "待核实",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P1",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 2900,
+      "coordinates": {
+        "latitude": 27.6676268,
+        "longitude": 117.6449117,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.66425624194993,
+        "longitude": 117.64992875195685,
+        "system": "GCJ-02"
+      }
+    },
+    {
+      "code": "WY-0061",
+      "name": "昆虫展示馆（在建）",
+      "region": null,
+      "status": "在建",
+      "sourceStatus": "在建",
+      "publicLevel": "P1",
+      "sourcePublicLevel": "P5",
+      "ownerApproved": true,
+      "coordinateStatus": "active",
+      "humanConfirmed": true,
+      "mapDisplayRole": "pin",
+      "corridorOrder": 3000,
+      "coordinates": {
+        "latitude": 27.6677566,
+        "longitude": 117.6444151,
+        "system": "WGS84"
+      },
+      "navigationCoordinates": {
+        "latitude": 27.664385205162716,
+        "longitude": 117.64943125532875,
+        "system": "GCJ-02"
+      }
+    }
+  ],
+  "publicationPolicy": {
+    "decision": "All locations personally marked by the owner may be public",
+    "decidedAt": "2026-09-24",
+    "includes": "active + human confirmed + not deleted + not duplicate + map role not hidden",
+    "excludes": "superseded, revoked, deleted, duplicate, hidden, and places without a formal active coordinate",
+    "navigation": "Publication does not change operational status or automatically enable navigation"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-09-08T08:30:52.989Z",
+  "application": "武夷山奶爸地图内部管理",
+  "keyName": "内部地图GL",
+  "keyStored": true,
+  "changedEnvFields": [
+    "TENCENT_MAP_KEY"
+  ],
+  "otherEnvContentPreserved": true,
+  "page": "http://127.0.0.1:5173/map",
+  "realBasemapVisuallyVerified": true,
+  "formalMapPlaces": 0,
+  "consoleWarningsAndErrors": [],
+  "businessCodeChanged": false,
+  "pending": [
+    "实体手机 HTTPS 访问",
+    "实体手机真实地点采集及确认替换",
+    "P2 实地点位权限核验",
+    "真实父子标记缩放显示"
+  ]
+}

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import VisitorThemeGrid from "../../components/VisitorThemeGrid.astro";
+import runtime from "../../data/visitor-runtime.json";
+const heroImage=runtime.home.heroImage?`/visitor-media/${runtime.home.heroImage}`:null;
+const home=runtime.home as any;
+const routes=[
+  {badge:"亲子",title:home.routeFamilyTitle||"带娃怎么玩",summary:home.routeFamilySummary||"带孩子轻松走，优先选择方便停留的地方"},
+  {badge:"1日",title:home.routeDayTitle||"一天怎么玩",summary:home.routeDaySummary||"用一天串起山水、茶和沿路停留"},
+  {badge:"2日",title:home.routeTwoDayTitle||"两天怎么玩",summary:home.routeTwoDaySummary||"第一天看山水，第二天慢慢走进茶与自然"},
+];
+---
+<BaseLayout lang="zh" title="游客主题｜武夷山奶爸地图" description="从玩水、风景、自然、茶与展馆、吃的、床车露营六个游客主题出发，再按带娃、一天和两天的推荐路线安排武夷山沿路体验。">
+  <section class="dad-home-hero">
+    {heroImage && <img src={heroImage} alt="Jeff一家在武夷山溪边" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async"/>}
+    <div class="dad-home-shade"></div>
+    <div class="dad-home-copy"><p class="dad-eyebrow light">{home.eyebrow||"一位本地爸爸的沿路笔记"}</p><h1>{home.titleLine1||"武夷山"}<br/>{home.titleLine2||"奶爸地图"}</h1><p>{home.introLine1||"我在武夷山生活，"}<br/>{home.introLine2||"把自己实际走过、愿意推荐的地方放在这里。"}</p><div class="dad-home-actions"><a class="dad-primary" href="/zh/map">{home.mapButtonLabel||"看地图"}</a><a class="dad-secondary-light" href="/zh/map#corridor">{home.corridorButtonLabel||"一号风景道"}</a></div></div>
+  </section>
+  <VisitorThemeGrid compact />
+  <section class="dad-route-recommendations" aria-labelledby="dad-route-heading">
+    <div class="dad-section-heading"><div><p class="dad-eyebrow">{home.routesEyebrow||"按时间和同行人安排"}</p><h2 id="dad-route-heading">{home.routesTitle||"推荐路线"}</h2></div></div>
+    <nav class="dad-route-grid" aria-label="推荐路线">
+      {routes.map((route)=><a href="/zh/map#corridor"><span>{route.badge}</span><strong>{route.title}</strong><small>{route.summary}</small><b aria-hidden="true">→</b></a>)}
+    </nav>
+  </section>
+</BaseLayout>

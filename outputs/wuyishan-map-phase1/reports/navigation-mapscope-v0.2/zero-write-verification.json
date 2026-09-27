@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-09-12T15:42:25.8114928+08:00",
+  "tableCountBefore": 22,
+  "tableCountAfter": 22,
+  "databaseTablesIdentical": true,
+  "changedTables": [],
+  "routeGeometryFile": "prototype/src/routeGeometryData.ts",
+  "routeGeometrySha256": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+  "routeGeometryBaselineSha256": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+  "routeGeometryMatchesBaseline": true,
+  "visitorContentFile": "visitor-content-store/data.json",
+  "visitorContentSha256": "E4195C334D5B97D65CA75F608F330957C724A49C6CD32C1E208791AFED1D625F",
+  "visitorContentBaselineSha256": "E4195C334D5B97D65CA75F608F330957C724A49C6CD32C1E208791AFED1D625F",
+  "visitorContentMatchesBaseline": true,
+  "routePointCount": 952,
+  "routeSegmentCount": 6,
+  "deletedPlaces": {
+    "WY-0008": true,
+    "WY-0011": true
+  }
+}

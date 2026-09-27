@@ -1,0 +1,39 @@
+server {
+    listen 80;
+    server_name your-subdomain.example.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name your-subdomain.example.com;
+
+    # Replace with the HTTPS certificate paths configured by the server owner.
+    ssl_certificate /etc/letsencrypt/live/your-subdomain.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/your-subdomain.example.com/privkey.pem;
+
+    root /srv/localdad/releases/current;
+    index index.html;
+
+    location /admin/ {
+        auth_basic "Local Dad maintenance";
+        auth_basic_user_file /etc/localdad/admin.htpasswd;
+        alias /srv/localdad/admin/;
+        try_files $uri $uri/ /admin/index.html;
+    }
+
+    location /api/admin/ {
+        auth_basic "Local Dad maintenance";
+        auth_basic_user_file /etc/localdad/admin.htpasswd;
+        proxy_set_header Authorization $http_authorization;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:3001;
+        client_max_body_size 12m;
+    }
+
+    location / {
+        try_files $uri $uri/ $uri/index.html =404;
+    }
+}

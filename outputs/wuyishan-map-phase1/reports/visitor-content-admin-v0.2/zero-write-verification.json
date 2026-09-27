@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-09-11T10:26:27.7696603+08:00",
+  "tables_checked": 22,
+  "database_identical": true,
+  "differences": [],
+  "route_before": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+  "route_after": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+  "route_identical": true,
+  "protected_deleted_state": [
+    {
+      "code": "WY-0008",
+      "name": "漫水桥",
+      "deleted_at": "2026-09-10T02:01:15.937Z"
+    },
+    {
+      "code": "WY-0011",
+      "name": "黄村沿线停靠/观察位置",
+      "deleted_at": "2026-09-09T15:26:05.341Z"
+    }
+  ],
+  "visitor_store_version": 3,
+  "visitor_issues": 0
+}

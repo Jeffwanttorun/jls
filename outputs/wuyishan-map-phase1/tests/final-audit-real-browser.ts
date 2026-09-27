@@ -1,0 +1,22 @@
+import 'dotenv/config';import {chromium,expect} from '@playwright/test';import assert from 'node:assert/strict';import {readFile,writeFile,mkdir} from 'node:fs/promises';import {resolve} from 'node:path';import {X509Certificate} from 'node:crypto';
+const root='reports/phase2/final-audit',browser=await chromium.launch({channel:'msedge',headless:true}),checks:string[]=[],errors:string[]=[],network:any[]=[];let blockedWrites=0;
+const redact=(s:string)=>s.replaceAll(process.env.TENCENT_MAP_KEY||'__absent__','[redacted]').replace(/([?&]key=)[^&\s]+/gi,'$1[redacted]');
+try{
+ await mkdir(root+'/screenshots',{recursive:true});const context=await browser.newContext({viewport:{width:1500,height:1000}});
+ await context.route('**/api/**',async route=>{if(!['GET','HEAD'].includes(route.request().method())){blockedWrites++;await route.abort();}else await route.continue();});
+ const page=await context.newPage();page.setDefaultTimeout(25000);page.on('pageerror',e=>errors.push(redact(e.message)));page.on('console',e=>{if(e.type()==='error')errors.push(redact(e.text()));});page.on('response',r=>{if(r.url().includes('map.qq.com/api/gljs'))network.push({url:redact(r.url()),status:r.status()});});
+ await page.goto('https://127.0.0.1:5173/map');await page.getByRole('heading',{name:'内部地图',exact:true}).waitFor();await expect(page.getByText('正在加载腾讯地图…',{exact:true})).toHaveCount(0);await expect(page.locator('.map-message')).toHaveCount(0);assert(await page.evaluate(()=>isSecureContext));assert(await page.evaluate(()=>typeof (window as any).TMap?.Map==='function'));
+ await expect(page.getByRole('button',{name:'卫星影像',exact:true})).toBeEnabled();await page.getByRole('button',{name:'卫星影像',exact:true}).click();await expect(page.getByRole('button',{name:'卫星影像',exact:true})).toHaveAttribute('aria-pressed','true');await page.screenshot({path:root+'/screenshots/real-satellite-readonly.png',fullPage:true});
+ await page.getByRole('button',{name:'标准地图',exact:true}).click();await expect(page.getByRole('button',{name:'标准地图',exact:true})).toHaveAttribute('aria-pressed','true');await page.screenshot({path:root+'/screenshots/real-standard-readonly.png',fullPage:true});checks.push('真实受信任HTTPS，腾讯GL SDK加载，标准/卫星切换，无候选写入');
+ const pub=await page.evaluate(async()=>await(await fetch('/api/places')).json());assert(pub.items.every((p:any)=>p.public_level!=='P5'&&((p.public_level==='P1'&&p.current_status==='正常')||(p.latitude===null&&p.longitude===null))));
+ const detail=await page.evaluate(async()=>await(await fetch('/api/admin/places/WY-0005')).json());assert(detail.code==='WY-0005');const recycle=await page.evaluate(async()=>await(await fetch('/api/admin/recycle-bin')).json());assert(recycle.items.some((p:any)=>p.code==='WY-0011'));checks.push('真实公开投影正常，真实WY-0011仍在回收站；仅GET读取');
+ await page.goto('https://127.0.0.1:5173/places/WY-0005');await page.getByRole('button',{name:'删除地点',exact:true}).click();const dialog=page.getByRole('alertdialog',{name:'删除地点',exact:true});await expect(dialog.getByRole('button',{name:'确认删除地点',exact:true})).toBeEnabled();await dialog.screenshot({path:root+'/screenshots/real-parent-preview-cancelled.png'});await dialog.getByRole('button',{name:'取消',exact:true}).click();checks.push('真实详情删除预览能够加载子地点和并发令牌，取消，未提交');
+ const staticChecks=[];
+ for(const file of ['database/seed/phase2-final-audit-full.sql','reports/phase2/final-audit/before.json','backend/src/place-maintenance.ts','.env'])for(const suffix of ['','?raw','?import']){
+  const response=await context.request.get('https://127.0.0.1:5173/@fs/'+resolve(file).replaceAll('\\','/')+suffix);assert.equal(response.status(),403,file+suffix);staticChecks.push({file,suffix,status:response.status()});
+ }
+ checks.push('备份、数据快照、后端源码、.env及raw/import变体均403，静态路径旁路已封堵');
+ const cert=new X509Certificate(await readFile(process.env.DEV_HTTPS_CERT!));assert(new Date(cert.validTo).getTime()>Date.now());assert(cert.checkIP('127.0.0.1'));
+ assert.equal(blockedWrites,0);assert.deepEqual(errors,[]);assert(network.some(r=>r.status===200));
+ await writeFile(root+'/real-browser.json',JSON.stringify({passed:true,at:new Date().toISOString(),checks,staticChecks,errors,network,blockedWrites,certificate:{validFrom:cert.validFrom,validTo:cert.validTo,subjectAltName:cert.subjectAltName},scope:'Desktop Edge real HTTPS and real Tencent SDK; all mutation API requests blocked; no physical iPhone retest'},null,2));console.log(JSON.stringify({passed:true,checks,blockedWrites},null,2));
+}finally{await browser.close();}

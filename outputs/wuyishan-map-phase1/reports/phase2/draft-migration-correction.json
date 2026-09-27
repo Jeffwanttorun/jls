@@ -1,0 +1,7 @@
+{
+  "reason": "Unreleased phase 2 migration: flush deferred legacy FK checks before index DDL. No persisted schema change. Local empty coordinate tables verified before reconciling development checksum.",
+  "oldSha256": "fbf20c9ebec9ca0dba16452041bf76af8a9cf6b663ab3df04c092b4c35f70d40",
+  "sha256": "37781205ffe468f335b14fe40d896789146e332fe24b20993b0156476586010d",
+  "coordinateRows": 0,
+  "checkedAt": "2026-09-05T10:23:19.505Z"
+}

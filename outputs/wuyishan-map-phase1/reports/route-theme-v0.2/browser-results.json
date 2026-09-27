@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-13T17:25:32.660Z",
+  "checks": [
+    "主线使用腾讯驾车路线返回的952个道路几何点，分为6段连续缓存；起点南源岭、终点坳头，服务点和武夷源支线不参与几何",
+    "游客端六类主题采用显式多对多映射；适合带孩子为独立集合，不再作为并列主题",
+    "全部地点地图不加载路线图层；路线模式显示主线、自动适配范围、标出起终点，并在缩小时隐藏服务点和所有支线",
+    "六个主题页显示显式配置的核心体验；月亮湾仅归风景/自然/带孩子并展示禁下水提醒，桃源峪归自然/带孩子；在建状态可见",
+    "首页、路线、六个主题页和四个内容页在360px及390px无横向溢出",
+    "原型浏览器只发出GET/HEAD请求，API无写入路由，控制台无异常"
+  ],
+  "routeGeometrySource": "tencent_driving_route_geometry",
+  "routeGeometryPoints": 952,
+  "routeSegments": 6,
+  "waterPlaces": 6,
+  "themes": [
+    {
+      "slug": "water",
+      "count": 6
+    },
+    {
+      "slug": "scenery",
+      "count": 7
+    },
+    {
+      "slug": "nature",
+      "count": 8
+    },
+    {
+      "slug": "tea",
+      "count": 4
+    },
+    {
+      "slug": "museum",
+      "count": 8
+    },
+    {
+      "slug": "food",
+      "count": 3
+    }
+  ],
+  "viewports": [
+    "390x844",
+    "360x800"
+  ],
+  "writeRequests": 0,
+  "consoleErrors": []
+}

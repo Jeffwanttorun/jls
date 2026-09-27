@@ -1,0 +1,34 @@
+import 'dotenv/config';
+import {chromium,devices,expect} from '@playwright/test';import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/promises';
+const browser=await chromium.launch({channel:'msedge',headless:true});
+const root='reports/phase2/satellite',checks:string[]=[],pageErrors:string[]=[],consoleErrors:string[]=[];
+let writes=0;
+const redact=(s:string)=>s.replace(/([?&]key=)[^&\s]+/gi,'$1[redacted]').replaceAll(process.env.TENCENT_MAP_KEY||'__no_key__','[redacted]');
+await mkdir(root+'/screenshots',{recursive:true});
+try{
+ const context=await browser.newContext({viewport:{width:1440,height:1100}});
+ await context.route('**/api/**',async route=>{if(!['GET','HEAD'].includes(route.request().method())){writes++;await route.abort();}else await route.continue();});
+ const page=await context.newPage();page.on('pageerror',e=>pageErrors.push(redact(e.message)));page.on('console',e=>{if(e.type()==='error')consoleErrors.push(redact(e.text()));});
+ await page.goto('https://127.0.0.1:5173/map');await page.getByText('GCJ-02 · 缩放',{exact:false}).waitFor();await page.getByRole('button',{name:'标准地图',exact:true}).click();await page.waitForTimeout(6000);
+ await page.screenshot({path:root+'/screenshots/real-standard-desktop.png',fullPage:true});
+ await page.getByRole('button',{name:'卫星影像',exact:true}).click();await expect(page.getByRole('button',{name:'卫星影像',exact:true})).toHaveAttribute('aria-pressed','true');await page.waitForTimeout(8000);
+ await page.screenshot({path:root+'/screenshots/real-satellite-desktop.png',fullPage:true});checks.push('电脑真实 HTTPS 标准/卫星切换与截图');
+ await page.getByRole('button',{name:'标准地图',exact:true}).click();await expect(page.getByRole('button',{name:'标准地图',exact:true})).toHaveAttribute('aria-pressed','true');checks.push('切回标准地图');
+ await page.getByRole('button',{name:'开始卫星判点',exact:true}).click();await page.locator('.advanced-coordinates summary').click();await page.getByRole('heading',{name:'坐标管理',exact:true}).waitFor();await page.getByText('GCJ-02 · 缩放',{exact:false}).waitFor();
+ await expect(page.getByRole('button',{name:'卫星影像',exact:true})).toHaveAttribute('aria-pressed','true');await page.waitForTimeout(5000);
+ await page.locator('.map-canvas').click({position:{x:220,y:200}});await expect(page.getByRole('button',{name:'取消选点',exact:true})).toBeEnabled();
+ await page.getByText('选中：纬度',{exact:false}).filter({hasText:'腾讯卫星影像人工判读'}).waitFor();
+ await page.getByRole('button',{name:'取消选点',exact:true}).click();await expect(page.getByRole('button',{name:'保存地图候选',exact:true})).toBeDisabled();
+ checks.push('高级操作中的真实卫星点选仍可本地预览和取消，零写入；快捷点击保存由独立测试库验证');
+ const mobile=await browser.newContext({...devices['iPhone 13']});await mobile.route('**/api/**',async route=>{if(!['GET','HEAD'].includes(route.request().method())){writes++;await route.abort();}else await route.continue();});
+ const m=await mobile.newPage();m.on('pageerror',e=>pageErrors.push(redact(e.message)));m.on('console',e=>{if(e.type()==='error')consoleErrors.push(redact(e.text()));});
+ await m.goto('https://192.168.2.178:5173/map');await m.getByRole('button',{name:'卫星影像',exact:true}).tap();await m.waitForTimeout(7000);
+ assert(await m.evaluate(()=>window.isSecureContext&&document.documentElement.scrollWidth<=innerWidth));
+ await m.screenshot({path:root+'/screenshots/real-satellite-mobile-emulation.png',fullPage:true});
+ await m.getByRole('button',{name:'开始卫星判点',exact:true}).tap();await m.locator('.advanced-coordinates summary').tap();await m.getByRole('heading',{name:'坐标管理',exact:true}).waitFor();await m.getByText('GCJ-02 · 缩放',{exact:false}).waitFor();await m.waitForTimeout(5000);
+ assert(await m.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await m.getByRole('region',{name:'采集新候选',exact:true}).screenshot({path:root+'/screenshots/real-satellite-picker-mobile-emulation.png'});
+ checks.push('局域网 HTTPS 地址，iPhone设备参数触摸操作及详情无横向溢出（非实体手机）');
+ assert.equal(writes,0);assert.deepEqual(pageErrors,[]);assert.deepEqual(consoleErrors,[]);
+ await writeFile(root+'/real-browser.json',JSON.stringify({passed:true,checks,pageErrors,consoleErrors,writeRequests:writes,physicalPhone:'pending user acceptance',checkedAt:new Date().toISOString()},null,2));
+ console.log(JSON.stringify({passed:true,checks,writeRequests:writes},null,2));
+}finally{await browser.close();}

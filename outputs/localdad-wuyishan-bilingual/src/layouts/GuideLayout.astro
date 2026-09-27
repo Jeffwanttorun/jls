@@ -1,0 +1,40 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import GuideCard from "../components/GuideCard.astro";
+import TrustLabel from "../components/TrustLabel.astro";
+import type { TrustStatus } from "../data/editorial";
+import { categories, type CategoryKey } from "../data/categories";
+import { localizedPath, type Locale } from "../i18n/config";
+import { articleSchema, breadcrumbSchema } from "../lib/structured-data";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ArticleMeta from "../components/ArticleMeta.astro";
+import DraftPreviewBanner from "../components/DraftPreviewBanner.astro";
+import RelatedContent from "../components/RelatedContent.astro";
+import type { ContentReference } from "../types/content";
+interface Related { id: string; data: { title: string; description: string; slug: string; category: CategoryKey; audience?: string[] }; }
+interface Alternate { lang: Locale; href: string; }
+interface Props { title: string; seoTitle?: string; description: string; eyebrow: string; category: CategoryKey; lang: Locale; published?: Date; updated?: Date; lastPersonallyChecked?: Date; image?: string; imageAlt?: string; imageWidth?: number; imageHeight?: number; trustStatus?: TrustStatus; alternates?: Alternate[]; related?: Related[]; relatedGuides?: ContentReference[]; preview?: boolean; }
+const { title, seoTitle, description, eyebrow, category, lang, published, updated, lastPersonallyChecked, image, imageAlt, imageWidth, imageHeight, trustStatus = "reconfirm-before-travel", alternates = [], related = [], relatedGuides = [], preview = false } = Astro.props;
+const categoryInfo = categories[category];
+const base = Astro.site;
+const articleUrl = base ? new URL(Astro.url.pathname, base).toString() : undefined;
+const categoryUrl = base ? new URL(localizedPath(`/guides/${category}`, lang), base).toString() : undefined;
+const schemas = !preview && published && base && articleUrl && categoryUrl ? [
+  articleSchema({ title, description, url:articleUrl, published, updated, language:lang === "zh" ? "zh-CN" : "en-US", image:image ? new URL(image, base).toString() : undefined, authorUrl:new URL(localizedPath("/about", lang), base).toString() }),
+  breadcrumbSchema([
+    { name:"Guides", url:new URL(localizedPath("/guides", lang), base).toString() },
+    { name:categoryInfo.label, url:categoryUrl },
+    { name:title, url:articleUrl },
+  ]),
+] : [];
+---
+<BaseLayout title={`${preview ? "Draft Preview: " : ""}${seoTitle ?? title} | Local Dad Jeff`} description={description} image={image} imageAlt={imageAlt} imageWidth={imageWidth} imageHeight={imageHeight} ogType="article" lang={lang} alternates={alternates} structuredData={schemas} noIndex={preview}>
+  {preview && <DraftPreviewBanner contentType="guide" />}
+  <section class="page-head guide-head"><Breadcrumbs items={[{label:"Guides",href:localizedPath("/guides",lang)},{label:categoryInfo.label,href:localizedPath(`/guides/${category}`,lang)},{label:title}]} /><p class="kicker">{eyebrow}</p><h1>{title}</h1><p>{description}</p>{published && <ArticleMeta published={published} updated={updated} lastPersonallyChecked={lastPersonallyChecked} lang={lang} authorHref={localizedPath("/about",lang)} />}<TrustLabel status={trustStatus} compact={true} /></section>
+  <div class="article-shell">
+    <aside class="article-aside"><p class="kicker">In this section</p><h2>{categoryInfo.label}</h2><p>{categoryInfo.description}</p><a class="text-link" href={localizedPath(`/guides/${category}`, lang)}>More in this section →</a></aside>
+    <article class="prose guide-prose"><slot /></article>
+  </div>
+  {related.length > 0 && <section class="related-guides"><div class="section-title"><div><p class="kicker">Keep exploring</p><h2>Related guides</h2></div></div><div class="guide-grid">{related.map((item) => <GuideCard title={item.data.title} description={item.data.description} category={categories[item.data.category].label} audience={item.data.audience} href={localizedPath(`/${item.data.slug}`, lang)} />)}</div></section>}
+  <RelatedContent articles={relatedGuides} eyebrow="Explore Wuyishan" heading="Continue exploring Wuyishan" />
+</BaseLayout>

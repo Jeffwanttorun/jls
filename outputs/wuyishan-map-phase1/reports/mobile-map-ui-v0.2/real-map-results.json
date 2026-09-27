@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-24T01:32:37.787Z",
+  "provider": "Tencent Maps JavaScript API GL",
+  "viewport": "390x844",
+  "screenshots": 6,
+  "localWriteRequests": [],
+  "consoleErrors": [],
+  "note": "真实腾讯底图自动截图已通过，仍需实体 iPhone Safari 人工验收"
+}

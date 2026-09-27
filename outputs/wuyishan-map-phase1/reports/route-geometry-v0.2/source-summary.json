@@ -1,0 +1,99 @@
+{
+  "source": {
+    "sourceType": "tencent_driving_route_geometry",
+    "sourceReference": "腾讯地图官方驾车路线规划结果（一次获取后固化，只读）",
+    "capturedAt": "2026-09-10",
+    "coordinateSystem": "GCJ-02",
+    "totalDistanceMeters": 64277,
+    "durationMinutes": 110,
+    "geometryPointCount": 952,
+    "keyRoads": [
+      "江东路",
+      "武夷山国家公园1号风景道"
+    ],
+    "controls": [
+      {
+        "label": "南源岭",
+        "geometryIndex": 0,
+        "latitude": 27.6085563,
+        "longitude": 117.9904387
+      },
+      {
+        "label": "星村",
+        "geometryIndex": 92,
+        "latitude": 27.634233299999995,
+        "longitude": 117.92397969999999
+      },
+      {
+        "label": "黄村",
+        "geometryIndex": 132,
+        "latitude": 27.64893629999999,
+        "longitude": 117.88251369999999
+      },
+      {
+        "label": "月亮湾",
+        "geometryIndex": 207,
+        "latitude": 27.666926299999997,
+        "longitude": 117.81927469999998
+      },
+      {
+        "label": "桃源峪方向",
+        "geometryIndex": 536,
+        "latitude": 27.724696299999998,
+        "longitude": 117.7191477
+      },
+      {
+        "label": "大峡谷展示馆附近",
+        "geometryIndex": 768,
+        "latitude": 27.71800729999998,
+        "longitude": 117.6585037
+      },
+      {
+        "label": "坳头村 / 坳头观景台",
+        "geometryIndex": 951,
+        "latitude": 27.66425729999998,
+        "longitude": 117.65026170000002
+      }
+    ],
+    "segmentation": "六段连续几何；相邻段共用同一连接点",
+    "runtimeRequests": false
+  },
+  "segments": [
+    {
+      "id": "segment-1",
+      "label": "南源岭 → 星村",
+      "points": 93,
+      "distanceMeters": 9885
+    },
+    {
+      "id": "segment-2",
+      "label": "星村 → 黄村",
+      "points": 41,
+      "distanceMeters": 4835
+    },
+    {
+      "id": "segment-3",
+      "label": "黄村 → 月亮湾",
+      "points": 76,
+      "distanceMeters": 8631
+    },
+    {
+      "id": "segment-4",
+      "label": "月亮湾 → 桃源峪方向",
+      "points": 330,
+      "distanceMeters": 20410
+    },
+    {
+      "id": "segment-5",
+      "label": "桃源峪方向 → 大峡谷展示馆附近",
+      "points": 233,
+      "distanceMeters": 12527
+    },
+    {
+      "id": "segment-6",
+      "label": "大峡谷展示馆附近 → 坳头村 / 坳头观景台",
+      "points": 184,
+      "distanceMeters": 7866
+    }
+  ]
+}

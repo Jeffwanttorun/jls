@@ -1,0 +1,23 @@
+---
+import { visitorThemes } from "../data/visitor-themes";
+import runtime from "../data/visitor-runtime.json";
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+const hint=(runtime.home as any).themeCardHint||"看看怎么安排";
+---
+<section class:list={["dad-theme-section", compact && "compact"]} aria-labelledby="dad-theme-heading">
+  <div class="dad-section-heading">
+    <div><p class="dad-eyebrow">按兴趣找地方</p><h2 id="dad-theme-heading">游客主题</h2></div>
+    <p>一个地方可以同时属于多个主题。</p>
+  </div>
+  <nav class="dad-theme-grid" aria-label="游客主题">
+    {visitorThemes.map((theme) => (
+      <a href={`/zh/theme/${theme.id}`} class={theme.tone} data-theme-link>
+        <span class="dad-theme-icon" aria-hidden="true">{theme.icon}</span>
+        <strong>{theme.name}</strong>
+        <small>{hint}</small>
+        <b aria-hidden="true">→</b>
+      </a>
+    ))}
+  </nav>
+</section>

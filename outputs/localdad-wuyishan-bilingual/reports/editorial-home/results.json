@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-24T15:45:42.686Z",
+  "checks": [
+    "390px: Chinese and English homepages share the same editorial structure without overflow",
+    "1024px: Chinese and English homepages share the same editorial structure without overflow"
+  ],
+  "errors": []
+}

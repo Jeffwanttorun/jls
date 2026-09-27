@@ -1,0 +1,10 @@
+---
+import { trustLabels, type TrustStatus } from "../data/editorial";
+interface Props { status: TrustStatus; compact?: boolean; }
+const { status, compact = false } = Astro.props;
+const item = trustLabels[status];
+---
+<div class:list={["trust-label", `trust-${status}`, { compact }]}>
+  <span aria-hidden="true"></span>
+  <div><strong>{item.label}</strong>{!compact && <p>{item.description}</p>}</div>
+</div>

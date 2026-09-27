@@ -1,0 +1,9 @@
+---
+import type { ContentPhoto } from "../types/content";
+interface Props { title?: string; intro?: string; photos: ContentPhoto[]; }
+const { title = "Photos from this place", intro, photos } = Astro.props;
+---
+<section class="photo-gallery" aria-labelledby={`gallery-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+  <header><p class="kicker">Photo notes</p><h2 id={`gallery-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{title}</h2>{intro && <p>{intro}</p>}</header>
+  <div>{photos.map((photo, index) => <figure class:list={{ wide:index === 0 }}><img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />{(photo.caption || photo.credit || photo.photographer || photo.source) && <figcaption>{photo.caption}{(photo.credit || photo.photographer) && <> · Credit: {photo.credit ?? photo.photographer}</>}{photo.source && <> · Source: {photo.source}</>}</figcaption>}</figure>)}</div>
+</section>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PlaceLocationMap from "../../../components/PlaceLocationMap.astro";
+import { visitorThemePlaces, visitorThemes, type VisitorThemePlace } from "../../../data/visitor-themes";
+import { publicMapPlaceCodes } from "../../../data/wuyishan-public-map";
+import publicMap from "../../../data/wuyishan-public-map.json";
+
+export function getStaticPaths() {
+  const places = new Map<string,VisitorThemePlace>();
+  for (const point of publicMap.places) places.set(point.code,{
+    code:point.code,name:point.name,region:point.region,
+    summary:`位于${point.region}的一号风景道沿线地点。`,themes:[],familyFriendly:false,status:point.status
+  });
+  for (const place of visitorThemePlaces) places.set(place.code,place);
+  return [...places.values()].map((place) => ({ params:{ code:place.code }, props:{ place } }));
+}
+
+interface Props { place: VisitorThemePlace; }
+const { place } = Astro.props;
+const themes = visitorThemes.filter((theme) => place.themes.includes(theme.id));
+const primaryTheme = themes[0];
+const canShowExactLocation = publicMapPlaceCodes.has(place.code);
+const facilities = [
+  ["卫生间", place.facilities?.toilet],
+  ["商店", place.facilities?.shop],
+  ["餐馆", place.facilities?.restaurant],
+  ["住宿", place.facilities?.lodging],
+].filter((item): item is [string,true] => item[1] === true);
+const hasTags = themes.length > 0 || place.familyFriendly || facilities.length > 0;
+---
+<BaseLayout lang="zh" title={`${place.name}｜武夷山奶爸地图`} description={`${place.name}位于${place.region}。${place.summary}本页整理它所属的游客主题、适合人群与地图位置，方便沿一号风景道查看地点并安排停留。`}>
+  <section class="dad-place-detail">
+    <a class="dad-back-link" href={primaryTheme ? `/zh/theme/${primaryTheme.id}` : "/zh/explore-wuyishan"}>← 返回{primaryTheme?.name ?? "全部主题"}</a>
+    <article class="dad-place-detail-hero">
+      {place.image
+        ? <img src={place.image} alt={`${place.name}现场照片`} width="900" height="600" loading="eager" decoding="async" />
+        : <div class:list={["dad-place-placeholder", primaryTheme?.tone ?? "nature"]}><span>{primaryTheme?.icon ?? "地"}</span></div>}
+      <div class="dad-place-detail-copy">
+        <p class="dad-eyebrow">{place.region}</p>
+        <div class="dad-place-topline"><h1>{place.name}</h1>{place.status === "在建" && <span class="dad-status">在建</span>}</div>
+        <p>{place.summary}</p>
+        {hasTags && <div class="dad-tags">
+          {themes.map((theme) => <a href={`/zh/theme/${theme.id}`}>{theme.name}</a>)}
+          {place.familyFriendly && <span class="family">适合带孩子</span>}
+          {facilities.map(([label]) => <span class="facility">{label}</span>)}
+        </div>}
+      </div>
+    </article>
+    {canShowExactLocation && <PlaceLocationMap placeCode={place.code} placeName={place.name} />}
+  </section>
+</BaseLayout>
+
+<style>
+  .dad-place-topline{align-items:flex-start}.dad-place-topline h1{flex:1}.dad-tags a{padding:5px 8px;border-radius:999px;background:#eaf3ed;color:#2e6552;font-size:10px;font-weight:800;text-decoration:none}
+  @media(max-width:699px){
+    .dad-place-detail{padding-top:12px}
+    .dad-back-link{margin-bottom:12px}
+    .dad-place-detail-hero{border-radius:22px}
+    .dad-place-detail-hero img{height:clamp(170px,44vw,205px)}
+    .dad-place-detail-hero>.dad-place-placeholder{height:150px}
+    .dad-place-detail-hero>.dad-place-placeholder span{width:48px;height:48px;border-radius:15px;font-size:19px}
+    .dad-place-detail-copy{padding:15px 17px 17px}
+    .dad-place-detail-copy h1{margin:3px 0 5px;font-size:28px;line-height:1.12}
+    .dad-place-detail-copy>p{font-size:13px;line-height:1.45}
+    .dad-tags{margin-top:9px}
+  }
+  @media(min-width:700px){.dad-place-detail{padding:30px 28px 70px}.dad-place-detail-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr)}.dad-place-detail-hero img,.dad-place-detail-hero>.dad-place-placeholder{height:100%;min-height:520px}.dad-place-detail-copy{padding:40px;align-self:center}}
+</style>

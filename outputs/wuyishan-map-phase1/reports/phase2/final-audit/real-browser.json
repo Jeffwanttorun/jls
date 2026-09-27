@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "at": "2026-09-09T19:58:56.101Z",
+  "checks": [
+    "真实受信任HTTPS，腾讯GL SDK加载，标准/卫星切换，无候选写入",
+    "真实公开投影正常，真实WY-0011仍在回收站；仅GET读取",
+    "真实详情删除预览能够加载子地点和并发令牌，取消，未提交",
+    "备份、数据快照、后端源码、.env及raw/import变体均403，静态路径旁路已封堵"
+  ],
+  "staticChecks": [
+    {
+      "file": "database/seed/phase2-final-audit-full.sql",
+      "suffix": "",
+      "status": 403
+    },
+    {
+      "file": "database/seed/phase2-final-audit-full.sql",
+      "suffix": "?raw",
+      "status": 403
+    },
+    {
+      "file": "database/seed/phase2-final-audit-full.sql",
+      "suffix": "?import",
+      "status": 403
+    },
+    {
+      "file": "reports/phase2/final-audit/before.json",
+      "suffix": "",
+      "status": 403
+    },
+    {
+      "file": "reports/phase2/final-audit/before.json",
+      "suffix": "?raw",
+      "status": 403
+    },
+    {
+      "file": "reports/phase2/final-audit/before.json",
+      "suffix": "?import",
+      "status": 403
+    },
+    {
+      "file": "backend/src/place-maintenance.ts",
+      "suffix": "",
+      "status": 403
+    },
+    {
+      "file": "backend/src/place-maintenance.ts",
+      "suffix": "?raw",
+      "status": 403
+    },
+    {
+      "file": "backend/src/place-maintenance.ts",
+      "suffix": "?import",
+      "status": 403
+    },
+    {
+      "file": ".env",
+      "suffix": "",
+      "status": 403
+    },
+    {
+      "file": ".env",
+      "suffix": "?raw",
+      "status": 403
+    },
+    {
+      "file": ".env",
+      "suffix": "?import",
+      "status": 403
+    }
+  ],
+  "errors": [],
+  "network": [
+    {
+      "url": "https://map.qq.com/api/gljs?v=1.exp&key=[redacted]&callback=wymapReady",
+      "status": 200
+    }
+  ],
+  "blockedWrites": 0,
+  "certificate": {
+    "validFrom": "Sep  8 08:36:49 2026 GMT",
+    "validTo": "Dec  8 08:36:49 2028 GMT",
+    "subjectAltName": "DNS:localhost, IP Address:192.168.2.178, IP Address:127.0.0.1"
+  },
+  "scope": "Desktop Edge real HTTPS and real Tencent SDK; all mutation API requests blocked; no physical iPhone retest"
+}

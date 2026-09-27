@@ -1,0 +1,42 @@
+---
+import type { ContentAuthor, ContentPhoto, ContentReference, LinkedVideo, PracticalInformationItem, SourceReference } from "../types/content";
+import AuthorInfo from "./AuthorInfo.astro";
+import LinkedVideos from "./LinkedVideos.astro";
+import PhotoGallery from "./PhotoGallery.astro";
+import PracticalInformation from "./PracticalInformation.astro";
+import RelatedContent from "./RelatedContent.astro";
+import SourceList from "./SourceList.astro";
+import TopicList from "./TopicList.astro";
+import type { TopicId } from "../data/topics";
+interface Props {
+  personalExperience?: string;
+  historicalContext?: string;
+  practicalInformation?: PracticalInformationItem[];
+  photos?: ContentPhoto[];
+  videos?: LinkedVideo[];
+  relatedPlaces?: ContentReference[];
+  relatedPeople?: ContentReference[];
+  relatedStories?: ContentReference[];
+  relatedRoutes?: ContentReference[];
+  relatedKnowledge?: ContentReference[];
+  relatedTopics?: TopicId[];
+  relatedThemes?: TopicId[];
+  relatedEyebrow?: string;
+  relatedHeading?: string;
+  sources?: SourceReference[];
+  author?: ContentAuthor;
+}
+const { personalExperience, historicalContext, practicalInformation = [], photos = [], videos = [], relatedPlaces = [], relatedPeople = [], relatedStories = [], relatedRoutes = [], relatedKnowledge = [], relatedTopics = [], relatedThemes = [], relatedEyebrow, relatedHeading, sources = [], author } = Astro.props;
+const topicIds = [...new Set([...relatedTopics, ...relatedThemes])];
+---
+<div class="editorial-extras">
+  {personalExperience && <section class="content-module personal-experience" aria-labelledby="personal-experience-heading"><header><p class="kicker">Personal experience</p><h2 id="personal-experience-heading">From firsthand experience</h2></header><p>{personalExperience}</p></section>}
+  {historicalContext && <section class="content-module historical-context" aria-labelledby="historical-context-heading"><header><p class="kicker">Context</p><h2 id="historical-context-heading">Historical context</h2></header><p>{historicalContext}</p></section>}
+  <PracticalInformation items={practicalInformation} />
+  {photos.length > 0 && <PhotoGallery title="Photos" photos={photos} />}
+  <LinkedVideos videos={videos} />
+  <TopicList topicIds={topicIds} />
+  <SourceList sources={sources} />
+  <AuthorInfo author={author} />
+  <RelatedContent articles={relatedKnowledge} places={relatedPlaces} people={relatedPeople} routes={relatedRoutes} stories={relatedStories} eyebrow={relatedEyebrow} heading={relatedHeading} />
+</div>

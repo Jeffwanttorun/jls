@@ -1,0 +1,3 @@
+import {createApp} from 'vue';import {createRouter,createWebHistory} from 'vue-router';import App from './App.vue';import Home from './views/Home.vue';import Corridor from './views/Corridor.vue';import Detail from './views/Detail.vue';import PlaceDetail from './views/PlaceDetail.vue';import Theme from './views/Theme.vue';import './style.css';
+const router=createRouter({history:createWebHistory(),routes:[{path:'/',component:Home},{path:'/corridor',component:Corridor},{path:'/theme/tea',redirect:'/theme/museum'},{path:'/theme/:theme',component:Theme,props:true},{path:'/place/:slug',component:Detail,props:true},{path:'/location/:code',component:PlaceDetail,props:true},{path:'/preview/:previewId',component:Detail,props:true}]});
+createApp(App).use(router).mount('#app');

@@ -1,0 +1,260 @@
+{
+  "passed": true,
+  "backup": "database/seed/phase2-maintenance-full.sql",
+  "backupSha256": "69e0ffa2e58d8737f7ff87ac257d218ae6ba026a4e11dbcce82587aafbe969c3",
+  "tables": [
+    {
+      "table": "coordinate_candidates",
+      "source": {
+        "count": 60,
+        "checksum": "a770025c2e910151093f30e4d8f05848"
+      },
+      "restored": {
+        "count": 60,
+        "checksum": "a770025c2e910151093f30e4d8f05848"
+      },
+      "passed": true
+    },
+    {
+      "table": "guide_places",
+      "source": {
+        "count": 8,
+        "checksum": "15d75cdfbfc49e340597a8a8fab29eab"
+      },
+      "restored": {
+        "count": 8,
+        "checksum": "15d75cdfbfc49e340597a8a8fab29eab"
+      },
+      "passed": true
+    },
+    {
+      "table": "guide_routes",
+      "source": {
+        "count": 2,
+        "checksum": "aa4783adbe6f6d9878c1638312536ce4"
+      },
+      "restored": {
+        "count": 2,
+        "checksum": "aa4783adbe6f6d9878c1638312536ce4"
+      },
+      "passed": true
+    },
+    {
+      "table": "guides",
+      "source": {
+        "count": 10,
+        "checksum": "15a7d590fb88c01d8d7fdfa9acf452a3"
+      },
+      "restored": {
+        "count": 10,
+        "checksum": "15a7d590fb88c01d8d7fdfa9acf452a3"
+      },
+      "passed": true
+    },
+    {
+      "table": "import_jobs",
+      "source": {
+        "count": 1,
+        "checksum": "cf5ef03aa6e22a4c766aa4e8aecc6a4c"
+      },
+      "restored": {
+        "count": 1,
+        "checksum": "cf5ef03aa6e22a4c766aa4e8aecc6a4c"
+      },
+      "passed": true
+    },
+    {
+      "table": "import_rows",
+      "source": {
+        "count": 93,
+        "checksum": "c054ef7d3e049cfcaaff75b17fec2e19"
+      },
+      "restored": {
+        "count": 93,
+        "checksum": "c054ef7d3e049cfcaaff75b17fec2e19"
+      },
+      "passed": true
+    },
+    {
+      "table": "media",
+      "source": {
+        "count": 0,
+        "checksum": null
+      },
+      "restored": {
+        "count": 0,
+        "checksum": null
+      },
+      "passed": true
+    },
+    {
+      "table": "place_accessibility",
+      "source": {
+        "count": 46,
+        "checksum": "deee5a10af7406ed50f3cad3a6502e39"
+      },
+      "restored": {
+        "count": 46,
+        "checksum": "deee5a10af7406ed50f3cad3a6502e39"
+      },
+      "passed": true
+    },
+    {
+      "table": "place_coordinates",
+      "source": {
+        "count": 45,
+        "checksum": "2f6f7bdfde79b3cad18c50cd05e4c7f0"
+      },
+      "restored": {
+        "count": 45,
+        "checksum": "2f6f7bdfde79b3cad18c50cd05e4c7f0"
+      },
+      "passed": true
+    },
+    {
+      "table": "place_name_history",
+      "source": {
+        "count": 6,
+        "checksum": "f22dd440289795f1167ac7c0af60d25c"
+      },
+      "restored": {
+        "count": 6,
+        "checksum": "f22dd440289795f1167ac7c0af60d25c"
+      },
+      "passed": true
+    },
+    {
+      "table": "place_nature",
+      "source": {
+        "count": 0,
+        "checksum": null
+      },
+      "restored": {
+        "count": 0,
+        "checksum": null
+      },
+      "passed": true
+    },
+    {
+      "table": "place_practical_info",
+      "source": {
+        "count": 46,
+        "checksum": "887e322a151c35ff45e4a3af484539f0"
+      },
+      "restored": {
+        "count": 46,
+        "checksum": "887e322a151c35ff45e4a3af484539f0"
+      },
+      "passed": true
+    },
+    {
+      "table": "place_water",
+      "source": {
+        "count": 0,
+        "checksum": null
+      },
+      "restored": {
+        "count": 0,
+        "checksum": null
+      },
+      "passed": true
+    },
+    {
+      "table": "places",
+      "source": {
+        "count": 61,
+        "checksum": "f57757d53bf2d7883b1166a66ed07b5b"
+      },
+      "restored": {
+        "count": 61,
+        "checksum": "f57757d53bf2d7883b1166a66ed07b5b"
+      },
+      "passed": true
+    },
+    {
+      "table": "route_place_links",
+      "source": {
+        "count": 0,
+        "checksum": null
+      },
+      "restored": {
+        "count": 0,
+        "checksum": null
+      },
+      "passed": true
+    },
+    {
+      "table": "route_stops",
+      "source": {
+        "count": 14,
+        "checksum": "a03ce6be8c0e10a6cec93c0f3cb38550"
+      },
+      "restored": {
+        "count": 14,
+        "checksum": "a03ce6be8c0e10a6cec93c0f3cb38550"
+      },
+      "passed": true
+    },
+    {
+      "table": "routes",
+      "source": {
+        "count": 4,
+        "checksum": "166ac3a1bb83624b38f4d2bfda0b9260"
+      },
+      "restored": {
+        "count": 4,
+        "checksum": "166ac3a1bb83624b38f4d2bfda0b9260"
+      },
+      "passed": true
+    },
+    {
+      "table": "schema_migrations",
+      "source": {
+        "count": 9,
+        "checksum": "170bd8eefd8a128d3b334f7218d5e99c"
+      },
+      "restored": {
+        "count": 9,
+        "checksum": "170bd8eefd8a128d3b334f7218d5e99c"
+      },
+      "passed": true
+    },
+    {
+      "table": "taxonomy_terms",
+      "source": {
+        "count": 34,
+        "checksum": "7f7799be6a0aafa2a0769d16dc024954"
+      },
+      "restored": {
+        "count": 34,
+        "checksum": "7f7799be6a0aafa2a0769d16dc024954"
+      },
+      "passed": true
+    },
+    {
+      "table": "verification_media",
+      "source": {
+        "count": 0,
+        "checksum": null
+      },
+      "restored": {
+        "count": 0,
+        "checksum": null
+      },
+      "passed": true
+    },
+    {
+      "table": "verifications",
+      "source": {
+        "count": 0,
+        "checksum": null
+      },
+      "restored": {
+        "count": 0,
+        "checksum": null
+      },
+      "passed": true
+    }
+  ],
+  "checkedAt": "2026-09-09T14:34:01.957Z"
+}

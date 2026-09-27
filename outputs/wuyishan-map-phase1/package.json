@@ -1,0 +1,51 @@
+{
+  "name": "wuyishan-map-phase1",
+  "private": true,
+  "version": "0.2.1",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "dev:api": "tsx watch backend/src/server.ts",
+    "dev:admin": "vite --config admin/vite.config.ts",
+    "dev:prototype-api": "tsx watch prototype-server/server.ts",
+    "dev:prototype": "vite --config prototype/vite.config.ts",
+    "build": "tsc --noEmit && vue-tsc --noEmit -p admin/tsconfig.json && vite build --config admin/vite.config.ts",
+    "build:prototype": "vue-tsc --noEmit -p prototype/tsconfig.json && vite build --config prototype/vite.config.ts",
+    "test:prototype": "tsx tests/prototype-browser.ts",
+    "test:prototype:real-map": "tsx tests/prototype-real-map.ts",
+    "db:migrate": "tsx backend/src/cli.ts migrate",
+    "import:preview": "tsx backend/src/cli.ts preview",
+    "import:apply": "tsx backend/src/cli.ts apply",
+    "db:check": "tsx backend/src/cli.ts check",
+    "test": "tsx --test tests/*.test.ts",
+    "test:integration": "tsx --test tests/integration/*.test.ts",
+    "test:browser": "tsx tests/phase2-browser.ts",
+    "db:backup": "tsx scripts/backup-verify.ts",
+    "test:quick-pick": "tsx tests/quick-pick-browser.ts",
+    "test:maintenance": "tsx tests/maintenance-browser.ts",
+    "test:recycle": "tsx tests/recycle-browser.ts"
+  },
+  "dependencies": {
+    "dotenv": "16.6.1",
+    "exceljs": "4.4.0",
+    "fastify": "5.12.3",
+    "gcoord": "1.0.7",
+    "jszip": "3.10.1",
+    "pg": "8.16.3",
+    "vue": "3.5.22",
+    "vue-router": "4.5.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.55.1",
+    "@types/node": "22.18.6",
+    "@types/pg": "8.15.5",
+    "@vitejs/plugin-vue": "6.0.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.2",
+    "vite": "7.3.6",
+    "vue-tsc": "3.0.8"
+  }
+}

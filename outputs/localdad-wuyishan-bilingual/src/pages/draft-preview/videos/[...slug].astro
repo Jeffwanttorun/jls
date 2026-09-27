@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import DraftPreviewBanner from "../../../components/DraftPreviewBanner.astro";
+import VideoEmbed from "../../../components/VideoEmbed.astro";
+import VideoMetadata from "../../../components/VideoMetadata.astro";
+import { videoDatabase } from "../../../data/videos";
+import { localeInfo } from "../../../i18n/config";
+import type { Locale } from "../../../i18n/config";
+import type { VideoContentType, VideoRecord } from "../../../types/content";
+
+export function getStaticPaths() {
+  if (!import.meta.env.DEV) return [];
+  return videoDatabase.filter((video) => video.recordStatus === "draft").map((video) => ({ params:{ slug:video.slug }, props:{ video } }));
+}
+
+interface Props { video: VideoRecord; }
+const { video } = Astro.props as Props;
+const languageLabels = Object.fromEntries(Object.entries(localeInfo).map(([locale, info]) => [locale, info.label])) as Record<Locale, string>;
+const contentTypeLabels: Record<VideoContentType, string> = { explanation:"Explanation", "place-visit":"Place visit", route:"Route", interview:"Interview", story:"Story" };
+const metadataLabels = { platform:"Platform", language:"Language", contentType:"Content type", published:"Published", transcript:"Transcript", transcriptAvailable:"Available" };
+const embedLabels = { watch:"Video preview", transcript:"Transcript", openTranscript:"Open transcript" };
+---
+<BaseLayout title={`Draft Preview: ${video.title} | Local Dad Jeff`} description={video.description ?? `Local draft preview for ${video.title}.`} lang={video.language} noIndex={true}>
+  <DraftPreviewBanner contentType="video" />
+  <section class="page-head article-head"><p class="kicker">Video draft</p><h1>{video.title}</h1>{video.description && <p>{video.description}</p>}<VideoMetadata video={video} labels={metadataLabels} languageLabels={languageLabels} contentTypeLabels={contentTypeLabels} /></section>
+  <VideoEmbed video={video} labels={embedLabels} />
+</BaseLayout>

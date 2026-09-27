@@ -1,0 +1,2 @@
+$ tsx backend/src/cli.ts migrate
+数据库迁移完成

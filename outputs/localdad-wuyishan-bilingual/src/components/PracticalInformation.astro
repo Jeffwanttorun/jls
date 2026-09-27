@@ -1,0 +1,9 @@
+---
+import type { PracticalInformationItem } from "../types/content";
+interface Props { items?: PracticalInformationItem[]; }
+const { items = [] } = Astro.props;
+---
+{items.length > 0 && <section class="content-module practical-information" aria-labelledby="practical-information-heading">
+  <header><p class="kicker">Practical information</p><h2 id="practical-information-heading">Details to keep handy</h2></header>
+  <dl>{items.map((item) => <div><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
+</section>}

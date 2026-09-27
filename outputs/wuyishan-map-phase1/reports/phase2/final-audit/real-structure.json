@@ -1,0 +1,5807 @@
+{
+  "at": "2026-09-09T19:54:36.957Z",
+  "checks": {
+    "checkedAt": "2026-09-09T19:54:36.956Z",
+    "passed": true,
+    "counts": {
+      "taxonomy_terms": 34,
+      "places": 61,
+      "place_coordinates": 45,
+      "coordinate_candidates": 60,
+      "verifications": 0,
+      "routes": 4,
+      "route_stops": 14,
+      "guides": 10,
+      "guide_places": 8,
+      "guide_routes": 2,
+      "media": 0
+    },
+    "checks": {
+      "回收站状态完整": [],
+      "回收站审计完整": [],
+      "回收站不公开": [],
+      "名称历史完整": [],
+      "路线显示顺序唯一且有效": [],
+      "显示与主支线角色合法": [],
+      "重复档案引用完整": [],
+      "在建不作为公开导航": [],
+      "业务编号唯一性": [],
+      "父地点存在": [],
+      "父子循环": [],
+      "路线引用完整": [],
+      "攻略引用完整": [],
+      "P2至P5精确坐标隔离": [],
+      "P5私有": [],
+      "未经确认坐标隔离": [],
+      "每地点唯一有效坐标": [],
+      "正式坐标候选链完整": [],
+      "候选已确认必有历史": [],
+      "历史坐标不公开": [],
+      "关闭或待核实不导航": [],
+      "确认审计完整": [],
+      "时间字段有效": [],
+      "坐标时间字段有效": [],
+      "枚举合法": [],
+      "分类维度合法": []
+    }
+  },
+  "structure": {
+    "columns": [
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "candidate_id",
+        "ordinal_position": 3,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "raw_latitude",
+        "ordinal_position": 4,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "raw_longitude",
+        "ordinal_position": 5,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "raw_coordinate_system",
+        "ordinal_position": 6,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_system",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "source_type",
+        "ordinal_position": 7,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_source",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "source_file",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "source_time",
+        "ordinal_position": 9,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "accuracy_meters",
+        "ordinal_position": 10,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "confidence_level",
+        "ordinal_position": 11,
+        "data_type": "USER-DEFINED",
+        "udt_name": "confidence_level",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "map_latitude",
+        "ordinal_position": 12,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "map_longitude",
+        "ordinal_position": 13,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "map_coordinate_system",
+        "ordinal_position": 14,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_system",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "conversion_method",
+        "ordinal_position": 15,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "human_confirmed",
+        "ordinal_position": 16,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "confirmed_at",
+        "ordinal_position": 17,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "confirmed_by",
+        "ordinal_position": 18,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "created_at",
+        "ordinal_position": 19,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "raw_wgs84",
+        "ordinal_position": 20,
+        "data_type": "USER-DEFINED",
+        "udt_name": "geography",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "map_point",
+        "ordinal_position": 21,
+        "data_type": "USER-DEFINED",
+        "udt_name": "geometry",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "source_reference",
+        "ordinal_position": 22,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "accuracy_note",
+        "ordinal_position": 23,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "status",
+        "ordinal_position": 24,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_record_status",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "status_changed_at",
+        "ordinal_position": 25,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "superseded_by",
+        "ordinal_position": 26,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "revoked_at",
+        "ordinal_position": 27,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "revoked_by",
+        "ordinal_position": 28,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "confirmed_place_coordinates",
+        "column_name": "revocation_reason",
+        "ordinal_position": 29,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "code",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "source_file",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "source_type",
+        "ordinal_position": 4,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_source",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "source_time",
+        "ordinal_position": 5,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "source_time_original",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "timecode",
+        "ordinal_position": 7,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "device",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "altitude_m",
+        "ordinal_position": 9,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "raw_latitude",
+        "ordinal_position": 10,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "raw_longitude",
+        "ordinal_position": 11,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "raw_coordinate_system",
+        "ordinal_position": 12,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_system",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "accuracy_meters",
+        "ordinal_position": 13,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "confidence_level",
+        "ordinal_position": 14,
+        "data_type": "USER-DEFINED",
+        "udt_name": "confidence_level",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "matched_place_id",
+        "ordinal_position": 15,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "match_confidence",
+        "ordinal_position": 16,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "match_reason",
+        "ordinal_position": 17,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "converted_latitude",
+        "ordinal_position": 18,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "converted_longitude",
+        "ordinal_position": 19,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "map_coordinate_system",
+        "ordinal_position": 20,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_system",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "conversion_method",
+        "ordinal_position": 21,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "human_confirmed",
+        "ordinal_position": 22,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "NO",
+        "column_default": "false",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "confirmed_at",
+        "ordinal_position": 23,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "confirmed_by",
+        "ordinal_position": 24,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "source_claimed_confirmed",
+        "ordinal_position": 25,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "rejected_reason",
+        "ordinal_position": 26,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "writeback_status",
+        "ordinal_position": 27,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": "'待确认'::text",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "notes",
+        "ordinal_position": 28,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "source_import_row_id",
+        "ordinal_position": 29,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "created_at",
+        "ordinal_position": 30,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "source_reference",
+        "ordinal_position": 31,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "accuracy_note",
+        "ordinal_position": 32,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "status",
+        "ordinal_position": 33,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_candidate_status",
+        "is_nullable": "NO",
+        "column_default": "'pending'::coordinate_candidate_status",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "reviewed_at",
+        "ordinal_position": 34,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "reviewed_by",
+        "ordinal_position": 35,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "column_name": "position_certainty",
+        "ordinal_position": 36,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geography_columns",
+        "column_name": "f_table_catalog",
+        "ordinal_position": 1,
+        "data_type": "name",
+        "udt_name": "name",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geography_columns",
+        "column_name": "f_table_schema",
+        "ordinal_position": 2,
+        "data_type": "name",
+        "udt_name": "name",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geography_columns",
+        "column_name": "f_table_name",
+        "ordinal_position": 3,
+        "data_type": "name",
+        "udt_name": "name",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geography_columns",
+        "column_name": "f_geography_column",
+        "ordinal_position": 4,
+        "data_type": "name",
+        "udt_name": "name",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geography_columns",
+        "column_name": "coord_dimension",
+        "ordinal_position": 5,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geography_columns",
+        "column_name": "srid",
+        "ordinal_position": 6,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geography_columns",
+        "column_name": "type",
+        "ordinal_position": 7,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geometry_columns",
+        "column_name": "f_table_catalog",
+        "ordinal_position": 1,
+        "data_type": "character varying",
+        "udt_name": "varchar",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geometry_columns",
+        "column_name": "f_table_schema",
+        "ordinal_position": 2,
+        "data_type": "name",
+        "udt_name": "name",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geometry_columns",
+        "column_name": "f_table_name",
+        "ordinal_position": 3,
+        "data_type": "name",
+        "udt_name": "name",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geometry_columns",
+        "column_name": "f_geometry_column",
+        "ordinal_position": 4,
+        "data_type": "name",
+        "udt_name": "name",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geometry_columns",
+        "column_name": "coord_dimension",
+        "ordinal_position": 5,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geometry_columns",
+        "column_name": "srid",
+        "ordinal_position": 6,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "geometry_columns",
+        "column_name": "type",
+        "ordinal_position": 7,
+        "data_type": "character varying",
+        "udt_name": "varchar",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guide_places",
+        "column_name": "guide_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guide_places",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guide_routes",
+        "column_name": "guide_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guide_routes",
+        "column_name": "route_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "code",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "title",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "summary",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "body",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "guide_type",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "publish_status",
+        "ordinal_position": 7,
+        "data_type": "USER-DEFINED",
+        "udt_name": "publish_status",
+        "is_nullable": "NO",
+        "column_default": "'草稿'::publish_status",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "source_workflow",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "published_at",
+        "ordinal_position": 9,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "updated_at",
+        "ordinal_position": 10,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "source_updated_at",
+        "ordinal_position": 11,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "body_source",
+        "ordinal_position": 12,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "media_note",
+        "ordinal_position": 13,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "notes",
+        "ordinal_position": 14,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "guides",
+        "column_name": "source_import_row_id",
+        "ordinal_position": 15,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "source_filename",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "source_sha256",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "preview_sha256",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "status",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "started_at",
+        "ordinal_position": 6,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "completed_at",
+        "ordinal_position": 7,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_jobs",
+        "column_name": "result",
+        "ordinal_position": 8,
+        "data_type": "jsonb",
+        "udt_name": "jsonb",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "job_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "sheet",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "row_number",
+        "ordinal_position": 4,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "business_code",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "payload",
+        "ordinal_position": 6,
+        "data_type": "jsonb",
+        "udt_name": "jsonb",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "outcome",
+        "ordinal_position": 7,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "import_rows",
+        "column_name": "issues",
+        "ordinal_position": 8,
+        "data_type": "jsonb",
+        "udt_name": "jsonb",
+        "is_nullable": "NO",
+        "column_default": "'[]'::jsonb",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "media_type",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "purpose",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "file_url",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "local_source_path",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "shot_at",
+        "ordinal_position": 7,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "direction_note",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "media",
+        "column_name": "public_status",
+        "ordinal_position": 9,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": "'私有'::text",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "place_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "stroller_friendly",
+        "ordinal_position": 2,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "baby_carrier_possible",
+        "ordinal_position": 3,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "age_2_3_rating",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "age_4_6_rating",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "age_7_plus_rating",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "elderly_friendly",
+        "ordinal_position": 7,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "child_friendly_note",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "stairs_note",
+        "ordinal_position": 9,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "slope_note",
+        "ordinal_position": 10,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "shade_note",
+        "ordinal_position": 11,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "seats_available",
+        "ordinal_position": 12,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "fall_risk",
+        "ordinal_position": 13,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "water_risk",
+        "ordinal_position": 14,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_accessibility",
+        "column_name": "vehicle_risk",
+        "ordinal_position": 15,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "candidate_id",
+        "ordinal_position": 3,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "raw_latitude",
+        "ordinal_position": 4,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "raw_longitude",
+        "ordinal_position": 5,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "raw_coordinate_system",
+        "ordinal_position": 6,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_system",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "source_type",
+        "ordinal_position": 7,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_source",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "source_file",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "source_time",
+        "ordinal_position": 9,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "accuracy_meters",
+        "ordinal_position": 10,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "confidence_level",
+        "ordinal_position": 11,
+        "data_type": "USER-DEFINED",
+        "udt_name": "confidence_level",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "map_latitude",
+        "ordinal_position": 12,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "map_longitude",
+        "ordinal_position": 13,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "map_coordinate_system",
+        "ordinal_position": 14,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_system",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "conversion_method",
+        "ordinal_position": 15,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "human_confirmed",
+        "ordinal_position": 16,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "NO",
+        "column_default": "false",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "confirmed_at",
+        "ordinal_position": 17,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "confirmed_by",
+        "ordinal_position": 18,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "created_at",
+        "ordinal_position": 19,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "raw_wgs84",
+        "ordinal_position": 20,
+        "data_type": "USER-DEFINED",
+        "udt_name": "geography",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "ALWAYS",
+        "generation_expression": "\nCASE\n    WHEN (raw_coordinate_system = 'WGS84'::coordinate_system) THEN (st_setsrid(st_makepoint(raw_longitude, raw_latitude), 4326))::geography\n    ELSE NULL::geography\nEND"
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "map_point",
+        "ordinal_position": 21,
+        "data_type": "USER-DEFINED",
+        "udt_name": "geometry",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "ALWAYS",
+        "generation_expression": "\nCASE\n    WHEN (map_latitude IS NOT NULL) THEN st_makepoint(map_longitude, map_latitude)\n    ELSE NULL::geometry\nEND"
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "source_reference",
+        "ordinal_position": 22,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "accuracy_note",
+        "ordinal_position": 23,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "status",
+        "ordinal_position": 24,
+        "data_type": "USER-DEFINED",
+        "udt_name": "coordinate_record_status",
+        "is_nullable": "NO",
+        "column_default": "'active'::coordinate_record_status",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "status_changed_at",
+        "ordinal_position": 25,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "superseded_by",
+        "ordinal_position": 26,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "revoked_at",
+        "ordinal_position": 27,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "revoked_by",
+        "ordinal_position": 28,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "revocation_reason",
+        "ordinal_position": 29,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_coordinates",
+        "column_name": "position_certainty",
+        "ordinal_position": 30,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_name_history",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_name_history",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_name_history",
+        "column_name": "old_name",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_name_history",
+        "column_name": "new_name",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_name_history",
+        "column_name": "changed_at",
+        "ordinal_position": 5,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_name_history",
+        "column_name": "change_source",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "place_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "primary_observation",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "secondary_observation",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "best_season",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "best_time",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "weather_note",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "wind_note",
+        "ordinal_position": 7,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "temperature_note",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "guaranteed_sighting",
+        "ordinal_position": 9,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "NO",
+        "column_default": "false",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "waiting_required",
+        "ordinal_position": 10,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_nature",
+        "column_name": "ecological_sensitivity",
+        "ordinal_position": 11,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "place_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "car_access",
+        "ordinal_position": 2,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "road_type",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "road_width_note",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "passing_difficulty",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "four_wheel_drive_required",
+        "ordinal_position": 6,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "walking_required",
+        "ordinal_position": 7,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "walking_distance_m",
+        "ordinal_position": 8,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "walking_duration_min",
+        "ordinal_position": 9,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "parking_available",
+        "ordinal_position": 10,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "parking_type",
+        "ordinal_position": 11,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "parking_capacity_note",
+        "ordinal_position": 12,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "parking_fee_note",
+        "ordinal_position": 13,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "toilet_available",
+        "ordinal_position": 14,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "toilet_distance_m",
+        "ordinal_position": 15,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "food_available",
+        "ordinal_position": 16,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "water_available",
+        "ordinal_position": 17,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "mobile_signal_note",
+        "ordinal_position": 18,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_practical_info",
+        "column_name": "charging_available",
+        "ordinal_position": 19,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_recycle_history",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_recycle_history",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_recycle_history",
+        "column_name": "action",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_recycle_history",
+        "column_name": "occurred_at",
+        "ordinal_position": 4,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_recycle_history",
+        "column_name": "action_source",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_recycle_history",
+        "column_name": "reason",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "place_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "water_type",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "normal_depth_note",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "riverbed_type",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "slippery_risk",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "current_risk",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "rainfall_risk",
+        "ordinal_position": 7,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "upstream_rainfall_risk",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "child_water_entry_note",
+        "ordinal_position": 9,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "life_jacket_note",
+        "ordinal_position": 10,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "place_water",
+        "column_name": "last_water_check_at",
+        "ordinal_position": 11,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "code",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "name",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "short_name",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "place_type",
+        "ordinal_position": 5,
+        "data_type": "USER-DEFINED",
+        "udt_name": "place_type",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "parent_place_id",
+        "ordinal_position": 6,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "category_id",
+        "ordinal_position": 7,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "tags",
+        "ordinal_position": 8,
+        "data_type": "ARRAY",
+        "udt_name": "_text",
+        "is_nullable": "NO",
+        "column_default": "'{}'::text[]",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "region",
+        "ordinal_position": 9,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "main_line",
+        "ordinal_position": 10,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "intro",
+        "ordinal_position": 11,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "current_status",
+        "ordinal_position": 12,
+        "data_type": "USER-DEFINED",
+        "udt_name": "place_status",
+        "is_nullable": "NO",
+        "column_default": "'待核实'::place_status",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "public_level",
+        "ordinal_position": 13,
+        "data_type": "USER-DEFINED",
+        "udt_name": "public_level",
+        "is_nullable": "NO",
+        "column_default": "'P5'::public_level",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "priority",
+        "ordinal_position": 14,
+        "data_type": "USER-DEFINED",
+        "udt_name": "priority",
+        "is_nullable": "NO",
+        "column_default": "'中'::priority",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "risk_note",
+        "ordinal_position": 15,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "rain_friendly",
+        "ordinal_position": 16,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "notes",
+        "ordinal_position": 17,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "source_last_verified_at",
+        "ordinal_position": 18,
+        "data_type": "date",
+        "udt_name": "date",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "source_import_row_id",
+        "ordinal_position": 19,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "created_at",
+        "ordinal_position": 20,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "updated_at",
+        "ordinal_position": 21,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "corridor_order",
+        "ordinal_position": 22,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "corridor_role",
+        "ordinal_position": 23,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": "'unassigned'::text",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "map_display_role",
+        "ordinal_position": 24,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": "'pin'::text",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "duplicate_of_place_id",
+        "ordinal_position": 25,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "deleted_at",
+        "ordinal_position": 26,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "deleted_by",
+        "ordinal_position": 27,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "places",
+        "column_name": "deletion_reason",
+        "ordinal_position": 28,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "code",
+        "ordinal_position": 1,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "name",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "current_status",
+        "ordinal_position": 3,
+        "data_type": "USER-DEFINED",
+        "udt_name": "place_status",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "public_level",
+        "ordinal_position": 4,
+        "data_type": "USER-DEFINED",
+        "udt_name": "public_level",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "region",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "latitude",
+        "ordinal_position": 6,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "longitude",
+        "ordinal_position": 7,
+        "data_type": "double precision",
+        "udt_name": "float8",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "public_places",
+        "column_name": "coordinate_system",
+        "ordinal_position": 8,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_place_links",
+        "column_name": "route_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_place_links",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_place_links",
+        "column_name": "source_import_row_id",
+        "ordinal_position": 3,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_stops",
+        "column_name": "route_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_stops",
+        "column_name": "place_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_stops",
+        "column_name": "sequence",
+        "ordinal_position": 3,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_stops",
+        "column_name": "suggested_duration_min",
+        "ordinal_position": 4,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_stops",
+        "column_name": "required_or_optional",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_stops",
+        "column_name": "alternative_group",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "route_stops",
+        "column_name": "condition_note",
+        "ordinal_position": 7,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "code",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "name",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "route_type",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "intro",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "total_duration_min",
+        "ordinal_position": 6,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "estimated_driving_min",
+        "ordinal_position": 7,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "estimated_walking_m",
+        "ordinal_position": 8,
+        "data_type": "numeric",
+        "udt_name": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "suitable_age_note",
+        "ordinal_position": 9,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "season_note",
+        "ordinal_position": 10,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "rain_friendly",
+        "ordinal_position": 11,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "elderly_friendly",
+        "ordinal_position": 12,
+        "data_type": "USER-DEFINED",
+        "udt_name": "yes_partial",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "publish_status",
+        "ordinal_position": 13,
+        "data_type": "USER-DEFINED",
+        "udt_name": "publish_status",
+        "is_nullable": "NO",
+        "column_default": "'草稿'::publish_status",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "source_status",
+        "ordinal_position": 14,
+        "data_type": "USER-DEFINED",
+        "udt_name": "place_status",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "start_note",
+        "ordinal_position": 15,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "end_note",
+        "ordinal_position": 16,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "source_last_verified_at",
+        "ordinal_position": 17,
+        "data_type": "date",
+        "udt_name": "date",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "sequence_confirmed",
+        "ordinal_position": 18,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "NO",
+        "column_default": "false",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "source_import_row_id",
+        "ordinal_position": 19,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "created_at",
+        "ordinal_position": 20,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "routes",
+        "column_name": "updated_at",
+        "ordinal_position": 21,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "schema_migrations",
+        "column_name": "name",
+        "ordinal_position": 1,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "schema_migrations",
+        "column_name": "sha256",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "schema_migrations",
+        "column_name": "applied_at",
+        "ordinal_position": 3,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "spatial_ref_sys",
+        "column_name": "srid",
+        "ordinal_position": 1,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "spatial_ref_sys",
+        "column_name": "auth_name",
+        "ordinal_position": 2,
+        "data_type": "character varying",
+        "udt_name": "varchar",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "spatial_ref_sys",
+        "column_name": "auth_srid",
+        "ordinal_position": 3,
+        "data_type": "integer",
+        "udt_name": "int4",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "spatial_ref_sys",
+        "column_name": "srtext",
+        "ordinal_position": 4,
+        "data_type": "character varying",
+        "udt_name": "varchar",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "spatial_ref_sys",
+        "column_name": "proj4text",
+        "ordinal_position": 5,
+        "data_type": "character varying",
+        "udt_name": "varchar",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "column_name": "dimension",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "column_name": "code",
+        "ordinal_position": 3,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "column_name": "name",
+        "ordinal_position": 4,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "column_name": "description",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "column_name": "enabled",
+        "ordinal_position": 6,
+        "data_type": "boolean",
+        "udt_name": "bool",
+        "is_nullable": "NO",
+        "column_default": "true",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "column_name": "source_import_row_id",
+        "ordinal_position": 7,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verification_media",
+        "column_name": "verification_id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verification_media",
+        "column_name": "media_id",
+        "ordinal_position": 2,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "id",
+        "ordinal_position": 1,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": "gen_random_uuid()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "code",
+        "ordinal_position": 2,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "place_id",
+        "ordinal_position": 3,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "verified_at",
+        "ordinal_position": 4,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "road_status",
+        "ordinal_position": 5,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "parking_status",
+        "ordinal_position": 6,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "toilet_status",
+        "ordinal_position": 7,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "open_status",
+        "ordinal_position": 8,
+        "data_type": "USER-DEFINED",
+        "udt_name": "place_status",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "weather",
+        "ordinal_position": 9,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "water_condition",
+        "ordinal_position": 10,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "observation_note",
+        "ordinal_position": 11,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "general_note",
+        "ordinal_position": 12,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "verifier",
+        "ordinal_position": 13,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "NO",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "source_photo_note",
+        "ordinal_position": 14,
+        "data_type": "text",
+        "udt_name": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "source_import_row_id",
+        "ordinal_position": 15,
+        "data_type": "uuid",
+        "udt_name": "uuid",
+        "is_nullable": "YES",
+        "column_default": null,
+        "is_generated": "NEVER",
+        "generation_expression": null
+      },
+      {
+        "table_name": "verifications",
+        "column_name": "created_at",
+        "ordinal_position": 16,
+        "data_type": "timestamp with time zone",
+        "udt_name": "timestamptz",
+        "is_nullable": "NO",
+        "column_default": "now()",
+        "is_generated": "NEVER",
+        "generation_expression": null
+      }
+    ],
+    "constraints": [
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "candidate_accuracy_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((accuracy_meters IS NULL) OR (accuracy_meters < 'Infinity'::numeric)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "candidate_accuracy_known_or_noted",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((accuracy_meters IS NOT NULL) OR ((accuracy_note IS NOT NULL) AND (length(TRIM(BOTH FROM accuracy_note)) > 0))))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "candidate_code_nonempty",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((length(TRIM(BOTH FROM code)) > 0))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "candidate_confirmation_atomic",
+        "contype": "t",
+        "condeferrable": true,
+        "condeferred": true,
+        "convalidated": true,
+        "definition": "TRIGGER DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "candidate_review_state",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((((status = 'pending'::coordinate_candidate_status) AND (NOT human_confirmed)) OR ((status = 'confirmed'::coordinate_candidate_status) AND human_confirmed AND (confirmed_at IS NOT NULL) AND (confirmed_by IS NOT NULL)) OR ((status = 'rejected'::coordinate_candidate_status) AND (NOT human_confirmed) AND (rejected_reason IS NOT NULL) AND (length(TRIM(BOTH FROM rejected_reason)) > 0) AND (reviewed_at IS NOT NULL) AND (reviewed_by IS NOT NULL))))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "confirmed_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((confirmed_at IS NULL) OR isfinite(confirmed_at)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_accuracy_meters_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((accuracy_meters >= (0)::numeric))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((converted_latitude IS NULL) = (converted_longitude IS NULL)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_check1",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((converted_latitude IS NULL) OR ((raw_coordinate_system <> '未知'::coordinate_system) AND (map_coordinate_system IS NOT NULL) AND (map_coordinate_system = 'GCJ-02'::coordinate_system))))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_check2",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((NOT human_confirmed) OR ((confirmed_at IS NOT NULL) AND (confirmed_by IS NOT NULL) AND (length(TRIM(BOTH FROM confirmed_by)) > 0) AND (matched_place_id IS NOT NULL) AND (converted_latitude IS NOT NULL))))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_check3",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((writeback_status <> ALL (ARRAY['可写回'::text, '已写回'::text])) OR human_confirmed))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_code_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (code)"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_converted_latitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((converted_latitude >= ('-90'::integer)::double precision) AND (converted_latitude <= (90)::double precision)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_converted_longitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((converted_longitude >= ('-180'::integer)::double precision) AND (converted_longitude <= (180)::double precision)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_match_confidence_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((match_confidence = ANY (ARRAY['高'::text, '中'::text, '低'::text])))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_matched_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (matched_place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_position_certainty_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((position_certainty = ANY (ARRAY['certain'::text, 'approximate'::text, 'uncertain'::text])))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_raw_latitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((raw_latitude >= ('-90'::integer)::double precision) AND (raw_latitude <= (90)::double precision)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_raw_longitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((raw_longitude >= ('-180'::integer)::double precision) AND (raw_longitude <= (180)::double precision)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_source_import_row_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (source_import_row_id) REFERENCES import_rows(id)"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "coordinate_candidates_writeback_status_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((writeback_status = ANY (ARRAY['待匹配'::text, '待确认'::text, '可写回'::text, '已写回'::text, '已拒绝'::text, '仅轨迹参考'::text])))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "created_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((created_at IS NULL) OR isfinite(created_at)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "reviewed_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((reviewed_at IS NULL) OR isfinite(reviewed_at)))"
+      },
+      {
+        "table_name": "coordinate_candidates",
+        "conname": "source_time_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((source_time IS NULL) OR isfinite(source_time)))"
+      },
+      {
+        "table_name": "guide_places",
+        "conname": "guide_places_guide_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (guide_id) REFERENCES guides(id)"
+      },
+      {
+        "table_name": "guide_places",
+        "conname": "guide_places_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (guide_id, place_id)"
+      },
+      {
+        "table_name": "guide_places",
+        "conname": "guide_places_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "guide_routes",
+        "conname": "guide_routes_guide_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (guide_id) REFERENCES guides(id)"
+      },
+      {
+        "table_name": "guide_routes",
+        "conname": "guide_routes_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (guide_id, route_id)"
+      },
+      {
+        "table_name": "guide_routes",
+        "conname": "guide_routes_route_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (route_id) REFERENCES routes(id)"
+      },
+      {
+        "table_name": "guides",
+        "conname": "guides_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((publish_status <> '已发布'::publish_status) OR (published_at IS NOT NULL)))"
+      },
+      {
+        "table_name": "guides",
+        "conname": "guides_code_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((code ~ '^G-[0-9]{4,}$'::text))"
+      },
+      {
+        "table_name": "guides",
+        "conname": "guides_code_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (code)"
+      },
+      {
+        "table_name": "guides",
+        "conname": "guides_guide_type_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((guide_type = ANY (ARRAY['实测攻略'::text, '展馆攻略'::text, '自然观察攻略'::text, '路线/专题'::text, '人物/展馆攻略'::text])))"
+      },
+      {
+        "table_name": "guides",
+        "conname": "guides_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "guides",
+        "conname": "guides_source_import_row_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (source_import_row_id) REFERENCES import_rows(id)"
+      },
+      {
+        "table_name": "guides",
+        "conname": "guides_source_workflow_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((source_workflow = ANY (ARRAY['已有内容/待入库'::text, '研究中'::text, '待建立'::text, '草稿'::text, '已发布'::text, '已归档'::text])))"
+      },
+      {
+        "table_name": "guides",
+        "conname": "published_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((published_at IS NULL) OR isfinite(published_at)))"
+      },
+      {
+        "table_name": "guides",
+        "conname": "source_updated_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((source_updated_at IS NULL) OR isfinite(source_updated_at)))"
+      },
+      {
+        "table_name": "guides",
+        "conname": "updated_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((updated_at IS NULL) OR isfinite(updated_at)))"
+      },
+      {
+        "table_name": "import_jobs",
+        "conname": "completed_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((completed_at IS NULL) OR isfinite(completed_at)))"
+      },
+      {
+        "table_name": "import_jobs",
+        "conname": "import_jobs_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "import_jobs",
+        "conname": "import_jobs_status_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((status = ANY (ARRAY['running'::text, 'completed'::text])))"
+      },
+      {
+        "table_name": "import_jobs",
+        "conname": "started_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((started_at IS NULL) OR isfinite(started_at)))"
+      },
+      {
+        "table_name": "import_rows",
+        "conname": "import_rows_job_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (job_id) REFERENCES import_jobs(id)"
+      },
+      {
+        "table_name": "import_rows",
+        "conname": "import_rows_job_id_sheet_row_number_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (job_id, sheet, row_number)"
+      },
+      {
+        "table_name": "import_rows",
+        "conname": "import_rows_outcome_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((outcome = ANY (ARRAY['pending'::text, 'success'::text, 'failed'::text, 'skipped'::text])))"
+      },
+      {
+        "table_name": "import_rows",
+        "conname": "import_rows_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "import_rows",
+        "conname": "import_rows_row_number_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((row_number > 0))"
+      },
+      {
+        "table_name": "media",
+        "conname": "media_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((file_url IS NOT NULL) OR (local_source_path IS NOT NULL)))"
+      },
+      {
+        "table_name": "media",
+        "conname": "media_media_type_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((media_type = ANY (ARRAY['图片'::text, '视频'::text, '音频'::text, '文件'::text])))"
+      },
+      {
+        "table_name": "media",
+        "conname": "media_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "media",
+        "conname": "media_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "media",
+        "conname": "media_public_status_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((public_status = ANY (ARRAY['私有'::text, '可公开'::text])))"
+      },
+      {
+        "table_name": "media",
+        "conname": "shot_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((shot_at IS NULL) OR isfinite(shot_at)))"
+      },
+      {
+        "table_name": "place_accessibility",
+        "conname": "place_accessibility_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (place_id)"
+      },
+      {
+        "table_name": "place_accessibility",
+        "conname": "place_accessibility_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "active_coordinate_confirmed",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((status <> 'active'::coordinate_record_status) OR (human_confirmed AND (candidate_id IS NOT NULL))))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "confirmed_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((confirmed_at IS NULL) OR isfinite(confirmed_at)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "created_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((created_at IS NULL) OR isfinite(created_at)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "formal_accuracy_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((accuracy_meters IS NULL) OR (accuracy_meters < 'Infinity'::numeric)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "formal_accuracy_known_or_noted",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((accuracy_meters IS NOT NULL) OR ((accuracy_note IS NOT NULL) AND (length(TRIM(BOTH FROM accuracy_note)) > 0))))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_accuracy_meters_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((accuracy_meters >= (0)::numeric))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_candidate_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (candidate_id) REFERENCES coordinate_candidates(id)"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((map_latitude IS NULL) = (map_longitude IS NULL)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_check1",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((map_latitude IS NULL) OR ((raw_coordinate_system <> '未知'::coordinate_system) AND (map_coordinate_system IS NOT NULL) AND (map_coordinate_system = 'GCJ-02'::coordinate_system))))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_check2",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((NOT human_confirmed) OR ((map_latitude IS NOT NULL) AND (confirmed_at IS NOT NULL) AND (confirmed_by IS NOT NULL) AND (length(TRIM(BOTH FROM confirmed_by)) > 0))))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_map_latitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((map_latitude >= ('-90'::integer)::double precision) AND (map_latitude <= (90)::double precision)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_map_longitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((map_longitude >= ('-180'::integer)::double precision) AND (map_longitude <= (180)::double precision)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_position_certainty_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((position_certainty = ANY (ARRAY['certain'::text, 'approximate'::text, 'uncertain'::text])))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_raw_latitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((raw_latitude >= ('-90'::integer)::double precision) AND (raw_latitude <= (90)::double precision)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_raw_longitude_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((raw_longitude >= ('-180'::integer)::double precision) AND (raw_longitude <= (180)::double precision)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "place_coordinates_superseded_by_fkey",
+        "contype": "f",
+        "condeferrable": true,
+        "condeferred": true,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (superseded_by) REFERENCES place_coordinates(id) DEFERRABLE INITIALLY DEFERRED"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "revoked_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((revoked_at IS NULL) OR isfinite(revoked_at)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "revoked_coordinate_audit",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((status <> 'revoked'::coordinate_record_status) OR ((revoked_at IS NOT NULL) AND (revoked_by IS NOT NULL) AND (revocation_reason IS NOT NULL) AND (length(TRIM(BOTH FROM revocation_reason)) > 0))))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "source_time_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((source_time IS NULL) OR isfinite(source_time)))"
+      },
+      {
+        "table_name": "place_coordinates",
+        "conname": "status_changed_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (isfinite(status_changed_at))"
+      },
+      {
+        "table_name": "place_name_history",
+        "conname": "place_name_history_change_source_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((length(TRIM(BOTH FROM change_source)) > 0))"
+      },
+      {
+        "table_name": "place_name_history",
+        "conname": "place_name_history_changed_at_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (isfinite(changed_at))"
+      },
+      {
+        "table_name": "place_name_history",
+        "conname": "place_name_history_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((old_name IS DISTINCT FROM new_name))"
+      },
+      {
+        "table_name": "place_name_history",
+        "conname": "place_name_history_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "place_name_history",
+        "conname": "place_name_history_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "place_nature",
+        "conname": "place_nature_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (place_id)"
+      },
+      {
+        "table_name": "place_nature",
+        "conname": "place_nature_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "place_practical_info",
+        "conname": "place_practical_info_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (place_id)"
+      },
+      {
+        "table_name": "place_practical_info",
+        "conname": "place_practical_info_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "place_practical_info",
+        "conname": "place_practical_info_toilet_distance_m_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((toilet_distance_m >= (0)::numeric))"
+      },
+      {
+        "table_name": "place_practical_info",
+        "conname": "place_practical_info_walking_distance_m_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((walking_distance_m >= (0)::numeric))"
+      },
+      {
+        "table_name": "place_practical_info",
+        "conname": "place_practical_info_walking_duration_min_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((walking_duration_min >= (0)::numeric))"
+      },
+      {
+        "table_name": "place_recycle_history",
+        "conname": "place_recycle_history_action_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((action = ANY (ARRAY['deleted'::text, 'restored'::text])))"
+      },
+      {
+        "table_name": "place_recycle_history",
+        "conname": "place_recycle_history_action_source_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((length(TRIM(BOTH FROM action_source)) > 0))"
+      },
+      {
+        "table_name": "place_recycle_history",
+        "conname": "place_recycle_history_occurred_at_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (isfinite(occurred_at))"
+      },
+      {
+        "table_name": "place_recycle_history",
+        "conname": "place_recycle_history_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "place_recycle_history",
+        "conname": "place_recycle_history_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "place_water",
+        "conname": "last_water_check_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((last_water_check_at IS NULL) OR isfinite(last_water_check_at)))"
+      },
+      {
+        "table_name": "place_water",
+        "conname": "place_water_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (place_id)"
+      },
+      {
+        "table_name": "place_water",
+        "conname": "place_water_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "places",
+        "conname": "corridor_order_unique",
+        "contype": "u",
+        "condeferrable": true,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (corridor_order) DEFERRABLE"
+      },
+      {
+        "table_name": "places",
+        "conname": "created_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((created_at IS NULL) OR isfinite(created_at)))"
+      },
+      {
+        "table_name": "places",
+        "conname": "duplicate_not_ordered",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((duplicate_of_place_id IS NULL) OR (corridor_order IS NULL)))"
+      },
+      {
+        "table_name": "places",
+        "conname": "place_deletion_state",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((((deleted_at IS NULL) AND (deleted_by IS NULL) AND (deletion_reason IS NULL)) OR ((deleted_at IS NOT NULL) AND isfinite(deleted_at) AND (deleted_by IS NOT NULL) AND (length(TRIM(BOTH FROM deleted_by)) > 0) AND (deletion_reason IS NOT NULL) AND (length(TRIM(BOTH FROM deletion_reason)) > 0))))"
+      },
+      {
+        "table_name": "places",
+        "conname": "place_duplicate_not_self",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((duplicate_of_place_id IS DISTINCT FROM id))"
+      },
+      {
+        "table_name": "places",
+        "conname": "place_name_length",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((char_length(name) <= 120))"
+      },
+      {
+        "table_name": "places",
+        "conname": "place_name_visible",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((name ~ '[^[:space:]　]'::text))"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_category_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (category_id) REFERENCES taxonomy_terms(id)"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((parent_place_id IS DISTINCT FROM id))"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_code_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((code ~ '^WY-[0-9]{4,}$'::text))"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_code_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (code)"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_corridor_order_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((corridor_order > 0))"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_corridor_role_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((corridor_role = ANY (ARRAY['main'::text, 'branch'::text, 'unassigned'::text])))"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_duplicate_of_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (duplicate_of_place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_map_display_role_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((map_display_role = ANY (ARRAY['pin'::text, 'group'::text, 'hidden'::text])))"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_name_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((length(TRIM(BOTH FROM name)) > 0))"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_parent_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (parent_place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "places",
+        "conname": "places_source_import_row_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (source_import_row_id) REFERENCES import_rows(id)"
+      },
+      {
+        "table_name": "places",
+        "conname": "source_last_verified_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((source_last_verified_at IS NULL) OR isfinite(source_last_verified_at)))"
+      },
+      {
+        "table_name": "places",
+        "conname": "updated_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((updated_at IS NULL) OR isfinite(updated_at)))"
+      },
+      {
+        "table_name": "route_place_links",
+        "conname": "route_place_links_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (route_id, place_id)"
+      },
+      {
+        "table_name": "route_place_links",
+        "conname": "route_place_links_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "route_place_links",
+        "conname": "route_place_links_route_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (route_id) REFERENCES routes(id)"
+      },
+      {
+        "table_name": "route_place_links",
+        "conname": "route_place_links_source_import_row_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (source_import_row_id) REFERENCES import_rows(id)"
+      },
+      {
+        "table_name": "route_stops",
+        "conname": "route_stops_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (route_id, sequence)"
+      },
+      {
+        "table_name": "route_stops",
+        "conname": "route_stops_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "route_stops",
+        "conname": "route_stops_required_or_optional_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((required_or_optional = ANY (ARRAY['必选'::text, '可选'::text])))"
+      },
+      {
+        "table_name": "route_stops",
+        "conname": "route_stops_route_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (route_id) REFERENCES routes(id)"
+      },
+      {
+        "table_name": "route_stops",
+        "conname": "route_stops_sequence_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((sequence > 0))"
+      },
+      {
+        "table_name": "route_stops",
+        "conname": "route_stops_suggested_duration_min_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((suggested_duration_min >= (0)::numeric))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "created_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((created_at IS NULL) OR isfinite(created_at)))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_code_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((code ~ '^R-[0-9]{4,}$'::text))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_code_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (code)"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_estimated_driving_min_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((estimated_driving_min >= (0)::numeric))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_estimated_walking_m_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((estimated_walking_m >= (0)::numeric))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_route_type_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((route_type = ANY (ARRAY['候选路线'::text, '自驾'::text, '步行'::text, '混合'::text])))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_source_import_row_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (source_import_row_id) REFERENCES import_rows(id)"
+      },
+      {
+        "table_name": "routes",
+        "conname": "routes_total_duration_min_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((total_duration_min >= (0)::numeric))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "source_last_verified_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((source_last_verified_at IS NULL) OR isfinite(source_last_verified_at)))"
+      },
+      {
+        "table_name": "routes",
+        "conname": "updated_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((updated_at IS NULL) OR isfinite(updated_at)))"
+      },
+      {
+        "table_name": "schema_migrations",
+        "conname": "schema_migrations_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (name)"
+      },
+      {
+        "table_name": "spatial_ref_sys",
+        "conname": "spatial_ref_sys_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (srid)"
+      },
+      {
+        "table_name": "spatial_ref_sys",
+        "conname": "spatial_ref_sys_srid_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((srid > 0) AND (srid <= 998999)))"
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "conname": "taxonomy_dimension",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((dimension = ANY (ARRAY['点位层级'::text, '一级分类'::text, '公开等级'::text, '坐标可信'::text, '当前状态'::text, '任务状态'::text, '任务优先级'::text, '标签'::text])))"
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "conname": "taxonomy_terms_dimension_code_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (dimension, code)"
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "conname": "taxonomy_terms_dimension_name_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (dimension, name)"
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "conname": "taxonomy_terms_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "taxonomy_terms",
+        "conname": "taxonomy_terms_source_import_row_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (source_import_row_id) REFERENCES import_rows(id)"
+      },
+      {
+        "table_name": "verification_media",
+        "conname": "verification_media_media_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (media_id) REFERENCES media(id)"
+      },
+      {
+        "table_name": "verification_media",
+        "conname": "verification_media_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (verification_id, media_id)"
+      },
+      {
+        "table_name": "verification_media",
+        "conname": "verification_media_verification_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (verification_id) REFERENCES verifications(id)"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "created_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((created_at IS NULL) OR isfinite(created_at)))"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "verification_code_nonempty",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((length(TRIM(BOTH FROM code)) > 0))"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "verifications_code_key",
+        "contype": "u",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "UNIQUE (code)"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "verifications_pkey",
+        "contype": "p",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "PRIMARY KEY (id)"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "verifications_place_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (place_id) REFERENCES places(id)"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "verifications_source_import_row_id_fkey",
+        "contype": "f",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "FOREIGN KEY (source_import_row_id) REFERENCES import_rows(id)"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "verifications_verifier_check",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK ((length(TRIM(BOTH FROM verifier)) > 0))"
+      },
+      {
+        "table_name": "verifications",
+        "conname": "verified_at_finite",
+        "contype": "c",
+        "condeferrable": false,
+        "condeferred": false,
+        "convalidated": true,
+        "definition": "CHECK (((verified_at IS NULL) OR isfinite(verified_at)))"
+      }
+    ],
+    "indexes": [
+      {
+        "tablename": "coordinate_candidates",
+        "indexname": "candidate_place_status_idx",
+        "indexdef": "CREATE INDEX candidate_place_status_idx ON public.coordinate_candidates USING btree (matched_place_id, status)"
+      },
+      {
+        "tablename": "coordinate_candidates",
+        "indexname": "candidates_place_idx",
+        "indexdef": "CREATE INDEX candidates_place_idx ON public.coordinate_candidates USING btree (matched_place_id)"
+      },
+      {
+        "tablename": "coordinate_candidates",
+        "indexname": "coordinate_candidates_code_key",
+        "indexdef": "CREATE UNIQUE INDEX coordinate_candidates_code_key ON public.coordinate_candidates USING btree (code)"
+      },
+      {
+        "tablename": "coordinate_candidates",
+        "indexname": "coordinate_candidates_pkey",
+        "indexdef": "CREATE UNIQUE INDEX coordinate_candidates_pkey ON public.coordinate_candidates USING btree (id)"
+      },
+      {
+        "tablename": "guide_places",
+        "indexname": "guide_places_pkey",
+        "indexdef": "CREATE UNIQUE INDEX guide_places_pkey ON public.guide_places USING btree (guide_id, place_id)"
+      },
+      {
+        "tablename": "guide_routes",
+        "indexname": "guide_routes_pkey",
+        "indexdef": "CREATE UNIQUE INDEX guide_routes_pkey ON public.guide_routes USING btree (guide_id, route_id)"
+      },
+      {
+        "tablename": "guides",
+        "indexname": "guides_code_key",
+        "indexdef": "CREATE UNIQUE INDEX guides_code_key ON public.guides USING btree (code)"
+      },
+      {
+        "tablename": "guides",
+        "indexname": "guides_pkey",
+        "indexdef": "CREATE UNIQUE INDEX guides_pkey ON public.guides USING btree (id)"
+      },
+      {
+        "tablename": "import_jobs",
+        "indexname": "import_jobs_pkey",
+        "indexdef": "CREATE UNIQUE INDEX import_jobs_pkey ON public.import_jobs USING btree (id)"
+      },
+      {
+        "tablename": "import_rows",
+        "indexname": "import_rows_job_id_sheet_row_number_key",
+        "indexdef": "CREATE UNIQUE INDEX import_rows_job_id_sheet_row_number_key ON public.import_rows USING btree (job_id, sheet, row_number)"
+      },
+      {
+        "tablename": "import_rows",
+        "indexname": "import_rows_pkey",
+        "indexdef": "CREATE UNIQUE INDEX import_rows_pkey ON public.import_rows USING btree (id)"
+      },
+      {
+        "tablename": "media",
+        "indexname": "media_pkey",
+        "indexdef": "CREATE UNIQUE INDEX media_pkey ON public.media USING btree (id)"
+      },
+      {
+        "tablename": "place_accessibility",
+        "indexname": "place_accessibility_pkey",
+        "indexdef": "CREATE UNIQUE INDEX place_accessibility_pkey ON public.place_accessibility USING btree (place_id)"
+      },
+      {
+        "tablename": "place_coordinates",
+        "indexname": "coordinates_place_idx",
+        "indexdef": "CREATE INDEX coordinates_place_idx ON public.place_coordinates USING btree (place_id)"
+      },
+      {
+        "tablename": "place_coordinates",
+        "indexname": "coordinates_spatial_idx",
+        "indexdef": "CREATE INDEX coordinates_spatial_idx ON public.place_coordinates USING gist (raw_wgs84)"
+      },
+      {
+        "tablename": "place_coordinates",
+        "indexname": "one_active_coordinate_per_place",
+        "indexdef": "CREATE UNIQUE INDEX one_active_coordinate_per_place ON public.place_coordinates USING btree (place_id) WHERE (status = 'active'::coordinate_record_status)"
+      },
+      {
+        "tablename": "place_coordinates",
+        "indexname": "one_formal_per_candidate",
+        "indexdef": "CREATE UNIQUE INDEX one_formal_per_candidate ON public.place_coordinates USING btree (candidate_id)"
+      },
+      {
+        "tablename": "place_coordinates",
+        "indexname": "place_coordinates_pkey",
+        "indexdef": "CREATE UNIQUE INDEX place_coordinates_pkey ON public.place_coordinates USING btree (id)"
+      },
+      {
+        "tablename": "place_name_history",
+        "indexname": "place_name_history_pkey",
+        "indexdef": "CREATE UNIQUE INDEX place_name_history_pkey ON public.place_name_history USING btree (id)"
+      },
+      {
+        "tablename": "place_name_history",
+        "indexname": "place_name_history_place_idx",
+        "indexdef": "CREATE INDEX place_name_history_place_idx ON public.place_name_history USING btree (place_id, changed_at DESC)"
+      },
+      {
+        "tablename": "place_nature",
+        "indexname": "place_nature_pkey",
+        "indexdef": "CREATE UNIQUE INDEX place_nature_pkey ON public.place_nature USING btree (place_id)"
+      },
+      {
+        "tablename": "place_practical_info",
+        "indexname": "place_practical_info_pkey",
+        "indexdef": "CREATE UNIQUE INDEX place_practical_info_pkey ON public.place_practical_info USING btree (place_id)"
+      },
+      {
+        "tablename": "place_recycle_history",
+        "indexname": "place_recycle_history_pkey",
+        "indexdef": "CREATE UNIQUE INDEX place_recycle_history_pkey ON public.place_recycle_history USING btree (id)"
+      },
+      {
+        "tablename": "place_recycle_history",
+        "indexname": "place_recycle_history_place_idx",
+        "indexdef": "CREATE INDEX place_recycle_history_place_idx ON public.place_recycle_history USING btree (place_id, occurred_at DESC)"
+      },
+      {
+        "tablename": "place_water",
+        "indexname": "place_water_pkey",
+        "indexdef": "CREATE UNIQUE INDEX place_water_pkey ON public.place_water USING btree (place_id)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "corridor_order_unique",
+        "indexdef": "CREATE UNIQUE INDEX corridor_order_unique ON public.places USING btree (corridor_order)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "places_code_key",
+        "indexdef": "CREATE UNIQUE INDEX places_code_key ON public.places USING btree (code)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "places_corridor_idx",
+        "indexdef": "CREATE INDEX places_corridor_idx ON public.places USING btree (corridor_order, code)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "places_filters_idx",
+        "indexdef": "CREATE INDEX places_filters_idx ON public.places USING btree (region, category_id, current_status, public_level)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "places_parent_idx",
+        "indexdef": "CREATE INDEX places_parent_idx ON public.places USING btree (parent_place_id)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "places_pkey",
+        "indexdef": "CREATE UNIQUE INDEX places_pkey ON public.places USING btree (id)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "places_recycle_bin_idx",
+        "indexdef": "CREATE INDEX places_recycle_bin_idx ON public.places USING btree (deleted_at DESC, code) WHERE (deleted_at IS NOT NULL)"
+      },
+      {
+        "tablename": "places",
+        "indexname": "places_tags_idx",
+        "indexdef": "CREATE INDEX places_tags_idx ON public.places USING gin (tags)"
+      },
+      {
+        "tablename": "route_place_links",
+        "indexname": "route_place_links_pkey",
+        "indexdef": "CREATE UNIQUE INDEX route_place_links_pkey ON public.route_place_links USING btree (route_id, place_id)"
+      },
+      {
+        "tablename": "route_stops",
+        "indexname": "route_stops_pkey",
+        "indexdef": "CREATE UNIQUE INDEX route_stops_pkey ON public.route_stops USING btree (route_id, sequence)"
+      },
+      {
+        "tablename": "route_stops",
+        "indexname": "route_stops_place_idx",
+        "indexdef": "CREATE INDEX route_stops_place_idx ON public.route_stops USING btree (place_id)"
+      },
+      {
+        "tablename": "routes",
+        "indexname": "routes_code_key",
+        "indexdef": "CREATE UNIQUE INDEX routes_code_key ON public.routes USING btree (code)"
+      },
+      {
+        "tablename": "routes",
+        "indexname": "routes_pkey",
+        "indexdef": "CREATE UNIQUE INDEX routes_pkey ON public.routes USING btree (id)"
+      },
+      {
+        "tablename": "schema_migrations",
+        "indexname": "schema_migrations_pkey",
+        "indexdef": "CREATE UNIQUE INDEX schema_migrations_pkey ON public.schema_migrations USING btree (name)"
+      },
+      {
+        "tablename": "spatial_ref_sys",
+        "indexname": "spatial_ref_sys_pkey",
+        "indexdef": "CREATE UNIQUE INDEX spatial_ref_sys_pkey ON public.spatial_ref_sys USING btree (srid)"
+      },
+      {
+        "tablename": "taxonomy_terms",
+        "indexname": "taxonomy_terms_dimension_code_key",
+        "indexdef": "CREATE UNIQUE INDEX taxonomy_terms_dimension_code_key ON public.taxonomy_terms USING btree (dimension, code)"
+      },
+      {
+        "tablename": "taxonomy_terms",
+        "indexname": "taxonomy_terms_dimension_name_key",
+        "indexdef": "CREATE UNIQUE INDEX taxonomy_terms_dimension_name_key ON public.taxonomy_terms USING btree (dimension, name)"
+      },
+      {
+        "tablename": "taxonomy_terms",
+        "indexname": "taxonomy_terms_pkey",
+        "indexdef": "CREATE UNIQUE INDEX taxonomy_terms_pkey ON public.taxonomy_terms USING btree (id)"
+      },
+      {
+        "tablename": "verification_media",
+        "indexname": "verification_media_pkey",
+        "indexdef": "CREATE UNIQUE INDEX verification_media_pkey ON public.verification_media USING btree (verification_id, media_id)"
+      },
+      {
+        "tablename": "verifications",
+        "indexname": "verifications_code_key",
+        "indexdef": "CREATE UNIQUE INDEX verifications_code_key ON public.verifications USING btree (code)"
+      },
+      {
+        "tablename": "verifications",
+        "indexname": "verifications_pkey",
+        "indexdef": "CREATE UNIQUE INDEX verifications_pkey ON public.verifications USING btree (id)"
+      },
+      {
+        "tablename": "verifications",
+        "indexname": "verifications_place_time_idx",
+        "indexdef": "CREATE INDEX verifications_place_time_idx ON public.verifications USING btree (place_id, verified_at DESC)"
+      }
+    ],
+    "triggers": [
+      {
+        "relname": "coordinate_candidates",
+        "tgname": "candidate_confirmation_atomic",
+        "tgenabled": "O",
+        "definition": "CREATE CONSTRAINT TRIGGER candidate_confirmation_atomic AFTER UPDATE ON public.coordinate_candidates DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION confirmed_candidate_has_formal()"
+      },
+      {
+        "relname": "coordinate_candidates",
+        "tgname": "candidate_history_guard",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER candidate_history_guard BEFORE INSERT OR DELETE OR UPDATE ON public.coordinate_candidates FOR EACH ROW EXECUTE FUNCTION guard_candidate_history()"
+      },
+      {
+        "relname": "coordinate_candidates",
+        "tgname": "stable_candidate_code",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER stable_candidate_code BEFORE UPDATE ON public.coordinate_candidates FOR EACH ROW EXECUTE FUNCTION keep_business_code()"
+      },
+      {
+        "relname": "guides",
+        "tgname": "stable_guide_code",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER stable_guide_code BEFORE UPDATE ON public.guides FOR EACH ROW EXECUTE FUNCTION keep_business_code()"
+      },
+      {
+        "relname": "place_coordinates",
+        "tgname": "formal_coordinate_certainty_guard",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER formal_coordinate_certainty_guard BEFORE INSERT ON public.place_coordinates FOR EACH ROW EXECUTE FUNCTION guard_coordinate_certainty()"
+      },
+      {
+        "relname": "place_coordinates",
+        "tgname": "formal_coordinate_history_guard",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER formal_coordinate_history_guard BEFORE INSERT OR DELETE OR UPDATE ON public.place_coordinates FOR EACH ROW EXECUTE FUNCTION guard_formal_coordinate()"
+      },
+      {
+        "relname": "place_name_history",
+        "tgname": "immutable_name_history",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER immutable_name_history BEFORE DELETE OR UPDATE ON public.place_name_history FOR EACH ROW EXECUTE FUNCTION protect_place_name_history()"
+      },
+      {
+        "relname": "place_recycle_history",
+        "tgname": "immutable_place_recycle_history",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER immutable_place_recycle_history BEFORE DELETE OR UPDATE ON public.place_recycle_history FOR EACH ROW EXECUTE FUNCTION protect_place_recycle_history()"
+      },
+      {
+        "relname": "places",
+        "tgname": "no_physical_place_delete",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER no_physical_place_delete BEFORE DELETE ON public.places FOR EACH ROW EXECUTE FUNCTION prevent_physical_place_delete()"
+      },
+      {
+        "relname": "places",
+        "tgname": "place_name_change",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER place_name_change AFTER UPDATE OF name ON public.places FOR EACH ROW EXECUTE FUNCTION record_place_name_change()"
+      },
+      {
+        "relname": "places",
+        "tgname": "place_recycle_audit",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER place_recycle_audit AFTER UPDATE OF deleted_at ON public.places FOR EACH ROW EXECUTE FUNCTION record_place_recycle_change()"
+      },
+      {
+        "relname": "places",
+        "tgname": "stable_place_code",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER stable_place_code BEFORE UPDATE ON public.places FOR EACH ROW EXECUTE FUNCTION keep_business_code()"
+      },
+      {
+        "relname": "places",
+        "tgname": "validate_place_trigger",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER validate_place_trigger BEFORE INSERT OR UPDATE ON public.places FOR EACH ROW EXECUTE FUNCTION validate_place()"
+      },
+      {
+        "relname": "routes",
+        "tgname": "stable_route_code",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER stable_route_code BEFORE UPDATE ON public.routes FOR EACH ROW EXECUTE FUNCTION keep_business_code()"
+      },
+      {
+        "relname": "verifications",
+        "tgname": "stable_verification_code",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER stable_verification_code BEFORE UPDATE ON public.verifications FOR EACH ROW EXECUTE FUNCTION keep_business_code()"
+      },
+      {
+        "relname": "verifications",
+        "tgname": "verification_history",
+        "tgenabled": "O",
+        "definition": "CREATE TRIGGER verification_history BEFORE DELETE OR UPDATE ON public.verifications FOR EACH ROW EXECUTE FUNCTION preserve_verifications()"
+      }
+    ],
+    "views": [
+      {
+        "viewname": "confirmed_place_coordinates",
+        "definition": " SELECT id,\n    place_id,\n    candidate_id,\n    raw_latitude,\n    raw_longitude,\n    raw_coordinate_system,\n    source_type,\n    source_file,\n    source_time,\n    accuracy_meters,\n    confidence_level,\n    map_latitude,\n    map_longitude,\n    map_coordinate_system,\n    conversion_method,\n    human_confirmed,\n    confirmed_at,\n    confirmed_by,\n    created_at,\n    raw_wgs84,\n    map_point,\n    source_reference,\n    accuracy_note,\n    status,\n    status_changed_at,\n    superseded_by,\n    revoked_at,\n    revoked_by,\n    revocation_reason\n   FROM place_coordinates\n  WHERE ((status = 'active'::coordinate_record_status) AND human_confirmed AND (map_coordinate_system = 'GCJ-02'::coordinate_system) AND (map_latitude IS NOT NULL));"
+      },
+      {
+        "viewname": "geography_columns",
+        "definition": " SELECT current_database() AS f_table_catalog,\n    n.nspname AS f_table_schema,\n    c.relname AS f_table_name,\n    a.attname AS f_geography_column,\n    postgis_typmod_dims(a.atttypmod) AS coord_dimension,\n    postgis_typmod_srid(a.atttypmod) AS srid,\n    postgis_typmod_type(a.atttypmod) AS type\n   FROM pg_class c,\n    pg_attribute a,\n    pg_type t,\n    pg_namespace n\n  WHERE ((t.typname = 'geography'::name) AND (a.attisdropped = false) AND (a.atttypid = t.oid) AND (a.attrelid = c.oid) AND (c.relnamespace = n.oid) AND (c.relkind = ANY (ARRAY['r'::\"char\", 'v'::\"char\", 'm'::\"char\", 'f'::\"char\", 'p'::\"char\"])) AND (NOT pg_is_other_temp_schema(c.relnamespace)) AND has_table_privilege(c.oid, 'SELECT'::text));"
+      },
+      {
+        "viewname": "geometry_columns",
+        "definition": " SELECT (current_database())::character varying(256) AS f_table_catalog,\n    n.nspname AS f_table_schema,\n    c.relname AS f_table_name,\n    a.attname AS f_geometry_column,\n    COALESCE(postgis_typmod_dims(a.atttypmod), sn.ndims, 2) AS coord_dimension,\n    COALESCE(NULLIF(postgis_typmod_srid(a.atttypmod), 0), sr.srid, 0) AS srid,\n    (replace(replace(COALESCE(NULLIF(upper(postgis_typmod_type(a.atttypmod)), 'GEOMETRY'::text), st.type, 'GEOMETRY'::text), 'ZM'::text, ''::text), 'Z'::text, ''::text))::character varying(30) AS type\n   FROM ((((((pg_class c\n     JOIN pg_attribute a ON (((a.attrelid = c.oid) AND (NOT a.attisdropped))))\n     JOIN pg_namespace n ON ((c.relnamespace = n.oid)))\n     JOIN pg_type t ON ((a.atttypid = t.oid)))\n     LEFT JOIN ( SELECT s.connamespace,\n            s.conrelid,\n            s.conkey,\n            (regexp_match(s.consrc, 'geometrytype\\(\\w+\\)\\s*=\\s*''(\\w+)'''::text, 'i'::text))[1] AS type\n           FROM ( SELECT pg_constraint.connamespace,\n                    pg_constraint.conrelid,\n                    pg_constraint.conkey,\n                    pg_get_constraintdef(pg_constraint.oid) AS consrc\n                   FROM pg_constraint) s\n          WHERE (s.consrc ~* 'geometrytype\\(\\w+\\)\\s*=\\s*''\\w+'''::text)) st ON (((st.connamespace = n.oid) AND (st.conrelid = c.oid) AND (a.attnum = ANY (st.conkey)))))\n     LEFT JOIN ( SELECT s.connamespace,\n            s.conrelid,\n            s.conkey,\n            ((regexp_match(s.consrc, 'ndims\\(\\w+\\)\\s*=\\s*(\\d+)'::text, 'i'::text))[1])::integer AS ndims\n           FROM ( SELECT pg_constraint.connamespace,\n                    pg_constraint.conrelid,\n                    pg_constraint.conkey,\n                    pg_get_constraintdef(pg_constraint.oid) AS consrc\n                   FROM pg_constraint) s\n          WHERE (s.consrc ~* 'ndims\\(\\w+\\)\\s*=\\s*\\d+'::text)) sn ON (((sn.connamespace = n.oid) AND (sn.conrelid = c.oid) AND (a.attnum = ANY (sn.conkey)))))\n     LEFT JOIN ( SELECT s.connamespace,\n            s.conrelid,\n            s.conkey,\n            ((regexp_match(s.consrc, 'srid\\(\\w+\\)\\s*=\\s*(\\d+)'::text, 'i'::text))[1])::integer AS srid\n           FROM ( SELECT pg_constraint.connamespace,\n                    pg_constraint.conrelid,\n                    pg_constraint.conkey,\n                    pg_get_constraintdef(pg_constraint.oid) AS consrc\n                   FROM pg_constraint) s\n          WHERE (s.consrc ~* 'srid\\(\\w+\\)\\s*=\\s*\\d+'::text)) sr ON (((sr.connamespace = n.oid) AND (sr.conrelid = c.oid) AND (a.attnum = ANY (sr.conkey)))))\n  WHERE ((c.relkind = ANY (ARRAY['r'::\"char\", 'v'::\"char\", 'm'::\"char\", 'f'::\"char\", 'p'::\"char\"])) AND (NOT (c.relname = 'raster_columns'::name)) AND (t.typname = 'geometry'::name) AND (NOT pg_is_other_temp_schema(c.relnamespace)) AND has_table_privilege(c.oid, 'SELECT'::text));"
+      },
+      {
+        "viewname": "public_places",
+        "definition": " SELECT p.code,\n    p.name,\n    p.current_status,\n    p.public_level,\n        CASE\n            WHEN (p.public_level = ANY (ARRAY['P1'::public_level, 'P2'::public_level, 'P3'::public_level])) THEN p.region\n            ELSE NULL::text\n        END AS region,\n        CASE\n            WHEN ((p.public_level = 'P1'::public_level) AND (p.current_status = '正常'::place_status)) THEN c.map_latitude\n            ELSE NULL::double precision\n        END AS latitude,\n        CASE\n            WHEN ((p.public_level = 'P1'::public_level) AND (p.current_status = '正常'::place_status)) THEN c.map_longitude\n            ELSE NULL::double precision\n        END AS longitude,\n        CASE\n            WHEN ((p.public_level = 'P1'::public_level) AND (p.current_status = '正常'::place_status) AND (c.id IS NOT NULL)) THEN 'GCJ-02'::text\n            ELSE NULL::text\n        END AS coordinate_system\n   FROM (places p\n     LEFT JOIN confirmed_place_coordinates c ON ((c.place_id = p.id)))\n  WHERE ((p.public_level <> 'P5'::public_level) AND (p.duplicate_of_place_id IS NULL) AND (p.deleted_at IS NULL));"
+      }
+    ],
+    "enums": [
+      {
+        "typname": "confidence_level",
+        "enumlabel": "A",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "confidence_level",
+        "enumlabel": "B",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "confidence_level",
+        "enumlabel": "C",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "confidence_level",
+        "enumlabel": "D",
+        "enumsortorder": 4
+      },
+      {
+        "typname": "coordinate_candidate_status",
+        "enumlabel": "pending",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "coordinate_candidate_status",
+        "enumlabel": "confirmed",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "coordinate_candidate_status",
+        "enumlabel": "rejected",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "coordinate_record_status",
+        "enumlabel": "active",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "coordinate_record_status",
+        "enumlabel": "superseded",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "coordinate_record_status",
+        "enumlabel": "revoked",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "coordinate_source",
+        "enumlabel": "phone_gps",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "coordinate_source",
+        "enumlabel": "map_click",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "coordinate_source",
+        "enumlabel": "manual_input",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "coordinate_source",
+        "enumlabel": "dji_srt",
+        "enumsortorder": 4
+      },
+      {
+        "typname": "coordinate_source",
+        "enumlabel": "gps_track",
+        "enumsortorder": 5
+      },
+      {
+        "typname": "coordinate_source",
+        "enumlabel": "imported_file",
+        "enumsortorder": 6
+      },
+      {
+        "typname": "coordinate_source",
+        "enumlabel": "other",
+        "enumsortorder": 7
+      },
+      {
+        "typname": "coordinate_source_legacy",
+        "enumlabel": "手机",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "coordinate_source_legacy",
+        "enumlabel": "DJI",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "coordinate_source_legacy",
+        "enumlabel": "GPS",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "coordinate_source_legacy",
+        "enumlabel": "地图点选",
+        "enumsortorder": 4
+      },
+      {
+        "typname": "coordinate_source_legacy",
+        "enumlabel": "手工导入",
+        "enumsortorder": 5
+      },
+      {
+        "typname": "coordinate_system",
+        "enumlabel": "WGS84",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "coordinate_system",
+        "enumlabel": "GCJ-02",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "coordinate_system",
+        "enumlabel": "BD-09",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "coordinate_system",
+        "enumlabel": "未知",
+        "enumsortorder": 4
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "正常",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "临时关闭",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "季节关闭",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "施工",
+        "enumsortorder": 4
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "道路中断",
+        "enumsortorder": 5
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "不建议前往",
+        "enumsortorder": 6
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "永久关闭",
+        "enumsortorder": 7
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "待核实",
+        "enumsortorder": 8
+      },
+      {
+        "typname": "place_status",
+        "enumlabel": "在建",
+        "enumsortorder": 9
+      },
+      {
+        "typname": "place_type",
+        "enumlabel": "主地点",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "place_type",
+        "enumlabel": "辅助点",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "place_type",
+        "enumlabel": "服务点",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "place_type",
+        "enumlabel": "风险点",
+        "enumsortorder": 4
+      },
+      {
+        "typname": "priority",
+        "enumlabel": "高",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "priority",
+        "enumlabel": "中",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "priority",
+        "enumlabel": "低",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "public_level",
+        "enumlabel": "P1",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "public_level",
+        "enumlabel": "P2",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "public_level",
+        "enumlabel": "P3",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "public_level",
+        "enumlabel": "P4",
+        "enumsortorder": 4
+      },
+      {
+        "typname": "public_level",
+        "enumlabel": "P5",
+        "enumsortorder": 5
+      },
+      {
+        "typname": "publish_status",
+        "enumlabel": "草稿",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "publish_status",
+        "enumlabel": "已发布",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "publish_status",
+        "enumlabel": "已归档",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "yes_partial",
+        "enumlabel": "是",
+        "enumsortorder": 1
+      },
+      {
+        "typname": "yes_partial",
+        "enumlabel": "否",
+        "enumsortorder": 2
+      },
+      {
+        "typname": "yes_partial",
+        "enumlabel": "部分",
+        "enumsortorder": 3
+      },
+      {
+        "typname": "yes_partial",
+        "enumlabel": "未知",
+        "enumsortorder": 4
+      }
+    ],
+    "functions": [
+      {
+        "proname": "confirmed_candidate_has_formal",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.confirmed_candidate_has_formal()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n IF NEW.status='confirmed' AND NOT EXISTS(SELECT 1 FROM place_coordinates WHERE candidate_id=NEW.id AND human_confirmed) THEN\n  RAISE EXCEPTION 'Candidate confirmation and formal coordinate must commit together'; END IF;\n RETURN NULL;\nEND $function$\n"
+      },
+      {
+        "proname": "guard_candidate_history",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.guard_candidate_history()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n IF TG_OP='DELETE' THEN RAISE EXCEPTION 'Candidates cannot be deleted'; END IF;\n IF TG_OP='INSERT' THEN\n  IF NEW.status<>'pending' OR NEW.human_confirmed THEN RAISE EXCEPTION 'New coordinates must start as pending candidates'; END IF;\n  RETURN NEW;\n END IF;\n IF OLD.status<>'pending' OR NEW.status NOT IN ('confirmed','rejected') THEN RAISE EXCEPTION 'Candidate already reviewed or invalid transition'; END IF;\n IF (to_jsonb(NEW)-ARRAY['status','human_confirmed','confirmed_at','confirmed_by','reviewed_at','reviewed_by','rejected_reason','writeback_status']) IS DISTINCT FROM\n    (to_jsonb(OLD)-ARRAY['status','human_confirmed','confirmed_at','confirmed_by','reviewed_at','reviewed_by','rejected_reason','writeback_status']) THEN\n  RAISE EXCEPTION 'Candidate observation is immutable; create a new candidate'; END IF;\n RETURN NEW;\nEND $function$\n"
+      },
+      {
+        "proname": "guard_coordinate_certainty",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.guard_coordinate_certainty()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n IF NEW.position_certainty IS DISTINCT FROM\n    (SELECT position_certainty FROM coordinate_candidates WHERE id=NEW.candidate_id) THEN\n  RAISE EXCEPTION 'Formal position certainty must preserve the confirmed candidate';\n END IF;\n RETURN NEW;\nEND $function$\n"
+      },
+      {
+        "proname": "guard_formal_coordinate",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.guard_formal_coordinate()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nDECLARE candidate coordinate_candidates%ROWTYPE;\nBEGIN\n IF TG_OP='DELETE' THEN RAISE EXCEPTION 'Coordinate history cannot be deleted'; END IF;\n IF TG_OP='UPDATE' THEN\n  IF (to_jsonb(NEW)-ARRAY['status','status_changed_at','superseded_by','revoked_at','revoked_by','revocation_reason','raw_wgs84','map_point']) IS DISTINCT FROM\n     (to_jsonb(OLD)-ARRAY['status','status_changed_at','superseded_by','revoked_at','revoked_by','revocation_reason','raw_wgs84','map_point']) THEN\n   RAISE EXCEPTION 'Formal coordinate payload is immutable'; END IF;\n  IF NOT(OLD.status='active' AND NEW.status IN ('superseded','revoked')) THEN RAISE EXCEPTION 'Invalid formal coordinate transition'; END IF;\n  NEW.status_changed_at=now(); RETURN NEW;\n END IF;\n SELECT * INTO candidate FROM coordinate_candidates WHERE id=NEW.candidate_id FOR UPDATE;\n IF NOT FOUND OR candidate.status<>'confirmed' OR NOT candidate.human_confirmed THEN RAISE EXCEPTION 'A confirmed candidate is required'; END IF;\n IF NEW.status<>'active' OR NOT NEW.human_confirmed OR\n ROW(NEW.place_id,NEW.raw_latitude,NEW.raw_longitude,NEW.raw_coordinate_system,NEW.source_type,NEW.source_reference,NEW.source_time,NEW.accuracy_meters,NEW.accuracy_note,NEW.map_latitude,NEW.map_longitude,NEW.map_coordinate_system,NEW.conversion_method,NEW.confirmed_at,NEW.confirmed_by) IS DISTINCT FROM\n ROW(candidate.matched_place_id,candidate.raw_latitude,candidate.raw_longitude,candidate.raw_coordinate_system,candidate.source_type,candidate.source_reference,candidate.source_time,candidate.accuracy_meters,candidate.accuracy_note,candidate.converted_latitude,candidate.converted_longitude,candidate.map_coordinate_system,candidate.conversion_method,candidate.confirmed_at,candidate.confirmed_by) THEN\n  RAISE EXCEPTION 'Formal coordinate must exactly preserve the confirmed candidate'; END IF;\n PERFORM 1 FROM places WHERE id=NEW.place_id FOR UPDATE;\n UPDATE place_coordinates SET status='superseded',superseded_by=NEW.id WHERE place_id=NEW.place_id AND status='active';\n RETURN NEW;\nEND $function$\n"
+      },
+      {
+        "proname": "keep_business_code",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.keep_business_code()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN IF NEW.code IS DISTINCT FROM OLD.code THEN RAISE EXCEPTION 'Business code is immutable'; END IF; RETURN NEW; END $function$\n"
+      },
+      {
+        "proname": "preserve_verifications",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.preserve_verifications()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN RAISE EXCEPTION 'Verification history is append-only'; END $function$\n"
+      },
+      {
+        "proname": "prevent_physical_place_delete",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.prevent_physical_place_delete()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN RAISE EXCEPTION 'Places cannot be physically deleted; use the recycle bin'; END $function$\n"
+      },
+      {
+        "proname": "protect_place_name_history",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.protect_place_name_history()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN RAISE EXCEPTION 'Place name history is immutable'; END $function$\n"
+      },
+      {
+        "proname": "protect_place_recycle_history",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.protect_place_recycle_history()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN RAISE EXCEPTION 'Place recycle history is immutable'; END $function$\n"
+      },
+      {
+        "proname": "record_place_name_change",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.record_place_name_change()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n IF NEW.name IS DISTINCT FROM OLD.name THEN\n  INSERT INTO place_name_history(place_id,old_name,new_name,change_source)\n  VALUES(NEW.id,OLD.name,NEW.name,coalesce(nullif(current_setting('app.name_change_source',true),''),'database_update'));\n END IF;\n RETURN NEW;\nEND $function$\n"
+      },
+      {
+        "proname": "record_place_recycle_change",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.record_place_recycle_change()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n IF OLD.deleted_at IS NULL AND NEW.deleted_at IS NOT NULL THEN\n  INSERT INTO place_recycle_history(place_id,action,occurred_at,action_source,reason)\n  VALUES(NEW.id,'deleted',NEW.deleted_at,NEW.deleted_by,NEW.deletion_reason);\n ELSIF OLD.deleted_at IS NOT NULL AND NEW.deleted_at IS NULL THEN\n  INSERT INTO place_recycle_history(place_id,action,action_source,reason)\n  VALUES(NEW.id,'restored',coalesce(nullif(current_setting('app.place_recycle_source',true),''),'database_update'),'从回收站恢复');\n END IF;\n RETURN NEW;\nEND $function$\n"
+      },
+      {
+        "proname": "validate_place",
+        "args": "",
+        "definition": "CREATE OR REPLACE FUNCTION public.validate_place()\n RETURNS trigger\n LANGUAGE plpgsql\nAS $function$\nBEGIN\n PERFORM pg_advisory_xact_lock(91724001);\n IF NOT EXISTS(SELECT 1 FROM taxonomy_terms WHERE id=NEW.category_id AND dimension='一级分类' AND enabled) THEN\n  RAISE EXCEPTION 'Category must be an enabled primary category'; END IF;\n IF NEW.parent_place_id IS NOT NULL AND EXISTS(\n  WITH RECURSIVE parents AS (\n   SELECT id,parent_place_id FROM places WHERE id=NEW.parent_place_id\n   UNION SELECT p.id,p.parent_place_id FROM places p JOIN parents a ON p.id=a.parent_place_id\n  ) SELECT 1 FROM parents WHERE id=NEW.id) THEN RAISE EXCEPTION 'Parent cycle'; END IF;\n IF NEW.duplicate_of_place_id IS NOT NULL AND (\n  EXISTS(SELECT 1 FROM places WHERE id=NEW.duplicate_of_place_id AND duplicate_of_place_id IS NOT NULL)\n  OR EXISTS(SELECT 1 FROM places WHERE duplicate_of_place_id=NEW.id)\n ) THEN RAISE EXCEPTION 'Duplicate chains are not allowed'; END IF;\n -- An order edit must change only corridor_order, including preserving updated_at.\n IF TG_OP='UPDATE' AND (to_jsonb(NEW)-'corridor_order')=(to_jsonb(OLD)-'corridor_order') THEN\n  RETURN NEW;\n END IF;\n NEW.updated_at=now(); RETURN NEW;\nEND $function$\n"
+      }
+    ],
+    "extensions": [
+      {
+        "extname": "plpgsql",
+        "extversion": "1.0"
+      },
+      {
+        "extname": "postgis",
+        "extversion": "3.6.2"
+      }
+    ],
+    "sequences": []
+  },
+  "runtime": [
+    {
+      "version": "PostgreSQL 17.6 on x86_64-windows, compiled by msvc-19.44.35213, 64-bit",
+      "listen_addresses": "127.0.0.1",
+      "port": "55432"
+    }
+  ],
+  "roles": [
+    {
+      "rolname": "wymap",
+      "rolsuper": true,
+      "rolcreatedb": true,
+      "rolcanlogin": true
+    }
+  ],
+  "deleted": [
+    {
+      "code": "WY-0011",
+      "name": "黄村沿线停靠/观察位置",
+      "deleted_at": "2026-09-09T15:26:05.341Z",
+      "parent_place_id": "a8ac2c98-1141-4865-a0b7-148d707c6f4a",
+      "corridor_order": 790
+    }
+  ],
+  "duplicate": [
+    {
+      "code": "WY-0042",
+      "name": "珍稀植物展示馆2号馆",
+      "canonical": "WY-0041",
+      "corridor_order": null
+    }
+  ],
+  "parentConflicts": [],
+  "migrations": [
+    {
+      "name": "001_initial.sql",
+      "sha256": "38664af2cdae9ea9bdf4492b375295249448bbf0f0a7d2b57c2b1ad6d0fd8b33"
+    },
+    {
+      "name": "002_integrity.sql",
+      "sha256": "0bdbc01b4da33dbebb869c0fdce1011e563325f1b52df71ff5e83f9b6d7db8a8"
+    },
+    {
+      "name": "003_coordinate_history.sql",
+      "sha256": "37781205ffe468f335b14fe40d896789146e332fe24b20993b0156476586010d"
+    },
+    {
+      "name": "004_coordinate_audit_integrity.sql",
+      "sha256": "d6d3ac1e8ded3cb9c00544e67443e4f5015b6291d1849528f3d438fac2af1355"
+    },
+    {
+      "name": "005_position_certainty.sql",
+      "sha256": "84b691d3a0e7556e138e499269738904484acf1e7bad48d921274e937d851e69"
+    },
+    {
+      "name": "006_under_construction.sql",
+      "sha256": "55db0f84230a3bef9884459c8f93b30d34c194552b9bae45b94931f560db0100"
+    },
+    {
+      "name": "007_corridor_display.sql",
+      "sha256": "411e29a2ccc0e42eaa9b540da82f640d81f0853b12d06e18b3e9895cd6bf6a11"
+    },
+    {
+      "name": "008_place_name_history.sql",
+      "sha256": "355348eebe899a2ea1348a6f221dc092abbb38528a2881f523fa2425f227b665"
+    },
+    {
+      "name": "009_documented_name_changes.sql",
+      "sha256": "45c1b2ff42e1cc070fb12ee90247fab284b6e0bb09fec8ced6465b1109228801"
+    },
+    {
+      "name": "010_place_recycle_bin.sql",
+      "sha256": "339e53509df3e8d11999054fcb51f1a878d48ae255803cc137e479562fe83af3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import TrustLabel from "../components/TrustLabel.astro";
+import { articleSchema, breadcrumbSchema, personSchema } from "../lib/structured-data";
+import type { TrustStatus } from "../data/editorial";
+import type { Locale } from "../i18n/config";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ArticleMeta from "../components/ArticleMeta.astro";
+import EditorialExtras from "../components/EditorialExtras.astro";
+import type { ContentAuthor, ContentPhoto, ContentReference, LearningNotes, LinkedVideo, PracticalInformationItem, SourceReference } from "../types/content";
+import type { TopicId } from "../data/topics";
+import DraftPreviewBanner from "../components/DraftPreviewBanner.astro";
+import WhyThisMatters from "../components/WhyThisMatters.astro";
+import KeyIdeas from "../components/KeyIdeas.astro";
+import PillarBridge from "../components/PillarBridge.astro";
+import { isKnowledgeContentCategory } from "../data/content-categories";
+import LearningNotesPanel from "../components/LearningNotesPanel.astro";
+interface Props {
+  title: string; seoTitle?: string; description: string; eyebrow: string; sectionLabel: string; pillarLabel: string;
+  contentCategory?: string; personName?: string; personChineseName?: string; shortIntroduction?: string;
+  alternates?: Array<{ lang: Locale; href: string }>;
+  lang: Locale; published?: Date; updated?: Date; lastPersonallyChecked?: Date; image?: string; imageAlt?: string;
+  imageWidth?: number; imageHeight?: number; trustStatus: TrustStatus;
+  englishName?: string; chineseName?: string; introduction?: string; summary?: string; whyItMatters?: string; keyIdeaIds?: TopicId[]; personalExperience?: string; historicalContext?: string;
+  practicalInformation?: PracticalInformationItem[]; photos?: ContentPhoto[]; videos?: LinkedVideo[];
+  relatedPlaces?: ContentReference[]; relatedPeople?: ContentReference[]; relatedStories?: ContentReference[]; relatedRoutes?: ContentReference[]; relatedKnowledge?: ContentReference[]; relatedGuides?: ContentReference[]; relatedTopics?: TopicId[]; relatedThemes?: TopicId[]; sources?: SourceReference[]; author?: ContentAuthor; learningNotes?: LearningNotes;
+  renderStructuredSources?: boolean;
+  preview?: boolean;
+}
+const { title, seoTitle, description, eyebrow, sectionLabel, pillarLabel, contentCategory, personName, personChineseName, shortIntroduction, alternates = [], lang, published, updated, lastPersonallyChecked, image, imageAlt, imageWidth, imageHeight, trustStatus, englishName, chineseName, introduction, summary, whyItMatters, keyIdeaIds = [], personalExperience, historicalContext, practicalInformation = [], photos = [], videos = [], relatedPlaces = [], relatedPeople = [], relatedStories = [], relatedRoutes = [], relatedKnowledge = [], relatedGuides = [], relatedTopics = [], relatedThemes = [], sources = [], author, learningNotes, renderStructuredSources = true, preview = false } = Astro.props;
+const displayTitle = chineseName ? `${englishName ?? title} · ${chineseName}` : englishName ?? title;
+const authorInfo = author ?? { name: "Jeff", href: "/about" };
+const base = Astro.site;
+const pageUrl = base ? new URL(Astro.url.pathname, base).toString() : undefined;
+const authorUrl = base ? new URL(authorInfo.href ?? "/about", base).toString() : undefined;
+const titleForMetadata = seoTitle ?? title;
+const brandedTitle = `${titleForMetadata} | Local Dad Jeff`;
+const compactTitle = titleForMetadata.split(":")[0];
+const compactBrandedTitle = `${compactTitle} | Local Dad Jeff`;
+const pageTitle = brandedTitle.length <= 70 ? brandedTitle : compactBrandedTitle.length <= 70 ? compactBrandedTitle : compactTitle;
+const isKnowledgeArticle = isKnowledgeContentCategory(contentCategory);
+const schemas = !preview && published && base && pageUrl && authorUrl ? [
+  articleSchema({ title:displayTitle, description, url:pageUrl, published, updated, language:lang === "zh" ? "zh-CN" : "en-US", image:image ? new URL(image, base).toString() : undefined, authorName:authorInfo.name, authorUrl }),
+  breadcrumbSchema([{ name:pillarLabel }, { name:displayTitle, url:pageUrl }]),
+  ...(contentCategory === "person" && personName ? [personSchema({ name:personName, alternateName:personChineseName, description:shortIntroduction, url:pageUrl })] : []),
+] : [];
+---
+<BaseLayout title={preview ? `Draft Preview: ${title} | Local Dad Jeff` : pageTitle} description={description} image={image} imageAlt={imageAlt} imageWidth={imageWidth} imageHeight={imageHeight} ogType="article" lang={lang} alternates={alternates} structuredData={schemas} noIndex={preview}>
+  {preview && <DraftPreviewBanner contentType="article" />}
+  <header class:list={["page-head", "article-head", { "knowledge-article-head":isKnowledgeArticle }]}>
+    <Breadcrumbs items={[{label:pillarLabel,href:isKnowledgeArticle ? "/why-wuyishan" : undefined},{label:sectionLabel},{label:displayTitle}]} />
+    <p class="kicker">{eyebrow}</p>
+    <h1>{displayTitle}</h1>
+    <p class="article-summary">{summary ?? introduction ?? description}</p>
+    <div class="article-header-meta">
+      {published && <ArticleMeta published={published} updated={updated} lastPersonallyChecked={lastPersonallyChecked} lang={lang} authorName={authorInfo.name} authorHref={authorInfo.href ?? "/about"} />}
+      {isKnowledgeArticle && trustStatus === "research-in-progress" ? <div class="article-about-note" role="note"><p class="kicker">About this article</p><p>This article is part of an ongoing project sharing Wuyishan through research, stories, and personal exploration.</p></div> : <TrustLabel status={trustStatus} compact={true} />}
+    </div>
+  </header>
+  {isKnowledgeArticle && (whyItMatters || keyIdeaIds.length > 0) && <div class="knowledge-support"><WhyThisMatters text={whyItMatters} /><KeyIdeas topicIds={keyIdeaIds} /></div>}
+  <article class:list={["prose", { "knowledge-article-body":isKnowledgeArticle }]}><slot /></article>
+  {preview && isKnowledgeArticle && <div class="editorial-extras"><LearningNotesPanel notes={learningNotes} /></div>}
+  <EditorialExtras personalExperience={personalExperience} historicalContext={historicalContext} practicalInformation={practicalInformation} photos={photos} videos={videos} relatedPlaces={relatedPlaces} relatedPeople={relatedPeople} relatedStories={relatedStories} relatedRoutes={relatedRoutes} relatedKnowledge={[...relatedKnowledge, ...relatedGuides]} relatedTopics={isKnowledgeArticle ? [] : relatedTopics} relatedThemes={isKnowledgeArticle ? [] : relatedThemes} relatedEyebrow={isKnowledgeArticle ? "Why Wuyishan" : undefined} relatedHeading={isKnowledgeArticle ? "Continue exploring Wuyishan" : undefined} sources={renderStructuredSources ? sources : []} author={author} />
+  {isKnowledgeArticle && <PillarBridge id="knowledge-to-explore" text="Now that you understand why Wuyishan matters, explore how to experience this landscape." linkLabel="Explore Wuyishan" href="/explore-wuyishan" />}
+</BaseLayout>

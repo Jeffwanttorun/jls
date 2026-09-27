@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "tables": {
+    "coordinate_candidates": true,
+    "guide_places": true,
+    "guide_routes": true,
+    "guides": true,
+    "import_jobs": true,
+    "import_rows": true,
+    "media": true,
+    "place_accessibility": true,
+    "place_coordinates": true,
+    "place_nature": true,
+    "place_practical_info": true,
+    "place_water": true,
+    "places": true,
+    "route_place_links": true,
+    "route_stops": true,
+    "routes": true,
+    "schema_migrations": true,
+    "taxonomy_terms": true,
+    "verification_media": true,
+    "verifications": true
+  },
+  "allPlaceFieldsUnchanged": true,
+  "envUnchanged": true,
+  "realDatabaseCoordinateWrites": 0
+}

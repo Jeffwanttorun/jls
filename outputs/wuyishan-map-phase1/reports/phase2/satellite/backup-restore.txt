@@ -1,0 +1,2 @@
+$ tsx scripts/backup-verify.ts "--out" "database/seed/phase2-satellite-full.sql" "--report" "reports/phase2/satellite/backup-restore-check.json"
+备份及空库恢复通过：20 张表逐表数量和内容摘要一致

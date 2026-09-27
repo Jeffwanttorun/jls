@@ -1,0 +1,34 @@
+---
+import type { Locale } from "../i18n/config";
+import type { VideoContentType, VideoRecord } from "../types/content";
+import { formatEditorialDate } from "../lib/dates";
+
+interface Props {
+  video: VideoRecord;
+  locale?: Locale;
+  labels: {
+    platform: string;
+    language: string;
+    contentType: string;
+    published: string;
+    transcript: string;
+    transcriptAvailable: string;
+  };
+  languageLabels: Record<Locale, string>;
+  contentTypeLabels: Record<VideoContentType, string>;
+}
+
+const { video, locale = video.language, labels, languageLabels, contentTypeLabels } = Astro.props;
+const items = [
+  { label:labels.platform, value:video.platform === "youtube" ? "YouTube" : "Instagram" },
+  { label:labels.language, value:languageLabels[video.language] },
+  { label:labels.contentType, value:contentTypeLabels[video.contentType] },
+  ...(video.published ? [{ label:labels.published, value:formatEditorialDate(video.published, locale) }] : []),
+  ...(video.transcript ? [{ label:labels.transcript, value:labels.transcriptAvailable }] : []),
+];
+---
+<dl class="video-metadata">{items.map((item) => <div><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>
+
+<style>
+  .video-metadata{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1px;margin:1.25rem 0;background:var(--line);border:1px solid var(--line)}.video-metadata div{padding:1rem;background:var(--paper)}.video-metadata dt{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.video-metadata dd{margin:.35rem 0 0}
+</style>

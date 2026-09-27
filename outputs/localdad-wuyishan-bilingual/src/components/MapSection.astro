@@ -1,0 +1,12 @@
+---
+interface Props { title?: string; latitude: number; longitude: number; zoom?: number; note?: string; placeName: string; }
+const { title = "Find it on the map", latitude, longitude, zoom = 13, note, placeName } = Astro.props;
+const delta = Math.max(.01, 1 / zoom);
+const bbox = `${longitude-delta},${latitude-delta},${longitude+delta},${latitude+delta}`;
+const embed = `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik&marker=${latitude}%2C${longitude}`;
+const link = `https://www.openstreetmap.org/?mlat=${latitude}&mlon=${longitude}#map=${zoom}/${latitude}/${longitude}`;
+---
+<section class="map-section">
+  <div><p class="kicker">Location</p><h2>{title}</h2>{note && <p>{note}</p>}<a class="text-link" href={link} target="_blank" rel="noopener noreferrer">Open {placeName} in OpenStreetMap <span aria-hidden="true">↗</span></a></div>
+  <div class="map-frame"><iframe src={embed} title={`Map showing ${placeName}`} loading="lazy" referrerpolicy="no-referrer" ></iframe></div>
+</section>

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-24T02:37:17.584Z",
+  "isolatedStore": true,
+  "databaseWrites": 0,
+  "directVisualUpdate": true,
+  "cropDialog": true,
+  "consoleErrors": []
+}

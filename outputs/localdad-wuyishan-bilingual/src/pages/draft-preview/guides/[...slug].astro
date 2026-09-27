@@ -1,0 +1,15 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import GuideLayout from "../../../layouts/GuideLayout.astro";
+
+export async function getStaticPaths() {
+  if (!import.meta.env.DEV) return [];
+  const entries = await getCollection("guides") as CollectionEntry<"guides">[];
+  return entries.filter((entry) => entry.data.recordStatus === "draft").map((entry) => ({ params:{ slug:entry.data.slug }, props:{ entry } }));
+}
+
+interface Props { entry: CollectionEntry<"guides">; }
+const { entry } = Astro.props as Props;
+const { Content } = await render(entry);
+---
+<GuideLayout {...entry.data} preview={true}><Content /></GuideLayout>

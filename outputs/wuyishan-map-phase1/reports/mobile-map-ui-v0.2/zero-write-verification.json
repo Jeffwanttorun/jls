@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-09-11T17:11:42.0354332+08:00",
+  "tables_checked": 22,
+  "database_identical": true,
+  "database_differences": [],
+  "places_identical": true,
+  "categories_identical": true,
+  "visitor_content_before": "E4195C334D5B97D65CA75F608F330957C724A49C6CD32C1E208791AFED1D625F",
+  "visitor_content_after": "E4195C334D5B97D65CA75F608F330957C724A49C6CD32C1E208791AFED1D625F",
+  "visitor_content_identical": true,
+  "route_before": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+  "route_after": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+  "route_identical": true,
+  "route_points": 952,
+  "route_segments": 6
+}

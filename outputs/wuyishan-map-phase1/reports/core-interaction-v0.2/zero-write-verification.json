@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-14T01:27:00+08:00",
+  "database": {
+    "tables": 22,
+    "allTableCountsUnchanged": true,
+    "allTableChecksumsUnchanged": true,
+    "allPlaceRowsUnchanged": true,
+    "changedTables": 0,
+    "wy0008StillDeleted": true,
+    "wy0011StillDeleted": true
+  },
+  "visitorContent": {
+    "dataSha256": "E4195C334D5B97D65CA75F608F330957C724A49C6CD32C1E208791AFED1D625F",
+    "seedSha256": "35DD9D465C3A62C55F34D760423E88D6BD77241423B8489B5B9BA587675795C5",
+    "unchanged": true
+  },
+  "routeGeometry": {
+    "sha256": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E",
+    "points": 952,
+    "segments": 6,
+    "unchanged": true
+  },
+  "tencentNavigation": {
+    "sha256": "F9C7493B66E8F96F5385A38BC9FEEC95EBAA11FFF54D5CD47FB4219580A22FC4",
+    "unchanged": true
+  },
+  "browserWriteRequests": 0
+}

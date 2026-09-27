@@ -1,0 +1,19 @@
+---
+import type { MapFilterId } from "../data/map-filters";
+
+interface Props {
+  filterIds: readonly MapFilterId[];
+  labels: Partial<Record<MapFilterId, string>>;
+  legend: string;
+}
+
+const { filterIds, labels, legend } = Astro.props;
+---
+{filterIds.length > 0 && <fieldset class="map-filter-controls" data-filter-group="map-filter">
+  <legend>{legend}</legend>
+  {filterIds.map((filterId) => <button type="button" data-filter={filterId} aria-pressed="false">{labels[filterId] ?? filterId}</button>)}
+</fieldset>}
+
+<style>
+  .map-filter-controls{border:0;padding:0;margin:0}.map-filter-controls legend{font-weight:700;margin-bottom:.45rem}.map-filter-controls button{margin:0 .4rem .4rem 0;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:inherit;padding:.55rem .85rem;min-height:2.75rem}.map-filter-controls button[aria-pressed="true"]{background:var(--ink);color:#fff}.map-filter-controls button:focus-visible{outline:3px solid var(--focus, #b36b2c);outline-offset:3px}
+</style>

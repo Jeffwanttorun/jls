@@ -1,0 +1,5499 @@
+{
+  "version": 1,
+  "source": "sources/武夷山奶爸地图_主数据库_V1.2.xlsx",
+  "sourceSha256": "5346dbe02e3e54067d96b91f080bf40007183b51df8cdd107d0d7f1dfd6cb40b",
+  "digest": "a4daf00c32a94b5f30bdfac1192721b120b238f8720e757ee2d5741500f11df6",
+  "rows": [
+    {
+      "sheet": "分类标签",
+      "row": 2,
+      "code": "点位层级:MAIN",
+      "raw": {
+        "维度": "点位层级",
+        "编码": "MAIN",
+        "名称": "主地点",
+        "说明": "用户会独立寻找或理解的主要地点",
+        "启用": true
+      },
+      "data": {
+        "dimension": "点位层级",
+        "code": "MAIN",
+        "name": "主地点",
+        "description": "用户会独立寻找或理解的主要地点",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 3,
+      "code": "点位层级:AUX",
+      "raw": {
+        "维度": "点位层级",
+        "编码": "AUX",
+        "名称": "辅助点",
+        "说明": "停车、厕所、入口、下河口等附属位置",
+        "启用": true
+      },
+      "data": {
+        "dimension": "点位层级",
+        "code": "AUX",
+        "name": "辅助点",
+        "description": "停车、厕所、入口、下河口等附属位置",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 4,
+      "code": "一级分类:AREA",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "AREA",
+        "名称": "区域/村镇",
+        "说明": "区域或村镇级地点",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "AREA",
+        "name": "区域/村镇",
+        "description": "区域或村镇级地点",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 5,
+      "code": "一级分类:NATURE",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "NATURE",
+        "名称": "自然观察",
+        "说明": "蝴蝶、猴类、昆虫、星空等",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "NATURE",
+        "name": "自然观察",
+        "description": "蝴蝶、猴类、昆虫、星空等",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 6,
+      "code": "一级分类:WATER",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "WATER",
+        "名称": "玩水",
+        "说明": "溪流、浅滩、下河点",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "WATER",
+        "name": "玩水",
+        "description": "溪流、浅滩、下河点",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 7,
+      "code": "一级分类:VIEW",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "VIEW",
+        "名称": "观景",
+        "说明": "观景、日出、星空等",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "VIEW",
+        "name": "观景",
+        "description": "观景、日出、星空等",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 8,
+      "code": "一级分类:MUSEUM",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "MUSEUM",
+        "名称": "展馆",
+        "说明": "科普、历史、茶文化等展馆",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "MUSEUM",
+        "name": "展馆",
+        "description": "科普、历史、茶文化等展馆",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 9,
+      "code": "一级分类:SERVICE",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "SERVICE",
+        "名称": "服务",
+        "说明": "厕所、补给、餐饮等",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "SERVICE",
+        "name": "服务",
+        "description": "厕所、补给、餐饮等",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 10,
+      "code": "一级分类:PARKING",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "PARKING",
+        "名称": "停车",
+        "说明": "停车位置或停车场",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "PARKING",
+        "name": "停车",
+        "description": "停车位置或停车场",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 11,
+      "code": "一级分类:TRAFFIC",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "TRAFFIC",
+        "名称": "交通/入口",
+        "说明": "岔路口、步行入口、道路节点",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "TRAFFIC",
+        "name": "交通/入口",
+        "description": "岔路口、步行入口、道路节点",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 12,
+      "code": "一级分类:RISK",
+      "raw": {
+        "维度": "一级分类",
+        "编码": "RISK",
+        "名称": "风险/状态",
+        "说明": "封闭、施工、风险提示等",
+        "启用": true
+      },
+      "data": {
+        "dimension": "一级分类",
+        "code": "RISK",
+        "name": "风险/状态",
+        "description": "封闭、施工、风险提示等",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 13,
+      "code": "公开等级:P1",
+      "raw": {
+        "维度": "公开等级",
+        "编码": "P1",
+        "名称": "精确公开",
+        "说明": "显示精确位置，可用于导航",
+        "启用": true
+      },
+      "data": {
+        "dimension": "公开等级",
+        "code": "P1",
+        "name": "精确公开",
+        "description": "显示精确位置，可用于导航",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 14,
+      "code": "公开等级:P2",
+      "raw": {
+        "维度": "公开等级",
+        "编码": "P2",
+        "名称": "附近公开",
+        "说明": "显示附近区域，不强调精确落点",
+        "启用": true
+      },
+      "data": {
+        "dimension": "公开等级",
+        "code": "P2",
+        "name": "附近公开",
+        "description": "显示附近区域，不强调精确落点",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 15,
+      "code": "公开等级:P3",
+      "raw": {
+        "维度": "公开等级",
+        "编码": "P3",
+        "名称": "区域公开",
+        "说明": "只显示区域级位置",
+        "启用": true
+      },
+      "data": {
+        "dimension": "公开等级",
+        "code": "P3",
+        "name": "区域公开",
+        "description": "只显示区域级位置",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 16,
+      "code": "公开等级:P4",
+      "raw": {
+        "维度": "公开等级",
+        "编码": "P4",
+        "名称": "不公开坐标",
+        "说明": "攻略可公开，但不展示坐标",
+        "启用": true
+      },
+      "data": {
+        "dimension": "公开等级",
+        "code": "P4",
+        "name": "不公开坐标",
+        "description": "攻略可公开，但不展示坐标",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 17,
+      "code": "公开等级:P5",
+      "raw": {
+        "维度": "公开等级",
+        "编码": "P5",
+        "名称": "完全私有",
+        "说明": "仅后台可见",
+        "启用": true
+      },
+      "data": {
+        "dimension": "公开等级",
+        "code": "P5",
+        "name": "完全私有",
+        "description": "仅后台可见",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 18,
+      "code": "坐标可信:A",
+      "raw": {
+        "维度": "坐标可信",
+        "编码": "A",
+        "名称": "A级",
+        "说明": "实地准确位置采集并人工核验",
+        "启用": true
+      },
+      "data": {
+        "dimension": "坐标可信",
+        "code": "A",
+        "name": "A级",
+        "description": "实地准确位置采集并人工核验",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 19,
+      "code": "坐标可信:B",
+      "raw": {
+        "维度": "坐标可信",
+        "编码": "B",
+        "名称": "B级",
+        "说明": "GPS/无人机轨迹等较可靠来源",
+        "启用": true
+      },
+      "data": {
+        "dimension": "坐标可信",
+        "code": "B",
+        "name": "B级",
+        "description": "GPS/无人机轨迹等较可靠来源",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 20,
+      "code": "坐标可信:C",
+      "raw": {
+        "维度": "坐标可信",
+        "编码": "C",
+        "名称": "C级",
+        "说明": "地图或卫星图人工判断",
+        "启用": true
+      },
+      "data": {
+        "dimension": "坐标可信",
+        "code": "C",
+        "name": "C级",
+        "description": "地图或卫星图人工判断",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 21,
+      "code": "坐标可信:D",
+      "raw": {
+        "维度": "坐标可信",
+        "编码": "D",
+        "名称": "D级",
+        "说明": "仅大致区域",
+        "启用": true
+      },
+      "data": {
+        "dimension": "坐标可信",
+        "code": "D",
+        "name": "D级",
+        "description": "仅大致区域",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 22,
+      "code": "当前状态:OPEN",
+      "raw": {
+        "维度": "当前状态",
+        "编码": "OPEN",
+        "名称": "正常",
+        "说明": "正常可访问/可使用",
+        "启用": true
+      },
+      "data": {
+        "dimension": "当前状态",
+        "code": "OPEN",
+        "name": "正常",
+        "description": "正常可访问/可使用",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 23,
+      "code": "当前状态:CLOSED",
+      "raw": {
+        "维度": "当前状态",
+        "编码": "CLOSED",
+        "名称": "临时关闭",
+        "说明": "临时关闭或封闭",
+        "启用": true
+      },
+      "data": {
+        "dimension": "当前状态",
+        "code": "CLOSED",
+        "name": "临时关闭",
+        "description": "临时关闭或封闭",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 24,
+      "code": "当前状态:SEASONAL",
+      "raw": {
+        "维度": "当前状态",
+        "编码": "SEASONAL",
+        "名称": "季节关闭",
+        "说明": "按季节关闭",
+        "启用": true
+      },
+      "data": {
+        "dimension": "当前状态",
+        "code": "SEASONAL",
+        "name": "季节关闭",
+        "description": "按季节关闭",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 25,
+      "code": "当前状态:CONSTRUCTION",
+      "raw": {
+        "维度": "当前状态",
+        "编码": "CONSTRUCTION",
+        "名称": "施工",
+        "说明": "施工影响访问",
+        "启用": true
+      },
+      "data": {
+        "dimension": "当前状态",
+        "code": "CONSTRUCTION",
+        "name": "施工",
+        "description": "施工影响访问",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 26,
+      "code": "当前状态:ROADBLOCK",
+      "raw": {
+        "维度": "当前状态",
+        "编码": "ROADBLOCK",
+        "名称": "道路中断",
+        "说明": "道路无法正常通行",
+        "启用": true
+      },
+      "data": {
+        "dimension": "当前状态",
+        "code": "ROADBLOCK",
+        "name": "道路中断",
+        "description": "道路无法正常通行",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 27,
+      "code": "当前状态:AVOID",
+      "raw": {
+        "维度": "当前状态",
+        "编码": "AVOID",
+        "名称": "不建议前往",
+        "说明": "当前不建议前往",
+        "启用": true
+      },
+      "data": {
+        "dimension": "当前状态",
+        "code": "AVOID",
+        "name": "不建议前往",
+        "description": "当前不建议前往",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 28,
+      "code": "当前状态:VERIFY",
+      "raw": {
+        "维度": "当前状态",
+        "编码": "VERIFY",
+        "名称": "待核实",
+        "说明": "信息尚未完成现场核实",
+        "启用": true
+      },
+      "data": {
+        "dimension": "当前状态",
+        "code": "VERIFY",
+        "name": "待核实",
+        "description": "信息尚未完成现场核实",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 29,
+      "code": "任务状态:TODO",
+      "raw": {
+        "维度": "任务状态",
+        "编码": "TODO",
+        "名称": "待处理",
+        "说明": "尚未处理",
+        "启用": true
+      },
+      "data": {
+        "dimension": "任务状态",
+        "code": "TODO",
+        "name": "待处理",
+        "description": "尚未处理",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 30,
+      "code": "任务状态:DOING",
+      "raw": {
+        "维度": "任务状态",
+        "编码": "DOING",
+        "名称": "进行中",
+        "说明": "正在核验或补录",
+        "启用": true
+      },
+      "data": {
+        "dimension": "任务状态",
+        "code": "DOING",
+        "name": "进行中",
+        "description": "正在核验或补录",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 31,
+      "code": "任务状态:DONE",
+      "raw": {
+        "维度": "任务状态",
+        "编码": "DONE",
+        "名称": "已完成",
+        "说明": "已经完成",
+        "启用": true
+      },
+      "data": {
+        "dimension": "任务状态",
+        "code": "DONE",
+        "name": "已完成",
+        "description": "已经完成",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 32,
+      "code": "任务优先级:H",
+      "raw": {
+        "维度": "任务优先级",
+        "编码": "H",
+        "名称": "高",
+        "说明": "第一批必须补齐",
+        "启用": true
+      },
+      "data": {
+        "dimension": "任务优先级",
+        "code": "H",
+        "name": "高",
+        "description": "第一批必须补齐",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 33,
+      "code": "任务优先级:M",
+      "raw": {
+        "维度": "任务优先级",
+        "编码": "M",
+        "名称": "中",
+        "说明": "第二批补齐",
+        "启用": true
+      },
+      "data": {
+        "dimension": "任务优先级",
+        "code": "M",
+        "name": "中",
+        "description": "第二批补齐",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "分类标签",
+      "row": 34,
+      "code": "任务优先级:L",
+      "raw": {
+        "维度": "任务优先级",
+        "编码": "L",
+        "名称": "低",
+        "说明": "后续完善",
+        "启用": true
+      },
+      "data": {
+        "dimension": "任务优先级",
+        "code": "L",
+        "name": "低",
+        "description": "后续完善",
+        "enabled": true
+      },
+      "issues": [],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 2,
+      "code": "WY-0001",
+      "raw": {
+        "地点ID": "WY-0001",
+        "名称": "南源岭",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "南源岭",
+        "一级分类": "区域/村镇",
+        "二级分类/标签": "一号风景道起点/区域",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T2=\"\",\"\",TODAY()-T2)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T2=\"\",\"待核验\",IF(U2<=90,\"新鲜\",IF(U2<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0001",
+        "name": "南源岭",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "区域/村镇",
+        "tags": [
+          "一号风景道起点",
+          "区域"
+        ],
+        "region": "南源岭",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 3,
+      "code": "WY-0002",
+      "raw": {
+        "地点ID": "WY-0002",
+        "名称": "南源岭停车位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0001",
+        "所属区域": "南源岭",
+        "一级分类": "停车",
+        "二级分类/标签": "停车",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T3=\"\",\"\",TODAY()-T3)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T3=\"\",\"待核验\",IF(U3<=90,\"新鲜\",IF(U3<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0002",
+        "name": "南源岭停车位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0001",
+        "category": "停车",
+        "tags": [
+          "停车"
+        ],
+        "region": "南源岭",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 4,
+      "code": "WY-0003",
+      "raw": {
+        "地点ID": "WY-0003",
+        "名称": "南源岭卫生间",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0001",
+        "所属区域": "南源岭",
+        "一级分类": "服务",
+        "二级分类/标签": "卫生间",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T4=\"\",\"\",TODAY()-T4)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T4=\"\",\"待核验\",IF(U4<=90,\"新鲜\",IF(U4<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0003",
+        "name": "南源岭卫生间",
+        "place_type": "辅助点",
+        "parent_code": "WY-0001",
+        "category": "服务",
+        "tags": [
+          "卫生间"
+        ],
+        "region": "南源岭",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 5,
+      "code": "WY-0004",
+      "raw": {
+        "地点ID": "WY-0004",
+        "名称": "齐云峰观景/日出位置",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "南源岭",
+        "一级分类": "观景",
+        "二级分类/标签": "日出/观景",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T5=\"\",\"\",TODAY()-T5)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T5=\"\",\"待核验\",IF(U5<=90,\"新鲜\",IF(U5<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0004",
+        "name": "齐云峰观景/日出位置",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "观景",
+        "tags": [
+          "日出",
+          "观景"
+        ],
+        "region": "南源岭",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 6,
+      "code": "WY-0005",
+      "raw": {
+        "地点ID": "WY-0005",
+        "名称": "三才峰观景信息点",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "南源岭",
+        "一级分类": "观景",
+        "二级分类/标签": "观景",
+        "公开等级": "P3",
+        "当前状态": "待核实",
+        "优先级": "低",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T6=\"\",\"\",TODAY()-T6)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T6=\"\",\"待核验\",IF(U6<=90,\"新鲜\",IF(U6<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0005",
+        "name": "三才峰观景信息点",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "观景",
+        "tags": [
+          "观景"
+        ],
+        "region": "南源岭",
+        "public_level": "P3",
+        "current_status": "待核实",
+        "priority": "低",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 7,
+      "code": "WY-0006",
+      "raw": {
+        "地点ID": "WY-0006",
+        "名称": "星村补给区",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "星村",
+        "一级分类": "服务",
+        "二级分类/标签": "补给/餐饮",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T7=\"\",\"\",TODAY()-T7)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T7=\"\",\"待核验\",IF(U7<=90,\"新鲜\",IF(U7<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0006",
+        "name": "星村补给区",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "服务",
+        "tags": [
+          "补给",
+          "餐饮"
+        ],
+        "region": "星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 8,
+      "code": "WY-0007",
+      "raw": {
+        "地点ID": "WY-0007",
+        "名称": "星村特色小吃集中区",
+        "点位层级": "主地点",
+        "上级地点ID": "WY-0006",
+        "所属区域": "星村",
+        "一级分类": "服务",
+        "二级分类/标签": "光饼/越南粉/油饼",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T8=\"\",\"\",TODAY()-T8)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T8=\"\",\"待核验\",IF(U8<=90,\"新鲜\",IF(U8<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0007",
+        "name": "星村特色小吃集中区",
+        "place_type": "主地点",
+        "parent_code": "WY-0006",
+        "category": "服务",
+        "tags": [
+          "光饼",
+          "越南粉",
+          "油饼"
+        ],
+        "region": "星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 9,
+      "code": "WY-0008",
+      "raw": {
+        "地点ID": "WY-0008",
+        "名称": "漫水桥",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "星村—黄村沿线",
+        "一级分类": "玩水",
+        "二级分类/标签": "桥/浅水石滩",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T9=\"\",\"\",TODAY()-T9)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T9=\"\",\"待核验\",IF(U9<=90,\"新鲜\",IF(U9<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0008",
+        "name": "漫水桥",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "玩水",
+        "tags": [
+          "桥",
+          "浅水石滩"
+        ],
+        "region": "星村—黄村沿线",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 10,
+      "code": "WY-0009",
+      "raw": {
+        "地点ID": "WY-0009",
+        "名称": "漫水桥下河位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0008",
+        "所属区域": "星村—黄村沿线",
+        "一级分类": "玩水",
+        "二级分类/标签": "下河入口",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T10=\"\",\"\",TODAY()-T10)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T10=\"\",\"待核验\",IF(U10<=90,\"新鲜\",IF(U10<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0009",
+        "name": "漫水桥下河位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0008",
+        "category": "玩水",
+        "tags": [
+          "下河入口"
+        ],
+        "region": "星村—黄村沿线",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 11,
+      "code": "WY-0010",
+      "raw": {
+        "地点ID": "WY-0010",
+        "名称": "黄村",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "黄村",
+        "一级分类": "区域/村镇",
+        "二级分类/标签": "村落/沿线节点",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T11=\"\",\"\",TODAY()-T11)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T11=\"\",\"待核验\",IF(U11<=90,\"新鲜\",IF(U11<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0010",
+        "name": "黄村",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "区域/村镇",
+        "tags": [
+          "村落",
+          "沿线节点"
+        ],
+        "region": "黄村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 12,
+      "code": "WY-0011",
+      "raw": {
+        "地点ID": "WY-0011",
+        "名称": "黄村沿线停靠/观察位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0010",
+        "所属区域": "黄村",
+        "一级分类": "观景",
+        "二级分类/标签": "沿线观察",
+        "公开等级": "P3",
+        "当前状态": "待核实",
+        "优先级": "低",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T12=\"\",\"\",TODAY()-T12)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T12=\"\",\"待核验\",IF(U12<=90,\"新鲜\",IF(U12<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0011",
+        "name": "黄村沿线停靠/观察位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0010",
+        "category": "观景",
+        "tags": [
+          "沿线观察"
+        ],
+        "region": "黄村",
+        "public_level": "P3",
+        "current_status": "待核实",
+        "priority": "低",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 13,
+      "code": "WY-0012",
+      "raw": {
+        "地点ID": "WY-0012",
+        "名称": "月亮湾",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "月亮湾",
+        "一级分类": "观景",
+        "二级分类/标签": "人工大坝/观景",
+        "公开等级": "P1",
+        "当前状态": "正常",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T13=\"\",\"\",TODAY()-T13)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T13=\"\",\"待核验\",IF(U13<=90,\"新鲜\",IF(U13<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0012",
+        "name": "月亮湾",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "观景",
+        "tags": [
+          "人工大坝",
+          "观景"
+        ],
+        "region": "月亮湾",
+        "public_level": "P1",
+        "current_status": "正常",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 14,
+      "code": "WY-0013",
+      "raw": {
+        "地点ID": "WY-0013",
+        "名称": "月亮湾停车位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0012",
+        "所属区域": "月亮湾",
+        "一级分类": "停车",
+        "二级分类/标签": "停车",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T14=\"\",\"\",TODAY()-T14)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T14=\"\",\"待核验\",IF(U14<=90,\"新鲜\",IF(U14<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0013",
+        "name": "月亮湾停车位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0012",
+        "category": "停车",
+        "tags": [
+          "停车"
+        ],
+        "region": "月亮湾",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 15,
+      "code": "WY-0014",
+      "raw": {
+        "地点ID": "WY-0014",
+        "名称": "月亮湾大坝观察位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0012",
+        "所属区域": "月亮湾",
+        "一级分类": "观景",
+        "二级分类/标签": "大坝观察",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T15=\"\",\"\",TODAY()-T15)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T15=\"\",\"待核验\",IF(U15<=90,\"新鲜\",IF(U15<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0014",
+        "name": "月亮湾大坝观察位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0012",
+        "category": "观景",
+        "tags": [
+          "大坝观察"
+        ],
+        "region": "月亮湾",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 16,
+      "code": "WY-0015",
+      "raw": {
+        "地点ID": "WY-0015",
+        "名称": "翡翠谷支线路口",
+        "点位层级": "辅助点",
+        "上级地点ID": null,
+        "所属区域": "翡翠谷支线",
+        "一级分类": "交通/入口",
+        "二级分类/标签": "支线路口",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T16=\"\",\"\",TODAY()-T16)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T16=\"\",\"待核验\",IF(U16<=90,\"新鲜\",IF(U16<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0015",
+        "name": "翡翠谷支线路口",
+        "place_type": "辅助点",
+        "parent_code": null,
+        "category": "交通/入口",
+        "tags": [
+          "支线路口"
+        ],
+        "region": "翡翠谷支线",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "warning",
+          "field": "上级地点ID",
+          "message": "辅助点未指定父地点，保持独立，不推测关联"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 17,
+      "code": "WY-0016",
+      "raw": {
+        "地点ID": "WY-0016",
+        "名称": "翡翠谷支线",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "翡翠谷支线",
+        "一级分类": "风险/状态",
+        "二级分类/标签": "当前封闭支线",
+        "公开等级": "P4",
+        "当前状态": "临时关闭",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T17=\"\",\"\",TODAY()-T17)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T17=\"\",\"待核验\",IF(U17<=90,\"新鲜\",IF(U17<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0016",
+        "name": "翡翠谷支线",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "风险/状态",
+        "tags": [
+          "当前封闭支线"
+        ],
+        "region": "翡翠谷支线",
+        "public_level": "P4",
+        "current_status": "临时关闭",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 18,
+      "code": "WY-0017",
+      "raw": {
+        "地点ID": "WY-0017",
+        "名称": "观山听水",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "黄村—红星沿线",
+        "一级分类": "玩水",
+        "二级分类/标签": "沿线玩水",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T18=\"\",\"\",TODAY()-T18)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T18=\"\",\"待核验\",IF(U18<=90,\"新鲜\",IF(U18<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0017",
+        "name": "观山听水",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "玩水",
+        "tags": [
+          "沿线玩水"
+        ],
+        "region": "黄村—红星沿线",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 19,
+      "code": "WY-0018",
+      "raw": {
+        "地点ID": "WY-0018",
+        "名称": "大峡谷农庄下河位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0017",
+        "所属区域": "黄村—红星沿线",
+        "一级分类": "玩水",
+        "二级分类/标签": "下河入口",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T19=\"\",\"\",TODAY()-T19)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T19=\"\",\"待核验\",IF(U19<=90,\"新鲜\",IF(U19<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0018",
+        "name": "大峡谷农庄下河位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0017",
+        "category": "玩水",
+        "tags": [
+          "下河入口"
+        ],
+        "region": "黄村—红星沿线",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 20,
+      "code": "WY-0019",
+      "raw": {
+        "地点ID": "WY-0019",
+        "名称": "皮坑浅滩",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "皮坑",
+        "一级分类": "玩水",
+        "二级分类/标签": "浅滩",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T20=\"\",\"\",TODAY()-T20)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T20=\"\",\"待核验\",IF(U20<=90,\"新鲜\",IF(U20<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0019",
+        "name": "皮坑浅滩",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "玩水",
+        "tags": [
+          "浅滩"
+        ],
+        "region": "皮坑",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 21,
+      "code": "WY-0020",
+      "raw": {
+        "地点ID": "WY-0020",
+        "名称": "皮坑口",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "皮坑",
+        "一级分类": "玩水",
+        "二级分类/标签": "浅滩/入口",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T21=\"\",\"\",TODAY()-T21)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T21=\"\",\"待核验\",IF(U21<=90,\"新鲜\",IF(U21<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0020",
+        "name": "皮坑口",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "玩水",
+        "tags": [
+          "浅滩",
+          "入口"
+        ],
+        "region": "皮坑",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 22,
+      "code": "WY-0021",
+      "raw": {
+        "地点ID": "WY-0021",
+        "名称": "皮坑口下水位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0020",
+        "所属区域": "皮坑",
+        "一级分类": "玩水",
+        "二级分类/标签": "下水入口",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T22=\"\",\"\",TODAY()-T22)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T22=\"\",\"待核验\",IF(U22<=90,\"新鲜\",IF(U22<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0021",
+        "name": "皮坑口下水位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0020",
+        "category": "玩水",
+        "tags": [
+          "下水入口"
+        ],
+        "region": "皮坑",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 23,
+      "code": "WY-0022",
+      "raw": {
+        "地点ID": "WY-0022",
+        "名称": "大浅滩",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "一号风景道沿线",
+        "一级分类": "玩水",
+        "二级分类/标签": "浅滩/餐饮附近",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T23=\"\",\"\",TODAY()-T23)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T23=\"\",\"待核验\",IF(U23<=90,\"新鲜\",IF(U23<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0022",
+        "name": "大浅滩",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "玩水",
+        "tags": [
+          "浅滩",
+          "餐饮附近"
+        ],
+        "region": "一号风景道沿线",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 24,
+      "code": "WY-0023",
+      "raw": {
+        "地点ID": "WY-0023",
+        "名称": "大浅滩停车位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0022",
+        "所属区域": "一号风景道沿线",
+        "一级分类": "停车",
+        "二级分类/标签": "停车",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T24=\"\",\"\",TODAY()-T24)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T24=\"\",\"待核验\",IF(U24<=90,\"新鲜\",IF(U24<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0023",
+        "name": "大浅滩停车位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0022",
+        "category": "停车",
+        "tags": [
+          "停车"
+        ],
+        "region": "一号风景道沿线",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 25,
+      "code": "WY-0024",
+      "raw": {
+        "地点ID": "WY-0024",
+        "名称": "桃源峪",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "桃源峪",
+        "一级分类": "自然观察",
+        "二级分类/标签": "蝴蝶/溪谷",
+        "公开等级": "P1",
+        "当前状态": "正常",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T25=\"\",\"\",TODAY()-T25)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T25=\"\",\"待核验\",IF(U25<=90,\"新鲜\",IF(U25<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0024",
+        "name": "桃源峪",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "自然观察",
+        "tags": [
+          "蝴蝶",
+          "溪谷"
+        ],
+        "region": "桃源峪",
+        "public_level": "P1",
+        "current_status": "正常",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "warning",
+          "field": "公开等级",
+          "message": "自然观察 P1 需人工复核生态敏感性；本批无正式坐标，不自动发布"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 26,
+      "code": "WY-0025",
+      "raw": {
+        "地点ID": "WY-0025",
+        "名称": "桃源峪停车位置",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0024",
+        "所属区域": "桃源峪",
+        "一级分类": "停车",
+        "二级分类/标签": "停车",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T26=\"\",\"\",TODAY()-T26)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T26=\"\",\"待核验\",IF(U26<=90,\"新鲜\",IF(U26<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0025",
+        "name": "桃源峪停车位置",
+        "place_type": "辅助点",
+        "parent_code": "WY-0024",
+        "category": "停车",
+        "tags": [
+          "停车"
+        ],
+        "region": "桃源峪",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 27,
+      "code": "WY-0026",
+      "raw": {
+        "地点ID": "WY-0026",
+        "名称": "桃源峪卫生间",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0024",
+        "所属区域": "桃源峪",
+        "一级分类": "服务",
+        "二级分类/标签": "卫生间",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T27=\"\",\"\",TODAY()-T27)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T27=\"\",\"待核验\",IF(U27<=90,\"新鲜\",IF(U27<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0026",
+        "name": "桃源峪卫生间",
+        "place_type": "辅助点",
+        "parent_code": "WY-0024",
+        "category": "服务",
+        "tags": [
+          "卫生间"
+        ],
+        "region": "桃源峪",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 28,
+      "code": "WY-0027",
+      "raw": {
+        "地点ID": "WY-0027",
+        "名称": "桃源峪主要观蝶区域",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0024",
+        "所属区域": "桃源峪",
+        "一级分类": "自然观察",
+        "二级分类/标签": "蝴蝶观察",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T28=\"\",\"\",TODAY()-T28)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T28=\"\",\"待核验\",IF(U28<=90,\"新鲜\",IF(U28<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0027",
+        "name": "桃源峪主要观蝶区域",
+        "place_type": "辅助点",
+        "parent_code": "WY-0024",
+        "category": "自然观察",
+        "tags": [
+          "蝴蝶观察"
+        ],
+        "region": "桃源峪",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 29,
+      "code": "WY-0028",
+      "raw": {
+        "地点ID": "WY-0028",
+        "名称": "龙渡蝴蝶科普展示馆",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "红星村附近",
+        "一级分类": "展馆",
+        "二级分类/标签": "蝴蝶科普",
+        "公开等级": "P1",
+        "当前状态": "正常",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T29=\"\",\"\",TODAY()-T29)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T29=\"\",\"待核验\",IF(U29<=90,\"新鲜\",IF(U29<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0028",
+        "name": "龙渡蝴蝶科普展示馆",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "展馆",
+        "tags": [
+          "蝴蝶科普"
+        ],
+        "region": "红星村附近",
+        "public_level": "P1",
+        "current_status": "正常",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 30,
+      "code": "WY-0029",
+      "raw": {
+        "地点ID": "WY-0029",
+        "名称": "蝴蝶馆停车/步行入口",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0028",
+        "所属区域": "红星村附近",
+        "一级分类": "交通/入口",
+        "二级分类/标签": "停车/步行入口",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T30=\"\",\"\",TODAY()-T30)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T30=\"\",\"待核验\",IF(U30<=90,\"新鲜\",IF(U30<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0029",
+        "name": "蝴蝶馆停车/步行入口",
+        "place_type": "辅助点",
+        "parent_code": "WY-0028",
+        "category": "交通/入口",
+        "tags": [
+          "停车",
+          "步行入口"
+        ],
+        "region": "红星村附近",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 31,
+      "code": "WY-0030",
+      "raw": {
+        "地点ID": "WY-0030",
+        "名称": "野猴谷",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "桐木区域",
+        "一级分类": "自然观察",
+        "二级分类/标签": "藏酋猴",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T31=\"\",\"\",TODAY()-T31)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T31=\"\",\"待核验\",IF(U31<=90,\"新鲜\",IF(U31<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0030",
+        "name": "野猴谷",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "自然观察",
+        "tags": [
+          "藏酋猴"
+        ],
+        "region": "桐木区域",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        },
+        {
+          "level": "warning",
+          "field": "公开等级",
+          "message": "自然观察 P1 需人工复核生态敏感性；本批无正式坐标，不自动发布"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 32,
+      "code": "WY-0031",
+      "raw": {
+        "地点ID": "WY-0031",
+        "名称": "野猴观察区域",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0030",
+        "所属区域": "桐木区域",
+        "一级分类": "自然观察",
+        "二级分类/标签": "藏酋猴观察范围",
+        "公开等级": "P3",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T32=\"\",\"\",TODAY()-T32)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T32=\"\",\"待核验\",IF(U32<=90,\"新鲜\",IF(U32<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0031",
+        "name": "野猴观察区域",
+        "place_type": "辅助点",
+        "parent_code": "WY-0030",
+        "category": "自然观察",
+        "tags": [
+          "藏酋猴观察范围"
+        ],
+        "region": "桐木区域",
+        "public_level": "P3",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 33,
+      "code": "WY-0032",
+      "raw": {
+        "地点ID": "WY-0032",
+        "名称": "红茶发源地展示馆",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "桐木区域",
+        "一级分类": "展馆",
+        "二级分类/标签": "红茶历史/正山小种",
+        "公开等级": "P1",
+        "当前状态": "正常",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T33=\"\",\"\",TODAY()-T33)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T33=\"\",\"待核验\",IF(U33<=90,\"新鲜\",IF(U33<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0032",
+        "name": "红茶发源地展示馆",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "展馆",
+        "tags": [
+          "红茶历史",
+          "正山小种"
+        ],
+        "region": "桐木区域",
+        "public_level": "P1",
+        "current_status": "正常",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 34,
+      "code": "WY-0033",
+      "raw": {
+        "地点ID": "WY-0033",
+        "名称": "大峡谷展示馆",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "桐木区域",
+        "一级分类": "展馆",
+        "二级分类/标签": "自然/地理展示",
+        "公开等级": "P1",
+        "当前状态": "正常",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T34=\"\",\"\",TODAY()-T34)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T34=\"\",\"待核验\",IF(U34<=90,\"新鲜\",IF(U34<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0033",
+        "name": "大峡谷展示馆",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "展馆",
+        "tags": [
+          "自然",
+          "地理展示"
+        ],
+        "region": "桐木区域",
+        "public_level": "P1",
+        "current_status": "正常",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 35,
+      "code": "WY-0034",
+      "raw": {
+        "地点ID": "WY-0034",
+        "名称": "桐木茶马古道相关入口",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "桐木区域",
+        "一级分类": "交通/入口",
+        "二级分类/标签": "历史路线/徒步入口",
+        "公开等级": "P3",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T35=\"\",\"\",TODAY()-T35)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T35=\"\",\"待核验\",IF(U35<=90,\"新鲜\",IF(U35<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0034",
+        "name": "桐木茶马古道相关入口",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "交通/入口",
+        "tags": [
+          "历史路线",
+          "徒步入口"
+        ],
+        "region": "桐木区域",
+        "public_level": "P3",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 36,
+      "code": "WY-0035",
+      "raw": {
+        "地点ID": "WY-0035",
+        "名称": "大竹岚自然观察区域",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "大竹岚",
+        "一级分类": "自然观察",
+        "二级分类/标签": "昆虫/森林观察",
+        "公开等级": "P3",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T36=\"\",\"\",TODAY()-T36)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T36=\"\",\"待核验\",IF(U36<=90,\"新鲜\",IF(U36<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0035",
+        "name": "大竹岚自然观察区域",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "自然观察",
+        "tags": [
+          "昆虫",
+          "森林观察"
+        ],
+        "region": "大竹岚",
+        "public_level": "P3",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 37,
+      "code": "WY-0036",
+      "raw": {
+        "地点ID": "WY-0036",
+        "名称": "坳头观景台",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "坳头村",
+        "一级分类": "观景",
+        "二级分类/标签": "观景/夜景",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T37=\"\",\"\",TODAY()-T37)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T37=\"\",\"待核验\",IF(U37<=90,\"新鲜\",IF(U37<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0036",
+        "name": "坳头观景台",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "观景",
+        "tags": [
+          "观景",
+          "夜景"
+        ],
+        "region": "坳头村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 38,
+      "code": "WY-0037",
+      "raw": {
+        "地点ID": "WY-0037",
+        "名称": "坳头星空观察区域",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0036",
+        "所属区域": "坳头村",
+        "一级分类": "自然观察",
+        "二级分类/标签": "星空",
+        "公开等级": "P2",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T38=\"\",\"\",TODAY()-T38)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T38=\"\",\"待核验\",IF(U38<=90,\"新鲜\",IF(U38<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0037",
+        "name": "坳头星空观察区域",
+        "place_type": "辅助点",
+        "parent_code": "WY-0036",
+        "category": "自然观察",
+        "tags": [
+          "星空"
+        ],
+        "region": "坳头村",
+        "public_level": "P2",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 39,
+      "code": "WY-0038",
+      "raw": {
+        "地点ID": "WY-0038",
+        "名称": "武夷源活动区域",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "武夷源",
+        "一级分类": "玩水",
+        "二级分类/标签": "皮筏艇/溪流",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "中",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": null,
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": null,
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T39=\"\",\"\",TODAY()-T39)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T39=\"\",\"待核验\",IF(U39<=90,\"新鲜\",IF(U39<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0038",
+        "name": "武夷源活动区域",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "玩水",
+        "tags": [
+          "皮筏艇",
+          "溪流"
+        ],
+        "region": "武夷源",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "中",
+        "intro": null,
+        "notes": null,
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 40,
+      "code": "WY-0039",
+      "raw": {
+        "地点ID": "WY-0039",
+        "名称": "红星村",
+        "点位层级": "主地点",
+        "上级地点ID": null,
+        "所属区域": "红星村",
+        "一级分类": "区域/村镇",
+        "二级分类/标签": "展馆群/村落节点",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "红星村展馆群的区域父节点；用于缩小地图时聚合展示。",
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": "各展馆作为子节点展开，步行关系待现场核验。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T40=\"\",\"\",TODAY()-T40)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T40=\"\",\"待核验\",IF(U40<=90,\"新鲜\",IF(U40<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0039",
+        "name": "红星村",
+        "place_type": "主地点",
+        "parent_code": null,
+        "category": "区域/村镇",
+        "tags": [
+          "展馆群",
+          "村落节点"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": "红星村展馆群的区域父节点；用于缩小地图时聚合展示。",
+        "notes": "各展馆作为子节点展开，步行关系待现场核验。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 41,
+      "code": "WY-0040",
+      "raw": {
+        "地点ID": "WY-0040",
+        "名称": "乌龙茶展示馆",
+        "点位层级": "主地点",
+        "上级地点ID": "WY-0039",
+        "所属区域": "红星村",
+        "一级分类": "展馆",
+        "二级分类/标签": "乌龙茶/茶史/工艺",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "红星村茶文化展馆节点。",
+        "关联路线": null,
+        "关联攻略": "G-0006",
+        "备注": "已有较完整研究与口播基础，坐标及开放信息待统一核验。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T41=\"\",\"\",TODAY()-T41)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T41=\"\",\"待核验\",IF(U41<=90,\"新鲜\",IF(U41<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0040",
+        "name": "乌龙茶展示馆",
+        "place_type": "主地点",
+        "parent_code": "WY-0039",
+        "category": "展馆",
+        "tags": [
+          "乌龙茶",
+          "茶史",
+          "工艺"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": "红星村茶文化展馆节点。",
+        "notes": "已有较完整研究与口播基础，坐标及开放信息待统一核验。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [
+          "G-0006"
+        ],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 42,
+      "code": "WY-0041",
+      "raw": {
+        "地点ID": "WY-0041",
+        "名称": "珍稀植物展示馆1号馆",
+        "点位层级": "主地点",
+        "上级地点ID": "WY-0039",
+        "所属区域": "红星村",
+        "一级分类": "展馆",
+        "二级分类/标签": "珍稀植物/模式标本/植物史",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "以武夷山植物、模式标本与科学史为重点的展馆节点。",
+        "关联路线": null,
+        "关联攻略": "G-0007",
+        "备注": "已有内容研究基础；坐标、开放时间、步行关系待核验。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T42=\"\",\"\",TODAY()-T42)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T42=\"\",\"待核验\",IF(U42<=90,\"新鲜\",IF(U42<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0041",
+        "name": "珍稀植物展示馆1号馆",
+        "place_type": "主地点",
+        "parent_code": "WY-0039",
+        "category": "展馆",
+        "tags": [
+          "珍稀植物",
+          "模式标本",
+          "植物史"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": "以武夷山植物、模式标本与科学史为重点的展馆节点。",
+        "notes": "已有内容研究基础；坐标、开放时间、步行关系待核验。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [
+          "G-0007"
+        ],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 43,
+      "code": "WY-0042",
+      "raw": {
+        "地点ID": "WY-0042",
+        "名称": "珍稀植物展示馆2号馆",
+        "点位层级": "主地点",
+        "上级地点ID": "WY-0039",
+        "所属区域": "红星村",
+        "一级分类": "展馆",
+        "二级分类/标签": "珍稀植物/自然科普",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "珍稀植物展示馆群中的第二馆。",
+        "关联路线": null,
+        "关联攻略": "G-0008",
+        "备注": "先建立地点对象，具体内容结构与1号馆关系后续补充。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T43=\"\",\"\",TODAY()-T43)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T43=\"\",\"待核验\",IF(U43<=90,\"新鲜\",IF(U43<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0042",
+        "name": "珍稀植物展示馆2号馆",
+        "place_type": "主地点",
+        "parent_code": "WY-0039",
+        "category": "展馆",
+        "tags": [
+          "珍稀植物",
+          "自然科普"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": "珍稀植物展示馆群中的第二馆。",
+        "notes": "先建立地点对象，具体内容结构与1号馆关系后续补充。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [
+          "G-0008"
+        ],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 44,
+      "code": "WY-0043",
+      "raw": {
+        "地点ID": "WY-0043",
+        "名称": "兰花展示馆",
+        "点位层级": "主地点",
+        "上级地点ID": "WY-0039",
+        "所属区域": "红星村",
+        "一级分类": "展馆",
+        "二级分类/标签": "兰花/真菌共生/传粉",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "兰花种子萌发、真菌关系与传粉观察的展馆节点。",
+        "关联路线": null,
+        "关联攻略": "G-0009",
+        "备注": "已有完整口播与素材基础，坐标及开放信息待核验。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T44=\"\",\"\",TODAY()-T44)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T44=\"\",\"待核验\",IF(U44<=90,\"新鲜\",IF(U44<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0043",
+        "name": "兰花展示馆",
+        "place_type": "主地点",
+        "parent_code": "WY-0039",
+        "category": "展馆",
+        "tags": [
+          "兰花",
+          "真菌共生",
+          "传粉"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": "兰花种子萌发、真菌关系与传粉观察的展馆节点。",
+        "notes": "已有完整口播与素材基础，坐标及开放信息待核验。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [
+          "G-0009"
+        ],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 45,
+      "code": "WY-0044",
+      "raw": {
+        "地点ID": "WY-0044",
+        "名称": "乡愁馆",
+        "点位层级": "主地点",
+        "上级地点ID": "WY-0039",
+        "所属区域": "红星村",
+        "一级分类": "展馆",
+        "二级分类/标签": "乡村记忆/山里人的故事",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "红星村乡村历史与人物故事节点。",
+        "关联路线": null,
+        "关联攻略": "G-0010",
+        "备注": "可关联黎老先生等“山里人的故事”内容。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T45=\"\",\"\",TODAY()-T45)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T45=\"\",\"待核验\",IF(U45<=90,\"新鲜\",IF(U45<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0044",
+        "name": "乡愁馆",
+        "place_type": "主地点",
+        "parent_code": "WY-0039",
+        "category": "展馆",
+        "tags": [
+          "乡村记忆",
+          "山里人的故事"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": "红星村乡村历史与人物故事节点。",
+        "notes": "可关联黎老先生等“山里人的故事”内容。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [
+          "G-0010"
+        ],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 46,
+      "code": "WY-0045",
+      "raw": {
+        "地点ID": "WY-0045",
+        "名称": "乡愁馆村咖/休息点",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0044",
+        "所属区域": "红星村",
+        "一级分类": "服务",
+        "二级分类/标签": "村咖/休息/补给",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "低",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "作为乡愁馆附属休息与补给点，是否需要独立成点待核验。",
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": "如果与乡愁馆完全同址且用户无需单独寻找，可后续降为地点属性而非地图针。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T46=\"\",\"\",TODAY()-T46)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T46=\"\",\"待核验\",IF(U46<=90,\"新鲜\",IF(U46<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0045",
+        "name": "乡愁馆村咖/休息点",
+        "place_type": "辅助点",
+        "parent_code": "WY-0044",
+        "category": "服务",
+        "tags": [
+          "村咖",
+          "休息",
+          "补给"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "低",
+        "intro": "作为乡愁馆附属休息与补给点，是否需要独立成点待核验。",
+        "notes": "如果与乡愁馆完全同址且用户无需单独寻找，可后续降为地点属性而非地图针。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "地点库",
+      "row": 47,
+      "code": "WY-0046",
+      "raw": {
+        "地点ID": "WY-0046",
+        "名称": "红星村展馆群停车/步行起点",
+        "点位层级": "辅助点",
+        "上级地点ID": "WY-0039",
+        "所属区域": "红星村",
+        "一级分类": "交通/入口",
+        "二级分类/标签": "停车/步行起点",
+        "公开等级": "P1",
+        "当前状态": "待核实",
+        "优先级": "高",
+        "原始纬度": null,
+        "原始经度": null,
+        "原始坐标系": null,
+        "坐标来源": null,
+        "坐标可信等级": null,
+        "地图纬度": null,
+        "地图经度": null,
+        "地图坐标系": null,
+        "是否人工核验": null,
+        "最后核验日期": null,
+        "距今核验天数": null,
+        "信息新鲜度": "待核验",
+        "停车": null,
+        "厕所": null,
+        "适合带娃": null,
+        "适合老人": null,
+        "雨天适合": null,
+        "主要风险": null,
+        "一句话说明": "为红星村展馆群建立统一到达与步行起点。",
+        "关联路线": null,
+        "关联攻略": null,
+        "备注": "需现场确认最佳停车位置以及是否确有统一步行起点；若不存在则拆分。",
+        "_formulas": {
+          "距今核验天数": {
+            "formula": "IF(T47=\"\",\"\",TODAY()-T47)"
+          },
+          "信息新鲜度": {
+            "formula": "IF(T47=\"\",\"待核验\",IF(U47<=90,\"新鲜\",IF(U47<=180,\"需复核\",\"已过期\")))",
+            "result": "待核验"
+          }
+        }
+      },
+      "data": {
+        "code": "WY-0046",
+        "name": "红星村展馆群停车/步行起点",
+        "place_type": "辅助点",
+        "parent_code": "WY-0039",
+        "category": "交通/入口",
+        "tags": [
+          "停车",
+          "步行起点"
+        ],
+        "region": "红星村",
+        "public_level": "P1",
+        "current_status": "待核实",
+        "priority": "高",
+        "intro": "为红星村展馆群建立统一到达与步行起点。",
+        "notes": "需现场确认最佳停车位置以及是否确有统一步行起点；若不存在则拆分。",
+        "risk_note": null,
+        "rain_friendly": null,
+        "source_last_verified_at": null,
+        "parking_available": null,
+        "toilet_available": null,
+        "child_friendly_note": null,
+        "elderly_friendly": null,
+        "route_codes": [],
+        "guide_codes": [],
+        "coordinate": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "坐标",
+          "message": "缺少坐标，地点可导入但不可导航"
+        },
+        {
+          "level": "warning",
+          "field": "最后核验日期",
+          "message": "无核验日期，不能认定当前信息已实地核验"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "路线库",
+      "row": 2,
+      "code": "R-0001",
+      "raw": {
+        "路线ID": "R-0001",
+        "路线名称": "一号风景道·自然观察候选线",
+        "路线类型": "候选路线",
+        "状态": "待核实",
+        "适合人群": "自然观察/亲子",
+        "地点序列（地点ID）": "WY-0024→WY-0028→WY-0030→WY-0035→WY-0036",
+        "预计总时长": null,
+        "驾驶时长": null,
+        "步行距离km": null,
+        "推荐季节": null,
+        "雨天可用": "部分",
+        "起点": "桃源峪",
+        "终点": "坳头观景台",
+        "最后核验日期": null,
+        "备注": "先作为路线集合，不直接承诺一日完成"
+      },
+      "data": {
+        "code": "R-0001",
+        "name": "一号风景道·自然观察候选线",
+        "route_type": "候选路线",
+        "source_status": "待核实",
+        "publish_status": "草稿",
+        "suitable_age_note": "自然观察/亲子",
+        "stops": [
+          "WY-0024",
+          "WY-0028",
+          "WY-0030",
+          "WY-0035",
+          "WY-0036"
+        ],
+        "total_duration_min": null,
+        "estimated_driving_min": null,
+        "estimated_walking_m": null,
+        "season_note": null,
+        "rain_friendly": "部分",
+        "start_note": "桃源峪",
+        "end_note": "坳头观景台",
+        "source_last_verified_at": null,
+        "intro": "先作为路线集合，不直接承诺一日完成"
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "路线库",
+      "row": 3,
+      "code": "R-0002",
+      "raw": {
+        "路线ID": "R-0002",
+        "路线名称": "一号风景道·展馆候选线",
+        "路线类型": "候选路线",
+        "状态": "待核实",
+        "适合人群": "亲子/雨天",
+        "地点序列（地点ID）": "WY-0028→WY-0032→WY-0033",
+        "预计总时长": null,
+        "驾驶时长": null,
+        "步行距离km": null,
+        "推荐季节": null,
+        "雨天可用": "是",
+        "起点": "蝴蝶馆",
+        "终点": "大峡谷展示馆",
+        "最后核验日期": null,
+        "备注": "后续通过R-0004接入红星村展馆群；跨区域先保留为候选路线，不写死顺序与时长。"
+      },
+      "data": {
+        "code": "R-0002",
+        "name": "一号风景道·展馆候选线",
+        "route_type": "候选路线",
+        "source_status": "待核实",
+        "publish_status": "草稿",
+        "suitable_age_note": "亲子/雨天",
+        "stops": [
+          "WY-0028",
+          "WY-0032",
+          "WY-0033"
+        ],
+        "total_duration_min": null,
+        "estimated_driving_min": null,
+        "estimated_walking_m": null,
+        "season_note": null,
+        "rain_friendly": "是",
+        "start_note": "蝴蝶馆",
+        "end_note": "大峡谷展示馆",
+        "source_last_verified_at": null,
+        "intro": "后续通过R-0004接入红星村展馆群；跨区域先保留为候选路线，不写死顺序与时长。"
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "路线库",
+      "row": 4,
+      "code": "R-0003",
+      "raw": {
+        "路线ID": "R-0003",
+        "路线名称": "一号风景道·玩水候选线",
+        "路线类型": "候选路线",
+        "状态": "待核实",
+        "适合人群": "亲子/玩水",
+        "地点序列（地点ID）": "WY-0008→WY-0017→WY-0019→WY-0020→WY-0022→WY-0038",
+        "预计总时长": null,
+        "驾驶时长": null,
+        "步行距离km": null,
+        "推荐季节": "夏季",
+        "雨天可用": "否",
+        "起点": "漫水桥",
+        "终点": "武夷源",
+        "最后核验日期": null,
+        "备注": "必须结合实时/近期水情与降雨判断"
+      },
+      "data": {
+        "code": "R-0003",
+        "name": "一号风景道·玩水候选线",
+        "route_type": "候选路线",
+        "source_status": "待核实",
+        "publish_status": "草稿",
+        "suitable_age_note": "亲子/玩水",
+        "stops": [
+          "WY-0008",
+          "WY-0017",
+          "WY-0019",
+          "WY-0020",
+          "WY-0022",
+          "WY-0038"
+        ],
+        "total_duration_min": null,
+        "estimated_driving_min": null,
+        "estimated_walking_m": null,
+        "season_note": "夏季",
+        "rain_friendly": "否",
+        "start_note": "漫水桥",
+        "end_note": "武夷源",
+        "source_last_verified_at": null,
+        "intro": "必须结合实时/近期水情与降雨判断"
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "只保留来源候选顺序，sequence_confirmed=false，不承诺路线可通行"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "路线库",
+      "row": 5,
+      "code": "R-0004",
+      "raw": {
+        "路线ID": "R-0004",
+        "路线名称": "红星村·展馆步行候选线",
+        "路线类型": "候选路线",
+        "状态": "待核实",
+        "适合人群": "亲子/雨天/文化自然",
+        "地点序列（地点ID）": null,
+        "预计总时长": null,
+        "驾驶时长": null,
+        "步行距离km": null,
+        "推荐季节": null,
+        "雨天可用": "是",
+        "起点": "红星村",
+        "终点": "红星村",
+        "最后核验日期": null,
+        "备注": "节点集合包括WY-0040～WY-0044；暂不写死参观顺序，先现场核验各馆坐标、开放情况与真实步行关系。"
+      },
+      "data": {
+        "code": "R-0004",
+        "name": "红星村·展馆步行候选线",
+        "route_type": "候选路线",
+        "source_status": "待核实",
+        "publish_status": "草稿",
+        "suitable_age_note": "亲子/雨天/文化自然",
+        "stops": [],
+        "total_duration_min": null,
+        "estimated_driving_min": null,
+        "estimated_walking_m": null,
+        "season_note": null,
+        "rain_friendly": "是",
+        "start_note": "红星村",
+        "end_note": "红星村",
+        "source_last_verified_at": null,
+        "intro": "节点集合包括WY-0040～WY-0044；暂不写死参观顺序，先现场核验各馆坐标、开放情况与真实步行关系。"
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "地点序列（地点ID）",
+          "message": "站点序列为空；保留路线和备注，不从备注范围推测顺序"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 2,
+      "code": "G-0001",
+      "raw": {
+        "攻略ID": "G-0001",
+        "标题": "桃源峪找蝴蝶",
+        "内容类型": "实测攻略",
+        "关联地点ID": "WY-0024",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "已有内容/待入库",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "可关联野外观察素材",
+        "正文文件/链接": null,
+        "备注": null
+      },
+      "data": {
+        "code": "G-0001",
+        "title": "桃源峪找蝴蝶",
+        "guide_type": "实测攻略",
+        "place_codes": [
+          "WY-0024"
+        ],
+        "route_codes": [],
+        "source_workflow": "已有内容/待入库",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "可关联野外观察素材",
+        "body_source": null,
+        "notes": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 3,
+      "code": "G-0002",
+      "raw": {
+        "攻略ID": "G-0002",
+        "标题": "龙渡蝴蝶科普展示馆",
+        "内容类型": "展馆攻略",
+        "关联地点ID": "WY-0028",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "已有内容/待入库",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "已有完整口播与素材",
+        "正文文件/链接": null,
+        "备注": null
+      },
+      "data": {
+        "code": "G-0002",
+        "title": "龙渡蝴蝶科普展示馆",
+        "guide_type": "展馆攻略",
+        "place_codes": [
+          "WY-0028"
+        ],
+        "route_codes": [],
+        "source_workflow": "已有内容/待入库",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "已有完整口播与素材",
+        "body_source": null,
+        "notes": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 4,
+      "code": "G-0003",
+      "raw": {
+        "攻略ID": "G-0003",
+        "标题": "野猴谷里的藏酋猴",
+        "内容类型": "自然观察攻略",
+        "关联地点ID": "WY-0030",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "研究中",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "需补拍并核实观察条件",
+        "正文文件/链接": null,
+        "备注": null
+      },
+      "data": {
+        "code": "G-0003",
+        "title": "野猴谷里的藏酋猴",
+        "guide_type": "自然观察攻略",
+        "place_codes": [
+          "WY-0030"
+        ],
+        "route_codes": [],
+        "source_workflow": "研究中",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "需补拍并核实观察条件",
+        "body_source": null,
+        "notes": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 5,
+      "code": "G-0004",
+      "raw": {
+        "攻略ID": "G-0004",
+        "标题": "一号风景道玩水点合集",
+        "内容类型": "路线/专题",
+        "关联地点ID": null,
+        "关联路线ID": "R-0003",
+        "平台": "统一内容源",
+        "发布状态": "待建立",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "重点关联动态水情字段",
+        "正文文件/链接": null,
+        "备注": null
+      },
+      "data": {
+        "code": "G-0004",
+        "title": "一号风景道玩水点合集",
+        "guide_type": "路线/专题",
+        "place_codes": [],
+        "route_codes": [
+          "R-0003"
+        ],
+        "source_workflow": "待建立",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "重点关联动态水情字段",
+        "body_source": null,
+        "notes": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 6,
+      "code": "G-0005",
+      "raw": {
+        "攻略ID": "G-0005",
+        "标题": "一号风景道自然观察线",
+        "内容类型": "路线/专题",
+        "关联地点ID": null,
+        "关联路线ID": "R-0001",
+        "平台": "统一内容源",
+        "发布状态": "待建立",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "暂不写死一日完成",
+        "正文文件/链接": null,
+        "备注": null
+      },
+      "data": {
+        "code": "G-0005",
+        "title": "一号风景道自然观察线",
+        "guide_type": "路线/专题",
+        "place_codes": [],
+        "route_codes": [
+          "R-0001"
+        ],
+        "source_workflow": "待建立",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "暂不写死一日完成",
+        "body_source": null,
+        "notes": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 7,
+      "code": "G-0006",
+      "raw": {
+        "攻略ID": "G-0006",
+        "标题": "乌龙茶展示馆",
+        "内容类型": "展馆攻略",
+        "关联地点ID": "WY-0040",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "已有内容/待入库",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "已有较完整研究、口播与素材",
+        "正文文件/链接": null,
+        "备注": "重点保留贡茶—市场—工艺演变与迁徙传播的复杂性。"
+      },
+      "data": {
+        "code": "G-0006",
+        "title": "乌龙茶展示馆",
+        "guide_type": "展馆攻略",
+        "place_codes": [
+          "WY-0040"
+        ],
+        "route_codes": [],
+        "source_workflow": "已有内容/待入库",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "已有较完整研究、口播与素材",
+        "body_source": null,
+        "notes": "重点保留贡茶—市场—工艺演变与迁徙传播的复杂性。"
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 8,
+      "code": "G-0007",
+      "raw": {
+        "攻略ID": "G-0007",
+        "标题": "珍稀植物展示馆1号馆",
+        "内容类型": "展馆攻略",
+        "关联地点ID": "WY-0041",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "已有内容/待入库",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "已有模式标本、谭卫道、植物学网络研究",
+        "正文文件/链接": null,
+        "备注": "强调科学史与模式标本，避免单一民族叙事。"
+      },
+      "data": {
+        "code": "G-0007",
+        "title": "珍稀植物展示馆1号馆",
+        "guide_type": "展馆攻略",
+        "place_codes": [
+          "WY-0041"
+        ],
+        "route_codes": [],
+        "source_workflow": "已有内容/待入库",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "已有模式标本、谭卫道、植物学网络研究",
+        "body_source": null,
+        "notes": "强调科学史与模式标本，避免单一民族叙事。"
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 9,
+      "code": "G-0008",
+      "raw": {
+        "攻略ID": "G-0008",
+        "标题": "珍稀植物展示馆2号馆",
+        "内容类型": "展馆攻略",
+        "关联地点ID": "WY-0042",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "待建立",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "地点先入库，内容结构待补",
+        "正文文件/链接": null,
+        "备注": null
+      },
+      "data": {
+        "code": "G-0008",
+        "title": "珍稀植物展示馆2号馆",
+        "guide_type": "展馆攻略",
+        "place_codes": [
+          "WY-0042"
+        ],
+        "route_codes": [],
+        "source_workflow": "待建立",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "地点先入库，内容结构待补",
+        "body_source": null,
+        "notes": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 10,
+      "code": "G-0009",
+      "raw": {
+        "攻略ID": "G-0009",
+        "标题": "兰花展示馆",
+        "内容类型": "展馆攻略",
+        "关联地点ID": "WY-0043",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "已有内容/待入库",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "已有兰花种子、真菌、传粉口播与素材",
+        "正文文件/链接": null,
+        "备注": null
+      },
+      "data": {
+        "code": "G-0009",
+        "title": "兰花展示馆",
+        "guide_type": "展馆攻略",
+        "place_codes": [
+          "WY-0043"
+        ],
+        "route_codes": [],
+        "source_workflow": "已有内容/待入库",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "已有兰花种子、真菌、传粉口播与素材",
+        "body_source": null,
+        "notes": null
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    },
+    {
+      "sheet": "攻略库",
+      "row": 11,
+      "code": "G-0010",
+      "raw": {
+        "攻略ID": "G-0010",
+        "标题": "乡愁馆与山里人的故事",
+        "内容类型": "人物/展馆攻略",
+        "关联地点ID": "WY-0044",
+        "关联路线ID": null,
+        "平台": "统一内容源",
+        "发布状态": "已有内容/待入库",
+        "发布时间": null,
+        "最后修改": null,
+        "封面/素材备注": "可关联黎老先生采访与乡愁馆素材",
+        "正文文件/链接": null,
+        "备注": "人物故事与地点信息分层呈现。"
+      },
+      "data": {
+        "code": "G-0010",
+        "title": "乡愁馆与山里人的故事",
+        "guide_type": "人物/展馆攻略",
+        "place_codes": [
+          "WY-0044"
+        ],
+        "route_codes": [],
+        "source_workflow": "已有内容/待入库",
+        "publish_status": "草稿",
+        "published_at": null,
+        "source_updated_at": null,
+        "media_note": "可关联黎老先生采访与乡愁馆素材",
+        "body_source": null,
+        "notes": "人物故事与地点信息分层呈现。"
+      },
+      "issues": [
+        {
+          "level": "warning",
+          "field": "发布状态",
+          "message": "导入为草稿；来源内容进度另存，不将“已有内容”当成已发布"
+        },
+        {
+          "level": "warning",
+          "field": "正文文件/链接",
+          "message": "没有正文文件或链接，保留攻略条目，不生成正文"
+        }
+      ],
+      "action": "insert"
+    }
+  ],
+  "summary": {
+    "total": 93,
+    "ready": 93,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 119,
+    "perSheet": {
+      "分类标签": {
+        "total": 33,
+        "ready": 33,
+        "failed": 0,
+        "skipped": 0,
+        "warnings": 0
+      },
+      "地点库": {
+        "total": 46,
+        "ready": 46,
+        "failed": 0,
+        "skipped": 0,
+        "warnings": 95
+      },
+      "路线库": {
+        "total": 4,
+        "ready": 4,
+        "failed": 0,
+        "skipped": 0,
+        "warnings": 4
+      },
+      "攻略库": {
+        "total": 10,
+        "ready": 10,
+        "failed": 0,
+        "skipped": 0,
+        "warnings": 20
+      },
+      "实地核验": {
+        "total": 0,
+        "ready": 0,
+        "failed": 0,
+        "skipped": 0,
+        "warnings": 0
+      },
+      "坐标候选匹配": {
+        "total": 0,
+        "ready": 0,
+        "failed": 0,
+        "skipped": 0,
+        "warnings": 0
+      }
+    }
+  },
+  "sheetIssues": []
+}

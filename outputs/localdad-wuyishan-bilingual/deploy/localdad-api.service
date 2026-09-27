@@ -1,0 +1,18 @@
+[Unit]
+Description=Local Dad content maintenance API
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=localdad
+Group=localdad
+WorkingDirectory=/srv/localdad/source/map
+EnvironmentFile=/etc/localdad/localdad.env
+ExecStart=/usr/bin/pnpm exec tsx backend/src/server.ts
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

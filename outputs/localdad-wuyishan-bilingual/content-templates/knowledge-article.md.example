@@ -1,0 +1,26 @@
+---
+title: "[Confirmed article title]"
+slug: "[lowercase-hyphenated-slug]"
+description: "[Search description based only on reviewed source material.]"
+eyebrow: "[Section label]"
+lang: en
+translationKey: "[same-as-slug]"
+audience: []
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+summary: "[Concise summary based only on reviewed source material.]"
+# historicalContext: "[Reviewed context supported by the sources below.]"
+heritageCategory: "[overview | natural-heritage | cultural-heritage | tea-heritage | living-heritage]"
+heritageCategories: ["[natural-heritage | cultural-heritage | tea-heritage | living-heritage]"]
+trustStatus: research-in-progress
+recordStatus: draft
+relatedPlaceIds: []
+relatedPersonIds: []
+relatedStoryIds: []
+relatedRouteIds: []
+# relatedTopics: [biodiversity, natural-history]
+videos: []
+sources: []
+---
+
+[Add reviewed source-based writing here before publication.]

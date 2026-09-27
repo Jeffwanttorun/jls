@@ -1,0 +1,24 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import LocationPage from "../../../components/LocationPage.astro";
+import MapSection from "../../../components/MapSection.astro";
+import { locationDatabase } from "../../../data/locations";
+
+export async function getStaticPaths() {
+  if (!import.meta.env.DEV) return [];
+  const entries = await getCollection("locations") as CollectionEntry<"locations">[];
+  return locationDatabase.filter((place) => place.recordStatus === "draft").map((pageData) => {
+    const entry = entries.find(({ data }) => data.recordKey === pageData.slug && data.lang === (pageData.lang ?? "en"));
+    if (!entry) throw new Error(`Missing draft narrative content for location: ${pageData.slug}`);
+    return { params:{ slug:pageData.slug }, props:{ entry, pageData } };
+  });
+}
+
+interface Props { entry: CollectionEntry<"locations">; pageData: (typeof locationDatabase)[number]; }
+const { entry, pageData } = Astro.props as Props;
+const { Content } = await render(entry);
+---
+<LocationPage {...pageData} preview={true}>
+  <Content />
+  {pageData.coordinates && <MapSection slot="map" title={`Where ${pageData.englishName} is`} placeName={pageData.englishName} latitude={pageData.coordinates.latitude} longitude={pageData.coordinates.longitude} zoom={12} note={pageData.mapNote} />}
+</LocationPage>

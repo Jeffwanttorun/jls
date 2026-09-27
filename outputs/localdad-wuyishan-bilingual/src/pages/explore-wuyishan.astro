@@ -1,0 +1,33 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import PillarLayout from "../layouts/PillarLayout.astro";
+import PillarSection from "../components/PillarSection.astro";
+import ExperienceCategories from "../components/ExperienceCategories.astro";
+import PillarBridge from "../components/PillarBridge.astro";
+import StartHereSection from "../components/StartHereSection.astro";
+
+const teaGardenPublished = (await getCollection("knowledgeArticles", ({ data }) => data.recordStatus === "published"))
+  .some((entry: CollectionEntry<"knowledgeArticles">) => entry.data.slug === "tea-garden-wuyishan");
+const teaExperienceLinks = [
+  { title:"Wuyi Rock Tea Guide", href:"/wuyi-rock-tea" },
+  { title:"Tea Culture", href:"/guides/tea" },
+  ...(teaGardenPublished ? [{ title:"Visiting a Tea Garden: Understanding Where Wuyi Tea Begins", href:"/why-wuyishan/tea-garden-wuyishan" }] : []),
+];
+---
+<PillarLayout pillarId="explore-wuyishan" title="Explore Wuyishan | Local Dad Jeff" description="Experience Wuyishan through its landscapes, routes, villages, tea culture, and everyday life." eyebrow="Explore Wuyishan">
+  <section class="pillar-introduction" aria-labelledby="explore-introduction-heading">
+    <div><p class="kicker">Visitor experience</p><h2 id="explore-introduction-heading">Understand the place, then decide how to experience it.</h2></div>
+    <div><p>After understanding why Wuyishan matters, visitors can use this section to explore its landscapes, routes, places, and experiences. Details that still need checking remain clearly marked.</p><a class="text-link" href="/wuyishan-guide">Start Here →</a></div>
+  </section>
+  <StartHereSection id="explore-start" title="Where should I start?" text="First time visiting Wuyishan? Start with the Main Scenic Area, then explore local routes, villages, tea experiences, and outdoor places to understand more of this landscape." linkLabel="Planning Your First Visit" href="/wuyishan-guide" />
+  <PillarBridge id="explore-to-why" text="Before planning your visit, understanding the nature, tea, culture, and people behind Wuyishan can make your experience richer." linkLabel="Why Wuyishan" href="/why-wuyishan" />
+  <ExperienceCategories />
+  <div class="pillar-sections">
+    <PillarSection id="main-scenic-area" title="Main Scenic Area" introduction="Explore the classic landscapes of Wuyishan, including mountains, rivers, and cultural sites." links={[{ title:"Main Scenic Area: Mountains, Rivers, and Cultural Landscapes", href:"/main-scenic-area" }, { title:"Jiuqu Stream · 九曲溪", href:"/locations/jiuqu-stream" }]} />
+    <PillarSection id="local-wuyishan" title="Local Wuyishan" introduction="Find places that help you understand Wuyishan beyond the main viewpoints." links={[{ title:"Locations", href:"/locations" }]} />
+    <PillarSection id="family-travel" title="Family Travel" introduction="Experience Wuyishan from a family perspective, with practical ideas for traveling with children." links={[{ title:"Wuyishan for Families: Experiencing Nature Together", href:"/family-travel" }]} />
+    <PillarSection id="hiking-and-rivers" title="Hiking and Rivers" introduction="Explore walking routes, rivers, and outdoor places around Wuyishan." links={[{ title:"Mountains & Outdoors", href:"/guides/outdoors" }, { title:"Jiuqu Stream · 九曲溪", href:"/locations/jiuqu-stream" }]} />
+    <PillarSection id="practical-travel" title="Practical Travel" introduction="Start with the information that helps a first visit make sense." links={[{ title:"Planning Your First Visit to Wuyishan", href:"/wuyishan-guide" }]} />
+    <PillarSection id="tea-experiences" title="Tea Experiences" introduction="Learn how tea fits into Wuyishan’s landscape and everyday life." links={teaExperienceLinks} />
+  </div>
+</PillarLayout>

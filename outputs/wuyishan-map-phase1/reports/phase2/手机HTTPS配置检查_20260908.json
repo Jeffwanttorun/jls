@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-09-08T08:40:55.917Z",
+  "checks": [
+    {
+      "path": "https://192.168.2.178:5173/access-check.html",
+      "status": 200,
+      "tlsValidated": true
+    },
+    {
+      "path": "https://192.168.2.178:5173/map",
+      "status": 200,
+      "tlsValidated": true
+    },
+    {
+      "path": "https://192.168.2.178:5173/api/admin/places",
+      "status": 401,
+      "tlsValidated": true
+    },
+    {
+      "path": "http://192.168.2.178:8766/wuyishan-local-ca.cer",
+      "status": 200,
+      "tlsValidated": false
+    },
+    {
+      "path": "http://192.168.2.178:8766/server-key.pem",
+      "status": 404,
+      "tlsValidated": false
+    },
+    {
+      "path": "http://192.168.2.178:8766/.env",
+      "status": 404,
+      "tlsValidated": false
+    }
+  ]
+}

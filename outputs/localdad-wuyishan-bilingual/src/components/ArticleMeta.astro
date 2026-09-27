@@ -1,0 +1,9 @@
+---
+import type { Locale } from "../i18n/config";
+import { formatEditorialDate, getEditorialDate, getEditorialDateLabel } from "../lib/dates";
+interface Props { published: Date; updated?: Date; lastPersonallyChecked?: Date; lang?: Locale; authorName?: string; authorHref?: string; }
+const { published, updated, lastPersonallyChecked, lang = "en", authorName = "Jeff", authorHref = "/about" } = Astro.props;
+const date = getEditorialDate(published, updated);
+const label = getEditorialDateLabel(updated);
+---
+<p class="article-meta">By <a href={authorHref} rel="author">{authorName}</a> · {label} <time datetime={date.toISOString()}>{formatEditorialDate(date, lang)}</time>{lastPersonallyChecked && <> · Personally checked by Jeff <time datetime={lastPersonallyChecked.toISOString()}>{formatEditorialDate(lastPersonallyChecked, lang)}</time></>}</p>

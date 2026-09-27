@@ -1,0 +1,53 @@
+---
+import { localeFromPath, localizedPath, ui } from "../i18n/config";
+import NavLinks from "./NavLinks.astro";
+const current = Astro.url.pathname.replace(/\/$/, "") || "/";
+const locale = localeFromPath(Astro.url.pathname);
+const labels = ui[locale];
+const pathWithoutLocale = locale === "zh" ? current.replace(/^\/zh(?=\/|$)/, "") || "/" : current;
+const translatedRoutes = new Set(["/", "/why-wuyishan", "/explore-wuyishan", "/map", "/stories-of-wuyishan", "/about"]);
+const counterpartPath = translatedRoutes.has(pathWithoutLocale)
+  ? localizedPath(pathWithoutLocale, locale === "en" ? "zh" : "en")
+  : localizedPath("/", locale === "en" ? "zh" : "en");
+const isChineseMapSurface = locale === "zh" && (current === "/zh/map" || current === "/zh/explore-wuyishan" || current.startsWith("/zh/theme/") || current.startsWith("/zh/place/"));
+const brandLabel = isChineseMapSurface ? "武夷山奶爸" : "Local Dad Jeff";
+const brandHref = isChineseMapSurface ? "/zh/explore-wuyishan" : localizedPath("/", locale);
+---
+<header class="dad-map-header">
+  <a class="brand dad-map-brand" href={brandHref}><strong>{brandLabel}</strong></a>
+  <details class="menu">
+    <summary aria-label={labels.openMenu} aria-controls="mobile-navigation" aria-expanded="false" data-open-label={labels.openMenu} data-close-label={labels.closeMenu}>•••</summary>
+    <nav id="mobile-navigation" aria-label="Main navigation">
+      <NavLinks locale={locale} labels={labels} current={current} />
+      {!isChineseMapSurface && <a class="menu-language" href={counterpartPath} hreflang={locale === "zh" ? "en-US" : "zh-CN"}>{locale === "zh" ? "English" : "中文"}</a>}
+    </nav>
+  </details>
+  <nav class="desktop" aria-label="Main navigation">
+    <NavLinks locale={locale} labels={labels} current={current} />
+  </nav>
+  <a class="language-switch" href={counterpartPath} hreflang={locale === "en" ? "zh-CN" : "en-US"}>{locale === "en" ? "中文" : "English"}</a>
+</header>
+<script is:inline>
+  document.querySelectorAll("details.menu").forEach((menu) => {
+    const summary = menu.querySelector("summary");
+    const sync = () => {
+      summary?.setAttribute("aria-expanded", String(menu.open));
+      summary?.setAttribute("aria-label", menu.open ? summary.dataset.closeLabel : summary.dataset.openLabel);
+    };
+    menu.addEventListener("toggle", sync);
+    menu.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.open) {
+        menu.open = false;
+        summary?.focus();
+      }
+    });
+    sync();
+  });
+
+  const editorialHeader = document.querySelector(".surface-editorial .dad-map-header");
+  if (editorialHeader) {
+    const syncHeader = () => editorialHeader.classList.toggle("is-scrolled", window.scrollY > 18);
+    window.addEventListener("scroll", syncHeader, { passive: true });
+    syncHeader();
+  }
+</script>

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-10T13:32:07.408Z",
+  "base": "https://127.0.0.1:5174",
+  "viewport": "390x844",
+  "screenshots": 6,
+  "tencentRequests": 50,
+  "writeRequests": 0,
+  "consoleErrors": []
+}

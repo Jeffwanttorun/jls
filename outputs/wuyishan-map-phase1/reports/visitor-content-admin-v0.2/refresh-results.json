@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "storeKind": "random-isolated-temp",
+  "beforeVersion": 1,
+  "afterVersion": 2,
+  "realDatabaseWrites": 0
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-13T17:25:44.097Z",
+  "checks": [
+    "首页、风景道及4个内容页在390px均无横向溢出",
+    "已生成10张390×844真实运行截图，覆盖首页、路线、4个内容页、导航抽屉及地图卡片",
+    "4个内容页头部返回操作均可回到来源页",
+    "4个内容页仅使用各自后台默认导航目标，均对应真实地点名称和正式坐标，漫水桥不引用已删除WY-0008",
+    "6个页面在360×800无横向溢出；固定底栏不遮挡正文且触控高度均不少于44px",
+    "原型API仍仅开放GET；浏览器零写请求、零控制台异常、无公开API别名"
+  ],
+  "pages": [
+    "/",
+    "/corridor",
+    "/place/manshui",
+    "/place/tea",
+    "/place/butterfly",
+    "/place/xingcun"
+  ],
+  "viewports": [
+    "390x844",
+    "360x800"
+  ],
+  "screenshots": 10,
+  "placeCount": 41,
+  "writeRequests": 0,
+  "navigationTargets": 4,
+  "consoleErrors": []
+}

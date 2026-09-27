@@ -1,0 +1,650 @@
+{
+  "version": "corridor-v1-20260909",
+  "authority": "用户人工确认30核心节点及V2最终调整",
+  "anchors": [
+    "WY-0001",
+    "WY-0004",
+    "WY-0005",
+    "WY-0048",
+    "WY-0049",
+    "WY-0050",
+    "WY-0008",
+    "WY-0055",
+    "WY-0056",
+    "WY-0040",
+    "WY-0058",
+    "WY-0059",
+    "WY-0041",
+    "WY-0044",
+    "WY-0043",
+    "WY-0012",
+    "WY-0015",
+    "WY-0017",
+    "WY-0018",
+    "WY-0060",
+    "WY-0021",
+    "WY-0022",
+    "WY-0027",
+    "WY-0028",
+    "WY-0030",
+    "WY-0032",
+    "WY-0033",
+    "WY-0035",
+    "WY-0036",
+    "WY-0061"
+  ],
+  "rows": [
+    {
+      "code": "WY-0001",
+      "name": "南源岭",
+      "parent_code": null,
+      "region": "南源岭",
+      "corridor_order": 100,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0002",
+      "name": "南源岭停车位置",
+      "parent_code": "WY-0001",
+      "region": "南源岭",
+      "corridor_order": 110,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0003",
+      "name": "南源岭卫生间",
+      "parent_code": "WY-0001",
+      "region": "南源岭",
+      "corridor_order": 120,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0004",
+      "name": "齐云峰观景/日出位置",
+      "parent_code": null,
+      "region": "南源岭",
+      "corridor_order": 200,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0005",
+      "name": "三才峰观景点",
+      "parent_code": null,
+      "region": "南源岭",
+      "corridor_order": 300,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0047",
+      "name": "三才峰附近卫生间",
+      "parent_code": "WY-0005",
+      "region": "南源岭",
+      "corridor_order": 310,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "SERVICE",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0006",
+      "name": "星村补给区",
+      "parent_code": null,
+      "region": "星村",
+      "corridor_order": 380,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0007",
+      "name": "星村特色小吃集中区",
+      "parent_code": "WY-0006",
+      "region": "星村",
+      "corridor_order": 390,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0048",
+      "name": "俞妹光饼",
+      "parent_code": "WY-0006",
+      "region": "星村",
+      "corridor_order": 400,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "SERVICE",
+      "place_type": "主地点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0049",
+      "name": "越南粉",
+      "parent_code": "WY-0006",
+      "region": "星村",
+      "corridor_order": 500,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "SERVICE",
+      "place_type": "主地点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0050",
+      "name": "旧竹筏码头河边",
+      "parent_code": null,
+      "region": "星村",
+      "corridor_order": 600,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "WATER",
+      "place_type": "主地点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0008",
+      "name": "漫水桥",
+      "parent_code": null,
+      "region": "星村—黄村沿线",
+      "corridor_order": 700,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0051",
+      "name": "漫水桥停车场1",
+      "parent_code": "WY-0008",
+      "region": "星村—黄村沿线",
+      "corridor_order": 710,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "PARKING",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0052",
+      "name": "漫水桥停车场2",
+      "parent_code": "WY-0008",
+      "region": "星村—黄村沿线",
+      "corridor_order": 720,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "PARKING",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0053",
+      "name": "漫水桥卫生间",
+      "parent_code": "WY-0008",
+      "region": "星村—黄村沿线",
+      "corridor_order": 730,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "SERVICE",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0009",
+      "name": "漫水桥河滩",
+      "parent_code": "WY-0008",
+      "region": "星村—黄村沿线",
+      "corridor_order": 740,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0010",
+      "name": "黄村",
+      "parent_code": null,
+      "region": "黄村",
+      "corridor_order": 780,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0011",
+      "name": "黄村沿线停靠/观察位置",
+      "parent_code": "WY-0010",
+      "region": "黄村",
+      "corridor_order": 790,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0055",
+      "name": "茶诗乐营地",
+      "parent_code": "WY-0010",
+      "region": "黄村",
+      "corridor_order": 800,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "SERVICE",
+      "place_type": "主地点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0056",
+      "name": "风吟茶海",
+      "parent_code": "WY-0010",
+      "region": "黄村",
+      "corridor_order": 900,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "VIEW",
+      "place_type": "主地点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0057",
+      "name": "风吟茶海停车场",
+      "parent_code": "WY-0056",
+      "region": "黄村",
+      "corridor_order": 910,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "PARKING",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0040",
+      "name": "黄村乌龙茶展示馆",
+      "parent_code": "WY-0010",
+      "region": "黄村",
+      "corridor_order": 1000,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0038",
+      "name": "武夷源活动区域",
+      "parent_code": null,
+      "region": "武夷源",
+      "corridor_order": 1080,
+      "current_status": "待核实",
+      "corridor_role": "branch"
+    },
+    {
+      "code": "WY-0062",
+      "name": "武夷源支线入口/分岔口",
+      "parent_code": "WY-0038",
+      "region": "武夷源",
+      "corridor_order": 1090,
+      "current_status": "待核实",
+      "corridor_role": "branch",
+      "category_code": "TRAFFIC",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0058",
+      "name": "武夷源支线1",
+      "parent_code": "WY-0038",
+      "region": "武夷源",
+      "corridor_order": 1100,
+      "current_status": "待核实",
+      "corridor_role": "branch",
+      "category_code": "TRAFFIC",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0059",
+      "name": "武夷源支线2",
+      "parent_code": "WY-0038",
+      "region": "武夷源",
+      "corridor_order": 1200,
+      "current_status": "待核实",
+      "corridor_role": "branch",
+      "category_code": "TRAFFIC",
+      "place_type": "辅助点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0039",
+      "name": "红星村",
+      "parent_code": null,
+      "region": "红星村",
+      "corridor_order": 1280,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0046",
+      "name": "红星村展馆群停车/步行起点",
+      "parent_code": "WY-0039",
+      "region": "红星村",
+      "corridor_order": 1290,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0041",
+      "name": "珍稀植物科普展示馆",
+      "parent_code": "WY-0039",
+      "region": "红星村",
+      "corridor_order": 1300,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0044",
+      "name": "乡愁馆",
+      "parent_code": "WY-0039",
+      "region": "红星村",
+      "corridor_order": 1400,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0045",
+      "name": "乡愁馆村咖/休息点",
+      "parent_code": "WY-0044",
+      "region": "红星村",
+      "corridor_order": 1410,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0043",
+      "name": "兰花展示馆",
+      "parent_code": "WY-0039",
+      "region": "红星村",
+      "corridor_order": 1500,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0012",
+      "name": "月亮湾",
+      "parent_code": null,
+      "region": "月亮湾",
+      "corridor_order": 1600,
+      "current_status": "正常",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0013",
+      "name": "月亮湾停车位置",
+      "parent_code": "WY-0012",
+      "region": "月亮湾",
+      "corridor_order": 1610,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0014",
+      "name": "月亮湾大坝观察位置",
+      "parent_code": "WY-0012",
+      "region": "月亮湾",
+      "corridor_order": 1620,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0015",
+      "name": "翡翠谷路口",
+      "parent_code": null,
+      "region": "翡翠谷支线",
+      "corridor_order": 1700,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0016",
+      "name": "翡翠谷支线",
+      "parent_code": null,
+      "region": "翡翠谷支线",
+      "corridor_order": 1710,
+      "current_status": "临时关闭",
+      "corridor_role": "branch"
+    },
+    {
+      "code": "WY-0017",
+      "name": "观山听水",
+      "parent_code": null,
+      "region": "黄村—红星沿线",
+      "corridor_order": 1800,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0018",
+      "name": "大峡谷农庄下河位置",
+      "parent_code": "WY-0017",
+      "region": "黄村—红星沿线",
+      "corridor_order": 1900,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0060",
+      "name": "小青龙瀑布",
+      "parent_code": null,
+      "region": null,
+      "corridor_order": 2000,
+      "current_status": "待核实",
+      "corridor_role": "main",
+      "category_code": "WATER",
+      "place_type": "主地点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0020",
+      "name": "皮坑口",
+      "parent_code": null,
+      "region": "皮坑",
+      "corridor_order": 2080,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0021",
+      "name": "皮坑口玩水点",
+      "parent_code": "WY-0020",
+      "region": "皮坑",
+      "corridor_order": 2100,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0022",
+      "name": "大浅滩",
+      "parent_code": null,
+      "region": "一号风景道沿线",
+      "corridor_order": 2200,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0023",
+      "name": "大浅滩停车位置",
+      "parent_code": "WY-0022",
+      "region": "一号风景道沿线",
+      "corridor_order": 2210,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0024",
+      "name": "桃源峪",
+      "parent_code": null,
+      "region": "桃源峪",
+      "corridor_order": 2280,
+      "current_status": "正常",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0025",
+      "name": "桃源峪停车位置",
+      "parent_code": "WY-0024",
+      "region": "桃源峪",
+      "corridor_order": 2290,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0026",
+      "name": "桃源峪卫生间",
+      "parent_code": "WY-0024",
+      "region": "桃源峪",
+      "corridor_order": 2295,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0027",
+      "name": "桃源峪主要观蝶区域",
+      "parent_code": "WY-0024",
+      "region": "桃源峪",
+      "corridor_order": 2300,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0028",
+      "name": "龙渡蝴蝶科普展示馆",
+      "parent_code": null,
+      "region": "红星村附近",
+      "corridor_order": 2400,
+      "current_status": "正常",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0029",
+      "name": "蝴蝶馆停车/步行入口",
+      "parent_code": "WY-0028",
+      "region": "红星村附近",
+      "corridor_order": 2410,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0030",
+      "name": "野猴谷",
+      "parent_code": null,
+      "region": "桐木区域",
+      "corridor_order": 2500,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0031",
+      "name": "野猴观察区域",
+      "parent_code": "WY-0030",
+      "region": "桐木区域",
+      "corridor_order": 2510,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0032",
+      "name": "红茶发源地展示馆",
+      "parent_code": null,
+      "region": "桐木区域",
+      "corridor_order": 2600,
+      "current_status": "正常",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0033",
+      "name": "大峡谷展示馆",
+      "parent_code": null,
+      "region": "桐木区域",
+      "corridor_order": 2700,
+      "current_status": "正常",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0035",
+      "name": "大竹岚自然观察区域",
+      "parent_code": null,
+      "region": "大竹岚",
+      "corridor_order": 2800,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0036",
+      "name": "坳头观景台",
+      "parent_code": null,
+      "region": "坳头村",
+      "corridor_order": 2900,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0037",
+      "name": "坳头星空观察区域",
+      "parent_code": "WY-0036",
+      "region": "坳头村",
+      "corridor_order": 2910,
+      "current_status": "待核实",
+      "corridor_role": "main"
+    },
+    {
+      "code": "WY-0061",
+      "name": "昆虫展示馆（在建）",
+      "parent_code": null,
+      "region": null,
+      "corridor_order": 3000,
+      "current_status": "在建",
+      "corridor_role": "main",
+      "category_code": "MUSEUM",
+      "place_type": "主地点",
+      "public_level": "P5",
+      "priority": "中"
+    },
+    {
+      "code": "WY-0019",
+      "name": "皮坑浅滩",
+      "parent_code": null,
+      "region": "皮坑",
+      "corridor_order": null,
+      "current_status": "待核实",
+      "corridor_role": "unassigned"
+    },
+    {
+      "code": "WY-0034",
+      "name": "桐木茶马古道相关入口",
+      "parent_code": null,
+      "region": "桐木区域",
+      "corridor_order": null,
+      "current_status": "待核实",
+      "corridor_role": "unassigned"
+    }
+  ],
+  "duplicate": {
+    "code": "WY-0042",
+    "canonical": "WY-0041"
+  },
+  "suggested_map_roles": {
+    "WY-0006": "group",
+    "WY-0007": "group",
+    "WY-0010": "group",
+    "WY-0038": "group",
+    "WY-0039": "group",
+    "WY-0042": "hidden"
+  }
+}

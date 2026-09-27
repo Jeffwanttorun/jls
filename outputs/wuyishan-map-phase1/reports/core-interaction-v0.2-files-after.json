@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-14T01:09:43.6932892+08:00",
+  "files": [
+    {
+      "file": "visitor-content-store/data.json",
+      "length": 53812,
+      "sha256": "E4195C334D5B97D65CA75F608F330957C724A49C6CD32C1E208791AFED1D625F"
+    },
+    {
+      "file": "visitor-content-store/seed.json",
+      "length": 54961,
+      "sha256": "35DD9D465C3A62C55F34D760423E88D6BD77241423B8489B5B9BA587675795C5"
+    },
+    {
+      "file": "prototype/src/routeGeometryData.ts",
+      "length": 81363,
+      "sha256": "0E3113C5B2BE8744DA4F229EA82FEDCFF4546027711E0243CE1F142AA0EBFB2E"
+    },
+    {
+      "file": "prototype/src/tencent.ts",
+      "length": 3343,
+      "sha256": "F9C7493B66E8F96F5385A38BC9FEEC95EBAA11FFF54D5CD47FB4219580A22FC4"
+    }
+  ],
+  "routePoints": 952,
+  "routeSegments": 6
+}

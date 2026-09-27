@@ -1,0 +1,28 @@
+---
+import MapExplorer from "./MapExplorer.astro";
+import type { MapFilterId } from "../data/map-filters";
+import type { MapDataset, MapExplorerLabels, MapTileConfiguration } from "../types/map";
+
+interface Props {
+  id: string;
+  title: string;
+  introduction?: string;
+  dataset: MapDataset;
+  tiles: MapTileConfiguration;
+  labels: MapExplorerLabels;
+  filterLabels: Partial<Record<MapFilterId, string>>;
+}
+
+const { id, title, introduction, dataset, tiles, labels, filterLabels } = Astro.props;
+---
+{dataset.places.length > 0 && <section class="content-module explore-map-section" aria-labelledby={`${id}-heading`}>
+  <header>
+    <h2 id={`${id}-heading`}>{title}</h2>
+    {introduction && <p>{introduction}</p>}
+  </header>
+  <MapExplorer id={id} dataset={dataset} tiles={tiles} labels={labels} filterLabels={filterLabels} />
+</section>}
+
+<style>
+  .explore-map-section{display:grid;gap:1.25rem}.explore-map-section>header{max-width:48rem}.explore-map-section>header p{margin-bottom:0}
+</style>

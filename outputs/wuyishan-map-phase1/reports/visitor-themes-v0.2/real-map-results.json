@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checkedAt": "2026-09-10T17:59:07.407Z",
+  "viewport": "390x844",
+  "screenshots": 7,
+  "themes": {
+    "water": 7,
+    "scenery": 7,
+    "nature": 7,
+    "tea": 4,
+    "museum": 8,
+    "food": 3
+  },
+  "kidsFilter": "independent-query-filter",
+  "multiThemeProof": "WY-0012: 玩水 + 风景 + 适合带孩子",
+  "tencentRequests": 69,
+  "writeRequests": 0,
+  "consoleErrors": []
+}

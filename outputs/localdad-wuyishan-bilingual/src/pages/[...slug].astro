@@ -1,0 +1,21 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import GuideLayout from "../layouts/GuideLayout.astro";
+import { localizedPath, type Locale } from "../i18n/config";
+import { buildSiteContentRegistry } from "../lib/site-content-registry";
+import { resolveContentReferences } from "../lib/relationships";
+const guides = await getCollection("guides") as CollectionEntry<"guides">[];
+export async function getStaticPaths() {
+  const entries = await getCollection("guides") as CollectionEntry<"guides">[];
+  return entries.filter((entry) => entry.data.recordStatus === "published").map((entry) => ({ params: { slug: localizedPath(`/${entry.data.slug}`, entry.data.lang as Locale).replace(/^\//, "") }, props: { entry } }));
+}
+interface Props { entry: CollectionEntry<"guides">; }
+const { entry } = Astro.props as Props;
+const { Content } = await render(entry);
+const related = guides.filter((item) => item.data.recordStatus === "published" && item.id !== entry.id && item.data.lang === entry.data.lang && item.data.category === entry.data.category).sort((a,b) => a.data.order - b.data.order).slice(0,3);
+const translations = guides.filter((item) => item.data.recordStatus === "published" && item.data.translationKey === entry.data.translationKey);
+const alternates = Astro.site ? translations.map((item) => ({ lang: item.data.lang as Locale, href: new URL(localizedPath(`/${item.data.slug}`, item.data.lang as Locale), Astro.site!).toString() })) : [];
+const registry = await buildSiteContentRegistry();
+const relatedGuides = resolveContentReferences(registry, "guide", entry.data.relatedGuideIds ?? [], entry.data.lang as Locale);
+---
+<GuideLayout {...entry.data} alternates={alternates} related={related} relatedGuides={relatedGuides}><Content /></GuideLayout>

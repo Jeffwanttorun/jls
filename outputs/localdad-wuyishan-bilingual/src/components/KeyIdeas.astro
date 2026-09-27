@@ -1,0 +1,15 @@
+---
+import { getTopic, type TopicId } from "../data/topics";
+
+interface Props {
+  topicIds?: TopicId[];
+}
+
+const { topicIds = [] } = Astro.props;
+const topics = [...new Set(topicIds)].map(getTopic);
+---
+{topics.length > 0 && <section class="knowledge-support-block key-ideas" aria-labelledby="key-ideas-heading">
+  <p class="kicker">Learning overview</p>
+  <h2 id="key-ideas-heading">Key ideas</h2>
+  <ul>{topics.map((topic) => <li>{topic.label}</li>)}</ul>
+</section>}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "database": "wymap_backup_audit_5a0746a0721d4c90889df497f8609894",
+  "at": "2026-09-23T00:12:15.228Z",
+  "injected": "pg_dump wrote partial content then failed",
+  "previousBackupUnchanged": true,
+  "pendingFilesRemoved": true,
+  "processExited": true
+}

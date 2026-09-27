@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+<BaseLayout lang="zh" title="茶主题已并入茶与展馆｜武夷山奶爸地图" description="原来的茶主题现已与沿路展馆内容合并为茶与展馆，原有茶园、茶文化和展示馆卡片都已保留，这个页面会自动带你前往新的主题页面。" noIndex={true}>
+  <section class="dad-empty dad-legacy-theme">
+    <h1>茶主题已并入“茶与展馆”</h1>
+    <p>正在前往新的主题页面。</p>
+    <a class="dad-card-action" href="/zh/theme/museum">进入茶与展馆 →</a>
+  </section>
+</BaseLayout>
+<script is:inline>
+  const target = new URL("/zh/theme/museum", location.origin);
+  target.search = location.search;
+  target.hash = location.hash;
+  location.replace(target);
+</script>

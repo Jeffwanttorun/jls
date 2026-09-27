@@ -1,0 +1,83 @@
+import { access, copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const defaultPhaseRoot = resolve(projectRoot, "../wuyishan-map-phase1");
+const storePath = resolve(process.env.VISITOR_CONTENT_STORE_PATH || resolve(defaultPhaseRoot, "visitor-content-store/data.json"));
+const mediaDir = resolve(process.env.VISITOR_CONTENT_MEDIA_DIR || resolve(defaultPhaseRoot, "visitor-content-store/media"));
+const publicMapPath = resolve(projectRoot, "src/data/wuyishan-public-map.json");
+const outputPath = resolve(projectRoot, "src/data/visitor-runtime.json");
+const publicMediaDir = resolve(projectRoot, "public/visitor-media");
+
+const [state, publicMap] = await Promise.all([
+  readFile(storePath, "utf8").then(JSON.parse),
+  readFile(publicMapPath, "utf8").then(JSON.parse),
+]);
+
+if (state?.schemaVersion !== 1 || !Array.isArray(state.themes) || !Array.isArray(state.placeAssignments)) {
+  throw new Error("Visitor content store is not a supported schemaVersion 1 document.");
+}
+
+const publicPlaces = new Map(publicMap.places.map((place) => [place.code, place]));
+const publishedContents = state.contents
+  .filter((item) => !item.deletedAt && item.status === "published" && item.published)
+  .map((item) => ({ id:item.id, version:item.publishedVersion, publishedAt:item.publishedAt, document:item.published }));
+
+const mediaItems = state.media?.items || {};
+const contentCoverByPlace = new Map();
+for (const content of publishedContents) {
+  if (content.document.slug === "corridor") continue;
+  const cover=mediaItems[`content.${content.id}.cover`]?.fileName;
+  if (!cover) continue;
+  for (const link of content.document.placeLinks.filter((item)=>item.role==="primary")) contentCoverByPlace.set(link.placeCode,cover);
+}
+const referencedFiles = new Set(Object.values(mediaItems).map((image) => image.fileName));
+for (const image of [state.home?.published?.heroImage]) if (image?.fileName) referencedFiles.add(image.fileName);
+
+await mkdir(publicMediaDir, { recursive:true });
+for (const fileName of referencedFiles) {
+  if (!/^[a-f0-9]{64}\.(?:jpg|png|webp)$/.test(fileName)) throw new Error(`Unsafe visitor media filename: ${fileName}`);
+  const source = resolve(mediaDir, fileName);
+  await access(source);
+  await copyFile(source, resolve(publicMediaDir, fileName));
+}
+
+const runtime = {
+  schemaVersion:1,
+  sourceStoreVersion:state.version,
+  generatedAt:new Date().toISOString(),
+  home:{ ...state.home?.published, heroImage:mediaItems["home.hero"]?.fileName || state.home?.published?.heroImage?.fileName || null },
+  themes:[...state.themes].sort((a,b)=>a.sequence-b.sequence).map(({id,name,icon,tone,description,sequence})=>({id,name,icon,tone,description,sequence,heroImage:mediaItems[`theme.${id}.hero`]?.fileName || null})),
+  places:state.placeAssignments
+    .filter((assignment)=>assignment.themeIds.length && publicPlaces.has(assignment.placeCode))
+    .map((assignment)=>{
+      const place=publicPlaces.get(assignment.placeCode);
+      const orderedThemes=[...assignment.themeIds].sort((a,b)=>(assignment.orderByTheme?.[a]??99999)-(assignment.orderByTheme?.[b]??99999));
+      const primaryTheme=orderedThemes[0];
+      return {
+        code:assignment.placeCode,
+        name:assignment.titleByTheme?.[primaryTheme] || place.name,
+        region:place.region || "一号风景道沿线",
+        summary:assignment.summaryByTheme?.[primaryTheme] || "查看地点与导航信息。",
+        summaryByTheme:assignment.summaryByTheme || {},
+        themes:assignment.themeIds,
+        familyFriendly:Boolean(assignment.familyFriendly),
+        facilities:assignment.facilities || {},
+        status:place.status || "正常",
+        orderByTheme:assignment.orderByTheme || {},
+        image:mediaItems[`place.${assignment.placeCode}.cover`]?.fileName || contentCoverByPlace.get(assignment.placeCode) || null,
+      };
+    }),
+  contents:publishedContents,
+  alerts:state.alerts.filter((alert)=>!alert.deletedAt && alert.enabled),
+  media:Object.fromEntries(Object.entries(mediaItems).map(([slot,image])=>[slot,image.fileName])),
+};
+
+await writeFile(outputPath, JSON.stringify(runtime,null,2)+"\n", "utf8");
+
+const existingFiles = new Set(await readdir(publicMediaDir));
+const missing = [...referencedFiles].filter((file)=>!existingFiles.has(file));
+if (missing.length) throw new Error(`Visitor media copy incomplete: ${missing.join(", ")}`);
+
+console.log(`Synced visitor content store v${state.version}: ${runtime.themes.length} themes, ${runtime.places.length} theme places, ${referencedFiles.size} media files.`);

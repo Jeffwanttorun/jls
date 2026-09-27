@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "真实HTTPS回收站可直接进入并与只读接口数量一致",
+    "真实HTTPS父地点显示子地点处理选项，默认解除父级；仅取消，未写入",
+    "真实公开接口P2—P5精确坐标保护保持"
+  ],
+  "errors": [],
+  "writeRequests": 0,
+  "checkedAt": "2026-09-09T15:44:33.119Z",
+  "scope": "real HTTPS; all non-GET/HEAD API requests blocked; delete dialog cancelled"
+}

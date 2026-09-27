@@ -1,0 +1,1542 @@
+{
+  "schemaVersion": 1,
+  "sourceStoreVersion": 159,
+  "generatedAt": "2026-09-26T13:12:28.904Z",
+  "home": {
+    "heroImage": "384f9134b79e063feaa103621776b8046440b871eb3923b7e090c0277627e879.jpg",
+    "eyebrow": "一位本地爸爸的沿路笔记",
+    "titleLine1": "武夷山",
+    "titleLine2": "奶爸地图",
+    "introLine1": "我在武夷山生活，",
+    "introLine2": "把自己去过、觉得不错的地方放在这里。",
+    "mapButtonLabel": "看地图",
+    "corridorButtonLabel": "一号风景道",
+    "kidsLabel": "适合带孩子",
+    "themeCardHint": "看看怎么安排",
+    "recommendationsEyebrow": "沿路挑三处",
+    "recommendationsTitle": "最近推荐",
+    "recommendationsLinkLabel": "查看路线 →",
+    "recommendationManshuiTitle": "漫水桥",
+    "recommendationManshuiSummary": "河边停一停，先看当天水况",
+    "recommendationMoonbayTitle": "月亮湾",
+    "recommendationMoonbaySummary": "在整条路线地图中查看位置",
+    "recommendationTaoyuanyuTitle": "桃源峪",
+    "recommendationTaoyuanyuSummary": "先在自然里找，再去展馆看懂",
+    "routesEyebrow": "按时间和同行人安排",
+    "routesTitle": "推荐路线",
+    "routeFamilyTitle": "带娃怎么玩",
+    "routeFamilySummary": "带孩子轻松走，优先选择方便停留的地方",
+    "routeDayTitle": "一天怎么玩",
+    "routeDaySummary": "用一天串起山水、茶和沿路停留",
+    "routeTwoDayTitle": "两天怎么玩",
+    "routeTwoDaySummary": "第一天看山水，第二天慢慢走进茶与自然"
+  },
+  "themes": [
+    {
+      "id": "water",
+      "name": "玩水",
+      "icon": "水",
+      "tone": "water",
+      "description": "先看当天水况，再选择适合停留的河边、浅滩或瀑布。",
+      "sequence": 10,
+      "heroImage": "31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64.jpg"
+    },
+    {
+      "id": "scenery",
+      "name": "风景",
+      "icon": "景",
+      "tone": "scenery",
+      "description": "沿一号风景道看山、看水、看茶园，挑适合自己的停留点。",
+      "sequence": 20,
+      "heroImage": null
+    },
+    {
+      "id": "nature",
+      "name": "自然",
+      "icon": "叶",
+      "tone": "nature",
+      "description": "从溪流、林缘和展馆认识植物、昆虫与山林环境。",
+      "sequence": 30,
+      "heroImage": null
+    },
+    {
+      "id": "museum",
+      "name": "茶与展馆",
+      "icon": "馆",
+      "tone": "museum",
+      "description": "从茶园、制茶工艺到植物、昆虫与村落展馆，按兴趣慢慢认识武夷山。",
+      "sequence": 40,
+      "heroImage": "0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12.jpg"
+    },
+    {
+      "id": "food",
+      "name": "吃的",
+      "icon": "食",
+      "tone": "food",
+      "description": "整理沿路吃饭、补给和歇脚的位置，方便按行程就近选择。",
+      "sequence": 50,
+      "heroImage": "d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5.jpg"
+    },
+    {
+      "id": "camping",
+      "name": "床车露营",
+      "icon": "营",
+      "tone": "camping",
+      "description": "整理适合床车停靠、过夜和休息的位置，方便按需要筛选。",
+      "sequence": 60,
+      "heroImage": null
+    }
+  ],
+  "places": [
+    {
+      "code": "WY-0009",
+      "name": "漫水桥玩水点",
+      "region": "星村—黄村沿线",
+      "summary": "到桥边和河滩看看当天水况",
+      "summaryByTheme": {
+        "water": "到桥边和河滩看看当天水况"
+      },
+      "themes": [
+        "water"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "water": 10
+      },
+      "image": "387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9.jpg"
+    },
+    {
+      "code": "WY-0017",
+      "name": "观山听水",
+      "region": "黄村—红星沿线",
+      "summary": "带上折叠桌椅，泡一壶茶",
+      "summaryByTheme": {
+        "scenery": "带上折叠桌椅，泡一壶茶"
+      },
+      "themes": [
+        "scenery"
+      ],
+      "familyFriendly": true,
+      "facilities": {},
+      "status": "正常",
+      "orderByTheme": {
+        "scenery": 40
+      },
+      "image": "550f7ca29d57a07eaa877dedcc6177697152dee29fbb5ef984130bd6c9da88ed.jpg"
+    },
+    {
+      "code": "WY-0018",
+      "name": "大峡谷农庄下河位置",
+      "region": "黄村—红星沿线",
+      "summary": "农庄附近的下河位置",
+      "summaryByTheme": {
+        "water": "农庄附近的下河位置"
+      },
+      "themes": [
+        "water"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "water": 40
+      },
+      "image": "935f8d636515cce0efce1d123559a538f0d1ed90c3ff71a84a3f61b1925cb943.jpg"
+    },
+    {
+      "code": "WY-0060",
+      "name": "小青龙瀑布",
+      "region": "一号风景道沿线",
+      "summary": "沿路瀑布与溪谷体验",
+      "summaryByTheme": {
+        "water": "沿路瀑布与溪谷体验"
+      },
+      "themes": [
+        "water"
+      ],
+      "familyFriendly": true,
+      "facilities": {},
+      "status": "正常",
+      "orderByTheme": {
+        "water": 50
+      },
+      "image": "cd9e84ef89dfa178a07ddca48b3cb205e834e8525d178c0bedaaf083b383316a.jpg"
+    },
+    {
+      "code": "WY-0021",
+      "name": "皮坑口玩水点",
+      "region": "皮坑",
+      "summary": "皮坑口的玩水位置",
+      "summaryByTheme": {
+        "water": "皮坑口的玩水位置"
+      },
+      "themes": [
+        "water"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "water": 60
+      },
+      "image": "fbbe17a731f7130cdefedc6cd44e56edb01593c7650fa1cd6acf8d6364ba2895.jpg"
+    },
+    {
+      "code": "WY-0022",
+      "name": "大浅滩",
+      "region": "一号风景道沿线",
+      "summary": "空间开阔的浅滩体验",
+      "summaryByTheme": {
+        "water": "空间开阔的浅滩体验"
+      },
+      "themes": [
+        "water"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "water": 70
+      },
+      "image": "1fbc6a6f0c4fe178777e247bba3c64f4070a003bf5d15f344f5b3e7ff6e55c7d.jpg"
+    },
+    {
+      "code": "WY-0004",
+      "name": "齐云峰",
+      "region": "南源岭",
+      "summary": "开车看日出和日落",
+      "summaryByTheme": {
+        "scenery": "开车看日出和日落"
+      },
+      "themes": [
+        "scenery"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "scenery": 10
+      },
+      "image": "155c12b2deaae0180ad7dc89e2394cdabb5d9448f1f5169cafdd37b4c2548760.jpg"
+    },
+    {
+      "code": "WY-0005",
+      "name": "三才峰",
+      "region": "南源岭",
+      "summary": "观鸟好去处",
+      "summaryByTheme": {
+        "scenery": "观鸟好去处"
+      },
+      "themes": [
+        "scenery"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "scenery": 20
+      },
+      "image": "de9c0e23771bc914cf899e7bd040761ceaa57451aab2362bacfca96a97eed488.jpg"
+    },
+    {
+      "code": "WY-0012",
+      "name": "月亮湾",
+      "region": "月亮湾",
+      "summary": "河湾水景与自然环境，适合观察但禁止下水",
+      "summaryByTheme": {
+        "scenery": "值得顺路，不必专程",
+        "nature": "河湾水景与自然环境，适合观察但禁止下水"
+      },
+      "themes": [
+        "scenery",
+        "nature"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "scenery": 30,
+        "nature": 5
+      },
+      "image": "a37def6b7959f3d521f56a9a5c14217f125571a1b949538c68f33bca81a97f1f.jpg"
+    },
+    {
+      "code": "WY-0056",
+      "name": "风吟茶海",
+      "region": "黄村",
+      "summary": "先从茶海景观感受茶山环境",
+      "summaryByTheme": {
+        "scenery": "茶海也是一段开阔风景",
+        "museum": "先从茶海景观感受茶山环境"
+      },
+      "themes": [
+        "scenery",
+        "museum",
+        "camping"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "scenery": 50,
+        "museum": 10
+      },
+      "image": "65ab132a70a947f4ae5a32a0784810898f10fa43307f94d10d58bc44cbacbd59.jpg"
+    },
+    {
+      "code": "WY-0035",
+      "name": "大竹岚自然观察区域",
+      "region": "大竹岚",
+      "summary": "大竹岚方向的自然观察区域",
+      "summaryByTheme": {
+        "nature": "大竹岚方向的自然观察区域"
+      },
+      "themes": [
+        "nature"
+      ],
+      "familyFriendly": true,
+      "facilities": {},
+      "status": "正常",
+      "orderByTheme": {
+        "nature": 60
+      },
+      "image": "8bce769adf62f8a1de1d9ee1302feb05acdffe3bc2f7510b1163f1e482cd46aa.jpg"
+    },
+    {
+      "code": "WY-0036",
+      "name": "坳头观景台",
+      "region": "坳头村",
+      "summary": "壮阔的武夷大峡谷",
+      "summaryByTheme": {
+        "scenery": "壮阔的武夷大峡谷"
+      },
+      "themes": [
+        "scenery"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "scenery": 70
+      },
+      "image": "13f4b4a21f8e5459ccd7778ea83260e041d17eb8c6e78a13f7c7f605341ab835.jpg"
+    },
+    {
+      "code": "WY-0024",
+      "name": "桃源峪",
+      "region": "桃源峪",
+      "summary": "溪流与林缘的自然观察起点",
+      "summaryByTheme": {
+        "nature": "溪流与林缘的自然观察起点"
+      },
+      "themes": [
+        "nature"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "nature": 10
+      },
+      "image": "c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f.jpg"
+    },
+    {
+      "code": "WY-0028",
+      "name": "龙渡蝴蝶科普展示馆",
+      "region": "红星村附近",
+      "summary": "在展馆里看懂蝴蝶与环境",
+      "summaryByTheme": {
+        "nature": "在展馆里看懂蝴蝶与环境",
+        "museum": "蝴蝶科普与自然观察衔接"
+      },
+      "themes": [
+        "nature",
+        "museum"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "nature": 20,
+        "museum": 80
+      },
+      "image": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg"
+    },
+    {
+      "code": "WY-0030",
+      "name": "野猴谷",
+      "region": "桐木区域",
+      "summary": "继续往桐木方向观察山林环境",
+      "summaryByTheme": {
+        "nature": "继续往桐木方向观察山林环境"
+      },
+      "themes": [
+        "nature"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "nature": 30
+      },
+      "image": null
+    },
+    {
+      "code": "WY-0041",
+      "name": "珍稀植物科普展示馆",
+      "region": "红星村",
+      "summary": "通过科普展示认识武夷山珍稀植物",
+      "summaryByTheme": {
+        "nature": "通过科普展示认识武夷山珍稀植物",
+        "museum": "珍稀植物主题科普展示"
+      },
+      "themes": [
+        "nature",
+        "museum"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "nature": 40,
+        "museum": 50
+      },
+      "image": "f45cca5ce439ecb32326111c319f8470f69ed9a780e20fafe1248f4a9a5d79b3.jpg"
+    },
+    {
+      "code": "WY-0043",
+      "name": "兰花展示馆",
+      "region": "红星村",
+      "summary": "从兰花主题认识本地植物",
+      "summaryByTheme": {
+        "nature": "从兰花主题认识本地植物",
+        "museum": "兰花主题展示"
+      },
+      "themes": [
+        "nature",
+        "museum"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "nature": 50,
+        "museum": 70
+      },
+      "image": "816d890131c24865835d55356aca1b9fa7a396b6087536cdc0cbdf0051fba4ca.jpg"
+    },
+    {
+      "code": "WY-0061",
+      "name": "昆虫展示馆（在建）",
+      "region": "一号风景道沿线",
+      "summary": "昆虫主题展示，开放前先留意在建状态",
+      "summaryByTheme": {
+        "nature": "昆虫主题展示，开放前先留意在建状态",
+        "museum": "昆虫主题展示，开放前先留意在建状态"
+      },
+      "themes": [
+        "nature",
+        "museum"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "在建",
+      "orderByTheme": {
+        "nature": 70,
+        "museum": 100
+      },
+      "image": "52ba2965a061f34079eb4ad22906ac8a4e73ae621bfdc4a57a0587c12d8ae482.jpg"
+    },
+    {
+      "code": "WY-0055",
+      "name": "茶诗乐营地",
+      "region": "黄村",
+      "summary": "查看地点与导航信息。",
+      "summaryByTheme": {},
+      "themes": [
+        "camping"
+      ],
+      "familyFriendly": true,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {},
+      "image": null
+    },
+    {
+      "code": "WY-0040",
+      "name": "黄村乌龙茶展示馆",
+      "region": "黄村",
+      "summary": "乌龙茶工艺与文化展示",
+      "summaryByTheme": {
+        "museum": "乌龙茶工艺与文化展示"
+      },
+      "themes": [
+        "museum"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "museum": 30
+      },
+      "image": "0d2aba2cde2f4584140807c399014bbad09023e30aeb07e1bc8c948b3282c30d.jpg"
+    },
+    {
+      "code": "WY-0032",
+      "name": "红茶发源地展示馆",
+      "region": "桐木区域",
+      "summary": "红茶发源地主题展示",
+      "summaryByTheme": {
+        "museum": "红茶发源地主题展示"
+      },
+      "themes": [
+        "museum"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "museum": 40
+      },
+      "image": "bdf32b1ea485d3229d06eeed9af00e1ccb35dd9f20437d65400872a48ecc19f8.jpg"
+    },
+    {
+      "code": "WY-0044",
+      "name": "乡愁馆",
+      "region": "红星村",
+      "summary": "红星村沿线的乡愁主题展馆",
+      "summaryByTheme": {
+        "museum": "红星村沿线的乡愁主题展馆"
+      },
+      "themes": [
+        "museum"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "museum": 60
+      },
+      "image": "db700e9510788c904857622cf34fb5cc060ababea35de13327cf282511825d60.jpg"
+    },
+    {
+      "code": "WY-0033",
+      "name": "大峡谷展示馆",
+      "region": "桐木区域",
+      "summary": "大峡谷主题展示",
+      "summaryByTheme": {
+        "museum": "大峡谷主题展示"
+      },
+      "themes": [
+        "museum"
+      ],
+      "familyFriendly": true,
+      "facilities": {},
+      "status": "正常",
+      "orderByTheme": {
+        "museum": 90
+      },
+      "image": "4f1f91b783655841f6793f263c952823d4cd0b8f6d7c5a3205639f15219b92bc.jpg"
+    },
+    {
+      "code": "WY-0048",
+      "name": "俞妹光饼",
+      "region": "星村",
+      "summary": "星村特色小吃",
+      "summaryByTheme": {
+        "food": "星村特色小吃"
+      },
+      "themes": [
+        "food"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "food": 10
+      },
+      "image": null
+    },
+    {
+      "code": "WY-0049",
+      "name": "越南粉",
+      "region": "星村",
+      "summary": "坐下来吃碗热的",
+      "summaryByTheme": {
+        "food": "坐下来吃碗热的"
+      },
+      "themes": [
+        "food"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {
+        "food": 20
+      },
+      "image": null
+    },
+    {
+      "code": "WY-0050",
+      "name": "旧竹筏码头",
+      "region": "星村",
+      "summary": "河边坐坐，挺惬意",
+      "summaryByTheme": {
+        "scenery": "河边坐坐，挺惬意"
+      },
+      "themes": [
+        "scenery"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": true,
+        "restaurant": true,
+        "lodging": true
+      },
+      "status": "正常",
+      "orderByTheme": {},
+      "image": null
+    },
+    {
+      "code": "WY-0057",
+      "name": "风吟茶海停车场",
+      "region": "黄村",
+      "summary": "查看地点与导航信息。",
+      "summaryByTheme": {},
+      "themes": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": true,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {},
+      "image": null
+    },
+    {
+      "code": "WY-0002",
+      "name": "南源岭停车位置",
+      "region": "南源岭",
+      "summary": "查看地点与导航信息。",
+      "summaryByTheme": {},
+      "themes": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {},
+      "image": null
+    },
+    {
+      "code": "WY-0003",
+      "name": "南源岭卫生间",
+      "region": "南源岭",
+      "summary": "查看地点与导航信息。",
+      "summaryByTheme": {},
+      "themes": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {},
+      "image": null
+    },
+    {
+      "code": "WY-0053",
+      "name": "漫水桥卫生间",
+      "region": "星村—黄村沿线",
+      "summary": "查看地点与导航信息。",
+      "summaryByTheme": {},
+      "themes": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {},
+      "image": null
+    },
+    {
+      "code": "WY-0052",
+      "name": "漫水桥停车场2",
+      "region": "星村—黄村沿线",
+      "summary": "查看地点与导航信息。",
+      "summaryByTheme": {},
+      "themes": [
+        "camping"
+      ],
+      "familyFriendly": false,
+      "facilities": {
+        "toilet": false,
+        "shop": false,
+        "restaurant": false,
+        "lodging": false
+      },
+      "status": "正常",
+      "orderByTheme": {},
+      "image": null
+    }
+  ],
+  "contents": [
+    {
+      "id": "vc-corridor",
+      "version": 1,
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
+      "document": {
+        "internalName": "一号风景道",
+        "slug": "corridor",
+        "title": "一号风景道",
+        "summary": "从南源岭沿真实道路一路进入坳头村方向。",
+        "themeIds": [
+          "scenery"
+        ],
+        "familyFriendly": false,
+        "placeLinks": [
+          {
+            "placeCode": "WY-0001",
+            "role": "primary",
+            "sequence": 10
+          },
+          {
+            "placeCode": "WY-0048",
+            "role": "primary",
+            "sequence": 20
+          },
+          {
+            "placeCode": "WY-0009",
+            "role": "primary",
+            "sequence": 30
+          },
+          {
+            "placeCode": "WY-0040",
+            "role": "primary",
+            "sequence": 40
+          },
+          {
+            "placeCode": "WY-0012",
+            "role": "primary",
+            "sequence": 60
+          },
+          {
+            "placeCode": "WY-0024",
+            "role": "primary",
+            "sequence": 70
+          },
+          {
+            "placeCode": "WY-0030",
+            "role": "primary",
+            "sequence": 80
+          },
+          {
+            "placeCode": "WY-0032",
+            "role": "primary",
+            "sequence": 90
+          },
+          {
+            "placeCode": "WY-0033",
+            "role": "primary",
+            "sequence": 100
+          },
+          {
+            "placeCode": "WY-0035",
+            "role": "primary",
+            "sequence": 110
+          },
+          {
+            "placeCode": "WY-0036",
+            "role": "primary",
+            "sequence": 120
+          }
+        ],
+        "navigationTargets": [
+          {
+            "placeCode": "WY-0001",
+            "label": "从南源岭开始",
+            "sequence": 10,
+            "isDefault": true
+          }
+        ],
+        "alertIds": [],
+        "modules": [
+          {
+            "id": "mod-corridor-1",
+            "kind": "route_segment",
+            "title": "南源岭段",
+            "body": "从村口和观景位置慢慢进入风景道",
+            "items": [
+              "0",
+              "399",
+              "20—60分钟",
+              "山"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 10
+          },
+          {
+            "id": "mod-corridor-2",
+            "kind": "route_segment",
+            "title": "星村段",
+            "body": "吃点东西，再到旧码头河边坐坐",
+            "items": [
+              "400",
+              "699",
+              "30—90分钟",
+              "食"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 20
+          },
+          {
+            "id": "mod-corridor-3",
+            "kind": "route_segment",
+            "title": "漫水桥段",
+            "body": "看桥、看河谷，水况合适再到河滩",
+            "items": [
+              "700",
+              "799",
+              "30—60分钟",
+              "水"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 30
+          },
+          {
+            "id": "mod-corridor-4",
+            "kind": "route_segment",
+            "title": "黄村段",
+            "body": "营地、茶海与乌龙茶展示馆",
+            "items": [
+              "800",
+              "1279",
+              "1—3小时",
+              "茶"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 40
+          },
+          {
+            "id": "mod-corridor-5",
+            "kind": "route_segment",
+            "title": "红星段",
+            "body": "把几个小展馆串起来慢慢看",
+            "items": [
+              "1280",
+              "1599",
+              "1—2小时",
+              "馆"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 50
+          },
+          {
+            "id": "mod-corridor-6",
+            "kind": "route_segment",
+            "title": "月亮湾以后",
+            "body": "河湾、支线与桃源峪自然观察",
+            "items": [
+              "1600",
+              "2499",
+              "1—3小时",
+              "湾"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 60
+          },
+          {
+            "id": "mod-corridor-7",
+            "kind": "route_segment",
+            "title": "桐木方向",
+            "body": "自然观察与红茶、峡谷主题展馆",
+            "items": [
+              "2500",
+              "9999",
+              "半天起",
+              "林"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 70
+          }
+        ],
+        "presentation": {
+          "kind": "outdoor",
+          "eyebrow": "从南源岭慢慢走到坳头村",
+          "cover": "一号风景道沿途风景",
+          "tags": [
+            "一号风景道"
+          ],
+          "corridorAnchor": 0,
+          "nearbyCodes": [],
+          "arrivalNotes": {},
+          "dadTip": "按自己的节奏慢慢走。",
+          "videoLabel": "一号风景道实拍",
+          "mediaText": "以后放真实沿路画面。"
+        },
+        "themeOrder": {}
+      }
+    },
+    {
+      "id": "vc-manshui",
+      "version": 1,
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
+      "document": {
+        "internalName": "漫水桥",
+        "slug": "manshui",
+        "title": "漫水桥",
+        "summary": "河边短暂停留点，天气和水况合适时，可以下到河滩玩水。",
+        "themeIds": [
+          "water"
+        ],
+        "familyFriendly": true,
+        "placeLinks": [
+          {
+            "placeCode": "WY-0051",
+            "role": "parking",
+            "sequence": 10
+          },
+          {
+            "placeCode": "WY-0052",
+            "role": "parking",
+            "sequence": 20
+          },
+          {
+            "placeCode": "WY-0053",
+            "role": "toilet",
+            "sequence": 30
+          },
+          {
+            "placeCode": "WY-0009",
+            "role": "primary",
+            "sequence": 40
+          }
+        ],
+        "navigationTargets": [
+          {
+            "placeCode": "WY-0051",
+            "label": "靠近漫水桥的停车选择",
+            "sequence": 10,
+            "isDefault": true
+          },
+          {
+            "placeCode": "WY-0052",
+            "label": "备用停车位置",
+            "sequence": 20,
+            "isDefault": false
+          },
+          {
+            "placeCode": "WY-0009",
+            "label": "河边活动位置",
+            "sequence": 30,
+            "isDefault": false
+          }
+        ],
+        "alertIds": [],
+        "modules": [
+          {
+            "id": "mod-manshui-1",
+            "kind": "steps",
+            "title": "我会怎么玩",
+            "body": "",
+            "items": [
+              "先看看桥和河谷",
+              "到河滩看看当天水况",
+              "再决定只是停一下，还是多玩一会儿"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 10
+          }
+        ],
+        "presentation": {
+          "kind": "outdoor",
+          "eyebrow": "河谷玩水 · 沿路停留",
+          "cover": "河谷、桥与水边环境",
+          "tags": [
+            "适合带孩子",
+            "河边",
+            "玩水",
+            "30—60分钟"
+          ],
+          "corridorAnchor": 700,
+          "nearbyCodes": [
+            "WY-0050",
+            "WY-0055",
+            "WY-0012"
+          ],
+          "arrivalNotes": {
+            "WY-0051": "靠近漫水桥的停车选择",
+            "WY-0052": "备用停车位置",
+            "WY-0053": "公共卫生间",
+            "WY-0009": "河边活动位置"
+          },
+          "dadTip": "河滩和水位会随天气变化。带孩子下水前，先看当天水流和环境。",
+          "videoLabel": "漫水桥实拍",
+          "mediaText": "以后放我的真实拍摄。先看环境，再决定当天怎么玩。"
+        },
+        "themeOrder": {}
+      }
+    },
+    {
+      "id": "vc-huangcun-tea",
+      "version": 2,
+      "publishedAt": "2026-09-26T12:36:44.342Z",
+      "document": {
+        "internalName": "黄村乌龙茶展示馆",
+        "slug": "tea",
+        "title": "黄村乌龙茶展示馆",
+        "summary": "如果想理解武夷茶怎样逐渐发展成今天的乌龙茶，这个馆值得慢慢看。",
+        "themeIds": [
+          "museum"
+        ],
+        "familyFriendly": false,
+        "placeLinks": [
+          {
+            "placeCode": "WY-0040",
+            "role": "primary",
+            "sequence": 10
+          }
+        ],
+        "navigationTargets": [
+          {
+            "placeCode": "WY-0040",
+            "label": "展示馆入口与到达位置",
+            "sequence": 10,
+            "isDefault": true
+          }
+        ],
+        "alertIds": [],
+        "modules": [
+          {
+            "id": "mod-tea-1",
+            "kind": "numbered",
+            "title": "进馆前先知道3件事",
+            "body": "",
+            "items": [
+              "武夷茶并不从一开始就是今天的乌龙茶",
+              "制作方式是在长期变化中逐渐形成的",
+              "比“谁发明了”更值得看的，是市场、工艺和饮茶方式怎样一起变化"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 10
+          },
+          {
+            "id": "mod-tea-2",
+            "kind": "checklist",
+            "title": "如果只有30分钟",
+            "body": "",
+            "items": [
+              "早期武夷茶",
+              "制作工艺变化",
+              "乌龙茶形成",
+              "工夫茶传播"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 20
+          },
+          {
+            "id": "mod-tea-3",
+            "kind": "timeline",
+            "title": "我建议这样逛",
+            "body": "",
+            "items": [
+              "早期武夷茶",
+              "工艺变化",
+              "半发酵茶逐渐形成",
+              "乌龙茶成为稳定茶类",
+              "饮茶方式传播"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 30
+          },
+          {
+            "id": "mod-tea-4",
+            "kind": "question",
+            "title": "看馆时可以留一个问题",
+            "body": "",
+            "items": [
+              "展板里的年份、人物和起源说法，哪些有明确史料，哪些可能属于后来的叙事？"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 40
+          }
+        ],
+        "presentation": {
+          "kind": "museum",
+          "eyebrow": "茶文化 · 看馆助手",
+          "cover": "展馆与制茶工艺",
+          "tags": [
+            "茶文化",
+            "展馆",
+            "30—60分钟"
+          ],
+          "corridorAnchor": 1000,
+          "nearbyCodes": [
+            "WY-0056",
+            "WY-0041",
+            "WY-0043"
+          ],
+          "arrivalNotes": {
+            "WY-0040": "展示馆入口与到达位置"
+          },
+          "dadTip": "先顺着工艺变化看，不必急着记人物和年份。这里的文字只是低保真导览示例。",
+          "videoLabel": "看馆实拍",
+          "mediaText": "以后放真实展馆画面和重点展板索引。"
+        },
+        "themeOrder": {}
+      }
+    },
+    {
+      "id": "vc-taoyuanyu-butterfly",
+      "version": 1,
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
+      "document": {
+        "internalName": "桃源峪 · 蝴蝶观察",
+        "slug": "butterfly",
+        "title": "桃源峪 · 蝴蝶观察",
+        "summary": "先去自然里找，再去展馆里看懂。",
+        "themeIds": [
+          "nature",
+          "museum"
+        ],
+        "familyFriendly": true,
+        "placeLinks": [
+          {
+            "placeCode": "WY-0024",
+            "role": "primary",
+            "sequence": 10
+          },
+          {
+            "placeCode": "WY-0025",
+            "role": "parking",
+            "sequence": 20
+          },
+          {
+            "placeCode": "WY-0026",
+            "role": "toilet",
+            "sequence": 30
+          },
+          {
+            "placeCode": "WY-0028",
+            "role": "secondary",
+            "sequence": 40
+          }
+        ],
+        "navigationTargets": [
+          {
+            "placeCode": "WY-0025",
+            "label": "停车位置",
+            "sequence": 10,
+            "isDefault": true
+          },
+          {
+            "placeCode": "WY-0024",
+            "label": "自然观察的起点",
+            "sequence": 20,
+            "isDefault": false
+          },
+          {
+            "placeCode": "WY-0028",
+            "label": "看标本、结构和科普内容",
+            "sequence": 30,
+            "isDefault": false
+          }
+        ],
+        "alertIds": [],
+        "modules": [
+          {
+            "id": "mod-butterfly-1",
+            "kind": "suitability",
+            "title": "今天适合去吗？",
+            "body": "",
+            "items": [],
+            "columns": [
+              {
+                "title": "更适合",
+                "icon": "☀",
+                "items": [
+                  "温暖",
+                  "晴朗",
+                  "风较小"
+                ]
+              },
+              {
+                "title": "活动可能较少",
+                "icon": "☂",
+                "items": [
+                  "阴雨",
+                  "低温",
+                  "风大"
+                ]
+              }
+            ],
+            "hidden": false,
+            "sequence": 10
+          },
+          {
+            "id": "mod-butterfly-2",
+            "kind": "checklist",
+            "title": "今天先找这些",
+            "body": "",
+            "items": [
+              "有没有蝴蝶？它停在哪里？",
+              "阳光下多还是阴影里多？",
+              "周围有什么植物？",
+              "溪边与林缘有什么差异？"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 20
+          },
+          {
+            "id": "mod-butterfly-3",
+            "kind": "question",
+            "title": "如果没看到蝴蝶",
+            "body": "",
+            "items": [
+              "没看到也正常。继续看看阳光、植物、林缘、溪流和环境变化。"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 30
+          },
+          {
+            "id": "mod-butterfly-4",
+            "kind": "sequence",
+            "title": "推荐顺序",
+            "body": "",
+            "items": [
+              "桃源峪：先观察真实环境",
+              "龙渡蝴蝶科普展示馆：再看标本、放大结构和显微观察"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 40
+          },
+          {
+            "id": "mod-butterfly-5",
+            "kind": "numbered",
+            "title": "和孩子聊什么",
+            "body": "",
+            "items": [
+              "“你看到它了吗？”",
+              "“它飞到哪里了？”",
+              "“这只大还是刚才那只大？”"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 50
+          },
+          {
+            "id": "mod-butterfly-6",
+            "kind": "question",
+            "title": "今天你发现了什么？",
+            "body": "",
+            "items": [
+              "这是视觉占位，不会提交或保存任何内容。"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 60
+          }
+        ],
+        "presentation": {
+          "kind": "nature",
+          "eyebrow": "自然观察 · 带孩子慢走",
+          "cover": "溪流、林缘与蝴蝶",
+          "tags": [
+            "适合带孩子",
+            "自然观察",
+            "慢走"
+          ],
+          "corridorAnchor": 2280,
+          "nearbyCodes": [
+            "WY-0022",
+            "WY-0030"
+          ],
+          "arrivalNotes": {
+            "WY-0024": "自然观察的起点",
+            "WY-0025": "停车位置",
+            "WY-0026": "公共卫生间",
+            "WY-0028": "看标本、结构和科普内容"
+          },
+          "dadTip": "把它当作一起发现，不要变成考试。没看到蝴蝶，也能看环境里发生了什么。",
+          "videoLabel": "自然观察实拍",
+          "mediaText": "以后放真实自然观察画面，不制作“保证看到”的剪辑承诺。"
+        },
+        "themeOrder": {}
+      }
+    },
+    {
+      "id": "vc-xingcun",
+      "version": 1,
+      "publishedAt": "2026-09-11T02:00:00.000+08:00",
+      "document": {
+        "internalName": "星村停一停",
+        "slug": "xingcun",
+        "title": "星村停一停",
+        "summary": "吃点东西，再去旧竹筏码头河边坐一会儿。",
+        "themeIds": [
+          "food"
+        ],
+        "familyFriendly": false,
+        "placeLinks": [
+          {
+            "placeCode": "WY-0048",
+            "role": "primary",
+            "sequence": 10
+          },
+          {
+            "placeCode": "WY-0049",
+            "role": "secondary",
+            "sequence": 20
+          },
+          {
+            "placeCode": "WY-0050",
+            "role": "nearby_service",
+            "sequence": 30
+          }
+        ],
+        "navigationTargets": [
+          {
+            "placeCode": "WY-0048",
+            "label": "简单补给",
+            "sequence": 10,
+            "isDefault": true
+          },
+          {
+            "placeCode": "WY-0049",
+            "label": "想坐下来吃点热的",
+            "sequence": 20,
+            "isDefault": false
+          },
+          {
+            "placeCode": "WY-0050",
+            "label": "时间不赶，吃完去河边走走",
+            "sequence": 30,
+            "isDefault": false
+          }
+        ],
+        "alertIds": [],
+        "modules": [
+          {
+            "id": "mod-xingcun-1",
+            "kind": "choices",
+            "title": "你现在有多少时间？",
+            "body": "",
+            "items": [
+              "15—20分钟｜简单买点吃的继续走",
+              "30—45分钟｜坐下来吃",
+              "60分钟以上｜吃完再去河边"
+            ],
+            "columns": [],
+            "hidden": false,
+            "sequence": 10
+          }
+        ],
+        "presentation": {
+          "kind": "food",
+          "eyebrow": "沿途吃喝 · 河边歇脚",
+          "cover": "光饼、越南粉与旧码头河边",
+          "tags": [
+            "吃点东西",
+            "河边",
+            "30—90分钟"
+          ],
+          "corridorAnchor": 400,
+          "nearbyCodes": [
+            "WY-0005",
+            "WY-0051"
+          ],
+          "arrivalNotes": {
+            "WY-0048": "简单补给",
+            "WY-0049": "想坐下来吃点热的",
+            "WY-0050": "时间不赶，吃完去河边走走"
+          },
+          "dadTip": "如果已经吃饱，不需要为了打卡硬吃。可以直接去河边，或者继续往漫水桥。",
+          "videoLabel": "星村沿路实拍",
+          "mediaText": "以后放真实环境和到达方式，不做评分、排行或虚构评价。"
+        },
+        "themeOrder": {}
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-moonbay-no-water",
+      "version": 1,
+      "text": "这里可以看水景，但禁止下水。",
+      "level": "注意",
+      "enabled": true,
+      "startAt": null,
+      "endAt": null,
+      "placeCodes": [
+        "WY-0012"
+      ],
+      "contentIds": [],
+      "deletedAt": null,
+      "updatedAt": "2026-09-11T02:00:00.000+08:00"
+    }
+  ],
+  "media": {
+    "home.hero": "384f9134b79e063feaa103621776b8046440b871eb3923b7e090c0277627e879.jpg",
+    "content.vc-manshui.cover": "387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9.jpg",
+    "place.WY-0012.cover": "a37def6b7959f3d521f56a9a5c14217f125571a1b949538c68f33bca81a97f1f.jpg",
+    "content.vc-taoyuanyu-butterfly.cover": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg",
+    "theme.water.hero": "31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64.jpg",
+    "place.WY-0018.cover": "935f8d636515cce0efce1d123559a538f0d1ed90c3ff71a84a3f61b1925cb943.jpg",
+    "place.WY-0017.cover": "550f7ca29d57a07eaa877dedcc6177697152dee29fbb5ef984130bd6c9da88ed.jpg",
+    "place.WY-0060.cover": "cd9e84ef89dfa178a07ddca48b3cb205e834e8525d178c0bedaaf083b383316a.jpg",
+    "place.WY-0021.cover": "fbbe17a731f7130cdefedc6cd44e56edb01593c7650fa1cd6acf8d6364ba2895.jpg",
+    "place.WY-0022.cover": "1fbc6a6f0c4fe178777e247bba3c64f4070a003bf5d15f344f5b3e7ff6e55c7d.jpg",
+    "place.WY-0004.cover": "155c12b2deaae0180ad7dc89e2394cdabb5d9448f1f5169cafdd37b4c2548760.jpg",
+    "place.WY-0005.cover": "de9c0e23771bc914cf899e7bd040761ceaa57451aab2362bacfca96a97eed488.jpg",
+    "place.WY-0056.cover": "65ab132a70a947f4ae5a32a0784810898f10fa43307f94d10d58bc44cbacbd59.jpg",
+    "place.WY-0035.cover": "8bce769adf62f8a1de1d9ee1302feb05acdffe3bc2f7510b1163f1e482cd46aa.jpg",
+    "place.WY-0036.cover": "13f4b4a21f8e5459ccd7778ea83260e041d17eb8c6e78a13f7c7f605341ab835.jpg",
+    "content.vc-corridor.cover": "aba161feede576d1480e7d2acd59623a72039ab349594f49a0e34db9e57f7a4c.jpg",
+    "content.vc-huangcun-tea.cover": "0d2aba2cde2f4584140807c399014bbad09023e30aeb07e1bc8c948b3282c30d.jpg",
+    "theme.museum.hero": "0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12.jpg",
+    "place.WY-0041.cover": "f45cca5ce439ecb32326111c319f8470f69ed9a780e20fafe1248f4a9a5d79b3.jpg",
+    "place.WY-0044.cover": "db700e9510788c904857622cf34fb5cc060ababea35de13327cf282511825d60.jpg",
+    "place.WY-0043.cover": "816d890131c24865835d55356aca1b9fa7a396b6087536cdc0cbdf0051fba4ca.jpg",
+    "place.WY-0032.cover": "bdf32b1ea485d3229d06eeed9af00e1ccb35dd9f20437d65400872a48ecc19f8.jpg",
+    "place.WY-0033.cover": "4f1f91b783655841f6793f263c952823d4cd0b8f6d7c5a3205639f15219b92bc.jpg",
+    "place.WY-0061.cover": "52ba2965a061f34079eb4ad22906ac8a4e73ae621bfdc4a57a0587c12d8ae482.jpg",
+    "theme.food.hero": "d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5.jpg",
+    "place.WY-0024.cover": "c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f.jpg",
+    "place.WY-0028.cover": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg"
+  }
+}

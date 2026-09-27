@@ -1,0 +1,100 @@
+{
+  "tables": [
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "coordinate_candidates"
+    },
+    {
+      "count": 8,
+      "unchanged": true,
+      "table": "guide_places"
+    },
+    {
+      "count": 2,
+      "unchanged": true,
+      "table": "guide_routes"
+    },
+    {
+      "count": 10,
+      "unchanged": true,
+      "table": "guides"
+    },
+    {
+      "count": 1,
+      "unchanged": true,
+      "table": "import_jobs"
+    },
+    {
+      "count": 93,
+      "unchanged": true,
+      "table": "import_rows"
+    },
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "media"
+    },
+    {
+      "count": 46,
+      "unchanged": true,
+      "table": "place_accessibility"
+    },
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "place_coordinates"
+    },
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "place_nature"
+    },
+    {
+      "count": 46,
+      "unchanged": true,
+      "table": "place_practical_info"
+    },
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "place_water"
+    },
+    {
+      "count": 46,
+      "unchanged": true,
+      "table": "places"
+    },
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "route_place_links"
+    },
+    {
+      "count": 14,
+      "unchanged": true,
+      "table": "route_stops"
+    },
+    {
+      "count": 4,
+      "unchanged": true,
+      "table": "routes"
+    },
+    {
+      "count": 33,
+      "unchanged": true,
+      "table": "taxonomy_terms"
+    },
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "verification_media"
+    },
+    {
+      "count": 0,
+      "unchanged": true,
+      "table": "verifications"
+    }
+  ],
+  "passed": true
+}

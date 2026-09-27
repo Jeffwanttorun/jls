@@ -1,0 +1,22 @@
+---
+import type { ImageAssetRecord } from "../types/image";
+
+interface Props {
+  image: ImageAssetRecord;
+  sizes?: string;
+  loading?: "eager" | "lazy";
+  priority?: boolean;
+  class?: string;
+}
+
+const { image, sizes = "100vw", loading = "lazy", priority = false, class:className } = Astro.props;
+const credit = image.credit ?? image.creditSource;
+---
+<figure class={className}>
+  <picture>
+    <source type="image/avif" srcset={image.avifSrcset} sizes={sizes} />
+    <source type="image/webp" srcset={image.webpSrcset} sizes={sizes} />
+    <img src={image.src} srcset={image.srcset} sizes={sizes} alt={image.alt} width={image.width} height={image.height} loading={loading} fetchpriority={priority ? "high" : "auto"} decoding="async" />
+  </picture>
+  {(image.caption || credit || image.source) && <figcaption>{image.caption}{credit && <> · Credit: {credit}</>}{image.source && <> · Source: {image.source}</>}</figcaption>}
+</figure>

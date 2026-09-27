@@ -1,0 +1,9 @@
+---
+import type { LinkedVideo } from "../types/content";
+interface Props { videos?: LinkedVideo[]; }
+const { videos = [] } = Astro.props;
+---
+{videos.length > 0 && <section class="content-module linked-videos" aria-labelledby="linked-videos-heading">
+  <header><p class="kicker">Videos</p><h2 id="linked-videos-heading">Related videos</h2></header>
+  <ul>{videos.map((video) => <li><a href={video.url} target="_blank" rel="noopener noreferrer">{video.title} <span aria-hidden="true">↗</span></a>{video.caption && <p>{video.caption}</p>}</li>)}</ul>
+</section>}
