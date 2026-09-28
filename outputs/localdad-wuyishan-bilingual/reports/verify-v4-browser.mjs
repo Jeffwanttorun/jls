@@ -23,7 +23,7 @@ try{
   const english=page.locator(".menu-language");
   assert((await english.getAttribute("href"))==="/map?category=water&place=WY-0009","中文到英文语言切换保留 category 与 place");
   await english.click();
-  await page.waitForURL(/\/map\?category=water&place=WY-0009$/);
+  await page.waitForURL((url)=>url.pathname.replace(/\/$/,"")==="/map"&&url.searchParams.get("category")==="water"&&url.searchParams.get("place")==="WY-0009");
   await page.locator("details.menu summary").click();
   const chinese=page.locator(".menu-language");
   assert((await chinese.getAttribute("href"))==="/zh/map?category=water&place=WY-0009","英文到中文语言切换保留 category 与 place");
