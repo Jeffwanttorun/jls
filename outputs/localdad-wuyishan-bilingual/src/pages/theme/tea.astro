@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout lang="en" title="Tea is now part of Tea and Exhibitions | Wuyishan Map" description="The former tea interest is now included in Tea and Exhibitions, which keeps the existing tea landscapes, culture, and exhibition places together." noIndex={true}>
+  <section class="dad-empty dad-legacy-theme"><h1>Tea is now part of “Tea and Exhibitions”</h1><p>Taking you to the combined interest page.</p><a class="dad-card-action" href="/theme/museum">Open Tea and Exhibitions →</a></section>
+</BaseLayout>
+<script is:inline>
+  const target=new URL("/theme/museum",location.origin);target.search=location.search;target.hash=location.hash;location.replace(target);
+</script>

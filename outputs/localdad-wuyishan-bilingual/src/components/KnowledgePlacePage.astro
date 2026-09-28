@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PlaceLocationMap from "./PlaceLocationMap.astro";
-import { knowledgePlaceById, localizedPlaceName } from "../data/knowledge-places";
+import { knowledgePlaceById, localizedPlaceName, localizedPlaceRegion } from "../data/knowledge-places";
 import { knowledgeRouteById } from "../data/knowledge-routes";
 import type { Locale } from "../i18n/config";
 import type { KnowledgePlace } from "../types/knowledge-map";
@@ -17,6 +17,8 @@ const routes=(place.routeIds??[]).flatMap((id)=>{const route=knowledgeRouteById.
 const previous=place.previousPlaceId?knowledgePlaceById.get(place.previousPlaceId):undefined;
 const next=place.nextPlaceId?knowledgePlaceById.get(place.nextPlaceId):undefined;
 const nearby=(place.nearbyPlaceIds??[]).flatMap((id)=>{const found=knowledgePlaceById.get(id);return found?[found]:[]});
+const nearbyServices=(place.nearbyServiceIds??[]).flatMap((id)=>{const found=knowledgePlaceById.get(id);return found?[found]:[]});
+const region=localizedPlaceRegion(place,locale);
 const facilities=[
   [zh?"卫生间":"Restroom",place.toilet],
   [zh?"餐馆":"Food",place.food],
@@ -44,7 +46,7 @@ const description=zh?`${name}的公开地图位置、现有实地记录、沿线
   <article class="knowledge-place">
     <a class="place-back" href={zh?"/zh/map":"/map"}>← {zh?"返回路线地图":"Back to map"}</a>
     <header class="place-heading">
-      <p class="place-region">{place.region||place.category}</p>
+      <p class="place-region">{region||localizedCategory(place.category,locale)}</p>
       <h1>{name}</h1>
       {!zh&&place.nameEn&&<p class="chinese-name">中文原名：{place.nameZh}</p>}
       {!zh&&place.englishNameStatus==="pending"&&<p class="translation-note">English name pending manual review · 中文原名：{place.nameZh}</p>}
@@ -65,8 +67,9 @@ const description=zh?`${name}的公开地图位置、现有实地记录、沿线
       {safetyNotes&&<section class="notice"><p class="section-kicker">{zh?"安全与开放提醒":"Safety and access notice"}</p><p>{safetyNotes}</p></section>}
       {(familyNotes||place.familyFriendly)&&<section><p class="section-kicker">{zh?"亲子信息":"For families"}</p><p>{familyNotes??(zh?"此地点已在现有地点资料中标记为适合带孩子。":"This place is marked as family-friendly in the current place record.")}</p></section>}
       {routes.length>0&&<section><p class="section-kicker">{zh?"所属路线":"Route"}</p>{routes.map((route)=><a class="relation-card" href={routeHref(route.slug)}><strong>{zh?route.nameZh:route.nameEn}</strong><span>→</span></a>)}</section>}
-      {(previous||next)&&<section><p class="section-kicker">{zh?"沿路线继续":"Continue along the route"}</p><div class="route-neighbors">{previous&&<a href={placeHref(previous.id)}><small>{zh?"上一站":"Previous"}</small><strong>← {localizedPlaceName(previous,locale)}</strong></a>}{next&&<a href={placeHref(next.id)}><small>{zh?"下一站":"Next"}</small><strong>{localizedPlaceName(next,locale)} →</strong></a>}</div></section>}
+      {(previous||next)&&<section><p class="section-kicker">{zh?"沿路线继续":"Continue along the route"}</p><div class="route-neighbors">{previous&&<a href={placeHref(previous.id)}><small>{zh?"上一站":"Previous stop"}</small><strong>{zh?<>← {localizedPlaceName(previous,locale)}</>:<>Previous: {localizedPlaceName(previous,locale)}</>}</strong></a>}{next&&<a href={placeHref(next.id)}><small>{zh?"下一站":"Next stop"}</small><strong>{zh?<>{localizedPlaceName(next,locale)} →</>:<>Next: {localizedPlaceName(next,locale)}</>}</strong></a>}</div></section>}
       {nearby.length>0&&<section><p class="section-kicker">{zh?"附近地点":"Nearby places"}</p><div class="nearby-grid">{nearby.map((item)=><a href={placeHref(item.id)}><strong>{localizedPlaceName(item,locale)}</strong><small>{localizedCategory(item.category,locale)}</small></a>)}</div></section>}
+      {nearbyServices.length>0&&<section><p class="section-kicker">{zh?"附近服务":"Nearby services"}</p><div class="nearby-grid">{nearbyServices.map((item)=><a href={placeHref(item.id)}><strong>{localizedPlaceName(item,locale)}</strong><small>{localizedCategory(item.category,locale)}</small></a>)}</div></section>}
       {(place.videos?.length??0)>0&&<section><p class="section-kicker">{zh?"相关视频":"Field videos"}</p><div class="link-list">{place.videos?.map((video)=><a href={video.url} target="_blank" rel="noreferrer"><strong>{video.title}</strong><small>{video.platform}{video.publishedAt?` · ${video.publishedAt}`:""}</small></a>)}</div></section>}
       {((place.storyLinks?.length??0)>0||(place.researchLinks?.length??0)>0)&&<section><p class="section-kicker">{zh?"相关故事与研究":"Stories and research"}</p><div class="link-list">{[...(place.storyLinks??[]),...(place.researchLinks??[])].map((link)=><a href={link.url}><strong>{link.title}</strong><span>→</span></a>)}</div></section>}
     </div>

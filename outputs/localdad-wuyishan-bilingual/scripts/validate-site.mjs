@@ -106,5 +106,24 @@ if (existsSync(join(root, "robots.txt"))) {
 for (const sitemapFile of files.filter((file) => /^sitemap.*\.xml$/.test(relative(root, file)))) {
   if (readFileSync(sitemapFile, "utf8").includes("/draft-preview/")) errors.push(`${relative(root, sitemapFile)}: draft preview URL is present in the sitemap`);
 }
+
+function requireBuiltContent(pathname,required=[],forbidden=[]){
+  const file=join(root,...pathname.split("/"),"index.html");
+  if(!existsSync(file)){errors.push(`${pathname}: expected built page is missing`);return;}
+  const html=readFileSync(file,"utf8");
+  for(const value of required)if(!html.includes(value))errors.push(`${pathname}: missing required knowledge-map content ${value}`);
+  for(const value of forbidden)if(html.includes(value))errors.push(`${pathname}: obsolete or invalid knowledge-map content ${value}`);
+}
+
+requireBuiltContent("zh/explore-wuyishan",["打开地图","实地路线","/zh/route/no-1-scenic-road","按兴趣找地方"],["带娃怎么玩","一天怎么玩","两天怎么玩"]);
+requireBuiltContent("explore-wuyishan",["Wuyishan Map","Open the Map","No. 1 Scenic Road","Explore by Interest","Main Scenic Area"]);
+requireBuiltContent("zh/theme/water",["/zh/map?category=water","data-empty hidden"]);
+requireBuiltContent("theme/water",["/map?category=water","View on Map","Family-friendly"]);
+requireBuiltContent("map",["Black Tea Hall","Nanyuanling Parking","\"filterIds\":[\"scenery\"]"],["Nanyuanling南源岭"]);
+requireBuiltContent("zh/map",["红茶馆","\"filterIds\":[\"scenery\"]"]);
+requireBuiltContent("route/no-1-scenic-road",["stage-support","Services and junctions","Nanyuanling","南源岭"],["Nanyuanling南源岭"]);
+requireBuiltContent("place/WY-0030",["Tongmu Area","中文原名：野猴谷"]);
+requireBuiltContent("place/WY-0032",["Previous: Wild Monkey Valley","Next: Grand Canyon Exhibition Hall"]);
+requireBuiltContent("place/WY-0002",["Nanyuanling Parking","Nearby services"],["Continue along the route"]);
 if (errors.length) throw new Error(`Site validation failed:\n${errors.map((error) => `- ${error}`).join("\n")}`);
 console.log(`Validated ${htmlFiles.length} HTML files; JavaScript files: ${clientJsBytes} bytes; max inline script per page: ${maxInlineClientJsBytes} bytes.`);

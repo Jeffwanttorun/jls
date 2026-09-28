@@ -1,0 +1,22 @@
+---
+import type { Locale } from "../i18n/config";
+import type { KnowledgeRoute } from "../types/knowledge-map";
+interface Props { route:KnowledgeRoute; locale:Locale; }
+const {route,locale}=Astro.props;
+const zh=locale==="zh";
+const name=zh?route.nameZh:route.nameEn;
+const stageNames=route.stages.map((stage)=>zh?stage.titleZh:stage.titleEn??stage.titleZh).join(" → ");
+const href=zh?`/zh/route/${route.slug}`:`/route/${route.slug}`;
+---
+<section class="explore-route" aria-labelledby={`route-${locale}`}>
+  <p class="route-label">{zh?"实地路线":"Routes"}</p>
+  <a href={href} class="route-card">
+    <div><h2 id={`route-${locale}`}>{name}</h2><p class="route-stages">{stageNames}</p><p>{zh?"沿途地点、实地记录与出行提示":"Stops, firsthand notes, and practical information along the route."}</p></div>
+    <strong>{zh?"查看路线":"View Route"} <span aria-hidden="true">→</span></strong>
+  </a>
+</section>
+<style>
+  .explore-route{padding:30px 18px 12px}.route-label{margin:0 0 10px;color:#a95d33;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.route-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:end;padding:24px;border:1px solid #d8e4de;border-radius:22px;background:#fff;color:#173f32;text-decoration:none;box-shadow:0 12px 30px rgb(34 65 52/.06)}.route-card h2{margin:0 0 10px;font-size:clamp(25px,5vw,38px)}.route-card p{margin:7px 0 0;color:#64766e;line-height:1.55}.route-card .route-stages{color:#294e40;font-weight:700}.route-card>strong{white-space:nowrap;color:#197152}
+  @media(min-width:800px){.explore-route{max-width:1120px;margin:auto;padding-inline:28px}}
+  @media(max-width:560px){.route-card{grid-template-columns:1fr;padding:19px}.route-card>strong{margin-top:3px}}
+</style>

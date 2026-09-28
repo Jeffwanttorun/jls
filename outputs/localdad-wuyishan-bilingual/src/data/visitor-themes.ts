@@ -8,6 +8,8 @@ export interface VisitorTheme {
   icon: string;
   tone: string;
   description: string;
+  nameEn: string;
+  descriptionEn: string;
   heroImage?: string;
 }
 
@@ -32,13 +34,15 @@ export interface VisitorThemePlace {
 const media = (fileName: string) => `/visitor-media/${fileName}`;
 
 const fallbackThemes: VisitorTheme[] = [
-  { id:"water", name:"玩水", icon:"水", tone:"water", description:"先看当天水况，再选择适合停留的河边、浅滩或瀑布。", heroImage:media("31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64.jpg") },
-  { id:"scenery", name:"风景", icon:"景", tone:"scenery", description:"沿一号风景道看山、看水、看茶园，挑适合自己的停留点。" },
-  { id:"nature", name:"自然", icon:"叶", tone:"nature", description:"从溪流、林缘和展馆认识植物、昆虫与山林环境。" },
-  { id:"museum", name:"茶与展馆", icon:"馆", tone:"museum", description:"从茶园、制茶工艺到植物、昆虫与村落展馆，按兴趣慢慢认识武夷山。", heroImage:media("0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12.jpg") },
-  { id:"food", name:"吃的", icon:"食", tone:"food", description:"整理沿路吃饭、补给和歇脚的位置，方便按行程就近选择。", heroImage:media("d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5.jpg") },
-  { id:"camping", name:"床车露营", icon:"营", tone:"camping", description:"整理适合床车停靠、过夜和休息的位置，方便按需要筛选。" },
+  { id:"water", name:"玩水", nameEn:"Waterside", icon:"水", tone:"water", description:"先看当天水况，再选择适合停留的河边、浅滩或瀑布。", descriptionEn:"Check current water conditions before choosing a riverbank, shallow stretch, or waterfall stop.", heroImage:media("31295183a29702ec970c672dee1feffc664b9625550c2442333f0721b475ba64.jpg") },
+  { id:"scenery", name:"风景", nameEn:"Scenery", icon:"景", tone:"scenery", description:"沿一号风景道看山、看水、看茶园，挑适合自己的停留点。", descriptionEn:"Find mountain, river, and tea-field views along No. 1 Scenic Road." },
+  { id:"nature", name:"自然", nameEn:"Nature", icon:"叶", tone:"nature", description:"从溪流、林缘和展馆认识植物、昆虫与山林环境。", descriptionEn:"Explore streams, forest edges, plants, insects, and nature exhibitions." },
+  { id:"museum", name:"茶与展馆", nameEn:"Tea and Exhibitions", icon:"馆", tone:"museum", description:"从茶园、制茶工艺到植物、昆虫与村落展馆，按兴趣慢慢认识武夷山。", descriptionEn:"Explore tea landscapes, craft traditions, natural history, and local exhibitions.", heroImage:media("0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12.jpg") },
+  { id:"food", name:"吃的", nameEn:"Food", icon:"食", tone:"food", description:"整理沿路吃饭、补给和歇脚的位置，方便按行程就近选择。", descriptionEn:"Find places for meals, simple supplies, and a break along the road.", heroImage:media("d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5.jpg") },
+  { id:"camping", name:"床车露营", nameEn:"Car Camping", icon:"营", tone:"camping", description:"整理适合床车停靠、过夜和休息的位置，方便按需要筛选。", descriptionEn:"Browse recorded places related to vehicle stops, overnight stays, and rest." },
 ];
+
+const englishThemeCopy=Object.fromEntries(fallbackThemes.map((theme)=>[theme.id,{nameEn:theme.nameEn,descriptionEn:theme.descriptionEn}])) as Record<VisitorThemeId,{nameEn:string;descriptionEn:string}>;
 
 const fallbackPlaces: VisitorThemePlace[] = [
   {code:"WY-0009",name:"漫水桥",region:"星村—黄村沿线",summary:"到桥边和河滩看看当天水况。",themes:["water"],familyFriendly:true,status:"正常",image:media("387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9.jpg")},
@@ -75,6 +79,7 @@ const runtimePlaces = runtime.places as Array<{code:string;name:string;region:st
 export const visitorThemes: VisitorTheme[] = runtimeThemes.length ? runtimeThemes.map((theme)=>({
   ...theme,
   id:theme.id as VisitorThemeId,
+  ...englishThemeCopy[theme.id as VisitorThemeId],
   heroImage:theme.heroImage?media(theme.heroImage):undefined,
 })) : fallbackThemes;
 
@@ -87,3 +92,5 @@ export const visitorThemePlaces: VisitorThemePlace[] = runtimePlaces.length ? ru
 
 export const themeById = (id: string) => visitorThemes.find((theme) => theme.id === id);
 export const placesForTheme = (id: VisitorThemeId) => visitorThemePlaces.filter((place) => place.themes.includes(id));
+export const localizedThemeName=(theme:VisitorTheme,locale:"zh"|"en")=>locale==="zh"?theme.name:theme.nameEn;
+export const localizedThemeDescription=(theme:VisitorTheme,locale:"zh"|"en")=>locale==="zh"?theme.description:theme.descriptionEn;

@@ -2,16 +2,18 @@
 import MapExplorer from "./MapExplorer.astro";
 import { wuyishanPublicMap, publicMapProvenance } from "../data/wuyishan-public-map";
 import type { Locale } from "../i18n/config";
+import { localizedThemeName, visitorThemes } from "../data/visitor-themes";
 interface Props { locale:Locale; }
 const { locale }=Astro.props;
 const dataset=wuyishanPublicMap(locale);
 const zh=locale==="zh";
 const tiles={urlTemplate:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19};
 const labels={map:zh?"武夷山奶爸公开地图":"Public Wuyishan map",filters:zh?"筛选":"Filters",relatedContent:zh?"相关内容":"Related content",openPlace:zh?"查看地点":"Open place",enableInteraction:zh?"启用地图拖动":"Enable map interaction",locateUser:zh?"我的位置":"My location",locatingUser:zh?"正在读取位置…":"Finding your location…",locationReady:zh?"已定位，蓝色圆点是你的位置":"Located. The blue dot is your position.",locationDenied:zh?"未获得定位权限，请在浏览器设置中允许位置访问":"Location permission was not granted.",locationUnavailable:zh?"暂时无法读取位置，请检查系统定位和网络":"Your location is currently unavailable.",placeId:zh?"地点编号":"Place ID",placeCategory:zh?"类型":"Type"};
+const filterLabels=Object.fromEntries(visitorThemes.map((theme)=>[theme.id,localizedThemeName(theme,locale)]));
 ---
 <section class="public-map-block" aria-labelledby="public-map-title">
   <header><p class="kicker">{zh?"公开地图":"Public map"}</p><h2 id="public-map-title">{zh?"路线地图":"No. 1 Scenic Road and places along the way"}</h2><p>{zh?`一号风景道 · ${publicMapProvenance.publicPlaceCount} 个实地记录地点`:`${publicMapProvenance.publicPlaceCount} places along No. 1 Scenic Road`}</p></header>
-  <MapExplorer id="wuyishan-public-map" {dataset} {tiles} {labels} filterLabels={{}} />
+  <MapExplorer id="wuyishan-public-map" {dataset} {tiles} {labels} {filterLabels} />
 </section>
 <style>
   .public-map-block{max-width:var(--max);margin:0 auto;padding:0 0 7rem}.public-map-block>header{max-width:760px;margin-bottom:2rem}.public-map-block h2{margin:.2em 0}.public-map-block>header>p:last-child{color:var(--muted)}#wuyishan-public-map{scroll-margin-top:6rem}

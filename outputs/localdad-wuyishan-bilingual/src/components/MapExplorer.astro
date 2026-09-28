@@ -55,7 +55,9 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
     L.tileLayer(tiles.urlTemplate, { attribution:tiles.attribution, maxZoom:tiles.maxZoom ?? 19 }).addTo(map);
     const routeLayer = L.layerGroup().addTo(map);
     const placeLayer = L.layerGroup().addTo(map);
-    const activeFilters = new Set<string>();
+    const availableFilters = new Set<string>(dataset.places.flatMap((place)=>place.filterIds));
+    const filtersFromUrl = () => new URLSearchParams(window.location.search).get("category")?.split(",").filter((value)=>availableFilters.has(value))??[];
+    const activeFilters = new Set<string>(filtersFromUrl());
     const requestedPlaceId = focusPlaceId || new URLSearchParams(window.location.search).get("place");
     let selectedPlaceId = requestedPlaceId || undefined;
     let focusedPlaceId: string | undefined;
@@ -99,6 +101,22 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
           marker.addTo(placeLayer);
         }
       }
+      for(const button of root.querySelectorAll<HTMLButtonElement>("button[data-filter]"))button.setAttribute("aria-pressed",String(activeFilters.has(button.dataset.filter!)));
+    };
+
+    const writeFiltersToUrl = () => {
+      const url=new URL(window.location.href);
+      const values=[...activeFilters];
+      if(values.length)url.searchParams.set("category",values.join(","));else url.searchParams.delete("category");
+      history.pushState({mapCategory:true},"",url);
+      window.dispatchEvent(new Event("urlstatechange"));
+    };
+
+    const readFiltersFromUrl = () => {
+      activeFilters.clear();
+      for(const value of filtersFromUrl())activeFilters.add(value);
+      refresh();
+      requestAnimationFrame(renderPlaceLabels);
     };
 
     const labelForZoom = (place:MapDataset["places"][number], zoom:number) => {
@@ -149,11 +167,12 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
       for (const button of group.querySelectorAll<HTMLButtonElement>("button[data-filter]")) button.addEventListener("click", () => {
         const value = button.dataset.filter!;
         activeFilters.has(value) ? activeFilters.delete(value) : activeFilters.add(value);
-        button.setAttribute("aria-pressed", String(activeFilters.has(value)));
+        writeFiltersToUrl();
         refresh();
         requestAnimationFrame(renderPlaceLabels);
       });
     }
+    window.addEventListener("popstate",readFiltersFromUrl);
 
     refresh();
     map.on("zoomend moveend",renderPlaceLabels);

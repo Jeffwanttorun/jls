@@ -7,7 +7,7 @@ const { compact = false } = Astro.props;
 <footer class:list={{"tool-footer":compact}}>
   {compact && locale === "zh" ? <>
     <div class="tool-footer-intro"><strong>武夷山奶爸地图</strong><p>本人走过、拍过并整理的沿路地点。</p></div>
-    <nav class="tool-footer-links" aria-label="奶爸地图快捷入口"><a href="/zh/explore-wuyishan">游客主题</a><a href="/zh/route/no-1-scenic-road">一号风景道</a><a href="/zh/why-wuyishan">了解武夷山</a></nav>
+    <nav class="tool-footer-links" aria-label="奶爸地图快捷入口"><a href="/zh/explore-wuyishan">按兴趣找地方</a><a href="/zh/route/no-1-scenic-road">一号风景道</a><a href="/zh/why-wuyishan">了解武夷山</a></nav>
     <small>© {new Date().getFullYear()} 武夷山奶爸</small>
   </> : compact ? <>
     <div class="tool-footer-intro"><strong>Local Dad Jeff · Wuyishan Map</strong><p>Places personally visited, photographed, and organized along the road.</p></div>

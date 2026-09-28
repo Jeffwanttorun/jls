@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { placesForTheme, visitorThemes, type VisitorTheme } from "../../../data/visitor-themes";
+import KnowledgeThemePage from "../../../components/KnowledgeThemePage.astro";
+import { visitorThemes, type VisitorTheme } from "../../../data/visitor-themes";
 
 export function getStaticPaths() {
   return visitorThemes.map((theme) => ({ params:{ theme:theme.id }, props:{ theme } }));
@@ -8,68 +8,5 @@ export function getStaticPaths() {
 
 interface Props { theme: VisitorTheme; }
 const { theme } = Astro.props;
-const places = placesForTheme(theme.id);
 ---
-<BaseLayout lang="zh" title={`${theme.name}｜武夷山奶爸地图`} description={`${theme.description}这里按现有游客主题映射整理沿路核心体验，并可继续筛选适合带孩子的地点。`}>
-  <section class:list={["dad-theme-hero", theme.tone, theme.heroImage && "has-photo"]} style={theme.heroImage ? `background-image:linear-gradient(90deg,rgba(15,58,43,.88),rgba(15,58,43,.40)),url(${theme.heroImage})` : undefined}>
-    <a class="dad-back-link" href="/zh/explore-wuyishan">← 全部主题</a>
-    <div class="dad-theme-title"><span>{theme.icon}</span><div><p class="dad-eyebrow">武夷山奶爸地图</p><h1>{theme.name}</h1></div></div>
-    <p>{theme.description}</p>
-    <button class="dad-kids-filter" type="button" aria-pressed="false" data-theme-family-toggle><span>✓</span>适合带孩子</button>
-  </section>
-
-  <section class="dad-theme-results" aria-labelledby="theme-results-title">
-    <div class="dad-section-heading">
-      <div><p class="dad-eyebrow">沿路值得先看</p><h2 id="theme-results-title">{theme.name}地点</h2></div>
-      <strong data-result-count>{places.length} 个</strong>
-    </div>
-    <div class="dad-place-grid">
-      {places.map((place) => (
-        <a class="dad-place-card" data-family={String(place.familyFriendly)} href={`/zh/place/${place.code}`} aria-label={`查看${place.name}详情`}>
-          {place.image ? <img src={place.image} alt={`${place.name}现场照片`} width="900" height="600" loading="lazy" decoding="async" /> : <div class:list={["dad-place-placeholder", theme.tone]}><span>{theme.icon}</span></div>}
-          <div class="dad-place-copy">
-            <div class="dad-place-topline"><p class="dad-eyebrow">{place.region}</p>{place.status === "在建" && <span class="dad-status">在建</span>}</div>
-            <h2>{place.name}</h2>
-            <p>{place.summaryByTheme?.[theme.id] || place.summary}</p>
-            <div class="dad-tags">
-              {visitorThemes.filter((item) => place.themes.includes(item.id)).map((item) => <span>{item.name}</span>)}
-              {place.familyFriendly && <span class="family">适合带孩子</span>}
-              {place.facilities?.toilet && <span class="facility">卫生间</span>}
-              {place.facilities?.shop && <span class="facility">商店</span>}
-              {place.facilities?.restaurant && <span class="facility">餐馆</span>}
-              {place.facilities?.lodging && <span class="facility">住宿</span>}
-            </div>
-            <span class="dad-card-action">查看详情 <b aria-hidden="true">→</b></span>
-          </div>
-        </a>
-      ))}
-    </div>
-    <p class="dad-empty" data-empty hidden>这个主题暂时没有同时标记为“适合带孩子”的地点。</p>
-  </section>
-</BaseLayout>
-<script is:inline>
-  const toggle = document.querySelector("[data-theme-family-toggle]");
-  const cards = [...document.querySelectorAll(".dad-place-card")];
-  const count = document.querySelector("[data-result-count]");
-  const empty = document.querySelector("[data-empty]");
-  const syncFamily = () => {
-    const active = new URLSearchParams(location.search).get("kids") === "1";
-    toggle?.setAttribute("aria-pressed", String(active));
-    toggle?.classList.toggle("active", active);
-    let visible = 0;
-    cards.forEach((card) => {
-      const show = !active || card.dataset.family === "true";
-      card.hidden = !show;
-      if (show) visible += 1;
-    });
-    if (count) count.textContent = `${visible} 个`;
-    if (empty) empty.hidden = visible !== 0;
-  };
-  toggle?.addEventListener("click", () => {
-    const url = new URL(location.href);
-    if (url.searchParams.get("kids") === "1") url.searchParams.delete("kids"); else url.searchParams.set("kids", "1");
-    history.replaceState({}, "", url);
-    syncFamily();
-  });
-  syncFamily();
-</script>
+<KnowledgeThemePage {theme} locale="zh" />

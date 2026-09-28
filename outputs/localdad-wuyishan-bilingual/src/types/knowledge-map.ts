@@ -27,7 +27,13 @@ export interface PlaceTrustStatus {
   checkedInPerson?: boolean;
   officialSource?: boolean;
   recheckBeforeGoing?: boolean;
-  lastCheckedAt?: string;
+}
+
+export type KnowledgeRoutePlaceRole = "core-stop" | "secondary-stop" | "service" | "junction" | "observation" | "food";
+
+export interface KnowledgeRoutePlaceRelationship {
+  placeId: string;
+  role: KnowledgeRoutePlaceRole;
 }
 
 export interface KnowledgePlace {
@@ -40,7 +46,7 @@ export interface KnowledgePlace {
   labelPriority: 20 | 40 | 60 | 80 | 100;
   category: string;
   coordinates: Coordinates;
-  region?: string;
+  region?: Partial<Record<Locale,string>>;
   summary?: Partial<Record<Locale,string>>;
   description?: Partial<Record<Locale,string>>;
   whyStop?: Partial<Record<Locale,string>>;
@@ -62,6 +68,7 @@ export interface KnowledgePlace {
   previousPlaceId?: string;
   nextPlaceId?: string;
   nearbyPlaceIds?: string[];
+  nearbyServiceIds?: string[];
   videos?: KnowledgeVideo[];
   storyLinks?: KnowledgeLink[];
   researchLinks?: KnowledgeLink[];
@@ -85,6 +92,7 @@ export interface KnowledgeRoute {
   summaryZh?: string;
   summaryEn?: string;
   placeIds: string[];
+  places: KnowledgeRoutePlaceRelationship[];
   stages: KnowledgeRouteStage[];
   practicalNotesZh?: string[];
   practicalNotesEn?: string[];

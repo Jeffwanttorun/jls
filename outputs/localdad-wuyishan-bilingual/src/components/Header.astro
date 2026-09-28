@@ -6,11 +6,11 @@ const locale = localeFromPath(Astro.url.pathname);
 const labels = ui[locale];
 const pathWithoutLocale = locale === "zh" ? current.replace(/^\/zh(?=\/|$)/, "") || "/" : current;
 const translatedRoutes = new Set(["/", "/why-wuyishan", "/explore-wuyishan", "/map", "/stories-of-wuyishan", "/about"]);
-const isTranslatedDetail = pathWithoutLocale.startsWith("/place/") || pathWithoutLocale.startsWith("/route/");
-const counterpartPath = translatedRoutes.has(pathWithoutLocale) || isTranslatedDetail
+const isTranslatedDetail = pathWithoutLocale.startsWith("/place/") || pathWithoutLocale.startsWith("/route/") || pathWithoutLocale.startsWith("/theme/");
+const counterpartBase = translatedRoutes.has(pathWithoutLocale) || isTranslatedDetail
   ? localizedPath(pathWithoutLocale, locale === "en" ? "zh" : "en")
   : localizedPath("/", locale === "en" ? "zh" : "en");
-const isChineseMapSurface = locale === "zh" && (current === "/zh/map" || current === "/zh/explore-wuyishan" || current.startsWith("/zh/theme/"));
+const counterpartPath=counterpartBase;
 const brandLabel = locale === "zh" ? "武夷山奶爸" : "Local Dad Jeff";
 const brandHref = localizedPath("/", locale);
 ---
@@ -20,13 +20,13 @@ const brandHref = localizedPath("/", locale);
     <summary aria-label={labels.openMenu} aria-controls="mobile-navigation" aria-expanded="false" data-open-label={labels.openMenu} data-close-label={labels.closeMenu}>•••</summary>
     <nav id="mobile-navigation" aria-label="Main navigation">
       <NavLinks locale={locale} labels={labels} current={current} />
-      {!isChineseMapSurface && <a class="menu-language" href={counterpartPath} hreflang={locale === "zh" ? "en-US" : "zh-CN"}>{locale === "zh" ? "English" : "中文"}</a>}
+      <a class="menu-language" href={counterpartPath} data-language-switch data-counterpart-base={counterpartBase} hreflang={locale === "zh" ? "en-US" : "zh-CN"}>{locale === "zh" ? "English" : "中文"}</a>
     </nav>
   </details>
   <nav class="desktop" aria-label="Main navigation">
     <NavLinks locale={locale} labels={labels} current={current} />
   </nav>
-  <a class="language-switch" href={counterpartPath} hreflang={locale === "en" ? "zh-CN" : "en-US"}>{locale === "en" ? "中文" : "English"}</a>
+  <a class="language-switch" href={counterpartPath} data-language-switch data-counterpart-base={counterpartBase} hreflang={locale === "en" ? "zh-CN" : "en-US"}>{locale === "en" ? "中文" : "English"}</a>
 </header>
 <script is:inline>
   document.querySelectorAll("details.menu").forEach((menu) => {
@@ -51,4 +51,11 @@ const brandHref = localizedPath("/", locale);
     window.addEventListener("scroll", syncHeader, { passive: true });
     syncHeader();
   }
+  const syncLanguageLinks=()=>document.querySelectorAll("[data-language-switch]").forEach((link)=>{
+    const base=link.dataset.counterpartBase;
+    if(base)link.href=`${base}${location.search}${location.hash}`;
+  });
+  window.addEventListener("popstate",syncLanguageLinks);
+  window.addEventListener("urlstatechange",syncLanguageLinks);
+  syncLanguageLinks();
 </script>

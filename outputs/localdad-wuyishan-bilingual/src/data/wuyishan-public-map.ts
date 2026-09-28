@@ -4,6 +4,7 @@ import type { MapDataset, MapPlace, MapRouteGeometry } from "../types/map";
 import { knowledgePlaces, localizedPlaceName } from "./knowledge-places";
 import { knowledgeRouteById } from "./knowledge-routes";
 import { localizedCategory } from "./knowledge-map-i18n";
+import { publicMapFilterIds, type PublicMapFilterId } from "./map-filters";
 
 type SnapshotPoint = { latitude:number; longitude:number; system:"WGS84" };
 
@@ -31,7 +32,7 @@ export function wuyishanPublicMap(locale:Locale):MapDataset {
     locale,
     translationStatus:locale==="zh"||place.englishNameStatus!=="pending"?"complete":"partial",
     coordinates:place.coordinates as SnapshotPoint,
-    categories:[],topics:[],filterIds:[],practicalInformation:[],
+    categories:[],topics:[],filterIds:(place.themeIds??[]).filter((id):id is PublicMapFilterId=>publicMapFilterIds.includes(id as PublicMapFilterId)),practicalInformation:[],
     relatedRoutes:(place.routeIds??[]).flatMap((routeId)=>{
       const route=knowledgeRouteById.get(routeId);
       return route?[{id:route.id,label:locale==="zh"?route.nameZh:route.nameEn,href:locale==="zh"?`/zh/route/${route.slug}`:`/route/${route.slug}`}]:[];

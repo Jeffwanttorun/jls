@@ -5,6 +5,9 @@ import PillarSection from "../components/PillarSection.astro";
 import ExperienceCategories from "../components/ExperienceCategories.astro";
 import PillarBridge from "../components/PillarBridge.astro";
 import StartHereSection from "../components/StartHereSection.astro";
+import KnowledgeRouteCard from "../components/KnowledgeRouteCard.astro";
+import VisitorThemeGrid from "../components/VisitorThemeGrid.astro";
+import { knowledgeRoutes } from "../data/knowledge-routes";
 
 const teaGardenPublished = (await getCollection("knowledgeArticles", ({ data }) => data.recordStatus === "published"))
   .some((entry: CollectionEntry<"knowledgeArticles">) => entry.data.slug === "tea-garden-wuyishan");
@@ -13,8 +16,12 @@ const teaExperienceLinks = [
   { title:"Tea Culture", href:"/guides/tea" },
   ...(teaGardenPublished ? [{ title:"Visiting a Tea Garden: Understanding Where Wuyi Tea Begins", href:"/why-wuyishan/tea-garden-wuyishan" }] : []),
 ];
+const route=knowledgeRoutes[0];
 ---
 <PillarLayout pillarId="explore-wuyishan" title="Explore Wuyishan | Local Dad Jeff" description="Experience Wuyishan through its landscapes, routes, villages, tea culture, and everyday life." eyebrow="Explore Wuyishan">
+  <section class="english-map-entry" aria-labelledby="english-map-heading"><p class="kicker">Firsthand map</p><h2 id="english-map-heading">Wuyishan Map</h2><p>Places, routes, and practical notes from firsthand visits around Wuyishan.</p><a class="primary" href="/map">Open the Map</a></section>
+  <KnowledgeRouteCard {route} locale="en" />
+  <VisitorThemeGrid compact locale="en" />
   <section class="pillar-introduction" aria-labelledby="explore-introduction-heading">
     <div><p class="kicker">Visitor experience</p><h2 id="explore-introduction-heading">Understand the place, then decide how to experience it.</h2></div>
     <div><p>After understanding why Wuyishan matters, visitors can use this section to explore its landscapes, routes, places, and experiences. Details that still need checking remain clearly marked.</p><a class="text-link" href="/wuyishan-guide">Start Here →</a></div>
@@ -31,3 +38,7 @@ const teaExperienceLinks = [
     <PillarSection id="tea-experiences" title="Tea Experiences" introduction="Learn how tea fits into Wuyishan’s landscape and everyday life." links={teaExperienceLinks} />
   </div>
 </PillarLayout>
+<style>
+  .english-map-entry{max-width:1120px;margin:46px auto 0;padding:34px;border-radius:26px;background:#153f31;color:#fff}.english-map-entry h2{margin:.1em 0;font-size:clamp(38px,7vw,64px);color:#fff}.english-map-entry>p:not(.kicker){max-width:650px;color:#dce9e2;font-size:18px;line-height:1.65}.english-map-entry .primary{display:inline-flex;min-height:48px;align-items:center;margin-top:10px;padding:11px 18px;border-radius:13px;background:#fff;color:#174c39;font-weight:900;text-decoration:none}
+  @media(max-width:800px){.english-map-entry{margin:20px 12px 0;padding:24px 20px;border-radius:22px}.english-map-entry>p:not(.kicker){font-size:16px}}
+</style>

@@ -1,0 +1,8 @@
+---
+import KnowledgeThemePage from "../../components/KnowledgeThemePage.astro";
+import { visitorThemes, type VisitorTheme } from "../../data/visitor-themes";
+export function getStaticPaths(){return visitorThemes.map((theme)=>({params:{theme:theme.id},props:{theme}}));}
+interface Props { theme:VisitorTheme; }
+const {theme}=Astro.props;
+---
+<KnowledgeThemePage {theme} locale="en" />
