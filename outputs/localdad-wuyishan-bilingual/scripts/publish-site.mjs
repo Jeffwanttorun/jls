@@ -18,6 +18,14 @@ const buildDir=resolve(root,"dist");
 const execFileAsync=promisify(execFile);
 const {stdout:headOutput}=await execFileAsync("git",["rev-parse","HEAD"],{cwd:root});
 const repositoryHead=headOutput.trim();
+const gitRemote=process.env.SITE_GIT_REMOTE||"origin";
+const gitBranch=process.env.SITE_GIT_BRANCH||"main";
+const {stdout:remoteOutput}=await execFileAsync("git",["ls-remote",gitRemote,`refs/heads/${gitBranch}`],{cwd:root});
+const remoteHead=remoteOutput.trim().split(/\s+/)[0];
+if(!remoteHead)throw new Error(`Cannot resolve ${gitRemote}/${gitBranch}; publication was not started.`);
+if(repositoryHead!==remoteHead){
+ throw new Error(`Server checkout ${repositoryHead} does not match ${gitRemote}/${gitBranch} ${remoteHead}; pull the repository before publishing.`);
+}
 
 const sha256=(buffer)=>createHash("sha256").update(buffer).digest("hex");
 const mapBefore=await readFile(resolve(root,"src/data/wuyishan-public-map.json"));
@@ -39,7 +47,7 @@ if(sha256(mapAfter)!==mapHashBefore)throw new Error("Protected public map geomet
 await mkdir(releaseDir,{recursive:false});
 await cp(buildDir,releaseDir,{recursive:true});
 const state=JSON.parse(await readFile(storePath,"utf8"));
-await writeFile(resolve(releaseDir,"release.json"),JSON.stringify({release:stamp,publishedAt:new Date().toISOString(),repositoryHead,visitorStoreVersion:state.version,mapHash:mapHashBefore},null,2)+"\n");
+await writeFile(resolve(releaseDir,"release.json"),JSON.stringify({release:stamp,publishedAt:new Date().toISOString(),repositoryHead,gitRemote,gitBranch,remoteHead,visitorStoreVersion:state.version,mapHash:mapHashBefore},null,2)+"\n");
 
 await mkdir(dirname(currentLink),{recursive:true});
 let previousTarget;
@@ -70,4 +78,4 @@ try{
  throw error;
 }
 
-console.log(JSON.stringify({ok:true,repositoryHead,projectDir:root,buildDir,release:stamp,releaseDir,currentLink,visitorStoreVersion:state.version,mapHash:mapHashBefore}));
+console.log(JSON.stringify({ok:true,repositoryHead,gitRemote,gitBranch,remoteHead,projectDir:root,buildDir,release:stamp,releaseDir,currentLink,visitorStoreVersion:state.version,mapHash:mapHashBefore}));
