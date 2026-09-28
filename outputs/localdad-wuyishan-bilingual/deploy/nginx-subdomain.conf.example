@@ -34,6 +34,14 @@ server {
     }
 
     location / {
+        # HTML and extensionless routes must revalidate so mobile webviews do
+        # not keep an older release after the current symlink changes.
+        add_header Cache-Control "no-cache, must-revalidate" always;
         try_files $uri $uri/ $uri/index.html =404;
+    }
+
+    location /_astro/ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        try_files $uri =404;
     }
 }

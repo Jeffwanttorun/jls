@@ -16,11 +16,11 @@ const teaExperienceLinks = [
   { title:"Tea Culture", href:"/guides/tea" },
   ...(teaGardenPublished ? [{ title:"Visiting a Tea Garden: Understanding Where Wuyi Tea Begins", href:"/why-wuyishan/tea-garden-wuyishan" }] : []),
 ];
-const route=knowledgeRoutes[0];
+const featuredRoutes=knowledgeRoutes.filter((route)=>route.published&&route.featured).sort((a,b)=>a.order-b.order);
 ---
 <PillarLayout pillarId="explore-wuyishan" title="Explore Wuyishan | Local Dad Jeff" description="Experience Wuyishan through its landscapes, routes, villages, tea culture, and everyday life." eyebrow="Explore Wuyishan">
   <section class="english-map-entry" aria-labelledby="english-map-heading"><p class="kicker">Firsthand map</p><h2 id="english-map-heading">Wuyishan Map</h2><p>Places, routes, and practical notes from firsthand visits around Wuyishan.</p><a class="primary" href="/map">Open the Map</a></section>
-  <KnowledgeRouteCard {route} locale="en" />
+  {featuredRoutes.map((route)=><KnowledgeRouteCard {route} locale="en" />)}
   <VisitorThemeGrid compact locale="en" />
   <section class="pillar-introduction" aria-labelledby="explore-introduction-heading">
     <div><p class="kicker">Visitor experience</p><h2 id="explore-introduction-heading">Understand the place, then decide how to experience it.</h2></div>

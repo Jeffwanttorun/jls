@@ -14,7 +14,8 @@ type SnapshotPlace = (typeof snapshot.places)[number] & { ownerApproved?:boolean
 
 const runtimeById = new Map((runtime.places as RuntimePlace[]).map((place)=>[place.code,place]));
 const routeIdsByPlace = new Map<string,string[]>();
-for(const route of knowledgeRoutes) for(const placeId of route.placeIds){
+const publicKnowledgeRoutes=knowledgeRoutes.filter((route)=>route.published);
+for(const route of publicKnowledgeRoutes) for(const placeId of route.placeIds){
   const routeIds=routeIdsByPlace.get(placeId)??[];
   routeIds.push(route.id);
   routeIdsByPlace.set(placeId,routeIds);
@@ -112,14 +113,14 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
 
 const pointById=new Map(basePlaces.map((place)=>[place.id,place]));
 if(pointById.size!==snapshot.places.length)throw new Error("Knowledge map contains duplicate place IDs");
-for(const route of knowledgeRoutes)for(const placeId of route.placeIds)if(!pointById.has(placeId))throw new Error(`Unknown place ${placeId} in route ${route.id}`);
+for(const route of publicKnowledgeRoutes)for(const placeId of route.placeIds)if(!pointById.has(placeId))throw new Error(`Unknown place ${placeId} in route ${route.id}`);
 function squaredDistance(a:KnowledgePlace,b:KnowledgePlace){
   const lat=a.coordinates.latitude-b.coordinates.latitude;
   const lng=a.coordinates.longitude-b.coordinates.longitude;
   return lat*lat+lng*lng;
 }
 
-for(const route of knowledgeRoutes){
+for(const route of publicKnowledgeRoutes){
   const primarySequence=route.places.filter((item)=>item.role==="core-stop").map((item)=>item.placeId);
   primarySequence.forEach((placeId,index)=>{
     const place=pointById.get(placeId);
@@ -129,11 +130,11 @@ for(const route of knowledgeRoutes){
   });
 }
 for(const place of basePlaces){
-  const visitorCandidates=basePlaces.filter((other)=>other.id!==place.id&&knowledgeRoutes.some((route)=>{
+  const visitorCandidates=basePlaces.filter((other)=>other.id!==place.id&&publicKnowledgeRoutes.some((route)=>{
     const role=routeRoleForPlace(route,other.id);
     return role!=="service"&&role!=="junction";
   }));
-  const sameStageServiceIds=new Set(knowledgeRoutes.flatMap((route)=>
+  const sameStageServiceIds=new Set(publicKnowledgeRoutes.flatMap((route)=>
     route.stages
       .filter((stage)=>stage.placeIds.includes(place.id))
       .flatMap((stage)=>stage.placeIds.filter((placeId)=>routeRoleForPlace(route,placeId)==="service")),

@@ -5,7 +5,7 @@ import KnowledgeRouteCard from "../../components/KnowledgeRouteCard.astro";
 import runtime from "../../data/visitor-runtime.json";
 import { knowledgeRoutes } from "../../data/knowledge-routes";
 const heroImage=runtime.home.heroImage?`/visitor-media/${runtime.home.heroImage}`:null;
-const route=knowledgeRoutes[0];
+const featuredRoutes=knowledgeRoutes.filter((route)=>route.published&&route.featured).sort((a,b)=>a.order-b.order);
 ---
 <BaseLayout lang="zh" title="探索武夷山｜武夷山奶爸" description="打开武夷山奶爸地图，按实地路线和兴趣主题查看 Jeff 走过并记录的地点、现场照片和实用出行信息，并继续进入完整地点详情。">
   <section class="dad-home-hero">
@@ -13,6 +13,6 @@ const route=knowledgeRoutes[0];
     <div class="dad-home-shade"></div>
     <div class="dad-home-copy"><p class="dad-eyebrow light">一位本地爸爸的沿路笔记</p><h1>武夷山<br/>奶爸地图</h1><p>我在武夷山生活，<br/>把自己实地走过的地点、路线和出行信息整理在这里。</p><div class="dad-home-actions"><a class="dad-primary" href="/zh/map">打开地图</a></div></div>
   </section>
-  <KnowledgeRouteCard {route} locale="zh" />
+  {featuredRoutes.map((route)=><KnowledgeRouteCard {route} locale="zh" />)}
   <VisitorThemeGrid compact locale="zh" />
 </BaseLayout>

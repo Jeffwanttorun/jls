@@ -2,7 +2,8 @@ import snapshot from "./wuyishan-public-map.json";
 import type { Locale } from "../i18n/config";
 import type { MapDataset, MapPlace, MapRouteGeometry } from "../types/map";
 import { knowledgePlaces, localizedPlaceName } from "./knowledge-places";
-import { knowledgeRouteById } from "./knowledge-routes";
+import { knowledgeRouteById, knowledgeRoutes } from "./knowledge-routes";
+import type { KnowledgeRoute } from "../types/knowledge-map";
 import { localizedCategory } from "./knowledge-map-i18n";
 import { publicMapFilterIds, type PublicMapFilterId } from "./map-filters";
 
@@ -18,6 +19,8 @@ export const publicMapProvenance = {
 } as const;
 
 export const publicMapPlaceCodes = new Set(snapshot.places.map((place)=>place.code));
+const publicMapGeometryIds = new Set(snapshot.routes.map((route)=>route.id));
+for(const route of knowledgeRoutes)for(const geometryId of route.geometryRouteIds)if(!publicMapGeometryIds.has(geometryId))throw new Error(`Unknown map geometry ${geometryId} in route ${route.id}`);
 
 export function wuyishanPublicMap(locale:Locale):MapDataset {
   const places:MapPlace[]=knowledgePlaces.map((place)=>({
@@ -40,11 +43,19 @@ export function wuyishanPublicMap(locale:Locale):MapDataset {
     relatedStories:(place.storyLinks??[]).map((link,index)=>({id:`story-${place.id}-${index}`,label:link.title,href:link.url})),
     relatedVideos:[],
   }));
-  const routes:MapRouteGeometry[]=snapshot.routes.map((route)=>({
+  const publishedGeometryIds=new Set(knowledgeRoutes.filter((route)=>route.published).flatMap((route)=>route.geometryRouteIds));
+  const routes:MapRouteGeometry[]=snapshot.routes.filter((route)=>publishedGeometryIds.has(route.id)).map((route)=>({
     id:route.id,
     names:{en:"Wuyishan No. 1 Scenic Road",zh:"武夷山国家公园一号风景道"},
     path:route.path as SnapshotPoint[],
     relatedPlaceIds:[],topics:[],
   }));
   return {locale,routingMode:"current",places,routes};
+}
+
+export function buildRouteMapDataset(route:KnowledgeRoute,locale:Locale):MapDataset {
+  const complete=wuyishanPublicMap(locale);
+  const placeIds=new Set(route.placeIds);
+  const geometryIds=new Set(route.geometryRouteIds);
+  return {...complete,places:complete.places.filter((place)=>placeIds.has(place.id)),routes:complete.routes.filter((geometry)=>geometryIds.has(geometry.id))};
 }

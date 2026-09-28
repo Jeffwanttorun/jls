@@ -87,11 +87,15 @@ export interface KnowledgeRouteStage {
 export interface KnowledgeRoute {
   id: string;
   slug: string;
+  published: boolean;
+  featured: boolean;
+  order: number;
   nameZh: string;
   nameEn: string;
   summaryZh?: string;
   summaryEn?: string;
   placeIds: string[];
+  geometryRouteIds: string[];
   places: KnowledgeRoutePlaceRelationship[];
   stages: KnowledgeRouteStage[];
   practicalNotesZh?: string[];

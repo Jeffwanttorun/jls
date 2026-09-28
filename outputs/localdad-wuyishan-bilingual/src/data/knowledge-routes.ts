@@ -28,16 +28,22 @@ const scenicRoadPlaceIds=scenicRoadStages.flatMap((stage)=>[...stage.placeIds]);
 export const knowledgeRoutes: readonly KnowledgeRoute[] = [{
   id:"no-1-scenic-road",
   slug:"no-1-scenic-road",
+  published:true,
+  featured:true,
+  order:10,
   nameZh:"一号风景道",
   nameEn:"No. 1 Scenic Road",
   summaryZh:"从南源岭出发，沿现有公开路线依次理解村庄、河谷、茶、展馆与山林地点。",
   summaryEn:"Follow the published route from Nanyuanling through villages, river valleys, tea areas, exhibition halls, and forest stops.",
   placeIds:scenicRoadPlaceIds,
+  geometryRouteIds:["corridor-01","corridor-02","corridor-03","corridor-04","corridor-05","corridor-06"],
   places:scenicRoadPlaceIds.map((placeId)=>({placeId,role:scenicRoadPlaceRoles[placeId]})),
   stages:scenicRoadStages.map((stage)=>({...stage,placeIds:[...stage.placeIds]})),
 }];
 
 for(const route of knowledgeRoutes){
+  if(!Number.isFinite(route.order))throw new Error(`Route order is invalid for ${route.id}`);
+  if(route.featured&&!route.published)throw new Error(`Featured route must be published: ${route.id}`);
   const uniquePlaceIds=new Set(route.placeIds);
   if(uniquePlaceIds.size!==route.placeIds.length)throw new Error(`Duplicate place relationship in route ${route.id}`);
   const stagePlaceIds=route.stages.flatMap((stage)=>stage.placeIds);

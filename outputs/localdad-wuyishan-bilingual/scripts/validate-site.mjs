@@ -121,7 +121,8 @@ requireBuiltContent("zh/theme/water",["/zh/map?category=water","data-empty hidde
 requireBuiltContent("theme/water",["/map?category=water","View on Map","Family-friendly"]);
 requireBuiltContent("map",["Black Tea Hall","Nanyuanling Parking","\"filterIds\":[\"scenery\"]"],["Nanyuanling南源岭"]);
 requireBuiltContent("zh/map",["红茶馆","\"filterIds\":[\"scenery\"]"]);
-requireBuiltContent("route/no-1-scenic-road",["stage-support","Services and junctions","Nanyuanling","南源岭"],["Nanyuanling南源岭"]);
+requireBuiltContent("route/no-1-scenic-road",["9 core stops · 41 mapped places","stage-support","Services and junctions","Nanyuanling","南源岭"],["Nanyuanling南源岭"]);
+requireBuiltContent("zh/route/no-1-scenic-road",["9 个核心停留点 · 41 个已记录地图点","实地核验"]);
 requireBuiltContent("place/WY-0030",["Tongmu Area","中文原名：野猴谷"]);
 requireBuiltContent("place/WY-0032",["Previous: Wild Monkey Valley","Next: Grand Canyon Exhibition Hall"]);
 requireBuiltContent("place/WY-0002",["Nanyuanling Parking","Nearby services"],["Continue along the route"]);

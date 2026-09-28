@@ -8,6 +8,7 @@
     "start": "astro dev",
     "content:sync-visitor": "node scripts/sync-visitor-content.mjs",
     "site:publish": "node scripts/publish-site.mjs",
+    "site:assert-production": "node scripts/assert-production.mjs",
     "site:rollback": "node scripts/rollback-site.mjs",
     "check": "astro check",
     "build": "node scripts/sync-visitor-content.mjs && node scripts/image-tools.mjs check && node scripts/verify-public-map.mjs && astro check && astro build && node scripts/validate-site.mjs",
