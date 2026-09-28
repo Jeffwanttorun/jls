@@ -13,14 +13,20 @@ const navigation=publicPlace?.navigationCoordinates;
 const webNavigation=navigation?`https://map.qq.com/nav/drive#routes/page?${new URLSearchParams({cond:"0",epointx:String(navigation.longitude),epointy:String(navigation.latitude),eword:placeName,sword:"我的位置",transport:"2"})}`:"";
 const appNavigation=navigation?`qqmap://map/routeplan?${new URLSearchParams({type:"drive",from:"我的位置",fromcoord:"CurrentLocation",to:placeName,tocoord:`${navigation.latitude},${navigation.longitude}`})}`:"";
 const tiles={urlTemplate:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19};
-const labels={map:zh?`${placeName}地图位置`:`Map location for ${placeName}`,filters:zh?"筛选":"Filters",relatedContent:zh?"相关内容":"Related content",openPlace:zh?"当前地点":"Current place",enableInteraction:zh?"启用地图拖动":"Enable map interaction",locateUser:zh?"我的位置":"My location",locatingUser:zh?"正在读取位置…":"Finding your location…",locationReady:zh?"已定位，蓝色圆点是你的位置":"Located. The blue dot is your position.",locationDenied:zh?"未获得定位权限，请在浏览器设置中允许位置访问":"Location permission was not granted.",locationUnavailable:zh?"暂时无法读取位置，请检查系统定位和网络":"Your location is currently unavailable.",placeId:zh?"地点编号":"Place ID",placeCategory:zh?"类型":"Type"};
+const labels={map:zh?`${placeName}地图位置`:`Map location for ${placeName}`,filters:zh?"筛选":"Filters",relatedContent:zh?"相关内容":"Related content",openPlace:zh?"当前地点":"Current place",placesList:zh?"地点资料":"Place information",enableInteraction:zh?"启用地图拖动":"Enable map interaction",locateUser:zh?"我的位置":"My location",locatingUser:zh?"正在读取位置…":"Finding your location…",locationReady:zh?"已定位，蓝色圆点是你的位置":"Located. The blue dot is your position.",locationDenied:zh?"未获得定位权限，请在浏览器设置中允许位置访问":"Location permission was not granted.",locationUnavailable:zh?"暂时无法读取位置，请检查系统定位和网络":"Your location is currently unavailable.",placeId:zh?"地点编号":"Place ID",placeCategory:zh?"类型":"Type"};
 ---
 {dataset.places.length > 0 && <section class="place-location-map" aria-label={zh?`${placeName}地图位置`:`Map location for ${placeName}`}>
   <p class="dad-eyebrow place-map-label">{zh?"地图与导航":"Map and directions"}</p>
+  {navigation&&<div class="direction-reference"><div><strong>{zh?"导航名称":"Chinese search name"}</strong><span data-copy-name>{placeName}</span></div><button type="button" data-copy-place-name data-copy-label={zh?"复制名称":"Copy name"} data-copied-label={zh?"已复制":"Copied"}>{zh?"复制名称":"Copy name"}</button><small>{navigation.latitude.toFixed(6)}, {navigation.longitude.toFixed(6)}</small></div>}
   {navigation && <button class="place-navigation dad-primary" type="button" data-place-navigation data-web-url={webNavigation} data-app-url={appNavigation}>{zh?"导航":"Directions"}</button>}
   <MapExplorer id={`place-map-${placeCode}`} {dataset} {tiles} {labels} filterLabels={{}} focusPlaceId={placeCode} autoScrollToFocus={false} openFocusedPopup={false} />
 </section>}
 <script>
+  for(const button of document.querySelectorAll<HTMLButtonElement>("[data-copy-place-name]"))button.addEventListener("click",async()=>{
+    const name=button.parentElement?.querySelector<HTMLElement>("[data-copy-name]")?.textContent?.trim();
+    if(!name)return;
+    try{await navigator.clipboard.writeText(name);button.textContent=button.dataset.copiedLabel||"Copied";setTimeout(()=>button.textContent=button.dataset.copyLabel||"Copy name",1400);}catch{/* The visible name remains selectable. */}
+  });
   for(const button of document.querySelectorAll<HTMLButtonElement>("[data-place-navigation]"))button.addEventListener("click",()=>{
     const webUrl=button.dataset.webUrl,appUrl=button.dataset.appUrl;
     if(!webUrl||!appUrl)return;
@@ -35,6 +41,7 @@ const labels={map:zh?`${placeName}地图位置`:`Map location for ${placeName}`,
 <style>
   .place-location-map{margin-top:18px;padding:20px;border-radius:26px;background:#fff;box-shadow:var(--dad-shadow)}
   .place-map-label{margin:0 0 10px}
+  .direction-reference{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;margin:0 0 12px;padding:12px 14px;border:1px solid #d8e4de;border-radius:14px;background:#f6faf7;color:#38594c}.direction-reference>div{display:grid;gap:2px}.direction-reference strong{font-size:11px;text-transform:uppercase;letter-spacing:.06em}.direction-reference span{font-weight:850;color:#143c2f}.direction-reference button{min-height:38px;padding:7px 11px;border:1px solid #a9c4b6;border-radius:10px;background:#fff;color:#175940;font-weight:800;cursor:pointer}.direction-reference small{grid-column:1/-1;color:#6e7e77;font-variant-numeric:tabular-nums}
   .place-location-map :global(.map-controls),.place-location-map :global(.map-fallback){display:none}
   .place-location-map :global(.interactive-map){min-height:clamp(280px,62vw,430px);border-radius:18px}
   .place-navigation{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin:0 0 16px;padding:12px 18px;border:0;border-radius:15px;background:#1f78dc;color:#fff;font-size:17px;font-weight:850;line-height:1.2;cursor:pointer;box-shadow:0 9px 22px rgba(31,120,220,.2)}

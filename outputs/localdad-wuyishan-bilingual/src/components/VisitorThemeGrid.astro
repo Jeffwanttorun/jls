@@ -1,6 +1,7 @@
 ---
 import { localizedThemeDescription, localizedThemeName, visitorThemes } from "../data/visitor-themes";
 import type { Locale } from "../i18n/config";
+import ThemeIcon from "./ThemeIcon.astro";
 interface Props { compact?: boolean; locale?:Locale; }
 const { compact = false,locale="zh" } = Astro.props;
 const zh=locale==="zh";
@@ -13,7 +14,7 @@ const zh=locale==="zh";
   <nav class="dad-theme-grid" aria-label={zh?"兴趣主题":"Interests"}>
     {visitorThemes.map((theme) => (
       <a href={zh?`/zh/theme/${theme.id}`:`/theme/${theme.id}`} class={theme.tone} data-theme-link>
-        <span class="dad-theme-icon" aria-hidden="true">{theme.icon}</span>
+        <span class="dad-theme-icon" aria-hidden="true">{zh?theme.icon:<ThemeIcon id={theme.id} />}</span>
         <strong>{localizedThemeName(theme,locale)}</strong>
         <small>{localizedThemeDescription(theme,locale)}</small>
         <b aria-hidden="true">→</b>

@@ -27,11 +27,12 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
     <button class="map-locate" type="button" data-map-locate aria-label={labels.locateUser} title={labels.locateUser}><span aria-hidden="true">◎</span><span>{labels.locateUser}</span></button>
     <p class="map-status" data-map-status aria-live="polite" hidden></p>
   </div>
-  <details class="map-fallback"><summary>{labels.openPlace}</summary><ul>{dataset.places.map((place) => <li><a href={place.href}>{place.name}</a>{place.alternateName && ` · ${place.alternateName}`}</li>)}</ul></details>
+  <details class="map-fallback"><summary>{labels.placesList}</summary><ul>{dataset.places.map((place) => <li><a href={place.href}>{place.name}</a>{place.alternateName && ` · ${place.alternateName}`}</li>)}</ul></details>
   <script type="application/json" data-map-config is:inline set:html={config} />
 </section>}
 
 <script>
+  import { canonicalPublicMapFilter } from "../data/map-filters";
   import type { MapDataset, MapExplorerLabels, MapTileConfiguration } from "../types/map";
 
   interface RuntimeConfig {
@@ -56,7 +57,7 @@ const config = JSON.stringify({ dataset, tiles, labels, focusPlaceId, autoScroll
     const routeLayer = L.layerGroup().addTo(map);
     const placeLayer = L.layerGroup().addTo(map);
     const availableFilters = new Set<string>(dataset.places.flatMap((place)=>place.filterIds));
-    const filtersFromUrl = () => new URLSearchParams(window.location.search).get("category")?.split(",").filter((value)=>availableFilters.has(value))??[];
+    const filtersFromUrl = () => new URLSearchParams(window.location.search).get("category")?.split(",").map((value)=>canonicalPublicMapFilter(value)??value).filter((value)=>availableFilters.has(value))??[];
     const activeFilters = new Set<string>(filtersFromUrl());
     const requestedPlaceId = focusPlaceId || new URLSearchParams(window.location.search).get("place");
     let selectedPlaceId = requestedPlaceId || undefined;

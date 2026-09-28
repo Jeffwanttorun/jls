@@ -58,7 +58,10 @@ export interface KnowledgePlace {
   shop?: boolean;
   lodging?: boolean;
   familyFriendly?: boolean;
+  familySuitability?: "yes" | "conditional" | "no" | "unknown";
   familyNotes?: Partial<Record<Locale,string>>;
+  campingRole?: "overnight-stop" | "parking" | "service-only";
+  overnightStatus?: "allowed" | "used-in-person" | "recheck" | "not-recommended" | "prohibited" | "unknown";
   safetyNotes?: Partial<Record<Locale,string>>;
   accessNotes?: Partial<Record<Locale,string>>;
   seasonNotes?: Partial<Record<Locale,string>>;

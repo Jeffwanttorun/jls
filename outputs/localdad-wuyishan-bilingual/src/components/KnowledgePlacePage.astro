@@ -21,7 +21,7 @@ const nearbyServices=(place.nearbyServiceIds??[]).flatMap((id)=>{const found=kno
 const region=localizedPlaceRegion(place,locale);
 const facilities=[
   [zh?"卫生间":"Restroom",place.toilet],
-  [zh?"餐馆":"Food",place.food],
+  [zh?"餐馆":"Restaurant",place.food],
   [zh?"商店":"Shop",place.shop],
   [zh?"住宿":"Lodging",place.lodging],
 ].filter((item):item is [string,true]=>item[1]===true);
@@ -35,7 +35,8 @@ const seasonNotes=place.seasonNotes?.[locale];
 const safetyNotes=place.safetyNotes?.[locale];
 const familyNotes=place.familyNotes?.[locale];
 const practical=[...(place.practicalInfo?.[locale]??[]),...facilities.map(([label])=>label)];
-const trustItems=localizedTrustLabels(trust,locale);
+const trustItems=localizedTrustLabels(trust,locale).map((item)=>trust?.checkedInPerson&&place.lastCheckedAt&&item===(zh?"Jeff 已实地核验":"Checked in person by Jeff")?`${zh?"Jeff 实地核验":"Checked in person"} · ${localizedLastChecked(place.lastCheckedAt,locale)}`:item);
+const englishNameNote=!zh&&place.englishNameStatus==="translated"?"Working English translation":!zh&&place.englishNameStatus==="pinyin"?"Pinyin place name":undefined;
 const routeHref=(slug:string)=>zh?`/zh/route/${slug}`:`/route/${slug}`;
 const placeHref=(id:string)=>zh?`/zh/place/${id}`:`/place/${id}`;
 const site=Astro.site??new URL("https://localdad.youzipal.com");
@@ -49,6 +50,7 @@ const description=zh?`${name}的公开地图位置、现有实地记录、沿线
       <p class="place-region">{region||localizedCategory(place.category,locale)}</p>
       <h1>{name}</h1>
       {!zh&&place.nameEn&&<p class="chinese-name">中文原名：{place.nameZh}</p>}
+      {englishNameNote&&<p class="translation-note">{englishNameNote} · Keep the Chinese name for local search and directions.</p>}
       {!zh&&place.englishNameStatus==="pending"&&<p class="translation-note">English name pending manual review · 中文原名：{place.nameZh}</p>}
       {summary&&<p class="place-summary">{summary}</p>}
       {trustItems.length>0&&<div class="trust-row" aria-label={zh?"地点信息来源":"Place information sources"}>{trustItems.map((item)=><a href="/editorial-standards"><span aria-hidden="true">●</span>{item}</a>)}</div>}
@@ -65,9 +67,9 @@ const description=zh?`${name}的公开地图位置、现有实地记录、沿线
       {practical.length>0&&<section><p class="section-kicker">{zh?"实用信息":"Practical information"}</p><ul class="compact-list">{practical.map((item)=><li>{item}</li>)}</ul></section>}
       {(parking||accessNotes||seasonNotes)&&<section><p class="section-kicker">{zh?"到达与季节":"Access and season"}</p><dl>{parking&&<><dt>{zh?"停车":"Parking"}</dt><dd>{parking}</dd></>}{accessNotes&&<><dt>{zh?"到达方式":"Access"}</dt><dd>{accessNotes}</dd></>}{seasonNotes&&<><dt>{zh?"季节":"Season"}</dt><dd>{seasonNotes}</dd></>}</dl></section>}
       {safetyNotes&&<section class="notice"><p class="section-kicker">{zh?"安全与开放提醒":"Safety and access notice"}</p><p>{safetyNotes}</p></section>}
-      {(familyNotes||place.familyFriendly)&&<section><p class="section-kicker">{zh?"亲子信息":"For families"}</p><p>{familyNotes??(zh?"此地点已在现有地点资料中标记为适合带孩子。":"This place is marked as family-friendly in the current place record.")}</p></section>}
+      {(familyNotes||place.familySuitability==="yes")&&<section><p class="section-kicker">{zh?"亲子信息":"For families"}</p><p>{familyNotes??(zh?"适合亲子同行。仍请结合当天开放情况和孩子状态安排。":"Suitable for a family visit. Check current access and plan around your child's needs.")}</p></section>}
       {routes.length>0&&<section><p class="section-kicker">{zh?"所属路线":"Route"}</p>{routes.map((route)=><a class="relation-card" href={routeHref(route.slug)}><strong>{zh?route.nameZh:route.nameEn}</strong><span>→</span></a>)}</section>}
-      {(previous||next)&&<section><p class="section-kicker">{zh?"沿路线继续":"Continue along the route"}</p><div class="route-neighbors">{previous&&<a href={placeHref(previous.id)}><small>{zh?"上一站":"Previous stop"}</small><strong>{zh?<>← {localizedPlaceName(previous,locale)}</>:<>Previous: {localizedPlaceName(previous,locale)}</>}</strong></a>}{next&&<a href={placeHref(next.id)}><small>{zh?"下一站":"Next stop"}</small><strong>{zh?<>{localizedPlaceName(next,locale)} →</>:<>Next: {localizedPlaceName(next,locale)}</>}</strong></a>}</div></section>}
+      {(previous||next)&&<section><p class="section-kicker">{zh?"沿路线继续":"Continue along the route"}</p><div class="route-neighbors">{previous&&<a href={placeHref(previous.id)}><small>{zh?"上一个核心停留点":"Previous core stop"}</small><strong>{zh?<>← {localizedPlaceName(previous,locale)}</>:localizedPlaceName(previous,locale)}</strong></a>}{next&&<a href={placeHref(next.id)}><small>{zh?"下一个核心停留点":"Next core stop"}</small><strong>{zh?<>{localizedPlaceName(next,locale)} →</>:localizedPlaceName(next,locale)}</strong></a>}</div></section>}
       {nearby.length>0&&<section><p class="section-kicker">{zh?"附近地点":"Nearby places"}</p><div class="nearby-grid">{nearby.map((item)=><a href={placeHref(item.id)}><strong>{localizedPlaceName(item,locale)}</strong><small>{localizedCategory(item.category,locale)}</small></a>)}</div></section>}
       {nearbyServices.length>0&&<section><p class="section-kicker">{zh?"附近服务":"Nearby services"}</p><div class="nearby-grid">{nearbyServices.map((item)=><a href={placeHref(item.id)}><strong>{localizedPlaceName(item,locale)}</strong><small>{localizedCategory(item.category,locale)}</small></a>)}</div></section>}
       {(place.videos?.length??0)>0&&<section><p class="section-kicker">{zh?"相关视频":"Field videos"}</p><div class="link-list">{place.videos?.map((video)=><a href={video.url} target="_blank" rel="noreferrer"><strong>{video.title}</strong><small>{video.platform}{video.publishedAt?` · ${video.publishedAt}`:""}</small></a>)}</div></section>}

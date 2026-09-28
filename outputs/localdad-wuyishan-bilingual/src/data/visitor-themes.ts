@@ -39,7 +39,7 @@ const fallbackThemes: VisitorTheme[] = [
   { id:"nature", name:"自然", nameEn:"Nature", icon:"叶", tone:"nature", description:"从溪流、林缘和展馆认识植物、昆虫与山林环境。", descriptionEn:"Explore streams, forest edges, plants, insects, and nature exhibitions." },
   { id:"museum", name:"茶与展馆", nameEn:"Tea and Exhibitions", icon:"馆", tone:"museum", description:"从茶园、制茶工艺到植物、昆虫与村落展馆，按兴趣慢慢认识武夷山。", descriptionEn:"Explore tea landscapes, craft traditions, natural history, and local exhibitions.", heroImage:media("0534d210b18efbea96f7c7ff6e118d896b77b7ccb1de032038399d312f3e9e12.jpg") },
   { id:"food", name:"吃的", nameEn:"Food", icon:"食", tone:"food", description:"整理沿路吃饭、补给和歇脚的位置，方便按行程就近选择。", descriptionEn:"Find places for meals, simple supplies, and a break along the road.", heroImage:media("d32b5f40e69875a1849502246e0416f3f0f53b07038bf3d6f1d77280ae2fbcf5.jpg") },
-  { id:"camping", name:"床车露营", nameEn:"Car Camping", icon:"营", tone:"camping", description:"整理适合床车停靠、过夜和休息的位置，方便按需要筛选。", descriptionEn:"Browse recorded places related to vehicle stops, overnight stays, and rest." },
+  { id:"camping", name:"床车过夜", nameEn:"Sleeping in Your Vehicle", icon:"营", tone:"camping", description:"记录可能与床车停靠、过夜和休息有关的位置；过夜许可与现场条件需在出发前确认。", descriptionEn:"Places for an overnight stay in a vehicle. Check current rules and conditions before going." },
 ];
 
 const englishThemeCopy=Object.fromEntries(fallbackThemes.map((theme)=>[theme.id,{nameEn:theme.nameEn,descriptionEn:theme.descriptionEn}])) as Record<VisitorThemeId,{nameEn:string;descriptionEn:string}>;
@@ -79,6 +79,7 @@ const runtimePlaces = runtime.places as Array<{code:string;name:string;region:st
 export const visitorThemes: VisitorTheme[] = runtimeThemes.length ? runtimeThemes.map((theme)=>({
   ...theme,
   id:theme.id as VisitorThemeId,
+  ...(theme.id==="camping"?{name:"床车过夜",description:"记录可能与床车停靠、过夜和休息有关的位置；过夜许可与现场条件需在出发前确认。"}:{}),
   ...englishThemeCopy[theme.id as VisitorThemeId],
   heroImage:theme.heroImage?media(theme.heroImage):undefined,
 })) : fallbackThemes;

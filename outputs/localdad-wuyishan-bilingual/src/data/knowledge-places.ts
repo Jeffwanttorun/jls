@@ -23,6 +23,7 @@ for(const route of publicKnowledgeRoutes) for(const placeId of route.placeIds){
 
 const reviewedEnglishNames:Record<string,{name:string;shortName?:string;status:KnowledgePlace["englishNameStatus"]}>={
   "WY-0001":{name:"Nanyuanling",status:"established"},
+  "WY-0005":{name:"Sancai Peak Viewpoint",shortName:"Sancai Peak",status:"translated"},
   "WY-0004":{name:"Qiyun Peak",status:"pinyin"},
   "WY-0009":{name:"Manshui Bridge",status:"translated"},
   "WY-0012":{name:"Yueliangwan",status:"pinyin"},
@@ -81,6 +82,15 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
   const english=reviewedEnglishNames[point.code];
   const summary=managed?.summary?.trim();
   const image=managed?.image?.trim();
+  const routeRole=publicKnowledgeRoutes.map((route)=>routeRoleForPlace(route,point.code)).find(Boolean);
+  const sourceThemeIds=managed?.themes??[];
+  const campingRole:KnowledgePlace["campingRole"]=sourceThemeIds.includes("camping")
+    ? routeRole==="service"||routeRole==="junction"?"service-only":labels.category==="停车"?"parking":"overnight-stop"
+    : undefined;
+  const themeIds=sourceThemeIds.filter((themeId)=>themeId!=="camping"||campingRole==="overnight-stop");
+  const familySuitability:KnowledgePlace["familySuitability"]=managed?.familyFriendly===true
+    ? themeIds.includes("water")?"conditional":"yes"
+    : managed?.familyFriendly===false?"no":"unknown";
   return {
     id:point.code,
     nameZh:managed?.name?.trim()||point.name,
@@ -97,7 +107,14 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
     food:managed?.facilities?.restaurant===true?true:undefined,
     shop:managed?.facilities?.shop===true?true:undefined,
     lodging:managed?.facilities?.lodging===true?true:undefined,
-    familyFriendly:managed?.familyFriendly===true?true:undefined,
+    familyFriendly:familySuitability==="yes"||familySuitability==="conditional"?true:undefined,
+    familySuitability,
+    familyNotes:familySuitability==="conditional"?{
+      zh:"亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
+      en:"Suitable for families only when current water, weather, the child's age, and close adult supervision allow.",
+    }:undefined,
+    campingRole,
+    overnightStatus:campingRole==="overnight-stop"?"unknown":undefined,
     trustStatus:(point.ownerApproved===true&&point.humanConfirmed===true)||managed?.status==="在建"?{
       firsthand:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,
       checkedInPerson:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,
@@ -106,7 +123,7 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
     routeIds:routeIdsByPlace.get(point.code),
     videos:[], storyLinks:[], researchLinks:[],
     photoGallery:image?[{src:media(image),altZh:`${managed?.name??point.name}现场照片`,altEn:english?`Photo of ${english.name}`:undefined}]:[],
-    themeIds:managed?.themes??[],
+    themeIds,
     publicStatus:managed?.status??point.status,
   };
 });

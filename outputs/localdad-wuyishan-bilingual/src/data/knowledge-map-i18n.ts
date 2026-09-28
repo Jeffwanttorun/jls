@@ -34,9 +34,10 @@ const trustLabels={
 
 export function localizedTrustLabels(status:PlaceTrustStatus|undefined,locale:Locale){
   if(!status)return [];
-  return (Object.keys(trustLabels) as Array<keyof typeof trustLabels>)
+  const keys=(Object.keys(trustLabels) as Array<keyof typeof trustLabels>)
     .filter((key)=>status[key]===true)
-    .map((key)=>trustLabels[key][locale]);
+    .filter((key)=>key!=="firsthand"||status.checkedInPerson!==true);
+  return keys.map((key)=>trustLabels[key][locale]);
 }
 
 export function localizedLastChecked(date:string,locale:Locale){

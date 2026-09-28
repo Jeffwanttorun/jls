@@ -14,6 +14,7 @@ const backupRoot=resolve(process.env.SITE_BACKUP_DIR||resolve(releasesDir,"backu
 const packageManager=process.env.SITE_PACKAGE_MANAGER||(/^win/.test(process.platform)?"pnpm.cmd":"pnpm");
 const stamp=new Date().toISOString().replace(/[:.]/g,"-");
 const releaseDir=resolve(releasesDir,stamp);
+const releaseId=stamp;
 const buildDir=resolve(root,"dist");
 const execFileAsync=promisify(execFile);
 const {stdout:headOutput}=await execFileAsync("git",["rev-parse","HEAD"],{cwd:root});
@@ -47,7 +48,8 @@ if(sha256(mapAfter)!==mapHashBefore)throw new Error("Protected public map geomet
 await mkdir(releaseDir,{recursive:false});
 await cp(buildDir,releaseDir,{recursive:true});
 const state=JSON.parse(await readFile(storePath,"utf8"));
-await writeFile(resolve(releaseDir,"release.json"),JSON.stringify({release:stamp,publishedAt:new Date().toISOString(),repositoryHead,gitRemote,gitBranch,remoteHead,visitorStoreVersion:state.version,mapHash:mapHashBefore},null,2)+"\n");
+const buildTime=new Date().toISOString();
+await writeFile(resolve(releaseDir,"release.json"),JSON.stringify({release:releaseId,releaseId,publishedAt:buildTime,buildTime,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,visitorStoreVersion:state.version,mapHash:mapHashBefore},null,2)+"\n");
 
 await mkdir(dirname(currentLink),{recursive:true});
 let previousTarget;
@@ -78,4 +80,4 @@ try{
  throw error;
 }
 
-console.log(JSON.stringify({ok:true,repositoryHead,gitRemote,gitBranch,remoteHead,projectDir:root,buildDir,release:stamp,releaseDir,currentLink,visitorStoreVersion:state.version,mapHash:mapHashBefore}));
+console.log(JSON.stringify({ok:true,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,projectDir:root,buildDir,release:releaseId,releaseDir,currentLink,visitorStoreVersion:state.version,mapHash:mapHashBefore}));

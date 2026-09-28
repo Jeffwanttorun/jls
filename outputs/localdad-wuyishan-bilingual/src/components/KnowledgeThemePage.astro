@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Locale } from "../i18n/config";
 import { knowledgePlaces, localizedPlaceName, localizedPlaceRegion } from "../data/knowledge-places";
 import { localizedThemeDescription, localizedThemeName, visitorThemes, type VisitorTheme } from "../data/visitor-themes";
+import ThemeIcon from "./ThemeIcon.astro";
 
 interface Props { theme:VisitorTheme; locale:Locale; }
 const { theme,locale }=Astro.props;
@@ -20,11 +21,11 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
 <BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Wuyishan Map`} description={metaDescription} {alternates}>
   <section class:list={["dad-theme-hero",theme.tone,theme.heroImage&&"has-photo"]} style={theme.heroImage?`background-image:linear-gradient(90deg,rgba(15,58,43,.88),rgba(15,58,43,.40)),url(${theme.heroImage})`:undefined}>
     <a class="dad-back-link" href={exploreHref}>← {zh?"全部主题":"All interests"}</a>
-    <div class="dad-theme-title"><span aria-hidden="true">{theme.icon}</span><div><p class="dad-eyebrow">{zh?"武夷山奶爸地图":"Wuyishan Map"}</p><h1>{name}</h1></div></div>
+    <div class="dad-theme-title"><span aria-hidden="true">{zh?theme.icon:<ThemeIcon id={theme.id} />}</span><div><p class="dad-eyebrow">{zh?"武夷山奶爸地图":"Wuyishan Map"}</p><h1>{name}</h1></div></div>
     <p>{description}</p>
     <div class="theme-actions">
       <a class="theme-map-cta" href={mapHref}>{zh?"在地图中查看":"View on Map"} <span aria-hidden="true">→</span></a>
-      <button class="dad-kids-filter" type="button" aria-pressed="false" data-theme-family-toggle><span aria-hidden="true">✓</span>{zh?"适合带孩子":"Family-friendly"}</button>
+      <label class="dad-kids-filter"><input type="checkbox" data-theme-family-toggle /><span>{zh?"只看适合亲子的地点":"Show family-friendly only"}</span></label>
     </div>
   </section>
 
@@ -38,8 +39,8 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
         const photo=place.photoGallery?.[0];
         const summary=place.summary?.[locale];
         const region=localizedPlaceRegion(place,locale);
-        return <a class="dad-place-card" data-family={String(place.familyFriendly===true)} href={placeHref(place.id)} aria-label={zh?`查看${place.nameZh}详情`:`Open ${localizedPlaceName(place,locale)}`}>
-          {photo?<img src={photo.src} alt={zh?photo.altZh:photo.altEn??photo.altZh} width="900" height="600" loading="lazy" decoding="async"/>:<div class:list={["dad-place-placeholder",theme.tone]}><span>{theme.icon}</span></div>}
+        return <a class="dad-place-card" data-family={place.familySuitability??"unknown"} href={placeHref(place.id)} aria-label={zh?`查看${place.nameZh}详情`:`Open ${localizedPlaceName(place,locale)}`}>
+          {photo?<img src={photo.src} alt={zh?photo.altZh:photo.altEn??photo.altZh} width="900" height="600" loading="lazy" decoding="async"/>:<div class:list={["dad-place-placeholder",theme.tone]}><span aria-hidden="true">{zh?theme.icon:<ThemeIcon id={theme.id} />}</span></div>}
           <div class="dad-place-copy">
             <div class="dad-place-topline">{region&&<p class="dad-eyebrow">{region}</p>}{place.publicStatus==="在建"&&<span class="dad-status">{zh?"在建":"Under construction"}</span>}</div>
             <h2>{localizedPlaceName(place,locale)}</h2>
@@ -47,18 +48,20 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
             {summary&&<p>{summary}</p>}
             <div class="dad-tags">
               {visitorThemes.filter((item)=>place.themeIds?.includes(item.id)).map((item)=><span>{localizedThemeName(item,locale)}</span>)}
-              {place.familyFriendly&&<span class="family">{zh?"适合带孩子":"Family-friendly"}</span>}
+              {place.familySuitability==="yes"&&<span class="family">{zh?"适合亲子":"Family-friendly"}</span>}
+              {place.familySuitability==="conditional"&&<span class="family conditional">{zh?"亲子可去 · 需看当天条件":"Families · check conditions"}</span>}
               {place.toilet&&<span class="facility">{zh?"卫生间":"Restroom"}</span>}
               {place.shop&&<span class="facility">{zh?"商店":"Shop"}</span>}
-              {place.food&&<span class="facility">{zh?"餐馆":"Food"}</span>}
+              {place.food&&<span class="facility">{zh?"餐馆":"Restaurant"}</span>}
               {place.lodging&&<span class="facility">{zh?"住宿":"Lodging"}</span>}
+              {theme.id==="camping"&&place.overnightStatus==="unknown"&&<span class="facility">{zh?"过夜情况需确认":"Overnight status: recheck"}</span>}
             </div>
             <span class="dad-card-action">{zh?"查看详情":"View place"} <b aria-hidden="true">→</b></span>
           </div>
         </a>;
       })}
     </div>
-    <p class="dad-empty" data-empty hidden>{zh?"这个主题目前没有标记为适合带孩子的地点。":"No places in this interest are currently marked as family-friendly."}</p>
+    <p class="dad-empty" data-empty hidden>{zh?"当前筛选条件下没有地点。":"No places match this filter."}</p>
   </section>
 </BaseLayout>
 
@@ -70,19 +73,19 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
   const zh=document.documentElement.lang.startsWith("zh");
   const syncFamily=()=>{
     const active=new URLSearchParams(location.search).get("kids")==="1";
-    toggle?.setAttribute("aria-pressed",String(active));
-    toggle?.classList.toggle("active",active);
+    if(toggle instanceof HTMLInputElement)toggle.checked=active;
+    toggle?.closest("label")?.classList.toggle("active",active);
     let visible=0;
-    cards.forEach((card)=>{const show=!active||card.dataset.family==="true";card.hidden=!show;if(show)visible+=1;});
+    cards.forEach((card)=>{const show=!active||card.dataset.family==="yes"||card.dataset.family==="conditional";card.hidden=!show;if(show)visible+=1;});
     if(count)count.textContent=zh?`${visible} 个`:`${visible} ${visible===1?"place":"places"}`;
     if(empty)empty.hidden=visible!==0;
   };
-  toggle?.addEventListener("click",()=>{const url=new URL(location.href);if(url.searchParams.get("kids")==="1")url.searchParams.delete("kids");else url.searchParams.set("kids","1");history.pushState({themeFamily:true},"",url);window.dispatchEvent(new Event("urlstatechange"));syncFamily();});
+  toggle?.addEventListener("change",()=>{const url=new URL(location.href);if(toggle instanceof HTMLInputElement&&toggle.checked)url.searchParams.set("kids","1");else url.searchParams.delete("kids");history.pushState({themeFamily:true},"",url);window.dispatchEvent(new Event("urlstatechange"));syncFamily();});
   window.addEventListener("popstate",syncFamily);
   syncFamily();
 </script>
 
 <style>
-  .theme-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.theme-map-cta,.dad-kids-filter{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 16px;border-radius:14px;font-weight:800;text-decoration:none}.theme-map-cta{background:#176d50;color:#fff}.dad-theme-hero.has-photo .theme-map-cta{background:#fff;color:#174c39}.theme-original-name{margin:.15rem 0 0!important;color:#7b8983!important;font-size:12px!important}.dad-empty[hidden]{display:none!important}
+  .theme-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.theme-map-cta,.dad-kids-filter{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 16px;border-radius:14px;font-weight:800;text-decoration:none}.theme-map-cta{background:#176d50;color:#fff}.dad-theme-hero.has-photo .theme-map-cta{background:#fff;color:#174c39}.dad-kids-filter{border:1px solid #b9cec3;background:#fff;color:#174c39;cursor:pointer}.dad-kids-filter input{width:18px;height:18px;margin:0;accent-color:#176d50}.dad-kids-filter.active{background:#e6f3ec;border-color:#176d50}.theme-original-name{margin:.15rem 0 0!important;color:#7b8983!important;font-size:12px!important}.dad-empty[hidden]{display:none!important}
   @media(max-width:420px){.theme-actions>*{width:100%}}
 </style>

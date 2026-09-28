@@ -51,6 +51,7 @@ export interface MapExplorerLabels {
   filters: string;
   relatedContent: string;
   openPlace: string;
+  placesList: string;
   enableInteraction: string;
   locateUser: string;
   locatingUser: string;
