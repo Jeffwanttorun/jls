@@ -21,7 +21,7 @@ for(const page of pages){
   for(const value of page.required)if(!html.includes(value))failures.push(`${page.path}: missing ${value}`);
   for(const value of page.forbidden)if(html.includes(value))failures.push(`${page.path}: contains obsolete ${value}`);
   if(page.path==="/place/WY-0030/"){
-    const neighbors=html.match(/<div class="route-neighbors">([\s\S]*?)<\/div>/)?.[1]??"";
+    const neighbors=html.match(/<div[^>]*class="route-neighbors"[^>]*>([\s\S]*?)<\/div>/)?.[1]??"";
     if(!neighbors.includes("Next core stop")||!neighbors.includes("Black Tea Origins Exhibition Hall"))failures.push(`${page.path}: core-stop navigation is incorrect`);
     if(neighbors.includes("野猴观察区域"))failures.push(`${page.path}: nearby place leaked into core-stop navigation`);
   }
