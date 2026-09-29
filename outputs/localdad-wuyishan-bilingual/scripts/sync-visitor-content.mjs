@@ -88,7 +88,15 @@ const runtime = {
 
 await writeFile(outputPath, JSON.stringify(runtime,null,2)+"\n", "utf8");
 
-const studioSource=await readFile(studioSnapshotPath,"utf8").then(JSON.parse).catch(async()=>({schemaVersion:2,contentRevision:"repository-seed",contentSnapshotHash:null,publishedAt:null,document:JSON.parse(await readFile(studioSeedPath,"utf8"))}));
+const studioSource=await readFile(studioSnapshotPath,"utf8").then(JSON.parse).catch(async()=>{
+  // The production website checkout is intentionally self-contained and may
+  // not include the sibling admin project on its first V6 deployment. The
+  // committed runtime snapshot is therefore the safe deployment fallback;
+  // local development can still regenerate it from the canonical seed.
+  const committed=await readFile(studioOutputPath,"utf8").then(JSON.parse).catch(()=>null);
+  if(committed?.schemaVersion===2&&committed?.document?.schemaVersion===2)return committed;
+  return {schemaVersion:2,contentRevision:"repository-seed",contentSnapshotHash:null,publishedAt:null,document:JSON.parse(await readFile(studioSeedPath,"utf8"))};
+});
 if(studioSource?.schemaVersion!==2||studioSource?.document?.schemaVersion!==2)throw new Error("Content Studio snapshot is not a supported schemaVersion 2 document.");
 if(Object.keys(studioSource.document.places||{}).length!==publicMap.places.length)throw new Error(`Content Studio place integrity mismatch: expected ${publicMap.places.length}.`);
 if(studioSource.document.geometry?.routeCount!==publicMap.routes.length||studioSource.document.geometry?.pointCount!==publicMap.routeSource.geometryPointCount)throw new Error("Protected route geometry metadata changed in Content Studio.");
