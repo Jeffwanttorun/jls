@@ -1,0 +1,5566 @@
+{
+  "schemaVersion": 2,
+  "routes": [
+    {
+      "id": "no-1-scenic-road",
+      "slug": "no-1-scenic-road",
+      "name": {
+        "zh": "一号风景道",
+        "en": "No. 1 Scenic Road"
+      },
+      "summary": {
+        "zh": "从南源岭一路到坳头，沿途经过村庄、河谷、茶园、展馆和山林观察点。",
+        "en": "Travel from Nanyuanling to Aotou through villages, river valleys, tea fields, exhibition halls, and forest observation stops."
+      },
+      "mapTitle": {
+        "zh": "从南源岭到坳头",
+        "en": "From Nanyuanling to Aotou"
+      },
+      "order": 10,
+      "published": true,
+      "featured": true,
+      "archivedAt": null,
+      "geometryRouteIds": [
+        "corridor-01",
+        "corridor-02",
+        "corridor-03",
+        "corridor-04",
+        "corridor-05",
+        "corridor-06"
+      ],
+      "stages": [
+        {
+          "id": "nanyuanling",
+          "title": {
+            "zh": "南源岭",
+            "en": "Nanyuanling"
+          },
+          "summary": {
+            "zh": "",
+            "en": ""
+          },
+          "order": 10,
+          "published": true,
+          "visible": true,
+          "archivedAt": null,
+          "groups": []
+        },
+        {
+          "id": "xingcun",
+          "title": {
+            "zh": "星村",
+            "en": "Xingcun"
+          },
+          "summary": {
+            "zh": "",
+            "en": ""
+          },
+          "order": 20,
+          "published": true,
+          "visible": true,
+          "archivedAt": null,
+          "groups": []
+        },
+        {
+          "id": "manshui-bridge",
+          "title": {
+            "zh": "漫水桥",
+            "en": "Manshui Bridge"
+          },
+          "summary": {
+            "zh": "",
+            "en": ""
+          },
+          "order": 30,
+          "published": true,
+          "visible": true,
+          "archivedAt": null,
+          "groups": []
+        },
+        {
+          "id": "huangcun-hongxing",
+          "title": {
+            "zh": "黄村与红星",
+            "en": "Huangcun and Hongxing"
+          },
+          "summary": {
+            "zh": "",
+            "en": ""
+          },
+          "order": 40,
+          "published": true,
+          "visible": true,
+          "archivedAt": null,
+          "groups": []
+        },
+        {
+          "id": "moon-bay-taoyuanyu",
+          "title": {
+            "zh": "月亮湾与桃源峪",
+            "en": "Yueliangwan and Taoyuanyu"
+          },
+          "summary": {
+            "zh": "",
+            "en": ""
+          },
+          "order": 50,
+          "published": true,
+          "visible": true,
+          "archivedAt": null,
+          "groups": []
+        },
+        {
+          "id": "tongmu-dazhulan",
+          "title": {
+            "zh": "桐木与大竹岚",
+            "en": "Tongmu and Dazhulan"
+          },
+          "summary": {
+            "zh": "",
+            "en": ""
+          },
+          "order": 60,
+          "published": true,
+          "visible": true,
+          "archivedAt": null,
+          "groups": []
+        },
+        {
+          "id": "aotou",
+          "title": {
+            "zh": "坳头",
+            "en": "Aotou"
+          },
+          "summary": {
+            "zh": "",
+            "en": ""
+          },
+          "order": 70,
+          "published": true,
+          "visible": true,
+          "archivedAt": null,
+          "groups": []
+        }
+      ],
+      "memberships": [
+        {
+          "placeId": "WY-0001",
+          "stageId": "nanyuanling",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 10,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0002",
+          "stageId": "nanyuanling",
+          "groupId": null,
+          "role": "service",
+          "order": 20,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0003",
+          "stageId": "nanyuanling",
+          "groupId": null,
+          "role": "service",
+          "order": 30,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0004",
+          "stageId": "nanyuanling",
+          "groupId": null,
+          "role": "observation",
+          "order": 40,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0005",
+          "stageId": "nanyuanling",
+          "groupId": null,
+          "role": "observation",
+          "order": 50,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0047",
+          "stageId": "nanyuanling",
+          "groupId": null,
+          "role": "service",
+          "order": 60,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0048",
+          "stageId": "xingcun",
+          "groupId": null,
+          "role": "food",
+          "order": 10,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0049",
+          "stageId": "xingcun",
+          "groupId": null,
+          "role": "food",
+          "order": 20,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0050",
+          "stageId": "xingcun",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 30,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0051",
+          "stageId": "manshui-bridge",
+          "groupId": null,
+          "role": "service",
+          "order": 10,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0052",
+          "stageId": "manshui-bridge",
+          "groupId": null,
+          "role": "service",
+          "order": 20,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0053",
+          "stageId": "manshui-bridge",
+          "groupId": null,
+          "role": "service",
+          "order": 30,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0009",
+          "stageId": "manshui-bridge",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 40,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0055",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 10,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0056",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 20,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0057",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "service",
+          "order": 30,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0040",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 40,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0058",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "junction",
+          "order": 50,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0059",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "junction",
+          "order": 60,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0041",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 70,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0044",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 80,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0043",
+          "stageId": "huangcun-hongxing",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 90,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0012",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 10,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0013",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "service",
+          "order": 20,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0015",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "junction",
+          "order": 30,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0017",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "observation",
+          "order": 40,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0018",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "observation",
+          "order": 50,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0060",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "observation",
+          "order": 60,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0021",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "observation",
+          "order": 70,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0022",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "observation",
+          "order": 80,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0024",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 90,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0025",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "service",
+          "order": 100,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0026",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "service",
+          "order": 110,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0028",
+          "stageId": "moon-bay-taoyuanyu",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 120,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0030",
+          "stageId": "tongmu-dazhulan",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 10,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0031",
+          "stageId": "tongmu-dazhulan",
+          "groupId": null,
+          "role": "observation",
+          "order": 20,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0032",
+          "stageId": "tongmu-dazhulan",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 30,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0033",
+          "stageId": "tongmu-dazhulan",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 40,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0035",
+          "stageId": "tongmu-dazhulan",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 50,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0061",
+          "stageId": "tongmu-dazhulan",
+          "groupId": null,
+          "role": "secondary-stop",
+          "order": 60,
+          "visible": true
+        },
+        {
+          "placeId": "WY-0036",
+          "stageId": "aotou",
+          "groupId": null,
+          "role": "core-stop",
+          "order": 10,
+          "visible": true
+        }
+      ],
+      "practicalNotes": {
+        "zh": [],
+        "en": []
+      },
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": []
+    }
+  ],
+  "places": {
+    "WY-0001": {
+      "id": "WY-0001",
+      "name": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "shortName": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "pinyin": "",
+      "englishNameStatus": "established",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6117246,
+        "longitude": 117.9855643,
+        "system": "WGS84"
+      }
+    },
+    "WY-0002": {
+      "id": "WY-0002",
+      "name": {
+        "zh": "南源岭停车位置",
+        "en": "Nanyuanling Parking"
+      },
+      "shortName": {
+        "zh": "南源岭停车",
+        "en": "Nanyuanling Parking"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "停车",
+      "region": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6131689,
+        "longitude": 117.9870039,
+        "system": "WGS84"
+      }
+    },
+    "WY-0003": {
+      "id": "WY-0003",
+      "name": {
+        "zh": "南源岭卫生间",
+        "en": "Nanyuanling Restroom"
+      },
+      "shortName": {
+        "zh": "南源岭卫生间",
+        "en": "Nanyuanling Restroom"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "公共服务",
+      "region": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6135752,
+        "longitude": 117.9871671,
+        "system": "WGS84"
+      }
+    },
+    "WY-0004": {
+      "id": "WY-0004",
+      "name": {
+        "zh": "齐云峰",
+        "en": "Qiyun Peak"
+      },
+      "shortName": {
+        "zh": "齐云峰",
+        "en": "Qiyun Peak"
+      },
+      "pinyin": "",
+      "englishNameStatus": "pinyin",
+      "labelPriority": 80,
+      "category": "观景点",
+      "region": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "开车看日出和日落",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": true
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "scenery"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0004-photo-1",
+          "fileName": "155c12b2deaae0180ad7dc89e2394cdabb5d9448f1f5169cafdd37b4c2548760.jpg",
+          "alt": {
+            "zh": "齐云峰现场照片",
+            "en": "Photo of Qiyun Peak"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6234322,
+        "longitude": 117.9240158,
+        "system": "WGS84"
+      }
+    },
+    "WY-0005": {
+      "id": "WY-0005",
+      "name": {
+        "zh": "三才峰",
+        "en": "Sancai Peak Viewpoint"
+      },
+      "shortName": {
+        "zh": "三才峰",
+        "en": "Sancai Peak"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 80,
+      "category": "观景点",
+      "region": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "观鸟好去处",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "scenery"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0005-photo-1",
+          "fileName": "de9c0e23771bc914cf899e7bd040761ceaa57451aab2362bacfca96a97eed488.jpg",
+          "alt": {
+            "zh": "三才峰现场照片",
+            "en": "Photo of Sancai Peak Viewpoint"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6277447,
+        "longitude": 117.9276603,
+        "system": "WGS84"
+      }
+    },
+    "WY-0047": {
+      "id": "WY-0047",
+      "name": {
+        "zh": "三才峰附近卫生间",
+        "en": "Sancai Peak Restroom"
+      },
+      "shortName": {
+        "zh": "三才峰卫生间",
+        "en": "Sancai Peak Restroom"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "公共服务",
+      "region": {
+        "zh": "南源岭",
+        "en": "Nanyuanling"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6268621,
+        "longitude": 117.9269806,
+        "system": "WGS84"
+      }
+    },
+    "WY-0048": {
+      "id": "WY-0048",
+      "name": {
+        "zh": "俞妹光饼",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "俞妹光饼",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 40,
+      "category": "餐饮补给",
+      "region": {
+        "zh": "星村",
+        "en": "Xingcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "星村特色小吃",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": true,
+        "lodging": true
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "food"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6373065,
+        "longitude": 117.9182569,
+        "system": "WGS84"
+      }
+    },
+    "WY-0049": {
+      "id": "WY-0049",
+      "name": {
+        "zh": "越南粉",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "越南粉",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 40,
+      "category": "餐饮补给",
+      "region": {
+        "zh": "星村",
+        "en": "Xingcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "坐下来吃碗热的",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": true,
+        "lodging": true
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "food"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6409684,
+        "longitude": 117.9184216,
+        "system": "WGS84"
+      }
+    },
+    "WY-0050": {
+      "id": "WY-0050",
+      "name": {
+        "zh": "旧竹筏码头",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "旧码头河边",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 40,
+      "category": "沿线停留点",
+      "region": {
+        "zh": "星村",
+        "en": "Xingcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "河边坐坐，挺惬意",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": true,
+        "lodging": true
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "scenery"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6426324,
+        "longitude": 117.9205062,
+        "system": "WGS84"
+      }
+    },
+    "WY-0051": {
+      "id": "WY-0051",
+      "name": {
+        "zh": "漫水桥停车场1",
+        "en": "Manshui Bridge Parking 1"
+      },
+      "shortName": {
+        "zh": "漫水桥停车1",
+        "en": "Manshui Bridge Parking 1"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "停车",
+      "region": {
+        "zh": "星村—黄村沿线",
+        "en": "Between Xingcun and Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6462929,
+        "longitude": 117.9109109,
+        "system": "WGS84"
+      }
+    },
+    "WY-0052": {
+      "id": "WY-0052",
+      "name": {
+        "zh": "漫水桥停车场2",
+        "en": "Manshui Bridge Parking 2"
+      },
+      "shortName": {
+        "zh": "漫水桥停车2",
+        "en": "Manshui Bridge Parking 2"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "停车",
+      "region": {
+        "zh": "星村—黄村沿线",
+        "en": "Between Xingcun and Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6481575,
+        "longitude": 117.9108569,
+        "system": "WGS84"
+      }
+    },
+    "WY-0053": {
+      "id": "WY-0053",
+      "name": {
+        "zh": "漫水桥卫生间",
+        "en": "Manshui Bridge Restroom"
+      },
+      "shortName": {
+        "zh": "漫水桥卫生间",
+        "en": "Manshui Bridge Restroom"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "公共服务",
+      "region": {
+        "zh": "星村—黄村沿线",
+        "en": "Between Xingcun and Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.647665,
+        "longitude": 117.9111125,
+        "system": "WGS84"
+      }
+    },
+    "WY-0009": {
+      "id": "WY-0009",
+      "name": {
+        "zh": "漫水桥玩水点",
+        "en": "Manshui Bridge"
+      },
+      "shortName": {
+        "zh": "漫水桥",
+        "en": "Manshui Bridge"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "星村—黄村沿线",
+        "en": "Between Xingcun and Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "到桥边和河滩看看当天水况",
+        "en": "A stop by the bridge and riverbank to check the water conditions that day."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "conditional",
+      "familyNotes": {
+        "zh": "亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
+        "en": "Suitable for families only when current water, weather, the child's age, and close adult supervision allow."
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "water"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0009-photo-1",
+          "fileName": "387343b51318c91cf763ede965391009c4851c896e851a5fbc2ab50eb77772e9.jpg",
+          "alt": {
+            "zh": "漫水桥玩水点现场照片",
+            "en": "Photo of Manshui Bridge"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6463862,
+        "longitude": 117.9097061,
+        "system": "WGS84"
+      }
+    },
+    "WY-0055": {
+      "id": "WY-0055",
+      "name": {
+        "zh": "茶诗乐营地",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "茶诗乐营地",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "营地",
+      "region": {
+        "zh": "黄村",
+        "en": "Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "camping"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6570755,
+        "longitude": 117.8900477,
+        "system": "WGS84"
+      }
+    },
+    "WY-0056": {
+      "id": "WY-0056",
+      "name": {
+        "zh": "风吟茶海",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "风吟茶海",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 80,
+      "category": "茶园与风景",
+      "region": {
+        "zh": "黄村",
+        "en": "Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "先从茶海景观感受茶山环境",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "scenery",
+        "museum",
+        "camping"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0056-photo-1",
+          "fileName": "65ab132a70a947f4ae5a32a0784810898f10fa43307f94d10d58bc44cbacbd59.jpg",
+          "alt": {
+            "zh": "风吟茶海现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6538033,
+        "longitude": 117.8672534,
+        "system": "WGS84"
+      }
+    },
+    "WY-0057": {
+      "id": "WY-0057",
+      "name": {
+        "zh": "风吟茶海停车场",
+        "en": "Fengyin Tea Fields Parking"
+      },
+      "shortName": {
+        "zh": "茶海停车",
+        "en": "Fengyin Tea Fields Parking"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "停车",
+      "region": {
+        "zh": "黄村",
+        "en": "Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6538021,
+        "longitude": 117.8672774,
+        "system": "WGS84"
+      }
+    },
+    "WY-0040": {
+      "id": "WY-0040",
+      "name": {
+        "zh": "黄村乌龙茶展示馆",
+        "en": "Huangcun Oolong Tea Exhibition Hall"
+      },
+      "shortName": {
+        "zh": "乌龙茶馆",
+        "en": "Oolong Tea Hall"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 80,
+      "category": "茶文化展馆",
+      "region": {
+        "zh": "黄村",
+        "en": "Huangcun"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "乌龙茶工艺与文化展示",
+        "en": "Exhibits on oolong tea craft and culture."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": false,
+        "lodging": true
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "museum"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0040-photo-1",
+          "fileName": "0d2aba2cde2f4584140807c399014bbad09023e30aeb07e1bc8c948b3282c30d.jpg",
+          "alt": {
+            "zh": "黄村乌龙茶展示馆现场照片",
+            "en": "Photo of Huangcun Oolong Tea Exhibition Hall"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6526114,
+        "longitude": 117.8740481,
+        "system": "WGS84"
+      }
+    },
+    "WY-0058": {
+      "id": "WY-0058",
+      "name": {
+        "zh": "武夷源支线1",
+        "en": "Wuyiyuan Junction 1"
+      },
+      "shortName": {
+        "zh": "武夷源支线1",
+        "en": "Wuyiyuan Junction 1"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 40,
+      "category": "支线路口",
+      "region": {
+        "zh": "武夷源",
+        "en": "Wuyiyuan"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6243866,
+        "longitude": 117.794787,
+        "system": "WGS84"
+      }
+    },
+    "WY-0059": {
+      "id": "WY-0059",
+      "name": {
+        "zh": "武夷源支线2",
+        "en": "Wuyiyuan Junction 2"
+      },
+      "shortName": {
+        "zh": "武夷源支线2",
+        "en": "Wuyiyuan Junction 2"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 40,
+      "category": "支线路口",
+      "region": {
+        "zh": "武夷源",
+        "en": "Wuyiyuan"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6048778,
+        "longitude": 117.7840543,
+        "system": "WGS84"
+      }
+    },
+    "WY-0041": {
+      "id": "WY-0041",
+      "name": {
+        "zh": "珍稀植物科普展示馆",
+        "en": "Rare Plant Science Exhibition Hall"
+      },
+      "shortName": {
+        "zh": "植物馆",
+        "en": "Rare Plant Hall"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 80,
+      "category": "自然科普展馆",
+      "region": {
+        "zh": "红星村",
+        "en": "Hongxing Village"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "通过科普展示认识武夷山珍稀植物",
+        "en": "Science exhibits introducing rare plants of Wuyishan."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "nature",
+        "museum"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0041-photo-1",
+          "fileName": "f45cca5ce439ecb32326111c319f8470f69ed9a780e20fafe1248f4a9a5d79b3.jpg",
+          "alt": {
+            "zh": "珍稀植物科普展示馆现场照片",
+            "en": "Photo of Rare Plant Science Exhibition Hall"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6492703,
+        "longitude": 117.8314565,
+        "system": "WGS84"
+      }
+    },
+    "WY-0044": {
+      "id": "WY-0044",
+      "name": {
+        "zh": "乡愁馆",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "乡愁馆",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "人文展馆",
+      "region": {
+        "zh": "红星村",
+        "en": "Hongxing Village"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "红星村沿线的乡愁主题展馆",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": true,
+        "lodging": true
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "museum"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0044-photo-1",
+          "fileName": "db700e9510788c904857622cf34fb5cc060ababea35de13327cf282511825d60.jpg",
+          "alt": {
+            "zh": "乡愁馆现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6633103,
+        "longitude": 117.8184603,
+        "system": "WGS84"
+      }
+    },
+    "WY-0043": {
+      "id": "WY-0043",
+      "name": {
+        "zh": "兰花展示馆",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "兰花馆",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "自然科普展馆",
+      "region": {
+        "zh": "红星村",
+        "en": "Hongxing Village"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "从兰花主题认识本地植物",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "nature",
+        "museum"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0043-photo-1",
+          "fileName": "816d890131c24865835d55356aca1b9fa7a396b6087536cdc0cbdf0051fba4ca.jpg",
+          "alt": {
+            "zh": "兰花展示馆现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6552499,
+        "longitude": 117.8236872,
+        "system": "WGS84"
+      }
+    },
+    "WY-0012": {
+      "id": "WY-0012",
+      "name": {
+        "zh": "月亮湾",
+        "en": "Yueliangwan"
+      },
+      "shortName": {
+        "zh": "月亮湾",
+        "en": "Yueliangwan"
+      },
+      "pinyin": "",
+      "englishNameStatus": "pinyin",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "月亮湾",
+        "en": "Yueliangwan"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "河湾水景与自然环境，适合观察但禁止下水",
+        "en": "A river bend and natural area for observation. Entering the water is prohibited."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "scenery",
+        "nature"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0012-photo-1",
+          "fileName": "a37def6b7959f3d521f56a9a5c14217f125571a1b949538c68f33bca81a97f1f.jpg",
+          "alt": {
+            "zh": "月亮湾现场照片",
+            "en": "Photo of Yueliangwan"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6700381,
+        "longitude": 117.8137805,
+        "system": "WGS84"
+      }
+    },
+    "WY-0013": {
+      "id": "WY-0013",
+      "name": {
+        "zh": "月亮湾停车位置",
+        "en": "Yueliangwan Parking"
+      },
+      "shortName": {
+        "zh": "月亮湾停车",
+        "en": "Yueliangwan Parking"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "停车",
+      "region": {
+        "zh": "月亮湾",
+        "en": "Yueliangwan"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6694941,
+        "longitude": 117.8148052,
+        "system": "WGS84"
+      }
+    },
+    "WY-0015": {
+      "id": "WY-0015",
+      "name": {
+        "zh": "翡翠谷路口",
+        "en": "Feicui Valley Junction"
+      },
+      "shortName": {
+        "zh": "翡翠谷路口",
+        "en": "Feicui Valley Junction"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 40,
+      "category": "支线路口",
+      "region": {
+        "zh": "翡翠谷支线",
+        "en": "Feicui Valley side road"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.6729775,
+        "longitude": 117.8135561,
+        "system": "WGS84"
+      }
+    },
+    "WY-0017": {
+      "id": "WY-0017",
+      "name": {
+        "zh": "观山听水",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "观山听水",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "沿线风景",
+      "region": {
+        "zh": "黄村—红星沿线",
+        "en": "Between Huangcun and Hongxing"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "带上折叠桌椅，泡一壶茶",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "scenery"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0017-photo-1",
+          "fileName": "550f7ca29d57a07eaa877dedcc6177697152dee29fbb5ef984130bd6c9da88ed.jpg",
+          "alt": {
+            "zh": "观山听水现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6758447,
+        "longitude": 117.8023413,
+        "system": "WGS84"
+      }
+    },
+    "WY-0018": {
+      "id": "WY-0018",
+      "name": {
+        "zh": "大峡谷农庄下河位置",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "农庄下河点",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "玩水地点",
+      "region": {
+        "zh": "黄村—红星沿线",
+        "en": "Between Huangcun and Hongxing"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "农庄附近的下河位置",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": true,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "conditional",
+      "familyNotes": {
+        "zh": "亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
+        "en": "Suitable for families only when current water, weather, the child's age, and close adult supervision allow."
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "water"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0018-photo-1",
+          "fileName": "935f8d636515cce0efce1d123559a538f0d1ed90c3ff71a84a3f61b1925cb943.jpg",
+          "alt": {
+            "zh": "大峡谷农庄下河位置现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6760106,
+        "longitude": 117.8012196,
+        "system": "WGS84"
+      }
+    },
+    "WY-0060": {
+      "id": "WY-0060",
+      "name": {
+        "zh": "小青龙瀑布",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "小青龙瀑布",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 80,
+      "category": "瀑布",
+      "region": {
+        "zh": "一号风景道沿线",
+        "en": "Along No. 1 Scenic Road"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "沿路瀑布与溪谷体验",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "conditional",
+      "familyNotes": {
+        "zh": "亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
+        "en": "Suitable for families only when current water, weather, the child's age, and close adult supervision allow."
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "water"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0060-photo-1",
+          "fileName": "cd9e84ef89dfa178a07ddca48b3cb205e834e8525d178c0bedaaf083b383316a.jpg",
+          "alt": {
+            "zh": "小青龙瀑布现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6714815,
+        "longitude": 117.7565993,
+        "system": "WGS84"
+      }
+    },
+    "WY-0021": {
+      "id": "WY-0021",
+      "name": {
+        "zh": "皮坑口玩水点",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "皮坑口",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "玩水地点",
+      "region": {
+        "zh": "皮坑",
+        "en": "Pikeng"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "皮坑口的玩水位置",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "conditional",
+      "familyNotes": {
+        "zh": "亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
+        "en": "Suitable for families only when current water, weather, the child's age, and close adult supervision allow."
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "water"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0021-photo-1",
+          "fileName": "fbbe17a731f7130cdefedc6cd44e56edb01593c7650fa1cd6acf8d6364ba2895.jpg",
+          "alt": {
+            "zh": "皮坑口玩水点现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6910643,
+        "longitude": 117.737062,
+        "system": "WGS84"
+      }
+    },
+    "WY-0022": {
+      "id": "WY-0022",
+      "name": {
+        "zh": "大浅滩",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "大浅滩",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "玩水地点",
+      "region": {
+        "zh": "一号风景道沿线",
+        "en": "Along No. 1 Scenic Road"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "空间开阔的浅滩体验",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": true,
+        "shop": false,
+        "lodging": true
+      },
+      "familySuitability": "conditional",
+      "familyNotes": {
+        "zh": "亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
+        "en": "Suitable for families only when current water, weather, the child's age, and close adult supervision allow."
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "water"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0022-photo-1",
+          "fileName": "1fbc6a6f0c4fe178777e247bba3c64f4070a003bf5d15f344f5b3e7ff6e55c7d.jpg",
+          "alt": {
+            "zh": "大浅滩现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6947771,
+        "longitude": 117.7372127,
+        "system": "WGS84"
+      }
+    },
+    "WY-0024": {
+      "id": "WY-0024",
+      "name": {
+        "zh": "桃源峪",
+        "en": "Taoyuanyu"
+      },
+      "shortName": {
+        "zh": "桃源峪",
+        "en": "Taoyuanyu"
+      },
+      "pinyin": "",
+      "englishNameStatus": "pinyin",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "桃源峪",
+        "en": "Taoyuanyu"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "溪流与林缘的自然观察起点",
+        "en": "A starting point for observing the stream edge and forest edge."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "nature"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0024-photo-1",
+          "fileName": "c8bd4b82de52dedb47ad73c99300fb5a3acf526cb59da7370bd07d4e1552e09f.jpg",
+          "alt": {
+            "zh": "桃源峪现场照片",
+            "en": "Photo of Taoyuanyu"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.7280462,
+        "longitude": 117.7135617,
+        "system": "WGS84"
+      }
+    },
+    "WY-0025": {
+      "id": "WY-0025",
+      "name": {
+        "zh": "桃源峪停车位置",
+        "en": "Taoyuanyu Parking"
+      },
+      "shortName": {
+        "zh": "桃源峪停车",
+        "en": "Taoyuanyu Parking"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "停车",
+      "region": {
+        "zh": "桃源峪",
+        "en": "Taoyuanyu"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.7280613,
+        "longitude": 117.7135561,
+        "system": "WGS84"
+      }
+    },
+    "WY-0026": {
+      "id": "WY-0026",
+      "name": {
+        "zh": "桃源峪卫生间",
+        "en": "Taoyuanyu Restroom"
+      },
+      "shortName": {
+        "zh": "桃源峪卫生间",
+        "en": "Taoyuanyu Restroom"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 20,
+      "category": "公共服务",
+      "region": {
+        "zh": "桃源峪",
+        "en": "Taoyuanyu"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.7278789,
+        "longitude": 117.7135171,
+        "system": "WGS84"
+      }
+    },
+    "WY-0028": {
+      "id": "WY-0028",
+      "name": {
+        "zh": "龙渡蝴蝶科普展示馆",
+        "en": "Longdu Butterfly Science Exhibition Hall"
+      },
+      "shortName": {
+        "zh": "蝴蝶馆",
+        "en": "Butterfly Hall"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 80,
+      "category": "自然科普展馆",
+      "region": {
+        "zh": "红星村附近",
+        "en": "Near Hongxing Village"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "在展馆里看懂蝴蝶与环境",
+        "en": "An exhibition about butterflies and their environment."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": true
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "nature",
+        "museum"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0028-photo-1",
+          "fileName": "03f35abce64a25d43f24aed7074152a9dcaa52e50f5217206d40757118fad58e.jpg",
+          "alt": {
+            "zh": "龙渡蝴蝶科普展示馆现场照片",
+            "en": "Photo of Longdu Butterfly Science Exhibition Hall"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.7269889,
+        "longitude": 117.7037196,
+        "system": "WGS84"
+      }
+    },
+    "WY-0030": {
+      "id": "WY-0030",
+      "name": {
+        "zh": "野猴谷",
+        "en": "Wild Monkey Valley"
+      },
+      "shortName": {
+        "zh": "野猴谷",
+        "en": "Wild Monkey Valley"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "桐木区域",
+        "en": "Tongmu Area"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "继续往桐木方向观察山林环境",
+        "en": "A stop for observing the forest environment on the way toward Tongmu."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "nature"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.7467292,
+        "longitude": 117.6772003,
+        "system": "WGS84"
+      }
+    },
+    "WY-0031": {
+      "id": "WY-0031",
+      "name": {
+        "zh": "野猴观察区域",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "野猴观察区",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 80,
+      "category": "自然观察点",
+      "region": {
+        "zh": "桐木区域",
+        "en": "Tongmu Area"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "unknown",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [],
+      "coordinates": {
+        "latitude": 27.74676,
+        "longitude": 117.6772334,
+        "system": "WGS84"
+      }
+    },
+    "WY-0032": {
+      "id": "WY-0032",
+      "name": {
+        "zh": "红茶发源地展示馆",
+        "en": "Black Tea Origins Exhibition Hall"
+      },
+      "shortName": {
+        "zh": "红茶馆",
+        "en": "Black Tea Hall"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 100,
+      "category": "茶文化展馆",
+      "region": {
+        "zh": "桐木区域",
+        "en": "Tongmu Area"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "红茶发源地主题展示",
+        "en": "An exhibition about the origins of black tea."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": true,
+        "lodging": true
+      },
+      "familySuitability": "no",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "museum"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0032-photo-1",
+          "fileName": "bdf32b1ea485d3229d06eeed9af00e1ccb35dd9f20437d65400872a48ecc19f8.jpg",
+          "alt": {
+            "zh": "红茶发源地展示馆现场照片",
+            "en": "Photo of Black Tea Origins Exhibition Hall"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.750947,
+        "longitude": 117.6750617,
+        "system": "WGS84"
+      }
+    },
+    "WY-0033": {
+      "id": "WY-0033",
+      "name": {
+        "zh": "大峡谷展示馆",
+        "en": "Grand Canyon Exhibition Hall"
+      },
+      "shortName": {
+        "zh": "大峡谷馆",
+        "en": "Grand Canyon Hall"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "桐木区域",
+        "en": "Tongmu Area"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "大峡谷主题展示",
+        "en": "An exhibition about the Wuyishan Grand Canyon."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "museum"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0033-photo-1",
+          "fileName": "4f1f91b783655841f6793f263c952823d4cd0b8f6d7c5a3205639f15219b92bc.jpg",
+          "alt": {
+            "zh": "大峡谷展示馆现场照片",
+            "en": "Photo of Grand Canyon Exhibition Hall"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.7108079,
+        "longitude": 117.6523821,
+        "system": "WGS84"
+      }
+    },
+    "WY-0035": {
+      "id": "WY-0035",
+      "name": {
+        "zh": "大竹岚自然观察区域",
+        "en": "Dazhulan Nature Observation Area"
+      },
+      "shortName": {
+        "zh": "大竹岚",
+        "en": "Dazhulan"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "大竹岚",
+        "en": "Dazhulan"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "大竹岚方向的自然观察区域",
+        "en": "A nature observation area in Dazhulan."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": false,
+        "food": false,
+        "shop": false,
+        "lodging": false
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "nature"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0035-photo-1",
+          "fileName": "8bce769adf62f8a1de1d9ee1302feb05acdffe3bc2f7510b1163f1e482cd46aa.jpg",
+          "alt": {
+            "zh": "大竹岚自然观察区域现场照片",
+            "en": "Photo of Dazhulan Nature Observation Area"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.7020279,
+        "longitude": 117.6475669,
+        "system": "WGS84"
+      }
+    },
+    "WY-0036": {
+      "id": "WY-0036",
+      "name": {
+        "zh": "坳头观景台",
+        "en": "Aotou Viewpoint"
+      },
+      "shortName": {
+        "zh": "坳头",
+        "en": "Aotou"
+      },
+      "pinyin": "",
+      "englishNameStatus": "translated",
+      "labelPriority": 100,
+      "category": "路线核心节点",
+      "region": {
+        "zh": "坳头村",
+        "en": "Aotou Village"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "壮阔的武夷大峡谷",
+        "en": "A viewpoint over the Wuyishan Grand Canyon."
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": true,
+        "lodging": true
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": false,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "scenery"
+      ],
+      "publicStatus": "正常",
+      "published": true,
+      "recommended": true,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0036-photo-1",
+          "fileName": "13f4b4a21f8e5459ccd7778ea83260e041d17eb8c6e78a13f7c7f605341ab835.jpg",
+          "alt": {
+            "zh": "坳头观景台现场照片",
+            "en": "Photo of Aotou Viewpoint"
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6676268,
+        "longitude": 117.6449117,
+        "system": "WGS84"
+      }
+    },
+    "WY-0061": {
+      "id": "WY-0061",
+      "name": {
+        "zh": "昆虫展示馆（在建）",
+        "en": ""
+      },
+      "shortName": {
+        "zh": "昆虫馆",
+        "en": ""
+      },
+      "pinyin": "",
+      "englishNameStatus": "pending",
+      "labelPriority": 60,
+      "category": "自然科普展馆",
+      "region": {
+        "zh": "一号风景道沿线",
+        "en": "Along No. 1 Scenic Road"
+      },
+      "address": {
+        "zh": "",
+        "en": ""
+      },
+      "summary": {
+        "zh": "昆虫主题展示，开放前先留意在建状态",
+        "en": ""
+      },
+      "description": {
+        "zh": "",
+        "en": ""
+      },
+      "whyStop": {
+        "zh": "",
+        "en": ""
+      },
+      "firsthandNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "practicalInfo": {
+        "zh": [],
+        "en": []
+      },
+      "parking": {
+        "zh": "",
+        "en": ""
+      },
+      "toiletNote": {
+        "zh": "",
+        "en": ""
+      },
+      "foodNote": {
+        "zh": "",
+        "en": ""
+      },
+      "shopNote": {
+        "zh": "",
+        "en": ""
+      },
+      "lodgingNote": {
+        "zh": "",
+        "en": ""
+      },
+      "facilities": {
+        "parking": false,
+        "toilet": true,
+        "food": true,
+        "shop": false,
+        "lodging": true
+      },
+      "familySuitability": "yes",
+      "familyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightStatus": "unknown",
+      "overnightNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "overnightLastCheckedAt": "",
+      "overnightSource": "",
+      "safetyNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "accessNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "seasonNotes": {
+        "zh": "",
+        "en": ""
+      },
+      "trust": {
+        "firsthand": true,
+        "checkedInPerson": true,
+        "officialSource": false,
+        "recheckBeforeGoing": true,
+        "lastCheckedAt": ""
+      },
+      "themeIds": [
+        "nature",
+        "museum"
+      ],
+      "publicStatus": "在建",
+      "published": true,
+      "recommended": false,
+      "videos": [],
+      "storyLinks": [],
+      "researchLinks": [],
+      "photos": [
+        {
+          "id": "WY-0061-photo-1",
+          "fileName": "52ba2965a061f34079eb4ad22906ac8a4e73ae621bfdc4a57a0587c12d8ae482.jpg",
+          "alt": {
+            "zh": "昆虫展示馆（在建）现场照片",
+            "en": ""
+          },
+          "role": "cover",
+          "order": 0
+        }
+      ],
+      "coordinates": {
+        "latitude": 27.6677566,
+        "longitude": 117.6444151,
+        "system": "WGS84"
+      }
+    }
+  },
+  "themes": [
+    {
+      "id": "water",
+      "name": {
+        "zh": "玩水",
+        "en": ""
+      },
+      "summary": {
+        "zh": "先看当天水况，再选择适合停留的河边、浅滩或瀑布。",
+        "en": ""
+      },
+      "icon": "水",
+      "tone": "water",
+      "order": 10,
+      "published": true,
+      "archivedAt": null
+    },
+    {
+      "id": "scenery",
+      "name": {
+        "zh": "风景",
+        "en": ""
+      },
+      "summary": {
+        "zh": "沿一号风景道看山、看水、看茶园，挑适合自己的停留点。",
+        "en": ""
+      },
+      "icon": "景",
+      "tone": "scenery",
+      "order": 20,
+      "published": true,
+      "archivedAt": null
+    },
+    {
+      "id": "nature",
+      "name": {
+        "zh": "自然",
+        "en": ""
+      },
+      "summary": {
+        "zh": "从溪流、林缘和展馆认识植物、昆虫与山林环境。",
+        "en": ""
+      },
+      "icon": "叶",
+      "tone": "nature",
+      "order": 30,
+      "published": true,
+      "archivedAt": null
+    },
+    {
+      "id": "museum",
+      "name": {
+        "zh": "茶与展馆",
+        "en": ""
+      },
+      "summary": {
+        "zh": "从茶园、制茶工艺到植物、昆虫与村落展馆，按兴趣慢慢认识武夷山。",
+        "en": ""
+      },
+      "icon": "馆",
+      "tone": "museum",
+      "order": 40,
+      "published": true,
+      "archivedAt": null
+    },
+    {
+      "id": "food",
+      "name": {
+        "zh": "吃的",
+        "en": ""
+      },
+      "summary": {
+        "zh": "整理沿路吃饭、补给和歇脚的位置，方便按行程就近选择。",
+        "en": ""
+      },
+      "icon": "食",
+      "tone": "food",
+      "order": 50,
+      "published": true,
+      "archivedAt": null
+    },
+    {
+      "id": "camping",
+      "name": {
+        "zh": "床车露营",
+        "en": ""
+      },
+      "summary": {
+        "zh": "整理适合床车停靠、过夜和休息的位置，方便按需要筛选。",
+        "en": ""
+      },
+      "icon": "营",
+      "tone": "camping",
+      "order": 60,
+      "published": true,
+      "archivedAt": null
+    }
+  ],
+  "siteSettings": {
+    "brand": {
+      "zh": "武夷山奶爸",
+      "en": "Local Dad Jeff"
+    },
+    "contactEmail": "",
+    "socialLinks": [],
+    "footerNote": {
+      "zh": "",
+      "en": ""
+    }
+  },
+  "geometry": {
+    "routeCount": 6,
+    "pointCount": 952,
+    "protectedHash": "b168ef226401e4dfeeedc3c440451d420be833712b12a796dd0647f49b1f36d8"
+  },
+  "updatedAt": "2026-09-29T02:14:31.660Z"
+}

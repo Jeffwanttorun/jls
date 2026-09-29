@@ -1,0 +1,23 @@
+import {chromium,expect} from '@playwright/test';
+import assert from 'node:assert/strict';
+import {readFile,mkdir,writeFile} from 'node:fs/promises';
+import {createServer} from 'vite';
+import vue from '@vitejs/plugin-vue';
+
+const document=JSON.parse(await readFile('content-studio-store/seed.json','utf8'));
+const payload={draftRevision:1,publishedRevision:'repository-seed',publishedSnapshotHash:'a'.repeat(64),updatedAt:new Date().toISOString(),publishedAt:new Date().toISOString(),document,dashboard:{stats:{places:41,routes:1,themes:6,coreStops:9,routeSegments:6,routePoints:952},issues:[],issueCounts:{},recentPlaces:Object.values(document.places).slice(0,8)}};
+const vite=await createServer({configFile:false,root:'admin',cacheDir:'../node_modules/.vite-studio-tests',plugins:[vue()],server:{host:'127.0.0.1',port:5178,strictPort:true}});
+await vite.listen();const browser=await chromium.launch({channel:'msedge',headless:true});const checks:string[]=[],writes:any[]=[];await mkdir('reports/content-studio-v6/screenshots',{recursive:true});
+const mock=async(page:any)=>{await page.route('**/api/admin/content-studio/state',(route:any)=>route.fulfill({json:payload}));await page.route('**/api/admin/visitor-content/state',(route:any)=>route.fulfill({json:{state:{media:{version:1,items:{}}},places:[],issues:[]}}));await page.route('**/api/admin/content-studio/save',async(route:any)=>{writes.push(route.request().postDataJSON());await route.fulfill({json:{ok:true,draftRevision:2}})});};
+const assertNoOverflow=async(page:any)=>{const layout=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,innerWidth,offenders:[...document.querySelectorAll('*')].filter((el:any)=>el.getBoundingClientRect().right>innerWidth+1).slice(0,8).map((el:any)=>({tag:el.tagName,class:el.className,right:el.getBoundingClientRect().right,width:el.getBoundingClientRect().width,text:el.textContent?.slice(0,30)}))}));assert.equal(layout.scrollWidth<=layout.innerWidth,true,JSON.stringify(layout));};
+try{
+ for(const width of [390,375]){
+  const context=await browser.newContext({viewport:{width,height:844}}),page=await context.newPage();await mock(page);await page.goto('http://127.0.0.1:5178/studio');
+  await expect(page.getByRole('heading',{name:'武夷山奶爸维护台'})).toBeVisible();await expect(page.getByText('41 个公开地点')).toBeVisible();await page.getByPlaceholder('野猴谷、WY-0030、桐木、红茶').fill('野猴谷');await expect(page.getByRole('link',{name:/野猴谷/})).toBeVisible();await assertNoOverflow(page);await page.screenshot({path:`reports/content-studio-v6/screenshots/dashboard-${width}.png`,fullPage:true});await context.close();
+ }
+ checks.push('375/390px 维护台总览、搜索与大按钮无横向溢出');
+ const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();page.on('pageerror',error=>console.error('PAGEERROR',error.message));await mock(page);await page.goto('http://127.0.0.1:5178/studio/routes/no-1-scenic-road');
+ await expect(page.locator('.route-stage-card')).toHaveCount(7);const stage=page.locator('.route-stage-card').nth(3);await stage.getByRole('button',{name:'＋ 添加分组'}).click();await expect(stage.locator('.route-group-heading input').last()).toHaveValue('新分组');await stage.getByRole('button',{name:'↑'}).first().click();await page.getByRole('button',{name:'保存路线草稿'}).last().click();await expect(page.getByText(/草稿已保存/)).toBeVisible();assert(writes.some(body=>body.objectType==='route'));assert.equal(writes.at(-1).document.routes[0].stages.find((s:any)=>s.id==='huangcun-hongxing').groups.length,1);await assertNoOverflow(page);await page.screenshot({path:'reports/content-studio-v6/screenshots/route-editor-390.png',fullPage:true});checks.push('手机路线编辑可新增分组、上移地点并保存草稿');
+ await page.goto('http://127.0.0.1:5178/studio/places/WY-0030');await expect(page.getByRole('heading',{name:'野猴谷'})).toBeVisible();await page.getByRole('button',{name:'现场更新'}).click();await page.getByRole('button',{name:'最近核验 = 今天'}).click();await page.getByPlaceholder('添加一条实地记录').fill('现场测试记录');await page.getByRole('button',{name:'保存现场草稿'}).click();await expect(page.getByText(/草稿已保存/)).toBeVisible();assert(writes.some(body=>body.objectType==='place'&&body.document.places['WY-0030'].firsthandNotes.zh==='现场测试记录'));await assertNoOverflow(page);await page.screenshot({path:'reports/content-studio-v6/screenshots/place-field-update-390.png',fullPage:true});checks.push('手机地点页可更新核验日期、实地记录并保存草稿');await context.close();
+ await writeFile('reports/content-studio-v6/browser-checks.json',JSON.stringify({passed:true,checks,writes:writes.length,checkedAt:new Date().toISOString()},null,2));console.log(JSON.stringify({passed:true,checks,writes:writes.length},null,2));
+}finally{await browser.close();await vite.close();}

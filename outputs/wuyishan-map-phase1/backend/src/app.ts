@@ -8,6 +8,7 @@ import { CoordinateError } from './coordinates.js';
 import {VisitorContentError} from '../../shared/visitor-content.js';
 import {registerVisitorContentRoutes} from './visitor-content-routes.js';
 import {registerSitePublishing} from './site-publishing.js';
+import {registerContentStudioRoutes} from './content-studio.js';
 import {timingSafeEqual} from 'node:crypto';
 const summarySql=`SELECT p.*,t.name category_name,parent.code parent_code,parent.name parent_name,
  v.last_verified_at,CASE WHEN c.id IS NOT NULL THEN '已确认' WHEN EXISTS(SELECT 1 FROM coordinate_candidates cc WHERE cc.matched_place_id=p.id AND cc.status='pending') THEN '待确认' ELSE '缺坐标' END coordinate_status
@@ -31,6 +32,7 @@ export function createApp(db:Pool) {
  registerPlaceMaintenance(app,db);
  registerCorridorRoutes(app,db);
  registerVisitorContentRoutes(app,db);
+ registerContentStudioRoutes(app,db);
  registerSitePublishing(app);
  app.get('/health',async()=>{await db.query('SELECT 1');return {status:'ok'};});
  app.get('/api/admin/coordinate-queue',{schema:{querystring:{type:'object',additionalProperties:false,properties:{after:{type:'string',pattern:'^WY-[0-9]{4,}$'}}}}},async req=>{

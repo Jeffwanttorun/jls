@@ -34,7 +34,13 @@ export type KnowledgeRoutePlaceRole = "core-stop" | "secondary-stop" | "service"
 export interface KnowledgeRoutePlaceRelationship {
   placeId: string;
   role: KnowledgeRoutePlaceRole;
+  stageId?: string;
+  groupId?: string;
+  order?: number;
+  showRoleLabel?: boolean;
 }
+
+export interface KnowledgeRouteGroup {id:string;titleZh:string;titleEn?:string;summaryZh?:string;summaryEn?:string;placeIds:string[]}
 
 export interface KnowledgePlace {
   id: string;
@@ -84,6 +90,7 @@ export interface KnowledgeRouteStage {
   titleZh: string;
   titleEn?: string;
   placeIds: string[];
+  groups?: KnowledgeRouteGroup[];
 }
 
 export interface KnowledgeRoute {

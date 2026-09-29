@@ -11,9 +11,21 @@ import VisitorThemes from './VisitorThemes.vue';
 import VisitorAlerts from './VisitorAlerts.vue';
 import VisitorChecks from './VisitorChecks.vue';
 import VisitorHomeEditor from './VisitorHomeEditor.vue';
+import StudioDashboard from './StudioDashboard.vue';
+import StudioPlaces from './StudioPlaces.vue';
+import StudioPlaceEditor from './StudioPlaceEditor.vue';
+import StudioRoutes from './StudioRoutes.vue';
+import StudioRouteEditor from './StudioRouteEditor.vue';
+import StudioThemes from './StudioThemes.vue';
+import StudioMedia from './StudioMedia.vue';
+import StudioIssues from './StudioIssues.vue';
+import StudioHistory from './StudioHistory.vue';
+import StudioHelp from './StudioHelp.vue';
+import StudioMap from './StudioMap.vue';
+import StudioSettings from './StudioSettings.vue';
 import './style.css';
 // Remove the obsolete credential left by the previous release.
 try { sessionStorage.removeItem('adminToken'); } catch { /* Storage is optional. */ }
 const base=import.meta.env.BASE_URL;
-const router=createRouter({history:createWebHistory(base),routes:[{path:'/',redirect:'/visitor-home'},{path:'/places',component:Places},{path:'/places/:code',component:PlaceDetail},{path:'/map',component:InternalMap},{path:'/recycle',component:RecycleBin},{path:'/visitor-home',component:VisitorHomeEditor},{path:'/visitor-content',component:VisitorContentList},{path:'/visitor-content/:id',component:VisitorContentEditor},{path:'/visitor-themes',component:VisitorThemes},{path:'/visitor-alerts',component:VisitorAlerts},{path:'/visitor-checks',component:VisitorChecks}]});
+const router=createRouter({history:createWebHistory(base),routes:[{path:'/',redirect:'/studio'},{path:'/studio',component:StudioDashboard},{path:'/studio/places',component:StudioPlaces},{path:'/studio/places/:code',component:StudioPlaceEditor},{path:'/studio/routes',component:StudioRoutes},{path:'/studio/routes/:id',component:StudioRouteEditor},{path:'/studio/themes',component:StudioThemes},{path:'/studio/media',component:StudioMedia},{path:'/studio/issues',component:StudioIssues},{path:'/studio/history',component:StudioHistory},{path:'/studio/help',component:StudioHelp},{path:'/studio/settings',component:StudioSettings},{path:'/studio/map',component:StudioMap},{path:'/places',component:Places},{path:'/places/:code',component:PlaceDetail},{path:'/map',component:InternalMap},{path:'/recycle',component:RecycleBin},{path:'/visitor-home',component:VisitorHomeEditor},{path:'/visitor-content',component:VisitorContentList},{path:'/visitor-content/:id',component:VisitorContentEditor},{path:'/visitor-themes',component:VisitorThemes},{path:'/visitor-alerts',component:VisitorAlerts},{path:'/visitor-checks',component:VisitorChecks}]});
 createApp(App).use(router).mount('#app');

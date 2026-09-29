@@ -1,5 +1,6 @@
 import snapshot from "./wuyishan-public-map.json";
 import runtime from "./visitor-runtime.json";
+import studioRuntime from "./content-studio-runtime.json";
 import { publicMapLabelFor } from "./map-place-labels";
 import { knowledgeRoutes, routeRoleForPlace } from "./knowledge-routes";
 import type { KnowledgePlace } from "../types/knowledge-map";
@@ -14,6 +15,7 @@ type RuntimePlace = {
 type SnapshotPlace = (typeof snapshot.places)[number] & { ownerApproved?:boolean; humanConfirmed?:boolean };
 
 const runtimeById = new Map((runtime.places as RuntimePlace[]).map((place)=>[place.code,place]));
+const studioPlaces=studioRuntime.document.places;
 const routeIdsByPlace = new Map<string,string[]>();
 const publicKnowledgeRoutes=knowledgeRoutes.filter((route)=>route.published);
 for(const route of publicKnowledgeRoutes) for(const placeId of route.placeIds){
@@ -79,50 +81,51 @@ const media=(fileName:string)=>`/visitor-media/${fileName}`;
 
 const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((point)=>{
   const managed=runtimeById.get(point.code);
+  const studio=studioPlaces[point.code as keyof typeof studioPlaces];
   const labels=publicMapLabelFor(point.code,managed?.name??point.name);
   const english=reviewedEnglishNames[point.code];
   const summary=managed?.summary?.trim();
   const image=managed?.image?.trim();
   const routeRole=publicKnowledgeRoutes.map((route)=>routeRoleForPlace(route,point.code)).find(Boolean);
-  const sourceThemeIds=managed?.themes??[];
+  const sourceThemeIds=studio?.themeIds??managed?.themes??[];
   const campingRole:KnowledgePlace["campingRole"]=sourceThemeIds.includes("camping")
     ? routeRole==="service"||routeRole==="junction"?"service-only":labels.category==="停车"?"parking":"overnight-stop"
     : undefined;
   const themeIds=sourceThemeIds.filter((themeId)=>themeId!=="camping"||campingRole==="overnight-stop");
-  const familySuitability:KnowledgePlace["familySuitability"]=managed?.familyFriendly===true
+  const familySuitability:KnowledgePlace["familySuitability"]=studio?.familySuitability??(managed?.familyFriendly===true
     ? themeIds.includes("water")?"conditional":"yes"
-    : managed?.familyFriendly===false?"no":"unknown";
+    : managed?.familyFriendly===false?"no":"unknown");
   return {
     id:point.code,
-    nameZh:managed?.name?.trim()||point.name,
-    nameEn:english?.name,
-    shortNameZh:labels.shortName,
-    shortNameEn:english?.shortName??english?.name,
-    englishNameStatus:english?.status??"pending",
-    labelPriority:labels.labelPriority,
-    category:labels.category,
+    nameZh:studio?.name.zh.trim()||managed?.name?.trim()||point.name,
+    nameEn:studio?.name.en.trim()||english?.name,
+    shortNameZh:studio?.shortName.zh.trim()||labels.shortName,
+    shortNameEn:(studio?.shortName.en.trim()||english?.shortName)??english?.name,
+    englishNameStatus:studio?.englishNameStatus??english?.status??"pending",
+    labelPriority:studio?.labelPriority??labels.labelPriority,
+    category:studio?.category??labels.category,
     coordinates:point.coordinates,
-    region:(managed?.region?.trim()||point.region)?{zh:(managed?.region?.trim()||point.region)!,en:regionNames[(managed?.region?.trim()||point.region)!]}:undefined,
-    summary:summary&&!genericSummaries.has(summary)?{zh:summary,en:reviewedEnglishSummaries[point.code]}:reviewedEnglishSummaries[point.code]?{en:reviewedEnglishSummaries[point.code]}:undefined,
-    toilet:managed?.facilities?.toilet===true?true:undefined,
-    food:managed?.facilities?.restaurant===true?true:undefined,
-    shop:managed?.facilities?.shop===true?true:undefined,
-    lodging:managed?.facilities?.lodging===true?true:undefined,
+    region:(studio?.region.zh.trim()||managed?.region?.trim()||point.region)?{zh:(studio?.region.zh.trim()||managed?.region?.trim()||point.region)!,en:studio?.region.en.trim()||regionNames[(managed?.region?.trim()||point.region)!]}:undefined,
+    summary:studio&&(studio.summary.zh.trim()||studio.summary.en.trim())?{zh:studio.summary.zh||undefined,en:studio.summary.en||undefined}:summary&&!genericSummaries.has(summary)?{zh:summary,en:reviewedEnglishSummaries[point.code]}:reviewedEnglishSummaries[point.code]?{en:reviewedEnglishSummaries[point.code]}:undefined,
+    description:studio&&(studio.description.zh||studio.description.en)?studio.description:undefined,whyStop:studio&&(studio.whyStop.zh||studio.whyStop.en)?studio.whyStop:undefined,firsthandNotes:studio&&(studio.firsthandNotes.zh||studio.firsthandNotes.en)?studio.firsthandNotes:undefined,
+    practicalInfo:studio&&(studio.practicalInfo.zh.length||studio.practicalInfo.en.length)?studio.practicalInfo:undefined,
+    parking:studio&&(studio.parking.zh||studio.parking.en)?studio.parking:undefined,
+    toilet:studio?.facilities.toilet===true||managed?.facilities?.toilet===true?true:undefined,
+    food:studio?.facilities.food===true||managed?.facilities?.restaurant===true?true:undefined,
+    shop:studio?.facilities.shop===true||managed?.facilities?.shop===true?true:undefined,
+    lodging:studio?.facilities.lodging===true||managed?.facilities?.lodging===true?true:undefined,
     familySuitability,
-    familyNotes:familySuitability==="conditional"?{
+    familyNotes:studio&&(studio.familyNotes.zh||studio.familyNotes.en)?studio.familyNotes:familySuitability==="conditional"?{
       zh:"亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
       en:"Suitable for families only when current water, weather, the child's age, and close adult supervision allow.",
     }:undefined,
     campingRole,
-    overnightStatus:campingRole==="overnight-stop"?"unknown":undefined,
-    trustStatus:(point.ownerApproved===true&&point.humanConfirmed===true)||managed?.status==="在建"?{
-      firsthand:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,
-      checkedInPerson:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,
-      recheckBeforeGoing:managed?.status==="在建"?true:undefined,
-    }:undefined,
+    overnightStatus:studio?.overnightStatus??(campingRole==="overnight-stop"?"unknown":undefined),
+    safetyNotes:studio&&(studio.safetyNotes.zh||studio.safetyNotes.en)?studio.safetyNotes:undefined,accessNotes:studio&&(studio.accessNotes.zh||studio.accessNotes.en)?studio.accessNotes:undefined,seasonNotes:studio&&(studio.seasonNotes.zh||studio.seasonNotes.en)?studio.seasonNotes:undefined,lastCheckedAt:studio?.trust.lastCheckedAt||undefined,
+    trustStatus:studio?{firsthand:studio.trust.firsthand||undefined,checkedInPerson:studio.trust.checkedInPerson||undefined,officialSource:studio.trust.officialSource||undefined,recheckBeforeGoing:studio.trust.recheckBeforeGoing||undefined}:(point.ownerApproved===true&&point.humanConfirmed===true)||managed?.status==="在建"?{firsthand:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,checkedInPerson:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,recheckBeforeGoing:managed?.status==="在建"?true:undefined}:undefined,
     routeIds:routeIdsByPlace.get(point.code),
-    videos:[], storyLinks:[], researchLinks:[],
-    photoGallery:image?[{src:media(image),altZh:`${managed?.name??point.name}现场照片`,altEn:english?`Photo of ${english.name}`:undefined}]:[],
+    videos:studio?.videos.flatMap(item=>item.platform?[{platform:item.platform,title:item.title.zh||item.title.en,url:item.url,publishedAt:item.publishedAt,language:item.language}]:[])??[], storyLinks:studio?.storyLinks.map(item=>({title:item.title.zh||item.title.en,url:item.url}))??[], researchLinks:studio?.researchLinks.map(item=>({title:item.title.zh||item.title.en,url:item.url}))??[],
+    photoGallery:studio?.photos.length?studio.photos.sort((a,b)=>a.order-b.order).map(item=>({src:media(item.fileName),altZh:item.alt.zh||studio.name.zh,altEn:item.alt.en||undefined})):image?[{src:media(image),altZh:`${managed?.name??point.name}现场照片`,altEn:english?`Photo of ${english.name}`:undefined}]:[],
     themeIds,
     publicStatus:managed?.status??point.status,
   };

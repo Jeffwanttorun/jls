@@ -6,6 +6,7 @@ import { execFile } from "node:child_process";
 import { resolve } from "node:path";
 
 const visitorStore=resolve("../wuyishan-map-phase1/visitor-content-store/data.json");
+const studioStore=resolve("../wuyishan-map-phase1/content-studio-store/published.json");
 const visitorSyncScript=resolve("scripts/sync-visitor-content.mjs");
 const liveVisitorContent={
   name:"live-visitor-content",
@@ -25,7 +26,8 @@ const liveVisitorContent={
         });
       };
       server.watcher.add(visitorStore);
-      server.watcher.on("change",(path)=>{if(resolve(path)!==visitorStore)return;clearTimeout(timer);timer=setTimeout(sync,180);});
+      server.watcher.add(studioStore);
+      server.watcher.on("change",(path)=>{if(![visitorStore,studioStore].includes(resolve(path)))return;clearTimeout(timer);timer=setTimeout(sync,180);});
     },
   },
 };

@@ -40,6 +40,8 @@ if(expectedCommit&&release.repositoryHead!==expectedCommit)failures.push(`/relea
 if(expectedCommit&&release.buildCommitSha!==expectedCommit)failures.push(`/release.json: build commit does not match ${expectedCommit}`);
 if(expectedCommit&&release.remoteHead!==expectedCommit)failures.push(`/release.json: remote main does not match ${expectedCommit}`);
 if(!release.releaseId||!release.buildTime)failures.push("/release.json: missing release identity metadata");
+if(!release.contentRevision)failures.push("/release.json: missing content revision");
+if(release.contentSnapshotHash&& !/^[a-f0-9]{64}$/.test(release.contentSnapshotHash))failures.push("/release.json: invalid content snapshot hash");
 
 if(failures.length)throw new Error(`Production content assertions failed:\n${failures.map((failure)=>`- ${failure}`).join("\n")}`);
 console.log(JSON.stringify({ok:true,siteUrl,repositoryHead:release.repositoryHead,release:release.release,checkedPages:pages.map((page)=>page.path)}));

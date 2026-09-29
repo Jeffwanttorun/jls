@@ -1,4 +1,5 @@
 import { access, copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -10,6 +11,9 @@ const mediaDir = resolve(process.env.VISITOR_CONTENT_MEDIA_DIR || resolve(defaul
 const publicMapPath = resolve(projectRoot, "src/data/wuyishan-public-map.json");
 const outputPath = resolve(projectRoot, "src/data/visitor-runtime.json");
 const publicMediaDir = resolve(projectRoot, "public/visitor-media");
+const studioSnapshotPath = resolve(process.env.CONTENT_STUDIO_SNAPSHOT_PATH || (process.env.VISITOR_CONTENT_STORE_PATH ? resolve(dirname(process.env.VISITOR_CONTENT_STORE_PATH), "../content-studio/published.json") : resolve(defaultPhaseRoot, "content-studio-store/published.json")));
+const studioSeedPath = resolve(defaultPhaseRoot, "content-studio-store/seed.json");
+const studioOutputPath = resolve(projectRoot, "src/data/content-studio-runtime.json");
 
 const [liveState, seedState, publicMap] = await Promise.all([
   readFile(storePath, "utf8").then(JSON.parse).catch(() => null),
@@ -84,8 +88,15 @@ const runtime = {
 
 await writeFile(outputPath, JSON.stringify(runtime,null,2)+"\n", "utf8");
 
+const studioSource=await readFile(studioSnapshotPath,"utf8").then(JSON.parse).catch(async()=>({schemaVersion:2,contentRevision:"repository-seed",contentSnapshotHash:null,publishedAt:null,document:JSON.parse(await readFile(studioSeedPath,"utf8"))}));
+if(studioSource?.schemaVersion!==2||studioSource?.document?.schemaVersion!==2)throw new Error("Content Studio snapshot is not a supported schemaVersion 2 document.");
+if(Object.keys(studioSource.document.places||{}).length!==publicMap.places.length)throw new Error(`Content Studio place integrity mismatch: expected ${publicMap.places.length}.`);
+if(studioSource.document.geometry?.routeCount!==publicMap.routes.length||studioSource.document.geometry?.pointCount!==publicMap.routeSource.geometryPointCount)throw new Error("Protected route geometry metadata changed in Content Studio.");
+if(!studioSource.contentSnapshotHash)studioSource.contentSnapshotHash=createHash("sha256").update(JSON.stringify(studioSource.document)).digest("hex");
+await writeFile(studioOutputPath,JSON.stringify(studioSource,null,2)+"\n","utf8");
+
 const existingFiles = new Set(await readdir(publicMediaDir));
 const missing = [...referencedFiles].filter((file)=>!existingFiles.has(file));
 if (missing.length) throw new Error(`Visitor media copy incomplete: ${missing.join(", ")}`);
 
-console.log(`Synced visitor content store v${state.version}${state === seedState ? " from repository snapshot" : " from live store"}: ${runtime.themes.length} themes, ${runtime.places.length} theme places, ${referencedFiles.size} media files.`);
+console.log(`Synced visitor content store v${state.version}${state === seedState ? " from repository snapshot" : " from live store"}: ${runtime.themes.length} themes, ${runtime.places.length} theme places, ${referencedFiles.size} media files. Content Studio ${studioSource.contentRevision}: ${Object.keys(studioSource.document.places).length} places.`);

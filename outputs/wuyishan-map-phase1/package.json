@@ -24,8 +24,10 @@
     "test:integration": "tsx --test tests/integration/*.test.ts",
     "test:browser": "tsx tests/phase2-browser.ts",
     "db:backup": "tsx scripts/backup-verify.ts",
+    "studio:seed": "tsx scripts/generate-content-studio-seed.ts",
     "test:quick-pick": "tsx tests/quick-pick-browser.ts",
     "test:maintenance": "tsx tests/maintenance-browser.ts",
+    "test:studio": "tsx tests/studio-ui-browser.ts",
     "test:recycle": "tsx tests/recycle-browser.ts"
   },
   "dependencies": {

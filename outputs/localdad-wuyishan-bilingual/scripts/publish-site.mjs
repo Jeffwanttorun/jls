@@ -10,6 +10,7 @@ const releasesDir=resolve(process.env.SITE_RELEASES_DIR||resolve(root,".local-re
 const currentLink=resolve(process.env.SITE_CURRENT_LINK||resolve(releasesDir,"current"));
 const storePath=resolve(process.env.VISITOR_CONTENT_STORE_PATH||resolve(root,"../wuyishan-map-phase1/visitor-content-store/data.json"));
 const mediaDir=resolve(process.env.VISITOR_CONTENT_MEDIA_DIR||resolve(root,"../wuyishan-map-phase1/visitor-content-store/media"));
+const contentStudioSnapshotPath=resolve(process.env.CONTENT_STUDIO_SNAPSHOT_PATH||(process.env.VISITOR_CONTENT_STORE_PATH?resolve(dirname(process.env.VISITOR_CONTENT_STORE_PATH),"../content-studio/published.json"):resolve(root,"../wuyishan-map-phase1/content-studio-store/published.json")));
 const backupRoot=resolve(process.env.SITE_BACKUP_DIR||resolve(releasesDir,"backups"));
 const packageManager=process.env.SITE_PACKAGE_MANAGER||(/^win/.test(process.platform)?"pnpm.cmd":"pnpm");
 const stamp=new Date().toISOString().replace(/[:.]/g,"-");
@@ -35,6 +36,7 @@ const mapHashBefore=sha256(mapBefore);
 await mkdir(resolve(backupRoot,stamp),{recursive:true});
 await cp(storePath,resolve(backupRoot,stamp,"visitor-content.json"));
 await cp(mediaDir,resolve(backupRoot,stamp,"media"),{recursive:true});
+try{await cp(contentStudioSnapshotPath,resolve(backupRoot,stamp,"content-studio-published.json"));}catch(error){if(error?.code!=="ENOENT")throw error;}
 
 await new Promise((resolvePromise,reject)=>{
  const child=spawn(packageManager,["run","build"],{cwd:root,stdio:"inherit",env:process.env,shell:process.platform==="win32"});
@@ -48,8 +50,9 @@ if(sha256(mapAfter)!==mapHashBefore)throw new Error("Protected public map geomet
 await mkdir(releaseDir,{recursive:false});
 await cp(buildDir,releaseDir,{recursive:true});
 const state=JSON.parse(await readFile(storePath,"utf8"));
+const studioRuntime=JSON.parse(await readFile(resolve(root,"src/data/content-studio-runtime.json"),"utf8"));
 const buildTime=new Date().toISOString();
-await writeFile(resolve(releaseDir,"release.json"),JSON.stringify({release:releaseId,releaseId,publishedAt:buildTime,buildTime,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,visitorStoreVersion:state.version,mapHash:mapHashBefore},null,2)+"\n");
+await writeFile(resolve(releaseDir,"release.json"),JSON.stringify({release:releaseId,releaseId,publishedAt:buildTime,buildTime,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,visitorStoreVersion:state.version,contentRevision:studioRuntime.contentRevision,contentSnapshotHash:studioRuntime.contentSnapshotHash,mapHash:mapHashBefore},null,2)+"\n");
 
 await mkdir(dirname(currentLink),{recursive:true});
 let previousTarget;
@@ -80,4 +83,4 @@ try{
  throw error;
 }
 
-console.log(JSON.stringify({ok:true,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,projectDir:root,buildDir,release:releaseId,releaseDir,currentLink,visitorStoreVersion:state.version,mapHash:mapHashBefore}));
+console.log(JSON.stringify({ok:true,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,projectDir:root,buildDir,release:releaseId,releaseDir,currentLink,visitorStoreVersion:state.version,contentRevision:studioRuntime.contentRevision,contentSnapshotHash:studioRuntime.contentSnapshotHash,mapHash:mapHashBefore}));

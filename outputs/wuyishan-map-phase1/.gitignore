@@ -19,3 +19,5 @@ outputs/
 visitor-content-store/data.json
 visitor-content-store/media/
 visitor-content-store/backups/
+content-studio-store/published.json
+content-studio-store/backups/
