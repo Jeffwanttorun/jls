@@ -16,7 +16,7 @@ try {
     const page = await context.newPage();
     page.on("pageerror", (error) => errors.push(`${width}px: ${error.message}`));
     page.on("console", (message) => { if (message.type() === "error") errors.push(`${width}px: ${message.text()}`); });
-    for (const [path, headings] of [["/", ["Landscape","Tea","Forest","People and Ideas"]], ["/zh", ["山水","茶","森林","人文"]]]) {
+    for (const [path, headings] of [["/", ["Landscape","Tea","Culture","Nature"]], ["/zh", ["山水","茶","人文","自然"]]]) {
       const response = await page.goto(base + path, { waitUntil:"networkidle" });
       assert.equal(response?.status(), 200);
       assert.deepEqual(await page.locator(".heritage-grid h3").allTextContents(), headings);

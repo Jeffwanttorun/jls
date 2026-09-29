@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Locale } from "../i18n/config";
 import { knowledgePlaces, localizedPlaceName, localizedPlaceRegion } from "../data/knowledge-places";
 import { localizedThemeDescription, localizedThemeName, visitorThemes, type VisitorTheme } from "../data/visitor-themes";
+import { localizedOvernightStatus } from "../data/knowledge-map-i18n";
 import ThemeIcon from "./ThemeIcon.astro";
 
 interface Props { theme:VisitorTheme; locale:Locale; }
@@ -25,7 +26,7 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
     <p>{description}</p>
     <div class="theme-actions">
       <a class="theme-map-cta" href={mapHref}>{zh?"在地图中查看":"View on Map"} <span aria-hidden="true">→</span></a>
-      <label class="dad-kids-filter"><input type="checkbox" data-theme-family-toggle /><span>{zh?"只看适合亲子的地点":"Show family-friendly only"}</span></label>
+      <label class="theme-family-filter"><input type="checkbox" data-theme-family-toggle /><span class="theme-family-filter-text">{zh?"只看亲子可去的地点":"Show places for families"}</span></label>
     </div>
   </section>
 
@@ -40,7 +41,7 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
         const summary=place.summary?.[locale];
         const region=localizedPlaceRegion(place,locale);
         return <a class="dad-place-card" data-family={place.familySuitability??"unknown"} href={placeHref(place.id)} aria-label={zh?`查看${place.nameZh}详情`:`Open ${localizedPlaceName(place,locale)}`}>
-          {photo?<img src={photo.src} alt={zh?photo.altZh:photo.altEn??photo.altZh} width="900" height="600" loading="lazy" decoding="async"/>:<div class:list={["dad-place-placeholder",theme.tone]}><span aria-hidden="true">{zh?theme.icon:<ThemeIcon id={theme.id} />}</span></div>}
+          {photo?<img src={photo.src} alt="" width="900" height="600" loading="lazy" decoding="async"/>:<div class:list={["dad-place-placeholder",theme.tone]}><span aria-hidden="true">{zh?theme.icon:<ThemeIcon id={theme.id} />}</span></div>}
           <div class="dad-place-copy">
             <div class="dad-place-topline">{region&&<p class="dad-eyebrow">{region}</p>}{place.publicStatus==="在建"&&<span class="dad-status">{zh?"在建":"Under construction"}</span>}</div>
             <h2>{localizedPlaceName(place,locale)}</h2>
@@ -54,7 +55,7 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
               {place.shop&&<span class="facility">{zh?"商店":"Shop"}</span>}
               {place.food&&<span class="facility">{zh?"餐馆":"Restaurant"}</span>}
               {place.lodging&&<span class="facility">{zh?"住宿":"Lodging"}</span>}
-              {theme.id==="camping"&&place.overnightStatus==="unknown"&&<span class="facility">{zh?"过夜情况需确认":"Overnight status: recheck"}</span>}
+              {theme.id==="camping"&&place.overnightStatus&&<span class:list={["facility",`overnight-${place.overnightStatus}`]}>{localizedOvernightStatus(place.overnightStatus,locale)}</span>}
             </div>
             <span class="dad-card-action">{zh?"查看详情":"View place"} <b aria-hidden="true">→</b></span>
           </div>
@@ -86,6 +87,6 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
 </script>
 
 <style>
-  .theme-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.theme-map-cta,.dad-kids-filter{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 16px;border-radius:14px;font-weight:800;text-decoration:none}.theme-map-cta{background:#176d50;color:#fff}.dad-theme-hero.has-photo .theme-map-cta{background:#fff;color:#174c39}.dad-kids-filter{border:1px solid #b9cec3;background:#fff;color:#174c39;cursor:pointer}.dad-kids-filter input{width:18px;height:18px;margin:0;accent-color:#176d50}.dad-kids-filter.active{background:#e6f3ec;border-color:#176d50}.theme-original-name{margin:.15rem 0 0!important;color:#7b8983!important;font-size:12px!important}.dad-empty[hidden]{display:none!important}
-  @media(max-width:420px){.theme-actions>*{width:100%}}
+  .theme-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.theme-map-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 16px;border-radius:14px;font-weight:800;text-decoration:none;background:#176d50;color:#fff}.dad-theme-hero.has-photo .theme-map-cta{background:#fff;color:#174c39}.theme-family-filter{align-self:center}.theme-original-name{margin:.15rem 0 0!important;color:#7b8983!important;font-size:12px!important}.dad-empty[hidden]{display:none!important}
+  @media(max-width:420px){.theme-map-cta{width:100%}.theme-family-filter{align-self:flex-start;justify-content:flex-start;max-width:100%}}
 </style>

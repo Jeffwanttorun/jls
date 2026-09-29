@@ -19,23 +19,23 @@ const teaLinks = publishedLinks([
   { slug:"tea-culture-wuyishan", title:"Tea and Daily Life" },
   { slug:"tea-garden-wuyishan", title:"Visit a Tea Garden" },
 ]);
-const forestLinks = publishedLinks([
-  { slug:"natural-heritage-wuyishan", title:"Forest and Natural Heritage" },
-]);
-const peopleLinks = publishedLinks([
+const cultureLinks = publishedLinks([
   { slug:"villages-wuyishan", title:"Villages and Local Life" },
 ]);
+const natureLinks = publishedLinks([
+  { slug:"natural-heritage-wuyishan", title:"Forest and Natural Heritage" },
+]);
 ---
-<BaseLayout title="Why Wuyishan | Local Dad Jeff" description="Explore Wuyishan through four chapters: landscape, tea, forest, and people and ideas.">
+<BaseLayout title="Why Wuyishan | Local Dad Jeff" description="Explore Wuyishan through four connected chapters: landscape, tea, culture, and nature.">
   <section class="why-introduction" aria-labelledby="why-wuyishan-title">
     <p class="kicker">Why Wuyishan</p>
     <h1 id="why-wuyishan-title">One place, understood through connected layers.</h1>
-    <p>Wuyishan’s mountains and rivers, forests and biodiversity, tea, villages, history, and daily work have developed in relation to one another. These four chapters provide a clear way to follow those connections.</p>
+    <p>Wuyishan’s landscape, tea, culture, nature, and everyday life have developed in relation to one another. These four chapters follow those connections through places, local knowledge, and field observation.</p>
   </section>
   <div class="why-chapters why-only-chapters" aria-label="Why Wuyishan — four chapters">
     <WhyChapter number="01" id="landscape" title="Landscape" image="/chapter-media/landscape.webp" imageAlt="A mountain road following a forested river in Wuyishan" links={landscapeLinks} />
     <WhyChapter number="02" id="tea" title="Tea" image="/chapter-media/tea.webp" imageAlt="Tea fields spreading across a Wuyishan valley" links={teaLinks} />
-    <WhyChapter number="03" id="forest" title="Forest" image="/chapter-media/forest.webp" imageAlt="A mantis observed in Wuyishan" links={forestLinks} />
-    <WhyChapter number="04" id="people-and-ideas" title="People and Ideas" image="/chapter-media/people.webp" imageAlt="A local family spending time beside a Wuyishan stream" links={peopleLinks} />
+    <WhyChapter number="03" id="culture" legacyIds={["people-and-ideas"]} title="Culture" image="/chapter-media/people.webp" imageAlt="A local family spending time beside a Wuyishan stream" links={cultureLinks} />
+    <WhyChapter number="04" id="nature" legacyIds={["forest"]} title="Nature" image="/chapter-media/forest.webp" imageAlt="A mantis observed in Wuyishan" links={natureLinks} />
   </div>
 </BaseLayout>

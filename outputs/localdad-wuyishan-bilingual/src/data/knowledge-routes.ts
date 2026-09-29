@@ -35,6 +35,8 @@ export const knowledgeRoutes: readonly KnowledgeRoute[] = [{
   nameEn:"No. 1 Scenic Road",
   summaryZh:"从南源岭一路到坳头，沿途经过村庄、河谷、茶园、展馆和山林观察点。",
   summaryEn:"Travel from Nanyuanling to Aotou through villages, river valleys, tea fields, exhibition halls, and forest observation stops.",
+  mapTitleZh:"从南源岭到坳头",
+  mapTitleEn:"From Nanyuanling to Aotou",
   placeIds:scenicRoadPlaceIds,
   geometryRouteIds:["corridor-01","corridor-02","corridor-03","corridor-04","corridor-05","corridor-06"],
   places:scenicRoadPlaceIds.map((placeId)=>({placeId,role:scenicRoadPlaceRoles[placeId]})),

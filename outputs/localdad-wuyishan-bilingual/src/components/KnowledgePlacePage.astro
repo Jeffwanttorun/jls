@@ -5,7 +5,7 @@ import { knowledgePlaceById, localizedPlaceName, localizedPlaceRegion } from "..
 import { knowledgeRouteById } from "../data/knowledge-routes";
 import type { Locale } from "../i18n/config";
 import type { KnowledgePlace } from "../types/knowledge-map";
-import { localizedCategory, localizedLastChecked, localizedTrustLabels } from "../data/knowledge-map-i18n";
+import { localizedCategory, localizedLastChecked, localizedOvernightStatus, localizedTrustLabels } from "../data/knowledge-map-i18n";
 
 interface Props { place:KnowledgePlace; locale:Locale; }
 const { place,locale }=Astro.props;
@@ -34,30 +34,29 @@ const accessNotes=place.accessNotes?.[locale];
 const seasonNotes=place.seasonNotes?.[locale];
 const safetyNotes=place.safetyNotes?.[locale];
 const familyNotes=place.familyNotes?.[locale];
-const practical=[...(place.practicalInfo?.[locale]??[]),...facilities.map(([label])=>label)];
-const trustItems=localizedTrustLabels(trust,locale).map((item)=>trust?.checkedInPerson&&place.lastCheckedAt&&item===(zh?"Jeff 已实地核验":"Checked in person by Jeff")?`${zh?"Jeff 实地核验":"Checked in person"} · ${localizedLastChecked(place.lastCheckedAt,locale)}`:item);
-const englishNameNote=!zh&&place.englishNameStatus==="translated"?"Working English translation":!zh&&place.englishNameStatus==="pinyin"?"Pinyin place name":undefined;
+const overnightLabel=place.overnightStatus?localizedOvernightStatus(place.overnightStatus,locale):undefined;
+const practical=[...(place.practicalInfo?.[locale]??[]),...facilities.map(([label])=>label),...(overnightLabel?[overnightLabel]:[])];
+const trustItems=localizedTrustLabels(trust,locale);
 const routeHref=(slug:string)=>zh?`/zh/route/${slug}`:`/route/${slug}`;
 const placeHref=(id:string)=>zh?`/zh/place/${id}`:`/place/${id}`;
 const site=Astro.site??new URL("https://localdad.youzipal.com");
 const alternates=[{lang:"en" as const,href:new URL(`/place/${place.id}`,site).toString()},{lang:"zh" as const,href:new URL(`/zh/place/${place.id}`,site).toString()}];
 const description=zh?`${name}的公开地图位置、现有实地记录、沿线前后地点和附近地点关系，由武夷山奶爸按照已经公开的真实地点资料整理，内容随实地记录逐步更新。`:`Map location, field-check status, route sequence, and nearby places for ${name} in Wuyishan.`;
+const primaryImageAlt=primaryPhoto?(zh?primaryPhoto.altZh:primaryPhoto.altEn??`Photo of ${name}`):undefined;
 ---
-<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Local Dad Jeff`} {description} {alternates} image={primaryPhoto?.src} imageAlt={primaryPhoto?zh?primaryPhoto.altZh:primaryPhoto.altEn??primaryPhoto.altZh:undefined}>
+<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Local Dad Jeff`} {description} {alternates} image={primaryPhoto?.src} imageAlt={primaryImageAlt}>
   <article class="knowledge-place">
-    <a class="place-back" href={zh?"/zh/map":"/map"}>← {zh?"返回路线地图":"Back to map"}</a>
+    <a class="place-back" href={zh?"/zh/map":"/map"}>← {zh?"返回地图":"Back to map"}</a>
     <header class="place-heading">
       <p class="place-region">{region||localizedCategory(place.category,locale)}</p>
       <h1>{name}</h1>
-      {!zh&&place.nameEn&&<p class="chinese-name">中文原名：{place.nameZh}</p>}
-      {englishNameNote&&<p class="translation-note">{englishNameNote} · Keep the Chinese name for local search and directions.</p>}
-      {!zh&&place.englishNameStatus==="pending"&&<p class="translation-note">English name pending manual review · 中文原名：{place.nameZh}</p>}
+      {!zh&&place.nameEn&&<p class="chinese-name">Chinese name for local search: <span lang="zh-CN">{place.nameZh}</span></p>}
       {summary&&<p class="place-summary">{summary}</p>}
       {trustItems.length>0&&<div class="trust-row" aria-label={zh?"地点信息来源":"Place information sources"}>{trustItems.map((item)=><a href="/editorial-standards"><span aria-hidden="true">●</span>{item}</a>)}</div>}
-      {place.lastCheckedAt&&<p class="last-checked">{zh?"上次实地核验":"Last checked in person"}：<time datetime={place.lastCheckedAt}>{localizedLastChecked(place.lastCheckedAt,locale)}</time></p>}
+      {place.lastCheckedAt&&<p class="last-checked">{zh?"最近核验":"Last checked"}：<time datetime={place.lastCheckedAt}>{localizedLastChecked(place.lastCheckedAt,locale)}</time></p>}
     </header>
 
-    {primaryPhoto&&<figure class="place-photo"><img src={primaryPhoto.src} alt={zh?primaryPhoto.altZh:primaryPhoto.altEn??primaryPhoto.altZh} width="900" height="600" loading="eager" decoding="async" /></figure>}
+    {primaryPhoto&&<figure class="place-photo"><img src={primaryPhoto.src} alt={primaryImageAlt} width="900" height="600" loading="eager" decoding="async" /></figure>}
     <PlaceLocationMap placeCode={place.id} placeName={place.nameZh} {locale} />
 
     <div class="place-sections">
@@ -67,7 +66,7 @@ const description=zh?`${name}的公开地图位置、现有实地记录、沿线
       {practical.length>0&&<section><p class="section-kicker">{zh?"实用信息":"Practical information"}</p><ul class="compact-list">{practical.map((item)=><li>{item}</li>)}</ul></section>}
       {(parking||accessNotes||seasonNotes)&&<section><p class="section-kicker">{zh?"到达与季节":"Access and season"}</p><dl>{parking&&<><dt>{zh?"停车":"Parking"}</dt><dd>{parking}</dd></>}{accessNotes&&<><dt>{zh?"到达方式":"Access"}</dt><dd>{accessNotes}</dd></>}{seasonNotes&&<><dt>{zh?"季节":"Season"}</dt><dd>{seasonNotes}</dd></>}</dl></section>}
       {safetyNotes&&<section class="notice"><p class="section-kicker">{zh?"安全与开放提醒":"Safety and access notice"}</p><p>{safetyNotes}</p></section>}
-      {(familyNotes||place.familySuitability==="yes")&&<section><p class="section-kicker">{zh?"亲子信息":"For families"}</p><p>{familyNotes??(zh?"适合亲子同行。仍请结合当天开放情况和孩子状态安排。":"Suitable for a family visit. Check current access and plan around your child's needs.")}</p></section>}
+      {(familyNotes||place.familySuitability==="yes"||place.familySuitability==="conditional")&&<section><p class="section-kicker">{zh?"亲子信息":"For families"}</p><p>{familyNotes??(place.familySuitability==="conditional"?(zh?"可以作为亲子选择，但请结合当天现场条件、开放情况和孩子状态判断。":"This can be a family option, but check current conditions, access, and your child's needs before deciding."):(zh?"适合亲子同行。仍请结合当天开放情况和孩子状态安排。":"Suitable for a family visit. Check current access and plan around your child's needs."))}</p></section>}
       {routes.length>0&&<section><p class="section-kicker">{zh?"所属路线":"Route"}</p>{routes.map((route)=><a class="relation-card" href={routeHref(route.slug)}><strong>{zh?route.nameZh:route.nameEn}</strong><span>→</span></a>)}</section>}
       {(previous||next)&&<section><p class="section-kicker">{zh?"沿路线继续":"Continue along the route"}</p><div class="route-neighbors">{previous&&<a href={placeHref(previous.id)}><small>{zh?"上一个核心停留点":"Previous core stop"}</small><strong>{zh?<>← {localizedPlaceName(previous,locale)}</>:localizedPlaceName(previous,locale)}</strong></a>}{next&&<a href={placeHref(next.id)}><small>{zh?"下一个核心停留点":"Next core stop"}</small><strong>{zh?<>{localizedPlaceName(next,locale)} →</>:localizedPlaceName(next,locale)}</strong></a>}</div></section>}
       {nearby.length>0&&<section><p class="section-kicker">{zh?"附近地点":"Nearby places"}</p><div class="nearby-grid">{nearby.map((item)=><a href={placeHref(item.id)}><strong>{localizedPlaceName(item,locale)}</strong><small>{localizedCategory(item.category,locale)}</small></a>)}</div></section>}
@@ -79,7 +78,7 @@ const description=zh?`${name}的公开地图位置、现有实地记录、沿线
 </BaseLayout>
 
 <style>
-  .knowledge-place{max-width:980px;margin:0 auto;padding:22px 18px 80px}.place-back{display:inline-flex;margin:0 0 22px;color:#187051;font-weight:800;text-decoration:none}.place-heading{max-width:760px}.place-region,.section-kicker{margin:0 0 8px;color:#a95d33;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.place-heading h1{max-width:820px;margin:0;color:#12382c;font-size:clamp(38px,8vw,72px);line-height:1.02}.chinese-name,.translation-note,.last-checked{color:#66786f;font-size:13px}.translation-note{display:inline-block;padding:7px 10px;border-radius:10px;background:#f5f2e8}.place-summary{max-width:680px;margin:16px 0 0;color:#556b61;font-size:18px;line-height:1.7}.trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.trust-row a{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #cadbd2;border-radius:999px;background:#f6faf7;color:#3f6656;font-size:11px;font-weight:800;text-decoration:none}.trust-row span{color:#2d8967;font-size:8px}.place-photo{margin:26px 0 0;overflow:hidden;border-radius:24px;background:#e4eee8}.place-photo img{display:block;width:100%;max-height:620px;object-fit:cover}.place-sections{display:grid;gap:16px;margin-top:18px}.place-sections>section{padding:22px;border:1px solid #d8e4de;border-radius:20px;background:#fff;box-shadow:0 12px 30px rgb(34 65 52/.06)}.place-sections p:last-child{margin-bottom:0;color:#52685e;line-height:1.7}.compact-list{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}.compact-list li{padding:8px 12px;border-radius:999px;background:#eaf4ee;color:#225d48;font-size:13px;font-weight:800}dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0}dt{font-weight:900}dd{margin:0;color:#52685e}.notice{border-color:#e6cbb9!important;background:#fffaf6!important}.relation-card,.link-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#174f3c;text-decoration:none}.route-neighbors,.nearby-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.route-neighbors a,.nearby-grid a{display:grid;gap:5px;padding:14px;border-radius:14px;background:#eef5f1;color:#174f3c;text-decoration:none}.route-neighbors small,.nearby-grid small,.link-list small{color:#6c7d75}.link-list{display:grid;gap:10px}.link-list a{padding:12px 0;border-bottom:1px solid #e0e8e4}.link-list a:last-child{border-bottom:0}
+  .knowledge-place{max-width:980px;margin:0 auto;padding:22px 18px 80px}.place-back{display:inline-flex;margin:0 0 22px;color:#187051;font-weight:800;text-decoration:none}.place-heading{max-width:760px}.place-region,.section-kicker{margin:0 0 8px;color:#a95d33;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.place-heading h1{max-width:820px;margin:0;color:#12382c;font-size:clamp(38px,8vw,72px);line-height:1.02}.chinese-name,.last-checked{color:#66786f;font-size:13px}.place-summary{max-width:680px;margin:16px 0 0;color:#556b61;font-size:18px;line-height:1.7}.trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.trust-row a{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #cadbd2;border-radius:999px;background:#f6faf7;color:#3f6656;font-size:11px;font-weight:800;text-decoration:none}.trust-row span{color:#2d8967;font-size:8px}.place-photo{margin:26px 0 0;overflow:hidden;border-radius:24px;background:#e4eee8}.place-photo img{display:block;width:100%;max-height:620px;object-fit:cover}.place-sections{display:grid;gap:16px;margin-top:18px}.place-sections>section{padding:22px;border:1px solid #d8e4de;border-radius:20px;background:#fff;box-shadow:0 12px 30px rgb(34 65 52/.06)}.place-sections p:last-child{margin-bottom:0;color:#52685e;line-height:1.7}.compact-list{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}.compact-list li{padding:8px 12px;border-radius:999px;background:#eaf4ee;color:#225d48;font-size:13px;font-weight:800}dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0}dt{font-weight:900}dd{margin:0;color:#52685e}.notice{border-color:#e6cbb9!important;background:#fffaf6!important}.relation-card,.link-list a{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#174f3c;text-decoration:none}.route-neighbors,.nearby-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.route-neighbors a,.nearby-grid a{display:grid;gap:5px;padding:14px;border-radius:14px;background:#eef5f1;color:#174f3c;text-decoration:none}.route-neighbors small,.nearby-grid small,.link-list small{color:#6c7d75}.link-list{display:grid;gap:10px}.link-list a{padding:12px 0;border-bottom:1px solid #e0e8e4}.link-list a:last-child{border-bottom:0}
   @media(min-width:760px){.knowledge-place{padding-top:40px}.place-sections{grid-template-columns:repeat(2,minmax(0,1fr))}.place-sections>section:has(.nearby-grid),.place-sections>section:has(.route-neighbors),.place-sections>section:has(.link-list){grid-column:1/-1}}
   @media(max-width:560px){.knowledge-place{padding-inline:12px}.route-neighbors,.nearby-grid{grid-template-columns:1fr}.place-sections>section{padding:18px}.place-heading h1{font-size:40px}}
 </style>

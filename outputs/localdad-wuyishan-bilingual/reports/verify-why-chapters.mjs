@@ -8,8 +8,8 @@ const output = new URL("./why-chapters/", import.meta.url);
 await mkdir(output, { recursive:true });
 
 const expected = {
-  "/why-wuyishan": ["Landscape", "Tea", "Forest", "People and Ideas"],
-  "/zh/why-wuyishan": ["山水", "茶", "森林", "人文"],
+  "/why-wuyishan": ["Landscape", "Tea", "Culture", "Nature"],
+  "/zh/why-wuyishan": ["山水", "茶", "人文", "自然"],
 };
 const browser = await chromium.launch({ channel:"msedge", headless:true });
 const results = [];

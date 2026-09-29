@@ -22,8 +22,8 @@ export const pillarRegistry: Record<PillarId, PillarDefinition> = {
     sections: [
       { id: "landscape", label: "Landscape", contentSource: "knowledgeArticles" },
       { id: "tea", label: "Tea", contentSource: "knowledgeArticles" },
-      { id: "forest", label: "Forest", contentSource: "knowledgeArticles" },
-      { id: "people-and-ideas", label: "People and Ideas", contentSource: "knowledgeArticles" },
+      { id: "culture", label: "Culture", contentSource: "knowledgeArticles" },
+      { id: "nature", label: "Nature", contentSource: "knowledgeArticles" },
     ],
   },
   "explore-wuyishan": {

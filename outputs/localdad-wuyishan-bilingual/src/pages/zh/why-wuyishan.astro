@@ -3,11 +3,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import WhyChapter from "../../components/WhyChapter.astro";
 const englishNote = "英文原文";
 ---
-<BaseLayout lang="zh" title="为什么是武夷山｜武夷山奶爸" description="从山水、茶、森林和人文四个相互关联的章节理解武夷山：先看见这片地方，再逐步认识风景背后的自然、生活与思想。">
+<BaseLayout lang="zh" title="为什么是武夷山｜武夷山奶爸" description="从山水、茶、人文和自然四个相互关联的章节理解武夷山，认识这里的地方生活、生物多样性、村落历史、茶文化与自然环境之间的联系。">
   <section class="why-introduction" aria-labelledby="zh-why-wuyishan-title">
     <p class="kicker">为什么是武夷山</p>
     <h1 id="zh-why-wuyishan-title">从彼此关联的线索理解武夷山。</h1>
-    <p>这里的山水、森林与生物多样性、茶、村落、历史和人的活动相互联系。下面四个章节提供一条清楚的理解路径。</p>
+    <p>这里的山水、茶、人文、自然与日常生活相互联系。下面四个章节从地方生活、历史、生物多样性和实地观察展开这些关系。</p>
   </section>
   <div class="why-chapters why-only-chapters" aria-label="为什么是武夷山——四个章节">
     <WhyChapter number="01" id="landscape" title="山水" image="/chapter-media/landscape.webp" imageAlt="武夷山森林与水面旁的沿山道路" links={[
@@ -19,11 +19,11 @@ const englishNote = "英文原文";
       {title:"茶与日常生活",href:"/why-wuyishan/tea-culture-wuyishan",note:englishNote},
       {title:"走进茶园",href:"/why-wuyishan/tea-garden-wuyishan",note:englishNote},
     ]} />
-    <WhyChapter number="03" id="forest" title="森林" image="/chapter-media/forest.webp" imageAlt="在武夷山观察到的螳螂" links={[
-      {title:"森林与自然遗产",href:"/why-wuyishan/natural-heritage-wuyishan",note:englishNote},
-    ]} />
-    <WhyChapter number="04" id="people-and-ideas" title="人文" image="/chapter-media/people.webp" imageAlt="武夷山溪边的本地家庭生活" links={[
+    <WhyChapter number="03" id="culture" legacyIds={["people-and-ideas"]} title="人文" image="/chapter-media/people.webp" imageAlt="武夷山溪边的本地家庭生活" links={[
       {title:"村落与当地生活",href:"/why-wuyishan/villages-wuyishan",note:englishNote},
+    ]} />
+    <WhyChapter number="04" id="nature" legacyIds={["forest"]} title="自然" image="/chapter-media/forest.webp" imageAlt="在武夷山观察到的螳螂" links={[
+      {title:"森林与自然遗产",href:"/why-wuyishan/natural-heritage-wuyishan",note:englishNote},
     ]} />
   </div>
   <aside class="why-map-branch" aria-labelledby="why-map-branch-title">

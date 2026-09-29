@@ -13,10 +13,16 @@ const zh=locale==="zh";
 const name=zh?route.nameZh:route.nameEn;
 const summary=zh?route.summaryZh:route.summaryEn;
 const places=route.placeIds.flatMap((id)=>{const place=knowledgePlaceById.get(id);return place?[place]:[]});
-const verified=places.filter((place)=>place.trustStatus?.checkedInPerson);
 const recheck=places.filter((place)=>place.trustStatus?.recheckBeforeGoing);
-const coreStopCount=route.places.filter((relationship)=>relationship.role==="core-stop").length;
+const corePlaces=route.places.filter((relationship)=>relationship.role==="core-stop").flatMap((relationship)=>{const place=knowledgePlaceById.get(relationship.placeId);return place?[place]:[]});
+const coreStopCount=corePlaces.length;
+const verifiedCoreCount=corePlaces.filter((place)=>place.trustStatus?.checkedInPerson===true).length;
 const practicalNotes=zh?route.practicalNotesZh:route.practicalNotesEn;
+const firstStage=route.stages[0];
+const lastStage=route.stages.at(-1);
+const mapTitle=zh
+  ? route.mapTitleZh??(firstStage&&lastStage?`从${firstStage.titleZh}到${lastStage.titleZh}`:name)
+  : route.mapTitleEn??(firstStage&&lastStage?`From ${firstStage.titleEn??firstStage.titleZh} to ${lastStage.titleEn??lastStage.titleZh}`:name);
 const dataset=buildRouteMapDataset(route,locale);
 const tiles={urlTemplate:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19};
 const labels={map:zh?`${name}路线地图`:`Map of ${name}`,filters:zh?"筛选沿途地点":"Filter stops",relatedContent:zh?"相关内容":"Related content",openPlace:zh?"查看地点":"Open place",placesList:zh?`全部地图点（${places.length}）`:`All mapped places (${places.length})`,enableInteraction:zh?"启用地图拖动":"Enable map interaction",locateUser:zh?"我的位置":"My location",locatingUser:zh?"正在读取位置…":"Finding your location…",locationReady:zh?"已定位，蓝色圆点是你的位置":"Located. The blue dot is your position.",locationDenied:zh?"未获得定位权限，请在浏览器设置中允许位置访问":"Location permission was not granted.",locationUnavailable:zh?"暂时无法读取位置，请检查系统定位和网络":"Your location is currently unavailable.",placeId:zh?"地点编号":"Place ID",placeCategory:zh?"类型":"Type"};
@@ -24,18 +30,21 @@ const filterLabels=localizedPublicMapFilterLabels(locale);
 const placeHref=(id:string)=>zh?`/zh/place/${id}`:`/place/${id}`;
 const site=Astro.site??new URL("https://localdad.youzipal.com");
 const alternates=[{lang:"en" as const,href:new URL(`/route/${route.slug}`,site).toString()},{lang:"zh" as const,href:new URL(`/zh/route/${route.slug}`,site).toString()}];
+const pageDescription=zh
+  ? `${name}的路线地图、核心停留点、沿途实地记录地点与出发前实用提醒，帮助旅行者理解路线骨架并安排途中停留。`
+  : `Map, core stops, places along the way, and practical notes for ${name}.`;
 const roleLabels={
   "core-stop":zh?"核心停留点":"Core stop", "secondary-stop":zh?"沿线停留点":"Additional stop",
   observation:zh?"观察点":"Observation stop", service:zh?"服务设施":"Service",
   junction:zh?"支线路口":"Junction", food:zh?"餐饮补给":"Food and supplies",
 };
 ---
-<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Local Dad Jeff`} description={zh?"一号风景道的路线地图、沿线分段、实地记录地点和现场核验状态。路线与地点使用统一知识地图数据关联，方便从路线继续查看每个地点。":"A route map and place-by-place sequence for Wuyishan No. 1 Scenic Road, linked to the shared knowledge map."} {alternates}>
+<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Local Dad Jeff`} description={pageDescription} {alternates}>
   <article class="route-page">
     <a class="route-back" href={zh?"/zh/map":"/map"}>← {zh?"返回完整地图":"Back to the full map"}</a>
-    <header class="route-hero"><p class="route-kicker">{zh?"路线":"Route"}</p><h1>{name}</h1>{summary&&<p>{summary}</p>}<p class="route-scope">{zh?`${coreStopCount} 个核心停留点 · ${places.length} 个已记录地图点`:`${coreStopCount} core stops · ${places.length} mapped places`}</p><div class="route-trust">{verified.length>0&&<span><b aria-hidden="true">✓</b>{zh?"实地核验":"Checked in person"}</span>}{recheck.length>0&&<span class="recheck"><b aria-hidden="true">⚠</b>{zh?`${recheck.length} 项出发前需复核`:`${recheck.length} item to recheck before going`}</span>}</div></header>
+    <header class="route-hero"><p class="route-kicker">{zh?"路线":"Route"}</p><h1>{name}</h1>{summary&&<p>{summary}</p>}<p class="route-scope">{zh?`${coreStopCount} 个核心停留点 · ${places.length} 个已记录地图点`:`${coreStopCount} core stops · ${places.length} mapped places`}</p><div class="route-trust">{coreStopCount>0&&<span><b aria-hidden="true">✓</b>{zh?`${coreStopCount} 个核心停留点中，${verifiedCoreCount} 个已实地核验`:`${verifiedCoreCount} of ${coreStopCount} core stops checked in person`}</span>}{recheck.length>0&&<span class="recheck"><b aria-hidden="true">⚠</b>{zh?`${recheck.length} 项出发前需复核`:`${recheck.length} item to recheck before going`}</span>}</div></header>
 
-    <section class="route-map" aria-labelledby="route-map-title"><div><p class="route-kicker">{zh?"路线地图":"Route map"}</p><h2 id="route-map-title">{zh?"从南源岭到坳头":"From Nanyuanling to Aotou"}</h2></div><MapExplorer id="no-1-scenic-road-map" {dataset} {tiles} {labels} {filterLabels} /></section>
+    <section class="route-map" aria-labelledby="route-map-title"><div><p class="route-kicker">{zh?"路线地图":"Route map"}</p><h2 id="route-map-title">{mapTitle}</h2></div><MapExplorer id={`${route.slug}-map`} {dataset} {tiles} {labels} {filterLabels} /></section>
 
     <section class="route-stages" aria-labelledby="route-stages-title"><p class="route-kicker">{zh?"路线骨架":"Route sequence"}</p><h2 id="route-stages-title">{zh?"沿线分段与地点":"Stages and places along the road"}</h2><div class="stage-list">{route.stages.map((stage,index)=>{
       const stageRelationships=route.places.filter((item)=>stage.placeIds.includes(item.placeId));

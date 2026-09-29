@@ -57,7 +57,6 @@ export interface KnowledgePlace {
   food?: boolean;
   shop?: boolean;
   lodging?: boolean;
-  familyFriendly?: boolean;
   familySuitability?: "yes" | "conditional" | "no" | "unknown";
   familyNotes?: Partial<Record<Locale,string>>;
   campingRole?: "overnight-stop" | "parking" | "service-only";
@@ -97,6 +96,8 @@ export interface KnowledgeRoute {
   nameEn: string;
   summaryZh?: string;
   summaryEn?: string;
+  mapTitleZh?: string;
+  mapTitleEn?: string;
   placeIds: string[];
   geometryRouteIds: string[];
   places: KnowledgeRoutePlaceRelationship[];

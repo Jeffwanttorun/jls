@@ -14,7 +14,7 @@ const { compact = false } = Astro.props;
     <nav class="tool-footer-links" aria-label="Map links"><a href="/map">Map</a><a href="/why-wuyishan">Why Wuyishan</a><a href="/">Home</a></nav>
     <small>© {new Date().getFullYear()} Local Dad Jeff</small>
   </> : locale === "zh" ? <>
-    <div class="footer-intro"><p class="kicker">一个生活在武夷山的爸爸</p><h2>把自己认识的武夷山<br/><em>慢慢讲给你听。</em></h2><p>从山水、茶、森林和人文出发，也清楚标注仍在建设或暂不开放的地点。</p></div>
+    <div class="footer-intro"><p class="kicker">一个生活在武夷山的爸爸</p><h2>把自己认识的武夷山<br/><em>慢慢讲给你听。</em></h2><p>从山水、茶、人文和自然出发，也清楚标注仍在建设或暂不开放的地点。</p></div>
     <div class="footer-links"><div><p class="kicker">网站</p><a href={localizedPath("/why-wuyishan", locale)}>为什么是武夷山</a><a href={localizedPath("/explore-wuyishan", locale)}>探索武夷山</a><a href={localizedPath("/stories-of-wuyishan", locale)}>武夷山故事</a><a href={localizedPath("/map", locale)}>武夷山奶爸地图</a></div><div><p class="kicker">关于</p><a href={localizedPath("/about", locale)}>关于 Jeff</a><a href="/">English</a></div></div>
     <small>© {new Date().getFullYear()} 武夷山奶爸 · 中国福建武夷山</small>
   </> : <>

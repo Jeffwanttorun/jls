@@ -108,7 +108,7 @@ for (const sitemapFile of files.filter((file) => /^sitemap.*\.xml$/.test(relativ
 }
 
 function requireBuiltContent(pathname,required=[],forbidden=[]){
-  const file=join(root,...pathname.split("/"),"index.html");
+  const file=pathname==="index"?join(root,"index.html"):join(root,...pathname.split("/"),"index.html");
   if(!existsSync(file)){errors.push(`${pathname}: expected built page is missing`);return;}
   const html=readFileSync(file,"utf8");
   for(const value of required)if(!html.includes(value))errors.push(`${pathname}: missing required knowledge-map content ${value}`);
@@ -118,15 +118,20 @@ function requireBuiltContent(pathname,required=[],forbidden=[]){
 requireBuiltContent("zh/explore-wuyishan",["打开地图","实地路线","/zh/route/no-1-scenic-road","按兴趣找地方"],["带娃怎么玩","一天怎么玩","两天怎么玩"]);
 requireBuiltContent("explore-wuyishan",["Wuyishan Map","Open the Map","No. 1 Scenic Road","Explore by Interest","Main Scenic Area"]);
 requireBuiltContent("zh/theme/water",["/zh/map?category=water","data-empty hidden"]);
-requireBuiltContent("theme/water",["/map?category=water","View on Map","Show family-friendly only"],[">水</span>"]);
+requireBuiltContent("theme/water",["/map?category=water","View on Map","Show places for families"],[">水</span>"]);
 requireBuiltContent("map",["Black Tea Hall","Nanyuanling Parking","\"filterIds\":[\"scenery\"]"],["Nanyuanling南源岭"]);
 requireBuiltContent("zh/map",["红茶馆","\"filterIds\":[\"scenery\"]"]);
 requireBuiltContent("route/no-1-scenic-road",["9 core stops · 41 mapped places","Filter stops","Tea &amp; Exhibitions","Sleeping in Your Vehicle","stage-support","Services and junctions","Nanyuanling","南源岭"],["Nanyuanling南源岭"]);
-requireBuiltContent("zh/route/no-1-scenic-road",["9 个核心停留点 · 41 个已记录地图点","筛选沿途地点","茶与展馆","床车过夜","实地核验"]);
-requireBuiltContent("place/WY-0030",["Tongmu Area","中文原名：野猴谷"]);
+requireBuiltContent("zh/route/no-1-scenic-road",["9 个核心停留点 · 41 个已记录地图点","筛选沿途地点","茶与展馆","床车过夜","9 个核心停留点中，9 个已实地核验"]);
+requireBuiltContent("route/no-1-scenic-road",["9 of 9 core stops checked in person","id=\"no-1-scenic-road-map\""]);
+requireBuiltContent("place/WY-0030",["Tongmu Area","Chinese name for local search:","野猴谷","Back to map"],["Working English translation","Pinyin place name","pending manual review","中文原名："]);
 requireBuiltContent("place/WY-0032",["Previous core stop","Wild Monkey Valley","Next core stop","Grand Canyon Exhibition Hall"]);
 requireBuiltContent("place/WY-0002",["Nanyuanling Parking","Nearby services"],["Continue along the route"]);
 requireBuiltContent("zh/theme/camping",["床车过夜","WY-0055"],["/zh/place/WY-0003","/zh/place/WY-0053","/zh/place/WY-0002","/zh/place/WY-0052"]);
 requireBuiltContent("map",["Wuyishan Map","Explore places, routes, firsthand notes, and practical information around Wuyishan."],["Wuyishan Local Dad Map","same reviewed places"]);
+requireBuiltContent("index",["href=\"/why-wuyishan#culture\"","href=\"/why-wuyishan#nature\"",">Culture</h3>",">Nature</h3>"],[">Forest</h3>",">People and Ideas</h3>"]);
+requireBuiltContent("zh",["href=\"/zh/why-wuyishan#culture\"","href=\"/zh/why-wuyishan#nature\"",">人文</h3>",">自然</h3>"],[">森林</h3>"]);
+requireBuiltContent("why-wuyishan",["id=\"culture\"","id=\"nature\"","id=\"people-and-ideas\"","id=\"forest\"",">Culture</h2>",">Nature</h2>"],[">Forest</h2>",">People and Ideas</h2>"]);
+requireBuiltContent("zh/why-wuyishan",["id=\"culture\"","id=\"nature\"","id=\"people-and-ideas\"","id=\"forest\"",">人文</h2>",">自然</h2>"],[">森林</h2>"]);
 if (errors.length) throw new Error(`Site validation failed:\n${errors.map((error) => `- ${error}`).join("\n")}`);
 console.log(`Validated ${htmlFiles.length} HTML files; JavaScript files: ${clientJsBytes} bytes; max inline script per page: ${maxInlineClientJsBytes} bytes.`);

@@ -6,6 +6,7 @@ import type { KnowledgePlace } from "../types/knowledge-map";
 
 type RuntimePlace = {
   code:string; name:string; region:string; summary:string; themes:string[];
+  /** @deprecated Legacy import value. Convert once at this adapter boundary; public UI reads familySuitability. */
   familyFriendly:boolean; facilities?:{toilet?:boolean;shop?:boolean;restaurant?:boolean;lodging?:boolean};
   status:string; image:string|null;
 };
@@ -107,7 +108,6 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
     food:managed?.facilities?.restaurant===true?true:undefined,
     shop:managed?.facilities?.shop===true?true:undefined,
     lodging:managed?.facilities?.lodging===true?true:undefined,
-    familyFriendly:familySuitability==="yes"||familySuitability==="conditional"?true:undefined,
     familySuitability,
     familyNotes:familySuitability==="conditional"?{
       zh:"亲子可去，但需要根据当天水况、天气、孩子年龄和成人看护情况判断。",
@@ -147,17 +147,34 @@ for(const route of publicKnowledgeRoutes){
   });
 }
 for(const place of basePlaces){
-  const visitorCandidates=basePlaces.filter((other)=>other.id!==place.id&&publicKnowledgeRoutes.some((route)=>{
-    const role=routeRoleForPlace(route,other.id);
-    return role!=="service"&&role!=="junction";
-  }));
+  const visitorRole=(role:ReturnType<typeof routeRoleForPlace>)=>role==="core-stop"||role==="secondary-stop"||role==="observation";
+  const orderedVisitorIds:string[]=[];
+  const addVisitorCandidates=(ids:string[],routeId?:string)=>ids.forEach((id)=>{
+    if(id===place.id||orderedVisitorIds.includes(id))return;
+    const candidate=pointById.get(id);
+    if(!candidate)return;
+    const hasVisitorRole=routeId
+      ? visitorRole(routeRoleForPlace(publicKnowledgeRoutes.find((route)=>route.id===routeId)!,id))
+      : publicKnowledgeRoutes.some((route)=>visitorRole(routeRoleForPlace(route,id)));
+    if(hasVisitorRole)orderedVisitorIds.push(id);
+  });
+  const containingRoutes=publicKnowledgeRoutes.filter((route)=>route.placeIds.includes(place.id));
+  for(const route of containingRoutes){
+    for(const stage of route.stages.filter((item)=>item.placeIds.includes(place.id))){
+      addVisitorCandidates([...stage.placeIds].sort((a,b)=>squaredDistance(place,pointById.get(a)!)-squaredDistance(place,pointById.get(b)!)),route.id);
+    }
+  }
+  for(const route of containingRoutes){
+    addVisitorCandidates([...route.placeIds].sort((a,b)=>squaredDistance(place,pointById.get(a)!)-squaredDistance(place,pointById.get(b)!)),route.id);
+  }
+  addVisitorCandidates(basePlaces.map((item)=>item.id).sort((a,b)=>squaredDistance(place,pointById.get(a)!)-squaredDistance(place,pointById.get(b)!)));
   const sameStageServiceIds=new Set(publicKnowledgeRoutes.flatMap((route)=>
     route.stages
       .filter((stage)=>stage.placeIds.includes(place.id))
-      .flatMap((stage)=>stage.placeIds.filter((placeId)=>routeRoleForPlace(route,placeId)==="service")),
+      .flatMap((stage)=>stage.placeIds.filter((placeId)=>["service","food"].includes(routeRoleForPlace(route,placeId)??""))),
   ));
   const serviceCandidates=basePlaces.filter((other)=>other.id!==place.id&&sameStageServiceIds.has(other.id));
-  if(!(place.nearbyPlaceIds?.length))place.nearbyPlaceIds=visitorCandidates.sort((a,b)=>squaredDistance(place,a)-squaredDistance(place,b)).slice(0,3).map((other)=>other.id);
+  if(!(place.nearbyPlaceIds?.length))place.nearbyPlaceIds=orderedVisitorIds.slice(0,3);
   place.nearbyServiceIds=serviceCandidates.sort((a,b)=>squaredDistance(place,a)-squaredDistance(place,b)).slice(0,3).map((other)=>other.id);
 }
 

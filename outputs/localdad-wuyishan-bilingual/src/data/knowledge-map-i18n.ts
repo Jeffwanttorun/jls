@@ -1,5 +1,5 @@
 import type { Locale } from "../i18n/config";
-import type { PlaceTrustStatus } from "../types/knowledge-map";
+import type { KnowledgePlace, PlaceTrustStatus } from "../types/knowledge-map";
 
 const categoryNames:Record<string,string>={
   "路线核心节点":"Route landmark",
@@ -27,7 +27,7 @@ export function localizedCategory(category:string,locale:Locale){
 
 const trustLabels={
   firsthand:{zh:"Jeff 的实地记录",en:"Visited in person"},
-  checkedInPerson:{zh:"Jeff 已实地核验",en:"Checked in person by Jeff"},
+  checkedInPerson:{zh:"实地核验",en:"Checked in person"},
   officialSource:{zh:"基于官方信息",en:"Based on official information"},
   recheckBeforeGoing:{zh:"出发前请重新确认",en:"Recheck before you go"},
 } as const;
@@ -38,6 +38,19 @@ export function localizedTrustLabels(status:PlaceTrustStatus|undefined,locale:Lo
     .filter((key)=>status[key]===true)
     .filter((key)=>key!=="firsthand"||status.checkedInPerson!==true);
   return keys.map((key)=>trustLabels[key][locale]);
+}
+
+const overnightLabels:Record<NonNullable<KnowledgePlace["overnightStatus"]>,Record<Locale,string>>={
+  allowed:{zh:"已确认可过夜",en:"Overnight stay confirmed"},
+  "used-in-person":{zh:"Jeff 曾实地过夜 · 当前规则需确认",en:"Jeff has stayed overnight · check current rules"},
+  recheck:{zh:"出发前重新确认",en:"Recheck before staying overnight"},
+  "not-recommended":{zh:"不建议过夜",en:"Overnight stay not recommended"},
+  prohibited:{zh:"禁止过夜",en:"Overnight stays prohibited"},
+  unknown:{zh:"过夜情况需确认",en:"Overnight status: recheck"},
+};
+
+export function localizedOvernightStatus(status:NonNullable<KnowledgePlace["overnightStatus"]>,locale:Locale){
+  return overnightLabels[status][locale];
 }
 
 export function localizedLastChecked(date:string,locale:Locale){
