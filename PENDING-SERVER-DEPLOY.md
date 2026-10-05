@@ -14,7 +14,7 @@ API 的实际目录、进程、服务器数据库版本、`011_content_studio.sq
 
 ## 本地版本与数据
 
-本地分支：`codex/v6-local-hardening`。本地改动基于 `32b5ce2`；保留 main 的生产基线，不向 GitHub 推送。本地最新 SHA 以项目根目录 `git rev-parse HEAD` 为准，同时写入不进 Git 的 `work/local-hardening/local-version.json`，记录完成提交后的 SHA、生产基线和验证证据。本地实现提交将在任务完成报告中列明。
+本地分支：`codex/v6-local-hardening`。本地改动基于 `32b5ce2`；保留 main 的生产基线，不向 GitHub 推送。本地最新 SHA 以项目根目录 `git rev-parse HEAD` 为准，同时写入不进 Git 的 `work/local-hardening/local-version.json`，记录完成提交后的 SHA、生产基线和验证证据。已验证的本地实现提交：`b581bd9ac45aeb9094da9c8c75be723e85a1f1df`。后续仅文档提交不改变实现；实际本地 HEAD 记录在上述 local-version.json。
 
 本轮：完整 PostgreSQL、API、维护台运行；禁用本地发布；完整 ZIP 导出、预检查、导入到 Draft；草稿预览；路线服务点移动；一键启动/停止/完整备份/恢复；同 Wi-Fi HTTPS。未新增大型功能。
 
