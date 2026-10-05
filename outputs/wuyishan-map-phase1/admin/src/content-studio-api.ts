@@ -1,6 +1,6 @@
 import {api} from './api';
 import type {ContentStudioDocument,StudioPlace,StudioRoute,StudioTheme,StudioValidationIssue} from '../../shared/content-studio';
-export interface StudioPayload {draftRevision:number;publishedRevision:string|null;publishedSnapshotHash:string|null;updatedAt:string;publishedAt:string|null;document:ContentStudioDocument;dashboard:{stats:Record<string,number>;issues:StudioValidationIssue[];issueCounts:Record<string,number>;recentPlaces:StudioPlace[]}}
+export interface StudioPayload {localOnly?:boolean;draftRevision:number;publishedRevision:string|null;publishedSnapshotHash:string|null;updatedAt:string;publishedAt:string|null;document:ContentStudioDocument;dashboard:{stats:Record<string,number>;issues:StudioValidationIssue[];issueCounts:Record<string,number>;recentPlaces:StudioPlace[]}}
 export const getStudio=()=>api<StudioPayload>('/content-studio/state');
 export const getStudioRevisions=()=>api<{items:any[]}>('/content-studio/revisions');
 export const saveStudio=(payload:StudioPayload,document:ContentStudioDocument,objectType:string,objectId:string,summary:string)=>api<{ok:boolean;draftRevision:number}>('/content-studio/save',{expectedRevision:payload.draftRevision,document,objectType,objectId,summary});

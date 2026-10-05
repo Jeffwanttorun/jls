@@ -5,18 +5,20 @@ import type { Pool } from 'pg';
 import { enums, freshness } from '../../shared/domain.js';
 import { registerCoordinateRoutes } from './coordinate-routes.js';
 import { CoordinateError } from './coordinates.js';
-import {VisitorContentError} from '../../shared/visitor-content.js';
+import {VisitorContentError,VisitorContentStore} from '../../shared/visitor-content.js';
 import {registerVisitorContentRoutes} from './visitor-content-routes.js';
 import {registerSitePublishing} from './site-publishing.js';
 import {registerContentStudioRoutes} from './content-studio.js';
 import {timingSafeEqual} from 'node:crypto';
+import {assertLocalDatabase} from './local-safety.js';
 const summarySql=`SELECT p.*,t.name category_name,parent.code parent_code,parent.name parent_name,
  v.last_verified_at,CASE WHEN c.id IS NOT NULL THEN '已确认' WHEN EXISTS(SELECT 1 FROM coordinate_candidates cc WHERE cc.matched_place_id=p.id AND cc.status='pending') THEN '待确认' ELSE '缺坐标' END coordinate_status
  FROM places p JOIN taxonomy_terms t ON t.id=p.category_id LEFT JOIN places parent ON parent.id=p.parent_place_id
  LEFT JOIN LATERAL(SELECT max(verified_at) last_verified_at FROM verifications WHERE place_id=p.id) v ON true
  LEFT JOIN confirmed_place_coordinates c ON c.place_id=p.id`;
 export function createApp(db:Pool) {
- const app=Fastify({logger:false,ajv:{customOptions:{removeAdditional:false}}});
+ assertLocalDatabase();
+ const app=Fastify({logger:false,bodyLimit:8*1024*1024,ajv:{customOptions:{removeAdditional:false}}});
  app.addHook('onRequest',async(req,reply)=>{
   reply.header('Cache-Control','no-store');reply.header('X-Content-Type-Options','nosniff');
   const password=process.env.ADMIN_PASSWORD;
@@ -26,13 +28,15 @@ export function createApp(db:Pool) {
    const expected=Buffer.from(password),actual=Buffer.from(supplied);
    if(expected.length!==actual.length||!timingSafeEqual(expected,actual)){reply.header('WWW-Authenticate','Basic realm="Local Dad Admin"');return reply.code(401).send({error:'需要登录维护后台'});}
   }
+  if(process.env.LOCAL_CONTENT_ONLY==='1'&&req.method!=='GET'&&(req.url.split('?')[0].endsWith('/publish')||req.url.split('?')[0]==='/api/admin/site-publish'))return reply.code(403).send({error:'本地录入模式只保存草稿，已禁止发布。'});
  });
  app.setErrorHandler((err,req,reply)=>{const error=err as Error & {validation?:unknown};if(error.validation)return reply.code(400).send({error:'请求参数格式错误'});if(error instanceof CoordinateError||error instanceof VisitorContentError)return reply.code(error.statusCode).send({error:error.message});req.log.error(error);return reply.code(500).send({error:'请求失败，请检查服务端日志'});});
  registerCoordinateRoutes(app,db);
  registerPlaceMaintenance(app,db);
  registerCorridorRoutes(app,db);
- registerVisitorContentRoutes(app,db);
- registerContentStudioRoutes(app,db);
+ const visitorStore=new VisitorContentStore();
+ registerVisitorContentRoutes(app,db,visitorStore);
+ registerContentStudioRoutes(app,db,visitorStore);
  registerSitePublishing(app);
  app.get('/health',async()=>{await db.query('SELECT 1');return {status:'ok'};});
  app.get('/api/admin/coordinate-queue',{schema:{querystring:{type:'object',additionalProperties:false,properties:{after:{type:'string',pattern:'^WY-[0-9]{4,}$'}}}}},async req=>{

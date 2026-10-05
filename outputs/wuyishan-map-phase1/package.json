@@ -28,6 +28,8 @@
     "test:quick-pick": "tsx tests/quick-pick-browser.ts",
     "test:maintenance": "tsx tests/maintenance-browser.ts",
     "test:studio": "tsx tests/studio-ui-browser.ts",
+    "test:local-hardening": "tsx tests/local-hardening.ts",
+    "local:smoke": "tsx scripts/local-smoke.ts",
     "test:recycle": "tsx tests/recycle-browser.ts"
   },
   "dependencies": {

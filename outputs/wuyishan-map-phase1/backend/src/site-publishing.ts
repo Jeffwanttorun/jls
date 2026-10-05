@@ -5,8 +5,9 @@ type PublishState={running:boolean;startedAt:string|null;finishedAt:string|null;
 const state:PublishState={running:false,startedAt:null,finishedAt:null,ok:null,log:'',exitCode:null};
 
 export function registerSitePublishing(app:FastifyInstance){
- app.get('/api/admin/site-publish/status',async()=>state);
+ app.get('/api/admin/site-publish/status',async()=>({...state,localOnly:process.env.LOCAL_CONTENT_ONLY==='1'}));
  app.post('/api/admin/site-publish',async(_req,reply)=>{
+  if(process.env.LOCAL_CONTENT_ONLY==='1')return reply.code(403).send({error:'本地模式禁止更新公开网站'});
   const script=process.env.SITE_PUBLISH_SCRIPT,project=process.env.SITE_PROJECT_DIR;
   if(!script||!project)return reply.code(503).send({error:'服务器尚未配置网站发布路径'});
   if(state.running)return reply.code(409).send({error:'网站正在更新，请稍候'});

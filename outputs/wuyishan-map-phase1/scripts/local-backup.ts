@@ -1,0 +1,18 @@
+import 'dotenv/config';
+import {execFile} from 'node:child_process';import {promisify} from 'node:util';
+import {mkdir,readFile,writeFile,readdir} from 'node:fs/promises';import {resolve,join} from 'node:path';
+import {createHash} from 'node:crypto';import JSZip from 'jszip';
+import {VisitorContentStore} from '../shared/visitor-content.js';import {assertLocalDatabase} from '../backend/src/local-safety.js';
+if(process.env.LOCAL_CONTENT_ONLY!=='1')throw Error('Only local backups are allowed by this command');assertLocalDatabase();
+const out=resolve('../../work/local-hardening/backups'),stamp=new Date().toISOString().replace(/[:.]/g,'-');await mkdir(out,{recursive:true});
+process.env.PG_BIN=resolve('../../work/runtime/pgsql/bin');
+const sql=join(out,`${stamp}.sql`),reportPath=join(out,`${stamp}-restore-check.json`);
+await promisify(execFile)(process.execPath,['--import','tsx','scripts/backup-verify.ts','--out',sql,'--report',reportPath],{env:process.env,maxBuffer:8*1024*1024});
+const store=new VisitorContentStore(),zip=new JSZip(),files:Record<string,{bytes:number;sha256:string}>={};
+const add=(name:string,buffer:Buffer)=>{files[name]={bytes:buffer.length,sha256:createHash('sha256').update(buffer).digest('hex')};zip.file(name,buffer);};
+add('database.sql',await readFile(sql));add('database-restore-check.json',await readFile(reportPath));add('visitor-state.json',Buffer.from(JSON.stringify(await store.ensure())));
+for(const name of (await readdir(store.mediaDir)).filter(n=>/^[a-f0-9]{64}\.(jpg|png|webp)$/.test(n)))add(`media/${name}`,await readFile(resolve(store.mediaDir,name)));
+for(const name of (await readdir('database/migrations')).filter(n=>n.endsWith('.sql')))add(`migrations/${name}`,await readFile(resolve('database/migrations',name)));
+const sha=(await promisify(execFile)('git',['rev-parse','HEAD'])).stdout.trim();
+zip.file('manifest.json',JSON.stringify({format:'wuyishan-local-full-backup',version:1,createdAt:new Date().toISOString(),productionBaseline:'32b5ce20b8fca132b5fd7ffdee06c87b9396a6d2',localCodeSha:sha,files},null,2));
+const target=join(out,`${stamp}-full.zip`);await writeFile(target,await zip.generateAsync({type:'nodebuffer',compression:'DEFLATE',compressionOptions:{level:3}}),{flag:'wx'});console.log(`完整本地备份：${target}`);console.log('数据库已在空库恢复核对；备份包含全部表、内容历史、旧维护资料与媒体。');

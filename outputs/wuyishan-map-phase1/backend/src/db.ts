@@ -2,6 +2,8 @@ import 'dotenv/config';
 import pg from 'pg';
 import { readFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import {assertLocalDatabase} from './local-safety.js';
+assertLocalDatabase();
 export const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 5 });
 export async function migrate() {
  const c = await pool.connect();

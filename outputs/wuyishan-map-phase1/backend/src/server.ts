@@ -1,5 +1,7 @@
 import { pool,migrate } from './db.js';
 import { createApp } from './app.js';
+import {assertLocalDatabase} from './local-safety.js';
+assertLocalDatabase();
 if(process.env.NODE_ENV==='production'&&!process.env.ADMIN_PASSWORD)throw new Error('ADMIN_PASSWORD is required in production');
 const app=createApp(pool);
 await migrate();
