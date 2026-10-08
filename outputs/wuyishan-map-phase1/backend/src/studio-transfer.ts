@@ -11,7 +11,7 @@ const bytesHash=(bytes:Buffer)=>createHash('sha256').update(bytes).digest('hex')
 const filePattern=/^[a-f0-9]{64}\.(jpg|png|webp)$/;
 const limit=200*1024*1024;
 type MediaEntry={fileName:string;sha256:string;bytes:number;asset:VisitorImageAsset};
-type Manifest={format:'wuyishan-studio-archive';version:1;createdAt:string;draftRevision:number;documentHash:string;files:Record<string,{sha256:string;bytes:number}>;media:MediaEntry[]};
+type Manifest={reservedCodes?:string[];format:'wuyishan-studio-archive';version:1;createdAt:string;draftRevision:number;documentHash:string;files:Record<string,{sha256:string;bytes:number}>;media:MediaEntry[]};
 function fail(message:string):never{throw new VisitorContentError(message);}
 
 // Preserve the full typed document, including empty optional editorial content.
@@ -32,6 +32,7 @@ export function validateTransferDocument(value:unknown,seed:ContentStudioDocumen
  const sample=Object.values(seed.places)[0];
  for(const [id,place] of Object.entries(doc.places)){
   walk(place,sample,`place.${id}`);
+  if(place.coordinateMissing!==undefined&&typeof place.coordinateMissing!=='boolean'||place.archivedAt!==undefined&&place.archivedAt!==null&&(typeof place.archivedAt!=='string'||!Number.isFinite(Date.parse(place.archivedAt))))fail(`${id} 草稿状态无效`);
   if(!/^WY-\d{4,}$/.test(id)||place.id!==id)fail(`地点编号不一致：${id}`);
   if(![20,40,60,80,100].includes(place.labelPriority))fail(`${id} 标签优先级无效`);
   if(!['official','established','translated','pinyin','pending'].includes(place.englishNameStatus)||!['yes','conditional','no','unknown'].includes(place.familySuitability)||!['allowed','used-in-person','recheck','not-recommended','prohibited','unknown'].includes(place.overnightStatus))fail(`${id} 状态值无效`);
@@ -54,9 +55,9 @@ export function validateTransferDocument(value:unknown,seed:ContentStudioDocumen
  const errors=validateContentStudio(doc).filter(i=>i.level==='error');if(errors.length)fail(errors.map(i=>i.message).join('；'));
 }
 
-export async function exportStudioArchive(row:{draft_revision:string;draft:ContentStudioDocument;published:ContentStudioDocument|null},history:unknown[],store:VisitorContentStore){
+export async function exportStudioArchive(row:{draft_revision:string;draft:ContentStudioDocument;published:ContentStudioDocument|null},history:unknown[],store:VisitorContentStore,reservedCodes:string[]=[]){
  const visitor=await store.ensure(),zip=new JSZip();
- const manifest:Manifest={format:'wuyishan-studio-archive',version:1,createdAt:new Date().toISOString(),draftRevision:Number(row.draft_revision),documentHash:digest(row.draft),files:{},media:[]};
+ const manifest:Manifest={format:'wuyishan-studio-archive',version:1,createdAt:new Date().toISOString(),draftRevision:Number(row.draft_revision),reservedCodes:[...new Set([...reservedCodes,...Object.keys(row.draft.places),...history.flatMap((h:any)=>Object.keys(h.snapshot?.places||{}))])].sort(),documentHash:digest(row.draft),files:{},media:[]};
  const add=(name:string,bytes:Buffer)=>{zip.file(name,bytes);manifest.files[name]={sha256:bytesHash(bytes),bytes:bytes.length};};
  add('draft.json',Buffer.from(stableJSON(row.draft)));add('published.json',Buffer.from(stableJSON(row.published)));add('history.json',Buffer.from(stableJSON(history)));add('visitor-state.json',Buffer.from(stableJSON(visitor)));
  const required=new Set([...Object.values(row.draft.places),...Object.values(row.published?.places||{})].flatMap(p=>p.photos.map(f=>f.fileName)));
@@ -80,6 +81,7 @@ export async function readStudioArchive(bytes:Buffer,seed:ContentStudioDocument)
  let size=0;for(const entry of entries){const declared=(entry as any)._data?.uncompressedSize||0;size+=declared;if(size>limit||declared>20*1024*1024)fail('解压后内容过大');if(entry.name.includes('..')||entry.name.startsWith('/')||(entry as any).unsafeOriginalName&&(entry as any).unsafeOriginalName!==entry.name)fail('不安全的 ZIP 路径');}
  const text=await zip.file('manifest.json')?.async('string');if(!text)fail('缺少导出清单');let manifest:Manifest;try{manifest=JSON.parse(text);}catch{fail('导出清单损坏');}
  if(manifest.format!=='wuyishan-studio-archive'||manifest.version!==1||!manifest.files||!Array.isArray(manifest.media))fail('不支持的导出包格式');
+ if(manifest.reservedCodes&&(!Array.isArray(manifest.reservedCodes)||manifest.reservedCodes.some(code=>!/^WY-\d{4,}$/.test(code))))fail('编号占用清单无效');
  const files=new Map<string,Buffer>();
  for(const [name,expected] of Object.entries(manifest.files)){if(!['draft.json','published.json','history.json','visitor-state.json'].includes(name)&&!/^media\/[a-f0-9]{64}\.(jpg|png|webp)$/.test(name))fail('导出包含未知文件');const file=zip.file(name);if(!file)fail(`缺少文件 ${name}`);const content=await file.async('nodebuffer');if(content.length!==expected.bytes||bytesHash(content)!==expected.sha256)fail(`文件校验失败：${name}`);files.set(name,content);}
  let document:ContentStudioDocument;try{document=JSON.parse(files.get('draft.json')!.toString('utf8'));}catch{fail('草稿 JSON 损坏');}

@@ -14,7 +14,7 @@ function changeBasemap(value:Basemap){if(!map)return;try{map.setBaseMap(baseOpti
 const shown=computed(()=>visibleMapPlaces(props.items,zoom.value));
 const symbol=(fill:string)=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36"><path d="M14 35C10 27 1 21 1 14a13 13 0 0126 0c0 7-9 13-13 21" fill="${fill}" stroke="white" stroke-width="2"/><circle cx="14" cy="14" r="4" fill="white"/></svg>`);
 function draw(){if(!sdk||!markers)return;
- const data=shown.value.map(p=>({id:p.code,styleId:p.map_display_role==='group'?'group':p.parent_code?'child':'parent',position:new sdk!.LatLng(p.latitude,p.longitude),properties:{code:p.code}}));
+ const data=shown.value.map(p=>({id:p.code,styleId:(p as MapPlace & {draft?:boolean}).draft?'selected':p.map_display_role==='group'?'group':p.parent_code?'child':'parent',position:new sdk!.LatLng(p.latitude,p.longitude),properties:{code:p.code}}));
  if(props.pick&&props.selected)data.push({id:'selected',styleId:'selected',position:new sdk.LatLng(props.selected.latitude,props.selected.longitude),properties:{code:'selected'}});
  markers.setGeometries(data);
 }

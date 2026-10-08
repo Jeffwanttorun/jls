@@ -6,6 +6,8 @@ import type {Pool,PoolClient} from 'pg';
 import {studioStats,validateContentStudio,type ContentStudioDocument} from '../../shared/content-studio.js';
 import {VisitorContentError,VisitorContentStore} from '../../shared/visitor-content.js';
 import {digest,exportStudioArchive,readStudioArchive,validateTransferDocument} from './studio-transfer.js';
+import {emptyStudioPlace,type PlaceCreationContext} from '../../shared/studio-place-creation.js';
+import type {StudioPlace} from '../../shared/content-studio.js';
 
 const workspaceId='wuyishan-knowledge-map';
 const seedPath=resolve(process.env.CONTENT_STUDIO_SEED_PATH||'content-studio-store/seed.json');
@@ -41,7 +43,39 @@ function dashboard(document:ContentStudioDocument){
 }
 
 export function registerContentStudioRoutes(app:FastifyInstance,db:Pool,store=new VisitorContentStore()){
- app.get('/api/admin/content-studio/state',async()=>{const row=await ensureWorkspace(db);return {localOnly:process.env.LOCAL_CONTENT_ONLY==='1',draftRevision:Number(row.draft_revision),publishedRevision:row.published_revision,publishedSnapshotHash:row.published_snapshot_hash,updatedAt:row.updated_at,publishedAt:row.published_at,document:row.draft,dashboard:dashboard(row.draft)};});
+ app.post('/api/admin/content-studio/places/create',async(req)=>{
+  const body=req.body as {expectedRevision:number;requestId:string;place:StudioPlace;document?:ContentStudioDocument;contexts?:PlaceCreationContext[]};
+  if(!body||!Number.isInteger(body.expectedRevision)||!/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(body.requestId||'')||!body.place?.name?.zh?.trim())throw new VisitorContentError('请填写中文名称；创建请求不完整');
+  const client=await db.connect();
+  try{
+   await client.query('BEGIN');const current=await ensureWorkspace(client,true);
+   await client.query('SELECT pg_advisory_xact_lock(91724003)');
+   const retry=(await client.query('SELECT code FROM studio_place_codes WHERE request_id=$1',[body.requestId])).rows[0];
+   if(retry){await client.query('COMMIT');return {ok:true,id:retry.code,draftRevision:Number(current.draft_revision),document:current.draft};}
+   if(Number(current.draft_revision)!==body.expectedRevision)throw new VisitorContentError('草稿已变化，请保留表单并刷新后重试。',409);
+   const document=clone(body.document||current.draft);
+   // New places must enter through the allocator, never through a client supplied ID.
+   if(Object.keys(document.places).some(id=>!current.draft.places[id])||Object.keys(current.draft.places).some(id=>!document.places[id]))throw new VisitorContentError('创建时不能增删其他地点');
+   const n=(await client.query("SELECT COALESCE(MAX(substring(code FROM 4)::bigint),0)+1 AS n FROM studio_place_codes")).rows[0].n;
+   const id=`WY-${String(n).padStart(4,'0')}`,place={...emptyStudioPlace(),...clone(body.place),id,archivedAt:null};
+   place.name.zh=place.name.zh.trim();if(place.coordinateMissing)place.published=false;else if(place.coordinates.system!=='WGS84')throw new VisitorContentError('新地点资料坐标必须为 WGS84');
+   document.places[id]=place;
+   const seen=new Set<string>();
+   for(const context of body.contexts||[]){
+    const route=document.routes.find(r=>r.id===context.routeId&&!r.archivedAt),stage=route?.stages.find(s=>s.id===context.stageId&&!s.archivedAt);
+    if(!route||!stage||context.groupId&&!stage.groups.some(g=>g.id===context.groupId&&!g.archivedAt)||seen.has(route.id)||!Number.isFinite(context.order))throw new VisitorContentError('路线、阶段或分组关联无效');
+    seen.add(route.id);route.memberships.push({placeId:id,stageId:stage.id,groupId:context.groupId,role:context.role,order:context.order,visible:true});
+   }
+   document.updatedAt=new Date().toISOString();validateTransferDocument(document,await seedDocument());
+   for(const photo of place.photos)await store.readImage(photo.fileName);
+   const next=Number(current.draft_revision)+1;
+   await client.query('INSERT INTO studio_place_codes(code,request_id)VALUES($1,$2)',[id,body.requestId]);
+   await client.query('UPDATE content_workspaces SET draft_revision=$2,draft=$3,updated_at=now() WHERE id=$1',[workspaceId,next,document]);
+   await client.query(`INSERT INTO content_revision_history(workspace_id,revision_no,revision_id,change_kind,object_type,object_id,summary,snapshot,snapshot_hash) VALUES($1,$2,$3,'save','place',$4,$5,$6,$7)`,[workspaceId,next,contentRevision(next),id,`新建地点草稿：${place.name.zh}`,document,hash(document)]);
+   await client.query('COMMIT');return {ok:true,id,draftRevision:next,document};
+  }catch(e){await client.query('ROLLBACK');throw e;}finally{client.release();}
+ });
+ app.get('/api/admin/content-studio/state',async()=>{const row=await ensureWorkspace(db);return {localOnly:process.env.LOCAL_CONTENT_ONLY==='1',draftRevision:Number(row.draft_revision),publishedRevision:row.published_revision,publishedSnapshotHash:row.published_snapshot_hash,publishedPlaceIds:Object.values(row.published?.places||{}).filter(p=>p.published&&!p.archivedAt).map(p=>p.id),updatedAt:row.updated_at,publishedAt:row.published_at,document:row.draft,dashboard:dashboard(row.draft)};});
  app.get('/api/admin/content-studio/revisions',async()=>({items:(await db.query(`SELECT revision_no,revision_id,change_kind,object_type,object_id,actor,summary,snapshot_hash,created_at FROM content_revision_history WHERE workspace_id=$1 ORDER BY revision_no DESC LIMIT 100`,[workspaceId])).rows}));
  app.post('/api/admin/content-studio/save',async(req)=>{
   const body=req.body as {expectedRevision:number;document:ContentStudioDocument;objectType?:string;objectId?:string;summary?:string};
@@ -58,7 +92,7 @@ export function registerContentStudioRoutes(app:FastifyInstance,db:Pool,store=ne
  app.post('/api/admin/content-studio/publish',async(req)=>{
   if(process.env.LOCAL_CONTENT_ONLY==='1')throw new VisitorContentError('本地录入模式只保存草稿，已禁止发布。',403);
   const body=req.body as {expectedRevision:number;acknowledgeWarnings?:boolean};const client=await db.connect();try{await client.query('BEGIN');const current=await ensureWorkspace(client);if(Number(current.draft_revision)!==body.expectedRevision)throw new VisitorContentError('草稿版本已变化，请刷新后重新发布。',409);
-   const issues=validateContentStudio(current.draft);const errors=issues.filter(item=>item.level==='error'),warnings=issues.filter(item=>item.level==='warning');if(errors.length)throw new VisitorContentError(errors.map(item=>item.message).join('；'));if(warnings.length&&!body.acknowledgeWarnings)throw new VisitorContentError(`有 ${warnings.length} 项提醒，请在确认后发布。`,409);
+   const issues=validateContentStudio(current.draft,true);const errors=issues.filter(item=>item.level==='error'),warnings=issues.filter(item=>item.level==='warning');if(errors.length)throw new VisitorContentError(errors.map(item=>item.message).join('；'));if(warnings.length&&!body.acknowledgeWarnings)throw new VisitorContentError(`有 ${warnings.length} 项提醒，请在确认后发布。`,409);
    const revision=contentRevision(Number(current.draft_revision)),snapshotHash=hash(current.draft);
    await client.query(`UPDATE content_workspaces SET published=$2,published_revision=$3,published_snapshot_hash=$4,published_at=now() WHERE id=$1`,[workspaceId,current.draft,revision,snapshotHash]);
    await client.query(`INSERT INTO content_revision_history(workspace_id,revision_no,revision_id,change_kind,object_type,object_id,summary,snapshot,snapshot_hash) VALUES($1,$2,$3,'publish','workspace',$1,'发布内容快照',$4,$5) ON CONFLICT(workspace_id,revision_no) DO NOTHING`,[workspaceId,Number(current.draft_revision),revision,current.draft,snapshotHash]);
@@ -74,7 +108,7 @@ export function registerContentStudioRoutes(app:FastifyInstance,db:Pool,store=ne
   }catch(error){await client.query('ROLLBACK');throw error;}finally{client.release();}
  });
  app.get('/api/admin/content-studio/export.zip',async(_req,reply)=>{
-  const client=await db.connect();try{await client.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');const row=await ensureWorkspace(client);const history=(await client.query('SELECT * FROM content_revision_history WHERE workspace_id=$1 ORDER BY revision_no',[workspaceId])).rows;const archive=await exportStudioArchive(row,history,store);await client.query('COMMIT');return reply.type('application/zip').header('Content-Disposition',`attachment; filename="wuyishan-studio-r${row.draft_revision}.zip"`).send(archive);}catch(e){await client.query('ROLLBACK');throw e;}finally{client.release();}
+  const client=await db.connect();try{await client.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');const row=await ensureWorkspace(client);const history=(await client.query('SELECT * FROM content_revision_history WHERE workspace_id=$1 ORDER BY revision_no',[workspaceId])).rows;const reservedCodes=(await client.query('SELECT code FROM studio_place_codes ORDER BY code')).rows.map(r=>r.code as string);const archive=await exportStudioArchive(row,history,store,reservedCodes);await client.query('COMMIT');return reply.type('application/zip').header('Content-Disposition',`attachment; filename="wuyishan-studio-r${row.draft_revision}.zip"`).send(archive);}catch(e){await client.query('ROLLBACK');throw e;}finally{client.release();}
  });
  app.addContentTypeParser('application/zip',{parseAs:'buffer',bodyLimit:200*1024*1024},(_req,body,done)=>done(null,body));
  app.post('/api/admin/content-studio/import',{bodyLimit:200*1024*1024},async(req)=>{
@@ -89,6 +123,8 @@ export function registerContentStudioRoutes(app:FastifyInstance,db:Pool,store=ne
    // Merge media only. The legacy home/published content in the archive is evidence,
    // never applied to a public snapshot by a draft import.
    await store.ensure();await store.mutate(undefined,draft=>{for(const entry of archive.manifest.media)draft.media.items[`content.library-${entry.asset.id}.asset`]=entry.asset;draft.media.version++;draft.media.updatedAt=new Date().toISOString();});
+   await client.query('SELECT pg_advisory_xact_lock(91724003)');
+   for(const code of archive.manifest.reservedCodes||[])await client.query('INSERT INTO studio_place_codes(code)VALUES($1)ON CONFLICT DO NOTHING',[code]);
    const next=Number(locked.draft_revision)+1,revision=contentRevision(next);
    await client.query('UPDATE content_workspaces SET draft_revision=$2,draft=$3,updated_at=now() WHERE id=$1',[workspaceId,next,archive.document]);
    await client.query(`INSERT INTO content_revision_history(workspace_id,revision_no,revision_id,change_kind,object_type,object_id,summary,snapshot,snapshot_hash) VALUES($1,$2,$3,'save','import',$1,$4,$5,$6)`,[workspaceId,next,revision,`导入完整草稿包（来源 r${archive.manifest.draftRevision}），保留当前公开快照`,archive.document,summary.documentHash]);

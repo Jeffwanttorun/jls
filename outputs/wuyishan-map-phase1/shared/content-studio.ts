@@ -10,6 +10,7 @@ export interface StudioRoute {id:string;slug:string;name:StudioLocaleText;summar
 export interface StudioLink {id:string;platform?:'douyin'|'youtube'|'instagram'|'tiktok';title:StudioLocaleText;url:string;publishedAt?:string;language?:'zh'|'en'}
 export interface StudioPhoto {id:string;fileName:string;alt:StudioLocaleText;role:'cover'|'gallery';order:number}
 export interface StudioPlace {
+ coordinateMissing?:boolean;archivedAt?:string|null;archivePublished?:boolean;
  id:string;name:StudioLocaleText;shortName:StudioLocaleText;pinyin:string;englishNameStatus:'official'|'established'|'translated'|'pinyin'|'pending';labelPriority:20|40|60|80|100;
  category:string;region:StudioLocaleText;address:StudioLocaleText;summary:StudioLocaleText;description:StudioLocaleText;whyStop:StudioLocaleText;firsthandNotes:StudioLocaleText;
  practicalInfo:{zh:string[];en:string[]};parking:StudioLocaleText;toiletNote:StudioLocaleText;foodNote:StudioLocaleText;shopNote:StudioLocaleText;lodgingNote:StudioLocaleText;
@@ -25,7 +26,7 @@ export interface ContentStudioDocument {schemaVersion:2;routes:StudioRoute[];pla
 
 export interface StudioValidationIssue {level:'error'|'warning';code:string;message:string;href?:string}
 
-export function validateContentStudio(doc:ContentStudioDocument){
+export function validateContentStudio(doc:ContentStudioDocument,publishing=false){
  const issues:StudioValidationIssue[]=[];
  const placeIds=new Set(Object.keys(doc.places));
  if(placeIds.size!==Object.keys(doc.places).length)issues.push({level:'error',code:'duplicate-place',message:'地点编号重复'});
@@ -37,15 +38,16 @@ export function validateContentStudio(doc:ContentStudioDocument){
   const groupIds=new Set(route.stages.flatMap(s=>s.groups.filter(g=>!g.archivedAt).map(g=>g.id)));
   const membershipKeys=new Set<string>();
   for(const member of route.memberships.filter(m=>m.visible)){
-   const key=`${member.placeId}:${member.stageId}`;if(membershipKeys.has(key))issues.push({level:'error',code:'duplicate-membership',message:`${route.name.zh} 中 ${member.placeId} 重复出现`});membershipKeys.add(key);
+   const key=member.placeId;if(membershipKeys.has(key))issues.push({level:'error',code:'duplicate-membership',message:`${route.name.zh} 中 ${member.placeId} 重复出现`});membershipKeys.add(key);
    if(!placeIds.has(member.placeId))issues.push({level:'error',code:'missing-place',message:`路线引用不存在地点：${member.placeId}`});
    if(!stageIds.has(member.stageId))issues.push({level:'error',code:'missing-stage',message:`${member.placeId} 引用不存在阶段：${member.stageId}`});
    if(member.groupId&&!groupIds.has(member.groupId))issues.push({level:'error',code:'missing-group',message:`${member.placeId} 引用不存在分组：${member.groupId}`});
   }
  }
  for(const place of Object.values(doc.places)){
-  if(place.published&&(!Number.isFinite(place.coordinates.latitude)||!Number.isFinite(place.coordinates.longitude)))issues.push({level:'error',code:'missing-coordinate',message:`公开地点 ${place.id} 缺少坐标`,href:`/studio/places/${place.id}`});
-  if(place.englishNameStatus!=='pending'&&!place.name.en.trim())issues.push({level:'error',code:'english-status',message:`${place.id} 已标记英文名状态但英文名为空`,href:`/studio/places/${place.id}`});
+  if(place.published&&!place.name.zh.trim())issues.push({level:publishing?'error':'warning',code:'missing-name',message:`${place.id} 缺中文名称`});
+  if(place.published&&(place.coordinateMissing||!Number.isFinite(place.coordinates.latitude)||!Number.isFinite(place.coordinates.longitude)))issues.push({level:publishing?'error':'warning',code:'missing-coordinate',message:`公开地点 ${place.id} 缺少坐标`,href:`/studio/places/${place.id}`});
+  if(place.englishNameStatus!=='pending'&&!place.name.en.trim())issues.push({level:publishing?'error':'warning',code:'english-status',message:`${place.id} 已标记英文名状态但英文名为空`,href:`/studio/places/${place.id}`});
   if(!place.name.en.trim())issues.push({level:'warning',code:'missing-english',message:`${place.id} 缺英文名称`,href:`/studio/places/${place.id}`});
   if(!place.photos.length)issues.push({level:'warning',code:'missing-image',message:`${place.id} 尚未设置图片`,href:`/studio/places/${place.id}`});
   if(!place.summary.zh.trim())issues.push({level:'warning',code:'missing-summary',message:`${place.id} 尚未填写简介`,href:`/studio/places/${place.id}`});
