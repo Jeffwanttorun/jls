@@ -10,6 +10,7 @@ export interface StudioRoute {id:string;slug:string;name:StudioLocaleText;summar
 export interface StudioLink {id:string;platform?:'douyin'|'youtube'|'instagram'|'tiktok';title:StudioLocaleText;url:string;publishedAt?:string;language?:'zh'|'en'}
 export interface StudioPhoto {id:string;fileName:string;alt:StudioLocaleText;role:'cover'|'gallery';order:number}
 export interface StudioPlace {
+ openingSchedule?:import('./place-opening.js').PlaceOpeningSchedule;
  coordinateMissing?:boolean;archivedAt?:string|null;archivePublished?:boolean;
  id:string;name:StudioLocaleText;shortName:StudioLocaleText;pinyin:string;englishNameStatus:'official'|'established'|'translated'|'pinyin'|'pending';labelPriority:20|40|60|80|100;
  category:string;region:StudioLocaleText;address:StudioLocaleText;summary:StudioLocaleText;description:StudioLocaleText;whyStop:StudioLocaleText;firsthandNotes:StudioLocaleText;

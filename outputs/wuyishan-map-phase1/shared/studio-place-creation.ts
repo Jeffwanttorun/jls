@@ -1,4 +1,5 @@
 import type {StudioPlace,StudioRole} from './content-studio.js';
+import {emptyOpeningSchedule} from './place-opening.js';
 import gcoordPackage from 'gcoord';
 // Same CommonJS interop as the existing coordinate service.
 const gcoord=gcoordPackage as unknown as {WGS84:string;BD09:string;GCJ02:string;transform:(xy:[number,number],from:string,to:string)=>[number,number]};
@@ -10,7 +11,7 @@ export function studioMapPoint(coordinates:StudioPlace['coordinates']){
 export interface PlaceCreationContext {routeId:string;stageId:string;groupId:string|null;role:StudioRole;order:number}
 export function emptyStudioPlace():StudioPlace {
  const text=()=>({zh:'',en:''});
- return {id:'',name:text(),shortName:text(),pinyin:'',englishNameStatus:'pending',labelPriority:60,
+ return {id:'',openingSchedule:emptyOpeningSchedule(),name:text(),shortName:text(),pinyin:'',englishNameStatus:'pending',labelPriority:60,
  category:'未分类',region:text(),address:text(),summary:text(),description:text(),whyStop:text(),firsthandNotes:text(),practicalInfo:{zh:[],en:[]},
  parking:text(),toiletNote:text(),foodNote:text(),shopNote:text(),lodgingNote:text(),facilities:{parking:false,toilet:false,food:false,shop:false,lodging:false},
  familySuitability:'unknown',familyNotes:text(),overnightStatus:'unknown',overnightNotes:text(),overnightLastCheckedAt:'',overnightSource:'',safetyNotes:text(),accessNotes:text(),seasonNotes:text(),

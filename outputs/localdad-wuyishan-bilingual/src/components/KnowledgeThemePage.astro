@@ -1,4 +1,5 @@
 ---
+import PlaceOpening from './PlaceOpening.astro';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Locale } from "../i18n/config";
 import { knowledgePlaces, localizedPlaceName, localizedPlaceRegion } from "../data/knowledge-places";
@@ -43,8 +44,8 @@ const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).to
         return <a class="dad-place-card" data-family={place.familySuitability??"unknown"} href={placeHref(place.id)} aria-label={zh?`查看${place.nameZh}详情`:`Open ${localizedPlaceName(place,locale)}`}>
           {photo?<img src={photo.src} alt="" width="900" height="600" loading="lazy" decoding="async"/>:<div class:list={["dad-place-placeholder",theme.tone]}><span aria-hidden="true">{zh?theme.icon:<ThemeIcon id={theme.id} />}</span></div>}
           <div class="dad-place-copy">
-            <div class="dad-place-topline">{region&&<p class="dad-eyebrow">{region}</p>}{place.publicStatus==="在建"&&<span class="dad-status">{zh?"在建":"Under construction"}</span>}</div>
-            <h2>{localizedPlaceName(place,locale)}</h2>
+            <div class="dad-place-topline">{region&&<p class="dad-eyebrow">{region}</p>}</div>
+            <h2>{localizedPlaceName(place,locale)}</h2><PlaceOpening {place} {locale}/>
             {!zh&&place.nameEn&&<p class="theme-original-name">{place.nameZh}</p>}
             {summary&&<p>{summary}</p>}
             <div class="dad-tags">

@@ -1,3 +1,4 @@
+import type {StudioPlace} from '../../../wuyishan-map-phase1/shared/content-studio';
 import snapshot from "./wuyishan-public-map.json";
 import runtime from "./visitor-runtime.json";
 import studioRuntime from "./content-studio-runtime.json";
@@ -15,7 +16,7 @@ type RuntimePlace = {
 type SnapshotPlace = (typeof snapshot.places)[number] & { ownerApproved?:boolean; humanConfirmed?:boolean };
 
 const runtimeById = new Map((runtime.places as RuntimePlace[]).map((place)=>[place.code,place]));
-const studioPlaces=studioRuntime.document.places;
+const studioPlaces=studioRuntime.document.places as Record<string,StudioPlace>;
 const routeIdsByPlace = new Map<string,string[]>();
 const publicKnowledgeRoutes=knowledgeRoutes.filter((route)=>route.published);
 for(const route of publicKnowledgeRoutes) for(const placeId of route.placeIds){
@@ -127,7 +128,8 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
     videos:studio?.videos.flatMap(item=>item.platform?[{platform:item.platform,title:item.title.zh||item.title.en,url:item.url,publishedAt:item.publishedAt,language:item.language}]:[])??[], storyLinks:studio?.storyLinks.map(item=>({title:item.title.zh||item.title.en,url:item.url}))??[], researchLinks:studio?.researchLinks.map(item=>({title:item.title.zh||item.title.en,url:item.url}))??[],
     photoGallery:studio?.photos.length?studio.photos.sort((a,b)=>a.order-b.order).map(item=>({src:media(item.fileName),altZh:item.alt.zh||studio.name.zh,altEn:item.alt.en||undefined})):image?[{src:media(image),altZh:`${managed?.name??point.name}现场照片`,altEn:english?`Photo of ${english.name}`:undefined}]:[],
     themeIds,
-    publicStatus:managed?.status??point.status,
+    publicStatus:studio?.publicStatus??managed?.status??point.status,
+    openingSchedule:studio?.openingSchedule,
   };
 });
 

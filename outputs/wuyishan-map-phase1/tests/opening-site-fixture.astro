@@ -1,0 +1,18 @@
+---
+export const prerender = false;
+// Copied temporarily by opening-e2e.ts to a guarded localhost-only test page.
+import KnowledgePlacePage from '../components/KnowledgePlacePage.astro';
+import KnowledgeRoutePage from '../components/KnowledgeRoutePage.astro';
+import KnowledgeThemePage from '../components/KnowledgeThemePage.astro';
+import {knowledgePlaceById} from '../data/knowledge-places';
+import {knowledgeRoutes} from '../data/knowledge-routes';
+import {visitorThemes} from '../data/visitor-themes';
+import {emptyOpeningSchedule,type OpeningKind} from '../../../wuyishan-map-phase1/shared/place-opening';
+if(process.env.OPENING_TEST_FIXTURE!=='1')return new Response('Not found',{status:404});
+const q=Astro.url.searchParams,locale=q.get('lang')==='en'?'en':'zh',view=q.get('view')||'place',kind=q.get('kind')||'weekends';
+const place=knowledgePlaceById.get('WY-0040')!;
+place.publicStatus=q.get('status')||'开放';
+place.openingSchedule=kind==='legacy'?undefined:{...emptyOpeningSchedule(),kind:kind as OpeningKind,weekdays:kind==='weekdays'?[1,3,5]:[],confirmed:q.get('confirmed')!=='0',hours:{zh:'',en:''},notes:{zh:'TEST 节假日请提前确认',en:'TEST Check holiday arrangements before visiting.'},source:{zh:'TEST 馆方公告',en:'TEST Museum notice'},lastVerifiedAt:'2026-10-07'};
+const route=knowledgeRoutes.find(r=>r.placeIds.includes(place.id))!,theme=visitorThemes.find(t=>place.themeIds?.includes(t.id))!;
+---
+{view==='place'?<KnowledgePlacePage {place} {locale}/>:view==='route'?<KnowledgeRoutePage {route} {locale}/>:<KnowledgeThemePage {theme} {locale}/>}

@@ -43,6 +43,7 @@ export interface KnowledgeRoutePlaceRelationship {
 export interface KnowledgeRouteGroup {id:string;titleZh:string;titleEn?:string;summaryZh?:string;summaryEn?:string;placeIds:string[]}
 
 export interface KnowledgePlace {
+  openingSchedule?:import('../../../wuyishan-map-phase1/shared/place-opening').PlaceOpeningSchedule;
   id: string;
   nameZh: string;
   nameEn?: string;
