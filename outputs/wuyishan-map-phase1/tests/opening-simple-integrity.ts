@@ -1,0 +1,11 @@
+import 'dotenv/config';import pg from 'pg';import {readFile,readdir,writeFile,mkdir} from 'node:fs/promises';import {resolve} from 'node:path';import {createHash} from 'node:crypto';import {digest} from '../backend/src/studio-transfer.js';import {assertLocalDatabase} from '../backend/src/local-safety.js';
+assertLocalDatabase();if(process.env.LOCAL_CONTENT_ONLY!=='1')throw Error('Local mode required');
+const db=new pg.Pool({connectionString:process.env.DATABASE_URL});
+try{const tables=(await db.query("SELECT tablename FROM pg_tables WHERE schemaname='public' AND tablename NOT IN ('spatial_ref_sys','schema_migrations','studio_place_codes') ORDER BY tablename")).rows;const checks:Record<string,unknown>={};
+ for(const {tablename} of tables){if(!/^[a-z_]+$/.test(tablename))throw Error('Invalid table');checks[tablename]=(await db.query(`SELECT count(*)::int count,md5(string_agg(row_to_json(t)::text,E'\\n' ORDER BY row_to_json(t)::text)) checksum FROM ${tablename} t`)).rows[0];}
+ const mediaDir=resolve(process.env.VISITOR_CONTENT_MEDIA_DIR||'visitor-content-store/media'),media:Record<string,string>={};for(const name of (await readdir(mediaDir)).sort())media[name]=createHash('sha256').update(await readFile(resolve(mediaDir,name))).digest('hex');
+ const row=(await db.query('SELECT draft,published,draft_revision FROM content_workspaces')).rows[0];
+ const result={checks,media,draftHash:digest(row.draft),publishedHash:digest(row.published),draftRevision:row.draft_revision,publicPlaces:Object.values(row.published.places).filter((p:any)=>p.published).length,geometry:row.draft.geometry,occupiedCodes:(await db.query('SELECT code FROM places ORDER BY code')).rows.map(r=>r.code)};
+ const dir=resolve('../../work/opening-simple-safety');await mkdir(dir,{recursive:true});const path=resolve(dir,process.argv[2]==='after'?'after.json':'before.json');await writeFile(path,JSON.stringify(result,null,2));
+ if(process.argv[2]==='after'){const before=JSON.parse(await readFile(resolve(dir,'before.json'),'utf8'));if(digest(before)!==digest(result))throw Error('Local content or media changed');console.log('原有全部业务表、公开快照、草稿、版本历史和媒体逐项摘要一致');}else console.log(JSON.stringify({path,publicPlaces:result.publicPlaces,geometry:result.geometry,draftRevision:result.draftRevision,maxLegacyCode:result.occupiedCodes.at(-1)},null,2));
+}finally{await db.end();}

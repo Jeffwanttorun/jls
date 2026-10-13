@@ -5,7 +5,7 @@ interface Props {place:Pick<KnowledgePlace,'category'|'publicStatus'|'openingSch
 const {place,locale,details=false}=Astro.props,info=openingDisplay(place,locale),zh=locale==='zh',Tag=details?'div':'span';
 ---
 {exhibitionOpeningApplies(place)&&<Tag class="place-opening" data-opening-kind={info.confirmed?place.openingSchedule?.kind:'unknown'}>
- <strong>{info.operating}</strong><span>{info.schedule}</span>
+ <strong>{info.operating}</strong>
  {info.caution&&<small class="opening-caution">{info.caution}</small>}
  {details&&<>{info.hours&&<p>{zh?'开放时段':'Hours'}: {info.hours}</p>}{info.notes&&<p>{info.notes}</p>}{info.source&&<p>{zh?'信息来源':'Source'}: {info.source}</p>}{info.lastVerifiedAt&&<small>{zh?'开放安排最后核实':'Opening schedule last verified'}: <time datetime={info.lastVerifiedAt}>{info.lastVerifiedAt}</time></small>}</>}
 </Tag>}
