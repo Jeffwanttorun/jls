@@ -1,0 +1,9 @@
+---
+export const prerender=false;
+import {readFile} from 'node:fs/promises';import KnowledgePlacePage from '../components/KnowledgePlacePage.astro';import {knowledgePlaceById}from'../data/knowledge-places';import {convertActionPoint,type ActionPoint}from'../../../wuyishan-map-phase1/shared/place-actions';
+if(process.env.NAVIGATION_TEST_FIXTURE!=='1'||!process.env.NAVIGATION_TEST_DOCUMENT)return new Response('Not found',{status:404});
+const doc=JSON.parse(await readFile(process.env.NAVIGATION_TEST_DOCUMENT,'utf8')),s=Object.values(doc.places).find((p:any)=>p.name.zh.startsWith('TEST 导航')) as any;
+const locale=Astro.url.searchParams.get('lang')==='en'?'en':'zh',draft=Astro.url.searchParams.get('draft')==='1';
+const place={...knowledgePlaceById.get('WY-0009')!,id:draft?s.id:'WY-0009',nameZh:s.name.zh,nameEn:s.name.en,summary:s.summary,navigationDestination:s.navigationDestination,shareInfo:s.shareInfo,shareAllowed:!draft,coordinates:convertActionPoint(s.coordinates as ActionPoint,'WGS84')};
+---
+<KnowledgePlacePage {place} {locale}/>

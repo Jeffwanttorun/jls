@@ -1,4 +1,5 @@
 ---
+import VisitorActions from './VisitorActions.astro';
 import PlaceOpening from './PlaceOpening.astro';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PlaceLocationMap from "./PlaceLocationMap.astro";
@@ -42,10 +43,11 @@ const routeHref=(slug:string)=>zh?`/zh/route/${slug}`:`/route/${slug}`;
 const placeHref=(id:string)=>zh?`/zh/place/${id}`:`/place/${id}`;
 const site=Astro.site??new URL("https://localdad.youzipal.com");
 const alternates=[{lang:"en" as const,href:new URL(`/place/${place.id}`,site).toString()},{lang:"zh" as const,href:new URL(`/zh/place/${place.id}`,site).toString()}];
-const description=zh?`${name}的公开地图位置、现有实地记录、沿线前后地点和附近地点关系，由武夷山奶爸按照已经公开的真实地点资料整理，内容随实地记录逐步更新。`:`Map location, field-check status, route sequence, and nearby places for ${name} in Wuyishan.`;
+const defaultDescription=zh?`${name}的公开地图位置、现有实地记录、沿线前后地点和附近地点关系，由武夷山奶爸按照已经公开的真实地点资料整理，内容随实地记录逐步更新。`:`Map location, field-check status, route sequence, and nearby places for ${name} in Wuyishan.`;
+const requestedDescription=place.shareInfo?.description[locale]||summary||defaultDescription;const description=(requestedDescription.length<50?requestedDescription+' '+defaultDescription:requestedDescription).slice(0,170);const shareTitle=place.shareInfo?.title[locale]||name;
 const primaryImageAlt=primaryPhoto?(zh?primaryPhoto.altZh:primaryPhoto.altEn??`Photo of ${name}`):undefined;
 ---
-<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Local Dad Jeff`} {description} {alternates} image={primaryPhoto?.src} imageAlt={primaryImageAlt}>
+<BaseLayout lang={locale} title={zh?`${shareTitle}｜武夷山奶爸地图`:`${shareTitle} | Local Dad Jeff`} {description} {alternates} image={primaryPhoto?.src||'/images/map-share-default.png'} imageAlt={primaryImageAlt}>
   <article class="knowledge-place">
     <a class="place-back" href={zh?"/zh/map":"/map"}>← {zh?"返回地图":"Back to map"}</a>
     <header class="place-heading">
@@ -58,7 +60,7 @@ const primaryImageAlt=primaryPhoto?(zh?primaryPhoto.altZh:primaryPhoto.altEn??`P
     </header>
 
     {primaryPhoto&&<figure class="place-photo"><img src={primaryPhoto.src} alt={primaryImageAlt} width="900" height="600" loading="eager" decoding="async" /></figure>}
-    <PlaceLocationMap placeCode={place.id} placeName={place.nameZh} {locale} />
+    <VisitorActions {place} {locale}/><PlaceLocationMap placeCode={place.id} placeName={place.nameZh} {locale} />
 
     <div class="place-sections"><section><p class="section-kicker">{zh?"开放情况":"Opening information"}</p><PlaceOpening {place} {locale} details/></section>
       {whyStop&&<section><p class="section-kicker">{zh?"为什么值得停":"Why stop here"}</p><p>{whyStop}</p></section>}

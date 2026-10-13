@@ -1,0 +1,12 @@
+---
+import type {KnowledgePlace} from '../types/knowledge-map';import type {Locale} from '../i18n/config';import {navigationTarget,placeSharePath} from '../../../wuyishan-map-phase1/shared/place-actions';
+interface Props {place?:KnowledgePlace;locale:Locale;path?:string;title?:string;text?:string;label?:string;publicPlace?:boolean}
+const {place,locale,path,title,text,label,publicPlace=true}=Astro.props,zh=locale==='zh',target=place?navigationTarget(place,locale):null,sharePath=place?placeSharePath(place.id,locale,publicPlace&&place.shareAllowed===true):path;
+const shareTitle=title||place?.shareInfo?.title[locale]||(place?(zh?place.nameZh:place.nameEn||place.nameZh):'Wuyishan Map'),shareText=text||place?.shareInfo?.description[locale]||place?.summary?.[locale]||'';
+---
+<div class="visitor-actions" data-action-locale={locale}>
+{place&&<button type="button" data-open-navigation data-tencent-key={import.meta.env.PUBLIC_TENCENT_URI_KEY||''} disabled={!target} data-navigation-target={target?JSON.stringify(target):undefined}>{zh?'导航':'Directions'}</button>}
+{sharePath?<button type="button" data-open-share data-share-path={sharePath} data-share-title={shareTitle} data-share-text={shareText}>{label||(zh?'分享':'Share')}</button>:place&&<small>{zh?'草稿地点，暂不可公开分享':'Draft place — public sharing is unavailable.'}</small>}
+</div>
+<script>import '../lib/visitor-actions';</script>
+<style>.visitor-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}.visitor-actions button{flex:1 1 100px;min-height:44px;padding:10px 16px;border:1px solid #8ba898;border-radius:12px;background:#fff;color:#15573e;font:700 15px system-ui;cursor:pointer}.visitor-actions button:first-child{background:#176348;color:#fff}.visitor-actions button:disabled{opacity:.55;cursor:default}</style>

@@ -97,7 +97,7 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
     ? themeIds.includes("water")?"conditional":"yes"
     : managed?.familyFriendly===false?"no":"unknown");
   return {
-    id:point.code,
+    id:point.code,shareAllowed:true,navigationDestination:studio?.navigationDestination,shareInfo:studio?.shareInfo,
     nameZh:studio?.name.zh.trim()||managed?.name?.trim()||point.name,
     nameEn:studio?.name.en.trim()||english?.name,
     shortNameZh:studio?.shortName.zh.trim()||labels.shortName,
@@ -126,7 +126,7 @@ const basePlaces:KnowledgePlace[]=(snapshot.places as SnapshotPlace[]).map((poin
     trustStatus:studio?{firsthand:studio.trust.firsthand||undefined,checkedInPerson:studio.trust.checkedInPerson||undefined,officialSource:studio.trust.officialSource||undefined,recheckBeforeGoing:studio.trust.recheckBeforeGoing||undefined}:(point.ownerApproved===true&&point.humanConfirmed===true)||managed?.status==="在建"?{firsthand:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,checkedInPerson:point.ownerApproved===true&&point.humanConfirmed===true?true:undefined,recheckBeforeGoing:managed?.status==="在建"?true:undefined}:undefined,
     routeIds:routeIdsByPlace.get(point.code),
     videos:studio?.videos.flatMap(item=>item.platform?[{platform:item.platform,title:item.title.zh||item.title.en,url:item.url,publishedAt:item.publishedAt,language:item.language}]:[])??[], storyLinks:studio?.storyLinks.map(item=>({title:item.title.zh||item.title.en,url:item.url}))??[], researchLinks:studio?.researchLinks.map(item=>({title:item.title.zh||item.title.en,url:item.url}))??[],
-    photoGallery:studio?.photos.length?studio.photos.sort((a,b)=>a.order-b.order).map(item=>({src:media(item.fileName),altZh:item.alt.zh||studio.name.zh,altEn:item.alt.en||undefined})):image?[{src:media(image),altZh:`${managed?.name??point.name}现场照片`,altEn:english?`Photo of ${english.name}`:undefined}]:[],
+    photoGallery:studio?.photos.length?[...studio.photos].sort((a,b)=>Number(b.role==='cover')-Number(a.role==='cover')||a.order-b.order).map(item=>({src:media(item.fileName),altZh:item.alt.zh||studio.name.zh,altEn:item.alt.en||undefined})):image?[{src:media(image),altZh:`${managed?.name??point.name}现场照片`,altEn:english?`Photo of ${english.name}`:undefined}]:[],
     themeIds,
     publicStatus:studio?.publicStatus??managed?.status??point.status,
     openingSchedule:studio?.openingSchedule,

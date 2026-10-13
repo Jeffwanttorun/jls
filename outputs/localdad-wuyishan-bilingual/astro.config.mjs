@@ -35,6 +35,8 @@ const liveVisitorContent={
 export default defineConfig({
   site: process.env.SITE_URL || productionSiteUrl,
   output: "static",
+  devToolbar:{enabled:process.env.NAVIGATION_TEST_FIXTURE!=='1'},
+  vite:{server:{proxy:{'/api':'http://127.0.0.1:3001'}}},
   trailingSlash: "never",
   integrations: [sitemap({ filter:(page) => !page.includes("/draft-preview/") }),liveVisitorContent],
   markdown: { remarkPlugins:[remarkRemoveKnowledgeTitle] },

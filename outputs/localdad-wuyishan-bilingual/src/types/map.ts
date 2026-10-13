@@ -5,6 +5,8 @@ import type { TopicId } from "../data/topics";
 import type { MapFilterId } from "../data/map-filters";
 
 export interface MapPlace {
+ shareTitle?:string;shareDescription?:string;
+ navigationTarget?:import('../../../wuyishan-map-phase1/shared/place-actions').NavigationTarget|null;
   id: string;
   href: string;
   name: string;

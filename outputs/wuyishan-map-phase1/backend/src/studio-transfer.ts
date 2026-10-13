@@ -4,6 +4,7 @@ import {readFile,readdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {validateContentStudio,type ContentStudioDocument} from '../../shared/content-studio.js';
 import {VisitorContentError,VisitorContentStore,type VisitorImageAsset} from '../../shared/visitor-content.js';
+import {placeActionErrors} from '../../shared/place-actions.js';
 import {openingScheduleErrors} from '../../shared/place-opening.js';
 
 export const stableJSON=(value:unknown):string=>JSON.stringify(value,(_key,item)=>item&&typeof item==='object'&&!Array.isArray(item)?Object.fromEntries(Object.keys(item).sort().map(key=>[key,item[key]])):item);
@@ -33,7 +34,7 @@ export function validateTransferDocument(value:unknown,seed:ContentStudioDocumen
  const sample=Object.values(seed.places)[0];
  for(const [id,place] of Object.entries(doc.places)){
   walk(place,sample,`place.${id}`);
-  const openingErrors=openingScheduleErrors(place.openingSchedule);if(openingErrors.length)fail(`${id}：${openingErrors.join('；')}`);
+  const actionErrors=placeActionErrors(place.navigationDestination,place.shareInfo);if(actionErrors.length)fail(`${id}：${actionErrors.join('；')}`);const openingErrors=openingScheduleErrors(place.openingSchedule);if(openingErrors.length)fail(`${id}：${openingErrors.join('；')}`);
   if(place.coordinateMissing!==undefined&&typeof place.coordinateMissing!=='boolean'||place.archivedAt!==undefined&&place.archivedAt!==null&&(typeof place.archivedAt!=='string'||!Number.isFinite(Date.parse(place.archivedAt))))fail(`${id} 草稿状态无效`);
   if(!/^WY-\d{4,}$/.test(id)||place.id!==id)fail(`地点编号不一致：${id}`);
   if(![20,40,60,80,100].includes(place.labelPriority))fail(`${id} 标签优先级无效`);

@@ -1,3 +1,4 @@
+import {navigationTarget} from '../../../wuyishan-map-phase1/shared/place-actions';
 import snapshot from "./wuyishan-public-map.json";
 import type { Locale } from "../i18n/config";
 import type { MapDataset, MapPlace, MapRouteGeometry } from "../types/map";
@@ -24,7 +25,7 @@ for(const route of knowledgeRoutes)for(const geometryId of route.geometryRouteId
 
 export function wuyishanPublicMap(locale:Locale):MapDataset {
   const places:MapPlace[]=knowledgePlaces.map((place)=>({
-    id:place.id,
+    id:place.id,shareTitle:place.shareInfo?.title[locale],shareDescription:place.shareInfo?.description[locale],navigationTarget:navigationTarget(place,locale),
     href:locale==="zh"?`/zh/place/${place.id}`:`/place/${place.id}`,
     name:localizedPlaceName(place,locale),
     shortName:localizedPlaceName(place,locale,true),

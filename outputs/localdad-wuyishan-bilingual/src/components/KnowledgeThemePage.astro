@@ -1,4 +1,5 @@
 ---
+import VisitorActions from './VisitorActions.astro';
 import PlaceOpening from './PlaceOpening.astro';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Locale } from "../i18n/config";
@@ -20,8 +21,8 @@ const mapHref=`${zh?"/zh/map":"/map"}?category=${theme.id}`;
 const site=Astro.site??new URL("https://localdad.youzipal.com");
 const alternates=[{lang:"en" as const,href:new URL(`/theme/${theme.id}`,site).toString()},{lang:"zh" as const,href:new URL(`/zh/theme/${theme.id}`,site).toString()}];
 ---
-<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Wuyishan Map`} description={metaDescription} {alternates}>
-  <section class:list={["dad-theme-hero",theme.tone,theme.heroImage&&"has-photo"]} style={theme.heroImage?`background-image:linear-gradient(90deg,rgba(15,58,43,.88),rgba(15,58,43,.40)),url(${theme.heroImage})`:undefined}>
+<BaseLayout lang={locale} title={zh?`${name}｜武夷山奶爸地图`:`${name} | Wuyishan Map`} description={metaDescription} {alternates} image={places.find(p=>p.photoGallery?.length)?.photoGallery?.[0].src||'/images/map-share-default.png'}>
+  <VisitorActions {locale} path={`${zh?'/zh':''}/theme/${theme.id}`} title={name} text={description}/><section class:list={["dad-theme-hero",theme.tone,theme.heroImage&&"has-photo"]} style={theme.heroImage?`background-image:linear-gradient(90deg,rgba(15,58,43,.88),rgba(15,58,43,.40)),url(${theme.heroImage})`:undefined}>
     <a class="dad-back-link" href={exploreHref}>← {zh?"全部主题":"All interests"}</a>
     <div class="dad-theme-title"><span aria-hidden="true">{zh?theme.icon:<ThemeIcon id={theme.id} />}</span><div><p class="dad-eyebrow">{zh?"武夷山奶爸地图":"Wuyishan Map"}</p><h1>{name}</h1></div></div>
     <p>{description}</p>
