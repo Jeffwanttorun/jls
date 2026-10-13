@@ -4,6 +4,8 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFile, spawn } from "node:child_process";
 import { promisify } from "node:util";
+import {dependencyInstallPlan} from './publish-dependencies.mjs';
+import {auditExistingRuntime} from './publish-runtime-audit.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const releasesDir=resolve(process.env.SITE_RELEASES_DIR||resolve(root,".local-releases"));
@@ -37,6 +39,20 @@ await mkdir(resolve(backupRoot,stamp),{recursive:true});
 await cp(storePath,resolve(backupRoot,stamp,"visitor-content.json"));
 await cp(mediaDir,resolve(backupRoot,stamp,"media"),{recursive:true});
 try{await cp(contentStudioSnapshotPath,resolve(backupRoot,stamp,"content-studio-published.json"));}catch(error){if(error?.code!=="ENOENT")throw error;}
+
+// A git pull updates package.json but does not install new build dependencies.
+// Fail before build/activation if the exact lockfile cannot be installed.
+const runtimeAudit=await auditExistingRuntime(root);
+console.log('Read-only existing runtime audit:',JSON.stringify(runtimeAudit));
+await writeFile(resolve(backupRoot,stamp,'runtime-audit.json'),JSON.stringify(runtimeAudit,null,2));
+await readFile(resolve(root,'pnpm-lock.yaml'));
+const dependencyPlan=dependencyInstallPlan(packageManager,JSON.parse(await readFile(resolve(root,'package.json'),'utf8')));
+console.log('Installing locked website dependencies before building…');
+await new Promise((resolvePromise,reject)=>{
+ const child=spawn(dependencyPlan.command,dependencyPlan.args,{cwd:root,stdio:'inherit',env:{...process.env,CI:'true'},shell:process.platform==='win32'});
+ child.once('error',reject);
+ child.once('exit',code=>code===0?resolvePromise():reject(new Error(`Website dependency installation failed with exit code ${code}; the current release was not changed.`)));
+});
 
 await new Promise((resolvePromise,reject)=>{
  const child=spawn(packageManager,["run","build"],{cwd:root,stdio:"inherit",env:process.env,shell:process.platform==="win32"});
@@ -83,4 +99,4 @@ try{
  throw error;
 }
 
-console.log(JSON.stringify({ok:true,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,projectDir:root,buildDir,release:releaseId,releaseDir,currentLink,visitorStoreVersion:state.version,contentRevision:studioRuntime.contentRevision,contentSnapshotHash:studioRuntime.contentSnapshotHash,mapHash:mapHashBefore}));
+console.log(JSON.stringify({ok:true,runtimeAudit,repositoryHead,buildCommitSha:repositoryHead,gitRemote,gitBranch,remoteHead,projectDir:root,buildDir,release:releaseId,releaseDir,currentLink,visitorStoreVersion:state.version,contentRevision:studioRuntime.contentRevision,contentSnapshotHash:studioRuntime.contentSnapshotHash,mapHash:mapHashBefore}));

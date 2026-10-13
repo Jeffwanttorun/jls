@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {dependencyInstallPlan}from'./publish-dependencies.mjs';
+const manifest={packageManager:'pnpm@11.19.0'};
+test('Existing npm host installs the exact pnpm lock including build-time types',()=>{assert.deepEqual(dependencyInstallPlan('/usr/bin/npm',manifest),{command:'/usr/bin/npm',args:['exec','--yes','--package=pnpm@11.19.0','--','pnpm','install','--frozen-lockfile','--prod=false']});});
+test('Existing pnpm host keeps its launcher and refuses an unlocked install',()=>{for(const command of ['pnpm','/usr/bin/pnpm','C:\\tools\\pnpm.cmd'])assert.deepEqual(dependencyInstallPlan(command,manifest),{command,args:['install','--frozen-lockfile','--prod=false']});assert.throws(()=>dependencyInstallPlan('npm',{packageManager:'pnpm@latest'}));assert.throws(()=>dependencyInstallPlan('other',manifest));});
