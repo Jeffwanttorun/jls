@@ -1,3 +1,4 @@
+import {unpublishedPlaceIds} from '../../shared/studio-place-presentation.js';
 import {createHash,randomUUID} from 'node:crypto';
 import {mkdir,readFile,rename,writeFile} from 'node:fs/promises';
 import {dirname,resolve} from 'node:path';
@@ -75,7 +76,7 @@ export function registerContentStudioRoutes(app:FastifyInstance,db:Pool,store=ne
    await client.query('COMMIT');return {ok:true,id,draftRevision:next,document};
   }catch(e){await client.query('ROLLBACK');throw e;}finally{client.release();}
  });
- app.get('/api/admin/content-studio/state',async()=>{const row=await ensureWorkspace(db);return {localOnly:process.env.LOCAL_CONTENT_ONLY==='1',draftRevision:Number(row.draft_revision),publishedRevision:row.published_revision,publishedSnapshotHash:row.published_snapshot_hash,publishedPlaceIds:Object.values(row.published?.places||{}).filter(p=>p.published&&!p.archivedAt).map(p=>p.id),updatedAt:row.updated_at,publishedAt:row.published_at,document:row.draft,dashboard:dashboard(row.draft)};});
+ app.get('/api/admin/content-studio/state',async()=>{const row=await ensureWorkspace(db);return {localOnly:process.env.LOCAL_CONTENT_ONLY==='1',draftRevision:Number(row.draft_revision),publishedRevision:row.published_revision,publishedSnapshotHash:row.published_snapshot_hash,unpublishedPlaceIds:unpublishedPlaceIds(row.draft,row.published),publishedPlaceIds:Object.values(row.published?.places||{}).filter(p=>p.published&&!p.archivedAt).map(p=>p.id),updatedAt:row.updated_at,publishedAt:row.published_at,document:row.draft,dashboard:dashboard(row.draft)};});
  app.get('/api/admin/content-studio/revisions',async()=>({items:(await db.query(`SELECT revision_no,revision_id,change_kind,object_type,object_id,actor,summary,snapshot_hash,created_at FROM content_revision_history WHERE workspace_id=$1 ORDER BY revision_no DESC LIMIT 100`,[workspaceId])).rows}));
  app.post('/api/admin/content-studio/save',async(req)=>{
   const body=req.body as {expectedRevision:number;document:ContentStudioDocument;objectType?:string;objectId?:string;summary?:string};

@@ -1,7 +1,7 @@
 import {api} from './api';
 import type {PlaceCreationContext} from '../../shared/studio-place-creation';
 import type {ContentStudioDocument,StudioPlace,StudioRoute,StudioTheme,StudioValidationIssue} from '../../shared/content-studio';
-export interface StudioPayload {localOnly?:boolean;publishedPlaceIds?:string[];draftRevision:number;publishedRevision:string|null;publishedSnapshotHash:string|null;updatedAt:string;publishedAt:string|null;document:ContentStudioDocument;dashboard:{stats:Record<string,number>;issues:StudioValidationIssue[];issueCounts:Record<string,number>;recentPlaces:StudioPlace[]}}
+export interface StudioPayload {localOnly?:boolean;publishedPlaceIds?:string[];unpublishedPlaceIds?:string[];draftRevision:number;publishedRevision:string|null;publishedSnapshotHash:string|null;updatedAt:string;publishedAt:string|null;document:ContentStudioDocument;dashboard:{stats:Record<string,number>;issues:StudioValidationIssue[];issueCounts:Record<string,number>;recentPlaces:StudioPlace[]}}
 export const getStudio=()=>api<StudioPayload>('/content-studio/state');
 export const createStudioPlace=(payload:StudioPayload,document:ContentStudioDocument,place:StudioPlace,contexts:PlaceCreationContext[],requestId:string)=>api<{ok:boolean;id:string;draftRevision:number;document:ContentStudioDocument}>('/content-studio/places/create',{expectedRevision:payload.draftRevision,document,place,contexts,requestId});
 export const getStudioRevisions=()=>api<{items:any[]}>('/content-studio/revisions');
