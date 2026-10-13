@@ -4,6 +4,7 @@ import { productionSiteUrl } from "./site.config.mjs";
 import remarkRemoveKnowledgeTitle from "./src/lib/remark-remove-knowledge-title.mjs";
 import { execFile } from "node:child_process";
 import { resolve } from "node:path";
+import { readFileSync } from "node:fs";
 
 const visitorStore=resolve("../wuyishan-map-phase1/visitor-content-store/data.json");
 const studioStore=resolve("../wuyishan-map-phase1/content-studio-store/published.json");
@@ -36,7 +37,7 @@ export default defineConfig({
   site: process.env.SITE_URL || productionSiteUrl,
   output: "static",
   devToolbar:{enabled:process.env.NAVIGATION_TEST_FIXTURE!=='1'},
-  vite:{server:{proxy:{'/api':'http://127.0.0.1:3001'}}},
+  vite:{server:{proxy:{'/api':'http://127.0.0.1:3001'},...(process.env.VISITOR_PREVIEW_CERT&&process.env.VISITOR_PREVIEW_KEY?{https:{cert:readFileSync(process.env.VISITOR_PREVIEW_CERT),key:readFileSync(process.env.VISITOR_PREVIEW_KEY)}}:{})}},
   trailingSlash: "never",
   integrations: [sitemap({ filter:(page) => !page.includes("/draft-preview/") }),liveVisitorContent],
   markdown: { remarkPlugins:[remarkRemoveKnowledgeTitle] },
