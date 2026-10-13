@@ -1,0 +1,7 @@
+<script setup lang="ts">
+import {computed,ref} from 'vue';
+const props=defineProps<{title:string;purpose:string;value:{zh:string|string[];en:string|string[]};englishLabel:string;lines?:boolean}>();
+const editing=ref(false),locale=ref<'zh'|'en'>('zh');
+const text=computed({get:()=>Array.isArray(props.value[locale.value])?(props.value[locale.value] as string[]).join('\n'):props.value[locale.value] as string,set:v=>{props.value[locale.value]=props.lines?v.split('\n'):v;}});
+</script>
+<template><article class="task-content-card"><div class="task-card-heading"><h3>{{title}}</h3><button type="button" :aria-expanded="editing" @click="editing=!editing">{{editing?'收起编辑':'编辑内容'}}</button></div><p class="task-purpose">{{purpose}}</p><div class="content-language" role="group" :aria-label="title+'语言'"><button type="button" :class="{active:locale==='zh'}" @click="locale='zh'">中文</button><button type="button" :class="{active:locale==='en'}" @click="locale='en'">English</button></div><label v-if="editing">{{locale==='zh'?title:englishLabel}}<textarea v-model="text" rows="8" :placeholder="locale==='zh'?'记录已知内容；不确定的资料可留空。':'Write confirmed information. English can be added later.'"></textarea></label><p v-else class="content-excerpt">{{text|| (locale==='zh'?'尚未填写':'English not added yet.')}} </p><p class="task-purpose">{{text?'已有内容，保存后进入草稿。':'选填；不会自动生成或翻译。'}} 游客端预览可查看完整内容。</p></article></template>
