@@ -20,7 +20,7 @@ updated: 2026-07-13
 image: /images/wuyishan-river-hero.jpg
 imageAlt: Jiuqu Stream winding between forested peaks in Wuyishan
 imageWidth: 1672
-imageHeight: 940
+imageHeight: 941
 ---
 
 Wuyishan is a small city in northern Fujian Province, in southeastern China. If you’re looking at a map, it sits inland between Fuzhou and the Jiangxi border. It’s best known for the Wuyi Mountains, Jiuqu Stream, and the roasted oolong tea grown in the rocky hills around town.

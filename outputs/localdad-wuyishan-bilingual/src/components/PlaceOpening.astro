@@ -1,12 +1,12 @@
 ---
-import {openingDisplay} from '../../../wuyishan-map-phase1/shared/place-opening';
+import {openingDisplay,exhibitionOpeningApplies} from '../../../wuyishan-map-phase1/shared/place-opening';
 import type {KnowledgePlace} from '../types/knowledge-map';import type {Locale} from '../i18n/config';
-interface Props {place:Pick<KnowledgePlace,'publicStatus'|'openingSchedule'>;locale:Locale;details?:boolean}
+interface Props {place:Pick<KnowledgePlace,'category'|'publicStatus'|'openingSchedule'>;locale:Locale;details?:boolean}
 const {place,locale,details=false}=Astro.props,info=openingDisplay(place,locale),zh=locale==='zh',Tag=details?'div':'span';
 ---
-<Tag class="place-opening" data-opening-kind={info.confirmed?place.openingSchedule?.kind:'unknown'}>
+{exhibitionOpeningApplies(place)&&<Tag class="place-opening" data-opening-kind={info.confirmed?place.openingSchedule?.kind:'unknown'}>
  <strong>{info.operating}</strong><span>{info.schedule}</span>
  {info.caution&&<small class="opening-caution">{info.caution}</small>}
  {details&&<>{info.hours&&<p>{zh?'开放时段':'Hours'}: {info.hours}</p>}{info.notes&&<p>{info.notes}</p>}{info.source&&<p>{zh?'信息来源':'Source'}: {info.source}</p>}{info.lastVerifiedAt&&<small>{zh?'开放安排最后核实':'Opening schedule last verified'}: <time datetime={info.lastVerifiedAt}>{info.lastVerifiedAt}</time></small>}</>}
-</Tag>
+</Tag>}
 <style>.place-opening{display:flex;flex-wrap:wrap;gap:5px 9px;margin:8px 0;color:#315d4a;font-size:12px;line-height:1.5}.place-opening strong{font-weight:700}.place-opening p,.opening-caution{width:100%;margin:0}.opening-caution{color:#874c2d}</style>

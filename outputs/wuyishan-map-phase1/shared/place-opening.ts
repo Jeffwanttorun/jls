@@ -1,5 +1,8 @@
 // One optional extension of the existing place model, shared by Studio and the site.
 export type OpeningKind='daily'|'weekends'|'weekdays'|'appointment'|'irregular'|'unknown';
+// Deliberately uses category only, never place names or interest themes.
+export const exhibitionCategories=['自然科普展馆','茶文化展馆','人文展馆','展馆','展示馆','展览馆','博物馆','科普展馆'] as const;
+export function exhibitionOpeningApplies(place:{category?:string}){return exhibitionCategories.some(type=>type===place.category?.trim());}
 export interface PlaceOpeningSchedule {
  kind:OpeningKind;weekdays:number[];hours:{zh:string;en:string};notes:{zh:string;en:string};source:{zh:string;en:string};lastVerifiedAt:string;confirmed:boolean;
 }

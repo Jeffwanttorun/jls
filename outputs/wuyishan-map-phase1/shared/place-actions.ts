@@ -15,6 +15,14 @@ export function navigationTarget(place:{coordinates?:{latitude:number;longitude:
  return {point:{...p},chineseName:n?.name.zh||place.name?.zh||place.nameZh||'',name:n?.name[locale]||n?.name.zh||place.name?.[locale]||place.name?.zh||(locale==='zh'?place.nameZh:place.nameEn||place.nameZh)||'',notes:n?.notes[locale]||'',vehicleAccess:explicit?n?.vehicleAccess||'unknown':'unknown',explicit};
 }
 export type NavigationProvider='amap'|'baidu'|'tencent'|'apple';
+// Open the destination, leaving travel mode selection to the map app.
+export function destinationLinks(target:NavigationTarget,provider:NavigationProvider,device:'ios'|'android'|'desktop'='desktop',tencentKey=''){
+ const name=provider==='apple'?target.name:target.chineseName||target.name,p=convertActionPoint(target.point,provider==='baidu'?'BD-09':provider==='apple'?'WGS84':'GCJ-02'),q=(v:Record<string,string>)=>new URLSearchParams(v).toString();
+ if(provider==='amap'){const params={sourceApplication:'LocalDadJeff',poiname:name,lat:String(p.latitude),lon:String(p.longitude),dev:'0'};return {point:p,web:'https://uri.amap.com/marker?'+q({position:`${p.longitude},${p.latitude}`,name,src:'LocalDadJeff',coordinate:'gaode',callnative:'0'}),app:device==='desktop'?null:(device==='ios'?'iosamap':'androidamap')+'://viewMap?'+q(params)};}
+ if(provider==='baidu'){const params={location:`${p.latitude},${p.longitude}`,title:name,content:target.notes,coord_type:'bd09ll'};return {point:p,web:'https://api.map.baidu.com/marker?'+q({...params,output:'html',src:'webapp.localdad.wuyishan'}),app:device==='desktop'?null:'baidumap://map/marker?'+q({...params,src:device==='ios'?'ios.localdad.wuyishan':'andr.localdad.wuyishan'})};}
+ if(provider==='tencent'){const marker=`coord:${p.latitude},${p.longitude};title:${name.replace(/[;:]/g,' ')};addr:${target.notes.replace(/[;:]/g,' ')}`;return {point:p,web:'https://apis.map.qq.com/uri/v1/marker?'+q({marker,referer:'LocalDadJeff'}),app:device==='desktop'||!tencentKey?null:'qqmap://map/marker?'+q({marker,referer:tencentKey})};}
+ const url='https://maps.apple.com/?'+q({ll:`${p.latitude},${p.longitude}`,q:name});return {point:p,web:url,app:device==='ios'?url:null};
+}
 export function navigationLinks(target:NavigationTarget,provider:NavigationProvider,mode:'walking'|'driving'='walking',device:'ios'|'android'|'desktop'='desktop',tencentKey=''){
  // No inferred vehicle access: unconfirmed map centers always use a walking plan.
  const drive=mode==='driving'&&target.explicit&&target.vehicleAccess==='yes',name=provider==='apple'?target.name:target.chineseName||target.name,p=convertActionPoint(target.point,provider==='baidu'?'BD-09':provider==='apple'?'WGS84':'GCJ-02'),q=(params:Record<string,string>)=>new URLSearchParams(params).toString();

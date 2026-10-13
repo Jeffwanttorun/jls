@@ -4,7 +4,7 @@ export const siteIdentity = {
   description: "An English-language resource from Jeff for understanding Wuyishan, China, through its landscape, culture, tea, and everyday life.",
   defaultSocialImage: "/images/wuyishan-river-hero.jpg",
   defaultSocialImageWidth: 1672,
-  defaultSocialImageHeight: 940,
+  defaultSocialImageHeight: 941,
 } as const;
 
 export const primaryNav = [

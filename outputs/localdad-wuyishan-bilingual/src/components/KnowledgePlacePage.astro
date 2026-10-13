@@ -1,5 +1,6 @@
 ---
 import VisitorActions from './VisitorActions.astro';
+import {exhibitionOpeningApplies} from '../../../wuyishan-map-phase1/shared/place-opening';
 import PlaceOpening from './PlaceOpening.astro';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PlaceLocationMap from "./PlaceLocationMap.astro";
@@ -62,7 +63,7 @@ const primaryImageAlt=primaryPhoto?(zh?primaryPhoto.altZh:primaryPhoto.altEn??`P
     {primaryPhoto&&<figure class="place-photo"><img src={primaryPhoto.src} alt={primaryImageAlt} width="900" height="600" loading="eager" decoding="async" /></figure>}
     <VisitorActions {place} {locale}/><PlaceLocationMap placeCode={place.id} placeName={place.nameZh} {locale} />
 
-    <div class="place-sections"><section><p class="section-kicker">{zh?"开放情况":"Opening information"}</p><PlaceOpening {place} {locale} details/></section>
+    <div class="place-sections">{exhibitionOpeningApplies(place)&&<section><p class="section-kicker">{zh?"开放情况":"Opening information"}</p><PlaceOpening {place} {locale} details/></section>}
       {whyStop&&<section><p class="section-kicker">{zh?"为什么值得停":"Why stop here"}</p><p>{whyStop}</p></section>}
       {fullDescription&&<section><p class="section-kicker">{zh?"地点说明":"About this place"}</p><p>{fullDescription}</p></section>}
       {firsthandNotes&&<section><p class="section-kicker">{zh?"Jeff 的实地记录":"Jeff’s field notes"}</p><p>{firsthandNotes}</p></section>}

@@ -26,7 +26,7 @@ export const jiuquStream = {
   imageSrcset: "/images/wuyishan-river-hero-640.jpg 640w, /images/wuyishan-river-hero-960.jpg 960w, /images/wuyishan-river-hero.jpg 1672w",
   imageAlt: "Jiuqu Stream winding between forested sandstone peaks in Wuyishan",
   imageWidth: 1672,
-  imageHeight: 940,
+  imageHeight: 941,
   imageNeedsReplacement: true,
   parentHref: "/guides/outdoors",
   parentLabel: "Mountains & Outdoors",

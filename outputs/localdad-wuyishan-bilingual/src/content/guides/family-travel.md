@@ -19,7 +19,7 @@ updated: 2026-07-13
 image: /images/wuyishan-river-hero.jpg
 imageAlt: Jiuqu Stream winding between forested peaks in Wuyishan
 imageWidth: 1672
-imageHeight: 940
+imageHeight: 941
 ---
 
 Wuyishan can work well for families who enjoy being outside and don’t mind adjusting the plan as they go. The main sights involve walking, stone steps, shuttle buses, and sometimes waiting, so a realistic plan matters. As a dad, I think about energy, weather, meals, and bathroom breaks—not just a list of attractions.

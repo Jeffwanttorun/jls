@@ -20,7 +20,7 @@ updated: 2026-07-13
 image: /images/wuyishan-river-hero.jpg
 imageAlt: Jiuqu Stream winding between forested peaks in Wuyishan
 imageWidth: 1672
-imageHeight: 940
+imageHeight: 941
 ---
 
 The Wuyishan Main Scenic Area is the large protected park next to Sangu, the main visitor district. Most of the places you’ve probably seen in Wuyishan photos are inside it. The park has multiple entrances, internal shuttle buses, and separate walking areas, so it doesn’t work like one trail with a single starting point.
