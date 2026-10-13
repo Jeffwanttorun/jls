@@ -6,6 +6,7 @@ import { execFile, spawn } from "node:child_process";
 import { promisify } from "node:util";
 import {dependencyInstallPlan} from './publish-dependencies.mjs';
 import {auditExistingRuntime} from './publish-runtime-audit.mjs';
+import {deploymentStorage,assertStorageAvailable,ensureBuildRuntime} from './publish-native-runtime.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const releasesDir=resolve(process.env.SITE_RELEASES_DIR||resolve(root,".local-releases"));
@@ -47,18 +48,21 @@ console.log('Read-only existing runtime audit:',JSON.stringify(runtimeAudit));
 await writeFile(resolve(backupRoot,stamp,'runtime-audit.json'),JSON.stringify(runtimeAudit,null,2));
 await readFile(resolve(root,'pnpm-lock.yaml'));
 const dependencyPlan=dependencyInstallPlan(packageManager,JSON.parse(await readFile(resolve(root,'package.json'),'utf8')));
-console.log('Installing locked website dependencies before building…');
-await new Promise((resolvePromise,reject)=>{
- const child=spawn(dependencyPlan.command,dependencyPlan.args,{cwd:root,stdio:'inherit',env:{...process.env,CI:'true'},shell:process.platform==='win32'});
- child.once('error',reject);
- child.once('exit',code=>code===0?resolvePromise():reject(new Error(`Website dependency installation failed with exit code ${code}; the current release was not changed.`)));
+const runStep=(command,args)=>new Promise((resolvePromise,reject)=>{
+ const child=spawn(command,args,{cwd:root,stdio:'inherit',env:{...process.env,CI:'true'},shell:process.platform==='win32'});
+ child.once('error',reject);child.once('exit',code=>code===0?resolvePromise():reject(new Error(`Deployment step exited ${code}; the current release was not changed.`)));
 });
-
-await new Promise((resolvePromise,reject)=>{
- const child=spawn(packageManager,["run","build"],{cwd:root,stdio:"inherit",env:process.env,shell:process.platform==="win32"});
- child.once("error",reject);
- child.once("exit",code=>code===0?resolvePromise():reject(new Error(`Website build failed with exit code ${code}`)));
-});
+let deploymentStage='storage';
+try{
+ runtimeAudit.storage=await deploymentStorage(root);console.log('Deployment storage:',JSON.stringify(runtimeAudit.storage));assertStorageAvailable(runtimeAudit.storage);
+ deploymentStage='dependency installation';console.log('Installing locked website dependencies before building…');await runStep(dependencyPlan.command,dependencyPlan.args);
+ deploymentStage='native runtime';runtimeAudit.nativeRuntime=await ensureBuildRuntime(root,packageManager);
+ deploymentStage='website build';await runStep(packageManager,['run','build']);
+}catch(error){
+ // Keep the full read-only diagnostics at the END of the existing bounded API log.
+ console.error('Deployment failure diagnostics:',JSON.stringify({stage:deploymentStage,runtimeAudit}));
+ throw error;
+}
 
 const mapAfter=await readFile(resolve(root,"src/data/wuyishan-public-map.json"));
 if(sha256(mapAfter)!==mapHashBefore)throw new Error("Protected public map geometry changed during publication; release was not activated.");
